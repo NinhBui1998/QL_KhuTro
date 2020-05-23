@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyKhuTro", "QuanLyKhuTro\QuanLyKhuTro.csproj", "{201DD3C2-310D-471B-B2B7-6C844B9E75B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{F39AB949-4A2D-431E-9135-683F13834D37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{B9E387C6-98FA-42DF-919C-C801E5A45F5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{201DD3C2-310D-471B-B2B7-6C844B9E75B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{201DD3C2-310D-471B-B2B7-6C844B9E75B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{201DD3C2-310D-471B-B2B7-6C844B9E75B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{201DD3C2-310D-471B-B2B7-6C844B9E75B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F39AB949-4A2D-431E-9135-683F13834D37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F39AB949-4A2D-431E-9135-683F13834D37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F39AB949-4A2D-431E-9135-683F13834D37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F39AB949-4A2D-431E-9135-683F13834D37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9E387C6-98FA-42DF-919C-C801E5A45F5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9E387C6-98FA-42DF-919C-C801E5A45F5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9E387C6-98FA-42DF-919C-C801E5A45F5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9E387C6-98FA-42DF-919C-C801E5A45F5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8533F1E6-56F9-4EBE-8507-B935FA8BCFF1}
+	EndGlobalSection
+EndGlobal
