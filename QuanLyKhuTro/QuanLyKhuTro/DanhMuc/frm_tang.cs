@@ -146,6 +146,8 @@ namespace QuanLyKhuTro
         {
             txt_matang.Clear();
             txt_tentang.Clear();
+            btn_them.Enabled = true;
+            btn_sua.Enabled= btn_luu.Enabled = btn_xoa.Enabled = false;
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -161,6 +163,7 @@ namespace QuanLyKhuTro
 
                 txt_matang.Text = t.MATANG.ToString();
                 txt_tentang.Text = t.TENTANG.ToString();
+                
             
             }
             catch { }
@@ -168,6 +171,7 @@ namespace QuanLyKhuTro
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
+            txt_matang.Enabled = false;
             btn_luu.Enabled = true;
             btn_xoa.Enabled = btn_them.Enabled = false;
             txt_tentang.Enabled = true;
