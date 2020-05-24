@@ -84,6 +84,8 @@ namespace QuanLyKhuTro
       
         private void btn_them_Click(object sender, EventArgs e)
         {
+            txt_matang.Clear();
+            txt_tentang.Clear();
             txt_matang.Enabled = txt_tentang.Enabled = true;
             //sinh mã
             string pos = gridView1.GetRowCellValue(gridView1.RowCount - 1, "MATANG").ToString();
@@ -108,6 +110,24 @@ namespace QuanLyKhuTro
         {
             txt_matang.Clear();
             txt_tentang.Clear();
+        }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            TANG t = new TANG();
+            btn_xoa.Enabled = btn_sua.Enabled = btn_huy.Enabled = true;
+            int position = gridView1.FocusedRowHandle;
+            try
+            {
+                t.MATANG = gridView1.GetRowCellValue(position, "MATANG").ToString();
+                t.TENTANG = gridView1.GetRowCellValue(position, "TENTANG").ToString();
+               
+
+                txt_matang.Text = t.MATANG.ToString();
+                txt_tentang.Text = t.TENTANG.ToString();
+            
+            }
+            catch { }
         }
     }
 }

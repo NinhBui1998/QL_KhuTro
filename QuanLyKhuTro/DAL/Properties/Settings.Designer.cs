@@ -33,5 +33,15 @@ namespace DAL.Properties {
                 return ((string)(this["QL_NHATROConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ADMIN\\SQLEXPRESS;Initial Catalog=QL_NHATRO;Integrated Security=True")]
+        public string QL_NHATROConnectionString1 {
+            get {
+                return ((string)(this["QL_NHATROConnectionString1"]));
+            }
+        }
     }
 }
