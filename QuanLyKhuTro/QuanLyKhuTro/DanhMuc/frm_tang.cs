@@ -34,25 +34,60 @@ namespace QuanLyKhuTro
 
         private void btn_luu_Click(object sender, EventArgs e)
         {
-            TANG tg = new TANG();
-            tg.MATANG = txt_matang.Text;
-            tg.TENTANG = txt_tentang.Text;
-            //kiểm tra khóa chính
-            if (tang.ktkc_Tang(tg.MATANG) == true)
-            {
-                MessageBox.Show("TRùng khóa chính");
-                return;
-            }
-            if (tang.themTang(tg) == true)
-            {
 
-                grv_Tang.DataSource = tang.loadBangTang();
-                MessageBox.Show("Thành công");
+            TANG tg = new TANG();
+            if (btn_them.Enabled==true)
+           {   
+                tg.MATANG = txt_matang.Text;
+                tg.TENTANG = txt_tentang.Text;
+                if(txt_matang.Text==null && txt_tentang.Text== string.Empty)
+                {
+                    MessageBox.Show("không được để trống");
+                    return;
+                }   
+                //kiểm tra khóa chính
+                if (tang.ktkc_Tang(tg.MATANG) == true)
+                {
+                    MessageBox.Show("TRùng khóa chính");
+                    return;
+                }
+                if (tang.themTang(tg) == true)
+                {
+
+                    grv_Tang.DataSource = tang.loadBangTang();
+                    MessageBox.Show("Thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Thất bại");
+                }
+                btn_sua.Enabled = btn_luu.Enabled = btn_them.Enabled = false;
             }
-            else
+           if(btn_sua.Enabled==true)
             {
-                MessageBox.Show("Thất bại");
-            }
+                try
+                {
+                    if(txt_tentang.Text== string.Empty)
+                    {
+                        MessageBox.Show("Tên tầng không được để trống");
+                        return;
+                    }    
+                    tg.MATANG = txt_matang.Text;
+                    tg.TENTANG = txt_tentang.Text;
+                 
+
+               
+                    if (tang.sua_Tang(tg) == true)
+                    {
+                        grv_Tang.DataSource = tang.loadBangTang();
+                        MessageBox.Show("Thành công");
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("thất bại");
+                }
+            }    
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
@@ -102,6 +137,7 @@ namespace QuanLyKhuTro
 
             btn_luu.Enabled=btn_huy.Enabled = true;
             btn_sua.Enabled = btn_xoa.Enabled = false;
+            
         }
 
        
@@ -128,6 +164,13 @@ namespace QuanLyKhuTro
             
             }
             catch { }
+        }
+
+        private void btn_sua_Click(object sender, EventArgs e)
+        {
+            btn_luu.Enabled = true;
+            btn_xoa.Enabled = btn_them.Enabled = false;
+            txt_tentang.Enabled = true;
         }
     }
 }
