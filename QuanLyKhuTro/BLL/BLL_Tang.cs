@@ -24,6 +24,11 @@ namespace BLL
         {
             return tang.them_Tang(pTang);
         }
+        //ktra xóa
+        public bool ktx_tang(String t)
+        {
+            return tang.kt_XoaTang(t);
+        }
         //Xóa
         public bool xoa_Tang(string pMa)
         {
@@ -34,6 +39,10 @@ namespace BLL
         {
             return tang.suaTang(pTang);
         }
+        //public string sinhmaTang()
+        //{
+        //    return tang.SinhMa();
+        //}
 
     }
 }

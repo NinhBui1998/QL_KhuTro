@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Data;
 namespace DAL
 {
    public class DAL_Tang
@@ -84,5 +84,63 @@ namespace DAL
                 return false;
             }
         }
+        //kiểm tra tầng có đang được sử dụng
+        public bool kt_XoaTang(string hd)
+        {
+
+            var ktx = (from t in data.TANGs
+                       from p in data.PHONGs
+                       where t.MATANG==hd && p.MATANG==hd
+                       select t).Count();
+            if (ktx > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        //public string SinhMa()
+        //{
+        //    var a = data.TANGs.Select(t => t);
+        //    var resultTable = new DataTable();
+        //    bool firstPass = true;
+        //    string ma = "T00";
+            
+        //    foreach (var item in a)
+        //    {
+        //        if (firstPass)
+        //        {
+        //            Array.ForEach(item.GetType().GetProperties(), p => resultTable.Columns.Add(new DataColumn(p.Name)));
+        //            firstPass = false;
+        //        }
+        //        var newRow = resultTable.NewRow();
+        //        Array.ForEach(item.GetType().GetProperties(), p => newRow[p.Name] = p.GetValue(item, null));
+        //        resultTable.Rows.Add(newRow);
+        //    }
+        //    try
+        //    {
+        //        int i = resultTable.Rows.Count;
+        //        string x = resultTable.Rows[i - 1][2].ToString();
+        //        int Str3 = int.Parse(x.Substring(2));
+        //        int Str4 = Str3 + 1;
+        //        if (Str4 < 10)
+        //        {
+        //            return ma + "00"+Str4;
+        //        }
+        //        else 
+        //        {
+        //            return ma + "0" + (Str3 + 1);
+        //        }
+     
+        //    }
+        //    catch
+        //    {
+        //        return ma + "001";
+        //    }
+        //}
     }
 }

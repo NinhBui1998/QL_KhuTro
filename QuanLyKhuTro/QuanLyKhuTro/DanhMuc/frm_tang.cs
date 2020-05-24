@@ -29,6 +29,7 @@ namespace QuanLyKhuTro
         private void frm_tang_Load(object sender, EventArgs e)
         {
             grv_Tang.DataSource = tang.loadBangTang();
+          
         }
 
         private void btn_luu_Click(object sender, EventArgs e)
@@ -63,11 +64,11 @@ namespace QuanLyKhuTro
                 MessageBox.Show("mã hóa đơn không được để trống");
                 return;
             }
-            //if (ta.ktxoa_HD(m) == true)
-            //{
-            //    MessageBox.Show("Mã hóa đơn hiện đang sử dụng không thể xóa");
-            //    return;
-            //}
+            if (tang.ktx_tang(m) == true)
+            {
+                MessageBox.Show("Tầng hiện đang sử dụng không thể xóa");
+                return;
+            }
             if (tang.xoa_Tang(m) == true)
             {
                 grv_Tang.DataSource = tang.loadBangTang();
@@ -79,6 +80,34 @@ namespace QuanLyKhuTro
             {
                 MessageBox.Show("Thất bại");
             }
+        }
+      
+        private void btn_them_Click(object sender, EventArgs e)
+        {
+            txt_matang.Enabled = txt_tentang.Enabled = true;
+            //sinh mã
+            string pos = gridView1.GetRowCellValue(gridView1.RowCount - 1, "MATANG").ToString();
+            pos = pos.Substring(2);
+            int k = (int.Parse(pos) + 1);
+            if (k < 10)
+            {
+                txt_matang.Text = "T00" + k;
+            }
+            else if (k > 10 && k < 100)
+            {
+                txt_matang.Text = "T0" + k;
+            }
+
+            btn_luu.Enabled=btn_huy.Enabled = true;
+            btn_sua.Enabled = btn_xoa.Enabled = false;
+        }
+
+       
+
+        private void btn_huy_Click(object sender, EventArgs e)
+        {
+            txt_matang.Clear();
+            txt_tentang.Clear();
         }
     }
 }
