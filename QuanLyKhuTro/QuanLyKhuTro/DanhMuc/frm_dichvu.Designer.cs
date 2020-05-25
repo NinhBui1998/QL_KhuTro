@@ -53,6 +53,8 @@
             this.MADV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENDV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GIA = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txt_donvi = new System.Windows.Forms.TextBox();
+            this.lbl_donvi = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -242,21 +244,24 @@
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.11765F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.88235F));
+            this.tableLayoutPanel3.Controls.Add(this.txt_donvi, 1, 3);
             this.tableLayoutPanel3.Controls.Add(this.lbl_dichvu, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.lbl_tendichvu, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.txt_madichvu, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.txt_tendichvu, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.lbl_gia, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.txt_gia, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.lbl_donvi, 0, 3);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel3.ForeColor = System.Drawing.Color.Black;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 26);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 3;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.RowCount = 4;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(320, 158);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
@@ -264,7 +269,7 @@
             // 
             this.lbl_dichvu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_dichvu.AutoSize = true;
-            this.lbl_dichvu.Location = new System.Drawing.Point(3, 16);
+            this.lbl_dichvu.Location = new System.Drawing.Point(3, 10);
             this.lbl_dichvu.Name = "lbl_dichvu";
             this.lbl_dichvu.Size = new System.Drawing.Size(87, 19);
             this.lbl_dichvu.TabIndex = 0;
@@ -274,7 +279,7 @@
             // 
             this.lbl_tendichvu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_tendichvu.AutoSize = true;
-            this.lbl_tendichvu.Location = new System.Drawing.Point(3, 68);
+            this.lbl_tendichvu.Location = new System.Drawing.Point(3, 49);
             this.lbl_tendichvu.Name = "lbl_tendichvu";
             this.lbl_tendichvu.Size = new System.Drawing.Size(87, 19);
             this.lbl_tendichvu.TabIndex = 1;
@@ -283,7 +288,7 @@
             // txt_madichvu
             // 
             this.txt_madichvu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_madichvu.Location = new System.Drawing.Point(96, 12);
+            this.txt_madichvu.Location = new System.Drawing.Point(96, 6);
             this.txt_madichvu.Name = "txt_madichvu";
             this.txt_madichvu.Size = new System.Drawing.Size(221, 27);
             this.txt_madichvu.TabIndex = 2;
@@ -291,7 +296,7 @@
             // txt_tendichvu
             // 
             this.txt_tendichvu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_tendichvu.Location = new System.Drawing.Point(96, 64);
+            this.txt_tendichvu.Location = new System.Drawing.Point(96, 45);
             this.txt_tendichvu.Name = "txt_tendichvu";
             this.txt_tendichvu.Size = new System.Drawing.Size(221, 27);
             this.txt_tendichvu.TabIndex = 2;
@@ -300,7 +305,7 @@
             // 
             this.lbl_gia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_gia.AutoSize = true;
-            this.lbl_gia.Location = new System.Drawing.Point(3, 121);
+            this.lbl_gia.Location = new System.Drawing.Point(3, 88);
             this.lbl_gia.Name = "lbl_gia";
             this.lbl_gia.Size = new System.Drawing.Size(87, 19);
             this.lbl_gia.TabIndex = 1;
@@ -309,7 +314,7 @@
             // txt_gia
             // 
             this.txt_gia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_gia.Location = new System.Drawing.Point(96, 117);
+            this.txt_gia.Location = new System.Drawing.Point(96, 84);
             this.txt_gia.Name = "txt_gia";
             this.txt_gia.Size = new System.Drawing.Size(221, 27);
             this.txt_gia.TabIndex = 2;
@@ -357,6 +362,24 @@
             this.GIA.Name = "GIA";
             this.GIA.Visible = true;
             this.GIA.VisibleIndex = 2;
+            // 
+            // txt_donvi
+            // 
+            this.txt_donvi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_donvi.Location = new System.Drawing.Point(96, 124);
+            this.txt_donvi.Name = "txt_donvi";
+            this.txt_donvi.Size = new System.Drawing.Size(221, 27);
+            this.txt_donvi.TabIndex = 4;
+            // 
+            // lbl_donvi
+            // 
+            this.lbl_donvi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_donvi.AutoSize = true;
+            this.lbl_donvi.Location = new System.Drawing.Point(3, 128);
+            this.lbl_donvi.Name = "lbl_donvi";
+            this.lbl_donvi.Size = new System.Drawing.Size(87, 19);
+            this.lbl_donvi.TabIndex = 1;
+            this.lbl_donvi.Text = "Đơn vị";
             // 
             // frm_dichvu
             // 
@@ -412,5 +435,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn MADV;
         private DevExpress.XtraGrid.Columns.GridColumn TENDV;
         private DevExpress.XtraGrid.Columns.GridColumn GIA;
+        private System.Windows.Forms.TextBox txt_donvi;
+        private System.Windows.Forms.Label lbl_donvi;
     }
 }

@@ -29,5 +29,13 @@ namespace QuanLyKhuTro.DanhMuc
             btn_them.Enabled = true;
             grv_loaiPhong.DataSource = blp.loadBangLoaiPhong();
         }
+
+        private void btn_sua_Click(object sender, EventArgs e)
+        {
+            txt_maloai.Clear();
+            txt_gia.Clear();
+            txt_tenloai.Clear();
+            frm_loaiphong_Load(sender,e);
+        }
     }
 }
