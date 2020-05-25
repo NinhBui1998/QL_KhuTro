@@ -140,6 +140,7 @@
             this.btn_them.Size = new System.Drawing.Size(122, 40);
             this.btn_them.TabIndex = 0;
             this.btn_them.Text = "Thêm";
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // btn_sua
             // 
@@ -300,6 +301,7 @@
             this.txt_gia.Name = "txt_gia";
             this.txt_gia.Size = new System.Drawing.Size(272, 27);
             this.txt_gia.TabIndex = 2;
+            this.txt_gia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_gia_KeyPress);
             // 
             // tableLayoutPanel1
             // 
@@ -336,6 +338,7 @@
             this.GIA});
             this.gridView_LoaiPhong.GridControl = this.grv_loaiPhong;
             this.gridView_LoaiPhong.Name = "gridView_LoaiPhong";
+            this.gridView_LoaiPhong.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView_LoaiPhong_FocusedRowChanged);
             // 
             // MALOAI
             // 
