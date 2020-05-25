@@ -42,19 +42,20 @@
             this.btn_luu = new DevExpress.XtraEditors.SimpleButton();
             this.grb_thongtindichvu = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.txt_donvi = new System.Windows.Forms.TextBox();
             this.lbl_dichvu = new System.Windows.Forms.Label();
             this.lbl_tendichvu = new System.Windows.Forms.Label();
             this.txt_madichvu = new System.Windows.Forms.TextBox();
             this.txt_tendichvu = new System.Windows.Forms.TextBox();
             this.lbl_gia = new System.Windows.Forms.Label();
             this.txt_gia = new System.Windows.Forms.TextBox();
+            this.lbl_donvi = new System.Windows.Forms.Label();
             this.grv_dichvu = new DevExpress.XtraGrid.GridControl();
             this.gridView_DichVu = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.MADV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENDV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.GIA = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.txt_donvi = new System.Windows.Forms.TextBox();
-            this.lbl_donvi = new System.Windows.Forms.Label();
+            this.GIADV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DONVI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -265,6 +266,14 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(320, 158);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
+            // txt_donvi
+            // 
+            this.txt_donvi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_donvi.Location = new System.Drawing.Point(96, 124);
+            this.txt_donvi.Name = "txt_donvi";
+            this.txt_donvi.Size = new System.Drawing.Size(221, 27);
+            this.txt_donvi.TabIndex = 4;
+            // 
             // lbl_dichvu
             // 
             this.lbl_dichvu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -319,6 +328,16 @@
             this.txt_gia.Size = new System.Drawing.Size(221, 27);
             this.txt_gia.TabIndex = 2;
             // 
+            // lbl_donvi
+            // 
+            this.lbl_donvi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_donvi.AutoSize = true;
+            this.lbl_donvi.Location = new System.Drawing.Point(3, 128);
+            this.lbl_donvi.Name = "lbl_donvi";
+            this.lbl_donvi.Size = new System.Drawing.Size(87, 19);
+            this.lbl_donvi.TabIndex = 1;
+            this.lbl_donvi.Text = "Đơn vị";
+            // 
             // grv_dichvu
             // 
             this.grv_dichvu.Location = new System.Drawing.Point(341, 3);
@@ -334,7 +353,8 @@
             this.gridView_DichVu.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.MADV,
             this.TENDV,
-            this.GIA});
+            this.GIADV,
+            this.DONVI});
             this.gridView_DichVu.GridControl = this.grv_dichvu;
             this.gridView_DichVu.Name = "gridView_DichVu";
             this.gridView_DichVu.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView_DichVu_FocusedRowChanged);
@@ -355,31 +375,21 @@
             this.TENDV.Visible = true;
             this.TENDV.VisibleIndex = 1;
             // 
-            // GIA
+            // GIADV
             // 
-            this.GIA.Caption = "Giá";
-            this.GIA.FieldName = "GIA";
-            this.GIA.Name = "GIA";
-            this.GIA.Visible = true;
-            this.GIA.VisibleIndex = 2;
+            this.GIADV.Caption = "Giá";
+            this.GIADV.FieldName = "GIADV";
+            this.GIADV.Name = "GIADV";
+            this.GIADV.Visible = true;
+            this.GIADV.VisibleIndex = 2;
             // 
-            // txt_donvi
+            // DONVI
             // 
-            this.txt_donvi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_donvi.Location = new System.Drawing.Point(96, 124);
-            this.txt_donvi.Name = "txt_donvi";
-            this.txt_donvi.Size = new System.Drawing.Size(221, 27);
-            this.txt_donvi.TabIndex = 4;
-            // 
-            // lbl_donvi
-            // 
-            this.lbl_donvi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_donvi.AutoSize = true;
-            this.lbl_donvi.Location = new System.Drawing.Point(3, 128);
-            this.lbl_donvi.Name = "lbl_donvi";
-            this.lbl_donvi.Size = new System.Drawing.Size(87, 19);
-            this.lbl_donvi.TabIndex = 1;
-            this.lbl_donvi.Text = "Đơn vị";
+            this.DONVI.Caption = "Đơn vị";
+            this.DONVI.FieldName = "DONVI";
+            this.DONVI.Name = "DONVI";
+            this.DONVI.Visible = true;
+            this.DONVI.VisibleIndex = 3;
             // 
             // frm_dichvu
             // 
@@ -434,8 +444,9 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView_DichVu;
         private DevExpress.XtraGrid.Columns.GridColumn MADV;
         private DevExpress.XtraGrid.Columns.GridColumn TENDV;
-        private DevExpress.XtraGrid.Columns.GridColumn GIA;
+        private DevExpress.XtraGrid.Columns.GridColumn GIADV;
         private System.Windows.Forms.TextBox txt_donvi;
         private System.Windows.Forms.Label lbl_donvi;
+        private DevExpress.XtraGrid.Columns.GridColumn DONVI;
     }
 }
