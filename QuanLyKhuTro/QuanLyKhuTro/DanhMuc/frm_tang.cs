@@ -28,8 +28,11 @@ namespace QuanLyKhuTro
 
         private void frm_tang_Load(object sender, EventArgs e)
         {
+            txt_matang.Enabled = false;
             grv_Tang.DataSource = tang.loadBangTang();
-          
+            btn_sua.Enabled = btn_xoa.Enabled = btn_huy.Enabled = btn_luu.Enabled = txt_matang.Enabled = txt_tentang.Enabled = false;
+            btn_them.Enabled = true;
+
         }
 
         private void btn_luu_Click(object sender, EventArgs e)
@@ -87,7 +90,9 @@ namespace QuanLyKhuTro
                 {
                     MessageBox.Show("thất bại");
                 }
-            }    
+            }
+            btn_sua.Enabled = btn_xoa.Enabled = btn_huy.Enabled = btn_luu.Enabled = txt_matang.Enabled = txt_tentang.Enabled = false;
+            btn_them.Enabled = true;
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
@@ -115,13 +120,17 @@ namespace QuanLyKhuTro
             {
                 MessageBox.Show("Thất bại");
             }
+            btn_sua.Enabled = btn_xoa.Enabled = btn_huy.Enabled = btn_luu.Enabled = txt_matang.Enabled = txt_tentang.Enabled = false;
+            btn_them.Enabled = true;
         }
       
         private void btn_them_Click(object sender, EventArgs e)
         {
+          
             txt_matang.Clear();
             txt_tentang.Clear();
             txt_matang.Enabled = txt_tentang.Enabled = true;
+            txt_matang.Enabled = false;
             //sinh mã
             string pos = gridView1.GetRowCellValue(gridView1.RowCount - 1, "MATANG").ToString();
             pos = pos.Substring(2);
@@ -148,12 +157,15 @@ namespace QuanLyKhuTro
             txt_tentang.Clear();
             btn_them.Enabled = true;
             btn_sua.Enabled= btn_luu.Enabled = btn_xoa.Enabled = false;
+            btn_sua.Enabled = btn_xoa.Enabled = btn_huy.Enabled = btn_luu.Enabled = txt_matang.Enabled = txt_tentang.Enabled = false;
+            btn_them.Enabled = true;
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             TANG t = new TANG();
             btn_xoa.Enabled = btn_sua.Enabled = btn_huy.Enabled = true;
+            btn_them.Enabled = false;
             int position = gridView1.FocusedRowHandle;
             try
             {
