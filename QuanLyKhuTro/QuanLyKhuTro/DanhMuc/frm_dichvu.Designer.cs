@@ -48,6 +48,11 @@
             this.txt_tendichvu = new System.Windows.Forms.TextBox();
             this.lbl_gia = new System.Windows.Forms.Label();
             this.txt_hinhphat = new System.Windows.Forms.TextBox();
+            this.grv_dichvu = new DevExpress.XtraGrid.GridControl();
+            this.gridView_DichVu = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.MADV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TENDV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GIA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -56,6 +61,8 @@
             this.tableLayoutPanel6.SuspendLayout();
             this.grb_thongtinnoiquy.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grv_dichvu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_DichVu)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -64,6 +71,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.83509F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.1649F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.grv_dichvu, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -147,6 +155,7 @@
             this.btn_them.Size = new System.Drawing.Size(98, 40);
             this.btn_them.TabIndex = 0;
             this.btn_them.Text = "Thêm";
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // btn_sua
             // 
@@ -213,6 +222,7 @@
             this.btn_luu.Size = new System.Drawing.Size(97, 41);
             this.btn_luu.TabIndex = 2;
             this.btn_luu.Text = "Lưu";
+            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
             // 
             // grb_thongtinnoiquy
             // 
@@ -304,6 +314,50 @@
             this.txt_hinhphat.Size = new System.Drawing.Size(221, 27);
             this.txt_hinhphat.TabIndex = 2;
             // 
+            // grv_dichvu
+            // 
+            this.grv_dichvu.Location = new System.Drawing.Point(341, 3);
+            this.grv_dichvu.MainView = this.gridView_DichVu;
+            this.grv_dichvu.Name = "grv_dichvu";
+            this.grv_dichvu.Size = new System.Drawing.Size(400, 200);
+            this.grv_dichvu.TabIndex = 1;
+            this.grv_dichvu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView_DichVu});
+            // 
+            // gridView_DichVu
+            // 
+            this.gridView_DichVu.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.MADV,
+            this.TENDV,
+            this.GIA});
+            this.gridView_DichVu.GridControl = this.grv_dichvu;
+            this.gridView_DichVu.Name = "gridView_DichVu";
+            this.gridView_DichVu.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView_DichVu_FocusedRowChanged);
+            // 
+            // MADV
+            // 
+            this.MADV.Caption = "Mã dịch vụ";
+            this.MADV.FieldName = "MADV";
+            this.MADV.Name = "MADV";
+            this.MADV.Visible = true;
+            this.MADV.VisibleIndex = 0;
+            // 
+            // TENDV
+            // 
+            this.TENDV.Caption = "Tên dịch vụ";
+            this.TENDV.FieldName = "TENDV";
+            this.TENDV.Name = "TENDV";
+            this.TENDV.Visible = true;
+            this.TENDV.VisibleIndex = 1;
+            // 
+            // GIA
+            // 
+            this.GIA.Caption = "Giá";
+            this.GIA.FieldName = "GIA";
+            this.GIA.Name = "GIA";
+            this.GIA.Visible = true;
+            this.GIA.VisibleIndex = 2;
+            // 
             // frm_dichvu
             // 
             this.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -316,6 +370,7 @@
             this.MinimumSize = new System.Drawing.Size(961, 424);
             this.Name = "frm_dichvu";
             this.Size = new System.Drawing.Size(961, 424);
+            this.Load += new System.EventHandler(this.frm_dichvu_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -325,6 +380,8 @@
             this.grb_thongtinnoiquy.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grv_dichvu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_DichVu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -350,5 +407,10 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private DevExpress.XtraEditors.SimpleButton btn_huy;
         private DevExpress.XtraEditors.SimpleButton btn_luu;
+        private DevExpress.XtraGrid.GridControl grv_dichvu;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView_DichVu;
+        private DevExpress.XtraGrid.Columns.GridColumn MADV;
+        private DevExpress.XtraGrid.Columns.GridColumn TENDV;
+        private DevExpress.XtraGrid.Columns.GridColumn GIA;
     }
 }

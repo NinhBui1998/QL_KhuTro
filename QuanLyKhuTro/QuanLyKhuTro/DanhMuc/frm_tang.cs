@@ -40,7 +40,7 @@ namespace QuanLyKhuTro
 
             TANG tg = new TANG();
             if (btn_them.Enabled==true)
-           {   
+            {   
                 tg.MATANG = txt_matang.Text;
                 tg.TENTANG = txt_tentang.Text;
                 if(txt_matang.Text==null && txt_tentang.Text== string.Empty)
@@ -66,7 +66,7 @@ namespace QuanLyKhuTro
                 }
                 btn_sua.Enabled = btn_luu.Enabled = btn_them.Enabled = false;
             }
-           if(btn_sua.Enabled==true)
+            if(btn_sua.Enabled==true)
             {
                 try
                 {

@@ -9,9 +9,9 @@ namespace BLL
     public class BLL_DichVu
     {
         DAL_DichVu dichvu = new DAL_DichVu();
-        public List<DICHVU> loadBangDV()
+        public List<DICHVU> loadBang_DV()
         {
-            return loadBangDV();
+            return dichvu.loadbangDichVu();
         }
         //kiểm tra khóa chính
         public bool ktkc_DichVu(string pMa)
