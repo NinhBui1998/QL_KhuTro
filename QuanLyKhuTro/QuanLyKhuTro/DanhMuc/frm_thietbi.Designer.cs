@@ -54,6 +54,14 @@
             this.txt_slphanbo = new System.Windows.Forms.TextBox();
             this.txt_slhuhong = new System.Windows.Forms.TextBox();
             this.txt_sltonkho = new System.Windows.Forms.TextBox();
+            this.grv_thietbi = new DevExpress.XtraGrid.GridControl();
+            this.gridView_ThietBi = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.MATHETBI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TENTB = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GIATB = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SOLUONG_PHANBO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SOLUONG_HUHONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SOLUONG_TONKHO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -62,6 +70,8 @@
             this.tableLayoutPanel6.SuspendLayout();
             this.grb_thongtinthietbi.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grv_thietbi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_ThietBi)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -70,6 +80,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.83607F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.16393F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.grv_thietbi, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -152,6 +163,7 @@
             this.btn_them.Size = new System.Drawing.Size(127, 40);
             this.btn_them.TabIndex = 0;
             this.btn_them.Text = "Thêm";
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // btn_sua
             // 
@@ -164,6 +176,7 @@
             this.btn_sua.Size = new System.Drawing.Size(129, 40);
             this.btn_sua.TabIndex = 1;
             this.btn_sua.Text = "Sửa";
+            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
             // btn_xoa
             // 
@@ -176,6 +189,7 @@
             this.btn_xoa.Size = new System.Drawing.Size(127, 40);
             this.btn_xoa.TabIndex = 0;
             this.btn_xoa.Text = "Xóa";
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -205,6 +219,7 @@
             this.btn_huy.Size = new System.Drawing.Size(97, 41);
             this.btn_huy.TabIndex = 3;
             this.btn_huy.Text = "Hủy";
+            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
             // 
             // btn_luu
             // 
@@ -218,6 +233,7 @@
             this.btn_luu.Size = new System.Drawing.Size(97, 41);
             this.btn_luu.TabIndex = 2;
             this.btn_luu.Text = "Lưu";
+            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
             // 
             // grb_thongtinthietbi
             // 
@@ -372,6 +388,77 @@
             this.txt_sltonkho.Size = new System.Drawing.Size(256, 27);
             this.txt_sltonkho.TabIndex = 2;
             // 
+            // grv_thietbi
+            // 
+            this.grv_thietbi.Location = new System.Drawing.Point(428, 3);
+            this.grv_thietbi.MainView = this.gridView_ThietBi;
+            this.grv_thietbi.Name = "grv_thietbi";
+            this.grv_thietbi.Size = new System.Drawing.Size(663, 200);
+            this.grv_thietbi.TabIndex = 1;
+            this.grv_thietbi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView_ThietBi});
+            // 
+            // gridView_ThietBi
+            // 
+            this.gridView_ThietBi.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.MATHETBI,
+            this.TENTB,
+            this.GIATB,
+            this.SOLUONG_PHANBO,
+            this.SOLUONG_HUHONG,
+            this.SOLUONG_TONKHO});
+            this.gridView_ThietBi.GridControl = this.grv_thietbi;
+            this.gridView_ThietBi.Name = "gridView_ThietBi";
+            this.gridView_ThietBi.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView_ThietBi_FocusedRowChanged);
+            // 
+            // MATHETBI
+            // 
+            this.MATHETBI.Caption = "Mã thiết bị";
+            this.MATHETBI.FieldName = "MATHETBI";
+            this.MATHETBI.Name = "MATHETBI";
+            this.MATHETBI.Visible = true;
+            this.MATHETBI.VisibleIndex = 0;
+            // 
+            // TENTB
+            // 
+            this.TENTB.Caption = "Tên thiết bị";
+            this.TENTB.FieldName = "TENTB";
+            this.TENTB.Name = "TENTB";
+            this.TENTB.Visible = true;
+            this.TENTB.VisibleIndex = 1;
+            // 
+            // GIATB
+            // 
+            this.GIATB.Caption = "Giá thiết bị";
+            this.GIATB.FieldName = "GIATB";
+            this.GIATB.Name = "GIATB";
+            this.GIATB.Visible = true;
+            this.GIATB.VisibleIndex = 2;
+            // 
+            // SOLUONG_PHANBO
+            // 
+            this.SOLUONG_PHANBO.Caption = "Số lượng phân bổ";
+            this.SOLUONG_PHANBO.FieldName = "SOLUONG_PHANBO";
+            this.SOLUONG_PHANBO.Name = "SOLUONG_PHANBO";
+            this.SOLUONG_PHANBO.Visible = true;
+            this.SOLUONG_PHANBO.VisibleIndex = 3;
+            // 
+            // SOLUONG_HUHONG
+            // 
+            this.SOLUONG_HUHONG.Caption = "Số lượng hư hỏng";
+            this.SOLUONG_HUHONG.FieldName = "SOLUONG_HUHONG";
+            this.SOLUONG_HUHONG.Name = "SOLUONG_HUHONG";
+            this.SOLUONG_HUHONG.Visible = true;
+            this.SOLUONG_HUHONG.VisibleIndex = 4;
+            // 
+            // SOLUONG_TONKHO
+            // 
+            this.SOLUONG_TONKHO.Caption = "Số lượng tồn kho";
+            this.SOLUONG_TONKHO.FieldName = "SOLUONG_TONKHO";
+            this.SOLUONG_TONKHO.Name = "SOLUONG_TONKHO";
+            this.SOLUONG_TONKHO.Visible = true;
+            this.SOLUONG_TONKHO.VisibleIndex = 5;
+            // 
             // frm_thietbi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -381,6 +468,7 @@
             this.MinimumSize = new System.Drawing.Size(1234, 521);
             this.Name = "frm_thietbi";
             this.Size = new System.Drawing.Size(1234, 521);
+            this.Load += new System.EventHandler(this.frm_thietbi_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -390,6 +478,8 @@
             this.grb_thongtinthietbi.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grv_thietbi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_ThietBi)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -421,5 +511,13 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private DevExpress.XtraEditors.SimpleButton btn_huy;
         private DevExpress.XtraEditors.SimpleButton btn_luu;
+        private DevExpress.XtraGrid.GridControl grv_thietbi;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView_ThietBi;
+        private DevExpress.XtraGrid.Columns.GridColumn MATHETBI;
+        private DevExpress.XtraGrid.Columns.GridColumn TENTB;
+        private DevExpress.XtraGrid.Columns.GridColumn GIATB;
+        private DevExpress.XtraGrid.Columns.GridColumn SOLUONG_PHANBO;
+        private DevExpress.XtraGrid.Columns.GridColumn SOLUONG_HUHONG;
+        private DevExpress.XtraGrid.Columns.GridColumn SOLUONG_TONKHO;
     }
 }

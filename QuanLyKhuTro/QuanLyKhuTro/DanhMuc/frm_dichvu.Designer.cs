@@ -171,6 +171,7 @@
             this.btn_sua.Size = new System.Drawing.Size(100, 40);
             this.btn_sua.TabIndex = 1;
             this.btn_sua.Text = "Sửa";
+            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
             // btn_xoa
             // 

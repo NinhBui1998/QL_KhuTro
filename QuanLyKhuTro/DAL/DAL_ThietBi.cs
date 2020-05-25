@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class DAL_DichVu
+    public class DAL_ThietBi
     {
         QL_KhuTroDataContext data = new QL_KhuTroDataContext();
 
         //lấy tất cả dữ liệu
-        public List<DICHVU> loadbangDichVu()
+        public List<THIETBI> loadbangThietBi()
         {
-            var dulieu = (from s in data.DICHVUs select s);
-            return dulieu.ToList<DICHVU>();
+            var dulieu = (from s in data.THIETBIs select s);
+            return dulieu.ToList<THIETBI>();
         }
 
         //kiểm tra khóa chính
-        public bool ktakhoachinh_DichVu(string hd)
+        public bool ktakhoachinh_ThietBi(string hd)
         {
-            var kt = (from h in data.DICHVUs
-                      where h.MADV == hd
+            var kt = (from h in data.THIETBIs
+                      where h.MATHIETBI == hd
                       select h).Count();
             if (kt > 0)
             {
@@ -34,11 +34,11 @@ namespace DAL
         }
 
         //Thêm
-        public bool them_DichVu(DICHVU dv)
+        public bool them_ThietBi(THIETBI tb)
         {
             try
             {
-                data.DICHVUs.InsertOnSubmit(dv);
+                data.THIETBIs.InsertOnSubmit(tb);
                 data.SubmitChanges();
                 return true;
             }
@@ -50,13 +50,12 @@ namespace DAL
         }
 
         //Xóa
-
-        public bool xoa_DichVu(string pMaDV)
+        public bool xoa_ThietBi(string pMaTB)
         {
             try
             {
-                DICHVU dv = data.DICHVUs.Where(t => t.MADV == pMaDV).FirstOrDefault();
-                data.DICHVUs.DeleteOnSubmit(dv);
+                THIETBI tb = data.THIETBIs.Where(t => t.MATHIETBI == pMaTB).FirstOrDefault();
+                data.THIETBIs.DeleteOnSubmit(tb);
                 data.SubmitChanges();
                 return true;
             }
@@ -67,16 +66,18 @@ namespace DAL
         }
 
         //Sửa
-        public bool sua_DichVu(DICHVU pDichVu)
+        public bool sua_ThietBi(THIETBI pThietBi)
         {
             try
             {
-                DICHVU nv = data.DICHVUs.Where(t => t.MADV == pDichVu.MADV).FirstOrDefault();
+                THIETBI nv = data.THIETBIs.Where(t => t.MATHIETBI == pThietBi.MATHIETBI).FirstOrDefault();
                 if (nv != null)
                 {
-                    nv.TENDV = pDichVu.TENDV;
-                    nv.GIADV = pDichVu.GIADV;
-                    nv.DONVI = pDichVu.DONVI;               
+                    nv.TENTB = pThietBi.TENTB;
+                    nv.GIATB = pThietBi.GIATB;
+                    nv.SOLUONG_PHANBO = pThietBi.SOLUONG_PHANBO;
+                    nv.SOLUONG_HUHONG = pThietBi.SOLUONG_HUHONG;
+                    nv.SOLUONG_TONKHO = pThietBi.SOLUONG_TONKHO;
                     data.SubmitChanges();
                 }
                 return true;
@@ -86,13 +87,14 @@ namespace DAL
                 return false;
             }
         }
+
         //kiểm tra tầng có đang được sử dụng
-        public bool kt_XoaDV(string hd)
+        public bool kt_XoaTB(string hd)
         {
 
-            var ktx = (from t in data.DICHVUs
-                       from p in data.DICHVU_PHONGs
-                       where t.MADV == hd && p.MADV == hd
+            var ktx = (from t in data.THIETBIs
+                       from p in data.THIETBI_PHONGs
+                       where t.MATHIETBI == hd && p.MATHIETBI == hd
                        select t).Count();
             if (ktx > 0)
             {

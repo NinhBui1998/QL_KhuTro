@@ -42,7 +42,6 @@ namespace QuanLyKhuTro.DanhMuc
         {
             frm_loaiphong_Load(sender,e);
         }
-
         private void btn_xoa_Click(object sender, EventArgs e)
         {
           
@@ -70,7 +69,6 @@ namespace QuanLyKhuTro.DanhMuc
 
             frm_loaiphong_Load(sender,e);
         }
-
         private void btn_luu_Click(object sender, EventArgs e)
         {
             if(btn_them.Enabled==true)
