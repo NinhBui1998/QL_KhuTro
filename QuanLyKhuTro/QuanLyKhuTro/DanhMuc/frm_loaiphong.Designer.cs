@@ -209,6 +209,7 @@
             this.btn_luu.Size = new System.Drawing.Size(97, 41);
             this.btn_luu.TabIndex = 2;
             this.btn_luu.Text = "Lưu";
+            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
             // 
             // grb_thongtinloaiphong
             // 

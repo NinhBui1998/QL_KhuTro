@@ -68,8 +68,39 @@ namespace QuanLyKhuTro.DanhMuc
                     MessageBox.Show("Thất bại");
                 }
 
-          
             frm_loaiphong_Load(sender,e);
+        }
+
+        private void btn_luu_Click(object sender, EventArgs e)
+        {
+            if(btn_them.Enabled==true)
+            {
+                loaip.MALOAI = txt_maloai.Text;
+                loaip.TENLOAI = txt_tenloai.Text;
+                loaip.GIA = Convert.ToDouble(txt_gia.Text);
+                if (txt_maloai.Text == string.Empty && txt_tenloai.Text == string.Empty && txt_gia.Text==string.Empty)
+                {
+                    MessageBox.Show("không được để trống");
+                    return;
+                }
+                //kiểm tra khóa chính
+                if (blp.ktkc_LoaiPhong(loaip.MALOAI) == true)
+                {
+                    MessageBox.Show("TRùng khóa chính");
+                    return;
+                }
+                if (blp.ThemLoaiPhong(loaip) == true)
+                {
+
+
+                    MessageBox.Show("Thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Thất bại");
+                }
+                frm_loaiphong_Load(sender,e);
+            }    
         }
     }
 }
