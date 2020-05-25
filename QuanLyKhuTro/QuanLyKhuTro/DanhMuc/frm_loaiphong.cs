@@ -37,5 +37,39 @@ namespace QuanLyKhuTro.DanhMuc
             txt_tenloai.Clear();
             frm_loaiphong_Load(sender,e);
         }
+
+        private void btn_huy_Click(object sender, EventArgs e)
+        {
+            frm_loaiphong_Load(sender,e);
+        }
+
+        private void btn_xoa_Click(object sender, EventArgs e)
+        {
+          
+                int position = gridView_LoaiPhong.FocusedRowHandle;
+                string m = gridView_LoaiPhong.GetRowCellValue(position, "MALOAI").ToString();
+                if (m == string.Empty)
+                {
+                    MessageBox.Show("mã loại không được để trống");
+                    return;
+                }
+                if (blp.ktx_loaiPhong(m) == true)
+                {
+                    MessageBox.Show("Phòng hiện đang sử dụng không thể xóa");
+                    return;
+                }
+                if (blp.xoa_LoaiPhong(m) == true)
+                {
+                    MessageBox.Show("Thành công");
+
+                }
+                else
+                {
+                    MessageBox.Show("Thất bại");
+                }
+
+          
+            frm_loaiphong_Load(sender,e);
+        }
     }
 }

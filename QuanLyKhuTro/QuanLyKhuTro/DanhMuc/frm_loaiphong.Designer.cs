@@ -165,6 +165,7 @@
             this.btn_xoa.Size = new System.Drawing.Size(122, 40);
             this.btn_xoa.TabIndex = 0;
             this.btn_xoa.Text = "Xóa";
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -194,6 +195,7 @@
             this.btn_huy.Size = new System.Drawing.Size(97, 41);
             this.btn_huy.TabIndex = 3;
             this.btn_huy.Text = "Hủy";
+            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
             // 
             // btn_luu
             // 
