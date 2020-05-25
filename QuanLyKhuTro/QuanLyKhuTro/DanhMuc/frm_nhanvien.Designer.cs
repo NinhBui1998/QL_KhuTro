@@ -53,7 +53,8 @@
             this.txt_diachi = new System.Windows.Forms.TextBox();
             this.txt_sdt = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txt_ngaysinh = new System.Windows.Forms.MaskedTextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -248,7 +249,7 @@
             this.tableLayoutPanel3.Controls.Add(this.txt_diachi, 1, 3);
             this.tableLayoutPanel3.Controls.Add(this.txt_sdt, 1, 4);
             this.tableLayoutPanel3.Controls.Add(this.comboBox1, 1, 5);
-            this.tableLayoutPanel3.Controls.Add(this.dateTimePicker1, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.txt_ngaysinh, 1, 2);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel3.ForeColor = System.Drawing.Color.Black;
@@ -365,13 +366,15 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 27);
             this.comboBox1.TabIndex = 3;
             // 
-            // dateTimePicker1
+            // txt_ngaysinh
             // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(120, 114);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(240, 27);
-            this.dateTimePicker1.TabIndex = 4;
+            this.txt_ngaysinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_ngaysinh.Location = new System.Drawing.Point(120, 114);
+            this.txt_ngaysinh.Mask = "00/00/0000";
+            this.txt_ngaysinh.Name = "txt_ngaysinh";
+            this.txt_ngaysinh.Size = new System.Drawing.Size(240, 27);
+            this.txt_ngaysinh.TabIndex = 4;
+            this.txt_ngaysinh.ValidatingType = typeof(System.DateTime);
             // 
             // frm_nhanvien
             // 
@@ -412,7 +415,6 @@
         private System.Windows.Forms.TextBox txt_diachi;
         private System.Windows.Forms.TextBox txt_sdt;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
@@ -422,5 +424,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private DevExpress.XtraEditors.SimpleButton btn_huy;
         private DevExpress.XtraEditors.SimpleButton btn_luu;
+        private System.Windows.Forms.MaskedTextBox txt_ngaysinh;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

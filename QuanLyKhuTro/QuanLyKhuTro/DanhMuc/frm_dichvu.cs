@@ -36,7 +36,7 @@ namespace QuanLyKhuTro.DanhMuc
         {
             txt_madichvu.Clear();
             txt_tendichvu.Clear();
-            txt_hinhphat.Clear();
+            txt_gia.Clear();
             txt_tendichvu.Enabled = true;
             txt_madichvu.Enabled = false;
             //sinh mã

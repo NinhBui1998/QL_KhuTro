@@ -40,14 +40,14 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_huy = new DevExpress.XtraEditors.SimpleButton();
             this.btn_luu = new DevExpress.XtraEditors.SimpleButton();
-            this.grb_thongtinnoiquy = new System.Windows.Forms.GroupBox();
+            this.grb_thongtindichvu = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_dichvu = new System.Windows.Forms.Label();
             this.lbl_tendichvu = new System.Windows.Forms.Label();
             this.txt_madichvu = new System.Windows.Forms.TextBox();
             this.txt_tendichvu = new System.Windows.Forms.TextBox();
             this.lbl_gia = new System.Windows.Forms.Label();
-            this.txt_hinhphat = new System.Windows.Forms.TextBox();
+            this.txt_gia = new System.Windows.Forms.TextBox();
             this.grv_dichvu = new DevExpress.XtraGrid.GridControl();
             this.gridView_DichVu = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.MADV = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -59,7 +59,7 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            this.grb_thongtinnoiquy.SuspendLayout();
+            this.grb_thongtindichvu.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grv_dichvu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_DichVu)).BeginInit();
@@ -87,7 +87,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Controls.Add(this.groupBox1, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.grb_thongtinnoiquy, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.grb_thongtindichvu, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -224,18 +224,18 @@
             this.btn_luu.Text = "Lưu";
             this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
             // 
-            // grb_thongtinnoiquy
+            // grb_thongtindichvu
             // 
-            this.grb_thongtinnoiquy.Controls.Add(this.tableLayoutPanel3);
-            this.grb_thongtinnoiquy.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grb_thongtinnoiquy.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grb_thongtinnoiquy.ForeColor = System.Drawing.Color.Red;
-            this.grb_thongtinnoiquy.Location = new System.Drawing.Point(3, 3);
-            this.grb_thongtinnoiquy.Name = "grb_thongtinnoiquy";
-            this.grb_thongtinnoiquy.Size = new System.Drawing.Size(326, 187);
-            this.grb_thongtinnoiquy.TabIndex = 5;
-            this.grb_thongtinnoiquy.TabStop = false;
-            this.grb_thongtinnoiquy.Text = "Thông tin nội quy";
+            this.grb_thongtindichvu.Controls.Add(this.tableLayoutPanel3);
+            this.grb_thongtindichvu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grb_thongtindichvu.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grb_thongtindichvu.ForeColor = System.Drawing.Color.Red;
+            this.grb_thongtindichvu.Location = new System.Drawing.Point(3, 3);
+            this.grb_thongtindichvu.Name = "grb_thongtindichvu";
+            this.grb_thongtindichvu.Size = new System.Drawing.Size(326, 187);
+            this.grb_thongtindichvu.TabIndex = 5;
+            this.grb_thongtindichvu.TabStop = false;
+            this.grb_thongtindichvu.Text = "Thông tin dịch vụ";
             // 
             // tableLayoutPanel3
             // 
@@ -247,7 +247,7 @@
             this.tableLayoutPanel3.Controls.Add(this.txt_madichvu, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.txt_tendichvu, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.lbl_gia, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.txt_hinhphat, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.txt_gia, 1, 2);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel3.ForeColor = System.Drawing.Color.Black;
@@ -306,13 +306,13 @@
             this.lbl_gia.TabIndex = 1;
             this.lbl_gia.Text = "Giá";
             // 
-            // txt_hinhphat
+            // txt_gia
             // 
-            this.txt_hinhphat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_hinhphat.Location = new System.Drawing.Point(96, 117);
-            this.txt_hinhphat.Name = "txt_hinhphat";
-            this.txt_hinhphat.Size = new System.Drawing.Size(221, 27);
-            this.txt_hinhphat.TabIndex = 2;
+            this.txt_gia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_gia.Location = new System.Drawing.Point(96, 117);
+            this.txt_gia.Name = "txt_gia";
+            this.txt_gia.Size = new System.Drawing.Size(221, 27);
+            this.txt_gia.TabIndex = 2;
             // 
             // grv_dichvu
             // 
@@ -377,7 +377,7 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
-            this.grb_thongtinnoiquy.ResumeLayout(false);
+            this.grb_thongtindichvu.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grv_dichvu)).EndInit();
@@ -390,14 +390,14 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.GroupBox grb_thongtinnoiquy;
+        private System.Windows.Forms.GroupBox grb_thongtindichvu;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label lbl_dichvu;
         private System.Windows.Forms.Label lbl_tendichvu;
         private System.Windows.Forms.TextBox txt_madichvu;
         private System.Windows.Forms.TextBox txt_tendichvu;
         private System.Windows.Forms.Label lbl_gia;
-        private System.Windows.Forms.TextBox txt_hinhphat;
+        private System.Windows.Forms.TextBox txt_gia;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;

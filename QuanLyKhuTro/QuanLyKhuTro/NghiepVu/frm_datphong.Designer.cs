@@ -63,9 +63,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txt_ngaysinh = new System.Windows.Forms.MaskedTextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -343,7 +343,7 @@
             this.grb_thongtinkhachthue.Size = new System.Drawing.Size(389, 428);
             this.grb_thongtinkhachthue.TabIndex = 8;
             this.grb_thongtinkhachthue.TabStop = false;
-            this.grb_thongtinkhachthue.Text = "Thông tin phòng";
+            this.grb_thongtinkhachthue.Text = "Thông tin khách thuê";
             // 
             // tableLayoutPanel5
             // 
@@ -363,8 +363,8 @@
             this.tableLayoutPanel5.Controls.Add(this.textBox1, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.textBox2, 1, 1);
             this.tableLayoutPanel5.Controls.Add(this.comboBox1, 1, 2);
-            this.tableLayoutPanel5.Controls.Add(this.dateTimePicker1, 1, 6);
             this.tableLayoutPanel5.Controls.Add(this.groupBox1, 1, 7);
+            this.tableLayoutPanel5.Controls.Add(this.txt_ngaysinh, 1, 6);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel5.ForeColor = System.Drawing.Color.Black;
@@ -501,14 +501,6 @@
             this.comboBox1.Size = new System.Drawing.Size(150, 27);
             this.comboBox1.TabIndex = 3;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(135, 220);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(245, 27);
-            this.dateTimePicker1.TabIndex = 4;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.pictureBox1);
@@ -531,6 +523,16 @@
             this.pictureBox1.Size = new System.Drawing.Size(144, 109);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // txt_ngaysinh
+            // 
+            this.txt_ngaysinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_ngaysinh.Location = new System.Drawing.Point(135, 220);
+            this.txt_ngaysinh.Mask = "00/00/0000";
+            this.txt_ngaysinh.Name = "txt_ngaysinh";
+            this.txt_ngaysinh.Size = new System.Drawing.Size(245, 27);
+            this.txt_ngaysinh.TabIndex = 6;
+            this.txt_ngaysinh.ValidatingType = typeof(System.DateTime);
             // 
             // frm_datphong
             // 
@@ -587,7 +589,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -599,5 +600,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private DevExpress.XtraEditors.SimpleButton btn_huy;
         private DevExpress.XtraEditors.SimpleButton btn_luu;
+        private System.Windows.Forms.MaskedTextBox txt_ngaysinh;
     }
 }

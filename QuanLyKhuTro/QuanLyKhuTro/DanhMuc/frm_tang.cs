@@ -21,10 +21,6 @@ namespace QuanLyKhuTro
             InitializeComponent();
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void frm_tang_Load(object sender, EventArgs e)
         {
@@ -129,7 +125,7 @@ namespace QuanLyKhuTro
           
             txt_matang.Clear();
             txt_tentang.Clear();
-            txt_matang.Enabled = txt_tentang.Enabled = true;
+            txt_tentang.Enabled = true;
             txt_matang.Enabled = false;
             //sinh mã
             string pos = gridView1.GetRowCellValue(gridView1.RowCount - 1, "MATANG").ToString();
