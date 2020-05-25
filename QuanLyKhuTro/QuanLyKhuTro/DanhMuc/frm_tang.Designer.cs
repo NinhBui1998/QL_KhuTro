@@ -307,6 +307,7 @@
             this.grv_Tang.TabIndex = 1;
             this.grv_Tang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+  
             // 
             // gridView1
             // 

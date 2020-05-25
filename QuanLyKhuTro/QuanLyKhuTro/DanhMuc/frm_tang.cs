@@ -188,5 +188,7 @@ namespace QuanLyKhuTro
             btn_xoa.Enabled = btn_them.Enabled = false;
             txt_tentang.Enabled = true;
         }
+
+      
     }
 }
