@@ -66,7 +66,8 @@ namespace QuanLyKhuTro.DanhMuc
                 dv.MADV = txt_madichvu.Text;
                 dv.TENDV = txt_tendichvu.Text;
                 dv.GIADV = Convert.ToDouble(txt_gia.Text);
-                if (txt_madichvu.Text == null && txt_tendichvu.Text == string.Empty)
+                if (txt_madichvu.Text == string.Empty && txt_tendichvu.Text == string.Empty
+                    && txt_gia.Text== string.Empty && txt_donvi.Text==string.Empty)
                 {
                     MessageBox.Show("không được để trống");
                     return;
@@ -149,6 +150,19 @@ namespace QuanLyKhuTro.DanhMuc
             {
                 MessageBox.Show("Thất bại");
             }
+            btn_sua.Enabled = btn_xoa.Enabled = btn_huy.Enabled = btn_luu.Enabled =
+                txt_madichvu.Enabled = txt_tendichvu.Enabled=txt_gia.Enabled=txt_donvi.Enabled = false;
+            btn_them.Enabled = true;
+        }
+
+        private void btn_huy_Click(object sender, EventArgs e)
+        {
+            txt_madichvu.Clear();
+            txt_tendichvu.Clear();
+            txt_gia.Clear();
+            txt_donvi.Clear();
+            btn_them.Enabled = true;
+            btn_sua.Enabled = btn_luu.Enabled = btn_xoa.Enabled = false;
             btn_sua.Enabled = btn_xoa.Enabled = btn_huy.Enabled = btn_luu.Enabled =
                 txt_madichvu.Enabled = txt_tendichvu.Enabled=txt_gia.Enabled=txt_donvi.Enabled = false;
             btn_them.Enabled = true;
