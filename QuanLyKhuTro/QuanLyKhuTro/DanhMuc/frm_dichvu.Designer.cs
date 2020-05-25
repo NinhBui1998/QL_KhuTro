@@ -183,6 +183,7 @@
             this.btn_xoa.Size = new System.Drawing.Size(98, 40);
             this.btn_xoa.TabIndex = 0;
             this.btn_xoa.Text = "Xóa";
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // tableLayoutPanel6
             // 

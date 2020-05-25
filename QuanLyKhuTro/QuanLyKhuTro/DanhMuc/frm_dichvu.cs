@@ -123,5 +123,35 @@ namespace QuanLyKhuTro.DanhMuc
                 txt_madichvu.Enabled = txt_tendichvu.Enabled = txt_gia.Enabled = false;
             btn_them.Enabled = true;
         }
+
+        private void btn_xoa_Click(object sender, EventArgs e)
+        {
+            int position = gridView_DichVu.FocusedRowHandle;
+            string m = gridView_DichVu.GetRowCellValue(position, "MADV").ToString();
+            if (m == string.Empty)
+            {
+                MessageBox.Show("Mã dịch vụ không được để trống");
+                return;
+            }
+            if (dichvu.ktx_dv(m) == true)
+            {
+                MessageBox.Show("Dịch vụ hiện đang sử dụng không thể xóa");
+                return;
+            }
+            if (dichvu.xoa_DichVu(m) == true)
+            {
+                grv_dichvu.DataSource = dichvu.loadBang_DV();
+                MessageBox.Show("Thành công");
+
+
+            }
+            else
+            {
+                MessageBox.Show("Thất bại");
+            }
+            btn_sua.Enabled = btn_xoa.Enabled = btn_huy.Enabled = btn_luu.Enabled =
+                txt_madichvu.Enabled = txt_tendichvu.Enabled=txt_gia.Enabled=txt_donvi.Enabled = false;
+            btn_them.Enabled = true;
+        }
     }
 }
