@@ -48,6 +48,11 @@
             this.lbl_gia = new System.Windows.Forms.Label();
             this.txt_gia = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.grv_loaiPhong = new DevExpress.XtraGrid.GridControl();
+            this.gridView_LoaiPhong = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.MALOAI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TENLOAI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GIA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -56,6 +61,8 @@
             this.grb_thongtinloaiphong.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grv_loaiPhong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_LoaiPhong)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -72,7 +79,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.125F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.875F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(378, 352);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(404, 352);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // groupBox1
@@ -83,7 +90,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.Red;
             this.groupBox1.Location = new System.Drawing.Point(3, 190);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(372, 159);
+            this.groupBox1.Size = new System.Drawing.Size(398, 159);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức năng";
@@ -101,7 +108,7 @@
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(366, 130);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(392, 130);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // tableLayoutPanel5
@@ -119,7 +126,7 @@
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(360, 59);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(386, 59);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // btn_them
@@ -130,7 +137,7 @@
             this.btn_them.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_them.ImageOptions.SvgImage")));
             this.btn_them.Location = new System.Drawing.Point(3, 9);
             this.btn_them.Name = "btn_them";
-            this.btn_them.Size = new System.Drawing.Size(114, 40);
+            this.btn_them.Size = new System.Drawing.Size(122, 40);
             this.btn_them.TabIndex = 0;
             this.btn_them.Text = "Thêm";
             // 
@@ -140,9 +147,9 @@
             this.btn_sua.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_sua.Appearance.Options.UseFont = true;
             this.btn_sua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_sua.ImageOptions.SvgImage")));
-            this.btn_sua.Location = new System.Drawing.Point(243, 9);
+            this.btn_sua.Location = new System.Drawing.Point(259, 9);
             this.btn_sua.Name = "btn_sua";
-            this.btn_sua.Size = new System.Drawing.Size(114, 40);
+            this.btn_sua.Size = new System.Drawing.Size(124, 40);
             this.btn_sua.TabIndex = 1;
             this.btn_sua.Text = "Sửa";
             // 
@@ -152,9 +159,9 @@
             this.btn_xoa.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_xoa.Appearance.Options.UseFont = true;
             this.btn_xoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_xoa.ImageOptions.SvgImage")));
-            this.btn_xoa.Location = new System.Drawing.Point(123, 9);
+            this.btn_xoa.Location = new System.Drawing.Point(131, 9);
             this.btn_xoa.Name = "btn_xoa";
-            this.btn_xoa.Size = new System.Drawing.Size(114, 40);
+            this.btn_xoa.Size = new System.Drawing.Size(122, 40);
             this.btn_xoa.TabIndex = 0;
             this.btn_xoa.Text = "Xóa";
             // 
@@ -171,7 +178,7 @@
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(360, 59);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(386, 59);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // btn_huy
@@ -181,7 +188,7 @@
             this.btn_huy.Appearance.Options.UseFont = true;
             this.btn_huy.Enabled = false;
             this.btn_huy.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_huy.ImageOptions.SvgImage")));
-            this.btn_huy.Location = new System.Drawing.Point(80, 9);
+            this.btn_huy.Location = new System.Drawing.Point(93, 9);
             this.btn_huy.Name = "btn_huy";
             this.btn_huy.Size = new System.Drawing.Size(97, 41);
             this.btn_huy.TabIndex = 3;
@@ -194,7 +201,7 @@
             this.btn_luu.Appearance.Options.UseFont = true;
             this.btn_luu.Enabled = false;
             this.btn_luu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_luu.ImageOptions.SvgImage")));
-            this.btn_luu.Location = new System.Drawing.Point(183, 9);
+            this.btn_luu.Location = new System.Drawing.Point(196, 9);
             this.btn_luu.Name = "btn_luu";
             this.btn_luu.Size = new System.Drawing.Size(97, 41);
             this.btn_luu.TabIndex = 2;
@@ -208,7 +215,7 @@
             this.grb_thongtinloaiphong.ForeColor = System.Drawing.Color.Red;
             this.grb_thongtinloaiphong.Location = new System.Drawing.Point(3, 3);
             this.grb_thongtinloaiphong.Name = "grb_thongtinloaiphong";
-            this.grb_thongtinloaiphong.Size = new System.Drawing.Size(372, 181);
+            this.grb_thongtinloaiphong.Size = new System.Drawing.Size(398, 181);
             this.grb_thongtinloaiphong.TabIndex = 3;
             this.grb_thongtinloaiphong.TabStop = false;
             this.grb_thongtinloaiphong.Text = "Thông tin loại phòng";
@@ -233,7 +240,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(366, 152);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(392, 152);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // lbl_maloai
@@ -242,7 +249,7 @@
             this.lbl_maloai.AutoSize = true;
             this.lbl_maloai.Location = new System.Drawing.Point(3, 15);
             this.lbl_maloai.Name = "lbl_maloai";
-            this.lbl_maloai.Size = new System.Drawing.Size(100, 19);
+            this.lbl_maloai.Size = new System.Drawing.Size(108, 19);
             this.lbl_maloai.TabIndex = 0;
             this.lbl_maloai.Text = "Mã loại";
             // 
@@ -252,24 +259,24 @@
             this.lbl_tenloai.AutoSize = true;
             this.lbl_tenloai.Location = new System.Drawing.Point(3, 65);
             this.lbl_tenloai.Name = "lbl_tenloai";
-            this.lbl_tenloai.Size = new System.Drawing.Size(100, 19);
+            this.lbl_tenloai.Size = new System.Drawing.Size(108, 19);
             this.lbl_tenloai.TabIndex = 1;
             this.lbl_tenloai.Text = "Tên loại";
             // 
             // txt_maloai
             // 
             this.txt_maloai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_maloai.Location = new System.Drawing.Point(109, 11);
+            this.txt_maloai.Location = new System.Drawing.Point(117, 11);
             this.txt_maloai.Name = "txt_maloai";
-            this.txt_maloai.Size = new System.Drawing.Size(254, 27);
+            this.txt_maloai.Size = new System.Drawing.Size(272, 27);
             this.txt_maloai.TabIndex = 2;
             // 
             // txt_tenloai
             // 
             this.txt_tenloai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_tenloai.Location = new System.Drawing.Point(109, 61);
+            this.txt_tenloai.Location = new System.Drawing.Point(117, 61);
             this.txt_tenloai.Name = "txt_tenloai";
-            this.txt_tenloai.Size = new System.Drawing.Size(254, 27);
+            this.txt_tenloai.Size = new System.Drawing.Size(272, 27);
             this.txt_tenloai.TabIndex = 2;
             // 
             // lbl_gia
@@ -278,16 +285,16 @@
             this.lbl_gia.AutoSize = true;
             this.lbl_gia.Location = new System.Drawing.Point(3, 116);
             this.lbl_gia.Name = "lbl_gia";
-            this.lbl_gia.Size = new System.Drawing.Size(100, 19);
+            this.lbl_gia.Size = new System.Drawing.Size(108, 19);
             this.lbl_gia.TabIndex = 1;
             this.lbl_gia.Text = "Giá";
             // 
             // txt_gia
             // 
             this.txt_gia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_gia.Location = new System.Drawing.Point(109, 112);
+            this.txt_gia.Location = new System.Drawing.Point(117, 112);
             this.txt_gia.Name = "txt_gia";
-            this.txt_gia.Size = new System.Drawing.Size(254, 27);
+            this.txt_gia.Size = new System.Drawing.Size(272, 27);
             this.txt_gia.TabIndex = 2;
             // 
             // tableLayoutPanel1
@@ -296,14 +303,59 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.54659F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.45341F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.grv_loaiPhong, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 463F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(721, 360);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(771, 360);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // grv_loaiPhong
+            // 
+            this.grv_loaiPhong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grv_loaiPhong.Location = new System.Drawing.Point(415, 3);
+            this.grv_loaiPhong.MainView = this.gridView_LoaiPhong;
+            this.grv_loaiPhong.Name = "grv_loaiPhong";
+            this.grv_loaiPhong.Size = new System.Drawing.Size(353, 354);
+            this.grv_loaiPhong.TabIndex = 1;
+            this.grv_loaiPhong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView_LoaiPhong});
+            // 
+            // gridView_LoaiPhong
+            // 
+            this.gridView_LoaiPhong.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.MALOAI,
+            this.TENLOAI,
+            this.GIA});
+            this.gridView_LoaiPhong.GridControl = this.grv_loaiPhong;
+            this.gridView_LoaiPhong.Name = "gridView_LoaiPhong";
+            // 
+            // MALOAI
+            // 
+            this.MALOAI.Caption = "Mã loại";
+            this.MALOAI.FieldName = "MALOAI";
+            this.MALOAI.Name = "MALOAI";
+            this.MALOAI.Visible = true;
+            this.MALOAI.VisibleIndex = 0;
+            // 
+            // TENLOAI
+            // 
+            this.TENLOAI.Caption = "Tên loại";
+            this.TENLOAI.FieldName = "TENLOAI";
+            this.TENLOAI.Name = "TENLOAI";
+            this.TENLOAI.Visible = true;
+            this.TENLOAI.VisibleIndex = 1;
+            // 
+            // GIA
+            // 
+            this.GIA.Caption = "Gía";
+            this.GIA.FieldName = "GIA";
+            this.GIA.Name = "GIA";
+            this.GIA.Visible = true;
+            this.GIA.VisibleIndex = 2;
             // 
             // frm_loaiphong
             // 
@@ -317,6 +369,7 @@
             this.MinimumSize = new System.Drawing.Size(800, 360);
             this.Name = "frm_loaiphong";
             this.Size = new System.Drawing.Size(800, 360);
+            this.Load += new System.EventHandler(this.frm_loaiphong_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -326,6 +379,8 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grv_loaiPhong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_LoaiPhong)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -351,5 +406,10 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private DevExpress.XtraEditors.SimpleButton btn_huy;
         private DevExpress.XtraEditors.SimpleButton btn_luu;
+        private DevExpress.XtraGrid.GridControl grv_loaiPhong;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView_LoaiPhong;
+        private DevExpress.XtraGrid.Columns.GridColumn MALOAI;
+        private DevExpress.XtraGrid.Columns.GridColumn TENLOAI;
+        private DevExpress.XtraGrid.Columns.GridColumn GIA;
     }
 }

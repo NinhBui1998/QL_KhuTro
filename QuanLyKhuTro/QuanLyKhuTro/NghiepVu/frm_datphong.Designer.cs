@@ -153,7 +153,7 @@
             // 
             this.cbb_loaiphong.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbb_loaiphong.FormattingEnabled = true;
-            this.cbb_loaiphong.Location = new System.Drawing.Point(472, 4);
+            this.cbb_loaiphong.Location = new System.Drawing.Point(472, 3);
             this.cbb_loaiphong.Name = "cbb_loaiphong";
             this.cbb_loaiphong.Size = new System.Drawing.Size(180, 27);
             this.cbb_loaiphong.TabIndex = 1;
@@ -162,7 +162,7 @@
             // 
             this.cbb_phong.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbb_phong.FormattingEnabled = true;
-            this.cbb_phong.Location = new System.Drawing.Point(829, 4);
+            this.cbb_phong.Location = new System.Drawing.Point(829, 3);
             this.cbb_phong.Name = "cbb_phong";
             this.cbb_phong.Size = new System.Drawing.Size(205, 27);
             this.cbb_phong.TabIndex = 1;
@@ -171,7 +171,7 @@
             // 
             this.cbb_tang.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbb_tang.FormattingEnabled = true;
-            this.cbb_tang.Location = new System.Drawing.Point(141, 4);
+            this.cbb_tang.Location = new System.Drawing.Point(141, 3);
             this.cbb_tang.Name = "cbb_tang";
             this.cbb_tang.Size = new System.Drawing.Size(135, 27);
             this.cbb_tang.TabIndex = 1;
@@ -496,7 +496,7 @@
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(135, 76);
+            this.comboBox1.Location = new System.Drawing.Point(135, 79);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(150, 27);
             this.comboBox1.TabIndex = 3;
