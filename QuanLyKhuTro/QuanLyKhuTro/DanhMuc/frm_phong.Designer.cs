@@ -51,11 +51,20 @@
             this.lbl_tinhtrang = new System.Windows.Forms.Label();
             this.lbl_slhientai = new System.Windows.Forms.Label();
             this.lbl_sltoida = new System.Windows.Forms.Label();
-            this.txt_tinhtrang = new System.Windows.Forms.TextBox();
             this.txt_slhientai = new System.Windows.Forms.TextBox();
             this.txt_sltoida = new System.Windows.Forms.TextBox();
             this.lbl_tang = new System.Windows.Forms.Label();
-            this.cbo_tang = new System.Windows.Forms.ComboBox();
+            this.cbb_tang = new System.Windows.Forms.ComboBox();
+            this.ckb_tinhtrang = new System.Windows.Forms.CheckBox();
+            this.grv_phong = new DevExpress.XtraGrid.GridControl();
+            this.gridView_Phong = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.MALOAI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MATANG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MAPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TENPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TINHTRANG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SOLUONG_HT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SOLUONG_TD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -64,6 +73,8 @@
             this.tableLayoutPanel6.SuspendLayout();
             this.grb_thongtinphong.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grv_phong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_Phong)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -72,6 +83,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.03041F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.96959F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.grv_phong, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -154,6 +166,7 @@
             this.btn_them.Size = new System.Drawing.Size(131, 40);
             this.btn_them.TabIndex = 0;
             this.btn_them.Text = "Thêm";
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // btn_sua
             // 
@@ -166,6 +179,7 @@
             this.btn_sua.Size = new System.Drawing.Size(131, 40);
             this.btn_sua.TabIndex = 1;
             this.btn_sua.Text = "Sửa";
+            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
             // btn_xoa
             // 
@@ -178,6 +192,7 @@
             this.btn_xoa.Size = new System.Drawing.Size(131, 40);
             this.btn_xoa.TabIndex = 0;
             this.btn_xoa.Text = "Xóa";
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -207,6 +222,7 @@
             this.btn_huy.Size = new System.Drawing.Size(97, 41);
             this.btn_huy.TabIndex = 3;
             this.btn_huy.Text = "Hủy";
+            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
             // 
             // btn_luu
             // 
@@ -220,6 +236,7 @@
             this.btn_luu.Size = new System.Drawing.Size(97, 41);
             this.btn_luu.TabIndex = 2;
             this.btn_luu.Text = "Lưu";
+            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
             // 
             // grb_thongtinphong
             // 
@@ -248,11 +265,11 @@
             this.tableLayoutPanel3.Controls.Add(this.lbl_tinhtrang, 0, 4);
             this.tableLayoutPanel3.Controls.Add(this.lbl_slhientai, 0, 5);
             this.tableLayoutPanel3.Controls.Add(this.lbl_sltoida, 0, 6);
-            this.tableLayoutPanel3.Controls.Add(this.txt_tinhtrang, 1, 4);
             this.tableLayoutPanel3.Controls.Add(this.txt_slhientai, 1, 5);
             this.tableLayoutPanel3.Controls.Add(this.txt_sltoida, 1, 6);
             this.tableLayoutPanel3.Controls.Add(this.lbl_tang, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.cbo_tang, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.cbb_tang, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.ckb_tinhtrang, 1, 4);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel3.ForeColor = System.Drawing.Color.Black;
@@ -319,7 +336,7 @@
             // 
             this.cbb_loaiphong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbb_loaiphong.FormattingEnabled = true;
-            this.cbb_loaiphong.Location = new System.Drawing.Point(147, 46);
+            this.cbb_loaiphong.Location = new System.Drawing.Point(147, 49);
             this.cbb_loaiphong.Name = "cbb_loaiphong";
             this.cbb_loaiphong.Size = new System.Drawing.Size(267, 27);
             this.cbb_loaiphong.TabIndex = 3;
@@ -354,14 +371,6 @@
             this.lbl_sltoida.TabIndex = 1;
             this.lbl_sltoida.Text = "Số lượng tối đa";
             // 
-            // txt_tinhtrang
-            // 
-            this.txt_tinhtrang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_tinhtrang.Location = new System.Drawing.Point(147, 166);
-            this.txt_tinhtrang.Name = "txt_tinhtrang";
-            this.txt_tinhtrang.Size = new System.Drawing.Size(267, 27);
-            this.txt_tinhtrang.TabIndex = 2;
-            // 
             // txt_slhientai
             // 
             this.txt_slhientai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -388,14 +397,107 @@
             this.lbl_tang.TabIndex = 0;
             this.lbl_tang.Text = "Tầng";
             // 
-            // cbo_tang
+            // cbb_tang
             // 
-            this.cbo_tang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbo_tang.FormattingEnabled = true;
-            this.cbo_tang.Location = new System.Drawing.Point(147, 6);
-            this.cbo_tang.Name = "cbo_tang";
-            this.cbo_tang.Size = new System.Drawing.Size(267, 27);
-            this.cbo_tang.TabIndex = 3;
+            this.cbb_tang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbb_tang.FormattingEnabled = true;
+            this.cbb_tang.Location = new System.Drawing.Point(147, 9);
+            this.cbb_tang.Name = "cbb_tang";
+            this.cbb_tang.Size = new System.Drawing.Size(267, 27);
+            this.cbb_tang.TabIndex = 3;
+            // 
+            // ckb_tinhtrang
+            // 
+            this.ckb_tinhtrang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ckb_tinhtrang.AutoSize = true;
+            this.ckb_tinhtrang.Location = new System.Drawing.Point(147, 163);
+            this.ckb_tinhtrang.Name = "ckb_tinhtrang";
+            this.ckb_tinhtrang.Size = new System.Drawing.Size(96, 34);
+            this.ckb_tinhtrang.TabIndex = 4;
+            this.ckb_tinhtrang.Text = "Chưa thuê";
+            this.ckb_tinhtrang.UseVisualStyleBackColor = true;
+            // 
+            // grv_phong
+            // 
+            this.grv_phong.Location = new System.Drawing.Point(438, 3);
+            this.grv_phong.MainView = this.gridView_Phong;
+            this.grv_phong.Name = "grv_phong";
+            this.grv_phong.Size = new System.Drawing.Size(718, 453);
+            this.grv_phong.TabIndex = 1;
+            this.grv_phong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView_Phong});
+            // 
+            // gridView_Phong
+            // 
+            this.gridView_Phong.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.MALOAI,
+            this.MATANG,
+            this.MAPHONG,
+            this.TENPHONG,
+            this.TINHTRANG,
+            this.SOLUONG_HT,
+            this.SOLUONG_TD});
+            this.gridView_Phong.GridControl = this.grv_phong;
+            this.gridView_Phong.Name = "gridView_Phong";
+            this.gridView_Phong.OptionsBehavior.ReadOnly = true;
+            this.gridView_Phong.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView_Phong_FocusedRowChanged);
+            // 
+            // MALOAI
+            // 
+            this.MALOAI.Caption = "Mã loại";
+            this.MALOAI.FieldName = "MALOAI";
+            this.MALOAI.Name = "MALOAI";
+            this.MALOAI.Visible = true;
+            this.MALOAI.VisibleIndex = 0;
+            // 
+            // MATANG
+            // 
+            this.MATANG.Caption = "Mã tầng";
+            this.MATANG.FieldName = "MATANG";
+            this.MATANG.Name = "MATANG";
+            this.MATANG.Visible = true;
+            this.MATANG.VisibleIndex = 1;
+            // 
+            // MAPHONG
+            // 
+            this.MAPHONG.Caption = "Mã phòng";
+            this.MAPHONG.FieldName = "MAPHONG";
+            this.MAPHONG.Name = "MAPHONG";
+            this.MAPHONG.Visible = true;
+            this.MAPHONG.VisibleIndex = 2;
+            // 
+            // TENPHONG
+            // 
+            this.TENPHONG.Caption = "Tên phòng";
+            this.TENPHONG.FieldName = "TENPHONG";
+            this.TENPHONG.Name = "TENPHONG";
+            this.TENPHONG.Visible = true;
+            this.TENPHONG.VisibleIndex = 3;
+            // 
+            // TINHTRANG
+            // 
+            this.TINHTRANG.Caption = "Tình trạng";
+            this.TINHTRANG.FieldName = "TINHTRANG";
+            this.TINHTRANG.Name = "TINHTRANG";
+            this.TINHTRANG.Visible = true;
+            this.TINHTRANG.VisibleIndex = 4;
+            // 
+            // SOLUONG_HT
+            // 
+            this.SOLUONG_HT.Caption = "Số lượng hiện tại";
+            this.SOLUONG_HT.FieldName = "SOLUONG_HT";
+            this.SOLUONG_HT.Name = "SOLUONG_HT";
+            this.SOLUONG_HT.Visible = true;
+            this.SOLUONG_HT.VisibleIndex = 5;
+            // 
+            // SOLUONG_TD
+            // 
+            this.SOLUONG_TD.Caption = "Số lượng tối đa";
+            this.SOLUONG_TD.FieldName = "SOLUONG_TD";
+            this.SOLUONG_TD.Name = "SOLUONG_TD";
+            this.SOLUONG_TD.Visible = true;
+            this.SOLUONG_TD.VisibleIndex = 6;
             // 
             // frm_phong
             // 
@@ -406,6 +508,7 @@
             this.MinimumSize = new System.Drawing.Size(1200, 506);
             this.Name = "frm_phong";
             this.Size = new System.Drawing.Size(1200, 506);
+            this.Load += new System.EventHandler(this.frm_phong_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -415,6 +518,8 @@
             this.grb_thongtinphong.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grv_phong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_Phong)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -434,11 +539,10 @@
         private System.Windows.Forms.Label lbl_tinhtrang;
         private System.Windows.Forms.Label lbl_slhientai;
         private System.Windows.Forms.Label lbl_sltoida;
-        private System.Windows.Forms.TextBox txt_tinhtrang;
         private System.Windows.Forms.TextBox txt_slhientai;
         private System.Windows.Forms.TextBox txt_sltoida;
         private System.Windows.Forms.Label lbl_tang;
-        private System.Windows.Forms.ComboBox cbo_tang;
+        private System.Windows.Forms.ComboBox cbb_tang;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
@@ -448,5 +552,15 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private DevExpress.XtraEditors.SimpleButton btn_huy;
         private DevExpress.XtraEditors.SimpleButton btn_luu;
+        private DevExpress.XtraGrid.GridControl grv_phong;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView_Phong;
+        private DevExpress.XtraGrid.Columns.GridColumn MALOAI;
+        private DevExpress.XtraGrid.Columns.GridColumn MATANG;
+        private DevExpress.XtraGrid.Columns.GridColumn MAPHONG;
+        private DevExpress.XtraGrid.Columns.GridColumn TENPHONG;
+        private DevExpress.XtraGrid.Columns.GridColumn TINHTRANG;
+        private DevExpress.XtraGrid.Columns.GridColumn SOLUONG_HT;
+        private DevExpress.XtraGrid.Columns.GridColumn SOLUONG_TD;
+        private System.Windows.Forms.CheckBox ckb_tinhtrang;
     }
 }

@@ -9,15 +9,16 @@ namespace DAL
     public class DAL_Phong
     {
         QL_KhuTroDataContext data = new QL_KhuTroDataContext();
+
         //lấy tất cả dữ liệu
-        public List<PHONG> loadBangPhong()
+        public List<PHONG> loadbangPhong()
         {
             var dulieu = (from s in data.PHONGs select s);
             return dulieu.ToList<PHONG>();
         }
 
         //kiểm tra khóa chính
-        public bool ktakhoachinh_phong(string hd)
+        public bool ktakhoachinh_Phong(string hd)
         {
             var kt = (from h in data.PHONGs
                       where h.MAPHONG == hd
@@ -33,11 +34,11 @@ namespace DAL
         }
 
         //Thêm
-        public bool them_phong(PHONG phong)
+        public bool them_Phong(PHONG p)
         {
             try
             {
-                data.PHONGs.InsertOnSubmit(phong);
+                data.PHONGs.InsertOnSubmit(p);
                 data.SubmitChanges();
                 return true;
             }
@@ -49,12 +50,13 @@ namespace DAL
         }
 
         //Xóa
-        public bool xoa_phong(string pmap)
+
+        public bool xoa_Phong(string pMaP)
         {
             try
             {
-                PHONG lp = data.PHONGs.Where(t => t.MAPHONG == pmap).FirstOrDefault();
-                data.PHONGs.DeleteOnSubmit(lp);
+                PHONG p= data.PHONGs.Where(t => t.MAPHONG == pMaP).FirstOrDefault();
+                data.PHONGs.DeleteOnSubmit(p);
                 data.SubmitChanges();
                 return true;
             }
@@ -63,6 +65,8 @@ namespace DAL
                 return false;
             }
         }
+
+        //Xóa     
         public bool ktx_phong(string pPhong)
         {
             var ktx = (from nv in data.PHONGs
@@ -71,7 +75,7 @@ namespace DAL
                        from tk in data.HOPDONGs
                        from tb in data.THIETBI_PHONGs
                        where nv.MAPHONG == h.MAPHONG || nv.MAPHONG == tr.MAPHONG
-                       || nv.MAPHONG == tk.MAPHONG|| nv.MAPHONG==tb.MAPHONG && nv.MAPHONG == pPhong
+                       || nv.MAPHONG == tk.MAPHONG || nv.MAPHONG == tb.MAPHONG && nv.MAPHONG == pPhong
                        select nv).Count();
             if (ktx > 0)
             {
@@ -94,8 +98,6 @@ namespace DAL
                     p.TINHTRANG = phong.TINHTRANG;
                     p.SOLUONG_HT = phong.SOLUONG_HT;
                     p.SOLUONG_TD = phong.SOLUONG_TD;
-                    p.MATANG = phong.MATANG;
-                    p.MALOAI = phong.MALOAI;
                     data.SubmitChanges();
                 }
                 return true;
@@ -106,5 +108,4 @@ namespace DAL
             }
         }
     }
-}
 }
