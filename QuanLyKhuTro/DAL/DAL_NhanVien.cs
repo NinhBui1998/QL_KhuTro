@@ -6,22 +6,21 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-     public class DAL_LoaiPhong
+   public class DAL_NhanVien
     {
         QL_KhuTroDataContext data = new QL_KhuTroDataContext();
-
         //lấy tất cả dữ liệu
-        public List<LOAIPHONG> loadbangLoaiPhong()
+        public List<NHANVIEN> loadbangNhanvien()
         {
-            var dulieu = (from s in data.LOAIPHONGs select s);
-            return dulieu.ToList<LOAIPHONG>();
+            var dulieu = (from s in data.NHANVIENs select s);
+            return dulieu.ToList<NHANVIEN>();
         }
 
         //kiểm tra khóa chính
-        public bool ktakhoachinh_LoaiPhong(string hd)
+        public bool ktakhoachinh_NhanVien(string hd)
         {
-            var kt = (from h in data.LOAIPHONGs
-                      where h.MALOAI == hd
+            var kt = (from h in data.NHANVIENs
+                      where h.MANV == hd
                       select h).Count();
             if (kt > 0)
             {
@@ -32,12 +31,13 @@ namespace DAL
                 return false;
             }
         }
+
         //Thêm
-        public bool them_LoaiPhong(LOAIPHONG lp)
+        public bool them_NhanVien(NHANVIEN nv)
         {
             try
             {
-                data.LOAIPHONGs.InsertOnSubmit(lp);
+                data.NHANVIENs.InsertOnSubmit(nv);
                 data.SubmitChanges();
                 return true;
             }
@@ -47,13 +47,14 @@ namespace DAL
             }
 
         }
+
         //Xóa
-        public bool xoa_LoaiPhong(string pMaLoai)
+        public bool xoa_NhanVien(string pmanv)
         {
             try
             {
-                LOAIPHONG lp = data.LOAIPHONGs.Where(t => t.MALOAI == pMaLoai).FirstOrDefault();
-                data.LOAIPHONGs.DeleteOnSubmit(lp);
+                NHANVIEN lp = data.NHANVIENs.Where(t => t.MANV == pmanv).FirstOrDefault();
+                data.NHANVIENs.DeleteOnSubmit(lp);
                 data.SubmitChanges();
                 return true;
             }
@@ -62,13 +63,17 @@ namespace DAL
                 return false;
             }
         }
-        public bool kt_XoaLoaiPhong(string hd)
+        public bool kt_NhanVien(string pnv)
         {
-
-            var ktx = (from t in data.LOAIPHONGs
-                       from p in data.PHONGs
-                       where t.MALOAI == hd && p.MALOAI == t.MALOAI
-                       select t).Count();
+            var ktx = (from nv in data.NHANVIENs
+                       from h in data.HOPDONGs
+                       from tr in data.TAMTRUs
+                       from tk in data.QUANLYNDs
+                       where nv.MANV == h.MANV && nv.MANV == pnv || nv.MANV==tr.MANV && nv.MANV==pnv
+                       ||nv.MANV==tk.TENDN && nv.MANV==pnv
+                       
+                       
+                       select nv).Count();
             if (ktx > 0)
             {
                 return true;
@@ -77,18 +82,19 @@ namespace DAL
             {
                 return false;
             }
-
         }
 
-        public bool suaLoaiPhong(LOAIPHONG pLoaiPhong)
+        public bool suaNhanVien(NHANVIEN pnv)
         {
             try
             {
-                LOAIPHONG nv = data.LOAIPHONGs.Where(t => t.MALOAI == pLoaiPhong.MALOAI).FirstOrDefault();
+                NHANVIEN nv = data.NHANVIENs.Where(t => t.MANV == pnv.MANV).FirstOrDefault();
                 if (nv != null)
                 {
-                    nv.TENLOAI = pLoaiPhong.TENLOAI;
-                    nv.GIA = pLoaiPhong.GIA;
+                    nv.TENNV = pnv.TENNV;
+                    nv.CMND_NV = pnv.CMND_NV;
+                    nv.SODT_CT = pnv.SODT_CT;
+                    nv.DIACHI = pnv.DIACHI;
                     data.SubmitChanges();
                 }
                 return true;

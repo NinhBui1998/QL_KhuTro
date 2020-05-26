@@ -338,6 +338,7 @@
             this.GIA});
             this.gridView_LoaiPhong.GridControl = this.grv_loaiPhong;
             this.gridView_LoaiPhong.Name = "gridView_LoaiPhong";
+            this.gridView_LoaiPhong.OptionsBehavior.ReadOnly = true;
             this.gridView_LoaiPhong.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView_LoaiPhong_FocusedRowChanged);
             // 
             // MALOAI

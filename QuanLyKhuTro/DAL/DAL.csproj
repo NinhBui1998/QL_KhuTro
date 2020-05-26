@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="DAL_DichVu.cs" />
     <Compile Include="DAL_LoaiPhong.cs" />
+    <Compile Include="DAL_NhanVien.cs" />
     <Compile Include="DAL_Tang.cs" />
     <Compile Include="DAL_ThietBi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

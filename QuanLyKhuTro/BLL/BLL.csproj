@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="BLL_DichVu.cs" />
     <Compile Include="BLL_LoaiPhong.cs" />
+    <Compile Include="BLL_NhanVien.cs" />
     <Compile Include="BLL_Tang.cs" />
     <Compile Include="BLL_ThietBi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

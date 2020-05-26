@@ -45,7 +45,7 @@ namespace QuanLyKhuTro.DanhMuc
         }
         private void btn_xoa_Click(object sender, EventArgs e)
         {
-            DialogResult res;
+             DialogResult res;
             res = MessageBox.Show("Bạn có muốn xóa không!", "xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
             if (res == DialogResult.Yes)
             {
@@ -64,7 +64,6 @@ namespace QuanLyKhuTro.DanhMuc
                 if (blp.xoa_LoaiPhong(m) == true)
                 {
                     MessageBox.Show("Thành công");
-
                 }
                 else
                 {
