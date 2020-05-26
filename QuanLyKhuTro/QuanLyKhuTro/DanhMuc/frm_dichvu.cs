@@ -104,10 +104,8 @@ namespace QuanLyKhuTro.DanhMuc
             {
 
             }
-           
-            btn_sua.Enabled = btn_xoa.Enabled = btn_huy.Enabled = btn_luu.Enabled =
-                txt_madichvu.Enabled = txt_tendichvu.Enabled=txt_gia.Enabled=txt_donvi.Enabled = false;
-            btn_them.Enabled = true;
+
+            frm_dichvu_Load(sender, e);
         }
         private void btn_sua_Click(object sender, EventArgs e)
         {
@@ -148,7 +146,7 @@ namespace QuanLyKhuTro.DanhMuc
                 {
                     MessageBox.Show("Thất bại");
                 }
-                btn_sua.Enabled = btn_luu.Enabled = btn_them.Enabled = false;
+                frm_dichvu_Load(sender, e);
             }
             if (btn_sua.Enabled == true)
             {
@@ -180,9 +178,7 @@ namespace QuanLyKhuTro.DanhMuc
                     MessageBox.Show("thất bại");
                 }
             }
-            btn_sua.Enabled = btn_xoa.Enabled = btn_huy.Enabled = btn_luu.Enabled =
-                txt_madichvu.Enabled = txt_tendichvu.Enabled = txt_gia.Enabled = txt_donvi.Enabled = false;
-            btn_them.Enabled = true;
+            frm_dichvu_Load(sender, e);
         }
         private void btn_huy_Click(object sender, EventArgs e)
         {
@@ -191,10 +187,8 @@ namespace QuanLyKhuTro.DanhMuc
             txt_gia.Clear();
             txt_donvi.Clear();
             btn_them.Enabled = true;
-            btn_sua.Enabled = btn_luu.Enabled = btn_xoa.Enabled = false;
-            btn_sua.Enabled = btn_xoa.Enabled = btn_huy.Enabled = btn_luu.Enabled =
-                txt_madichvu.Enabled = txt_tendichvu.Enabled = txt_gia.Enabled = txt_donvi.Enabled = false;
-            btn_them.Enabled = true;
+
+            frm_dichvu_Load(sender, e);
         }
     }
 }
