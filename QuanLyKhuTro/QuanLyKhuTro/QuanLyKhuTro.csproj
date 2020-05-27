@@ -67,6 +67,12 @@
     <Compile Include="DanhMuc\frm_dichvu.Designer.cs">
       <DependentUpon>frm_dichvu.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\frm_KhachThue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\frm_KhachThue.Designer.cs">
+      <DependentUpon>frm_KhachThue.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\frm_loaiphong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     <EmbeddedResource Include="DanhMuc\frm_dichvu.resx">
       <DependentUpon>frm_dichvu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\frm_KhachThue.resx">
+      <DependentUpon>frm_KhachThue.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\frm_loaiphong.resx">
       <DependentUpon>frm_loaiphong.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,6 +207,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -211,6 +221,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anh.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

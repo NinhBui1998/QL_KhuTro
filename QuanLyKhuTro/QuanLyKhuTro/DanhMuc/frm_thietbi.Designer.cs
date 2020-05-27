@@ -149,7 +149,7 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(363, 58);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
@@ -204,7 +204,7 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(363, 58);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
@@ -416,7 +416,7 @@
             // MATHETBI
             // 
             this.MATHETBI.Caption = "Mã thiết bị";
-            this.MATHETBI.FieldName = "MATHETBI";
+            this.MATHETBI.FieldName = "MATHIETBI";
             this.MATHETBI.Name = "MATHETBI";
             this.MATHETBI.Visible = true;
             this.MATHETBI.VisibleIndex = 0;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyKhuTro.DanhMuc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace QuanLyKhuTro
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frm_main());
+            //Application.Run(new frm_KhachThue());
         }
     }
 }

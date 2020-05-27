@@ -108,6 +108,7 @@ namespace QuanLyKhuTro.DanhMuc
                 }
                 if (bnv.xoa_Nhanvien(m) == true)
                 {
+                    grv_nhanvien.DataSource = bnv.loadBangNV();
                     MessageBox.Show("Thành công");
                 }
                 else
