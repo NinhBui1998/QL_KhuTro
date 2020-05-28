@@ -48,8 +48,11 @@
     <Compile Include="BLL_DichVu.cs" />
     <Compile Include="BLL_KhachThue.cs" />
     <Compile Include="BLL_LoaiPhong.cs" />
+    <Compile Include="BLL_NguoiDung_NhomNguoiDung.cs" />
     <Compile Include="BLL_NhanVien.cs" />
+    <Compile Include="BLL_NhomNguoiDung.cs" />
     <Compile Include="BLL_NoiQuy.cs" />
+    <Compile Include="BLL_PhanQuyen.cs" />
     <Compile Include="BLL_Phong.cs" />
     <Compile Include="BLL_Tang.cs" />
     <Compile Include="BLL_ThietBi.cs" />

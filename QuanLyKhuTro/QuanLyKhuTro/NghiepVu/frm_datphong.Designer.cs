@@ -183,7 +183,7 @@
             // 
             this.cbb_loaiphong.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbb_loaiphong.FormattingEnabled = true;
-            this.cbb_loaiphong.Location = new System.Drawing.Point(508, 5);
+            this.cbb_loaiphong.Location = new System.Drawing.Point(508, 3);
             this.cbb_loaiphong.Name = "cbb_loaiphong";
             this.cbb_loaiphong.Size = new System.Drawing.Size(292, 27);
             this.cbb_loaiphong.TabIndex = 1;
@@ -192,7 +192,7 @@
             // 
             this.cbb_phong.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbb_phong.FormattingEnabled = true;
-            this.cbb_phong.Location = new System.Drawing.Point(909, 5);
+            this.cbb_phong.Location = new System.Drawing.Point(909, 3);
             this.cbb_phong.Name = "cbb_phong";
             this.cbb_phong.Size = new System.Drawing.Size(205, 27);
             this.cbb_phong.TabIndex = 1;
@@ -201,7 +201,7 @@
             // 
             this.cbb_tang.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbb_tang.FormattingEnabled = true;
-            this.cbb_tang.Location = new System.Drawing.Point(176, 5);
+            this.cbb_tang.Location = new System.Drawing.Point(176, 3);
             this.cbb_tang.Name = "cbb_tang";
             this.cbb_tang.Size = new System.Drawing.Size(180, 27);
             this.cbb_tang.TabIndex = 1;
@@ -281,7 +281,7 @@
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(382, 54);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
@@ -333,7 +333,7 @@
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(382, 55);
             this.tableLayoutPanel8.TabIndex = 1;
             // 
@@ -518,7 +518,7 @@
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(165, 79);
+            this.comboBox1.Location = new System.Drawing.Point(165, 76);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(150, 27);
             this.comboBox1.TabIndex = 3;
