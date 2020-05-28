@@ -76,11 +76,12 @@ namespace QuanLyKhuTro.DanhMuc
 
         private void btn_luu_Click(object sender, EventArgs e)
         {
-            //byte[] b = convertImage(pic_anhkt.Image);
+            byte[] b = convertImage(pic_anhkt.Image);
             KHACHTHUE kt = new KHACHTHUE();
             kt.MAKT = txt_makt.Text;
             kt.TENKT = txt_tenkt.Text;
             kt.SDT = txt_sdt.Text;
+            kt.ANH = b;
             kt.SOCMND = txt_cmnd.Text;
             kt.NGAYSINH = Convert.ToDateTime(txt_ngaysinh.Text);
             kt.QUEQUAN = txt_quequan.Text;

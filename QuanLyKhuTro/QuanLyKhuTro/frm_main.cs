@@ -21,6 +21,12 @@ namespace QuanLyKhuTro
         {
             InitializeComponent();
         }
+        String TenDN;
+        public string Tendn
+        {
+            get { return TenDN; }
+            set { TenDN = value; }
+        }
         public void skins()
         {
             DevExpress.LookAndFeel.DefaultLookAndFeel theme = new DevExpress.LookAndFeel.DefaultLookAndFeel();
@@ -105,6 +111,8 @@ namespace QuanLyKhuTro
         private void frm_main_Load(object sender, EventArgs e)
         {
             skins();
+            //lb_manv.Text = Tendn;
+
         }
 
         private void btn_datphong_ItemClick(object sender, ItemClickEventArgs e)
@@ -136,5 +144,7 @@ namespace QuanLyKhuTro
             pnl_main.Controls.Clear();
             pnl_main.Controls.Add(kt);
         }
+
+      
     }
 }

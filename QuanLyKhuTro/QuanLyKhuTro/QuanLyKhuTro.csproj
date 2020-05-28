@@ -50,6 +50,7 @@
     <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -68,7 +69,7 @@
       <DependentUpon>frm_dichvu.cs</DependentUpon>
     </Compile>
     <Compile Include="DanhMuc\frm_khachthue.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="DanhMuc\frm_khachthue.Designer.cs">
       <DependentUpon>frm_khachthue.cs</DependentUpon>
@@ -146,6 +147,7 @@
     <Compile Include="DanhMuc\frm_tang.Designer.cs">
       <DependentUpon>frm_tang.cs</DependentUpon>
     </Compile>
+    <Compile Include="HeThong\LoginResult.cs" />
     <Compile Include="NghiepVu\frm_datphong.cs">
       <SubType>Form</SubType>
     </Compile>

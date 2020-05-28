@@ -1,4 +1,5 @@
 ﻿using QuanLyKhuTro.DanhMuc;
+using QuanLyKhuTro.HeThong;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,8 +18,9 @@ namespace QuanLyKhuTro
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_main());
-            //Application.Run(new frm_KhachThue());
+            //Application.Run(new frm_main());
+            //Application.Run(new frm_dangnhap());
+            Application.Run(new frm_dangnhap());
         }
     }
 }

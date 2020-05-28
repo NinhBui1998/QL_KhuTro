@@ -1,4 +1,4 @@
-﻿namespace QuanLyKhuTro
+﻿namespace QuanLyKhuTro.HeThong
 {
     partial class frm_dangnhap
     {
@@ -28,80 +28,81 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbl_taikhoan = new System.Windows.Forms.Label();
-            this.lbl_matkhau = new System.Windows.Forms.Label();
-            this.txt_taikhoan = new System.Windows.Forms.TextBox();
-            this.txt_matkhau = new System.Windows.Forms.TextBox();
-            this.btn_dangnhap = new DevExpress.XtraEditors.SimpleButton();
             this.btn_huy = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_dangnhap = new DevExpress.XtraEditors.SimpleButton();
+            this.txt_matkhau = new System.Windows.Forms.TextBox();
+            this.txt_taikhoan = new System.Windows.Forms.TextBox();
+            this.lbl_matkhau = new System.Windows.Forms.Label();
+            this.lbl_taikhoan = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // lbl_taikhoan
+            // btn_huy
             // 
-            this.lbl_taikhoan.AutoSize = true;
-            this.lbl_taikhoan.Location = new System.Drawing.Point(34, 112);
-            this.lbl_taikhoan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_taikhoan.Name = "lbl_taikhoan";
-            this.lbl_taikhoan.Size = new System.Drawing.Size(74, 19);
-            this.lbl_taikhoan.TabIndex = 0;
-            this.lbl_taikhoan.Text = "Tài khoản";
+            this.btn_huy.Location = new System.Drawing.Point(320, 156);
+            this.btn_huy.Name = "btn_huy";
+            this.btn_huy.Size = new System.Drawing.Size(107, 45);
+            this.btn_huy.TabIndex = 4;
+            this.btn_huy.Text = "Hủy";
+            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
+            // 
+            // btn_dangnhap
+            // 
+            this.btn_dangnhap.Location = new System.Drawing.Point(145, 156);
+            this.btn_dangnhap.Name = "btn_dangnhap";
+            this.btn_dangnhap.Size = new System.Drawing.Size(107, 45);
+            this.btn_dangnhap.TabIndex = 3;
+            this.btn_dangnhap.Text = "Đăng nhập";
+            this.btn_dangnhap.Click += new System.EventHandler(this.btn_dangnhap_Click);
+            this.btn_dangnhap.Enter += new System.EventHandler(this.btn_dangnhap_Click);
+            // 
+            // txt_matkhau
+            // 
+            this.txt_matkhau.Location = new System.Drawing.Point(145, 81);
+            this.txt_matkhau.Name = "txt_matkhau";
+            this.txt_matkhau.Size = new System.Drawing.Size(282, 21);
+            this.txt_matkhau.TabIndex = 2;
+            // 
+            // txt_taikhoan
+            // 
+            this.txt_taikhoan.Location = new System.Drawing.Point(145, 41);
+            this.txt_taikhoan.Name = "txt_taikhoan";
+            this.txt_taikhoan.Size = new System.Drawing.Size(282, 21);
+            this.txt_taikhoan.TabIndex = 1;
             // 
             // lbl_matkhau
             // 
             this.lbl_matkhau.AutoSize = true;
-            this.lbl_matkhau.Location = new System.Drawing.Point(34, 176);
+            this.lbl_matkhau.Location = new System.Drawing.Point(41, 89);
             this.lbl_matkhau.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_matkhau.Name = "lbl_matkhau";
-            this.lbl_matkhau.Size = new System.Drawing.Size(71, 19);
-            this.lbl_matkhau.TabIndex = 0;
+            this.lbl_matkhau.Size = new System.Drawing.Size(51, 13);
+            this.lbl_matkhau.TabIndex = 3;
             this.lbl_matkhau.Text = "Mật khẩu";
             // 
-            // txt_taikhoan
+            // lbl_taikhoan
             // 
-            this.txt_taikhoan.Location = new System.Drawing.Point(140, 104);
-            this.txt_taikhoan.Name = "txt_taikhoan";
-            this.txt_taikhoan.Size = new System.Drawing.Size(282, 27);
-            this.txt_taikhoan.TabIndex = 1;
+            this.lbl_taikhoan.AutoSize = true;
+            this.lbl_taikhoan.Location = new System.Drawing.Point(39, 49);
+            this.lbl_taikhoan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_taikhoan.Name = "lbl_taikhoan";
+            this.lbl_taikhoan.Size = new System.Drawing.Size(53, 13);
+            this.lbl_taikhoan.TabIndex = 4;
+            this.lbl_taikhoan.Text = "Tài khoản";
             // 
-            // txt_matkhau
+            // frm_dn
             // 
-            this.txt_matkhau.Location = new System.Drawing.Point(140, 168);
-            this.txt_matkhau.Name = "txt_matkhau";
-            this.txt_matkhau.Size = new System.Drawing.Size(282, 27);
-            this.txt_matkhau.TabIndex = 1;
-            // 
-            // btn_dangnhap
-            // 
-            this.btn_dangnhap.Location = new System.Drawing.Point(140, 226);
-            this.btn_dangnhap.Name = "btn_dangnhap";
-            this.btn_dangnhap.Size = new System.Drawing.Size(107, 45);
-            this.btn_dangnhap.TabIndex = 2;
-            this.btn_dangnhap.Text = "Đăng nhập";
-            // 
-            // btn_huy
-            // 
-            this.btn_huy.Location = new System.Drawing.Point(315, 226);
-            this.btn_huy.Name = "btn_huy";
-            this.btn_huy.Size = new System.Drawing.Size(107, 45);
-            this.btn_huy.TabIndex = 2;
-            this.btn_huy.Text = "Hủy";
-            // 
-            // frm_dangnhap
-            // 
-            this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 283);
+            this.ClientSize = new System.Drawing.Size(467, 218);
             this.Controls.Add(this.btn_huy);
             this.Controls.Add(this.btn_dangnhap);
             this.Controls.Add(this.txt_matkhau);
             this.Controls.Add(this.txt_taikhoan);
             this.Controls.Add(this.lbl_matkhau);
             this.Controls.Add(this.lbl_taikhoan);
-            this.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frm_dangnhap";
-            this.Text = "frm_dangnhap";
+            this.Name = "frm_dn";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "frm_dn";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,11 +110,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbl_taikhoan;
-        private System.Windows.Forms.Label lbl_matkhau;
-        private System.Windows.Forms.TextBox txt_taikhoan;
-        private System.Windows.Forms.TextBox txt_matkhau;
-        private DevExpress.XtraEditors.SimpleButton btn_dangnhap;
         private DevExpress.XtraEditors.SimpleButton btn_huy;
+        private DevExpress.XtraEditors.SimpleButton btn_dangnhap;
+        private System.Windows.Forms.TextBox txt_matkhau;
+        private System.Windows.Forms.TextBox txt_taikhoan;
+        private System.Windows.Forms.Label lbl_matkhau;
+        private System.Windows.Forms.Label lbl_taikhoan;
     }
 }
