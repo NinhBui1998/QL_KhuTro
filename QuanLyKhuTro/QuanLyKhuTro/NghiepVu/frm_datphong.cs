@@ -40,5 +40,6 @@ namespace QuanLyKhuTro.NghiepVu
             cbb_phong.DisplayMember = "TENPHONG";
             cbb_phong.ValueMember = "MAPHONG";
         }
+
     }
 }

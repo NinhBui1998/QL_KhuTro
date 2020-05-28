@@ -123,7 +123,7 @@
             this.ribbonPage2,
             this.ribbonPage3,
             this.ribbonPage4});
-            this.ribbon.Size = new System.Drawing.Size(810, 158);
+            this.ribbon.Size = new System.Drawing.Size(772, 158);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // barButtonItem1
@@ -282,7 +282,7 @@
             // 
             this.btn_khachthue.Caption = "Khách thuê";
             this.btn_khachthue.Id = 19;
-            this.btn_khachthue.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_thannhan.ImageOptions.SvgImage")));
+            this.btn_khachthue.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_khachthue.ImageOptions.SvgImage")));
             this.btn_khachthue.Name = "btn_khachthue";
             this.btn_khachthue.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
@@ -356,7 +356,7 @@
             // 
             this.btn_thannhan.Caption = "Thân nhân";
             this.btn_thannhan.Id = 29;
-            this.btn_thannhan.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
+            this.btn_thannhan.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_thannhan.ImageOptions.SvgImage")));
             this.btn_thannhan.Name = "btn_thannhan";
             // 
             // ribbonPage1
@@ -464,19 +464,20 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 482);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 736);
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(4);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(810, 24);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(772, 24);
             // 
             // pnl_main
             // 
-            this.pnl_main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_main.AutoSize = true;
+            this.pnl_main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_main.Location = new System.Drawing.Point(0, 158);
             this.pnl_main.Name = "pnl_main";
-            this.pnl_main.Size = new System.Drawing.Size(810, 324);
+            this.pnl_main.Size = new System.Drawing.Size(772, 578);
             this.pnl_main.TabIndex = 2;
             // 
             // frm_main
@@ -484,7 +485,7 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(810, 506);
+            this.ClientSize = new System.Drawing.Size(772, 760);
             this.Controls.Add(this.pnl_main);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
