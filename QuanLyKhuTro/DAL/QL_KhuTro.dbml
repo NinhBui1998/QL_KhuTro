@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL_NHATRO" Class="QL_KhuTroDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-T8SC55E\SQLEXPRESS;Initial Catalog=QL_NHATRO;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="QL_NHATROConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ADMIN\SQLEXPRESS;Initial Catalog=QL_NHATRO;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="QL_NHATROConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CHISO_DIENNUOC" Member="CHISO_DIENNUOCs">
     <Type Name="CHISO_DIENNUOC">
       <Column Name="MAHOADON" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -89,7 +89,7 @@
       <Column Name="MAKT" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TENKT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="GIOITINH" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
-      <Column Name="ANH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ANH" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="SDT" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="QUEQUAN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="SOCMND" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />

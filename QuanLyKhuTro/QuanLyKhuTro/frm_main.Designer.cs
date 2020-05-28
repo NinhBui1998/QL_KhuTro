@@ -49,7 +49,7 @@
             this.btn_thietbi = new DevExpress.XtraBars.BarButtonItem();
             this.btn_dichvu = new DevExpress.XtraBars.BarButtonItem();
             this.btn_noiquy = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_thannhan = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_khachthue = new DevExpress.XtraBars.BarButtonItem();
             this.btn_nhanvien = new DevExpress.XtraBars.BarButtonItem();
             this.btn_thongkephong = new DevExpress.XtraBars.BarButtonItem();
             this.btn_thongkedoanhthu = new DevExpress.XtraBars.BarButtonItem();
@@ -59,6 +59,7 @@
             this.btn_vipham = new DevExpress.XtraBars.BarButtonItem();
             this.btn_traphong = new DevExpress.XtraBars.BarButtonItem();
             this.btn_hoadon = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_thannhan = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -102,7 +103,7 @@
             this.btn_thietbi,
             this.btn_dichvu,
             this.btn_noiquy,
-            this.btn_thannhan,
+            this.btn_khachthue,
             this.btn_nhanvien,
             this.btn_thongkephong,
             this.btn_thongkedoanhthu,
@@ -111,10 +112,11 @@
             this.barButtonItem3,
             this.btn_vipham,
             this.btn_traphong,
-            this.btn_hoadon});
+            this.btn_hoadon,
+            this.btn_thannhan});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbon.MaxItemId = 29;
+            this.ribbon.MaxItemId = 30;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -276,14 +278,15 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btn_noiquy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_noiquy_ItemClick);
             // 
-            // btn_thannhan
+            // btn_khachthue
             // 
-            this.btn_thannhan.Caption = "Thân nhân";
-            this.btn_thannhan.Id = 19;
-            this.btn_thannhan.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_thannhan.ImageOptions.SvgImage")));
-            this.btn_thannhan.Name = "btn_thannhan";
-            this.btn_thannhan.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            this.btn_khachthue.Caption = "Khách thuê";
+            this.btn_khachthue.Id = 19;
+            this.btn_khachthue.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_thannhan.ImageOptions.SvgImage")));
+            this.btn_khachthue.Name = "btn_khachthue";
+            this.btn_khachthue.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btn_khachthue.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_khachthue_ItemClick);
             // 
             // btn_nhanvien
             // 
@@ -349,6 +352,13 @@
             this.btn_hoadon.Id = 28;
             this.btn_hoadon.Name = "btn_hoadon";
             // 
+            // btn_thannhan
+            // 
+            this.btn_thannhan.Caption = "Thân nhân";
+            this.btn_thannhan.Id = 29;
+            this.btn_thannhan.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
+            this.btn_thannhan.Name = "btn_thannhan";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -375,8 +385,9 @@
             // 
             // ribbonPageGroup8
             // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.btn_thannhan);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btn_khachthue);
             this.ribbonPageGroup8.ItemLinks.Add(this.btn_nhanvien);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btn_thannhan);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             // 
             // ribbonPage2
@@ -524,7 +535,7 @@
         private DevExpress.XtraBars.BarButtonItem btn_thietbi;
         private DevExpress.XtraBars.BarButtonItem btn_dichvu;
         private DevExpress.XtraBars.BarButtonItem btn_noiquy;
-        private DevExpress.XtraBars.BarButtonItem btn_thannhan;
+        private DevExpress.XtraBars.BarButtonItem btn_khachthue;
         private DevExpress.XtraBars.BarButtonItem btn_nhanvien;
         private DevExpress.XtraBars.BarButtonItem btn_thongkephong;
         private DevExpress.XtraBars.BarButtonItem btn_thongkedoanhthu;
@@ -539,5 +550,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
         private DevExpress.XtraBars.BarButtonItem btn_hoadon;
+        private DevExpress.XtraBars.BarButtonItem btn_thannhan;
     }
 }

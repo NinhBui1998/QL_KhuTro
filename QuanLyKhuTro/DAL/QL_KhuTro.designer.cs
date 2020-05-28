@@ -102,7 +102,7 @@ namespace DAL
     #endregion
 		
 		public QL_KhuTroDataContext() : 
-				base(global::DAL.Properties.Settings.Default.QL_NHATROConnectionString, mappingSource)
+				base(global::DAL.Properties.Settings.Default.QL_NHATROConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -2070,7 +2070,7 @@ namespace DAL
 		
 		private string _GIOITINH;
 		
-		private string _ANH;
+		private System.Data.Linq.Binary _ANH;
 		
 		private string _SDT;
 		
@@ -2098,7 +2098,7 @@ namespace DAL
     partial void OnTENKTChanged();
     partial void OnGIOITINHChanging(string value);
     partial void OnGIOITINHChanged();
-    partial void OnANHChanging(string value);
+    partial void OnANHChanging(System.Data.Linq.Binary value);
     partial void OnANHChanged();
     partial void OnSDTChanging(string value);
     partial void OnSDTChanged();
@@ -2179,8 +2179,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ANH", DbType="NVarChar(50)")]
-		public string ANH
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ANH", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary ANH
 		{
 			get
 			{

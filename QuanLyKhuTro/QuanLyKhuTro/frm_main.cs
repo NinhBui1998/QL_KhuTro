@@ -129,5 +129,12 @@ namespace QuanLyKhuTro
             pnl_main.Controls.Clear();
             pnl_main.Controls.Add(backup);
         }
+
+        private void btn_khachthue_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frm_khachthue kt = new frm_khachthue();
+            pnl_main.Controls.Clear();
+            pnl_main.Controls.Add(kt);
+        }
     }
 }

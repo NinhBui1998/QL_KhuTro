@@ -540,6 +540,7 @@
             // 
             // gridControl1
             // 
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.gridControl1.Location = new System.Drawing.Point(396, 3);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";

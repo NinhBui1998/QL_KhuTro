@@ -95,6 +95,7 @@ namespace DAL
                     kt.GIOITINH = pkt.GIOITINH;
                     kt.SDT= pkt.SDT;
                     kt.ANH = pkt.ANH;
+
                     kt.QUEQUAN = pkt.QUEQUAN;
                     kt.SOCMND = pkt.SOCMND;
                     kt.NGAYSINH = pkt.NGAYSINH;

@@ -51,8 +51,8 @@
             this.rdb_nu = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pic_anhkt = new System.Windows.Forms.PictureBox();
+            this.btn_chonAnh = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -62,8 +62,16 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_huy = new DevExpress.XtraEditors.SimpleButton();
             this.btn_luu = new DevExpress.XtraEditors.SimpleButton();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grv_khachthue = new DevExpress.XtraGrid.GridControl();
+            this.gridView_khachthue = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.MAKT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TENKT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GIOITINH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ANH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SDT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.QUEQUAN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SOCMND = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NGAYSINH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.grb_thongtindichvu.SuspendLayout();
@@ -71,13 +79,13 @@
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_anhkt)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grv_khachthue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_khachthue)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -86,7 +94,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 638F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.gridControl1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.grv_khachthue, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -359,8 +367,8 @@
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel7.Controls.Add(this.pictureBox1, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.button1, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.pic_anhkt, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.btn_chonAnh, 0, 1);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
@@ -370,28 +378,29 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(99, 113);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
-            // pictureBox1
+            // pic_anhkt
             // 
-            this.pictureBox1.BackgroundImage = global::QuanLyKhuTro.Properties.Resources.anh;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(93, 77);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pic_anhkt.BackgroundImage = global::QuanLyKhuTro.Properties.Resources.anh;
+            this.pic_anhkt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pic_anhkt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pic_anhkt.Location = new System.Drawing.Point(3, 3);
+            this.pic_anhkt.Name = "pic_anhkt";
+            this.pic_anhkt.Size = new System.Drawing.Size(93, 77);
+            this.pic_anhkt.TabIndex = 0;
+            this.pic_anhkt.TabStop = false;
             // 
-            // button1
+            // btn_chonAnh
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(3, 86);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 24);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Chọn ảnh";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_chonAnh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_chonAnh.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_chonAnh.ForeColor = System.Drawing.Color.Black;
+            this.btn_chonAnh.Location = new System.Drawing.Point(3, 86);
+            this.btn_chonAnh.Name = "btn_chonAnh";
+            this.btn_chonAnh.Size = new System.Drawing.Size(93, 24);
+            this.btn_chonAnh.TabIndex = 1;
+            this.btn_chonAnh.Text = "Chọn ảnh";
+            this.btn_chonAnh.UseVisualStyleBackColor = true;
+            this.btn_chonAnh.Click += new System.EventHandler(this.btn_chonAnh_Click);
             // 
             // groupBox1
             // 
@@ -464,6 +473,7 @@
             this.btn_sua.Size = new System.Drawing.Size(131, 33);
             this.btn_sua.TabIndex = 1;
             this.btn_sua.Text = "Sửa";
+            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
             // btn_xoa
             // 
@@ -476,6 +486,7 @@
             this.btn_xoa.Size = new System.Drawing.Size(129, 33);
             this.btn_xoa.TabIndex = 0;
             this.btn_xoa.Text = "Xóa";
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -518,30 +529,105 @@
             this.btn_luu.Size = new System.Drawing.Size(97, 33);
             this.btn_luu.TabIndex = 2;
             this.btn_luu.Text = "Lưu";
+            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
             // 
-            // gridControl1
+            // grv_khachthue
             // 
-            this.gridControl1.Location = new System.Drawing.Point(434, 3);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(623, 200);
-            this.gridControl1.TabIndex = 2;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.grv_khachthue.Location = new System.Drawing.Point(434, 3);
+            this.grv_khachthue.MainView = this.gridView_khachthue;
+            this.grv_khachthue.Name = "grv_khachthue";
+            this.grv_khachthue.Size = new System.Drawing.Size(623, 200);
+            this.grv_khachthue.TabIndex = 2;
+            this.grv_khachthue.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView_khachthue});
             // 
-            // gridView1
+            // gridView_khachthue
             // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
+            this.gridView_khachthue.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.MAKT,
+            this.TENKT,
+            this.GIOITINH,
+            this.ANH,
+            this.SDT,
+            this.QUEQUAN,
+            this.SOCMND,
+            this.NGAYSINH});
+            this.gridView_khachthue.GridControl = this.grv_khachthue;
+            this.gridView_khachthue.Name = "gridView_khachthue";
+            this.gridView_khachthue.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView_khachthue_FocusedRowChanged);
+            // 
+            // MAKT
+            // 
+            this.MAKT.Caption = "Mã khách thuê";
+            this.MAKT.FieldName = "MAKT";
+            this.MAKT.Name = "MAKT";
+            this.MAKT.Visible = true;
+            this.MAKT.VisibleIndex = 0;
+            // 
+            // TENKT
+            // 
+            this.TENKT.Caption = "Tên khách thuê";
+            this.TENKT.FieldName = "TENKT";
+            this.TENKT.Name = "TENKT";
+            this.TENKT.Visible = true;
+            this.TENKT.VisibleIndex = 1;
+            // 
+            // GIOITINH
+            // 
+            this.GIOITINH.Caption = "Giới tính";
+            this.GIOITINH.FieldName = "GIOITINH";
+            this.GIOITINH.Name = "GIOITINH";
+            this.GIOITINH.Visible = true;
+            this.GIOITINH.VisibleIndex = 2;
+            // 
+            // ANH
+            // 
+            this.ANH.Caption = "Ảnh";
+            this.ANH.FieldName = "ANH";
+            this.ANH.Name = "ANH";
+            this.ANH.Visible = true;
+            this.ANH.VisibleIndex = 3;
+            // 
+            // SDT
+            // 
+            this.SDT.Caption = "Số điện thoại";
+            this.SDT.FieldName = "SDT";
+            this.SDT.Name = "SDT";
+            this.SDT.Visible = true;
+            this.SDT.VisibleIndex = 4;
+            // 
+            // QUEQUAN
+            // 
+            this.QUEQUAN.Caption = "Quê quán";
+            this.QUEQUAN.FieldName = "QUEQUAN";
+            this.QUEQUAN.Name = "QUEQUAN";
+            this.QUEQUAN.Visible = true;
+            this.QUEQUAN.VisibleIndex = 5;
+            // 
+            // SOCMND
+            // 
+            this.SOCMND.Caption = "Số CMND";
+            this.SOCMND.FieldName = "SOCMND";
+            this.SOCMND.Name = "SOCMND";
+            this.SOCMND.Visible = true;
+            this.SOCMND.VisibleIndex = 6;
+            // 
+            // NGAYSINH
+            // 
+            this.NGAYSINH.Caption = "Ngày sinh";
+            this.NGAYSINH.FieldName = "NGAYSINH";
+            this.NGAYSINH.Name = "NGAYSINH";
+            this.NGAYSINH.Visible = true;
+            this.NGAYSINH.VisibleIndex = 7;
             // 
             // frm_khachthue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1069, 533);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frm_khachthue";
-            this.Text = "frm_KhachThue";
+            this.Size = new System.Drawing.Size(1069, 533);
+            this.Load += new System.EventHandler(this.frm_khachthue_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.grb_thongtindichvu.ResumeLayout(false);
@@ -551,13 +637,13 @@
             this.tableLayoutPanel9.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_anhkt)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grv_khachthue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_khachthue)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -578,8 +664,8 @@
         private System.Windows.Forms.GroupBox grb_thongtindichvu;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pic_anhkt;
+        private System.Windows.Forms.Button btn_chonAnh;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -597,7 +683,15 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.RadioButton rdb_nam;
         private System.Windows.Forms.RadioButton rdb_nu;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl grv_khachthue;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView_khachthue;
+        private DevExpress.XtraGrid.Columns.GridColumn MAKT;
+        private DevExpress.XtraGrid.Columns.GridColumn TENKT;
+        private DevExpress.XtraGrid.Columns.GridColumn GIOITINH;
+        private DevExpress.XtraGrid.Columns.GridColumn ANH;
+        private DevExpress.XtraGrid.Columns.GridColumn SDT;
+        private DevExpress.XtraGrid.Columns.GridColumn QUEQUAN;
+        private DevExpress.XtraGrid.Columns.GridColumn SOCMND;
+        private DevExpress.XtraGrid.Columns.GridColumn NGAYSINH;
     }
 }

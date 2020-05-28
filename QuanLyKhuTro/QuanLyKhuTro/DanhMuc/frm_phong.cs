@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using BLL;
 using DAL;
+using System.Data.SqlClient;
 
 namespace QuanLyKhuTro.DanhMuc
 {
@@ -67,6 +68,14 @@ namespace QuanLyKhuTro.DanhMuc
                 cbb_loaiphong.Text = p.MALOAI.ToString();
                 cbb_tang.Text = p.MATANG.ToString();
                 ckb_tinhtrang.Checked = p.TINHTRANG.Value;
+                if(ckb_tinhtrang.Checked==true)
+                {
+                    ckb_tinhtrang.Text = "Đã thuê";
+                }    
+                else
+                {
+                    ckb_tinhtrang.Text = "Chưa thuê";
+                }    
                 
             }
             catch { }
@@ -210,6 +219,18 @@ namespace QuanLyKhuTro.DanhMuc
             txt_slhientai.Clear();
             txt_sltoida.Clear();
             frm_phong_Load(sender, e);
+        }
+
+        private void ckb_tinhtrang_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_tinhtrang.Checked == true)
+            {
+                ckb_tinhtrang.Text = "Đã thuê";
+            }
+            else
+            {
+                ckb_tinhtrang.Text = "Chưa thuê";
+            }
         }
     }
 }
