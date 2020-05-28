@@ -91,7 +91,7 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(491, 304);
+            this.ClientSize = new System.Drawing.Size(507, 283);
             this.Controls.Add(this.btn_huy);
             this.Controls.Add(this.btn_dangnhap);
             this.Controls.Add(this.txt_matkhau);

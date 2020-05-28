@@ -1,6 +1,6 @@
 ﻿namespace QuanLyKhuTro.DanhMuc
 {
-    partial class frm_KhachThue
+    partial class frm_khachthue
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_KhachThue));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_khachthue));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.grb_thongtindichvu = new System.Windows.Forms.GroupBox();
@@ -534,13 +534,13 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
-            // frm_KhachThue
+            // frm_khachthue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1069, 533);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "frm_KhachThue";
+            this.Name = "frm_khachthue";
             this.Text = "frm_KhachThue";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);

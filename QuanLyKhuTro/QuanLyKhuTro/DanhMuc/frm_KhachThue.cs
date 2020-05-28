@@ -11,9 +11,9 @@ using DevExpress.XtraEditors;
 
 namespace QuanLyKhuTro.DanhMuc
 {
-    public partial class frm_KhachThue : DevExpress.XtraEditors.XtraForm
+    public partial class frm_khachthue : DevExpress.XtraEditors.XtraForm
     {
-        public frm_KhachThue()
+        public frm_khachthue()
         {
             InitializeComponent();
         }

@@ -67,11 +67,11 @@
     <Compile Include="DanhMuc\frm_dichvu.Designer.cs">
       <DependentUpon>frm_dichvu.cs</DependentUpon>
     </Compile>
-    <Compile Include="DanhMuc\frm_KhachThue.cs">
+    <Compile Include="DanhMuc\frm_khachthue.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DanhMuc\frm_KhachThue.Designer.cs">
-      <DependentUpon>frm_KhachThue.cs</DependentUpon>
+    <Compile Include="DanhMuc\frm_khachthue.Designer.cs">
+      <DependentUpon>frm_khachthue.cs</DependentUpon>
     </Compile>
     <Compile Include="DanhMuc\frm_loaiphong.cs">
       <SubType>UserControl</SubType>
@@ -115,6 +115,7 @@
     <Compile Include="DuLieu\UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
+    <Compile Include="HeThong\cauhinh.cs" />
     <Compile Include="HeThong\frm_cauhinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,8 +157,8 @@
     <EmbeddedResource Include="DanhMuc\frm_dichvu.resx">
       <DependentUpon>frm_dichvu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DanhMuc\frm_KhachThue.resx">
-      <DependentUpon>frm_KhachThue.cs</DependentUpon>
+    <EmbeddedResource Include="DanhMuc\frm_khachthue.resx">
+      <DependentUpon>frm_khachthue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\frm_loaiphong.resx">
       <DependentUpon>frm_loaiphong.cs</DependentUpon>
