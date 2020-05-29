@@ -16,9 +16,9 @@ namespace BLL
                 return phanquyen.loadbang_QLPHANQUYEN();
             }
             //kiểm tra khóa chính
-            public bool ktkc_QLPHANQUYEN(string pMa)
+            public bool ktkc_QLPHANQUYEN(string pMa, string pmamh)
             {
-                return phanquyen.ktakhoachinh_QLPHANQUYEN(pMa);
+                return phanquyen.ktakhoachinh_QLPHANQUYEN(pMa,pmamh);
             }
             //Thêm
             public bool them_QLPHANQUYEN(QLPHANQUYEN pQLPHANQUYEN)

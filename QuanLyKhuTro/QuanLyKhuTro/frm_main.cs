@@ -12,11 +12,14 @@ using DevExpress.Utils.Extensions;
 using QuanLyKhuTro.DanhMuc;
 using QuanLyKhuTro.NghiepVu;
 using QuanLyKhuTro.DuLieu;
+using DAL;
+using BLL;
 
 namespace QuanLyKhuTro
 {
     public partial class frm_main : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        PhanQuyen pq = new PhanQuyen();
         public frm_main()
         {
             InitializeComponent();
@@ -110,11 +113,32 @@ namespace QuanLyKhuTro
 
         private void frm_main_Load(object sender, EventArgs e)
         {
+          
             skins();
             //lb_manv.Text = Tendn;
+            List<QLPHANQUYEN> manhinh = new List<QLPHANQUYEN>();
+            QLND_NHOMND nhom = new QLND_NHOMND();
+            nhom = pq.laymanhom(Tendn);
+            manhinh = pq.laydsmanhinh(nhom.MANHOM);
 
-        }
+            for (int i = 0; i < manhinh.Count(); i++)
+            {
+                if (manhinh[i].MAMANHINH == "MH001")
+                {
 
+                }
+               else if(manhinh[i].MAMANHINH == "MH002")
+                {
+                    btn_nhanvien.Enabled = false;
+                } 
+                else
+                {
+                    ribbonPageGroup1.Visible = ribbonPageGroup7.Visible= ribbonPageGroup8.Visible 
+                        = ribbonPageGroup9 .Visible= ribbonPageGroup10 .Visible= ribbonPageGroup3 .Visible=
+                        ribbonPageGroup4 .Visible= ribbonPageGroup5 .Visible= false;
+                }    
+            }
+          }
         private void btn_datphong_ItemClick(object sender, ItemClickEventArgs e)
         {
             frm_datphong forms = new frm_datphong();

@@ -18,10 +18,10 @@ namespace DAL
         }
 
         //kiểm tra khóa chính
-        public bool ktakhoachinh_QLPHANQUYEN(string hd)
+        public bool ktakhoachinh_QLPHANQUYEN(string hd, string mamh)
         {
             var kt = (from h in data.QLPHANQUYENs
-                      where h.MANHOM == hd
+                      where h.MANHOM == hd && h.MAMANHINH== mamh
                       select h).Count();
             if (kt > 0)
             {

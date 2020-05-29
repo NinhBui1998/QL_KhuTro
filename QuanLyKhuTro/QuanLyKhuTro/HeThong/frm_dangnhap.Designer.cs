@@ -61,6 +61,7 @@
             this.txt_matkhau.Name = "txt_matkhau";
             this.txt_matkhau.Size = new System.Drawing.Size(282, 21);
             this.txt_matkhau.TabIndex = 2;
+            this.txt_matkhau.Text = "123456789";
             // 
             // txt_taikhoan
             // 
@@ -68,6 +69,7 @@
             this.txt_taikhoan.Name = "txt_taikhoan";
             this.txt_taikhoan.Size = new System.Drawing.Size(282, 21);
             this.txt_taikhoan.TabIndex = 1;
+            this.txt_taikhoan.Text = "NV001";
             // 
             // lbl_matkhau
             // 
@@ -89,7 +91,7 @@
             this.lbl_taikhoan.TabIndex = 4;
             this.lbl_taikhoan.Text = "Tài khoản";
             // 
-            // frm_dn
+            // frm_dangnhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -100,7 +102,7 @@
             this.Controls.Add(this.txt_taikhoan);
             this.Controls.Add(this.lbl_matkhau);
             this.Controls.Add(this.lbl_taikhoan);
-            this.Name = "frm_dn";
+            this.Name = "frm_dangnhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_dn";
             this.ResumeLayout(false);

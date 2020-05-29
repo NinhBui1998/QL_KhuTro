@@ -101,6 +101,8 @@
             this.cbb_servername.Name = "cbb_servername";
             this.cbb_servername.Size = new System.Drawing.Size(265, 27);
             this.cbb_servername.TabIndex = 2;
+            this.cbb_servername.DropDown += new System.EventHandler(this.cbb_server_DropDown);
+            this.cbb_servername.TextChanged += new System.EventHandler(this.cbb_server_TextChanged);
             // 
             // cbb_database
             // 
@@ -109,6 +111,8 @@
             this.cbb_database.Name = "cbb_database";
             this.cbb_database.Size = new System.Drawing.Size(265, 27);
             this.cbb_database.TabIndex = 2;
+            this.cbb_database.DropDown += new System.EventHandler(this.cbb_database_DropDown);
+            this.cbb_database.SelectedIndexChanged += new System.EventHandler(this.cbb_database_SelectedIndexChanged);
             // 
             // btn_luu
             // 
@@ -117,6 +121,7 @@
             this.btn_luu.Size = new System.Drawing.Size(97, 40);
             this.btn_luu.TabIndex = 3;
             this.btn_luu.Text = "Lưu lại";
+            this.btn_luu.Click += new System.EventHandler(this.btn_ketnoi_Click);
             // 
             // btn_huy
             // 
@@ -125,6 +130,7 @@
             this.btn_huy.Size = new System.Drawing.Size(96, 40);
             this.btn_huy.TabIndex = 3;
             this.btn_huy.Text = "Hủy bỏ";
+            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
             // 
             // frm_cauhinh
             // 
@@ -146,6 +152,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "frm_cauhinh";
             this.Text = "frm_cauhinh";
+            this.Load += new System.EventHandler(this.frm_cauhinh_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
