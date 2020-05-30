@@ -35,11 +35,19 @@ namespace QuanLyKhuTro.NghiepVu
             cbb_loaiphong.ValueMember = "MALOAI";
 
             //load dữ liệu combobox phòng
-
             cbb_phong.DataSource = phong.loadBang_Phong();
             cbb_phong.DisplayMember = "TENPHONG";
             cbb_phong.ValueMember = "MAPHONG";
         }
 
+        private void gridView_datphong_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+
+        }
+
+        private void btn_taohd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

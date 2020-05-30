@@ -345,6 +345,7 @@
             this.btn_traphong.Id = 27;
             this.btn_traphong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_traphong.ImageOptions.SvgImage")));
             this.btn_traphong.Name = "btn_traphong";
+            this.btn_traphong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_traphong_ItemClick);
             // 
             // btn_hoadon
             // 

@@ -16,8 +16,7 @@ namespace QuanLyKhuTro.Properties {
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-        internal string QuanLyKhuTro;
-
+        
         public static Settings Default {
             get {
                 return defaultInstance;
@@ -34,5 +33,17 @@ namespace QuanLyKhuTro.Properties {
                 return ((string)(this["QL_NHATROConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ADMIN\\SQLEXPRESS;Initial Catalog=QL_NHATRO;Integrated Security=True")]
+        public string QL_NHATROConnectionString1 {
+            get {
+                return ((string)(this["QL_NHATROConnectionString1"]));
+            }
+        }
+
+        public string QuanLyKhuTro { get; internal set; }
     }
 }

@@ -154,6 +154,12 @@
     <Compile Include="NghiepVu\frm_datphong.Designer.cs">
       <DependentUpon>frm_datphong.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\frm_traphong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\frm_traphong.Designer.cs">
+      <DependentUpon>frm_traphong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DanhMuc\frm_dichvu.resx">
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\frm_datphong.resx">
       <DependentUpon>frm_datphong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\frm_traphong.resx">
+      <DependentUpon>frm_traphong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

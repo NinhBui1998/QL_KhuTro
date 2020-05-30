@@ -336,7 +336,7 @@
             // 
             this.cbb_loaiphong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbb_loaiphong.FormattingEnabled = true;
-            this.cbb_loaiphong.Location = new System.Drawing.Point(147, 46);
+            this.cbb_loaiphong.Location = new System.Drawing.Point(147, 49);
             this.cbb_loaiphong.Name = "cbb_loaiphong";
             this.cbb_loaiphong.Size = new System.Drawing.Size(267, 27);
             this.cbb_loaiphong.TabIndex = 3;
@@ -401,7 +401,7 @@
             // 
             this.cbb_tang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbb_tang.FormattingEnabled = true;
-            this.cbb_tang.Location = new System.Drawing.Point(147, 6);
+            this.cbb_tang.Location = new System.Drawing.Point(147, 9);
             this.cbb_tang.Name = "cbb_tang";
             this.cbb_tang.Size = new System.Drawing.Size(267, 27);
             this.cbb_tang.TabIndex = 3;

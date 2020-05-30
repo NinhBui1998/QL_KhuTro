@@ -33,7 +33,7 @@ namespace QuanLyKhuTro
         public void skins()
         {
             DevExpress.LookAndFeel.DefaultLookAndFeel theme = new DevExpress.LookAndFeel.DefaultLookAndFeel();
-            theme.LookAndFeel.SkinName = "Visual Studio 2013 Blue";
+            theme.LookAndFeel.SkinName = "Office 2019 Colorful";
         }
         public void showForm(Form a)
         {
@@ -142,7 +142,7 @@ namespace QuanLyKhuTro
         private void btn_datphong_ItemClick(object sender, ItemClickEventArgs e)
         {
             frm_datphong forms = new frm_datphong();
-            forms.Show();
+            forms.ShowDialog();
             //pnl_main.Controls.Clear();
             //pnl_main.Controls.Add(forms);
         }
@@ -169,6 +169,10 @@ namespace QuanLyKhuTro
             pnl_main.Controls.Add(kt);
         }
 
-      
+        private void btn_traphong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frm_traphong forms = new frm_traphong();
+            forms.ShowDialog();
+        }
     }
 }
