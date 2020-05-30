@@ -196,7 +196,6 @@
             this.HOATDONG});
             this.gridView_qlnguoidung.GridControl = this.grv_qlnd;
             this.gridView_qlnguoidung.Name = "gridView_qlnguoidung";
-            this.gridView_qlnguoidung.OptionsBehavior.ReadOnly = true;
             this.gridView_qlnguoidung.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView_qlnguoidung_FocusedRowChanged);
             // 
             // TENDN
