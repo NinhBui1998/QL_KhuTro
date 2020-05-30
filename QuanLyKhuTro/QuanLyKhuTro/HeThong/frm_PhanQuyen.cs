@@ -19,8 +19,8 @@ namespace QuanLyKhuTro.HeThong
         BLL_NguoiDung_NhomNguoiDung bnd_nnd = new BLL_NguoiDung_NhomNguoiDung();
         BLL_NhomNguoiDung bnhomnd = new BLL_NhomNguoiDung();
 
-        QUANLYND qlnd = new QUANLYND();
-        QLND_NHOMND qlndnnd = new QLND_NHOMND();
+        QUANLYND qlnd ;
+        QLND_NHOMND qlndnnd;
         public frm_phanquyen()
         {
             InitializeComponent();
@@ -39,9 +39,11 @@ namespace QuanLyKhuTro.HeThong
 
         private void gridView_qlnguoidung_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
+            qlnd = new QUANLYND();
             int position = gridView_qlnguoidung.FocusedRowHandle;
-            ckb_hoatdong.Checked = Convert.ToBoolean( gridView_qlnguoidung.GetRowCellValue(position, "HOATDONG").ToString());
-            if(ckb_hoatdong.Checked==true)
+           qlnd.HOATDONG = Convert.ToBoolean(gridView_qlnguoidung.GetRowCellValue(position, "HOATDONG").ToString());
+            ckb_hoatdong.Checked = qlnd.HOATDONG.Value;
+            if (ckb_hoatdong.Checked==true)
             {
                 ckb_hoatdong.Text = "Đang hoạt động";
             }    

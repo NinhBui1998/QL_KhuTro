@@ -133,7 +133,7 @@ namespace QuanLyKhuTro.DanhMuc
                 //kiểm tra khóa chính
                 if (noiquy.ktkc_NoiQuy(nq.MANOIQUY) == true)
                 {
-                    MessageBox.Show("TRùng khóa chính");
+                    MessageBox.Show("Trùng khóa chính");
                     return;
                 }
                 if (noiquy.them_NoiQuy(nq) == true)

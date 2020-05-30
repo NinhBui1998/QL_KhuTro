@@ -517,7 +517,7 @@
             // 
             this.cbb_gioitinh.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbb_gioitinh.FormattingEnabled = true;
-            this.cbb_gioitinh.Location = new System.Drawing.Point(225, 76);
+            this.cbb_gioitinh.Location = new System.Drawing.Point(225, 79);
             this.cbb_gioitinh.Name = "cbb_gioitinh";
             this.cbb_gioitinh.Size = new System.Drawing.Size(150, 27);
             this.cbb_gioitinh.TabIndex = 3;

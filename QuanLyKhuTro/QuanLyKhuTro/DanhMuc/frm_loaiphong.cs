@@ -16,7 +16,6 @@ namespace QuanLyKhuTro.DanhMuc
     public partial class frm_loaiphong : DevExpress.XtraEditors.XtraUserControl
     {
         BLL_LoaiPhong blp = new BLL_LoaiPhong();
-        LOAIPHONG loaip = new LOAIPHONG();
         public frm_loaiphong()
         {
             InitializeComponent();
@@ -74,62 +73,7 @@ namespace QuanLyKhuTro.DanhMuc
 
 
             frm_loaiphong_Load(sender,e);
-        }
-        private void btn_luu_Click(object sender, EventArgs e)
-        {
-            if(btn_them.Enabled==true)
-            {
-                loaip.MALOAI = txt_maloai.Text;
-                loaip.TENLOAI = txt_tenloai.Text;
-                loaip.GIA = Convert.ToDouble(txt_gia.Text);
-                if (txt_maloai.Text == string.Empty && txt_tenloai.Text == string.Empty && txt_gia.Text==string.Empty)
-                {
-                    MessageBox.Show("không được để trống");
-                    return;
-                }
-                //kiểm tra khóa chính
-                if (blp.ktkc_LoaiPhong(loaip.MALOAI) == true)
-                {
-                    MessageBox.Show("TRùng khóa chính");
-                    return;
-                }
-                if (blp.ThemLoaiPhong(loaip) == true)
-                {
-
-
-                    MessageBox.Show("Thành công");
-                }
-                else
-                {
-                    MessageBox.Show("Thất bại");
-                }
-                frm_loaiphong_Load(sender,e);
-            }
-            if (btn_sua.Enabled == true && btn_them.Enabled == false)
-            {
-                try
-                {
-                    if (txt_tenloai.Text == string.Empty || txt_gia.Text == string.Empty)
-                    {
-                        MessageBox.Show(" không được để trống");
-                        return;
-                    }
-                    loaip.MALOAI = txt_maloai.Text;
-                    loaip.TENLOAI = txt_tenloai.Text;
-                    loaip.GIA = Convert.ToDouble(txt_gia.Text);
-                    if (blp.sua_LoaiPhong(loaip) == true)
-                    {
-                        MessageBox.Show("Thành công");
-                    }
-                }
-                catch
-                {
-                    MessageBox.Show("thất bại");
-                }
-            }
-            frm_loaiphong_Load(sender,e);
-        }
-
+        } 
         private void btn_them_Click(object sender, EventArgs e)
         {
             txt_gia.Enabled = txt_tenloai.Enabled = btn_huy.Enabled = btn_luu.Enabled = true;
@@ -150,17 +94,76 @@ namespace QuanLyKhuTro.DanhMuc
             btn_luu.Enabled = btn_huy.Enabled = true;
             btn_sua.Enabled = btn_xoa.Enabled = false;
         }
+        private void btn_luu_Click(object sender, EventArgs e)
+        {
+            LOAIPHONG lp = new LOAIPHONG();
+            if (btn_them.Enabled == true)
+            {
+                lp.MALOAI = txt_maloai.Text;
+                lp.TENLOAI = txt_tenloai.Text;
+                lp.GIA = Convert.ToDouble(txt_gia.Text);
+                if (txt_maloai.Text == string.Empty && txt_tenloai.Text == string.Empty && txt_gia.Text == string.Empty)
+                {
+                    MessageBox.Show("không được để trống");
+                    return;
+                }
+                //kiểm tra khóa chính
+                if (blp.ktkc_LoaiPhong(lp.MALOAI) == true)
+                {
+                    MessageBox.Show("Trùng khóa chính");
+                    return;
+                }
+                if (blp.ThemLoaiPhong(lp) == true)
+                {
+                    grv_loaiPhong.DataSource = blp.loadBangLoaiPhong();
+                    MessageBox.Show("Thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Thất bại");
+                }
+                frm_loaiphong_Load(sender, e);
+            }
+            if (btn_sua.Enabled == true && btn_them.Enabled == false)
+            {
+                try
+                {
+                    if (txt_tenloai.Text == string.Empty || txt_gia.Text == string.Empty)
+                    {
+                        MessageBox.Show(" không được để trống");
+                        return;
+                    }
+                    lp.MALOAI = txt_maloai.Text;
+                    lp.TENLOAI = txt_tenloai.Text;
+                    lp.GIA = Convert.ToDouble(txt_gia.Text);
+                    if (blp.sua_LoaiPhong(lp) == true)
+                    {
+                        MessageBox.Show("Thành công");
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("thất bại");
+                }
+            }
+            frm_loaiphong_Load(sender, e);
+        }
 
         private void gridView_LoaiPhong_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
+            LOAIPHONG lp = new LOAIPHONG();
             btn_xoa.Enabled = btn_sua.Enabled = btn_huy.Enabled = true;
             btn_them.Enabled = false;
             int position = gridView_LoaiPhong.FocusedRowHandle;
             try
             {
-                txt_tenloai.Text = gridView_LoaiPhong.GetRowCellValue(position, "TENLOAI").ToString();
-                txt_maloai.Text = gridView_LoaiPhong.GetRowCellValue(position, "MALOAI").ToString();
-                txt_gia.Text = gridView_LoaiPhong.GetRowCellValue(position, "GIA").ToString();
+               lp.TENLOAI= gridView_LoaiPhong.GetRowCellValue(position, "TENLOAI").ToString();
+               lp.MALOAI = gridView_LoaiPhong.GetRowCellValue(position, "MALOAI").ToString();
+               lp.GIA= Convert.ToDouble(gridView_LoaiPhong.GetRowCellValue(position, "GIA").ToString());
+
+                txt_tenloai.Text = lp.TENLOAI.ToString();
+                txt_maloai.Text = lp.MALOAI.ToString();
+                txt_gia.Text = lp.MALOAI.ToString();
             }
             catch { }
         }
