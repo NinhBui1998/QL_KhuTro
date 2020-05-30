@@ -100,7 +100,7 @@ namespace QuanLyKhuTro.HeThong
         {
             try
             {
-
+                qlndnnd = new QLND_NHOMND();
             
             int position = gridView_qlnguoidung.FocusedRowHandle;
             qlndnnd.TENDN = gridView_qlnguoidung.GetRowCellValue(position, "TENDN").ToString();

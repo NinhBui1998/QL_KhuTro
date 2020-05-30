@@ -16,8 +16,8 @@ namespace QuanLyKhuTro.DanhMuc
     public partial class frm_nhanvien : DevExpress.XtraEditors.XtraUserControl
     {
         BLL_NhanVien bnv = new BLL_NhanVien();
-        NHANVIEN nv = new NHANVIEN();
-        QUANLYND qlnd = new QUANLYND();
+        NHANVIEN nv;
+        QUANLYND qlnd;
         BLL_Quanlynguoidung bqlnd = new BLL_Quanlynguoidung();
         public frm_nhanvien()
         {
@@ -31,6 +31,7 @@ namespace QuanLyKhuTro.DanhMuc
 
         private void btn_them_Click(object sender, EventArgs e)
         {
+            
             btn_huy.Enabled = btn_luu.Enabled = true;
             btn_sua.Enabled = btn_xoa.Enabled = false;
             txt_diachi.Enabled  = txt_sdt.Enabled = txt_tennv.Enabled = txt_scm.Enabled = true;
@@ -92,6 +93,7 @@ namespace QuanLyKhuTro.DanhMuc
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
+            nv = new NHANVIEN();
             DialogResult res;
             res = MessageBox.Show("Bạn có muốn xóa không!", "xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
             if (res == DialogResult.Yes)
@@ -125,6 +127,8 @@ namespace QuanLyKhuTro.DanhMuc
 
         private void btn_luu_Click(object sender, EventArgs e)
         {
+            nv = new NHANVIEN();
+            qlnd = new QUANLYND();
             nv.MANV = txt_manv.Text;
             nv.TENNV = txt_tennv.Text;
             nv.CMND_NV = txt_scm.Text;
