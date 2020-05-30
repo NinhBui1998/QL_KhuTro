@@ -157,6 +157,7 @@
             this.btn_doimatkhau.Name = "btn_doimatkhau";
             this.btn_doimatkhau.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btn_doimatkhau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_doimatkhau_ItemClick);
             // 
             // btn_dangxuat
             // 

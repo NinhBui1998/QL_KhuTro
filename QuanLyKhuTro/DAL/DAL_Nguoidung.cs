@@ -32,6 +32,7 @@ namespace DAL
                 QUANLYND qlnd = data.QUANLYNDs.Where(t => t.TENDN == pqlnd.TENDN).FirstOrDefault();
                 if (qlnd != null)
                 {
+                    qlnd.MK = pqlnd.MK;
                     qlnd.HOATDONG = pqlnd.HOATDONG;
                     data.SubmitChanges();
                 }

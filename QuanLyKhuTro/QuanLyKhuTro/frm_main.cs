@@ -31,6 +31,12 @@ namespace QuanLyKhuTro
             get { return TenDN; }
             set { TenDN = value; }
         }
+        string MK;
+        public string MatKhau
+        {
+            get { return MK; }
+            set { MK = value; }
+        }
         public void skins()
         {
             DevExpress.LookAndFeel.DefaultLookAndFeel theme = new DevExpress.LookAndFeel.DefaultLookAndFeel();
@@ -130,7 +136,8 @@ namespace QuanLyKhuTro
                 }
                else if(manhinh[i].MAMANHINH == "MH002")
                 {
-                    btn_nhanvien.Enabled = false;
+                    btn_nhanvien.Enabled =btn_phanquyen.Enabled = false;
+
                 } 
                 else
                 {
@@ -181,6 +188,15 @@ namespace QuanLyKhuTro
             frm_phanquyen pq = new frm_phanquyen();
             pnl_main.Controls.Clear();
             pnl_main.Controls.Add(pq);
+        }
+
+        private void btn_doimatkhau_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frm_doimatkhau dmk = new frm_doimatkhau();
+            pnl_main.Controls.Clear();
+            dmk.MatKhau = MatKhau;
+            dmk.Tendn = Tendn;
+            pnl_main.Controls.Add(dmk);
         }
     }
 }

@@ -38,38 +38,40 @@
             this.gridView_qlnd_nhomnd = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.TENDANGNHAP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MANHOM = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.cbo_quanlynhomnd = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.grv_qlnd = new DevExpress.XtraGrid.GridControl();
             this.gridView_qlnguoidung = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.TENDN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HOATDONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ckb_hoatdong = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_sua = new DevExpress.XtraEditors.SimpleButton();
             this.btn_xoa = new DevExpress.XtraEditors.SimpleButton();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tab_ND_NhomND.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grv_qlnd_nnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_qlnd_nhomnd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grv_qlnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_qlnguoidung)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab_ND_NhomND
             // 
             this.tab_ND_NhomND.Controls.Add(this.tabPage1);
-            this.tab_ND_NhomND.Controls.Add(this.tabPage2);
             this.tab_ND_NhomND.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tab_ND_NhomND.Location = new System.Drawing.Point(0, 0);
             this.tab_ND_NhomND.Name = "tab_ND_NhomND";
             this.tab_ND_NhomND.SelectedIndex = 0;
             this.tab_ND_NhomND.Size = new System.Drawing.Size(671, 417);
-            this.tab_ND_NhomND.TabIndex = 1;
+            this.tab_ND_NhomND.TabIndex = 3;
             // 
             // tabPage1
             // 
@@ -129,7 +131,8 @@
             this.grv_qlnd_nnd.Size = new System.Drawing.Size(253, 286);
             this.grv_qlnd_nnd.TabIndex = 5;
             this.grv_qlnd_nnd.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView_qlnd_nhomnd});
+            this.gridView_qlnd_nhomnd,
+            this.gridView2});
             // 
             // gridView_qlnd_nhomnd
             // 
@@ -139,6 +142,7 @@
             this.gridView_qlnd_nhomnd.GridControl = this.grv_qlnd_nnd;
             this.gridView_qlnd_nhomnd.Name = "gridView_qlnd_nhomnd";
             this.gridView_qlnd_nhomnd.OptionsBehavior.ReadOnly = true;
+            this.gridView_qlnd_nhomnd.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView_qlnguoidung_FocusedRowChanged);
             // 
             // TENDANGNHAP
             // 
@@ -155,6 +159,11 @@
             this.MANHOM.Name = "MANHOM";
             this.MANHOM.Visible = true;
             this.MANHOM.VisibleIndex = 1;
+            // 
+            // gridView2
+            // 
+            this.gridView2.GridControl = this.grv_qlnd_nnd;
+            this.gridView2.Name = "gridView2";
             // 
             // cbo_quanlynhomnd
             // 
@@ -187,7 +196,8 @@
             this.grv_qlnd.Size = new System.Drawing.Size(236, 239);
             this.grv_qlnd.TabIndex = 0;
             this.grv_qlnd.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView_qlnguoidung});
+            this.gridView_qlnguoidung,
+            this.gridView1});
             // 
             // gridView_qlnguoidung
             // 
@@ -213,6 +223,11 @@
             this.HOATDONG.Name = "HOATDONG";
             this.HOATDONG.Visible = true;
             this.HOATDONG.VisibleIndex = 1;
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.grv_qlnd;
+            this.gridView1.Name = "gridView1";
             // 
             // ckb_hoatdong
             // 
@@ -267,16 +282,6 @@
             this.btn_xoa.Text = "Xóa";
             this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.Color.Transparent;
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(663, 391);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Phân quyền";
-            // 
             // frm_phanquyen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,10 +295,12 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grv_qlnd_nnd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_qlnd_nhomnd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grv_qlnd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_qlnguoidung)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -310,16 +317,17 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView_qlnd_nhomnd;
         private DevExpress.XtraGrid.Columns.GridColumn TENDANGNHAP;
         private DevExpress.XtraGrid.Columns.GridColumn MANHOM;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private System.Windows.Forms.ComboBox cbo_quanlynhomnd;
         private System.Windows.Forms.GroupBox groupBox1;
         private DevExpress.XtraGrid.GridControl grv_qlnd;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView_qlnguoidung;
         private DevExpress.XtraGrid.Columns.GridColumn TENDN;
         private DevExpress.XtraGrid.Columns.GridColumn HOATDONG;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.CheckBox ckb_hoatdong;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private DevExpress.XtraEditors.SimpleButton btn_sua;
         private DevExpress.XtraEditors.SimpleButton btn_xoa;
-        private System.Windows.Forms.TabPage tabPage2;
     }
 }

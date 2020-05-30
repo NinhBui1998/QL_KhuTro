@@ -37,6 +37,7 @@ namespace QuanLyKhuTro.HeThong
                 // đúng tài khoản và mật khẩu
                 frm_main main = new frm_main();
                 main.Tendn = txt_taikhoan.Text;
+                main.MatKhau = txt_matkhau.Text;
                 main.ShowDialog();
             }
         }
@@ -85,5 +86,7 @@ namespace QuanLyKhuTro.HeThong
             txt_matkhau.Clear();
             txt_taikhoan.Clear();
         }
+
+       
     }
 }

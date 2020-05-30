@@ -84,6 +84,7 @@ namespace QuanLyKhuTro.HeThong
             int position = gridView_qlnguoidung.FocusedRowHandle;
             qlnd.TENDN= gridView_qlnguoidung.GetRowCellValue(position, "TENDN").ToString();
             qlnd.HOATDONG = ckb_hoatdong.Checked;
+            qlnd.TENDN = "123456789";
             if (bqlnd.sua_ND(qlnd) == true)
             {
                 grv_qlnd.DataSource = bqlnd.loadnd();
@@ -156,5 +157,7 @@ namespace QuanLyKhuTro.HeThong
             }
             frm_PhanQuyen_Load(sender,e);
         }
+
+      
     }
 }
