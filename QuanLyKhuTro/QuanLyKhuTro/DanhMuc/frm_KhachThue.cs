@@ -151,7 +151,6 @@ namespace QuanLyKhuTro.DanhMuc
         {
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "All Text File (.jpg)|.jpg";
-
             open.FilterIndex = 1;
             open.RestoreDirectory = true;
             if (open.ShowDialog() == DialogResult.OK)

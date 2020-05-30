@@ -14,6 +14,7 @@ using QuanLyKhuTro.NghiepVu;
 using QuanLyKhuTro.DuLieu;
 using DAL;
 using BLL;
+using QuanLyKhuTro.HeThong;
 
 namespace QuanLyKhuTro
 {
@@ -173,6 +174,13 @@ namespace QuanLyKhuTro
         {
             frm_traphong forms = new frm_traphong();
             forms.ShowDialog();
+        }
+
+        private void btn_phanquyen_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frm_phanquyen pq = new frm_phanquyen();
+            pnl_main.Controls.Clear();
+            pnl_main.Controls.Add(pq);
         }
     }
 }

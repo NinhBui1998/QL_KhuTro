@@ -46,6 +46,7 @@
     <Compile Include="DAL_DichVu.cs" />
     <Compile Include="DAL_KhachThue.cs" />
     <Compile Include="DAL_LoaiPhong.cs" />
+    <Compile Include="DAL_Nguoidung.cs" />
     <Compile Include="DAL_NguoiDung_NhomNguoiDung.cs" />
     <Compile Include="DAL_NhanVien.cs" />
     <Compile Include="DAL_NhomNguoiDung.cs" />

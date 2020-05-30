@@ -54,6 +54,7 @@
     <Compile Include="BLL_NoiQuy.cs" />
     <Compile Include="BLL_PhanQuyen.cs" />
     <Compile Include="BLL_Phong.cs" />
+    <Compile Include="BLL_Quanlynguoidung.cs" />
     <Compile Include="BLL_Tang.cs" />
     <Compile Include="BLL_ThietBi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

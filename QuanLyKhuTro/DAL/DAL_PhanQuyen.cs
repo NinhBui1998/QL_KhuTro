@@ -50,11 +50,11 @@ namespace DAL
         }
 
         //Xóa
-        public bool xoa_QLPHANQUYEN(string pMaNhom)
+        public bool xoa_QLPHANQUYEN(string pMaNhom, string pmamh)
         {
             try
             {
-                QLPHANQUYEN manhom = data.QLPHANQUYENs.Where(t => t.MANHOM == pMaNhom).FirstOrDefault();
+                QLPHANQUYEN manhom = data.QLPHANQUYENs.Where(t => t.MANHOM == pMaNhom && t.MAMANHINH==pmamh).FirstOrDefault();
                 data.QLPHANQUYENs.DeleteOnSubmit(manhom);
                 data.SubmitChanges();
                 return true;

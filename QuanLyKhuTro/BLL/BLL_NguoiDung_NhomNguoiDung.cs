@@ -14,9 +14,9 @@ namespace BLL
             return ND_nhomND.loadbang_QLND_NHOMND();
         }
         //kiểm tra khóa chính
-        public bool ktkc_QLND_NHOMND(string pMa)
+        public bool ktkc_QLND_NHOMND(string pMa, string ptennd)
         {
-            return ND_nhomND.ktakhoachinh_QLND_NHOMND(pMa);
+            return ND_nhomND.ktakhoachinh_QLND_NHOMND(pMa,ptennd);
         }
         //Thêm
         public bool them_QLND_NHOMND(QLND_NHOMND pQLND_NHOMND)
@@ -24,9 +24,9 @@ namespace BLL
             return ND_nhomND.them_QLND_NHOMND(pQLND_NHOMND);
         }
         //Xóa
-        public bool xoa_QLND_NHOMND(string pMa)
+        public bool xoa_QLND_NHOMND(string pMa, string ptendn)
         {
-            return ND_nhomND.xoa_QLND_NHOMND(pMa);
+            return ND_nhomND.xoa_QLND_NHOMND(pMa, ptendn);
         }
         //Sửa
         public bool sua_QLND_NHOMND(QLND_NHOMND pQLND_NHOMND)

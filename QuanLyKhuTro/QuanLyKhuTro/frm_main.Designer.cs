@@ -177,6 +177,7 @@
             this.btn_phanquyen.Name = "btn_phanquyen";
             this.btn_phanquyen.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btn_phanquyen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_phanquyen_ItemClick);
             // 
             // btn_saoluu
             // 

@@ -17,6 +17,8 @@ namespace QuanLyKhuTro.DanhMuc
     {
         BLL_NhanVien bnv = new BLL_NhanVien();
         NHANVIEN nv = new NHANVIEN();
+        QUANLYND qlnd = new QUANLYND();
+        BLL_Quanlynguoidung bqlnd = new BLL_Quanlynguoidung();
         public frm_nhanvien()
         {
             InitializeComponent();
@@ -128,6 +130,10 @@ namespace QuanLyKhuTro.DanhMuc
             nv.CMND_NV = txt_scm.Text;
             nv.SODT_CT = txt_sdt.Text;
             nv.DIACHI = txt_diachi.Text;
+
+            qlnd.TENDN = txt_manv.Text;
+            qlnd.MK = "123456789";
+            qlnd.HOATDONG = false;
             if (btn_them.Enabled==true && btn_sua.Enabled==false)
             {
                 
@@ -143,11 +149,10 @@ namespace QuanLyKhuTro.DanhMuc
                     MessageBox.Show("TRùng khóa chính");
                     return;
                 }
-                if (bnv.ThemNV(nv) == true)
+                if (bnv.ThemNV(nv) == true && bqlnd.them_nguoidung(qlnd)==true )
                 {
-
-
                     MessageBox.Show("Thành công");
+
                 }
                 else
                 {

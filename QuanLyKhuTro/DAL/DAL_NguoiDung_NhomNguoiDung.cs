@@ -18,10 +18,10 @@ namespace DAL
         }
 
         //kiểm tra khóa chính
-        public bool ktakhoachinh_QLND_NHOMND(string hd)
+        public bool ktakhoachinh_QLND_NHOMND(string hd, string tendn)
         {
             var kt = (from h in data.QLND_NHOMNDs
-                      where h.MANHOM == hd
+                      where h.MANHOM == hd && h.TENDN==tendn
                       select h).Count();
             if (kt > 0)
             {
@@ -32,7 +32,6 @@ namespace DAL
                 return false;
             }
         }
-
         //Thêm
         public bool them_QLND_NHOMND(QLND_NHOMND ND_nhomND)
         {
@@ -50,11 +49,11 @@ namespace DAL
         }
 
         //Xóa
-        public bool xoa_QLND_NHOMND(string pMaNhom)
+        public bool xoa_QLND_NHOMND(string pMaNhom, string ptendn)
         {
             try
             {
-                QLND_NHOMND manhom = data.QLND_NHOMNDs.Where(t => t.MANHOM == pMaNhom).FirstOrDefault();
+                QLND_NHOMND manhom = data.QLND_NHOMNDs.Where(t => t.MANHOM == pMaNhom && t.TENDN==ptendn).FirstOrDefault();
                 data.QLND_NHOMNDs.DeleteOnSubmit(manhom);
                 data.SubmitChanges();
                 return true;
@@ -83,5 +82,6 @@ namespace DAL
                 return false;
             }
         }
+
     }
 }

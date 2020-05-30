@@ -147,6 +147,12 @@
     <Compile Include="DanhMuc\frm_tang.Designer.cs">
       <DependentUpon>frm_tang.cs</DependentUpon>
     </Compile>
+    <Compile Include="HeThong\frm_phanquyen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HeThong\frm_phanquyen.Designer.cs">
+      <DependentUpon>frm_phanquyen.cs</DependentUpon>
+    </Compile>
     <Compile Include="HeThong\LoginResult.cs" />
     <Compile Include="NghiepVu\frm_datphong.cs">
       <SubType>Form</SubType>
@@ -203,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\frm_tang.resx">
       <DependentUpon>frm_tang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\frm_phanquyen.resx">
+      <DependentUpon>frm_phanquyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\frm_datphong.resx">
       <DependentUpon>frm_datphong.cs</DependentUpon>

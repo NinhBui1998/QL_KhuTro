@@ -26,9 +26,9 @@ namespace BLL
                 return phanquyen.them_QLPHANQUYEN(pQLPHANQUYEN);
             }
             //Xóa
-            public bool xoa_QLPHANQUYEN(string pMa)
+            public bool xoa_QLPHANQUYEN(string pMa, string pdmmh)
             {
-                return phanquyen.xoa_QLPHANQUYEN(pMa);
+                return phanquyen.xoa_QLPHANQUYEN(pMa,pdmmh);
             }
             //Sửa
             public bool sua_QLPHANQUYEN(QLPHANQUYEN pQLPHANQUYEN)
