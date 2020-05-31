@@ -44,7 +44,9 @@ namespace QuanLyKhuTro.DanhMuc
                 kt.QUEQUAN = gridView_khachthue.GetRowCellValue(position, "QUEQUAN").ToString();
                 kt.SOCMND = gridView_khachthue.GetRowCellValue(position, "SOCMND").ToString();
                 kt.SDT = gridView_khachthue.GetRowCellValue(position, "SDT").ToString();
-
+                //kt.ANH = convertImage(gridView_khachthue.GetRowCellValue(position,"ANH").ToString());
+                //byte[] b = (byte[])kt.ANH;
+                //pic_anhkt.Image = bytetoimage(b);
 
                 txt_makt.Text = kt.MAKT.ToString();
                 txt_tenkt.Text = kt.TENKT.ToString();
@@ -150,12 +152,14 @@ namespace QuanLyKhuTro.DanhMuc
         private void btn_chonAnh_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "All Text File (.jpg)|.jpg";
+            //open.Filter = "All Text File (.jpg)|.jpg";
             open.FilterIndex = 1;
             open.RestoreDirectory = true;
             if (open.ShowDialog() == DialogResult.OK)
             {
+               
                 pic_anhkt.ImageLocation = open.FileName;
+                pic_anhkt.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
         private byte[] convertImage(Image img)//chuyen image sang byte

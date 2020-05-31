@@ -38,10 +38,10 @@ namespace QuanLyKhuTro.NghiepVu
             cbb_loaiphong.DisplayMember = "TENLOAI";
             cbb_loaiphong.ValueMember = "MALOAI";
 
-            //load dữ liệu combobox phòng
-            cbb_phong.DataSource = phong.loadBang_Phong();
-            cbb_phong.DisplayMember = "TENPHONG";
-            cbb_phong.ValueMember = "MAPHONG";
+            ////load dữ liệu combobox phòng
+            //cbb_phong.DataSource = phong.loadBang_Phong();
+            //cbb_phong.DisplayMember = "TENPHONG";
+            //cbb_phong.ValueMember = "MAPHONG";
 
             //load dl
             grv_datphong.DataSource = datphong.LoadDatPhong();
@@ -78,6 +78,21 @@ namespace QuanLyKhuTro.NghiepVu
         private void btn_taohd_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbb_phong_SelectedValueChanged(object sender, EventArgs e)
+        {
+            //load dữ liệu combobox phòng
+            cbb_phong.Text = string.Empty;
+            cbb_phong.DataSource = phong.loadBang_Phong();
+            cbb_phong.DisplayMember = "TENPHONG";
+            cbb_phong.ValueMember = "MAPHONG";
+            cbb_phong.DataSource = datphong.laytenphong(cbb_tang.SelectedValue.ToString(), cbb_loaiphong.SelectedValue.ToString()).ToList();
+        }
+
+        private void cbb_tang_SelectedValueChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

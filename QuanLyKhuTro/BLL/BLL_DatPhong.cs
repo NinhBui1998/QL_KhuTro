@@ -14,5 +14,9 @@ namespace BLL
         {
             return dp.loaddatphong();
         }
+        public List<PHONG>laytenphong( string pmatang, string pmaloai)
+        {
+            return dp.laytenphong(pmatang, pmaloai);
+        }
     }
 }

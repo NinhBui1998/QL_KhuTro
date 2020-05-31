@@ -194,6 +194,7 @@
             this.cbb_loaiphong.Name = "cbb_loaiphong";
             this.cbb_loaiphong.Size = new System.Drawing.Size(245, 27);
             this.cbb_loaiphong.TabIndex = 1;
+            this.cbb_loaiphong.SelectedValueChanged += new System.EventHandler(this.cbb_phong_SelectedValueChanged);
             // 
             // cbb_phong
             // 
@@ -204,6 +205,7 @@
             this.cbb_phong.Name = "cbb_phong";
             this.cbb_phong.Size = new System.Drawing.Size(205, 27);
             this.cbb_phong.TabIndex = 1;
+            this.cbb_phong.SelectedValueChanged += new System.EventHandler(this.cbb_phong_SelectedValueChanged);
             // 
             // cbb_tang
             // 
@@ -214,6 +216,7 @@
             this.cbb_tang.Name = "cbb_tang";
             this.cbb_tang.Size = new System.Drawing.Size(180, 27);
             this.cbb_tang.TabIndex = 1;
+            this.cbb_tang.SelectedValueChanged += new System.EventHandler(this.cbb_tang_SelectedValueChanged);
             // 
             // tableLayoutPanel3
             // 

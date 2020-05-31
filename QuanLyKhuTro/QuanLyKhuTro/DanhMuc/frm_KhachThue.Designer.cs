@@ -90,12 +90,12 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 638F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.grv_khachthue, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -348,6 +348,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.42373F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.57627F));
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel7, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btn_chonAnh, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 26);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -366,35 +367,32 @@
             // 
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel7.Controls.Add(this.pic_anhkt, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.btn_chonAnh, 0, 1);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 2;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 73.86364F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.13636F));
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 113F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(99, 113);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // pic_anhkt
             // 
-            this.pic_anhkt.BackgroundImage = global::QuanLyKhuTro.Properties.Resources.anh;
             this.pic_anhkt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pic_anhkt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pic_anhkt.Location = new System.Drawing.Point(3, 3);
             this.pic_anhkt.Name = "pic_anhkt";
-            this.pic_anhkt.Size = new System.Drawing.Size(93, 77);
+            this.pic_anhkt.Size = new System.Drawing.Size(93, 107);
             this.pic_anhkt.TabIndex = 0;
             this.pic_anhkt.TabStop = false;
             // 
             // btn_chonAnh
             // 
-            this.btn_chonAnh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_chonAnh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_chonAnh.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_chonAnh.ForeColor = System.Drawing.Color.Black;
-            this.btn_chonAnh.Location = new System.Drawing.Point(3, 86);
+            this.btn_chonAnh.Location = new System.Drawing.Point(108, 92);
             this.btn_chonAnh.Name = "btn_chonAnh";
             this.btn_chonAnh.Size = new System.Drawing.Size(93, 24);
             this.btn_chonAnh.TabIndex = 1;
@@ -536,7 +534,7 @@
             this.grv_khachthue.Location = new System.Drawing.Point(434, 3);
             this.grv_khachthue.MainView = this.gridView_khachthue;
             this.grv_khachthue.Name = "grv_khachthue";
-            this.grv_khachthue.Size = new System.Drawing.Size(623, 200);
+            this.grv_khachthue.Size = new System.Drawing.Size(632, 200);
             this.grv_khachthue.TabIndex = 2;
             this.grv_khachthue.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_khachthue});

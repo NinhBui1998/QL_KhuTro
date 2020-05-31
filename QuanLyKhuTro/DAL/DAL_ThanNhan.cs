@@ -9,7 +9,7 @@ namespace DAL
     public class DAL_ThanNhan
     {
         QL_KhuTroDataContext data = new QL_KhuTroDataContext();
-        public List<THANNHAN> loadbangDichVu()
+        public List<THANNHAN> loadbangThanNhan()
         {
             var dulieu = (from s in data.THANNHANs select s);
             return dulieu.ToList<THANNHAN>();

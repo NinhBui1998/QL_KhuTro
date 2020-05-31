@@ -57,6 +57,7 @@
     <Compile Include="DAL_Phong.cs" />
     <Compile Include="DAL_Tang.cs" />
     <Compile Include="DAL_ThanNhan.cs" />
+    <Compile Include="DAL_ThanNhan_TamTru.cs" />
     <Compile Include="DAL_ThietBi.cs" />
     <Compile Include="DatPhong.cs" />
     <Compile Include="PhanQuyen.cs" />

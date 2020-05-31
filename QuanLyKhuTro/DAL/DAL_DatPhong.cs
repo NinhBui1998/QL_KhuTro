@@ -38,5 +38,15 @@ namespace DAL
             kq.ToList<DatPhong>();
             return kq;
         }
+        public List<PHONG> laytenphong(string pmatang, string pmaloai)
+        {
+            var l = (from p in data.PHONGs
+                     from lp in data.LOAIPHONGs
+                     from t in data.TANGs
+                     where p.MALOAI == lp.MALOAI && p.MATANG == t.MATANG && p.MALOAI == pmaloai
+                     && t.MATANG == pmatang
+                     select p);
+            return l.ToList<PHONG>();
+        }
     }
 }
