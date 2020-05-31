@@ -168,6 +168,7 @@
             this.btn_dangxuat.Name = "btn_dangxuat";
             this.btn_dangxuat.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btn_dangxuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_dangxuat_ItemClick);
             // 
             // btn_phanquyen
             // 
@@ -361,6 +362,7 @@
             this.btn_thannhan.Id = 29;
             this.btn_thannhan.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_thannhan.ImageOptions.SvgImage")));
             this.btn_thannhan.Name = "btn_thannhan";
+            this.btn_thannhan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_thannhan_ItemClick);
             // 
             // ribbonPage1
             // 

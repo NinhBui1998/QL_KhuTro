@@ -98,6 +98,12 @@
     <Compile Include="DanhMuc\frm_phong.Designer.cs">
       <DependentUpon>frm_phong.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\frm_thannhan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\frm_thannhan.Designer.cs">
+      <DependentUpon>frm_thannhan.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\frm_thietbi.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -130,7 +136,7 @@
       <DependentUpon>frm_dangnhap.cs</DependentUpon>
     </Compile>
     <Compile Include="HeThong\frm_doimatkhau.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="HeThong\frm_doimatkhau.Designer.cs">
       <DependentUpon>frm_doimatkhau.cs</DependentUpon>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\frm_phong.resx">
       <DependentUpon>frm_phong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\frm_thannhan.resx">
+      <DependentUpon>frm_thannhan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\frm_thietbi.resx">
       <DependentUpon>frm_thietbi.cs</DependentUpon>

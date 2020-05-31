@@ -20,6 +20,7 @@ namespace QuanLyKhuTro.NghiepVu
         BLL_Tang tang = new BLL_Tang();
         BLL_Phong phong = new BLL_Phong();
         BLL_HopDong hopdong = new BLL_HopDong();
+        BLL_DatPhong datphong = new BLL_DatPhong();
         public frm_datphong()
         {
             InitializeComponent();
@@ -42,6 +43,9 @@ namespace QuanLyKhuTro.NghiepVu
             cbb_phong.DisplayMember = "TENPHONG";
             cbb_phong.ValueMember = "MAPHONG";
 
+            //load dl
+            grv_datphong.DataSource = datphong.LoadDatPhong();
+
         }
 
         private void gridView_datphong_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -53,20 +57,20 @@ namespace QuanLyKhuTro.NghiepVu
             int position = gridView_datphong.FocusedRowHandle;
             try
             {
-                hd.MAHD = gridView_datphong.GetRowCellValue(position, "MAHD").ToString();
-                hd.MANV= gridView_datphong.GetRowCellValue(position, "MANV").ToString();
-                //hd_kt.MAKT = gridView_datphong.GetRowCellValue(position, "MAKT").ToString();
-                hd.NGAYLAPHD =Convert.ToDateTime(gridView_datphong.GetRowCellValue(position,"NGAYLAPHD").ToString());
-                hd.TIENCOC = Convert.ToDouble(gridView_datphong.GetRowCellValue(position,"TIENCOC").ToString());
-                //hd_kt.TENKT = gridView_datphong.GetRowCellValue(position,"TENKT").ToString();
+                //hd.MAHD = gridView_datphong.GetRowCellValue(position, "MAHD").ToString();
+                //hd.MANV= gridView_datphong.GetRowCellValue(position, "MANV").ToString();
+                ////hd_kt.MAKT = gridView_datphong.GetRowCellValue(position, "MAKT").ToString();
+                //hd.NGAYLAPHD =Convert.ToDateTime(gridView_datphong.GetRowCellValue(position,"NGAYLAPHD").ToString());
+                //hd.TIENCOC = Convert.ToDouble(gridView_datphong.GetRowCellValue(position,"TIENCOC").ToString());
+                ////hd_kt.TENKT = gridView_datphong.GetRowCellValue(position,"TENKT").ToString();
 
 
-                txt_mahd.Text = hd.MAHD.ToString();
-                txt_manv.Text = hd.MANV.ToString();
-                //txt_makt.Text = hd_kt.MAKT.ToString();
-                txt_ngaylaphd.Text = hd.NGAYLAPHD.ToString();
-                txt_tiencoc.Text = hd.TIENCOC.ToString();
-                //txt_tenkt.Text = hd_kt.TENKT.ToString();
+                //txt_mahd.Text = hd.MAHD.ToString();
+                //txt_manv.Text = hd.MANV.ToString();
+                ////txt_makt.Text = hd_kt.MAKT.ToString();
+                //txt_ngaylaphd.Text = hd.NGAYLAPHD.ToString();
+                //txt_tiencoc.Text = hd.TIENCOC.ToString();
+                ////txt_tenkt.Text = hd_kt.TENKT.ToString();
             }
             catch { }
         }

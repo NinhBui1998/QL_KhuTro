@@ -112,10 +112,15 @@ namespace QuanLyKhuTro
 
         private void btn_xacnhan_Click(object sender, EventArgs e)
         {
+            if(txtmkc.Text==string.Empty && txt_matkhaumoi.Text==string.Empty && txt_xacnhanmk.Text==string.Empty)
+            {
+                MessageBox.Show("Không được để trống");
+                return;
+            }    
             if (txt_xacnhanmk.Text == txt_matkhaumoi.Text)
             {
 
-
+                
                 QUANLYND nd = new QUANLYND();
                 nd.TENDN = txtmanv.Text;
                 nd.MK = txt_xacnhanmk.Text;
@@ -127,11 +132,14 @@ namespace QuanLyKhuTro
                 txt_xacnhanmk.Clear();
                 txtmkc.Clear();
                 txt_matkhaumoi.Clear();
+                frm_main form = new frm_main();
+                form.Close();
             }
             else
             {
                 MessageBox.Show("Mật khẩu và mật khẩu xác nhận không giống nhau");
             }    
+
         }
     }
 }

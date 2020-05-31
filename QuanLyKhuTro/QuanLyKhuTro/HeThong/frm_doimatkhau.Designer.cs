@@ -82,6 +82,7 @@
             this.txt_xacnhanmk.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_xacnhanmk.Location = new System.Drawing.Point(197, 135);
             this.txt_xacnhanmk.Name = "txt_xacnhanmk";
+            this.txt_xacnhanmk.PasswordChar = '*';
             this.txt_xacnhanmk.Size = new System.Drawing.Size(294, 27);
             this.txt_xacnhanmk.TabIndex = 1;
             this.txt_xacnhanmk.Validating += new System.ComponentModel.CancelEventHandler(this.txt_xacnhanmk_Validating);
@@ -91,6 +92,7 @@
             this.txt_matkhaumoi.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_matkhaumoi.Location = new System.Drawing.Point(197, 91);
             this.txt_matkhaumoi.Name = "txt_matkhaumoi";
+            this.txt_matkhaumoi.PasswordChar = '*';
             this.txt_matkhaumoi.Size = new System.Drawing.Size(294, 27);
             this.txt_matkhaumoi.TabIndex = 1;
             this.txt_matkhaumoi.Validating += new System.ComponentModel.CancelEventHandler(this.txt_matkhaumoi_Validating);
@@ -164,6 +166,7 @@
             this.txtmkc.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtmkc.Location = new System.Drawing.Point(197, 49);
             this.txtmkc.Name = "txtmkc";
+            this.txtmkc.PasswordChar = '*';
             this.txtmkc.Size = new System.Drawing.Size(294, 27);
             this.txtmkc.TabIndex = 1;
             this.txtmkc.Validating += new System.ComponentModel.CancelEventHandler(this.txtmkc_Validating);

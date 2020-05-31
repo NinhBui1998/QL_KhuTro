@@ -811,7 +811,7 @@
             // MAHD
             // 
             this.MAHD.Caption = "Mã hợp đồng";
-            this.MAHD.FieldName = "MAHD";
+            this.MAHD.FieldName = "Mahd";
             this.MAHD.Name = "MAHD";
             this.MAHD.Visible = true;
             this.MAHD.VisibleIndex = 0;
@@ -819,7 +819,7 @@
             // MANV
             // 
             this.MANV.Caption = "Mã nhân viên";
-            this.MANV.FieldName = "MANV";
+            this.MANV.FieldName = "Manv";
             this.MANV.Name = "MANV";
             this.MANV.Visible = true;
             this.MANV.VisibleIndex = 1;
@@ -827,7 +827,7 @@
             // MAKT
             // 
             this.MAKT.Caption = "Mã khách thuê";
-            this.MAKT.FieldName = "MAKT";
+            this.MAKT.FieldName = "Makt";
             this.MAKT.Name = "MAKT";
             this.MAKT.Visible = true;
             this.MAKT.VisibleIndex = 2;
@@ -835,7 +835,7 @@
             // TENKT
             // 
             this.TENKT.Caption = "Tên khách thuê";
-            this.TENKT.FieldName = "TENKT";
+            this.TENKT.FieldName = "Tenkt";
             this.TENKT.Name = "TENKT";
             this.TENKT.Visible = true;
             this.TENKT.VisibleIndex = 6;
@@ -843,7 +843,7 @@
             // NGAYLAPHD
             // 
             this.NGAYLAPHD.Caption = "Ngày lập";
-            this.NGAYLAPHD.FieldName = "NGAYLAPHD";
+            this.NGAYLAPHD.FieldName = "NgayLap";
             this.NGAYLAPHD.Name = "NGAYLAPHD";
             this.NGAYLAPHD.Visible = true;
             this.NGAYLAPHD.VisibleIndex = 3;
@@ -851,7 +851,7 @@
             // THOIHAN
             // 
             this.THOIHAN.Caption = "Thời hạn";
-            this.THOIHAN.FieldName = "THOIHAN";
+            this.THOIHAN.FieldName = "Thoihan";
             this.THOIHAN.Name = "THOIHAN";
             this.THOIHAN.Visible = true;
             this.THOIHAN.VisibleIndex = 4;
@@ -859,7 +859,7 @@
             // TIENCOC
             // 
             this.TIENCOC.Caption = "Tiền cọc";
-            this.TIENCOC.FieldName = "TIENCOC";
+            this.TIENCOC.FieldName = "Tiencoc";
             this.TIENCOC.Name = "TIENCOC";
             this.TIENCOC.Visible = true;
             this.TIENCOC.VisibleIndex = 5;

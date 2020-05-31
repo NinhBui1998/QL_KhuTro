@@ -198,5 +198,17 @@ namespace QuanLyKhuTro
             dmk.Tendn = Tendn;
             pnl_main.Controls.Add(dmk);
         }
+
+        private void btn_dangxuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_thannhan_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frm_thannhan tn = new frm_thannhan();
+            pnl_main.Controls.Clear();
+            pnl_main.Controls.Add(tn);
+        }
     }
 }
