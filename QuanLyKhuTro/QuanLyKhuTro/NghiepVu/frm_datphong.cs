@@ -15,6 +15,7 @@ namespace QuanLyKhuTro.NghiepVu
 {
     public partial class frm_datphong : DevExpress.XtraEditors.XtraForm
     {
+        DAL_Phong dal_phong = new DAL_Phong();
         BLL_KhachThue khachthue = new BLL_KhachThue();
         BLL_LoaiPhong loaip = new BLL_LoaiPhong();
         BLL_Tang tang = new BLL_Tang();
@@ -42,11 +43,35 @@ namespace QuanLyKhuTro.NghiepVu
             //load dl
             grv_datphong.DataSource = datphong.LoadDatPhong();
 
-            cbb_tang.Enabled = cbb_loaiphong.Enabled = cbb_phong.Enabled = false;
-            btn_sua.Enabled = btn_xoa.Enabled = btn_huy.Enabled = btn_luu.Enabled = false;
-            txt_makt.Enabled = txt_tenkt.Enabled = rdb_nam.Enabled = rdb_nu.Enabled = txt_sdt.Enabled
-                = txt_quequan.Enabled = txt_cmnd.Enabled = txt_ngaysinh.Enabled = pic_anh.Enabled = false;
-            txt_mahd.Enabled = txt_tiencoc.Enabled = txt_thoihan.Enabled = txt_manv.Enabled = txt_ngaylaphd.Enabled = false;
+            //cbb_tang.Enabled = cbb_loaiphong.Enabled = cbb_phong.Enabled = false;
+            //btn_sua.Enabled = false;
+            //txt_makt.Enabled = txt_tenkt.Enabled = rdb_nam.Enabled = rdb_nu.Enabled = txt_sdt.Enabled
+            //    = txt_quequan.Enabled = txt_cmnd.Enabled = txt_ngaysinh.Enabled = pic_anh.Enabled = false;
+            //txt_mahd.Enabled = txt_tiencoc.Enabled = txt_thoihan.Enabled = txt_manv.Enabled = txt_ngaylaphd.Enabled = false;
+
+            string pos = gridView_datphong.GetRowCellValue(gridView_datphong.RowCount - 1, "Makt").ToString();
+            pos = pos.Substring(2);
+            int k = (int.Parse(pos) + 1);
+            if (k < 10)
+            {
+                txt_makt.Text = "KT00" + k;
+            }
+            else if (k > 10 && k < 100)
+            {
+                txt_makt.Text = "KT0" + k;
+            }
+            //sinh mã hợp đồng
+            string pos1 = gridView_datphong.GetRowCellValue(gridView_datphong.RowCount - 1, "Mahd").ToString();
+            pos1 = pos1.Substring(2);
+            int k1 = (int.Parse(pos1) + 1);
+            if (k1 < 10)
+            {
+                txt_mahd.Text = "HD00" + k1;
+            }
+            else if (k1 > 10 && k1 < 100)
+            {
+                txt_mahd.Text = "HD0" + k1;
+            }
             //foreach (Control ctrl in grb_thongtinkhachthue.Controls)
             //{
             //    if (ctrl.Enabled == true && ctrl.GetType() == typeof(TextBox))
@@ -96,7 +121,7 @@ namespace QuanLyKhuTro.NghiepVu
             hd.NGAYLAPHD = Convert.ToDateTime(txt_ngaylaphd.Text);
             hd.THOIHAN = txt_thoihan.Text;
             hd.MAPHONG = cbb_phong.SelectedValue.ToString();
-            hd.MANV = txt_manv.Text;
+            hd.MANV = txt_manv.Text;           
 
 
                     
@@ -156,38 +181,16 @@ namespace QuanLyKhuTro.NghiepVu
             cbb_phong.DataSource = datphong.laytenphong(cbb_tang.SelectedValue.ToString(), cbb_loaiphong.SelectedValue.ToString()).ToList();
         }
 
-        private void btn_them_Click(object sender, EventArgs e)
+        private void cbb_phong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cbb_tang.Enabled = cbb_loaiphong.Enabled = cbb_phong.Enabled = true;
-            txt_makt.Enabled = txt_tenkt.Enabled = rdb_nam.Enabled = rdb_nu.Enabled = txt_sdt.Enabled
-                = txt_quequan.Enabled = txt_cmnd.Enabled = txt_ngaysinh.Enabled = pic_anh.Enabled = true;
-            txt_mahd.Enabled = txt_tiencoc.Enabled = txt_thoihan.Enabled = txt_manv.Enabled = txt_ngaylaphd.Enabled = true;
-            //sinh mã khách thuê
-            string pos = gridView_datphong.GetRowCellValue(gridView_datphong.RowCount - 1, "Makt").ToString();
-            pos = pos.Substring(2);
-            int k = (int.Parse(pos) + 1);
-            if (k < 10)
+            try
             {
-                txt_makt.Text = "KT00" + k;
+                PHONG p = new PHONG();
+                p = dal_phong.loadTenPhong(cbb_phong.SelectedValue.ToString());
+                txt_soluongtd.Text= p.SOLUONG_TD.ToString();
+                txt_soluonght.Text= p.SOLUONG_HT.ToString();
             }
-            else if (k > 10 && k < 100)
-            {
-                txt_makt.Text = "KT0" + k;
-            }
-            //sinh mã hợp đồng
-            string pos1 = gridView_datphong.GetRowCellValue(gridView_datphong.RowCount - 1, "Mahd").ToString();
-            pos1 = pos1.Substring(2);
-            int k1 = (int.Parse(pos1) + 1);
-            if (k1 < 10)
-            {
-                txt_mahd.Text = "HD00" + k1;
-            }
-            else if (k1 > 10 && k1 < 100)
-            {
-                txt_mahd.Text = "HD0" + k1;
-            }
-            btn_luu.Enabled = btn_huy.Enabled = true;
-            btn_sua.Enabled = btn_xoa.Enabled = false;
+            catch { MessageBox.Show("Lỗi hệ thống"); }
         }
     }
 }
