@@ -23,6 +23,14 @@ namespace QuanLyKhuTro.NghiepVu
         BLL_HopDong hopdong = new BLL_HopDong();
         BLL_DatPhong datphong = new BLL_DatPhong();
         BLL_HopDong_KhachThue hopdong_khachthue = new BLL_HopDong_KhachThue();
+
+
+        string Ten;
+        public string TenPhong
+        {
+            get { return Ten; }
+            set { Ten = value; }
+        }
         public frm_datphong()
         {
             InitializeComponent();
@@ -79,6 +87,12 @@ namespace QuanLyKhuTro.NghiepVu
             //        ctrl.Enabled = false;
             //    }
             //}
+            cbb_phong.Text = string.Empty;
+            cbb_phong.DataSource = datphong.laymaphong(Ten);
+            cbb_phong.DisplayMember = "TENPHONG";
+            cbb_phong.ValueMember = "MAPHONG";
+
+
 
         }
 
@@ -117,14 +131,14 @@ namespace QuanLyKhuTro.NghiepVu
             //if (btn_them.Enabled == true)
             //{
             hd.MAHD = txt_mahd.Text;
-            hd.TIENCOC = Convert.ToDouble(txt_tiencoc.Text);        
+            hd.TIENCOC = Convert.ToDouble(txt_tiencoc.Text);
             hd.NGAYLAPHD = Convert.ToDateTime(txt_ngaylaphd.Text);
             hd.THOIHAN = txt_thoihan.Text;
             hd.MAPHONG = cbb_phong.SelectedValue.ToString();
-            hd.MANV = txt_manv.Text;           
+            hd.MANV = txt_manv.Text;
 
 
-                    
+
             //Thêm khách thuê vào hợp đồng
             kt.MAKT = txt_makt.Text;
             kt.TENKT = txt_tenkt.Text;
@@ -145,7 +159,7 @@ namespace QuanLyKhuTro.NghiepVu
             hd_kt.MAHD = txt_mahd.Text;
             hd_kt.MAKT = txt_makt.Text;
             hd_kt.TRACOC = false;
-            hd_kt.NGAYTRA =null;
+            hd_kt.NGAYTRA = null;
 
             if (txt_makt.Text == string.Empty && txt_mahd.Text == string.Empty
                     && txt_manv.Text == string.Empty && txt_tenkt.Text == string.Empty)
@@ -159,7 +173,7 @@ namespace QuanLyKhuTro.NghiepVu
             //    MessageBox.Show("Trùng khóa chính");
             //    return;
             //}
-            if (khachthue.ThemKT(kt) == true && hopdong.them_HopDong(hd) == true && hopdong_khachthue.them_HopDong_KhachThue(hd_kt)==true)
+            if (khachthue.ThemKT(kt) == true && hopdong.them_HopDong(hd) == true && hopdong_khachthue.them_HopDong_KhachThue(hd_kt) == true)
             {
                 grv_datphong.DataSource = datphong.LoadDatPhong();
                 MessageBox.Show("Thành công");
@@ -171,26 +185,22 @@ namespace QuanLyKhuTro.NghiepVu
             frm_datphong_Load(sender, e);
         }
 
-        private void cbb_phong_SelectedValueChanged(object sender, EventArgs e)
-        {
-            //load dữ liệu combobox phòng
-            cbb_phong.Text = string.Empty;
-            cbb_phong.DataSource = phong.loadBang_Phong();
-            cbb_phong.DisplayMember = "TENPHONG";
-            cbb_phong.ValueMember = "MAPHONG";
-            cbb_phong.DataSource = datphong.laytenphong(cbb_tang.SelectedValue.ToString(), cbb_loaiphong.SelectedValue.ToString()).ToList();
-        }
-
         private void cbb_phong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                PHONG p = new PHONG();
-                p = dal_phong.loadTenPhong(cbb_phong.SelectedValue.ToString());
-                txt_soluongtd.Text= p.SOLUONG_TD.ToString();
-                txt_soluonght.Text= p.SOLUONG_HT.ToString();
-            }
-            catch { MessageBox.Show("Lỗi hệ thống"); }
+            //try
+            //{
+            //    PHONG p = new PHONG();
+            //    cbb_phong.Text = string.Empty;
+            //p = dal_phong.loadTenPhong(cbb_phong.SelectedValue.ToString());
+            //    txt_soluongtd.Text = p.SOLUONG_TD.ToString();
+            //    txt_soluonght.Text = p.SOLUONG_HT.ToString();
+            //}
+            //catch { MessageBox.Show("Lỗi hệ thống"); }
+            txt_soluonght.Text = datphong.layslht(cbb_phong.SelectedValue.ToString());
+
+
         }
-    }
+
+    }     
+    
 }

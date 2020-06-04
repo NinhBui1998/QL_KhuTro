@@ -48,5 +48,20 @@ namespace DAL
                      select p);
             return l.ToList<PHONG>();
         }
+        //lấy mã phòng theo tên phòng
+        public List<PHONG> Laymaphong(string ten)
+        {
+            var kq = from p in data.PHONGs
+                     where p.TENPHONG==ten
+                     select p;
+            return kq.ToList<PHONG>();
+        }
+        public string LaySLHTPhong(string pMa)
+        {
+            var kq = (from p in data.PHONGs
+                     where p.MAPHONG == pMa
+                     select p.SOLUONG_HT).FirstOrDefault();
+            return kq.ToString();
+        }
     }
 }

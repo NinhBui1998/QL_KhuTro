@@ -18,5 +18,13 @@ namespace BLL
         {
             return dp.laytenphong(pmatang, pmaloai);
         }
+        public List<PHONG> laymaphong(string pten)
+        {
+            return dp.Laymaphong(pten);
+        }
+        public String layslht(string pma)
+        {
+            return dp.LaySLHTPhong(pma);
+        }
     }
 }

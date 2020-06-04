@@ -27,6 +27,13 @@ namespace QuanLyKhuTro.NghiepVu
         BLL_HopDong_KhachThue hopdong_khachthue = new BLL_HopDong_KhachThue();
         BLL_HopDong hopdong = new BLL_HopDong();
         BLL_KhachThue khachthue = new BLL_KhachThue();
+
+        string Ten;
+        public string TenPhong
+        {
+            get { return Ten; }
+            set { Ten = value; }
+        }
         public frm_traphong()
         {
             InitializeComponent();
@@ -35,6 +42,7 @@ namespace QuanLyKhuTro.NghiepVu
         private void frm_traphong_Load(object sender, EventArgs e)
         {
             grv_traphong.DataSource = traphong.LoadTraPhong();
+            txt_tenphong.Text = Ten;
         }
 
         private void gridView_traphong_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -46,6 +54,7 @@ namespace QuanLyKhuTro.NghiepVu
             int position = gridView_traphong.FocusedRowHandle;
             try
             {
+                /*
                 tp.Mahd= gridView_traphong.GetRowCellValue(position, "Mahd").ToString();
                 p.MAPHONG = gridView_traphong.GetRowCellValue(position, "Maphong").ToString();
                 tp.Makt = gridView_traphong.GetRowCellValue(position, "Makt").ToString();
@@ -70,6 +79,7 @@ namespace QuanLyKhuTro.NghiepVu
                 {
                     ckb_tracoc.Text = "Chưa";
                 }
+                */
             }
             catch { }
         }

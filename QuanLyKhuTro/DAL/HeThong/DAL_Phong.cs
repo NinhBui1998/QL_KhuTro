@@ -15,15 +15,7 @@ namespace DAL
         {
             var dulieu = (from s in data.PHONGs select s);
             return dulieu.ToList<PHONG>();
-        }
-
-        public List<PHONG> LoadDL_phong(string Maphong)
-        {
-            var phong = from t in data.PHONGs
-                       where t.MAPHONG == Maphong
-                       select t;
-            return phong.ToList<PHONG>();
-        }
+        }    
         public PHONG loadTenPhong(string pMa)
         {
             return data.PHONGs.Where(t => t.MAPHONG == pMa).FirstOrDefault();

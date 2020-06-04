@@ -45,23 +45,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL_DatPhong.cs" />
-    <Compile Include="BLL_DichVu.cs" />
-    <Compile Include="BLL_HopDong.cs" />
-    <Compile Include="BLL_HopDong_KhachThue.cs" />
-    <Compile Include="BLL_KhachThue.cs" />
-    <Compile Include="BLL_LoaiPhong.cs" />
+    <Compile Include="NghiepVu\BLL_DatPhong.cs" />
+    <Compile Include="HeThong\BLL_DichVu.cs" />
+    <Compile Include="NghiepVu\BLL_HopDong.cs" />
+    <Compile Include="NghiepVu\BLL_HopDong_KhachThue.cs" />
+    <Compile Include="HeThong\BLL_KhachThue.cs" />
+    <Compile Include="HeThong\BLL_LoaiPhong.cs" />
     <Compile Include="BLL_NguoiDung_NhomNguoiDung.cs" />
-    <Compile Include="BLL_NhanVien.cs" />
+    <Compile Include="HeThong\BLL_NhanVien.cs" />
     <Compile Include="BLL_NhomNguoiDung.cs" />
-    <Compile Include="BLL_NoiQuy.cs" />
+    <Compile Include="HeThong\BLL_NoiQuy.cs" />
     <Compile Include="BLL_PhanQuyen.cs" />
-    <Compile Include="BLL_Phong.cs" />
+    <Compile Include="HeThong\BLL_Phong.cs" />
     <Compile Include="BLL_Quanlynguoidung.cs" />
-    <Compile Include="BLL_Tang.cs" />
-    <Compile Include="BLL_ThanNhan.cs" />
+    <Compile Include="HeThong\BLL_Tang.cs" />
+    <Compile Include="HeThong\BLL_ThanNhan.cs" />
     <Compile Include="BLL_ThietBi.cs" />
-    <Compile Include="BLL_TraPhong.cs" />
+    <Compile Include="NghiepVu\BLL_TraPhong.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>

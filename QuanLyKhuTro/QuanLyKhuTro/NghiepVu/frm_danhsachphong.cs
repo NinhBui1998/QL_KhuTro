@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using DAL;
+using DevExpress.Export;
 using QuanLyKhuTro.NghiepVu;
 
 namespace QuanLyKhuTro
@@ -15,15 +17,15 @@ namespace QuanLyKhuTro
     public partial class frm_test : UserControl
     {
         BLL_Phong p = new BLL_Phong();
+        BLL_DatPhong dp = new BLL_DatPhong();
+       
         public frm_test()
         {
             InitializeComponent();
-        }
-        
-        
+        } 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            //tạo control động
             int x = 0;
             int y = 0;
             for (int j = 0; j < p.stang().Count; j++)
@@ -48,20 +50,25 @@ namespace QuanLyKhuTro
                     {
                         b.BackColor = Color.Gray;
                         b.Click += showformtraphong;
+
                     }
                     else if (1<=p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT && p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT<p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_TD)
                     {
                         b.BackColor = Color.SeaGreen;
                         b.Click += showformdatphong;
+
                     }
                     else
                     {
                         b.BackColor = Color.White;
+                        //TenPhong = b.Text;
                         b.Click += showformdatphong;
-                    }    
+                    }
                     //b.Click += btn_Click;
                     panel1.Controls.Add(b);
+                    
                 }
+                
                 x = 0;
                 y += 60;
             }
@@ -69,17 +76,23 @@ namespace QuanLyKhuTro
         void showformtraphong(object sender, EventArgs e)
         {
             frm_traphong frm = new frm_traphong();
+            Button btn = (Button)sender;
+            frm.TenPhong = btn.Text;
             frm.ShowDialog();
         }
         void showformdatphong(object sender, EventArgs e)
         {
             frm_datphong frm = new frm_datphong();
+            Button btn = (Button)sender;
+            frm.TenPhong = btn.Text;
             frm.ShowDialog();
+
         }
         void btn_Click(object sender, EventArgs e)
         {
-
-            MessageBox.Show("Chưa có");    
-        }
+            
+                    //MessageBox.Show("Không tìm thấy dl");
+                
+        }         
     }
 }

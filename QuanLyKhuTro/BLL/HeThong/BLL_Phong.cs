@@ -13,11 +13,11 @@ namespace BLL
         {
             return phong.loadbangPhong();
         }
-        
-        public List<PHONG> LoadDL_Phong(string pma)
-        {
-            return phong.LoadDL_phong(pma);
-        }
+
+        //public List<PHONG> LoadDL_Phong(string pma)
+        //{
+        //    //return phong.LoadDL_phong(pma);
+        //}
         //kiểm tra khóa chính
         public bool ktkc_Phong(string pMa)
         {
