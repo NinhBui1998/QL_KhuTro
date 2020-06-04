@@ -146,14 +146,13 @@ namespace QuanLyKhuTro
                         ribbonPageGroup4 .Visible= ribbonPageGroup5 .Visible= false;
                 }    
             }
-            frm_test test = new frm_test();
-            pnl_main.Controls.Clear();
-            pnl_main.Controls.Add(test);
+          
           }
         private void btn_datphong_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frm_datphong forms = new frm_datphong();
-            forms.ShowDialog();
+            frm_test test = new frm_test();
+            pnl_main.Controls.Clear();
+            pnl_main.Controls.Add(test);
             //pnl_main.Controls.Clear();
             //pnl_main.Controls.Add(forms);
         }
