@@ -43,5 +43,14 @@ namespace BLL
         {
             return phong.suaPhong(pPhong);
         }
+
+        public List<PHONG> sphong(string tdal)
+        {
+            return phong.sp(tdal);
+        }
+        public List<TANG> stang()
+        {
+            return phong.st();
+        }
     }
 }

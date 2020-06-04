@@ -122,6 +122,12 @@
     <Compile Include="DuLieu\UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\frm_danhsachphong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\frm_danhsachphong.Designer.cs">
+      <DependentUpon>frm_danhsachphong.cs</DependentUpon>
+    </Compile>
     <Compile Include="HeThong\cauhinh.cs" />
     <Compile Include="HeThong\frm_cauhinh.cs">
       <SubType>Form</SubType>
@@ -160,12 +166,6 @@
       <DependentUpon>frm_phanquyen.cs</DependentUpon>
     </Compile>
     <Compile Include="HeThong\LoginResult.cs" />
-    <Compile Include="NghiepVu\frm_danhsachphong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NghiepVu\frm_danhsachphong.Designer.cs">
-      <DependentUpon>frm_danhsachphong.cs</DependentUpon>
-    </Compile>
     <Compile Include="NghiepVu\frm_datphong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +210,9 @@
     <EmbeddedResource Include="DuLieu\UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\frm_danhsachphong.resx">
+      <DependentUpon>frm_danhsachphong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HeThong\frm_cauhinh.resx">
       <DependentUpon>frm_cauhinh.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,9 +230,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\frm_phanquyen.resx">
       <DependentUpon>frm_phanquyen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NghiepVu\frm_danhsachphong.resx">
-      <DependentUpon>frm_danhsachphong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\frm_datphong.resx">
       <DependentUpon>frm_datphong.cs</DependentUpon>

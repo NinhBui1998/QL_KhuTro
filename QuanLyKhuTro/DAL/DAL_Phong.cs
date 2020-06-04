@@ -118,5 +118,17 @@ namespace DAL
                 return false;
             }
         }
+
+        public List<PHONG> sp(string t)
+        {
+            var sp = (from s in data.PHONGs where s.MATANG == t select s).ToList<PHONG>();
+            return sp;
+        }
+
+        public List<TANG> st()
+        {
+            var sp = (from s in data.TANGs select s).ToList<TANG>();
+            return sp;
+        }
     }
 }
