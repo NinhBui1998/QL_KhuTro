@@ -43,24 +43,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL_DatPhong.cs" />
-    <Compile Include="DAL_DichVu.cs" />
-    <Compile Include="DAL_HopDong.cs" />
-    <Compile Include="DAL_HopDong_KhachThue.cs" />
-    <Compile Include="DAL_KhachThue.cs" />
-    <Compile Include="DAL_LoaiPhong.cs" />
-    <Compile Include="DAL_Nguoidung.cs" />
-    <Compile Include="DAL_NguoiDung_NhomNguoiDung.cs" />
-    <Compile Include="DAL_NhanVien.cs" />
-    <Compile Include="DAL_NhomNguoiDung.cs" />
-    <Compile Include="DAL_NoiQuy.cs" />
-    <Compile Include="DAL_PhanQuyen.cs" />
-    <Compile Include="DAL_Phong.cs" />
-    <Compile Include="DAL_Tang.cs" />
-    <Compile Include="DAL_ThanNhan.cs" />
-    <Compile Include="DAL_ThanNhan_TamTru.cs" />
-    <Compile Include="DAL_ThietBi.cs" />
-    <Compile Include="DAL_TraPhong.cs" />
+    <Compile Include="NghiepVu\DAL_DatPhong.cs" />
+    <Compile Include="HeThong\DAL_DichVu.cs" />
+    <Compile Include="NghiepVu\DAL_HopDong.cs" />
+    <Compile Include="NghiepVu\DAL_HopDong_KhachThue.cs" />
+    <Compile Include="HeThong\DAL_KhachThue.cs" />
+    <Compile Include="HeThong\DAL_LoaiPhong.cs" />
+    <Compile Include="DuLieu\DAL_Nguoidung.cs" />
+    <Compile Include="DuLieu\DAL_NguoiDung_NhomNguoiDung.cs" />
+    <Compile Include="HeThong\DAL_NhanVien.cs" />
+    <Compile Include="DuLieu\DAL_NhomNguoiDung.cs" />
+    <Compile Include="HeThong\DAL_NoiQuy.cs" />
+    <Compile Include="DuLieu\DAL_PhanQuyen.cs" />
+    <Compile Include="HeThong\DAL_Phong.cs" />
+    <Compile Include="HeThong\DAL_Tang.cs" />
+    <Compile Include="HeThong\DAL_ThanNhan.cs" />
+    <Compile Include="HeThong\DAL_ThanNhan_TamTru.cs" />
+    <Compile Include="HeThong\DAL_ThietBi.cs" />
+    <Compile Include="NghiepVu\DAL_TraPhong.cs" />
     <Compile Include="Model\DatPhong.cs" />
     <Compile Include="Model\PhanQuyen.cs" />
     <Compile Include="Model\TraPhong.cs" />
@@ -93,5 +93,6 @@
       <DependentUpon>QL_KhuTro.dbml</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
