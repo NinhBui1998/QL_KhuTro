@@ -4,7 +4,6 @@ E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\DAL\bin\Debug\DAL.pdb
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\DAL\obj\Debug\DAL.dll
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\DAL\obj\Debug\DAL.pdb
-E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
 E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\DAL\bin\Debug\DAL.dll.config
 E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\DAL\bin\Debug\DAL.dll
 E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\DAL\bin\Debug\DAL.pdb
@@ -12,3 +11,4 @@ E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\DAL\obj\Debug\DAL.csprojAssemblyRe
 E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\DAL\obj\Debug\DAL.dll
 E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\DAL\obj\Debug\DAL.pdb
+E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\DAL\obj\Debug\DAL.csprojAssemblyReference.cache

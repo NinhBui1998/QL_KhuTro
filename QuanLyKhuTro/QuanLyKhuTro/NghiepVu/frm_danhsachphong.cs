@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using QuanLyKhuTro.NghiepVu;
 
 namespace QuanLyKhuTro
 {
@@ -18,15 +19,17 @@ namespace QuanLyKhuTro
         {
             InitializeComponent();
         }
-
+        
+        
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             int x = 0;
             int y = 0;
             for (int j = 0; j < p.stang().Count; j++)
             {
                 Label l = new Label();
-                l.Text = ("tầng" + (j + 1).ToString());
+                l.Text = ("Tầng" + (j + 1).ToString());
                 l.Tag = (j + 1).ToString();
                 l.Size = new Size(60, 30);
                 l.Location = new Point(x, y);
@@ -44,26 +47,39 @@ namespace QuanLyKhuTro
                     if (p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_TD- p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT==0)
                     {
                         b.BackColor = Color.Gray;
+                        b.Click += showformtraphong;
                     }
                     else if (1<=p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT && p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT<p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_TD)
                     {
                         b.BackColor = Color.SeaGreen;
+                        b.Click += showformdatphong;
                     }
                     else
                     {
                         b.BackColor = Color.White;
+                        b.Click += showformdatphong;
                     }    
-                    b.Click += btn_Click;
+                    //b.Click += btn_Click;
                     panel1.Controls.Add(b);
                 }
                 x = 0;
                 y += 60;
             }
         }
-
+        void showformtraphong(object sender, EventArgs e)
+        {
+            frm_traphong frm = new frm_traphong();
+            frm.ShowDialog();
+        }
+        void showformdatphong(object sender, EventArgs e)
+        {
+            frm_datphong frm = new frm_datphong();
+            frm.ShowDialog();
+        }
         void btn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("chưa có gì");
+
+            MessageBox.Show("Chưa có");    
         }
     }
 }
