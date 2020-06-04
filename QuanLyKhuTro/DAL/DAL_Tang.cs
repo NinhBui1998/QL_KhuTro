@@ -15,8 +15,11 @@ namespace DAL
         {
             var dulieu = (from s in data.TANGs select s);
             return dulieu.ToList<TANG>();
+        }    
+        public TANG loadTenTang(string pMa)
+        {
+            return data.TANGs.Where(t => t.MATANG == pMa).FirstOrDefault();
         }
-
         //kiểm tra khóa chính
         public bool ktakhoachinh_Tang(string hd)
         {

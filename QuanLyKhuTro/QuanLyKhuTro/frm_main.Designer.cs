@@ -478,7 +478,8 @@
             // pnl_main
             // 
             this.pnl_main.AutoSize = true;
-            this.pnl_main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnl_main.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_main.BackgroundImage")));
+            this.pnl_main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnl_main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_main.Location = new System.Drawing.Point(0, 158);
             this.pnl_main.Name = "pnl_main";

@@ -61,7 +61,7 @@
             this.txt_quequan = new System.Windows.Forms.TextBox();
             this.txt_cmnd = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pic_anh = new System.Windows.Forms.PictureBox();
             this.txt_ngaysinh = new System.Windows.Forms.MaskedTextBox();
             this.txt_tenkt = new System.Windows.Forms.TextBox();
             this.txt_makt = new System.Windows.Forms.TextBox();
@@ -105,7 +105,7 @@
             this.grb_thongtinkhachthue.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_anh)).BeginInit();
             this.tableLayoutPanel11.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.grb_thongtinhopdong.SuspendLayout();
@@ -216,7 +216,6 @@
             this.cbb_tang.Name = "cbb_tang";
             this.cbb_tang.Size = new System.Drawing.Size(180, 27);
             this.cbb_tang.TabIndex = 1;
-            this.cbb_tang.SelectedValueChanged += new System.EventHandler(this.cbb_tang_SelectedValueChanged);
             // 
             // tableLayoutPanel3
             // 
@@ -308,6 +307,7 @@
             this.btn_them.Size = new System.Drawing.Size(169, 35);
             this.btn_them.TabIndex = 0;
             this.btn_them.Text = "Thêm";
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // btn_sua
             // 
@@ -521,7 +521,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.pic_anh);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.ForeColor = System.Drawing.Color.Red;
             this.groupBox1.Location = new System.Drawing.Point(225, 255);
@@ -531,16 +531,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ảnh";
             // 
-            // pictureBox1
+            // pic_anh
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pic_anh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox1.BackColor = System.Drawing.Color.DarkKhaki;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 26);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(122, 113);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pic_anh.BackColor = System.Drawing.Color.DarkKhaki;
+            this.pic_anh.Location = new System.Drawing.Point(6, 26);
+            this.pic_anh.Name = "pic_anh";
+            this.pic_anh.Size = new System.Drawing.Size(122, 113);
+            this.pic_anh.TabIndex = 0;
+            this.pic_anh.TabStop = false;
             // 
             // txt_ngaysinh
             // 
@@ -921,7 +921,7 @@
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_anh)).EndInit();
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel11.PerformLayout();
             this.tableLayoutPanel9.ResumeLayout(false);
@@ -973,7 +973,7 @@
         private DevExpress.XtraEditors.SimpleButton btn_huy;
         private DevExpress.XtraEditors.SimpleButton btn_luu;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pic_anh;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.GroupBox grb_thongtinhopdong;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;

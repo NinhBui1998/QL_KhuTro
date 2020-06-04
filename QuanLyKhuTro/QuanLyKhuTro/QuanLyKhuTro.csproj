@@ -160,6 +160,12 @@
       <DependentUpon>frm_phanquyen.cs</DependentUpon>
     </Compile>
     <Compile Include="HeThong\LoginResult.cs" />
+    <Compile Include="NghiepVu\frm_danhsachphong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\frm_danhsachphong.Designer.cs">
+      <DependentUpon>frm_danhsachphong.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\frm_datphong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\frm_phanquyen.resx">
       <DependentUpon>frm_phanquyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\frm_danhsachphong.resx">
+      <DependentUpon>frm_danhsachphong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\frm_datphong.resx">
       <DependentUpon>frm_datphong.cs</DependentUpon>

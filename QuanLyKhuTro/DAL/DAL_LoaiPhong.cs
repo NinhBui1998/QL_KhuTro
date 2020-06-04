@@ -16,7 +16,10 @@ namespace DAL
             var dulieu = (from s in data.LOAIPHONGs select s);
             return dulieu.ToList<LOAIPHONG>();
         }
-
+        public LOAIPHONG loadTenLoaiPhong(string pMa)
+        {
+            return data.LOAIPHONGs.Where(t => t.MALOAI == pMa).FirstOrDefault();
+        }
         //kiểm tra khóa chính
         public bool ktakhoachinh_LoaiPhong(string hd)
         {
