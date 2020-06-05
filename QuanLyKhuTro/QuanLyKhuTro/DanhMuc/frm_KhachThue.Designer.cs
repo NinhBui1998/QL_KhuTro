@@ -52,7 +52,7 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.pic_anhkt = new System.Windows.Forms.PictureBox();
-            this.btn_chonAnh = new System.Windows.Forms.Button();
+            this.btn_chonAnh = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -390,14 +390,12 @@
             // btn_chonAnh
             // 
             this.btn_chonAnh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_chonAnh.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_chonAnh.ForeColor = System.Drawing.Color.Black;
-            this.btn_chonAnh.Location = new System.Drawing.Point(108, 92);
+            this.btn_chonAnh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_chonAnh.ImageOptions.Image")));
+            this.btn_chonAnh.Location = new System.Drawing.Point(108, 85);
             this.btn_chonAnh.Name = "btn_chonAnh";
-            this.btn_chonAnh.Size = new System.Drawing.Size(93, 24);
-            this.btn_chonAnh.TabIndex = 1;
+            this.btn_chonAnh.Size = new System.Drawing.Size(95, 31);
+            this.btn_chonAnh.TabIndex = 2;
             this.btn_chonAnh.Text = "Chọn ảnh";
-            this.btn_chonAnh.UseVisualStyleBackColor = true;
             this.btn_chonAnh.Click += new System.EventHandler(this.btn_chonAnh_Click);
             // 
             // groupBox1
@@ -660,10 +658,6 @@
         private DevExpress.XtraEditors.SimpleButton btn_huy;
         private DevExpress.XtraEditors.SimpleButton btn_luu;
         private System.Windows.Forms.GroupBox grb_thongtindichvu;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.PictureBox pic_anhkt;
-        private System.Windows.Forms.Button btn_chonAnh;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -691,5 +685,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn QUEQUAN;
         private DevExpress.XtraGrid.Columns.GridColumn SOCMND;
         private DevExpress.XtraGrid.Columns.GridColumn NGAYSINH;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.PictureBox pic_anhkt;
+        private DevExpress.XtraEditors.SimpleButton btn_chonAnh;
     }
 }

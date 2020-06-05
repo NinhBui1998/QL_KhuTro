@@ -12,12 +12,14 @@ using BLL;
 using DAL;
 using System.IO;
 using DevExpress.Utils.Extensions;
+using DevExpress.Data.WcfLinq.Helpers;
 
 namespace QuanLyKhuTro.DanhMuc
 {
     public partial class frm_khachthue : DevExpress.XtraEditors.XtraUserControl
     {
         BLL_KhachThue khachthue = new BLL_KhachThue();
+        //QL_KhuTroDataContext data = new QL_KhuTroDataContext();
         public frm_khachthue()
         {
             InitializeComponent();
@@ -37,52 +39,50 @@ namespace QuanLyKhuTro.DanhMuc
             KHACHTHUE kt = new KHACHTHUE();
             btn_sua.Enabled = btn_xoa.Enabled = true;
             int position = gridView_khachthue.FocusedRowHandle;
-            //try
-            //{
-            kt.TENKT = gridView_khachthue.GetRowCellValue(position, "TENKT").ToString();
-            kt.MAKT = gridView_khachthue.GetRowCellValue(position, "MAKT").ToString();
-            kt.NGAYSINH = Convert.ToDateTime(gridView_khachthue.GetRowCellValue(position, "NGAYSINH").ToString());
-            kt.GIOITINH = gridView_khachthue.GetRowCellValue(position, "GIOITINH").ToString();
-            kt.QUEQUAN = gridView_khachthue.GetRowCellValue(position, "QUEQUAN").ToString();
-            kt.SOCMND = gridView_khachthue.GetRowCellValue(position, "SOCMND").ToString();
-            kt.SDT = gridView_khachthue.GetRowCellValue(position, "SDT").ToString();
-
-
-            //string anh = gridView_khachthue.GetRowCellValue(position, "ANH").ToString();
-            //try { 
-            byte[] b = (Byte[])(gridView_khachthue.GetRowCellValue(position, "ANH"));
-            //pic_anhkt.Image = bytetoimage(b);
-            //byte[] b = convertImage(pic_anhkt.Image);            
-            //kt.ANH= gridView_khachthue.GetRowCellValue(position, "ANH");
-            //kt.ANH = b;
-            pic_anhkt.Image = bytetoimage(b);
-
-            //}
-
-
-
-            txt_makt.Text = kt.MAKT.ToString();
-            txt_tenkt.Text = kt.TENKT.ToString();
-            txt_sdt.Text = kt.SDT.ToString();
-            txt_cmnd.Text = kt.SOCMND.ToString();
-            txt_ngaysinh.Text = kt.NGAYSINH.ToString();
-            txt_quequan.Text = kt.QUEQUAN.ToString();
-            if (kt.GIOITINH == "Nam")
+            try
             {
-                rdb_nam.Checked = true;
-            }
-            if (kt.GIOITINH == "Nữ")
-            {
-                rdb_nu.Checked = true;
-            }
+                kt.TENKT = gridView_khachthue.GetRowCellValue(position, "TENKT").ToString();
+                kt.MAKT = gridView_khachthue.GetRowCellValue(position, "MAKT").ToString();
+                kt.NGAYSINH = Convert.ToDateTime(gridView_khachthue.GetRowCellValue(position, "NGAYSINH").ToString());
+                kt.GIOITINH = gridView_khachthue.GetRowCellValue(position, "GIOITINH").ToString();
+                kt.QUEQUAN = gridView_khachthue.GetRowCellValue(position, "QUEQUAN").ToString();
+                kt.SOCMND = gridView_khachthue.GetRowCellValue(position, "SOCMND").ToString();
+                kt.SDT = gridView_khachthue.GetRowCellValue(position, "SDT").ToString();
 
-            //}
-            //catch { }
-        
+
+
+                txt_makt.Text = kt.MAKT.ToString();
+                txt_tenkt.Text = kt.TENKT.ToString();
+                txt_sdt.Text = kt.SDT.ToString();
+                txt_cmnd.Text = kt.SOCMND.ToString();
+                txt_ngaysinh.Text = kt.NGAYSINH.ToString();
+                txt_quequan.Text = kt.QUEQUAN.ToString();
+                if (kt.GIOITINH == "Nam")
+                {
+                    rdb_nam.Checked = true;
+                }
+                if (kt.GIOITINH == "Nữ")
+                {
+                    rdb_nu.Checked = true;
+                }
+
+
+                //var q3 = data.KHACHTHUEs.Where(c => c.MAKT == kt.MAKT).Select(c => c.ANH).FirstOrDefault();
+
+                //byte[] b = q3.ToArray();
+                byte[] b = (byte[]) khachthue.layanh(kt.MAKT);
+                pic_anhkt.Image = bytetoimage(b);
+                pic_anhkt.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            }
+            catch { }
+
         }
+        
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
+            btn_chonAnh.Enabled = true;
             txt_makt.Enabled = false;
             btn_luu.Enabled = true;
             btn_xoa.Enabled = false;

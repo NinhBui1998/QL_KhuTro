@@ -38,5 +38,9 @@ namespace BLL
         {
             return dkt.sua_KhachThue(pkt);
         }
+        public Array layanh(string pma)
+        {
+            return dkt.layanh(pma);
+        }
     }
 }

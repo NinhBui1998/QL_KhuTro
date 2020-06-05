@@ -15,6 +15,11 @@ namespace DAL
             var dulieu = (from s in data.KHACHTHUEs select s);
             return dulieu.ToList<KHACHTHUE>();
         }
+        public Array layanh(string pma)
+        {
+            var q3 = data.KHACHTHUEs.Where(c => c.MAKT == pma).Select(c => c.ANH).FirstOrDefault();
+            return q3.ToArray();
+        }
         public KHACHTHUE loadTenKhachThue(string pMa)
         {
             return data.KHACHTHUEs.Where(t => t.MAKT == pMa).FirstOrDefault();
