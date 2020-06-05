@@ -30,12 +30,12 @@ namespace QuanLyKhuTro.DanhMuc
             {         
                 dv.TENDV = gridView_DichVu.GetRowCellValue(position, "TENDV").ToString();
                 dv.MADV = gridView_DichVu.GetRowCellValue(position, "MADV").ToString();
-                dv.GIADV =double.Parse(gridView_DichVu.GetRowCellValue(position, "GIADV").ToString());
+                dv.GIADV =decimal.Parse(gridView_DichVu.GetRowCellValue(position, "GIADV").ToString());
                 dv.DONVI = gridView_DichVu.GetRowCellValue(position,"DONVI").ToString();
 
                 txt_madichvu.Text = dv.MADV.ToString();
                 txt_tendichvu.Text = dv.TENDV.ToString();
-                txt_gia.Text = dv.GIADV.ToString();
+                txt_gia.Text = String.Format("{0:#,##0.##} VNĐ", dv.GIADV);
                 txt_donvi.Text = dv.DONVI.ToString();
             }
             catch { }
@@ -122,7 +122,7 @@ namespace QuanLyKhuTro.DanhMuc
             {
                 dv.MADV = txt_madichvu.Text;
                 dv.TENDV = txt_tendichvu.Text;
-                dv.GIADV = Convert.ToDouble(txt_gia.Text);
+                dv.GIADV = decimal.Parse(txt_gia.Text);
                 dv.DONVI = txt_donvi.Text;
                 if (txt_madichvu.Text == string.Empty && txt_tendichvu.Text == string.Empty
                     && txt_gia.Text == string.Empty && txt_donvi.Text == string.Empty)
@@ -164,7 +164,7 @@ namespace QuanLyKhuTro.DanhMuc
                     }
                     dv.MADV = txt_madichvu.Text;
                     dv.TENDV = txt_tendichvu.Text;
-                    dv.GIADV = Convert.ToDouble(txt_gia.Text);
+                    dv.GIADV = decimal.Parse(txt_gia.Text);
                     dv.DONVI = txt_donvi.Text;
 
                     if (dichvu.sua_DichVu(dv) == true)

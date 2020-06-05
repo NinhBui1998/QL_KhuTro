@@ -30,7 +30,7 @@ namespace QuanLyKhuTro.DanhMuc
             {
                 tb.TENTB = gridView_ThietBi.GetRowCellValue(position, "TENTB").ToString();
                 tb.MATHIETBI = gridView_ThietBi.GetRowCellValue(position, "MATHIETBI").ToString();
-                tb.GIATB = double.Parse(gridView_ThietBi.GetRowCellValue(position, "GIATB").ToString());
+                tb.GIATB = decimal.Parse(gridView_ThietBi.GetRowCellValue(position, "GIATB").ToString());
                 tb.SOLUONG_PHANBO = Int32.Parse(gridView_ThietBi.GetRowCellValue(position,"SOLUONG_PHANBO").ToString());
                 tb.SOLUONG_HUHONG = Int32.Parse(gridView_ThietBi.GetRowCellValue(position, "SOLUONG_HUHONG").ToString());
                 tb.SOLUONG_TONKHO = Int32.Parse(gridView_ThietBi.GetRowCellValue(position, "SOLUONG_TONKHO").ToString());
@@ -38,7 +38,7 @@ namespace QuanLyKhuTro.DanhMuc
           
                 txt_maloai.Text = tb.MATHIETBI.ToString();
                 txt_tenloai.Text = tb.TENTB.ToString();
-                txt_gia.Text = tb.GIATB.ToString();
+                txt_gia.Text = String.Format("{0:#,##0.##} VNĐ", tb.GIATB);
                 txt_slphanbo.Text = tb.SOLUONG_PHANBO.ToString();
                 txt_slhuhong.Text = tb.SOLUONG_HUHONG.ToString();
                 txt_sltonkho.Text = tb.SOLUONG_TONKHO.ToString();
@@ -139,7 +139,7 @@ namespace QuanLyKhuTro.DanhMuc
             {
                 tb.MATHIETBI = txt_maloai.Text;
                 tb.TENTB = txt_tenloai.Text;
-                tb.GIATB= Convert.ToDouble(txt_gia.Text);
+                tb.GIATB= decimal.Parse(txt_gia.Text);
                 tb.SOLUONG_PHANBO =Convert.ToInt32(txt_slphanbo.Text);
                 tb.SOLUONG_HUHONG = Convert.ToInt32(txt_slhuhong.Text);
                 tb.SOLUONG_TONKHO = Convert.ToInt32(txt_sltonkho.Text);
@@ -201,7 +201,7 @@ namespace QuanLyKhuTro.DanhMuc
 
                     tb.MATHIETBI= txt_maloai.Text;
                     tb.TENTB = txt_tenloai.Text;
-                    tb.GIATB = Convert.ToDouble(txt_gia.Text);
+                    tb.GIATB = decimal.Parse(txt_gia.Text);
                     tb.SOLUONG_PHANBO =Convert.ToInt32(txt_slphanbo.Text);
                     tb.SOLUONG_HUHONG = Convert.ToInt32(txt_slhuhong.Text);
                     tb.SOLUONG_TONKHO = Convert.ToInt32(txt_sltonkho.Text);

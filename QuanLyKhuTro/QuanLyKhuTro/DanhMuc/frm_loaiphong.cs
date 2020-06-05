@@ -101,7 +101,7 @@ namespace QuanLyKhuTro.DanhMuc
             {
                 lp.MALOAI = txt_maloai.Text;
                 lp.TENLOAI = txt_tenloai.Text;
-                lp.GIA = Convert.ToDouble(txt_gia.Text);
+                lp.GIA = decimal.Parse(txt_gia.Text);
                 if (txt_maloai.Text == string.Empty && txt_tenloai.Text == string.Empty && txt_gia.Text == string.Empty)
                 {
                     MessageBox.Show("không được để trống");
@@ -135,7 +135,7 @@ namespace QuanLyKhuTro.DanhMuc
                     }
                     lp.MALOAI = txt_maloai.Text;
                     lp.TENLOAI = txt_tenloai.Text;
-                    lp.GIA = Convert.ToDouble(txt_gia.Text);
+                    lp.GIA = decimal.Parse(txt_gia.Text);
                     if (blp.sua_LoaiPhong(lp) == true)
                     {
                         MessageBox.Show("Thành công");
@@ -159,11 +159,11 @@ namespace QuanLyKhuTro.DanhMuc
             {
                lp.TENLOAI= gridView_LoaiPhong.GetRowCellValue(position, "TENLOAI").ToString();
                lp.MALOAI = gridView_LoaiPhong.GetRowCellValue(position, "MALOAI").ToString();
-               lp.GIA= Convert.ToDouble(gridView_LoaiPhong.GetRowCellValue(position, "GIA").ToString());
+               lp.GIA= decimal.Parse(gridView_LoaiPhong.GetRowCellValue(position, "GIA").ToString());
 
                 txt_tenloai.Text = lp.TENLOAI.ToString();
                 txt_maloai.Text = lp.MALOAI.ToString();
-                txt_gia.Text = lp.MALOAI.ToString();
+                txt_gia.Text = String.Format("{0:#,##0.##} VNĐ", lp.GIA);
             }
             catch { }
         }

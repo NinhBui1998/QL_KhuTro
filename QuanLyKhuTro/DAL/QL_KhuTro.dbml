@@ -27,7 +27,7 @@
     <Type Name="DICHVU">
       <Column Name="MADV" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TENDV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="GIADV" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GIADV" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="DONVI" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Association Name="DICHVU_DICHVU_PHONG" Member="DICHVU_PHONGs" ThisKey="MADV" OtherKey="MADV" Type="DICHVU_PHONG" />
     </Type>
@@ -50,12 +50,12 @@
   <Table Name="dbo.HOADON" Member="HOADONs">
     <Type Name="HOADON">
       <Column Name="MAHOADON" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TIENDIEN" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TIENNUOC" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="WIFI" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="RAC" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TIENDIEN" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TIENNUOC" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="WIFI" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="RAC" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="NGAYLAP" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="TONGTIEN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TONGTIEN" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="MAPHONG" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Association Name="HOADON_CHISO_DIENNUOC" Member="CHISO_DIENNUOC" ThisKey="MAHOADON" OtherKey="MAHOADON" Type="CHISO_DIENNUOC" Cardinality="One" />
       <Association Name="PHONG_HOADON" Member="PHONG" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONG" IsForeignKey="true" />
@@ -64,7 +64,7 @@
   <Table Name="dbo.HOPDONG" Member="HOPDONGs">
     <Type Name="HOPDONG">
       <Column Name="MAHD" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TIENCOC" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TIENCOC" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="NGAYLAPHD" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="THOIHAN" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="MAPHONG" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
@@ -104,7 +104,7 @@
     <Type Name="LOAIPHONG">
       <Column Name="MALOAI" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TENLOAI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="GIA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GIA" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Association Name="LOAIPHONG_PHONG" Member="PHONGs" ThisKey="MALOAI" OtherKey="MALOAI" Type="PHONG" />
     </Type>
   </Table>
@@ -221,7 +221,7 @@
     <Type Name="THIETBI">
       <Column Name="MATHIETBI" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TENTB" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="GIATB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GIATB" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="SOLUONG_PHANBO" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="SOLUONG_HUHONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="SOLUONG_TONKHO" Type="System.Int32" DbType="Int" CanBeNull="true" />

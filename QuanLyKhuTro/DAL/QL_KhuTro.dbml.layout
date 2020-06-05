@@ -2,303 +2,303 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.25, 29.875" name="QL_KhuTro">
   <DataContextMoniker Name="/QL_KhuTroDataContext" />
   <nestedChildShapes>
-    <classShape Id="3b558723-b4ec-4814-b9fa-df1f51f354c9" absoluteBounds="9, 11.875, 2, 2.1554996744791666">
+    <classShape Id="fe49b8fc-be86-40ce-b4c6-3bb5020beffe" absoluteBounds="9, 11.875, 2, 2.1554996744791666">
       <DataClassMoniker Name="/QL_KhuTroDataContext/CHISO_DIENNUOC" />
       <nestedChildShapes>
-        <elementListCompartment Id="e240b0c3-e8f2-4d52-a112-0b0860b468ee" absoluteBounds="9.015, 12.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ea742995-318c-4c22-8962-dc6decf2f384" absoluteBounds="9.015, 12.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2dbe3e51-6336-40d6-a81c-56342d7eb26b" absoluteBounds="12, 16.125, 2, 1.7708968098958309">
+    <classShape Id="20f3e8f6-1c74-4307-8b1f-fe34430294b0" absoluteBounds="12, 16.125, 2, 1.7708968098958309">
       <DataClassMoniker Name="/QL_KhuTroDataContext/VIPHAM" />
       <nestedChildShapes>
-        <elementListCompartment Id="5d355258-8bbc-4ede-9758-dd631d86ae3f" absoluteBounds="12.015, 16.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="afa9b099-5714-452a-b6a6-8d31b371b298" absoluteBounds="12.015, 16.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="9571cf52-9186-429e-910b-c9c00487dfcc" absoluteBounds="3.5, 8.125, 2, 1.5785953776041666">
+    <classShape Id="1222513f-bd60-42c8-9658-cd6475c2ae1c" absoluteBounds="3.5, 8.125, 2, 1.5785953776041666">
       <DataClassMoniker Name="/QL_KhuTroDataContext/DICHVU" />
       <nestedChildShapes>
-        <elementListCompartment Id="fe167c69-fc5c-472f-a20c-e12d542dc993" absoluteBounds="3.515, 8.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b1e0ac74-21f9-49d1-943a-77a9dff2663e" absoluteBounds="3.515, 8.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="60d50adc-c850-4618-a894-614b0fbc5ca9" absoluteBounds="6.25, 5.375, 2, 1.1939925130208344">
+    <classShape Id="2c71a0d6-c884-466b-8897-cf1b7a6633dc" absoluteBounds="6.25, 5.375, 2, 1.1939925130208344">
       <DataClassMoniker Name="/QL_KhuTroDataContext/DICHVU_PHONG" />
       <nestedChildShapes>
-        <elementListCompartment Id="ddc382de-e839-421c-82c8-388c2b1982b4" absoluteBounds="6.265, 5.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1828185a-3aeb-4223-91d9-b1742b276b30" absoluteBounds="6.265, 5.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ecb77e72-e60b-423b-9572-9bd1578a5214" absoluteBounds="6.25, 28.375, 2, 1.1939925130208309">
+    <classShape Id="8825b652-7678-4762-8dae-d09ef94630fd" absoluteBounds="6.25, 28.375, 2, 1.1939925130208309">
       <DataClassMoniker Name="/QL_KhuTroDataContext/DMMANHINH" />
       <nestedChildShapes>
-        <elementListCompartment Id="73e26a0e-f344-4d2e-b4c2-b167f8fd0011" absoluteBounds="6.265, 28.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="16c08541-1280-423a-a2dc-6d8003ca9b84" absoluteBounds="6.265, 28.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5bf74cc4-6da1-4a1c-aa69-da9d467f449d" absoluteBounds="6.25, 11.75, 2, 2.3478011067708344">
+    <classShape Id="1658758e-63bc-409b-b142-7e1df06ca39a" absoluteBounds="6.25, 11.75, 2, 2.3478011067708344">
       <DataClassMoniker Name="/QL_KhuTroDataContext/HOADON" />
       <nestedChildShapes>
-        <elementListCompartment Id="40fb23c7-6f71-4fa4-842d-7417d5a64263" absoluteBounds="6.265, 12.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e36fef22-b51b-4d41-a9d6-00727f127d3b" absoluteBounds="6.265, 12.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f9e12da7-4323-4d25-aed6-02ea66b36aa0" absoluteBounds="6.25, 8, 2, 1.9631982421874996">
+    <classShape Id="16058bea-849a-491b-9ff3-997c17c7f62b" absoluteBounds="6.25, 8, 2, 1.9631982421874996">
       <DataClassMoniker Name="/QL_KhuTroDataContext/HOPDONG" />
       <nestedChildShapes>
-        <elementListCompartment Id="6dcc7629-be55-4c6c-aaa4-ea017c18c04b" absoluteBounds="6.265, 8.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3f3764de-8d5d-4036-a115-e0ce1bd7b6d0" absoluteBounds="6.265, 8.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="db1de4b4-9a55-48c9-ac11-5948060b7021" absoluteBounds="9, 8.125, 2, 1.5785953776041666">
+    <classShape Id="1a4a5d2d-f7c4-415e-9a7f-4630b288914a" absoluteBounds="9, 8.125, 2, 1.5785953776041666">
       <DataClassMoniker Name="/QL_KhuTroDataContext/HOPDONG_KT" />
       <nestedChildShapes>
-        <elementListCompartment Id="ba804840-bd20-49c3-895e-9a69656d5c91" absoluteBounds="9.015, 8.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d0826fe2-65ab-4b83-b09f-7de741615940" absoluteBounds="9.015, 8.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="75311c80-01ff-4186-b01f-acb04431ecba" absoluteBounds="6.25, 15.75, 2, 2.3478011067708326">
+    <classShape Id="6593c7b1-9dda-48dc-a69c-4787b91a68db" absoluteBounds="6.25, 15.75, 2, 2.3478011067708326">
       <DataClassMoniker Name="/QL_KhuTroDataContext/KHACHTHUE" />
       <nestedChildShapes>
-        <elementListCompartment Id="52f2a868-2f74-46a1-8b1c-a1a2c587fd2b" absoluteBounds="6.265, 16.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4a96826a-0c4b-42f5-8867-33131cdda4e2" absoluteBounds="6.265, 16.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="aef282f7-9421-429d-ae94-533d3fd9d604" absoluteBounds="0.75, 2.25, 2, 1.3862939453125005">
+    <classShape Id="acb38f3e-5736-403f-8377-64ba4eeb261a" absoluteBounds="0.75, 2.25, 2, 1.3862939453125005">
       <DataClassMoniker Name="/QL_KhuTroDataContext/LOAIPHONG" />
       <nestedChildShapes>
-        <elementListCompartment Id="2ab0614f-5049-4bb9-b8ef-def8a4bd6d3e" absoluteBounds="0.765, 2.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1e08830b-c088-4dd7-a2ab-a8961e94939e" absoluteBounds="0.765, 2.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="832beccb-015d-4c48-839b-1c4a2292e06f" absoluteBounds="3.5, 11.125, 2, 1.7708968098958344">
+    <classShape Id="25e84927-8176-43c1-9960-fe3707c1197b" absoluteBounds="3.5, 11.125, 2, 1.7708968098958344">
       <DataClassMoniker Name="/QL_KhuTroDataContext/NHANVIEN" />
       <nestedChildShapes>
-        <elementListCompartment Id="bbf68a52-2cd9-43a6-ac29-9de3bebf93b9" absoluteBounds="3.515, 11.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="63400d82-0f92-460f-864f-206b376efdb6" absoluteBounds="3.515, 11.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="58648807-2364-40b9-ae1a-3f91dc161dc5" absoluteBounds="9.25, 20.25, 2, 1.3862939453125023">
+    <classShape Id="1e8b80e2-ed3c-4e92-9117-16a7e53f5ddd" absoluteBounds="9.25, 20.25, 2, 1.3862939453125023">
       <DataClassMoniker Name="/QL_KhuTroDataContext/NOIQUY" />
       <nestedChildShapes>
-        <elementListCompartment Id="a3809ea4-2f79-4a27-bc7c-94a6b7351174" absoluteBounds="9.265, 20.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6c697a0c-694f-48aa-aa1c-172826cc5c28" absoluteBounds="9.265, 20.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f4f1a6ce-641d-473e-93fb-2368236c0d54" absoluteBounds="3.5, 4.875, 2, 2.1554996744791666">
+    <classShape Id="fc2f7dbe-7fe1-4f6c-a6d5-5075c6e7abd5" absoluteBounds="3.5, 4.875, 2, 2.1554996744791666">
       <DataClassMoniker Name="/QL_KhuTroDataContext/PHONG" />
       <nestedChildShapes>
-        <elementListCompartment Id="27dab04a-4eaf-40ee-8199-0965311c3396" absoluteBounds="3.515, 5.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="62934fa7-2548-484a-aa9c-4993a1e179de" absoluteBounds="3.515, 5.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="443032c8-36b0-4e85-a92f-940b1efcab61" absoluteBounds="9, 23.25, 2, 1.3862939453125023">
+    <classShape Id="f6e9f596-9994-4380-8187-a3fdf7f74176" absoluteBounds="9, 23.25, 2, 1.3862939453125023">
       <DataClassMoniker Name="/QL_KhuTroDataContext/QLND_NHOMND" />
       <nestedChildShapes>
-        <elementListCompartment Id="269d507f-baa7-4dd9-b803-9da2f1703a5a" absoluteBounds="9.015, 23.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2f96708a-3fe5-48cf-9325-7136f71a6b29" absoluteBounds="9.015, 23.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="1aa0f6ff-2f61-4042-9c8f-b4a30e9a2892" absoluteBounds="6.25, 25.25, 2, 1.3862939453125023">
+    <classShape Id="62a81f34-76f7-457d-aaae-42b646e9269a" absoluteBounds="6.25, 25.25, 2, 1.3862939453125023">
       <DataClassMoniker Name="/QL_KhuTroDataContext/QLNHOMND" />
       <nestedChildShapes>
-        <elementListCompartment Id="62de3946-657f-48bb-8241-3297ac964984" absoluteBounds="6.265, 25.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5f9c31a2-5d84-47a8-9b6d-b142e274afff" absoluteBounds="6.265, 25.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="373916e2-fa6d-4f16-bb46-e6f3afca31a6" absoluteBounds="9, 26.25, 2, 1.3862939453125023">
+    <classShape Id="cb9440ff-312c-4109-a268-0ced017f06e1" absoluteBounds="9, 26.25, 2, 1.3862939453125023">
       <DataClassMoniker Name="/QL_KhuTroDataContext/QLPHANQUYEN" />
       <nestedChildShapes>
-        <elementListCompartment Id="92d214b4-8ff7-4140-9b66-407930fdd03c" absoluteBounds="9.015, 26.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2e626655-bc9c-41b3-b641-f0b10b0a2cf7" absoluteBounds="9.015, 26.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="daadafa2-6bf3-4c3c-8464-044e17de7216" absoluteBounds="6.25, 22.25, 2, 1.3862939453125023">
+    <classShape Id="0d79b34b-afde-49cc-96e0-022540b1eedc" absoluteBounds="6.25, 22.25, 2, 1.3862939453125023">
       <DataClassMoniker Name="/QL_KhuTroDataContext/QUANLYND" />
       <nestedChildShapes>
-        <elementListCompartment Id="bfe746ab-9582-4d9e-96a4-80ddcef18969" absoluteBounds="6.265, 22.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="7e3e65ba-2285-43cf-b034-803329d9be88" absoluteBounds="6.265, 22.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="3e49002b-62e2-4038-8f30-0ca1795eeae9" absoluteBounds="9, 14.875, 2, 1.5785953776041666">
+    <classShape Id="0af3fa8b-9c2f-466f-a2ab-05710eeaea0e" absoluteBounds="9, 14.875, 2, 1.5785953776041666">
       <DataClassMoniker Name="/QL_KhuTroDataContext/TAMTRU" />
       <nestedChildShapes>
-        <elementListCompartment Id="ef83c670-6422-4508-81eb-9e4dfb122dc8" absoluteBounds="9.015, 15.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="82b72131-3832-4bf4-816f-ee72396ace0e" absoluteBounds="9.015, 15.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="96753d39-7b4e-42ab-821a-dfaae6dc5eaa" absoluteBounds="0.75, 5.375, 2, 1.1939925130208344">
+    <classShape Id="6c83c9cf-bb0c-409b-ab15-d65f87af25f3" absoluteBounds="0.75, 5.375, 2, 1.1939925130208344">
       <DataClassMoniker Name="/QL_KhuTroDataContext/TANG" />
       <nestedChildShapes>
-        <elementListCompartment Id="b9d1f8ac-0380-4273-b077-5fcd94938b87" absoluteBounds="0.765, 5.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a51af889-f35c-421d-b0e5-156b067a1c89" absoluteBounds="0.765, 5.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7a26753e-49ff-40f8-857a-af5db500e63b" absoluteBounds="6.25, 19.125, 2, 1.5785953776041666">
+    <classShape Id="85d5421b-0004-414b-afa4-bc20cfc65260" absoluteBounds="6.25, 19.125, 2, 1.5785953776041666">
       <DataClassMoniker Name="/QL_KhuTroDataContext/THANNHAN" />
       <nestedChildShapes>
-        <elementListCompartment Id="c4f5f0ad-b59d-4291-a5aa-bfb855cc241a" absoluteBounds="6.265, 19.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2e0e07c2-e361-4680-8828-df5834a2e875" absoluteBounds="6.265, 19.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="cf01a167-5aeb-4dd5-a299-39cebbd40c13" absoluteBounds="9, 17.125, 2, 1.5785953776041666">
+    <classShape Id="0bee381c-d0a7-4ddd-a6e6-8248844edee5" absoluteBounds="9, 17.125, 2, 1.5785953776041666">
       <DataClassMoniker Name="/QL_KhuTroDataContext/THANNHAN_TAMTRU" />
       <nestedChildShapes>
-        <elementListCompartment Id="ae146a76-409e-4c78-bb48-ab2d6ada78d9" absoluteBounds="9.015, 17.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c9572a30-e1f4-4069-b58b-abdeaaca9f7c" absoluteBounds="9.015, 17.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ffefa725-73fe-48f5-9c57-d4d435a23bee" absoluteBounds="3.5, 2, 2, 1.9631982421875003">
+    <classShape Id="3d7d9457-4c3e-43be-b7a1-8fbf9a3e9397" absoluteBounds="3.5, 2, 2, 1.9631982421875003">
       <DataClassMoniker Name="/QL_KhuTroDataContext/THIETBI" />
       <nestedChildShapes>
-        <elementListCompartment Id="d0981abe-0575-40b2-85af-efe6f677d8a5" absoluteBounds="3.515, 2.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1ed00b10-2358-4e17-8265-0e3241460a98" absoluteBounds="3.515, 2.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ec6f0117-947d-43e5-a2ab-e1f381930a7d" absoluteBounds="6.25, 2.125, 2, 1.5785953776041666">
+    <classShape Id="4b20e940-7d33-41bf-a5b1-8884b867f27f" absoluteBounds="6.25, 2.125, 2, 1.5785953776041666">
       <DataClassMoniker Name="/QL_KhuTroDataContext/THIETBI_PHONG" />
       <nestedChildShapes>
-        <elementListCompartment Id="200487f7-b092-4621-9c75-84652e038861" absoluteBounds="6.265, 2.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="76a7b4e6-0624-4452-b877-fa29ea1559f7" absoluteBounds="6.265, 2.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <associationConnector edgePoints="[(5.5 : 8.125); (5.875 : 7.75); (5.875 : 5.97199625651042); (6.25 : 5.97199625651042)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/QL_KhuTroDataContext/DICHVU/DICHVU_DICHVU_PHONG" />
       <nodes>
-        <classShapeMoniker Id="9571cf52-9186-429e-910b-c9c00487dfcc" />
-        <classShapeMoniker Id="60d50adc-c850-4618-a894-614b0fbc5ca9" />
+        <classShapeMoniker Id="1222513f-bd60-42c8-9658-cd6475c2ae1c" />
+        <classShapeMoniker Id="2c71a0d6-c884-466b-8897-cf1b7a6633dc" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.25 : 12.9527498372396); (8.54166666666667 : 12.9527498372396 : JumpStart); (8.70833333333333 : 12.9527498372396 : JumpEnd); (9 : 12.9527498372396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QL_KhuTroDataContext/HOADON/HOADON_CHISO_DIENNUOC" />
       <nodes>
-        <classShapeMoniker Id="5bf74cc4-6da1-4a1c-aa69-da9d467f449d" />
-        <classShapeMoniker Id="3b558723-b4ec-4814-b9fa-df1f51f354c9" />
+        <classShapeMoniker Id="1658758e-63bc-409b-b142-7e1df06ca39a" />
+        <classShapeMoniker Id="fe49b8fc-be86-40ce-b4c6-3bb5020beffe" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.25 : 8.91429768880208); (9 : 8.91429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QL_KhuTroDataContext/HOPDONG/HOPDONG_HOPDONG_KT" />
       <nodes>
-        <classShapeMoniker Id="f9e12da7-4323-4d25-aed6-02ea66b36aa0" />
-        <classShapeMoniker Id="db1de4b4-9a55-48c9-ac11-5948060b7021" />
+        <classShapeMoniker Id="16058bea-849a-491b-9ff3-997c17c7f62b" />
+        <classShapeMoniker Id="1a4a5d2d-f7c4-415e-9a7f-4630b288914a" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.25 : 16.7892976888021); (12 : 16.7892976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QL_KhuTroDataContext/KHACHTHUE/KHACHTHUE_VIPHAM" />
       <nodes>
-        <classShapeMoniker Id="75311c80-01ff-4186-b01f-acb04431ecba" />
-        <classShapeMoniker Id="2dbe3e51-6336-40d6-a81c-56342d7eb26b" />
+        <classShapeMoniker Id="6593c7b1-9dda-48dc-a69c-4787b91a68db" />
+        <classShapeMoniker Id="20f3e8f6-1c74-4307-8b1f-fe34430294b0" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.25 : 15.75); (8.625 : 15.375); (8.625 : 9.34019853320313); (9 : 9.34019853320313)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/QL_KhuTroDataContext/KHACHTHUE/KHACHTHUE_HOPDONG_KT" />
       <nodes>
-        <classShapeMoniker Id="75311c80-01ff-4186-b01f-acb04431ecba" />
-        <classShapeMoniker Id="db1de4b4-9a55-48c9-ac11-5948060b7021" />
+        <classShapeMoniker Id="6593c7b1-9dda-48dc-a69c-4787b91a68db" />
+        <classShapeMoniker Id="1a4a5d2d-f7c4-415e-9a7f-4630b288914a" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 11.1263612283153); (5.875 : 10.7513612283153); (5.875 : 8.98159912109375); (5.97916666666667 : 8.98159912109375 : JumpStart); (6.14583333333333 : 8.98159912109375 : JumpEnd); (6.25 : 8.98159912109375)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/QL_KhuTroDataContext/NHANVIEN/NHANVIEN_HOPDONG" />
       <nodes>
-        <classShapeMoniker Id="832beccb-015d-4c48-839b-1c4a2292e06f" />
-        <classShapeMoniker Id="f9e12da7-4323-4d25-aed6-02ea66b36aa0" />
+        <classShapeMoniker Id="25e84927-8176-43c1-9960-fe3707c1197b" />
+        <classShapeMoniker Id="16058bea-849a-491b-9ff3-997c17c7f62b" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(11.15625 : 20.25); (11.15625 : 16.957151344401); (12 : 16.957151344401)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QL_KhuTroDataContext/NOIQUY/NOIQUY_VIPHAM" />
       <nodes>
-        <classShapeMoniker Id="58648807-2364-40b9-ae1a-3f91dc161dc5" />
-        <classShapeMoniker Id="2dbe3e51-6336-40d6-a81c-56342d7eb26b" />
+        <classShapeMoniker Id="1e8b80e2-ed3c-4e92-9117-16a7e53f5ddd" />
+        <classShapeMoniker Id="20f3e8f6-1c74-4307-8b1f-fe34430294b0" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 5.61099812825521); (6.25 : 5.61099812825521)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QL_KhuTroDataContext/PHONG/PHONG_DICHVU_PHONG" />
       <nodes>
-        <classShapeMoniker Id="f4f1a6ce-641d-473e-93fb-2368236c0d54" />
-        <classShapeMoniker Id="60d50adc-c850-4618-a894-614b0fbc5ca9" />
+        <classShapeMoniker Id="fc2f7dbe-7fe1-4f6c-a6d5-5075c6e7abd5" />
+        <classShapeMoniker Id="2c71a0d6-c884-466b-8897-cf1b7a6633dc" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.46769230769231 : 7.03049967447917); (5.81607443490112 : 7.37888180168798 : JumpStart); (5.99642556509888 : 7.55923293188574 : JumpEnd); (6.0625 : 7.62530736678686); (6.0625 : 12.9239005533854); (6.25 : 12.9239005533854)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/QL_KhuTroDataContext/PHONG/PHONG_HOADON" />
       <nodes>
-        <classShapeMoniker Id="f4f1a6ce-641d-473e-93fb-2368236c0d54" />
-        <classShapeMoniker Id="5bf74cc4-6da1-4a1c-aa69-da9d467f449d" />
+        <classShapeMoniker Id="fc2f7dbe-7fe1-4f6c-a6d5-5075c6e7abd5" />
+        <classShapeMoniker Id="1658758e-63bc-409b-b142-7e1df06ca39a" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 6.93511405909455); (5.81607443490112 : 7.25118849399567 : JumpStart); (5.93392556509888 : 7.36903962419343 : JumpEnd); (5.9375 : 7.37261405909455); (5.9375 : 8.45954756054687); (5.97916666666667 : 8.45954756054687 : JumpStart); (6.14583333333333 : 8.45954756054687 : JumpEnd); (6.25 : 8.45954756054687)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/QL_KhuTroDataContext/PHONG/PHONG_HOPDONG" />
       <nodes>
-        <classShapeMoniker Id="f4f1a6ce-641d-473e-93fb-2368236c0d54" />
-        <classShapeMoniker Id="f9e12da7-4323-4d25-aed6-02ea66b36aa0" />
+        <classShapeMoniker Id="fc2f7dbe-7fe1-4f6c-a6d5-5075c6e7abd5" />
+        <classShapeMoniker Id="16058bea-849a-491b-9ff3-997c17c7f62b" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 3.6362939453125); (3.125 : 4.0112939453125); (3.125 : 5.95274983723958); (3.5 : 5.95274983723958)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/QL_KhuTroDataContext/LOAIPHONG/LOAIPHONG_PHONG" />
       <nodes>
-        <classShapeMoniker Id="aef282f7-9421-429d-ae94-533d3fd9d604" />
-        <classShapeMoniker Id="f4f1a6ce-641d-473e-93fb-2368236c0d54" />
+        <classShapeMoniker Id="acb38f3e-5736-403f-8377-64ba4eeb261a" />
+        <classShapeMoniker Id="fc2f7dbe-7fe1-4f6c-a6d5-5075c6e7abd5" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.25 : 25.25); (8.625 : 24.875); (8.625 : 25.0112939453125); (9 : 24.6362939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QL_KhuTroDataContext/QLNHOMND/QLNHOMND_QLND_NHOMND" />
       <nodes>
-        <classShapeMoniker Id="1aa0f6ff-2f61-4042-9c8f-b4a30e9a2892" />
-        <classShapeMoniker Id="443032c8-36b0-4e85-a92f-940b1efcab61" />
+        <classShapeMoniker Id="62a81f34-76f7-457d-aaae-42b646e9269a" />
+        <classShapeMoniker Id="f6e9f596-9994-4380-8187-a3fdf7f74176" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.25 : 28.9719962565104); (10 : 28.9719962565104); (10 : 27.6362939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QL_KhuTroDataContext/DMMANHINH/DMMANHINH_QLPHANQUYEN" />
       <nodes>
-        <classShapeMoniker Id="ecb77e72-e60b-423b-9572-9bd1578a5214" />
-        <classShapeMoniker Id="373916e2-fa6d-4f16-bb46-e6f3afca31a6" />
+        <classShapeMoniker Id="8825b652-7678-4762-8dae-d09ef94630fd" />
+        <classShapeMoniker Id="cb9440ff-312c-4109-a268-0ced017f06e1" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.25 : 26.4431469726563); (9 : 26.4431469726563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QL_KhuTroDataContext/QLNHOMND/QLNHOMND_QLPHANQUYEN" />
       <nodes>
-        <classShapeMoniker Id="1aa0f6ff-2f61-4042-9c8f-b4a30e9a2892" />
-        <classShapeMoniker Id="373916e2-fa6d-4f16-bb46-e6f3afca31a6" />
+        <classShapeMoniker Id="62a81f34-76f7-457d-aaae-42b646e9269a" />
+        <classShapeMoniker Id="cb9440ff-312c-4109-a268-0ced017f06e1" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.25 : 23.4431469726563); (9 : 23.4431469726563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QL_KhuTroDataContext/QUANLYND/QUANLYND_QLND_NHOMND" />
       <nodes>
-        <classShapeMoniker Id="daadafa2-6bf3-4c3c-8464-044e17de7216" />
-        <classShapeMoniker Id="443032c8-36b0-4e85-a92f-940b1efcab61" />
+        <classShapeMoniker Id="0d79b34b-afde-49cc-96e0-022540b1eedc" />
+        <classShapeMoniker Id="f6e9f596-9994-4380-8187-a3fdf7f74176" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(4.5 : 12.8958968098958); (4.5 : 22.9431469726563); (6.25 : 22.9431469726563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QL_KhuTroDataContext/NHANVIEN/NHANVIEN_QUANLYND" />
       <nodes>
-        <classShapeMoniker Id="832beccb-015d-4c48-839b-1c4a2292e06f" />
-        <classShapeMoniker Id="daadafa2-6bf3-4c3c-8464-044e17de7216" />
+        <classShapeMoniker Id="25e84927-8176-43c1-9960-fe3707c1197b" />
+        <classShapeMoniker Id="0d79b34b-afde-49cc-96e0-022540b1eedc" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.25 : 16.1330501888021); (9 : 16.1330501888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QL_KhuTroDataContext/KHACHTHUE/KHACHTHUE_TAMTRU" />
       <nodes>
-        <classShapeMoniker Id="75311c80-01ff-4186-b01f-acb04431ecba" />
-        <classShapeMoniker Id="3e49002b-62e2-4038-8f30-0ca1795eeae9" />
+        <classShapeMoniker Id="6593c7b1-9dda-48dc-a69c-4787b91a68db" />
+        <classShapeMoniker Id="0af3fa8b-9c2f-466f-a2ab-05710eeaea0e" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.0312525 : 12.8958968098958); (5.0312525 : 15.28125); (8.54166666666667 : 15.28125 : JumpStart); (8.70833333333333 : 15.28125 : JumpEnd); (9 : 15.28125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QL_KhuTroDataContext/NHANVIEN/NHANVIEN_TAMTRU" />
       <nodes>
-        <classShapeMoniker Id="832beccb-015d-4c48-839b-1c4a2292e06f" />
-        <classShapeMoniker Id="3e49002b-62e2-4038-8f30-0ca1795eeae9" />
+        <classShapeMoniker Id="25e84927-8176-43c1-9960-fe3707c1197b" />
+        <classShapeMoniker Id="0af3fa8b-9c2f-466f-a2ab-05710eeaea0e" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 6.32337117513021); (3.5 : 6.32337117513021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QL_KhuTroDataContext/TANG/TANG_PHONG" />
       <nodes>
-        <classShapeMoniker Id="96753d39-7b4e-42ab-821a-dfaae6dc5eaa" />
-        <classShapeMoniker Id="f4f1a6ce-641d-473e-93fb-2368236c0d54" />
+        <classShapeMoniker Id="6c83c9cf-bb0c-409b-ab15-d65f87af25f3" />
+        <classShapeMoniker Id="fc2f7dbe-7fe1-4f6c-a6d5-5075c6e7abd5" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.25 : 17.6114005533854); (9 : 17.6114005533854)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QL_KhuTroDataContext/KHACHTHUE/KHACHTHUE_THANNHAN_TAMTRU" />
       <nodes>
-        <classShapeMoniker Id="75311c80-01ff-4186-b01f-acb04431ecba" />
-        <classShapeMoniker Id="cf01a167-5aeb-4dd5-a299-39cebbd40c13" />
+        <classShapeMoniker Id="6593c7b1-9dda-48dc-a69c-4787b91a68db" />
+        <classShapeMoniker Id="0bee381c-d0a7-4ddd-a6e6-8248844edee5" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.25 : 19.65625); (9.09375 : 19.65625); (9.09375 : 18.7035953776042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QL_KhuTroDataContext/THANNHAN/THANNHAN_THANNHAN_TAMTRU" />
       <nodes>
-        <classShapeMoniker Id="7a26753e-49ff-40f8-857a-af5db500e63b" />
-        <classShapeMoniker Id="cf01a167-5aeb-4dd5-a299-39cebbd40c13" />
+        <classShapeMoniker Id="85d5421b-0004-414b-afa4-bc20cfc65260" />
+        <classShapeMoniker Id="0bee381c-d0a7-4ddd-a6e6-8248844edee5" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 4.875); (5.875 : 4.5); (5.875 : 2.91429768880208); (6.25 : 2.91429768880208)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/QL_KhuTroDataContext/PHONG/PHONG_THIETBI_PHONG" />
       <nodes>
-        <classShapeMoniker Id="f4f1a6ce-641d-473e-93fb-2368236c0d54" />
-        <classShapeMoniker Id="ec6f0117-947d-43e5-a2ab-e1f381930a7d" />
+        <classShapeMoniker Id="fc2f7dbe-7fe1-4f6c-a6d5-5075c6e7abd5" />
+        <classShapeMoniker Id="4b20e940-7d33-41bf-a5b1-8884b867f27f" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 2.45714884440104); (6.25 : 2.45714884440104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QL_KhuTroDataContext/THIETBI/THIETBI_THIETBI_PHONG" />
       <nodes>
-        <classShapeMoniker Id="ffefa725-73fe-48f5-9c57-d4d435a23bee" />
-        <classShapeMoniker Id="ec6f0117-947d-43e5-a2ab-e1f381930a7d" />
+        <classShapeMoniker Id="3d7d9457-4c3e-43be-b7a1-8fbf9a3e9397" />
+        <classShapeMoniker Id="4b20e940-7d33-41bf-a5b1-8884b867f27f" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

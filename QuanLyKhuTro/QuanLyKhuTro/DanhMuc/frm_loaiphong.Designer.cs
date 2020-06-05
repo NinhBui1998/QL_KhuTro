@@ -359,7 +359,7 @@
             // 
             // GIA
             // 
-            this.GIA.Caption = "Gía";
+            this.GIA.Caption = "Giá";
             this.GIA.FieldName = "GIA";
             this.GIA.Name = "GIA";
             this.GIA.Visible = true;

@@ -132,7 +132,7 @@ namespace QuanLyKhuTro.NghiepVu
             //if (btn_them.Enabled == true)
             //{
             hd.MAHD = txt_mahd.Text;
-            hd.TIENCOC = Convert.ToDouble(txt_tiencoc.Text);
+            hd.TIENCOC = decimal.Parse(txt_tiencoc.Text);
             hd.NGAYLAPHD = Convert.ToDateTime(txt_ngaylaphd.Text);
             hd.THOIHAN = txt_thoihan.Text;
             hd.MAPHONG =txt_phong.Text;

@@ -813,7 +813,7 @@ namespace DAL
 		
 		private string _TENDV;
 		
-		private System.Nullable<double> _GIADV;
+		private System.Nullable<decimal> _GIADV;
 		
 		private string _DONVI;
 		
@@ -827,7 +827,7 @@ namespace DAL
     partial void OnMADVChanged();
     partial void OnTENDVChanging(string value);
     partial void OnTENDVChanged();
-    partial void OnGIADVChanging(System.Nullable<double> value);
+    partial void OnGIADVChanging(System.Nullable<decimal> value);
     partial void OnGIADVChanged();
     partial void OnDONVIChanging(string value);
     partial void OnDONVIChanged();
@@ -879,8 +879,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIADV", DbType="Float")]
-		public System.Nullable<double> GIADV
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIADV", DbType="Money")]
+		public System.Nullable<decimal> GIADV
 		{
 			get
 			{
@@ -1255,17 +1255,17 @@ namespace DAL
 		
 		private string _MAHOADON;
 		
-		private System.Nullable<double> _TIENDIEN;
+		private System.Nullable<decimal> _TIENDIEN;
 		
-		private System.Nullable<double> _TIENNUOC;
+		private System.Nullable<decimal> _TIENNUOC;
 		
-		private System.Nullable<double> _WIFI;
+		private System.Nullable<decimal> _WIFI;
 		
-		private System.Nullable<double> _RAC;
+		private System.Nullable<decimal> _RAC;
 		
 		private System.Nullable<System.DateTime> _NGAYLAP;
 		
-		private System.Nullable<double> _TONGTIEN;
+		private System.Nullable<decimal> _TONGTIEN;
 		
 		private string _MAPHONG;
 		
@@ -1279,17 +1279,17 @@ namespace DAL
     partial void OnCreated();
     partial void OnMAHOADONChanging(string value);
     partial void OnMAHOADONChanged();
-    partial void OnTIENDIENChanging(System.Nullable<double> value);
+    partial void OnTIENDIENChanging(System.Nullable<decimal> value);
     partial void OnTIENDIENChanged();
-    partial void OnTIENNUOCChanging(System.Nullable<double> value);
+    partial void OnTIENNUOCChanging(System.Nullable<decimal> value);
     partial void OnTIENNUOCChanged();
-    partial void OnWIFIChanging(System.Nullable<double> value);
+    partial void OnWIFIChanging(System.Nullable<decimal> value);
     partial void OnWIFIChanged();
-    partial void OnRACChanging(System.Nullable<double> value);
+    partial void OnRACChanging(System.Nullable<decimal> value);
     partial void OnRACChanged();
     partial void OnNGAYLAPChanging(System.Nullable<System.DateTime> value);
     partial void OnNGAYLAPChanged();
-    partial void OnTONGTIENChanging(System.Nullable<double> value);
+    partial void OnTONGTIENChanging(System.Nullable<decimal> value);
     partial void OnTONGTIENChanged();
     partial void OnMAPHONGChanging(string value);
     partial void OnMAPHONGChanged();
@@ -1322,8 +1322,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TIENDIEN", DbType="Float")]
-		public System.Nullable<double> TIENDIEN
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TIENDIEN", DbType="Money")]
+		public System.Nullable<decimal> TIENDIEN
 		{
 			get
 			{
@@ -1342,8 +1342,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TIENNUOC", DbType="Float")]
-		public System.Nullable<double> TIENNUOC
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TIENNUOC", DbType="Money")]
+		public System.Nullable<decimal> TIENNUOC
 		{
 			get
 			{
@@ -1362,8 +1362,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WIFI", DbType="Float")]
-		public System.Nullable<double> WIFI
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WIFI", DbType="Money")]
+		public System.Nullable<decimal> WIFI
 		{
 			get
 			{
@@ -1382,8 +1382,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RAC", DbType="Float")]
-		public System.Nullable<double> RAC
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RAC", DbType="Money")]
+		public System.Nullable<decimal> RAC
 		{
 			get
 			{
@@ -1422,8 +1422,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TONGTIEN", DbType="Float")]
-		public System.Nullable<double> TONGTIEN
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TONGTIEN", DbType="Money")]
+		public System.Nullable<decimal> TONGTIEN
 		{
 			get
 			{
@@ -1558,7 +1558,7 @@ namespace DAL
 		
 		private string _MAHD;
 		
-		private System.Nullable<double> _TIENCOC;
+		private System.Nullable<decimal> _TIENCOC;
 		
 		private System.Nullable<System.DateTime> _NGAYLAPHD;
 		
@@ -1580,7 +1580,7 @@ namespace DAL
     partial void OnCreated();
     partial void OnMAHDChanging(string value);
     partial void OnMAHDChanged();
-    partial void OnTIENCOCChanging(System.Nullable<double> value);
+    partial void OnTIENCOCChanging(System.Nullable<decimal> value);
     partial void OnTIENCOCChanged();
     partial void OnNGAYLAPHDChanging(System.Nullable<System.DateTime> value);
     partial void OnNGAYLAPHDChanged();
@@ -1620,8 +1620,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TIENCOC", DbType="Float")]
-		public System.Nullable<double> TIENCOC
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TIENCOC", DbType="Money")]
+		public System.Nullable<decimal> TIENCOC
 		{
 			get
 			{
@@ -2410,7 +2410,7 @@ namespace DAL
 		
 		private string _TENLOAI;
 		
-		private System.Nullable<double> _GIA;
+		private System.Nullable<decimal> _GIA;
 		
 		private EntitySet<PHONG> _PHONGs;
 		
@@ -2422,7 +2422,7 @@ namespace DAL
     partial void OnMALOAIChanged();
     partial void OnTENLOAIChanging(string value);
     partial void OnTENLOAIChanged();
-    partial void OnGIAChanging(System.Nullable<double> value);
+    partial void OnGIAChanging(System.Nullable<decimal> value);
     partial void OnGIAChanged();
     #endregion
 		
@@ -2472,8 +2472,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIA", DbType="Float")]
-		public System.Nullable<double> GIA
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIA", DbType="Money")]
+		public System.Nullable<decimal> GIA
 		{
 			get
 			{
@@ -4769,7 +4769,7 @@ namespace DAL
 		
 		private string _TENTB;
 		
-		private System.Nullable<double> _GIATB;
+		private System.Nullable<decimal> _GIATB;
 		
 		private System.Nullable<int> _SOLUONG_PHANBO;
 		
@@ -4787,7 +4787,7 @@ namespace DAL
     partial void OnMATHIETBIChanged();
     partial void OnTENTBChanging(string value);
     partial void OnTENTBChanged();
-    partial void OnGIATBChanging(System.Nullable<double> value);
+    partial void OnGIATBChanging(System.Nullable<decimal> value);
     partial void OnGIATBChanged();
     partial void OnSOLUONG_PHANBOChanging(System.Nullable<int> value);
     partial void OnSOLUONG_PHANBOChanged();
@@ -4843,8 +4843,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIATB", DbType="Float")]
-		public System.Nullable<double> GIATB
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIATB", DbType="Money")]
+		public System.Nullable<decimal> GIATB
 		{
 			get
 			{
