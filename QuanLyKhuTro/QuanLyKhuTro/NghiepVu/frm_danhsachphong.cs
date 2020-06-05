@@ -22,7 +22,13 @@ namespace QuanLyKhuTro
         public frm_test()
         {
             InitializeComponent();
-        } 
+        }
+        string MaNV;
+        public string MaNhanVien
+        {
+            get { return MaNV; }
+            set { MaNV = value; }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             //tạo control động
@@ -83,6 +89,7 @@ namespace QuanLyKhuTro
         void showformdatphong(object sender, EventArgs e)
         {
             frm_datphong frm = new frm_datphong();
+            frm.MaNhanVien = MaNV;
             Button btn = (Button)sender;
             frm.TenPhong = btn.Text;
             frm.ShowDialog();

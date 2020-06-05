@@ -325,6 +325,7 @@
             this.pic_anh.Size = new System.Drawing.Size(122, 107);
             this.pic_anh.TabIndex = 0;
             this.pic_anh.TabStop = false;
+            this.pic_anh.Click += new System.EventHandler(this.pic_anh_Click);
             // 
             // txt_ngaysinh
             // 

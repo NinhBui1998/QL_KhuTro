@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using BLL;
 using DAL;
 using System.IO;
+using DevExpress.Utils.Extensions;
 
 namespace QuanLyKhuTro.DanhMuc
 {
@@ -26,7 +27,8 @@ namespace QuanLyKhuTro.DanhMuc
         {
             grv_khachthue.DataSource = khachthue.loadBangKT();
             btn_sua.Enabled = btn_xoa.Enabled = false;
-            txt_makt.Enabled = txt_tenkt.Enabled = txt_sdt.Enabled = txt_quequan.Enabled = txt_ngaysinh.Enabled = false;
+            txt_makt.Enabled = txt_tenkt.Enabled = txt_sdt.Enabled=btn_chonAnh.Enabled
+                = txt_quequan.Enabled = txt_ngaysinh.Enabled = false;
             txt_cmnd.Enabled = rdb_nam.Enabled = rdb_nu.Enabled = false;
         }
 
@@ -35,36 +37,48 @@ namespace QuanLyKhuTro.DanhMuc
             KHACHTHUE kt = new KHACHTHUE();
             btn_sua.Enabled = btn_xoa.Enabled = true;
             int position = gridView_khachthue.FocusedRowHandle;
-            try
+            //try
+            //{
+            kt.TENKT = gridView_khachthue.GetRowCellValue(position, "TENKT").ToString();
+            kt.MAKT = gridView_khachthue.GetRowCellValue(position, "MAKT").ToString();
+            kt.NGAYSINH = Convert.ToDateTime(gridView_khachthue.GetRowCellValue(position, "NGAYSINH").ToString());
+            kt.GIOITINH = gridView_khachthue.GetRowCellValue(position, "GIOITINH").ToString();
+            kt.QUEQUAN = gridView_khachthue.GetRowCellValue(position, "QUEQUAN").ToString();
+            kt.SOCMND = gridView_khachthue.GetRowCellValue(position, "SOCMND").ToString();
+            kt.SDT = gridView_khachthue.GetRowCellValue(position, "SDT").ToString();
+
+
+            //string anh = gridView_khachthue.GetRowCellValue(position, "ANH").ToString();
+            //try { 
+            byte[] b = (Byte[])(gridView_khachthue.GetRowCellValue(position, "ANH"));
+            //pic_anhkt.Image = bytetoimage(b);
+            //byte[] b = convertImage(pic_anhkt.Image);            
+            //kt.ANH= gridView_khachthue.GetRowCellValue(position, "ANH");
+            //kt.ANH = b;
+            pic_anhkt.Image = bytetoimage(b);
+
+            //}
+
+
+
+            txt_makt.Text = kt.MAKT.ToString();
+            txt_tenkt.Text = kt.TENKT.ToString();
+            txt_sdt.Text = kt.SDT.ToString();
+            txt_cmnd.Text = kt.SOCMND.ToString();
+            txt_ngaysinh.Text = kt.NGAYSINH.ToString();
+            txt_quequan.Text = kt.QUEQUAN.ToString();
+            if (kt.GIOITINH == "Nam")
             {
-                kt.TENKT = gridView_khachthue.GetRowCellValue(position, "TENKT").ToString();
-                kt.MAKT = gridView_khachthue.GetRowCellValue(position, "MAKT").ToString();
-                kt.NGAYSINH = Convert.ToDateTime(gridView_khachthue.GetRowCellValue(position, "NGAYSINH").ToString());
-                kt.GIOITINH = gridView_khachthue.GetRowCellValue(position, "GIOITINH").ToString();
-                kt.QUEQUAN = gridView_khachthue.GetRowCellValue(position, "QUEQUAN").ToString();
-                kt.SOCMND = gridView_khachthue.GetRowCellValue(position, "SOCMND").ToString();
-                kt.SDT = gridView_khachthue.GetRowCellValue(position, "SDT").ToString();
-                //kt.ANH = convertImage(gridView_khachthue.GetRowCellValue(position,"ANH").ToString());
-                //byte[] b = (byte[])kt.ANH;
-                //pic_anhkt.Image = bytetoimage(b);
-
-                txt_makt.Text = kt.MAKT.ToString();
-                txt_tenkt.Text = kt.TENKT.ToString();
-                txt_sdt.Text = kt.SDT.ToString();
-                txt_cmnd.Text = kt.SOCMND.ToString();
-                txt_ngaysinh.Text = kt.NGAYSINH.ToString();
-                txt_quequan.Text = kt.QUEQUAN.ToString();
-                if (kt.GIOITINH == "Nam")
-                {
-                    rdb_nam.Checked = true;
-                }
-                if (kt.GIOITINH == "Nữ")
-                {
-                    rdb_nu.Checked = true;
-                }
-
+                rdb_nam.Checked = true;
             }
-            catch { }
+            if (kt.GIOITINH == "Nữ")
+            {
+                rdb_nu.Checked = true;
+            }
+
+            //}
+            //catch { }
+        
         }
 
         private void btn_sua_Click(object sender, EventArgs e)

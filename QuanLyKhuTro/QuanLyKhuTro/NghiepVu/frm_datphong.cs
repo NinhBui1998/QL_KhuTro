@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using BLL;
 using DAL;
+using System.IO;
 
 namespace QuanLyKhuTro.NghiepVu
 {
@@ -33,6 +34,13 @@ namespace QuanLyKhuTro.NghiepVu
             get { return Ten; }
             set { Ten = value; }
         }
+
+        string MaNV;
+        public string MaNhanVien
+        {
+            get { return MaNV; }
+            set { MaNV = value; }
+        }
         public frm_datphong()
         {
             InitializeComponent();
@@ -50,9 +58,11 @@ namespace QuanLyKhuTro.NghiepVu
             //cbb_loaiphong.DisplayMember = "TENLOAI";
             //cbb_loaiphong.ValueMember = "MALOAI";
 
-            ////load dl
+            //load dl
+            
             grv_datphong.DataSource = datphong.LoadDatPhong();
-
+            txt_manv.Text = MaNV;
+            txt_ngaylaphd.Text= DateTime.Now.ToShortDateString();
             //cbb_tang.Enabled = cbb_loaiphong.Enabled = cbb_phong.Enabled = false;
             //btn_sua.Enabled = false;
             //txt_makt.Enabled = txt_tenkt.Enabled = rdb_nam.Enabled = rdb_nu.Enabled = txt_sdt.Enabled
@@ -126,6 +136,7 @@ namespace QuanLyKhuTro.NghiepVu
 
         private void btn_taohd_Click(object sender, EventArgs e)
         {
+            byte[] b = convertImage(pic_anh.Image);
             KHACHTHUE kt = new KHACHTHUE();
             HOPDONG hd = new HOPDONG();
             HOPDONG_KT hd_kt = new HOPDONG_KT();
@@ -135,8 +146,9 @@ namespace QuanLyKhuTro.NghiepVu
             hd.TIENCOC = decimal.Parse(txt_tiencoc.Text);
             hd.NGAYLAPHD = Convert.ToDateTime(txt_ngaylaphd.Text);
             hd.THOIHAN = txt_thoihan.Text;
-            hd.MAPHONG =txt_phong.Text;
+            hd.MAPHONG =datphong.laymaphong(Ten);
             hd.MANV = txt_manv.Text;
+           
 
 
 
@@ -144,6 +156,7 @@ namespace QuanLyKhuTro.NghiepVu
             kt.MAKT = txt_makt.Text;
             kt.TENKT = txt_tenkt.Text;
             kt.SDT = txt_sdt.Text;
+            kt.ANH = b;
             if (rdb_nam.Checked == true)
             {
                 kt.GIOITINH = rdb_nam.Text;
@@ -169,11 +182,18 @@ namespace QuanLyKhuTro.NghiepVu
                 return;
             }
             //kiểm tra khóa chính
-            //if (khachthue.ktkc_khachthue(kt.MAKT) == true)
-            //{
-            //    MessageBox.Show("Trùng khóa chính");
-            //    return;
-            //}
+            if (khachthue.ktkc_khachthue(kt.MAKT) == true)
+            {
+                MessageBox.Show("Trùng khóa chính khách thuê");
+                return;
+            }
+            if (hopdong.ktkc_HopDong(txt_mahd.Text) == true)
+            {
+                MessageBox.Show("Trùng khóa chính hợp đồng");
+                return;
+            }
+            //thêm
+
             if (khachthue.ThemKT(kt) == true && hopdong.them_HopDong(hd) == true && hopdong_khachthue.them_HopDong_KhachThue(hd_kt) == true)
             {
                 grv_datphong.DataSource = datphong.LoadDatPhong();
@@ -223,6 +243,31 @@ namespace QuanLyKhuTro.NghiepVu
             catch { MessageBox.Show("Lỗi hệ thống"); }
 
         }
-    }     
-    
+
+        private void pic_anh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            //open.Filter = "All Text File (.jpg)|.jpg";
+            open.FilterIndex = 1;
+            open.RestoreDirectory = true;
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+
+                pic_anh.ImageLocation = open.FileName;
+                pic_anh.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+           
+        }
+         private byte[] convertImage(Image img)//chuyen image sang byte
+            {
+                MemoryStream m = new MemoryStream();
+                img.Save(m, System.Drawing.Imaging.ImageFormat.Png);
+                return m.ToArray();
+            }
+            private Image bytetoimage(byte[] b)//chuyen byte sang image
+            {
+                MemoryStream m = new MemoryStream(b);
+                return Image.FromStream(m);
+            } 
+    }
 }

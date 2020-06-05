@@ -36,16 +36,16 @@ namespace DAL
         //Thêm
         public bool them_HopDong(HOPDONG hd)
         {
-            try
-            {
+            //try
+            //{
                 data.HOPDONGs.InsertOnSubmit(hd);
                 data.SubmitChanges();
                 return true;
-            }
-            catch
-            {
-                return false;
-            }
+            //}
+            //catch
+            //{
+            //    return false;
+            //}
 
         }
 
