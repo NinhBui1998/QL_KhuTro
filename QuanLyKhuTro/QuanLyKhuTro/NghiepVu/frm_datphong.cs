@@ -16,6 +16,8 @@ namespace QuanLyKhuTro.NghiepVu
     public partial class frm_datphong : DevExpress.XtraEditors.XtraForm
     {
         DAL_Phong dal_phong = new DAL_Phong();
+        DAL_Tang dal_tang = new DAL_Tang();
+        DAL_LoaiPhong dal_lp = new DAL_LoaiPhong();
         BLL_KhachThue khachthue = new BLL_KhachThue();
         BLL_LoaiPhong loaip = new BLL_LoaiPhong();
         BLL_Tang tang = new BLL_Tang();
@@ -38,17 +40,17 @@ namespace QuanLyKhuTro.NghiepVu
 
         private void frm_datphong_Load(object sender, EventArgs e)
         {
-            //load dữ liêu combobox tầng
-            cbb_tang.DataSource = tang.loadBangTang();
-            cbb_tang.DisplayMember = "TENTANG";
-            cbb_tang.ValueMember = "MATANG";
+            ////load dữ liêu combobox tầng
+            //cbb_tang.DataSource = tang.loadBangTang();
+            //cbb_tang.DisplayMember = "TENTANG";
+            //cbb_tang.ValueMember = "MATANG";
 
-            //load dữ liêu combobox loai phòng
-            cbb_loaiphong.DataSource = loaip.loadBangLoaiPhong();
-            cbb_loaiphong.DisplayMember = "TENLOAI";
-            cbb_loaiphong.ValueMember = "MALOAI";
+            ////load dữ liêu combobox loai phòng
+            //cbb_loaiphong.DataSource = loaip.loadBangLoaiPhong();
+            //cbb_loaiphong.DisplayMember = "TENLOAI";
+            //cbb_loaiphong.ValueMember = "MALOAI";
 
-            //load dl
+            ////load dl
             grv_datphong.DataSource = datphong.LoadDatPhong();
 
             //cbb_tang.Enabled = cbb_loaiphong.Enabled = cbb_phong.Enabled = false;
@@ -87,12 +89,11 @@ namespace QuanLyKhuTro.NghiepVu
             //        ctrl.Enabled = false;
             //    }
             //}
-            cbb_phong.Text = string.Empty;
-            cbb_phong.DataSource = datphong.laymaphong(Ten);
-            cbb_phong.DisplayMember = "TENPHONG";
-            cbb_phong.ValueMember = "MAPHONG";
-
-
+           
+            //cbb_phong.DataSource = datphong.laymaphong(Ten);
+            //cbb_phong.DisplayMember = "TENPHONG";
+            //cbb_phong.ValueMember = "MAPHONG";
+            txt_phong.Text = Ten;
 
         }
 
@@ -134,7 +135,7 @@ namespace QuanLyKhuTro.NghiepVu
             hd.TIENCOC = Convert.ToDouble(txt_tiencoc.Text);
             hd.NGAYLAPHD = Convert.ToDateTime(txt_ngaylaphd.Text);
             hd.THOIHAN = txt_thoihan.Text;
-            hd.MAPHONG = cbb_phong.SelectedValue.ToString();
+            hd.MAPHONG =txt_phong.Text;
             hd.MANV = txt_manv.Text;
 
 
@@ -196,11 +197,32 @@ namespace QuanLyKhuTro.NghiepVu
             //    txt_soluonght.Text = p.SOLUONG_HT.ToString();
             //}
             //catch { MessageBox.Show("Lỗi hệ thống"); }
-            txt_soluonght.Text = datphong.layslht(cbb_phong.SelectedValue.ToString());
+          
+            //txt_soluonght.Text = datphong.layslht(cbb_phong.SelectedValue.ToString());
 
-
+            //PHONG p = new PHONG();
+            //p = dal_phong.loadTenPhong(cbb_phong.SelectedValue.ToString());
+            //txt_soluongtd.Text = p.SOLUONG_TD.ToString();
         }
 
+        private void txt_phong_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                PHONG p = new PHONG();
+                LOAIPHONG lp = new LOAIPHONG();
+                TANG t = new TANG();
+                p = dal_phong.loadTenPhong(datphong.laymaphong(Ten));
+                lp = dal_lp.loadTenLoaiPhong(p.MALOAI);
+                t = dal_tang.loadTenTang(p.MATANG);
+                txt_soluongtd.Text = p.SOLUONG_TD.ToString();
+                txt_soluonght.Text = p.SOLUONG_HT.ToString();
+                txt_loaiphong.Text = lp.TENLOAI;
+                txt_matang.Text = t.TENTANG;
+            }
+            catch { MessageBox.Show("Lỗi hệ thống"); }
+
+        }
     }     
     
 }

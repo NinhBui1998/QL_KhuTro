@@ -49,12 +49,13 @@ namespace DAL
             return l.ToList<PHONG>();
         }
         //lấy mã phòng theo tên phòng
-        public List<PHONG> Laymaphong(string ten)
+        public String Laymaphong(string ten)
         {
-            var kq = from p in data.PHONGs
+            var kq = (from p in data.PHONGs
                      where p.TENPHONG==ten
-                     select p;
-            return kq.ToList<PHONG>();
+                     select p.MAPHONG).FirstOrDefault();
+
+            return kq.ToString();
         }
         public string LaySLHTPhong(string pMa)
         {
@@ -63,5 +64,13 @@ namespace DAL
                      select p.SOLUONG_HT).FirstOrDefault();
             return kq.ToString();
         }
+        //public string LaySLTDhong(string pMa)
+        //{
+        //    var kq = (from p in data.PHONGs
+        //              where p.MAPHONG == pMa
+        //              select p.SOLUONG_TD).FirstOrDefault();
+        //    return kq.ToString();
+        //}
+        
     }
 }

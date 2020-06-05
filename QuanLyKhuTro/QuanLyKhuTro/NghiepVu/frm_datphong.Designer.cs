@@ -54,16 +54,16 @@
             this.rdb_nu = new System.Windows.Forms.RadioButton();
             this.grb_thongtinphong = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.cbb_phong = new System.Windows.Forms.ComboBox();
             this.lbl_loaiphong = new System.Windows.Forms.Label();
             this.lbl_phong = new System.Windows.Forms.Label();
-            this.cbb_loaiphong = new System.Windows.Forms.ComboBox();
             this.lbl_tang = new System.Windows.Forms.Label();
-            this.cbb_tang = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_soluonght = new System.Windows.Forms.TextBox();
             this.txt_soluongtd = new System.Windows.Forms.TextBox();
+            this.txt_phong = new System.Windows.Forms.TextBox();
+            this.txt_loaiphong = new System.Windows.Forms.TextBox();
+            this.txt_matang = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.grb_thongtinhopdong = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
@@ -408,16 +408,16 @@
             this.tableLayoutPanel6.ColumnCount = 2;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.69925F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.30075F));
-            this.tableLayoutPanel6.Controls.Add(this.cbb_phong, 1, 2);
             this.tableLayoutPanel6.Controls.Add(this.lbl_loaiphong, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.lbl_phong, 0, 2);
-            this.tableLayoutPanel6.Controls.Add(this.cbb_loaiphong, 1, 1);
             this.tableLayoutPanel6.Controls.Add(this.lbl_tang, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.cbb_tang, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.label1, 0, 3);
             this.tableLayoutPanel6.Controls.Add(this.label2, 0, 4);
             this.tableLayoutPanel6.Controls.Add(this.txt_soluonght, 1, 3);
             this.tableLayoutPanel6.Controls.Add(this.txt_soluongtd, 1, 4);
+            this.tableLayoutPanel6.Controls.Add(this.txt_phong, 1, 2);
+            this.tableLayoutPanel6.Controls.Add(this.txt_loaiphong, 1, 1);
+            this.tableLayoutPanel6.Controls.Add(this.txt_matang, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel6.ForeColor = System.Drawing.Color.Black;
@@ -432,16 +432,6 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(532, 168);
             this.tableLayoutPanel6.TabIndex = 1;
-            // 
-            // cbb_phong
-            // 
-            this.cbb_phong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbb_phong.FormattingEnabled = true;
-            this.cbb_phong.Location = new System.Drawing.Point(161, 69);
-            this.cbb_phong.Name = "cbb_phong";
-            this.cbb_phong.Size = new System.Drawing.Size(368, 27);
-            this.cbb_phong.TabIndex = 1;
-            this.cbb_phong.SelectedIndexChanged += new System.EventHandler(this.cbb_phong_SelectedIndexChanged);
             // 
             // lbl_loaiphong
             // 
@@ -463,15 +453,6 @@
             this.lbl_phong.TabIndex = 0;
             this.lbl_phong.Text = "Phòng";
             // 
-            // cbb_loaiphong
-            // 
-            this.cbb_loaiphong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbb_loaiphong.FormattingEnabled = true;
-            this.cbb_loaiphong.Location = new System.Drawing.Point(161, 39);
-            this.cbb_loaiphong.Name = "cbb_loaiphong";
-            this.cbb_loaiphong.Size = new System.Drawing.Size(368, 27);
-            this.cbb_loaiphong.TabIndex = 1;
-            // 
             // lbl_tang
             // 
             this.lbl_tang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -481,15 +462,6 @@
             this.lbl_tang.Size = new System.Drawing.Size(152, 19);
             this.lbl_tang.TabIndex = 0;
             this.lbl_tang.Text = "Tầng";
-            // 
-            // cbb_tang
-            // 
-            this.cbb_tang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbb_tang.FormattingEnabled = true;
-            this.cbb_tang.Location = new System.Drawing.Point(161, 3);
-            this.cbb_tang.Name = "cbb_tang";
-            this.cbb_tang.Size = new System.Drawing.Size(368, 27);
-            this.cbb_tang.TabIndex = 1;
             // 
             // label1
             // 
@@ -526,6 +498,31 @@
             this.txt_soluongtd.Name = "txt_soluongtd";
             this.txt_soluongtd.Size = new System.Drawing.Size(368, 27);
             this.txt_soluongtd.TabIndex = 3;
+            // 
+            // txt_phong
+            // 
+            this.txt_phong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_phong.Location = new System.Drawing.Point(161, 69);
+            this.txt_phong.Name = "txt_phong";
+            this.txt_phong.Size = new System.Drawing.Size(368, 27);
+            this.txt_phong.TabIndex = 4;
+            this.txt_phong.TextChanged += new System.EventHandler(this.txt_phong_TextChanged);
+            // 
+            // txt_loaiphong
+            // 
+            this.txt_loaiphong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_loaiphong.Location = new System.Drawing.Point(161, 36);
+            this.txt_loaiphong.Name = "txt_loaiphong";
+            this.txt_loaiphong.Size = new System.Drawing.Size(368, 27);
+            this.txt_loaiphong.TabIndex = 4;
+            // 
+            // txt_matang
+            // 
+            this.txt_matang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_matang.Location = new System.Drawing.Point(161, 3);
+            this.txt_matang.Name = "txt_matang";
+            this.txt_matang.Size = new System.Drawing.Size(368, 27);
+            this.txt_matang.TabIndex = 4;
             // 
             // tableLayoutPanel9
             // 
@@ -783,6 +780,7 @@
             // TIENCOC
             // 
             this.TIENCOC.Caption = "Tiền cọc";
+            this.TIENCOC.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.TIENCOC.FieldName = "Tiencoc";
             this.TIENCOC.Name = "TIENCOC";
             this.TIENCOC.Visible = true;
@@ -875,9 +873,6 @@
         private System.Windows.Forms.Label lbl_tang;
         private System.Windows.Forms.Label lbl_loaiphong;
         private System.Windows.Forms.Label lbl_phong;
-        private System.Windows.Forms.ComboBox cbb_loaiphong;
-        private System.Windows.Forms.ComboBox cbb_phong;
-        private System.Windows.Forms.ComboBox cbb_tang;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private DevExpress.XtraEditors.SimpleButton btn_sua;
@@ -933,5 +928,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_soluonght;
         private System.Windows.Forms.TextBox txt_soluongtd;
+        private System.Windows.Forms.TextBox txt_phong;
+        private System.Windows.Forms.TextBox txt_loaiphong;
+        private System.Windows.Forms.TextBox txt_matang;
     }
 }

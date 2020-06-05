@@ -18,7 +18,7 @@ namespace BLL
         {
             return dp.laytenphong(pmatang, pmaloai);
         }
-        public List<PHONG> laymaphong(string pten)
+        public String laymaphong(string pten)
         {
             return dp.Laymaphong(pten);
         }
