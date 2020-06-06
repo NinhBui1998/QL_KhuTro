@@ -15,7 +15,7 @@ namespace DAL
         {
             var dulieu = (from s in data.PHONGs select s);
             return dulieu.ToList<PHONG>();
-        }    
+        }
         public PHONG loadTenPhong(string pMa)
         {
             return data.PHONGs.Where(t => t.MAPHONG == pMa).FirstOrDefault();
@@ -58,7 +58,7 @@ namespace DAL
         {
             try
             {
-                PHONG p= data.PHONGs.Where(t => t.MAPHONG == pMaP).FirstOrDefault();
+                PHONG p = data.PHONGs.Where(t => t.MAPHONG == pMaP).FirstOrDefault();
                 data.PHONGs.DeleteOnSubmit(p);
                 data.SubmitChanges();
                 return true;
@@ -121,6 +121,25 @@ namespace DAL
         {
             var sp = (from s in data.TANGs select s).ToList<TANG>();
             return sp;
+        }
+        // sửa số lượng hiện tại
+        public bool suaSLHTPhong(PHONG phong)
+        {
+            try
+            {
+                PHONG p = data.PHONGs.Where(t => t.MAPHONG == phong.MAPHONG).FirstOrDefault();
+                if (p != null)
+                {
+                    p.SOLUONG_HT = phong.SOLUONG_HT;
+
+                    data.SubmitChanges();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

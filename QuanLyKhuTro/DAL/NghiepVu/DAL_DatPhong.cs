@@ -14,7 +14,8 @@ namespace DAL
             var kt = from s in data.HOPDONGs
                      from k in data.HOPDONG_KTs
                      from kth in data.KHACHTHUEs
-                     where s.MAHD == k.MAHD && k.MAKT==kth.MAKT
+                     from p in data.PHONGs
+                     where s.MAHD == k.MAHD && k.MAKT==kth.MAKT && p.MAPHONG==s.MAPHONG
                      select new
                      {
                          s.MAHD,
@@ -24,6 +25,7 @@ namespace DAL
                          s.NGAYLAPHD,
                          s.THOIHAN,
                          s.TIENCOC,
+                         p.TENPHONG,
                      };
             var kq = kt.ToList().ConvertAll(t => new DatPhong()
             {
@@ -34,6 +36,7 @@ namespace DAL
                 NgayLap = Convert.ToDateTime(t.NGAYLAPHD),
                 Thoihan=t.THOIHAN,
                 Tiencoc= Convert.ToDouble(t.TIENCOC),
+                TenPhong=t.TENPHONG,
             });
             kq.ToList<DatPhong>();
             return kq;
@@ -71,6 +74,12 @@ namespace DAL
         //              select p.SOLUONG_TD).FirstOrDefault();
         //    return kq.ToString();
         //}
-        
+        public int demhopdong(string pmaphong)
+        {
+            var kq = (from hd in data.HOPDONGs
+                      where hd.MAPHONG == pmaphong
+                      select hd).Count();
+            return kq;
+        }
     }
 }

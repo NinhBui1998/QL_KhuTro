@@ -611,6 +611,8 @@
             // NGAYSINH
             // 
             this.NGAYSINH.Caption = "Ngày sinh";
+            this.NGAYSINH.DisplayFormat.FormatString = "d";
+            this.NGAYSINH.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.NGAYSINH.FieldName = "NGAYSINH";
             this.NGAYSINH.Name = "NGAYSINH";
             this.NGAYSINH.Visible = true;

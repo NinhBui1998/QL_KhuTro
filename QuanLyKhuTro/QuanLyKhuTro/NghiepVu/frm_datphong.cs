@@ -136,6 +136,8 @@ namespace QuanLyKhuTro.NghiepVu
 
         private void btn_taohd_Click(object sender, EventArgs e)
         {
+            try
+            { 
             byte[] b = convertImage(pic_anh.Image);
             KHACHTHUE kt = new KHACHTHUE();
             HOPDONG hd = new HOPDONG();
@@ -181,6 +183,7 @@ namespace QuanLyKhuTro.NghiepVu
                 MessageBox.Show("không được để trống");
                 return;
             }
+           
             //kiểm tra khóa chính
             if (khachthue.ktkc_khachthue(kt.MAKT) == true)
             {
@@ -194,16 +197,37 @@ namespace QuanLyKhuTro.NghiepVu
             }
             //thêm
 
-            if (khachthue.ThemKT(kt) == true && hopdong.them_HopDong(hd) == true && hopdong_khachthue.them_HopDong_KhachThue(hd_kt) == true)
+            if (khachthue.ThemKT(kt) == true && hopdong.them_HopDong(hd) == true &&
+                hopdong_khachthue.them_HopDong_KhachThue(hd_kt) == true )
             {
                 grv_datphong.DataSource = datphong.LoadDatPhong();
-                MessageBox.Show("Thành công");
+               
             }
             else
             {
                 MessageBox.Show("Thất bại");
             }
+            //sửa số lượng hiện tại trong phòng
+            PHONG ph = new PHONG();
+            ph.MAPHONG = datphong.laymaphong(Ten);
+            ph.SOLUONG_HT = datphong.demsohd(ph.MAPHONG);
+            if (phong.sua_slhientai(ph) == true)
+            {
+                   
+                MessageBox.Show("Thành công");
+            }    
+            else
+            {
+                MessageBox.Show("Thất bại");
+            }
+            
             frm_datphong_Load(sender, e);
+            txt_soluonght.Text=( datphong.demsohd(datphong.laymaphong(Ten))).ToString();
+            }
+            catch
+            {
+                MessageBox.Show("chưa có ảnh khách thuê");
+            }
         }
 
         private void cbb_phong_SelectedIndexChanged(object sender, EventArgs e)
@@ -259,11 +283,14 @@ namespace QuanLyKhuTro.NghiepVu
            
         }
          private byte[] convertImage(Image img)//chuyen image sang byte
-            {
+         {
+         
                 MemoryStream m = new MemoryStream();
                 img.Save(m, System.Drawing.Imaging.ImageFormat.Png);
                 return m.ToArray();
-            }
+            
+           
+         }
             private Image bytetoimage(byte[] b)//chuyen byte sang image
             {
                 MemoryStream m = new MemoryStream(b);

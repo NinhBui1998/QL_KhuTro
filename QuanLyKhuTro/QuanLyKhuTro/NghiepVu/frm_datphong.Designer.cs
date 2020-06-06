@@ -91,6 +91,7 @@
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_taohd = new DevExpress.XtraEditors.SimpleButton();
             this.btn_sua = new DevExpress.XtraEditors.SimpleButton();
+            this.TENPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -725,7 +726,8 @@
             this.TENKT,
             this.NGAYLAPHD,
             this.THOIHAN,
-            this.TIENCOC});
+            this.TIENCOC,
+            this.TENPHONG});
             this.gridView_datphong.GridControl = this.grv_datphong;
             this.gridView_datphong.Name = "gridView_datphong";
             this.gridView_datphong.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView_datphong_FocusedRowChanged);
@@ -827,6 +829,14 @@
             this.btn_sua.Size = new System.Drawing.Size(158, 30);
             this.btn_sua.TabIndex = 1;
             this.btn_sua.Text = "Sửa";
+            // 
+            // TENPHONG
+            // 
+            this.TENPHONG.Caption = "Tên phòng";
+            this.TENPHONG.FieldName = "TenPhong";
+            this.TENPHONG.Name = "TENPHONG";
+            this.TENPHONG.Visible = true;
+            this.TENPHONG.VisibleIndex = 7;
             // 
             // frm_datphong
             // 
@@ -932,5 +942,6 @@
         private System.Windows.Forms.TextBox txt_phong;
         private System.Windows.Forms.TextBox txt_loaiphong;
         private System.Windows.Forms.TextBox txt_matang;
+        private DevExpress.XtraGrid.Columns.GridColumn TENPHONG;
     }
 }

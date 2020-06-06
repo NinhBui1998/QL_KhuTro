@@ -26,5 +26,9 @@ namespace BLL
         {
             return dp.LaySLHTPhong(pma);
         }
+        public int demsohd(string pmaphong)
+        {
+            return dp.demhopdong(pmaphong);
+        }
     }
 }

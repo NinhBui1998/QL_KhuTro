@@ -52,5 +52,9 @@ namespace BLL
         {
             return phong.st();
         }
+        public bool sua_slhientai(PHONG p)
+        {
+            return phong.suaSLHTPhong(p);
+        }
     }
 }

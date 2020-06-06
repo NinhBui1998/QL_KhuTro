@@ -15,11 +15,17 @@ namespace DAL
         DateTime NGAYLAP;
         string THOIHAN;
         Double TIENCOC;
+        string TENPHONG;
 
         public String Mahd
         {
             get { return MAHD; }
             set { MAHD = value; }
+        }
+        public String TenPhong
+        {
+            get { return TENPHONG; }
+            set { TENPHONG = value; }
         }
         public String Manv
         {
