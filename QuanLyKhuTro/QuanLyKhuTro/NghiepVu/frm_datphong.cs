@@ -41,6 +41,10 @@ namespace QuanLyKhuTro.NghiepVu
             get { return MaNV; }
             set { MaNV = value; }
         }
+        public frm_datphong()
+        {
+            InitializeComponent();
+        }
         public frm_datphong(frm_test us)
         {
             InitializeComponent();
@@ -108,22 +112,29 @@ namespace QuanLyKhuTro.NghiepVu
             {
                 txt_mahd.Text = "HD0" + k1;
             }
-            
+
             txt_phong.Text = Ten;
 
         }
 
         private void gridView_datphong_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
+            KHACHTHUE kt = new KHACHTHUE();
             HOPDONG hd = new HOPDONG();
             HOPDONG_KT hd_kt = new HOPDONG_KT();
+            DatPhong dp = new DatPhong();
             //btn_xoa.Enabled = btn_sua.Enabled = btn_huy.Enabled = true;
             //btn_them.Enabled = false;
             int position = gridView_datphong.FocusedRowHandle;
             try
             {
+                dp.Mahd= gridView_datphong.GetRowCellValue(position, "Mahd").ToString();
+                dp.Makt = gridView_datphong.GetRowCellValue(position, "Makt").ToString();
+
+                txt_mahd.Text = dp.Mahd.ToString();
+                txt_makt.Text = dp.Makt.ToString();  
             }
-            catch { }
+            catch { }         
         }
 
         private void btn_taohd_Click(object sender, EventArgs e)

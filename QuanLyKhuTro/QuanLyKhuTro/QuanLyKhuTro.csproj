@@ -122,6 +122,12 @@
     <Compile Include="DuLieu\UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\dialog_datphong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\dialog_datphong.Designer.cs">
+      <DependentUpon>dialog_datphong.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\frm_danhsachphong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DuLieu\UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\dialog_datphong.resx">
+      <DependentUpon>dialog_datphong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\frm_danhsachphong.resx">
       <DependentUpon>frm_danhsachphong.cs</DependentUpon>

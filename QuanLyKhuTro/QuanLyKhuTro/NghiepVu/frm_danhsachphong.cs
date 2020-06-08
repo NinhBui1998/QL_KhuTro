@@ -62,16 +62,16 @@ namespace QuanLyKhuTro
                     }
                     else if (1<=p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT && p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT<p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_TD)
                     {
-                        b.BackColor = Color.SeaGreen;
-                        frm_datphong frm = new frm_datphong(this);
-                        frm.UpdateEventHandler += F2_UpdateEventHandler;
-                        b.Click += showformdatphong;
+                        b.BackColor = Color.SeaGreen;                                          
+                        b.Click += showdialog;
 
                     }
                     else
                     {
                         b.BackColor = Color.White;
+                        frm_datphong frm = new frm_datphong(this);
                         //TenPhong = b.Text;
+                        frm.UpdateEventHandler += F2_UpdateEventHandler;
                         b.Click += showformdatphong;
                     }
                     //b.Click += btn_Click;
@@ -82,6 +82,11 @@ namespace QuanLyKhuTro
                 x = 0;
                 y += 60;
             }
+        }
+        void showdialog(object sender, EventArgs e)
+        {
+            dialog_datphong dialog = new dialog_datphong();
+            dialog.Show();
         }
         void showformtraphong(object sender, EventArgs e)
         {
