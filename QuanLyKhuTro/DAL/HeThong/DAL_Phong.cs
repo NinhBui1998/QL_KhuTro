@@ -110,7 +110,24 @@ namespace DAL
                 return false;
             }
         }
-
+        // sửa số lượng hiện tại
+        public bool suaSLHTPhong(PHONG pma)
+        {
+            try
+            {
+                PHONG phong = data.PHONGs.Where(t => t.MAPHONG == pma.MAPHONG).FirstOrDefault();
+                if (phong != null)
+                {
+                    phong.SOLUONG_HT = pma.SOLUONG_HT;
+                    data.SubmitChanges();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         public List<PHONG> sp(string t)
         {
             var sp = (from s in data.PHONGs where s.MATANG == t select s).ToList<PHONG>();
@@ -122,24 +139,6 @@ namespace DAL
             var sp = (from s in data.TANGs select s).ToList<TANG>();
             return sp;
         }
-        // sửa số lượng hiện tại
-        public bool suaSLHTPhong(PHONG phong)
-        {
-            try
-            {
-                PHONG p = data.PHONGs.Where(t => t.MAPHONG == phong.MAPHONG).FirstOrDefault();
-                if (p != null)
-                {
-                    p.SOLUONG_HT = phong.SOLUONG_HT;
-
-                    data.SubmitChanges();
-                }
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
+        
     }
 }

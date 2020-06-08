@@ -41,9 +41,25 @@ namespace QuanLyKhuTro.NghiepVu
             get { return MaNV; }
             set { MaNV = value; }
         }
-        public frm_datphong()
+        public frm_datphong(frm_test us)
         {
             InitializeComponent();
+        }
+        public delegate void updatedelegate(object sender, UpdateEventArgs args);
+        public event updatedelegate UpdateEventHandler;
+
+        public class UpdateEventArgs : EventArgs
+        {
+            public string data
+            {
+                get;
+                set;
+            }
+        }
+        protected void insert()
+        {
+            UpdateEventArgs args = new UpdateEventArgs();
+            UpdateEventHandler.Invoke(this, args);
         }
 
         private void frm_datphong_Load(object sender, EventArgs e)
@@ -76,7 +92,7 @@ namespace QuanLyKhuTro.NghiepVu
             {
                 txt_makt.Text = "KT00" + k;
             }
-            else if (k > 10 && k < 100)
+            else if (k >= 10 && k < 100)
             {
                 txt_makt.Text = "KT0" + k;
             }
@@ -88,21 +104,11 @@ namespace QuanLyKhuTro.NghiepVu
             {
                 txt_mahd.Text = "HD00" + k1;
             }
-            else if (k1 > 10 && k1 < 100)
+            else if (k1 >= 10 && k1 < 100)
             {
                 txt_mahd.Text = "HD0" + k1;
             }
-            //foreach (Control ctrl in grb_thongtinkhachthue.Controls)
-            //{
-            //    if (ctrl.Enabled == true && ctrl.GetType() == typeof(TextBox))
-            //    {
-            //        ctrl.Enabled = false;
-            //    }
-            //}
-           
-            //cbb_phong.DataSource = datphong.laymaphong(Ten);
-            //cbb_phong.DisplayMember = "TENPHONG";
-            //cbb_phong.ValueMember = "MAPHONG";
+            
             txt_phong.Text = Ten;
 
         }
@@ -116,20 +122,6 @@ namespace QuanLyKhuTro.NghiepVu
             int position = gridView_datphong.FocusedRowHandle;
             try
             {
-                //hd.MAHD = gridView_datphong.GetRowCellValue(position, "MAHD").ToString();
-                //hd.MANV= gridView_datphong.GetRowCellValue(position, "MANV").ToString();
-                ////hd_kt.MAKT = gridView_datphong.GetRowCellValue(position, "MAKT").ToString();
-                //hd.NGAYLAPHD =Convert.ToDateTime(gridView_datphong.GetRowCellValue(position,"NGAYLAPHD").ToString());
-                //hd.TIENCOC = Convert.ToDouble(gridView_datphong.GetRowCellValue(position,"TIENCOC").ToString());
-                ////hd_kt.TENKT = gridView_datphong.GetRowCellValue(position,"TENKT").ToString();
-
-
-                //txt_mahd.Text = hd.MAHD.ToString();
-                //txt_manv.Text = hd.MANV.ToString();
-                ////txt_makt.Text = hd_kt.MAKT.ToString();
-                //txt_ngaylaphd.Text = hd.NGAYLAPHD.ToString();
-                //txt_tiencoc.Text = hd.TIENCOC.ToString();
-                ////txt_tenkt.Text = hd_kt.TENKT.ToString();
             }
             catch { }
         }
@@ -138,18 +130,17 @@ namespace QuanLyKhuTro.NghiepVu
         {
             try
             { 
-            byte[] b = convertImage(pic_anh.Image);
-            KHACHTHUE kt = new KHACHTHUE();
-            HOPDONG hd = new HOPDONG();
-            HOPDONG_KT hd_kt = new HOPDONG_KT();
-            //if (btn_them.Enabled == true)
-            //{
-            hd.MAHD = txt_mahd.Text;
-            hd.TIENCOC = decimal.Parse(txt_tiencoc.Text);
-            hd.NGAYLAPHD = Convert.ToDateTime(txt_ngaylaphd.Text);
-            hd.THOIHAN = txt_thoihan.Text;
-            hd.MAPHONG =datphong.laymaphong(Ten);
-            hd.MANV = txt_manv.Text;
+                byte[] b = convertImage(pic_anh.Image);
+                KHACHTHUE kt = new KHACHTHUE();
+                HOPDONG hd = new HOPDONG();
+                HOPDONG_KT hd_kt = new HOPDONG_KT();
+
+                hd.MAHD = txt_mahd.Text;
+                hd.TIENCOC = decimal.Parse(txt_tiencoc.Text);
+                hd.NGAYLAPHD = Convert.ToDateTime(txt_ngaylaphd.Text);
+                hd.THOIHAN = txt_thoihan.Text;
+                hd.MAPHONG =datphong.laymaphong(Ten);
+                hd.MANV = txt_manv.Text;
            
 
 
@@ -228,6 +219,7 @@ namespace QuanLyKhuTro.NghiepVu
             {
                 MessageBox.Show("chưa có ảnh khách thuê");
             }
+            insert();
         }
 
         private void cbb_phong_SelectedIndexChanged(object sender, EventArgs e)
@@ -295,6 +287,11 @@ namespace QuanLyKhuTro.NghiepVu
             {
                 MemoryStream m = new MemoryStream(b);
                 return Image.FromStream(m);
-            } 
+            }
+
+        public void frm_datphong_Leave(object sender, EventArgs e)
+        {
+            txt_soluonght.Refresh();
+        }
     }
 }

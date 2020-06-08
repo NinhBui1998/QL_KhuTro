@@ -88,10 +88,10 @@
             this.NGAYLAPHD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.THOIHAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TIENCOC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TENPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_taohd = new DevExpress.XtraEditors.SimpleButton();
             this.btn_sua = new DevExpress.XtraEditors.SimpleButton();
-            this.TENPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -789,6 +789,14 @@
             this.TIENCOC.Visible = true;
             this.TIENCOC.VisibleIndex = 5;
             // 
+            // TENPHONG
+            // 
+            this.TENPHONG.Caption = "Tên phòng";
+            this.TENPHONG.FieldName = "TenPhong";
+            this.TENPHONG.Name = "TENPHONG";
+            this.TENPHONG.Visible = true;
+            this.TENPHONG.VisibleIndex = 7;
+            // 
             // tableLayoutPanel10
             // 
             this.tableLayoutPanel10.ColumnCount = 2;
@@ -830,14 +838,6 @@
             this.btn_sua.TabIndex = 1;
             this.btn_sua.Text = "Sửa";
             // 
-            // TENPHONG
-            // 
-            this.TENPHONG.Caption = "Tên phòng";
-            this.TENPHONG.FieldName = "TenPhong";
-            this.TENPHONG.Name = "TENPHONG";
-            this.TENPHONG.Visible = true;
-            this.TENPHONG.VisibleIndex = 7;
-            // 
             // frm_datphong
             // 
             this.Appearance.Options.UseFont = true;
@@ -851,6 +851,7 @@
             this.Text = "ĐẶT PHÒNG";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_datphong_Load);
+            this.Leave += new System.EventHandler(this.frm_datphong_Leave);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);

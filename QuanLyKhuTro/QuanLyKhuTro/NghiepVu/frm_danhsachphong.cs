@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using BLL;
 using DAL;
 using DevExpress.Export;
+using DevExpress.Utils.Extensions;
+using DevExpress.XtraExport.Helpers;
 using QuanLyKhuTro.NghiepVu;
 
 namespace QuanLyKhuTro
@@ -61,6 +63,8 @@ namespace QuanLyKhuTro
                     else if (1<=p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT && p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT<p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_TD)
                     {
                         b.BackColor = Color.SeaGreen;
+                        frm_datphong frm = new frm_datphong(this);
+                        frm.UpdateEventHandler += F2_UpdateEventHandler;
                         b.Click += showformdatphong;
 
                     }
@@ -88,18 +92,20 @@ namespace QuanLyKhuTro
         }
         void showformdatphong(object sender, EventArgs e)
         {
-            frm_datphong frm = new frm_datphong();
+            frm_datphong frm = new frm_datphong(this);
             frm.MaNhanVien = MaNV;
             Button btn = (Button)sender;
             frm.TenPhong = btn.Text;
+            frm.UpdateEventHandler += F2_UpdateEventHandler;
             frm.ShowDialog();
-
         }
-        void btn_Click(object sender, EventArgs e)
+        private void F2_UpdateEventHandler(object sender, frm_datphong.UpdateEventArgs args)
         {
-            
-                    //MessageBox.Show("Không tìm thấy dl");
-                
-        }         
+            Form1_Load(sender, args);
+        }
+        private void btn_restart_Click(object sender, EventArgs e)
+        {
+            frm_test t = new frm_test();
+        }
     }
 }
