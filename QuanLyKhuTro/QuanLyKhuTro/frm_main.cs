@@ -213,5 +213,11 @@ namespace QuanLyKhuTro
             pnl_main.Controls.Clear();
             pnl_main.Controls.Add(tn);
         }
+
+        private void btn_tienphong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frm_tienphong tn = new frm_tienphong();
+            tn.ShowDialog();
+        }
     }
 }

@@ -58,7 +58,7 @@
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.btn_vipham = new DevExpress.XtraBars.BarButtonItem();
             this.btn_traphong = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_hoadon = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_tienphong = new DevExpress.XtraBars.BarButtonItem();
             this.btn_thannhan = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -112,7 +112,7 @@
             this.barButtonItem3,
             this.btn_vipham,
             this.btn_traphong,
-            this.btn_hoadon,
+            this.btn_tienphong,
             this.btn_thannhan});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(4);
@@ -350,11 +350,12 @@
             this.btn_traphong.Name = "btn_traphong";
             this.btn_traphong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_traphong_ItemClick);
             // 
-            // btn_hoadon
+            // btn_tienphong
             // 
-            this.btn_hoadon.Caption = "Hóa đơn";
-            this.btn_hoadon.Id = 28;
-            this.btn_hoadon.Name = "btn_hoadon";
+            this.btn_tienphong.Caption = "Tiền phòng hàng tháng";
+            this.btn_tienphong.Id = 28;
+            this.btn_tienphong.Name = "btn_tienphong";
+            this.btn_tienphong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_tienphong_ItemClick);
             // 
             // btn_thannhan
             // 
@@ -413,7 +414,7 @@
             // 
             // ribbonPageGroup9
             // 
-            this.ribbonPageGroup9.ItemLinks.Add(this.btn_hoadon);
+            this.ribbonPageGroup9.ItemLinks.Add(this.btn_tienphong);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "ribbonPageGroup9";
             // 
@@ -555,7 +556,7 @@
         private DevExpress.XtraBars.BarButtonItem btn_traphong;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
-        private DevExpress.XtraBars.BarButtonItem btn_hoadon;
+        private DevExpress.XtraBars.BarButtonItem btn_tienphong;
         private DevExpress.XtraBars.BarButtonItem btn_thannhan;
     }
 }
