@@ -76,6 +76,7 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.pnl_main = new System.Windows.Forms.Panel();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
@@ -113,10 +114,11 @@
             this.btn_vipham,
             this.btn_traphong,
             this.btn_tienphong,
-            this.btn_thannhan});
+            this.btn_thannhan,
+            this.barButtonItem2});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbon.MaxItemId = 30;
+            this.ribbon.MaxItemId = 31;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -325,6 +327,7 @@
             // btn_datphong
             // 
             this.btn_datphong.Caption = "Đặt phòng";
+            this.btn_datphong.Enabled = false;
             this.btn_datphong.Id = 24;
             this.btn_datphong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_datphong.ImageOptions.SvgImage")));
             this.btn_datphong.Name = "btn_datphong";
@@ -345,6 +348,7 @@
             // btn_traphong
             // 
             this.btn_traphong.Caption = "Trả phòng";
+            this.btn_traphong.Enabled = false;
             this.btn_traphong.Id = 27;
             this.btn_traphong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_traphong.ImageOptions.SvgImage")));
             this.btn_traphong.Name = "btn_traphong";
@@ -409,6 +413,7 @@
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.btn_datphong);
             this.ribbonPageGroup2.ItemLinks.Add(this.btn_traphong);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "ribbonPageGroup2";
             // 
@@ -486,6 +491,14 @@
             this.pnl_main.Size = new System.Drawing.Size(772, 578);
             this.pnl_main.TabIndex = 2;
             // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Phòng";
+            this.barButtonItem2.Id = 30;
+            this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
             // frm_main
             // 
             this.Appearance.Options.UseFont = true;
@@ -558,5 +571,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
         private DevExpress.XtraBars.BarButtonItem btn_tienphong;
         private DevExpress.XtraBars.BarButtonItem btn_thannhan;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     }
 }

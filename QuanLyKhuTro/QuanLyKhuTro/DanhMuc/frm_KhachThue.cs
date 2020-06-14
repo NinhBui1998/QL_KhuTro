@@ -70,9 +70,19 @@ namespace QuanLyKhuTro.DanhMuc
                 //var q3 = data.KHACHTHUEs.Where(c => c.MAKT == kt.MAKT).Select(c => c.ANH).FirstOrDefault();
 
                 //byte[] b = q3.ToArray();
-                byte[] b = (byte[]) khachthue.layanh(kt.MAKT);
-                pic_anhkt.Image = bytetoimage(b);
-                pic_anhkt.SizeMode = PictureBoxSizeMode.StretchImage;
+                if(kt.ANH!=null)
+                {    
+             
+                       byte[] b = (byte[]) khachthue.layanh(kt.MAKT);
+                       pic_anhkt.Image = bytetoimage(b);
+                       pic_anhkt.SizeMode = PictureBoxSizeMode.StretchImage;
+                 }
+                else
+                {
+                    MessageBox.Show("Không có ảnh");
+                }
+               
+               
 
             }
             catch { }
@@ -98,6 +108,12 @@ namespace QuanLyKhuTro.DanhMuc
             kt.TENKT = txt_tenkt.Text;
             kt.SDT = txt_sdt.Text;
             kt.ANH = b;
+            if (rdb_nam.Checked == true)
+            {
+                kt.GIOITINH = rdb_nam.Text;
+            }
+            else
+                kt.GIOITINH = rdb_nu.Text;
             kt.SOCMND = txt_cmnd.Text;
             kt.NGAYSINH = Convert.ToDateTime(txt_ngaysinh.Text);
             kt.QUEQUAN = txt_quequan.Text;

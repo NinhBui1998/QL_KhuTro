@@ -15,5 +15,17 @@ namespace BLL
         {
             return tp.loadtraphong();
         }
+        public List<TraPhong> LoadTraPhongtheoten(string pten)
+        {
+            return tp.loadtraphongtheoma(pten);
+        }
+        public String laySoDien(string pma)
+        {
+            return tp.LaysoDien(pma);
+        }
+        public String laySoNuoc(string pma)
+        {
+            return tp.LaysoNuoc(pma);
+        }
     }
 }

@@ -74,10 +74,9 @@ namespace DAL
         {
             var ktx = (from nv in data.PHONGs
                        from h in data.HOADONs
-                       from tr in data.DICHVU_PHONGs
                        from tk in data.HOPDONGs
                        from tb in data.THIETBI_PHONGs
-                       where nv.MAPHONG == h.MAPHONG || nv.MAPHONG == tr.MAPHONG
+                       where nv.MAPHONG == h.MAPHONG
                        || nv.MAPHONG == tk.MAPHONG || nv.MAPHONG == tb.MAPHONG && nv.MAPHONG == pPhong
                        select nv).Count();
             if (ktx > 0)
@@ -118,6 +117,8 @@ namespace DAL
                 PHONG phong = data.PHONGs.Where(t => t.MAPHONG == pma.MAPHONG).FirstOrDefault();
                 if (phong != null)
                 {
+
+                    phong.TINHTRANG = pma.TINHTRANG;
                     phong.SOLUONG_HT = pma.SOLUONG_HT;
                     data.SubmitChanges();
                 }

@@ -17,8 +17,15 @@ namespace DAL
         }
         public Array layanh(string pma)
         {
-            var q3 = data.KHACHTHUEs.Where(c => c.MAKT == pma).Select(c => c.ANH).FirstOrDefault();
-            return q3.ToArray();
+            try
+            {
+                var q3 = data.KHACHTHUEs.Where(c => c.MAKT == pma).Select(c => c.ANH).FirstOrDefault();
+                return q3.ToArray();
+            }
+            catch
+            {
+                return null;
+            }
         }
         public KHACHTHUE loadTenKhachThue(string pMa)
         {

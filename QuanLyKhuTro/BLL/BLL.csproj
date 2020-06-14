@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL_SinhMa.cs" />
     <Compile Include="NghiepVu\BLL_DatPhong.cs" />
     <Compile Include="HeThong\BLL_DichVu.cs" />
     <Compile Include="NghiepVu\BLL_HopDong.cs" />

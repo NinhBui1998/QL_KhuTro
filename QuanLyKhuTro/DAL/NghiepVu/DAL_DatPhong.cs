@@ -41,6 +41,39 @@ namespace DAL
             kq.ToList<DatPhong>();
             return kq;
         }
+
+        public List<DatPhong> loaddatPhongtheoMa( string pten)
+        {
+            var kt = from s in data.HOPDONGs
+                     from k in data.HOPDONG_KTs
+                     from kth in data.KHACHTHUEs
+                     from p in data.PHONGs
+                     where s.MAHD == k.MAHD && k.MAKT == kth.MAKT && p.MAPHONG == s.MAPHONG && p.TENPHONG==pten
+                     select new
+                     {
+                         s.MAHD,
+                         s.MANV,
+                         kth.MAKT,
+                         kth.TENKT,
+                         s.NGAYLAPHD,
+                         s.THOIHAN,
+                         s.TIENCOC,
+                         p.TENPHONG,
+                     };
+            var kq = kt.ToList().ConvertAll(t => new DatPhong()
+            {
+                Mahd = t.MAHD,
+                Manv = t.MANV,
+                Makt = t.MAKT,
+                Tenkt = t.TENKT,
+                NgayLap = Convert.ToDateTime(t.NGAYLAPHD),
+                Thoihan = t.THOIHAN,
+                Tiencoc = Convert.ToDouble(t.TIENCOC),
+                TenPhong = t.TENPHONG,
+            });
+            kq.ToList<DatPhong>();
+            return kq;
+        }
         public List<PHONG> laytenphong(string pmatang, string pmaloai)
         {
             var l = (from p in data.PHONGs
@@ -81,5 +114,6 @@ namespace DAL
                       select hd).Count();
             return kq;
         }
+       
     }
 }

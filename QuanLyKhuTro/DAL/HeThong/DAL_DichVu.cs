@@ -91,7 +91,7 @@ namespace DAL
         {
 
             var ktx = (from t in data.DICHVUs
-                       from p in data.DICHVU_PHONGs
+                       from p in data.HOADON_DICHVUs
                        where t.MADV == hd && p.MADV == hd
                        select t).Count();
             if (ktx > 0)

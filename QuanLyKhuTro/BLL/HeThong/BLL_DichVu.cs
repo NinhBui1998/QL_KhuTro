@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using DAL.Model;
+
 namespace BLL
 {
     public class BLL_DichVu
     {
         DAL_DichVu dichvu = new DAL_DichVu();
+        
         public List<DICHVU> loadBang_DV()
         {
             return dichvu.loadbangDichVu();

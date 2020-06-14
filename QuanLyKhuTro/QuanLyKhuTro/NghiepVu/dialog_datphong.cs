@@ -17,16 +17,23 @@ namespace QuanLyKhuTro.NghiepVu
         {
             InitializeComponent();
         }
-
+        string TENPHONG;
+        public string TenPhong
+        {
+            get { return TENPHONG; }
+            set { TENPHONG = value; }
+        }
         private void btn_datphong_Click(object sender, EventArgs e)
         {
             frm_datphong frm = new frm_datphong();
+            frm.TenPhong = TENPHONG;
             frm.ShowDialog();
         }
 
         private void btn_traphong_Click(object sender, EventArgs e)
         {
             frm_traphong frm = new frm_traphong();
+            frm.TenPhong = TENPHONG;
             frm.ShowDialog();
         }
     }

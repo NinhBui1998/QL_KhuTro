@@ -150,10 +150,7 @@ namespace QuanLyKhuTro
           }
         private void btn_datphong_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frm_test test = new frm_test();
-            test.MaNhanVien = Tendn;
-            pnl_main.Controls.Clear();
-            pnl_main.Controls.Add(test);
+          
             //pnl_main.Controls.Clear();
             //pnl_main.Controls.Add(forms);
         }
@@ -218,6 +215,14 @@ namespace QuanLyKhuTro
         {
             frm_tienphong tn = new frm_tienphong();
             tn.ShowDialog();
+        }
+
+        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frm_test test = new frm_test();
+            test.MaNhanVien = Tendn;
+            pnl_main.Controls.Clear();
+            pnl_main.Controls.Add(test);
         }
     }
 }

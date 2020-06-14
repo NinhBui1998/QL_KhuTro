@@ -40,7 +40,15 @@ namespace BLL
         }
         public Array layanh(string pma)
         {
-            return dkt.layanh(pma);
+            try
+            {
+                return dkt.layanh(pma);
+            }
+            catch
+            {
+                return null;
+            }
+            
         }
     }
 }

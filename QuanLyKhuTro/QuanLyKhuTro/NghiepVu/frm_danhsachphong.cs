@@ -71,7 +71,7 @@ namespace QuanLyKhuTro
                         b.BackColor = Color.White;
                         frm_datphong frm = new frm_datphong(this);
                         //TenPhong = b.Text;
-                        frm.UpdateEventHandler += F2_UpdateEventHandler;
+                     //   frm.UpdateEventHandler += F2_UpdateEventHandler;
                         b.Click += showformdatphong;
                     }
                     //b.Click += btn_Click;
@@ -86,6 +86,8 @@ namespace QuanLyKhuTro
         void showdialog(object sender, EventArgs e)
         {
             dialog_datphong dialog = new dialog_datphong();
+            Button btn = (Button)sender;
+            dialog.TenPhong = btn.Text;
             dialog.Show();
         }
         void showformtraphong(object sender, EventArgs e)
@@ -101,16 +103,17 @@ namespace QuanLyKhuTro
             frm.MaNhanVien = MaNV;
             Button btn = (Button)sender;
             frm.TenPhong = btn.Text;
-            frm.UpdateEventHandler += F2_UpdateEventHandler;
+            //frm.UpdateEventHandler += F2_UpdateEventHandler;
             frm.ShowDialog();
         }
-        private void F2_UpdateEventHandler(object sender, frm_datphong.UpdateEventArgs args)
-        {
-            Form1_Load(sender, args);
-        }
+        //private void F2_UpdateEventHandler(object sender, frm_datphong.UpdateEventArgs args)
+        //{
+        //    frm_test frm = new frm_test();
+        //    frm.Show();
+        //}
         private void btn_restart_Click(object sender, EventArgs e)
         {
-            frm_test t = new frm_test();
+            
         }
     }
 }
