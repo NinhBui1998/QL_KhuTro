@@ -11,6 +11,7 @@ using BLL;
 using DAL;
 using DevExpress.Export;
 using DevExpress.Utils.Extensions;
+using DevExpress.XtraEditors;
 using DevExpress.XtraExport.Helpers;
 using QuanLyKhuTro.NghiepVu;
 
@@ -33,6 +34,7 @@ namespace QuanLyKhuTro
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            grv_phong.DataSource = p.loadBang_Phong();
             //tạo control động
             int x = 0;
             int y = 0;
@@ -82,7 +84,7 @@ namespace QuanLyKhuTro
                 x = 0;
                 y += 60;
             }
-            grv_phong.DataSource = p.loadBang_Phong();
+            
         }
         void showdialog(object sender, EventArgs e)
         {
@@ -112,10 +114,7 @@ namespace QuanLyKhuTro
         //    frm_test frm = new frm_test();
         //    frm.Show();
         //}
-        private void btn_restart_Click(object sender, EventArgs e)
-        {
-            
-        }
+      
 
         private void gridView_Phong_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
@@ -132,6 +131,12 @@ namespace QuanLyKhuTro
                 p.SOLUONG_TD = Convert.ToInt32(gridView_Phong.GetRowCellValue(position, "SOLUONG_TD").ToString());
             }
             catch { }
+        }
+        private void btn_restart_Click(object sender, EventArgs e)
+        {
+          
+           
+
         }
     }
 }
