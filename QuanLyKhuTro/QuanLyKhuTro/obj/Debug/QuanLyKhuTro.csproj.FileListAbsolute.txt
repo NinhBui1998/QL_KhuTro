@@ -115,8 +115,6 @@ E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTr
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\QuanLyKhuTro.exe.config
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\QuanLyKhuTro.exe
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\QuanLyKhuTro.pdb
-E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\BLL.dll
-E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DAL.dll
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Data.v19.2.dll
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Printing.v19.2.Core.dll
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Utils.v19.2.dll
@@ -232,3 +230,5 @@ E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLy
 E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.NghiepVu.dialog_datphong.resources
 E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.NghiepVu.frm_quanlythietbi.resources
 E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.NghiepVu.frm_tienphong.resources
+E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\BLL.dll
+E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DAL.dll

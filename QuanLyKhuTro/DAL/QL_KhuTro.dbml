@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL_NHATRO" Class="QL_KhuTroDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-T8SC55E\SQLEXPRESS;Initial Catalog=QL_NHATRO;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="QL_NHATROConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ADMIN\SQLEXPRESS;Initial Catalog=QL_NHATRO;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="QL_NHATROConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CHISO_DIENNUOC" Member="CHISO_DIENNUOCs">
     <Type Name="CHISO_DIENNUOC">
       <Column Name="MAHOADON" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -46,9 +46,11 @@
       <Column Name="TIENNUOC" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="NGAYLAP" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="TONGTIEN" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="MANV" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="MAPHONG" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Association Name="HOADON_CHISO_DIENNUOC" Member="CHISO_DIENNUOC" ThisKey="MAHOADON" OtherKey="MAHOADON" Type="CHISO_DIENNUOC" Cardinality="One" />
       <Association Name="HOADON_HOADON_DICHVU" Member="HOADON_DICHVUs" ThisKey="MAHOADON" OtherKey="MAHOADON" Type="HOADON_DICHVU" />
+      <Association Name="NHANVIEN_HOADON" Member="NHANVIEN" ThisKey="MANV" OtherKey="MANV" Type="NHANVIEN" IsForeignKey="true" />
       <Association Name="PHONG_HOADON" Member="PHONG" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONG" IsForeignKey="true" />
     </Type>
   </Table>
@@ -114,6 +116,7 @@
       <Column Name="TENNV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="SODT_CT" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="DIACHI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="NHANVIEN_HOADON" Member="HOADONs" ThisKey="MANV" OtherKey="MANV" Type="HOADON" />
       <Association Name="NHANVIEN_HOPDONG" Member="HOPDONGs" ThisKey="MANV" OtherKey="MANV" Type="HOPDONG" />
       <Association Name="NHANVIEN_QUANLYND" Member="QUANLYND" ThisKey="MANV" OtherKey="TENDN" Type="QUANLYND" Cardinality="One" />
       <Association Name="NHANVIEN_TAMTRU" Member="TAMTRUs" ThisKey="MANV" OtherKey="MANV" Type="TAMTRU" />

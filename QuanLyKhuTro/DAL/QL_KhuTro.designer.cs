@@ -102,7 +102,7 @@ namespace DAL
     #endregion
 		
 		public QL_KhuTroDataContext() : 
-				base(global::DAL.Properties.Settings.Default.QL_NHATROConnectionString, mappingSource)
+				base(global::DAL.Properties.Settings.Default.QL_NHATROConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -1113,11 +1113,15 @@ namespace DAL
 		
 		private System.Nullable<decimal> _TONGTIEN;
 		
+		private string _MANV;
+		
 		private string _MAPHONG;
 		
 		private EntityRef<CHISO_DIENNUOC> _CHISO_DIENNUOC;
 		
 		private EntitySet<HOADON_DICHVU> _HOADON_DICHVUs;
+		
+		private EntityRef<NHANVIEN> _NHANVIEN;
 		
 		private EntityRef<PHONG> _PHONG;
 		
@@ -1135,6 +1139,8 @@ namespace DAL
     partial void OnNGAYLAPChanged();
     partial void OnTONGTIENChanging(System.Nullable<decimal> value);
     partial void OnTONGTIENChanged();
+    partial void OnMANVChanging(string value);
+    partial void OnMANVChanged();
     partial void OnMAPHONGChanging(string value);
     partial void OnMAPHONGChanged();
     #endregion
@@ -1143,6 +1149,7 @@ namespace DAL
 		{
 			this._CHISO_DIENNUOC = default(EntityRef<CHISO_DIENNUOC>);
 			this._HOADON_DICHVUs = new EntitySet<HOADON_DICHVU>(new Action<HOADON_DICHVU>(this.attach_HOADON_DICHVUs), new Action<HOADON_DICHVU>(this.detach_HOADON_DICHVUs));
+			this._NHANVIEN = default(EntityRef<NHANVIEN>);
 			this._PHONG = default(EntityRef<PHONG>);
 			OnCreated();
 		}
@@ -1247,6 +1254,30 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MANV", DbType="VarChar(10)")]
+		public string MANV
+		{
+			get
+			{
+				return this._MANV;
+			}
+			set
+			{
+				if ((this._MANV != value))
+				{
+					if (this._NHANVIEN.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMANVChanging(value);
+					this.SendPropertyChanging();
+					this._MANV = value;
+					this.SendPropertyChanged("MANV");
+					this.OnMANVChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAPHONG", DbType="VarChar(10)")]
 		public string MAPHONG
 		{
@@ -1310,6 +1341,40 @@ namespace DAL
 			set
 			{
 				this._HOADON_DICHVUs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NHANVIEN_HOADON", Storage="_NHANVIEN", ThisKey="MANV", OtherKey="MANV", IsForeignKey=true)]
+		public NHANVIEN NHANVIEN
+		{
+			get
+			{
+				return this._NHANVIEN.Entity;
+			}
+			set
+			{
+				NHANVIEN previousValue = this._NHANVIEN.Entity;
+				if (((previousValue != value) 
+							|| (this._NHANVIEN.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._NHANVIEN.Entity = null;
+						previousValue.HOADONs.Remove(this);
+					}
+					this._NHANVIEN.Entity = value;
+					if ((value != null))
+					{
+						value.HOADONs.Add(this);
+						this._MANV = value.MANV;
+					}
+					else
+					{
+						this._MANV = default(string);
+					}
+					this.SendPropertyChanged("NHANVIEN");
+				}
 			}
 		}
 		
@@ -2552,6 +2617,8 @@ namespace DAL
 		
 		private string _DIACHI;
 		
+		private EntitySet<HOADON> _HOADONs;
+		
 		private EntitySet<HOPDONG> _HOPDONGs;
 		
 		private EntityRef<QUANLYND> _QUANLYND;
@@ -2576,6 +2643,7 @@ namespace DAL
 		
 		public NHANVIEN()
 		{
+			this._HOADONs = new EntitySet<HOADON>(new Action<HOADON>(this.attach_HOADONs), new Action<HOADON>(this.detach_HOADONs));
 			this._HOPDONGs = new EntitySet<HOPDONG>(new Action<HOPDONG>(this.attach_HOPDONGs), new Action<HOPDONG>(this.detach_HOPDONGs));
 			this._QUANLYND = default(EntityRef<QUANLYND>);
 			this._TAMTRUs = new EntitySet<TAMTRU>(new Action<TAMTRU>(this.attach_TAMTRUs), new Action<TAMTRU>(this.detach_TAMTRUs));
@@ -2682,6 +2750,19 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NHANVIEN_HOADON", Storage="_HOADONs", ThisKey="MANV", OtherKey="MANV")]
+		public EntitySet<HOADON> HOADONs
+		{
+			get
+			{
+				return this._HOADONs;
+			}
+			set
+			{
+				this._HOADONs.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NHANVIEN_HOPDONG", Storage="_HOPDONGs", ThisKey="MANV", OtherKey="MANV")]
 		public EntitySet<HOPDONG> HOPDONGs
 		{
@@ -2755,6 +2836,18 @@ namespace DAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_HOADONs(HOADON entity)
+		{
+			this.SendPropertyChanging();
+			entity.NHANVIEN = this;
+		}
+		
+		private void detach_HOADONs(HOADON entity)
+		{
+			this.SendPropertyChanging();
+			entity.NHANVIEN = null;
 		}
 		
 		private void attach_HOPDONGs(HOPDONG entity)

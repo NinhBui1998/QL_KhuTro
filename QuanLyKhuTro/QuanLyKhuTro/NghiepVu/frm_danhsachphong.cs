@@ -82,6 +82,7 @@ namespace QuanLyKhuTro
                 x = 0;
                 y += 60;
             }
+            grv_phong.DataSource = p.loadBang_Phong();
         }
         void showdialog(object sender, EventArgs e)
         {
@@ -114,6 +115,23 @@ namespace QuanLyKhuTro
         private void btn_restart_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void gridView_Phong_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            PHONG p = new PHONG();
+            //TANG t = new TANG();
+            //LOAIPHONG lp = new LOAIPHONG();
+            int position = gridView_Phong.FocusedRowHandle;
+            try
+            {
+                p.MATANG = gridView_Phong.GetRowCellValue(position, "MATANG").ToString();
+                p.MALOAI = gridView_Phong.GetRowCellValue(position, "MALOAI").ToString();
+                p.TENPHONG = gridView_Phong.GetRowCellValue(position, "TENPHONG").ToString();                 
+                p.SOLUONG_HT = Convert.ToInt32(gridView_Phong.GetRowCellValue(position, "SOLUONG_HT").ToString());
+                p.SOLUONG_TD = Convert.ToInt32(gridView_Phong.GetRowCellValue(position, "SOLUONG_TD").ToString());
+            }
+            catch { }
         }
     }
 }
