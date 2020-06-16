@@ -60,6 +60,7 @@
             this.btn_traphong = new DevExpress.XtraBars.BarButtonItem();
             this.btn_tienphong = new DevExpress.XtraBars.BarButtonItem();
             this.btn_thannhan = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -76,7 +77,6 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.pnl_main = new System.Windows.Forms.Panel();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
@@ -344,6 +344,7 @@
             this.btn_vipham.Caption = "Vi phạm";
             this.btn_vipham.Id = 26;
             this.btn_vipham.Name = "btn_vipham";
+            this.btn_vipham.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_vipham_ItemClick);
             // 
             // btn_traphong
             // 
@@ -368,6 +369,14 @@
             this.btn_thannhan.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_thannhan.ImageOptions.SvgImage")));
             this.btn_thannhan.Name = "btn_thannhan";
             this.btn_thannhan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_thannhan_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Phòng";
+            this.barButtonItem2.Id = 30;
+            this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -490,14 +499,6 @@
             this.pnl_main.Name = "pnl_main";
             this.pnl_main.Size = new System.Drawing.Size(772, 578);
             this.pnl_main.TabIndex = 2;
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "Phòng";
-            this.barButtonItem2.Id = 30;
-            this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
-            this.barButtonItem2.Name = "barButtonItem2";
-            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // frm_main
             // 

@@ -34,7 +34,6 @@
             this.grb_thongtinphong = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_phong = new System.Windows.Forms.Label();
-            this.txt_maphong = new System.Windows.Forms.TextBox();
             this.lbl_tang = new System.Windows.Forms.Label();
             this.txt_matang = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -87,6 +86,7 @@
             this.txt_tongtien = new System.Windows.Forms.TextBox();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.cbo_maphong = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -175,13 +175,13 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.87823F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.12177F));
             this.tableLayoutPanel6.Controls.Add(this.lbl_phong, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.txt_maphong, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.lbl_tang, 0, 3);
             this.tableLayoutPanel6.Controls.Add(this.txt_matang, 1, 3);
             this.tableLayoutPanel6.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.lbl_loaiphong, 0, 2);
             this.tableLayoutPanel6.Controls.Add(this.txt_tenphong, 1, 1);
             this.tableLayoutPanel6.Controls.Add(this.txt_loaiphong, 1, 2);
+            this.tableLayoutPanel6.Controls.Add(this.cbo_maphong, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel6.ForeColor = System.Drawing.Color.Black;
@@ -206,14 +206,6 @@
             this.lbl_phong.Size = new System.Drawing.Size(117, 19);
             this.lbl_phong.TabIndex = 0;
             this.lbl_phong.Text = "Mã phòng";
-            // 
-            // txt_maphong
-            // 
-            this.txt_maphong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_maphong.Location = new System.Drawing.Point(126, 4);
-            this.txt_maphong.Name = "txt_maphong";
-            this.txt_maphong.Size = new System.Drawing.Size(411, 27);
-            this.txt_maphong.TabIndex = 4;
             // 
             // lbl_tang
             // 
@@ -810,6 +802,15 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
+            // cbo_maphong
+            // 
+            this.cbo_maphong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbo_maphong.FormattingEnabled = true;
+            this.cbo_maphong.Location = new System.Drawing.Point(126, 7);
+            this.cbo_maphong.Name = "cbo_maphong";
+            this.cbo_maphong.Size = new System.Drawing.Size(411, 27);
+            this.cbo_maphong.TabIndex = 5;
+            // 
             // frm_tienphong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -857,7 +858,6 @@
         private System.Windows.Forms.GroupBox grb_thongtinphong;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Label lbl_phong;
-        private System.Windows.Forms.TextBox txt_maphong;
         private System.Windows.Forms.Label lbl_tang;
         private System.Windows.Forms.TextBox txt_matang;
         private System.Windows.Forms.Label label1;
@@ -910,5 +910,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txt_tienphong;
         private DevExpress.XtraEditors.SimpleButton btn_tinhtienphong;
+        private System.Windows.Forms.ComboBox cbo_maphong;
     }
 }

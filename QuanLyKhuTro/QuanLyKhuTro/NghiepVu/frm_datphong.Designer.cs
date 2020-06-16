@@ -899,6 +899,7 @@
             this.Name = "frm_datphong";
             this.Text = "ĐẶT PHÒNG";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_datphong_FormClosing);
             this.Load += new System.EventHandler(this.frm_datphong_Load);
             this.Leave += new System.EventHandler(this.frm_datphong_Leave);
             this.tableLayoutPanel1.ResumeLayout(false);

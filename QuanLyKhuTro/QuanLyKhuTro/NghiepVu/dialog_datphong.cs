@@ -27,14 +27,24 @@ namespace QuanLyKhuTro.NghiepVu
         {
             frm_datphong frm = new frm_datphong();
             frm.TenPhong = TENPHONG;
-            frm.ShowDialog();
+            frm.Show();
+            Visible = false;
+           // this.Close();
         }
 
         private void btn_traphong_Click(object sender, EventArgs e)
         {
             frm_traphong frm = new frm_traphong();
             frm.TenPhong = TENPHONG;
-            frm.ShowDialog();
+            frm.Show();
+            Visible = false;
+        }
+
+        private void dialog_datphong_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frm_test frm = new frm_test();
+            frm.Show();
+
         }
     }
 }

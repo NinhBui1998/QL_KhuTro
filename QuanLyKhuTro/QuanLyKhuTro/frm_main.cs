@@ -219,10 +219,22 @@ namespace QuanLyKhuTro
 
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frm_test test = new frm_test();
-            test.MaNhanVien = Tendn;
+            
             pnl_main.Controls.Clear();
-            pnl_main.Controls.Add(test);
+            frm_test forms = new frm_test();
+            forms.MaNhanVien = Tendn;
+            forms.ShowDialog();
+            //frm_test test = new frm_test();
+            
+            
+            //pnl_main.Controls.Add(test);
+        }
+
+        private void btn_vipham_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frm_vipham vp = new frm_vipham();
+            pnl_main.Controls.Clear();
+            pnl_main.Controls.Add(vp);
         }
     }
 }

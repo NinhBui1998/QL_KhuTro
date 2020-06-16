@@ -17,7 +17,7 @@ using QuanLyKhuTro.NghiepVu;
 
 namespace QuanLyKhuTro
 {
-    public partial class frm_test : UserControl
+    public partial class frm_test : Form
     {
         BLL_Phong p = new BLL_Phong();
         BLL_DatPhong dp = new BLL_DatPhong();
@@ -90,15 +90,17 @@ namespace QuanLyKhuTro
         {
             dialog_datphong dialog = new dialog_datphong();
             Button btn = (Button)sender;
-            dialog.TenPhong = btn.Text;
-            dialog.Show();
+            dialog.TenPhong = btn.Text; 
+            this.Close();
+            dialog.Show();         
         }
         void showformtraphong(object sender, EventArgs e)
         {
             frm_traphong frm = new frm_traphong();
             Button btn = (Button)sender;
             frm.TenPhong = btn.Text;
-            frm.ShowDialog();
+            frm.Show();
+            Visible = false;
         }
         void showformdatphong(object sender, EventArgs e)
         {
@@ -107,7 +109,8 @@ namespace QuanLyKhuTro
             Button btn = (Button)sender;
             frm.TenPhong = btn.Text;
             //frm.UpdateEventHandler += F2_UpdateEventHandler;
-            frm.ShowDialog();
+            frm.Show();
+            Visible = false;
         }
         //private void F2_UpdateEventHandler(object sender, frm_datphong.UpdateEventArgs args)
         //{
@@ -134,9 +137,9 @@ namespace QuanLyKhuTro
         }
         private void btn_restart_Click(object sender, EventArgs e)
         {
-          
-           
-
+            frm_test frm = new frm_test();
+            //frm.Close();
+            
         }
     }
 }

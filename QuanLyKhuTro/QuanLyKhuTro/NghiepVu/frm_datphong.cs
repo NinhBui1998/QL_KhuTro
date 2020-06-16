@@ -344,6 +344,10 @@ namespace QuanLyKhuTro.NghiepVu
           
         }
 
-
+        private void frm_datphong_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frm_test frm = new frm_test();
+            frm.ShowDialog();
+        }
     }
 }

@@ -301,5 +301,11 @@ namespace QuanLyKhuTro.NghiepVu
         {
                 txt_tongtien.Text = TinhTienPhong().ToString();
         }
+
+        private void frm_traphong_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frm_test frm = new frm_test();
+            frm.ShowDialog();
+        }
     }
 }

@@ -59,6 +59,7 @@
             this.Controls.Add(this.btn_datphong);
             this.Name = "dialog_datphong";
             this.Text = "dialog_datphong";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.dialog_datphong_FormClosing);
             this.ResumeLayout(false);
 
         }

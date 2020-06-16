@@ -1115,6 +1115,7 @@
             this.Name = "frm_traphong";
             this.Text = "frm_traphong";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_traphong_FormClosing);
             this.Load += new System.EventHandler(this.frm_traphong_Load);
             this.tab_cha.ResumeLayout(false);
             this.tab_top.ResumeLayout(false);
