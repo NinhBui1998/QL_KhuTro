@@ -197,7 +197,6 @@ E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\de\Dev
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\DevExpress.Office.v19.2.Core.resources.dll
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.Office.v19.2.Core.resources.dll
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.Office.v19.2.Core.resources.dll
-E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.csprojAssemblyReference.cache
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.DanhMuc.frm_dichvu.resources
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.DanhMuc.frm_khachthue.resources
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.DanhMuc.frm_loaiphong.resources
@@ -303,3 +302,4 @@ E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\Dev
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.XtraVerticalGrid.v19.2.resources.dll
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.XtraVerticalGrid.v19.2.resources.dll
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.NghiepVu.frm_vipham.resources
+E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.csprojAssemblyReference.cache
