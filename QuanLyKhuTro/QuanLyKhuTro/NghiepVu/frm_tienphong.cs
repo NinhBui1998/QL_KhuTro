@@ -17,5 +17,10 @@ namespace QuanLyKhuTro.NghiepVu
         {
             InitializeComponent();
         }
+
+        private void frm_tienphong_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

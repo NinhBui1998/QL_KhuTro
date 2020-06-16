@@ -16,6 +16,10 @@ namespace BLL
         {
             return dichvu.loadbangDichVu();
         }
+        public string loaddv(string pma)
+        {
+            return dichvu.loadDV(pma);
+        }
         //kiểm tra khóa chính
         public bool ktkc_DichVu(string pMa)
         {

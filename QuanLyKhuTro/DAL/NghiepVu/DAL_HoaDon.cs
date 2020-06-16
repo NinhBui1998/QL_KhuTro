@@ -4,32 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL
+namespace DAL.NghiepVu
 {
-    public class DAL_DichVu
+   public class DAL_HoaDon
     {
         QL_KhuTroDataContext data = new QL_KhuTroDataContext();
-
-        //lấy tất cả dữ liệu
-        public List<DICHVU> loadbangDichVu()
+        public List<HOADON> loadbangHoaDon()
         {
-            var dulieu = (from s in data.DICHVUs select s);
-            return dulieu.ToList<DICHVU>();
+            var dulieu = (from s in data.HOADONs select s);
+            return dulieu.ToList<HOADON>();
         }
-
-        public String loadDV( string pma)
-        {
-            var tien = (from dv in data.DICHVUs
-                        where dv.MADV == pma
-                        select dv.GIADV).FirstOrDefault();
-            return tien.ToString();
-        }
-
         //kiểm tra khóa chính
-        public bool ktakhoachinh_DichVu(string hd)
+        public bool ktakhoachinh_hoadon(string hd)
         {
-            var kt = (from h in data.DICHVUs
-                      where h.MADV == hd
+            var kt = (from h in data.HOADONs
+                      where h.MAHOADON == hd
                       select h).Count();
             if (kt > 0)
             {
@@ -40,13 +29,11 @@ namespace DAL
                 return false;
             }
         }
-
-        //Thêm
-        public bool them_DichVu(DICHVU dv)
+        public bool them_HoaDon(HOADON tn)
         {
             try
             {
-                data.DICHVUs.InsertOnSubmit(dv);
+                data.HOADONs.InsertOnSubmit(tn);
                 data.SubmitChanges();
                 return true;
             }
@@ -54,17 +41,15 @@ namespace DAL
             {
                 return false;
             }
-
         }
-
         //Xóa
 
-        public bool xoa_DichVu(string pMaDV)
+        public bool xoa_HoaDon(string pMatn)
         {
             try
             {
-                DICHVU dv = data.DICHVUs.Where(t => t.MADV == pMaDV).FirstOrDefault();
-                data.DICHVUs.DeleteOnSubmit(dv);
+                HOADON dv = data.HOADONs.Where(t => t.MAHOADON == pMatn).FirstOrDefault();
+                data.HOADONs.DeleteOnSubmit(dv);
                 data.SubmitChanges();
                 return true;
             }
@@ -73,18 +58,14 @@ namespace DAL
                 return false;
             }
         }
-
-        //Sửa
-        public bool sua_DichVu(DICHVU pDichVu)
+        public bool sua_HoaDon(HOADON ptn)
         {
             try
             {
-                DICHVU nv = data.DICHVUs.Where(t => t.MADV == pDichVu.MADV).FirstOrDefault();
+                HOADON nv = data.HOADONs.Where(t => t.MAHOADON == ptn.MAHOADON).FirstOrDefault();
                 if (nv != null)
                 {
-                    nv.TENDV = pDichVu.TENDV;
-                    nv.GIADV = pDichVu.GIADV;
-                    nv.DONVI = pDichVu.DONVI;               
+                    nv.MAPHONG = ptn.MAPHONG;
                     data.SubmitChanges();
                 }
                 return true;
@@ -94,13 +75,12 @@ namespace DAL
                 return false;
             }
         }
-        //kiểm tra tầng có đang được sử dụng
-        public bool kt_XoaDV(string hd)
+        public bool ktx_hoadon(string pmatn)
         {
-
-            var ktx = (from t in data.DICHVUs
+            var ktx = (from t in data.HOADONs
                        from p in data.HOADON_DICHVUs
-                       where t.MADV == hd && p.MADV == hd
+                       from cs in data.CHISO_DIENNUOCs
+                       where t.MAHOADON == p.MAHOADON || p.MAHOADON==cs.MAHOADON && t.MAHOADON==pmatn
                        select t).Count();
             if (ktx > 0)
             {
@@ -110,7 +90,6 @@ namespace DAL
             {
                 return false;
             }
-
         }
     }
 }

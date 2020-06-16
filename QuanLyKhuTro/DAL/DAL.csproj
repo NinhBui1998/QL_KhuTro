@@ -44,8 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\DAL_SinhMa.cs" />
+    <Compile Include="Model\HoaDon.cs" />
+    <Compile Include="NghiepVu\DAL_ChiSoDienNuoc.cs" />
     <Compile Include="NghiepVu\DAL_DatPhong.cs" />
     <Compile Include="HeThong\DAL_DichVu.cs" />
+    <Compile Include="NghiepVu\DAL_HoaDon.cs" />
+    <Compile Include="NghiepVu\DAL_HoaDonDichVu.cs" />
     <Compile Include="NghiepVu\DAL_HopDong.cs" />
     <Compile Include="NghiepVu\DAL_HopDong_KhachThue.cs" />
     <Compile Include="HeThong\DAL_KhachThue.cs" />
@@ -61,6 +65,7 @@
     <Compile Include="HeThong\DAL_ThanNhan.cs" />
     <Compile Include="HeThong\DAL_ThanNhan_TamTru.cs" />
     <Compile Include="HeThong\DAL_ThietBi.cs" />
+    <Compile Include="NghiepVu\DAL_TienPhongHangThang.cs" />
     <Compile Include="NghiepVu\DAL_TraPhong.cs" />
     <Compile Include="Model\DatPhong.cs" />
     <Compile Include="Model\PhanQuyen.cs" />

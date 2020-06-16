@@ -96,6 +96,7 @@
             this.btn_in = new DevExpress.XtraEditors.SimpleButton();
             this.btn_tatcahd = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_xacnhan = new DevExpress.XtraEditors.SimpleButton();
             this.grv_traphong = new DevExpress.XtraGrid.GridControl();
             this.gridView_traphong = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -107,7 +108,6 @@
             this.NGAYLAPHD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAYTRA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TRACOC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.tab_cha.SuspendLayout();
             this.tab_top.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -934,12 +934,12 @@
             this.tableLayoutPanel13.Controls.Add(this.btn_in, 0, 0);
             this.tableLayoutPanel13.Controls.Add(this.btn_tatcahd, 0, 0);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(298, 3);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(297, 3);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(117, 47);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(118, 47);
             this.tableLayoutPanel13.TabIndex = 5;
             // 
             // btn_in
@@ -948,7 +948,7 @@
             this.btn_in.Appearance.Options.UseFont = true;
             this.btn_in.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_in.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_in.ImageOptions.Image")));
-            this.btn_in.Location = new System.Drawing.Point(61, 3);
+            this.btn_in.Location = new System.Drawing.Point(62, 3);
             this.btn_in.Name = "btn_in";
             this.btn_in.Size = new System.Drawing.Size(53, 41);
             this.btn_in.TabIndex = 4;
@@ -961,7 +961,7 @@
             this.btn_tatcahd.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_tatcahd.ImageOptions.SvgImage")));
             this.btn_tatcahd.Location = new System.Drawing.Point(3, 3);
             this.btn_tatcahd.Name = "btn_tatcahd";
-            this.btn_tatcahd.Size = new System.Drawing.Size(52, 41);
+            this.btn_tatcahd.Size = new System.Drawing.Size(53, 41);
             this.btn_tatcahd.TabIndex = 2;
             this.btn_tatcahd.Click += new System.EventHandler(this.btn_tatcahd_Click);
             // 
@@ -978,8 +978,19 @@
             this.tableLayoutPanel12.RowCount = 1;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(289, 47);
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(288, 47);
             this.tableLayoutPanel12.TabIndex = 0;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.simpleButton1.Location = new System.Drawing.Point(129, 3);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(156, 41);
+            this.simpleButton1.TabIndex = 11;
+            this.simpleButton1.Text = "Tính tiền";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // btn_xacnhan
             // 
@@ -1091,17 +1102,6 @@
             this.TRACOC.Visible = true;
             this.TRACOC.VisibleIndex = 7;
             this.TRACOC.Width = 117;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.simpleButton1.Location = new System.Drawing.Point(129, 3);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(157, 41);
-            this.simpleButton1.TabIndex = 11;
-            this.simpleButton1.Text = "Tính tiền";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // frm_traphong
             // 

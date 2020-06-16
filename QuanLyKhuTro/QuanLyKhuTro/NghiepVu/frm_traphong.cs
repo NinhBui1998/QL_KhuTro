@@ -32,6 +32,7 @@ namespace QuanLyKhuTro.NghiepVu
         BLL_HopDong hopdong = new BLL_HopDong();
         BLL_KhachThue khachthue = new BLL_KhachThue();
         BLL_DatPhong datphong = new BLL_DatPhong();
+        BLL_DichVu bll_dichvu = new BLL_DichVu();
 
         string Ten;
         public string TenPhong
@@ -267,20 +268,38 @@ namespace QuanLyKhuTro.NghiepVu
         }
         public Double TinhTienPhong()
         {
-            double TienNuoc = Convert.ToInt32(txt_sonuoc.Text) * Convert.ToInt32(6000);
-            double TienDien= Convert.ToInt32(txt_sonuoc.Text) * Convert.ToInt32(3000);
-            double wifi = 60000;
-            double rac = 20000;
-           // String tienphong = laytienphong(txt_maphong.Text);
-            double Tong = (TienDien + TienNuoc + wifi + rac);
+            string tiennuoc = bll_dichvu.loaddv("DV002");
+            string tiendien = bll_dichvu.loaddv("DV001");
+            string tienwifi = bll_dichvu.loaddv("DV003");
+            string tienrac = bll_dichvu.loaddv("DV004");
+            double TienNuoc = Convert.ToInt32(txt_sonuoc.Text) * Convert.ToDouble( tiennuoc);
+            double TienDien= Convert.ToInt32(txt_sonuoc.Text) * Convert.ToDouble(tiendien);
+            double wifi = Convert.ToDouble(tienwifi);
+            double rac = Convert.ToDouble(tienrac);
+            // String tienphong = laytienphong(txt_maphong.Text);
+            double Tong;
+            if (ckb_wifi.Checked==true && ckb_rac.Checked==false)
+            {
+                 Tong = (TienDien + TienNuoc + wifi);
+            }
+            else if (ckb_wifi.Checked == false && ckb_rac.Checked == true)
+                {
+                    Tong = (TienDien + TienNuoc + rac);
+                }
+                else if (ckb_wifi.Checked == false && ckb_rac.Checked == false)
+                     {
+                        Tong = (TienDien + TienNuoc);
+                     }
+                    else
+                        { 
+                            Tong = (TienDien + TienNuoc + wifi + rac);
+                        }    
             return Tong;
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
                 txt_tongtien.Text = TinhTienPhong().ToString();
-            
-           
         }
     }
 }

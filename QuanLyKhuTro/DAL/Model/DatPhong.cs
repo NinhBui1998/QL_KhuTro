@@ -17,6 +17,7 @@ namespace DAL
         Double TIENCOC;
         string TENPHONG;
 
+
         public String Mahd
         {
             get { return MAHD; }
