@@ -16,7 +16,10 @@ namespace DAL
             var dulieu = (from s in data.NOIQUYs select s);
             return dulieu.ToList<NOIQUY>();
         }
-
+        public NOIQUY loadNoiDung(string pMa)
+        {
+            return data.NOIQUYs.Where(t => t.MANOIQUY == pMa).FirstOrDefault();
+        }
         //kiểm tra khóa chính
         public bool ktakhoachinh_NoiQuy(string hd)
         {
