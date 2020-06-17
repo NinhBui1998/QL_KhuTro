@@ -40,6 +40,12 @@ namespace QuanLyKhuTro.NghiepVu
             get { return Ten; }
             set { Ten = value; }
         }
+        string MAnv;
+        public string MaNhanVien
+        {
+            get { return MAnv; }
+            set { MAnv = value; }
+        }
         public frm_traphong()
         {
             InitializeComponent();
@@ -266,37 +272,37 @@ namespace QuanLyKhuTro.NghiepVu
                      select lp.GIA).FirstOrDefault();
             return k.ToString();
         }
+
         public Double TinhTienPhong()
         {
             string tiennuoc = bll_dichvu.loaddv("DV002");
             string tiendien = bll_dichvu.loaddv("DV001");
             string tienwifi = bll_dichvu.loaddv("DV003");
             string tienrac = bll_dichvu.loaddv("DV004");
-            double TienNuoc = Convert.ToInt32(txt_sonuoc.Text) * Convert.ToDouble( tiennuoc);
-            double TienDien= Convert.ToInt32(txt_sonuoc.Text) * Convert.ToDouble(tiendien);
+            double TienNuoc = Convert.ToInt32(txt_sonuoc.Text) * Convert.ToDouble(tiennuoc);
+            double TienDien = Convert.ToInt32(txt_sodien.Text) * Convert.ToDouble(tiendien);
             double wifi = Convert.ToDouble(tienwifi);
             double rac = Convert.ToDouble(tienrac);
             // String tienphong = laytienphong(txt_maphong.Text);
             double Tong;
-            if (ckb_wifi.Checked==true && ckb_rac.Checked==false)
+            if (ckb_wifi.Checked == true && ckb_rac.Checked == false)
             {
-                 Tong = (TienDien + TienNuoc + wifi);
+                Tong = (TienDien + TienNuoc + wifi);
             }
             else if (ckb_wifi.Checked == false && ckb_rac.Checked == true)
-                {
-                    Tong = (TienDien + TienNuoc + rac);
-                }
-                else if (ckb_wifi.Checked == false && ckb_rac.Checked == false)
-                     {
-                        Tong = (TienDien + TienNuoc);
-                     }
-                    else
-                        { 
-                            Tong = (TienDien + TienNuoc + wifi + rac);
-                        }    
+            {
+                Tong = (TienDien + TienNuoc + rac);
+            }
+            else if (ckb_wifi.Checked == false && ckb_rac.Checked == false)
+            {
+                Tong = (TienDien + TienNuoc);
+            }
+            else
+            {
+                Tong = (TienDien + TienNuoc + wifi + rac);
+            }
             return Tong;
         }
-
         private void simpleButton1_Click(object sender, EventArgs e)
         {
                 txt_tongtien.Text = TinhTienPhong().ToString();
@@ -305,6 +311,8 @@ namespace QuanLyKhuTro.NghiepVu
         private void frm_traphong_FormClosing(object sender, FormClosingEventArgs e)
         {
             frm_test frm = new frm_test();
+            frm.MaNhanVien = MAnv;
+            Visible = false;
             frm.ShowDialog();
         }
     }

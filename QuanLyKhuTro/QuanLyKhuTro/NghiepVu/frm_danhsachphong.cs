@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using BLL.NghiepVu;
 using DAL;
 using DevExpress.Export;
 using DevExpress.Utils.Extensions;
@@ -21,6 +22,10 @@ namespace QuanLyKhuTro
     {
         BLL_Phong p = new BLL_Phong();
         BLL_DatPhong dp = new BLL_DatPhong();
+        BLL_LoaiPhong bll_loai = new BLL_LoaiPhong();
+        BLL_Tang bll_tang = new BLL_Tang();
+        BLL_DSPhong bll_dsp = new BLL_DSPhong();
+        
        
         public frm_test()
         {
@@ -34,7 +39,15 @@ namespace QuanLyKhuTro
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            grv_phong.DataSource = p.loadBang_Phong();
+            cbo_loai.DataSource = bll_loai.loadBangLoaiPhong();
+            cbo_loai.DisplayMember = "TENLOAI";
+            cbo_loai.ValueMember = "MALOAI";
+
+            cbo_tang.DataSource = bll_tang.loadBangTang();
+            cbo_tang.DisplayMember = "TENTANG";
+            cbo_tang.ValueMember = "MATANG";
+
+            grv_phong.DataSource = bll_dsp.LoadDSPhong();
             //tạo control động
             int x = 0;
             int y = 0;
@@ -90,17 +103,19 @@ namespace QuanLyKhuTro
         {
             dialog_datphong dialog = new dialog_datphong();
             Button btn = (Button)sender;
-            dialog.TenPhong = btn.Text; 
-            this.Close();
-            dialog.Show();         
+            dialog.TenPhong = btn.Text;
+            dialog.MaNhanVien = MaNV;
+            Visible = false;
+            dialog.ShowDialog();
         }
         void showformtraphong(object sender, EventArgs e)
         {
             frm_traphong frm = new frm_traphong();
             Button btn = (Button)sender;
             frm.TenPhong = btn.Text;
-            frm.Show();
+            frm.MaNhanVien = MaNV;
             Visible = false;
+            frm.ShowDialog();
         }
         void showformdatphong(object sender, EventArgs e)
         {
@@ -109,8 +124,9 @@ namespace QuanLyKhuTro
             Button btn = (Button)sender;
             frm.TenPhong = btn.Text;
             //frm.UpdateEventHandler += F2_UpdateEventHandler;
-            frm.Show();
             Visible = false;
+            frm.ShowDialog();
+            
         }
         //private void F2_UpdateEventHandler(object sender, frm_datphong.UpdateEventArgs args)
         //{
@@ -121,25 +137,29 @@ namespace QuanLyKhuTro
 
         private void gridView_Phong_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            PHONG p = new PHONG();
-            //TANG t = new TANG();
-            //LOAIPHONG lp = new LOAIPHONG();
-            int position = gridView_Phong.FocusedRowHandle;
-            try
-            {
-                p.MATANG = gridView_Phong.GetRowCellValue(position, "MATANG").ToString();
-                p.MALOAI = gridView_Phong.GetRowCellValue(position, "MALOAI").ToString();
-                p.TENPHONG = gridView_Phong.GetRowCellValue(position, "TENPHONG").ToString();                 
-                p.SOLUONG_HT = Convert.ToInt32(gridView_Phong.GetRowCellValue(position, "SOLUONG_HT").ToString());
-                p.SOLUONG_TD = Convert.ToInt32(gridView_Phong.GetRowCellValue(position, "SOLUONG_TD").ToString());
-            }
-            catch { }
+            //PHONG p = new PHONG();
+            ////TANG t = new TANG();
+            ////LOAIPHONG lp = new LOAIPHONG();
+            //int position = gridView_Phong.FocusedRowHandle;
+            //try
+            //{
+            //    p.MATANG = gridView_Phong.GetRowCellValue(position, "MATANG").ToString();
+            //    p.MALOAI = gridView_Phong.GetRowCellValue(position, "MALOAI").ToString();
+            //    p.TENPHONG = gridView_Phong.GetRowCellValue(position, "TENPHONG").ToString();                 
+            //    p.SOLUONG_HT = Convert.ToInt32(gridView_Phong.GetRowCellValue(position, "SOLUONG_HT").ToString());
+            //    p.SOLUONG_TD = Convert.ToInt32(gridView_Phong.GetRowCellValue(position, "SOLUONG_TD").ToString());
+            //}
+            //catch { }
         }
-        private void btn_restart_Click(object sender, EventArgs e)
+
+        private void btn_taohd_Click(object sender, EventArgs e)
         {
-            frm_test frm = new frm_test();
-            //frm.Close();
-            
+            grv_phong.DataSource = bll_dsp.LoadDSPhongTheoMa(cbo_tang.SelectedValue.ToString(), cbo_loai.SelectedValue.ToString());
+        }
+
+        private void btn_tatcaphong_Click(object sender, EventArgs e)
+        {
+            grv_phong.DataSource = bll_dsp.LoadDSPhong();
         }
     }
 }

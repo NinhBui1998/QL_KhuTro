@@ -49,6 +49,7 @@
     <Compile Include="NghiepVu\BLL_ChiSoDienNuoc.cs" />
     <Compile Include="NghiepVu\BLL_DatPhong.cs" />
     <Compile Include="HeThong\BLL_DichVu.cs" />
+    <Compile Include="NghiepVu\BLL_DSPhong.cs" />
     <Compile Include="NghiepVu\BLL_HoaDon_DV.cs" />
     <Compile Include="NghiepVu\BLL_HopDong.cs" />
     <Compile Include="NghiepVu\BLL_HopDong_KhachThue.cs" />

@@ -214,6 +214,7 @@ namespace QuanLyKhuTro
         private void btn_tienphong_ItemClick(object sender, ItemClickEventArgs e)
         {
             frm_tienphong tn = new frm_tienphong();
+            tn.MaNhanVien = TenDN;
             tn.ShowDialog();
         }
 

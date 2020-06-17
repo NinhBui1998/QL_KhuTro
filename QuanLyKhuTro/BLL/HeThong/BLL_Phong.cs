@@ -13,6 +13,10 @@ namespace BLL
         {
             return phong.loadbangPhong();
         }
+        public List<PHONG> loadBang_Phongtheoma( string pmatang)
+        {
+            return phong.loadphongtheoma( pmatang);
+        }
 
         //public List<PHONG> LoadDL_Phong(string pma)
         //{

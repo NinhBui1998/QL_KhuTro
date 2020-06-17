@@ -16,6 +16,16 @@ namespace DAL
             var dulieu = (from s in data.PHONGs select s);
             return dulieu.ToList<PHONG>();
         }
+        public List<PHONG> loadphongtheoma(string pmatang)
+        {
+            var dulieu = (from s in data.PHONGs 
+                       
+                          from t in data.TANGs
+                          where s.MATANG==t.MATANG && 
+                          t.MATANG==pmatang
+                          select s);
+            return dulieu.ToList<PHONG>();
+        }
         public PHONG loadTenPhong(string pMa)
         {
             return data.PHONGs.Where(t => t.MAPHONG == pMa).FirstOrDefault();

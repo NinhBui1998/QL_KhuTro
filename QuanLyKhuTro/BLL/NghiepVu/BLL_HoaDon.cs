@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using DAL.Model;
 using DAL.NghiepVu;
 
 namespace BLL.NghiepVu
@@ -11,9 +12,14 @@ namespace BLL.NghiepVu
     public class BLL_HoaDon
     {
         DAL_HoaDon dall_hoadon = new DAL_HoaDon();
+        DAL_TienPhongHangThang tpht = new DAL_TienPhongHangThang();
         public List<HOADON> Loadhoadon()
         {
             return dall_hoadon.loadbangHoaDon();
+        }
+        public List<HoaDon> LoadDataHoaDon()
+        {
+            return tpht.loadHoaDon();
         }
         //kiểm tra khóa chính
         public bool ktkc_HoaDon(string pMa)

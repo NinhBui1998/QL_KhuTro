@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
+
 namespace QuanLyKhuTro.NghiepVu
 {
     public partial class dialog_datphong : DevExpress.XtraEditors.XtraForm
@@ -23,12 +24,21 @@ namespace QuanLyKhuTro.NghiepVu
             get { return TENPHONG; }
             set { TENPHONG = value; }
         }
+
+        string MAnv;
+        public string MaNhanVien
+        {
+            get { return MAnv; }
+            set { MAnv = value; }
+        }
         private void btn_datphong_Click(object sender, EventArgs e)
         {
             frm_datphong frm = new frm_datphong();
             frm.TenPhong = TENPHONG;
-            frm.Show();
+            frm.MaNhanVien = MAnv;
             Visible = false;
+            frm.ShowDialog();
+            
            // this.Close();
         }
 
@@ -36,14 +46,18 @@ namespace QuanLyKhuTro.NghiepVu
         {
             frm_traphong frm = new frm_traphong();
             frm.TenPhong = TENPHONG;
-            frm.Show();
+            frm.MaNhanVien = MAnv;
             Visible = false;
+            frm.ShowDialog();
+            
         }
 
         private void dialog_datphong_FormClosing(object sender, FormClosingEventArgs e)
         {
             frm_test frm = new frm_test();
-            frm.Show();
+            frm.MaNhanVien = MAnv;
+            Visible = false;
+            frm.ShowDialog();
 
         }
     }

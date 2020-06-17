@@ -807,8 +807,8 @@
             this.tableLayoutPanel10.ColumnCount = 4;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.30208F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.69792F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 251F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 87F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 294F));
             this.tableLayoutPanel10.Controls.Add(this.btn_sua, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.btn_taohd, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel2, 3, 0);
@@ -856,12 +856,12 @@
             this.tableLayoutPanel2.Controls.Add(this.btn_in, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btn_tatcahd, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(585, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(421, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(125, 40);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(289, 40);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // btn_in
@@ -869,11 +869,13 @@
             this.btn_in.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_in.Appearance.Options.UseFont = true;
             this.btn_in.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_in.Enabled = false;
             this.btn_in.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_in.ImageOptions.Image")));
-            this.btn_in.Location = new System.Drawing.Point(65, 3);
+            this.btn_in.Location = new System.Drawing.Point(147, 3);
             this.btn_in.Name = "btn_in";
-            this.btn_in.Size = new System.Drawing.Size(57, 34);
+            this.btn_in.Size = new System.Drawing.Size(139, 34);
             this.btn_in.TabIndex = 4;
+            this.btn_in.Text = "xuất hợp đồng";
             // 
             // btn_tatcahd
             // 
@@ -883,8 +885,9 @@
             this.btn_tatcahd.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_tatcahd.ImageOptions.SvgImage")));
             this.btn_tatcahd.Location = new System.Drawing.Point(3, 3);
             this.btn_tatcahd.Name = "btn_tatcahd";
-            this.btn_tatcahd.Size = new System.Drawing.Size(56, 34);
+            this.btn_tatcahd.Size = new System.Drawing.Size(138, 34);
             this.btn_tatcahd.TabIndex = 2;
+            this.btn_tatcahd.Text = "Hợp đồng";
             this.btn_tatcahd.Click += new System.EventHandler(this.btn_tatcahd_Click);
             // 
             // frm_datphong
