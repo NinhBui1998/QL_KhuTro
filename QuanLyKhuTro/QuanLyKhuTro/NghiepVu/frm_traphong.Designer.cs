@@ -108,6 +108,7 @@
             this.NGAYLAPHD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAYTRA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TRACOC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.label18 = new System.Windows.Forms.Label();
             this.tab_cha.SuspendLayout();
             this.tab_top.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -135,16 +136,18 @@
             // 
             this.tab_cha.ColumnCount = 1;
             this.tab_cha.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tab_cha.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tab_cha.Controls.Add(this.tab_top, 0, 0);
-            this.tab_cha.Controls.Add(this.grv_traphong, 0, 1);
+            this.tab_cha.Controls.Add(this.tab_top, 0, 1);
+            this.tab_cha.Controls.Add(this.grv_traphong, 0, 2);
+            this.tab_cha.Controls.Add(this.label18, 0, 0);
             this.tab_cha.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tab_cha.Location = new System.Drawing.Point(0, 0);
             this.tab_cha.Margin = new System.Windows.Forms.Padding(4);
             this.tab_cha.Name = "tab_cha";
-            this.tab_cha.RowCount = 2;
-            this.tab_cha.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.17117F));
-            this.tab_cha.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.82883F));
+            this.tab_cha.RowCount = 3;
+            this.tab_cha.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tab_cha.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.72552F));
+            this.tab_cha.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.27448F));
+            this.tab_cha.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tab_cha.Size = new System.Drawing.Size(1057, 666);
             this.tab_cha.TabIndex = 0;
             // 
@@ -156,13 +159,13 @@
             this.tab_top.Controls.Add(this.tableLayoutPanel1, 1, 0);
             this.tab_top.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tab_top.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tab_top.Location = new System.Drawing.Point(4, 4);
+            this.tab_top.Location = new System.Drawing.Point(4, 47);
             this.tab_top.Margin = new System.Windows.Forms.Padding(4);
             this.tab_top.Name = "tab_top";
             this.tab_top.RowCount = 1;
             this.tab_top.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tab_top.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 466F));
-            this.tab_top.Size = new System.Drawing.Size(1049, 466);
+            this.tab_top.Size = new System.Drawing.Size(1049, 470);
             this.tab_top.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -179,7 +182,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 58.91304F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.08696F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(613, 460);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(613, 464);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
             // grb_thongtinhd
@@ -188,9 +191,9 @@
             this.grb_thongtinhd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grb_thongtinhd.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grb_thongtinhd.ForeColor = System.Drawing.Color.Red;
-            this.grb_thongtinhd.Location = new System.Drawing.Point(3, 273);
+            this.grb_thongtinhd.Location = new System.Drawing.Point(3, 276);
             this.grb_thongtinhd.Name = "grb_thongtinhd";
-            this.grb_thongtinhd.Size = new System.Drawing.Size(607, 184);
+            this.grb_thongtinhd.Size = new System.Drawing.Size(607, 185);
             this.grb_thongtinhd.TabIndex = 9;
             this.grb_thongtinhd.TabStop = false;
             this.grb_thongtinhd.Text = "Thông tin hợp đồng thuê";
@@ -221,7 +224,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(393, 155);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(393, 156);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // ckb_tracoc
@@ -229,9 +232,9 @@
             this.ckb_tracoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.ckb_tracoc.AutoSize = true;
-            this.ckb_tracoc.Location = new System.Drawing.Point(124, 117);
+            this.ckb_tracoc.Location = new System.Drawing.Point(124, 120);
             this.ckb_tracoc.Name = "ckb_tracoc";
-            this.ckb_tracoc.Size = new System.Drawing.Size(63, 35);
+            this.ckb_tracoc.Size = new System.Drawing.Size(63, 33);
             this.ckb_tracoc.TabIndex = 5;
             this.ckb_tracoc.Text = "Chưa";
             this.ckb_tracoc.UseVisualStyleBackColor = true;
@@ -242,7 +245,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(3, 9);
+            this.label5.Location = new System.Drawing.Point(3, 10);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(115, 19);
             this.label5.TabIndex = 0;
@@ -254,7 +257,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(3, 47);
+            this.label6.Location = new System.Drawing.Point(3, 49);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 19);
             this.label6.TabIndex = 0;
@@ -266,7 +269,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(3, 125);
+            this.label7.Location = new System.Drawing.Point(3, 127);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(115, 19);
             this.label7.TabIndex = 0;
@@ -275,7 +278,7 @@
             // txt_mahd
             // 
             this.txt_mahd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_mahd.Location = new System.Drawing.Point(124, 5);
+            this.txt_mahd.Location = new System.Drawing.Point(124, 6);
             this.txt_mahd.Name = "txt_mahd";
             this.txt_mahd.Size = new System.Drawing.Size(266, 27);
             this.txt_mahd.TabIndex = 1;
@@ -286,7 +289,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(3, 85);
+            this.label8.Location = new System.Drawing.Point(3, 88);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(115, 19);
             this.label8.TabIndex = 0;
@@ -295,7 +298,7 @@
             // txt_ngaytra
             // 
             this.txt_ngaytra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_ngaytra.Location = new System.Drawing.Point(124, 81);
+            this.txt_ngaytra.Location = new System.Drawing.Point(124, 84);
             this.txt_ngaytra.Mask = "00/00/0000";
             this.txt_ngaytra.Name = "txt_ngaytra";
             this.txt_ngaytra.Size = new System.Drawing.Size(266, 27);
@@ -305,7 +308,7 @@
             // txt_ngaylap
             // 
             this.txt_ngaylap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_ngaylap.Location = new System.Drawing.Point(124, 43);
+            this.txt_ngaylap.Location = new System.Drawing.Point(124, 45);
             this.txt_ngaylap.Mask = "00/00/0000";
             this.txt_ngaylap.Name = "txt_ngaylap";
             this.txt_ngaylap.Size = new System.Drawing.Size(266, 27);
@@ -320,7 +323,7 @@
             this.grb_dichvu.ForeColor = System.Drawing.Color.Red;
             this.grb_dichvu.Location = new System.Drawing.Point(3, 3);
             this.grb_dichvu.Name = "grb_dichvu";
-            this.grb_dichvu.Size = new System.Drawing.Size(607, 264);
+            this.grb_dichvu.Size = new System.Drawing.Size(607, 267);
             this.grb_dichvu.TabIndex = 10;
             this.grb_dichvu.TabStop = false;
             this.grb_dichvu.Text = "Thông tin dịch vụ";
@@ -338,7 +341,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 134F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(601, 235);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(601, 238);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // tableLayoutPanel10
@@ -544,7 +547,7 @@
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(595, 95);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(595, 98);
             this.tableLayoutPanel9.TabIndex = 1;
             // 
             // label13
@@ -561,7 +564,7 @@
             // 
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(3, 37);
+            this.label16.Location = new System.Drawing.Point(3, 38);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(104, 19);
             this.label16.TabIndex = 0;
@@ -571,7 +574,7 @@
             // 
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(3, 69);
+            this.label17.Location = new System.Drawing.Point(3, 71);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(104, 19);
             this.label17.TabIndex = 0;
@@ -590,7 +593,7 @@
             // 
             this.txt_sonuoc.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_sonuoc.Enabled = false;
-            this.txt_sonuoc.Location = new System.Drawing.Point(113, 34);
+            this.txt_sonuoc.Location = new System.Drawing.Point(113, 35);
             this.txt_sonuoc.Name = "txt_sonuoc";
             this.txt_sonuoc.Size = new System.Drawing.Size(116, 27);
             this.txt_sonuoc.TabIndex = 1;
@@ -599,7 +602,7 @@
             // 
             this.txt_tongtien.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_tongtien.Enabled = false;
-            this.txt_tongtien.Location = new System.Drawing.Point(113, 65);
+            this.txt_tongtien.Location = new System.Drawing.Point(113, 67);
             this.txt_tongtien.Name = "txt_tongtien";
             this.txt_tongtien.Size = new System.Drawing.Size(213, 27);
             this.txt_tongtien.TabIndex = 1;
@@ -618,7 +621,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.03846F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.47826F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.6087F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(424, 460);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(424, 464);
             this.tableLayoutPanel4.TabIndex = 7;
             // 
             // grb_thongtinphong
@@ -629,7 +632,7 @@
             this.grb_thongtinphong.ForeColor = System.Drawing.Color.Red;
             this.grb_thongtinphong.Location = new System.Drawing.Point(3, 3);
             this.grb_thongtinphong.Name = "grb_thongtinphong";
-            this.grb_thongtinphong.Size = new System.Drawing.Size(418, 219);
+            this.grb_thongtinphong.Size = new System.Drawing.Size(418, 221);
             this.grb_thongtinphong.TabIndex = 7;
             this.grb_thongtinphong.TabStop = false;
             this.grb_thongtinphong.Text = "Thông tin phòng";
@@ -664,7 +667,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(409, 190);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(409, 192);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // lbl_maloaiphong
@@ -730,7 +733,7 @@
             // 
             this.lbl_sltoida.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_sltoida.AutoSize = true;
-            this.lbl_sltoida.Location = new System.Drawing.Point(3, 163);
+            this.lbl_sltoida.Location = new System.Drawing.Point(3, 164);
             this.lbl_sltoida.Name = "lbl_sltoida";
             this.lbl_sltoida.Size = new System.Drawing.Size(128, 19);
             this.lbl_sltoida.TabIndex = 1;
@@ -749,7 +752,7 @@
             // 
             this.txt_sltoida.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_sltoida.Enabled = false;
-            this.txt_sltoida.Location = new System.Drawing.Point(137, 159);
+            this.txt_sltoida.Location = new System.Drawing.Point(137, 160);
             this.txt_sltoida.Name = "txt_sltoida";
             this.txt_sltoida.Size = new System.Drawing.Size(269, 27);
             this.txt_sltoida.TabIndex = 2;
@@ -790,9 +793,9 @@
             this.grb_thongtinkt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grb_thongtinkt.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grb_thongtinkt.ForeColor = System.Drawing.Color.Red;
-            this.grb_thongtinkt.Location = new System.Drawing.Point(3, 228);
+            this.grb_thongtinkt.Location = new System.Drawing.Point(3, 230);
             this.grb_thongtinkt.Name = "grb_thongtinkt";
-            this.grb_thongtinkt.Size = new System.Drawing.Size(418, 170);
+            this.grb_thongtinkt.Size = new System.Drawing.Size(418, 172);
             this.grb_thongtinkt.TabIndex = 8;
             this.grb_thongtinkt.TabStop = false;
             this.grb_thongtinkt.Text = "Thông tin khách thuê";
@@ -823,7 +826,7 @@
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(409, 141);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(409, 143);
             this.tableLayoutPanel8.TabIndex = 1;
             // 
             // label1
@@ -856,7 +859,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(3, 113);
+            this.label4.Location = new System.Drawing.Point(3, 114);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(127, 19);
             this.label4.TabIndex = 0;
@@ -885,7 +888,7 @@
             // 
             this.txt_sdt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_sdt.Enabled = false;
-            this.txt_sdt.Location = new System.Drawing.Point(136, 109);
+            this.txt_sdt.Location = new System.Drawing.Point(136, 110);
             this.txt_sdt.Name = "txt_sdt";
             this.txt_sdt.Size = new System.Drawing.Size(270, 27);
             this.txt_sdt.TabIndex = 1;
@@ -918,12 +921,12 @@
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.42584F));
             this.tableLayoutPanel11.Controls.Add(this.tableLayoutPanel13, 1, 0);
             this.tableLayoutPanel11.Controls.Add(this.tableLayoutPanel12, 0, 0);
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 404);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 408);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(418, 53);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(418, 48);
             this.tableLayoutPanel11.TabIndex = 9;
             // 
             // tableLayoutPanel13
@@ -939,7 +942,7 @@
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(118, 47);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(118, 42);
             this.tableLayoutPanel13.TabIndex = 5;
             // 
             // btn_in
@@ -950,7 +953,7 @@
             this.btn_in.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_in.ImageOptions.Image")));
             this.btn_in.Location = new System.Drawing.Point(62, 3);
             this.btn_in.Name = "btn_in";
-            this.btn_in.Size = new System.Drawing.Size(53, 41);
+            this.btn_in.Size = new System.Drawing.Size(53, 36);
             this.btn_in.TabIndex = 4;
             // 
             // btn_tatcahd
@@ -961,7 +964,7 @@
             this.btn_tatcahd.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_tatcahd.ImageOptions.SvgImage")));
             this.btn_tatcahd.Location = new System.Drawing.Point(3, 3);
             this.btn_tatcahd.Name = "btn_tatcahd";
-            this.btn_tatcahd.Size = new System.Drawing.Size(53, 41);
+            this.btn_tatcahd.Size = new System.Drawing.Size(53, 36);
             this.btn_tatcahd.TabIndex = 2;
             this.btn_tatcahd.Click += new System.EventHandler(this.btn_tatcahd_Click);
             // 
@@ -978,7 +981,7 @@
             this.tableLayoutPanel12.RowCount = 1;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(288, 47);
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(288, 42);
             this.tableLayoutPanel12.TabIndex = 0;
             // 
             // simpleButton1
@@ -987,7 +990,7 @@
             this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
             this.simpleButton1.Location = new System.Drawing.Point(129, 3);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(156, 41);
+            this.simpleButton1.Size = new System.Drawing.Size(156, 36);
             this.simpleButton1.TabIndex = 11;
             this.simpleButton1.Text = "Tính tiền";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -998,7 +1001,7 @@
             this.btn_xacnhan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_xacnhan.ImageOptions.Image")));
             this.btn_xacnhan.Location = new System.Drawing.Point(3, 3);
             this.btn_xacnhan.Name = "btn_xacnhan";
-            this.btn_xacnhan.Size = new System.Drawing.Size(120, 41);
+            this.btn_xacnhan.Size = new System.Drawing.Size(120, 36);
             this.btn_xacnhan.TabIndex = 10;
             this.btn_xacnhan.Text = "Xác nhận";
             this.btn_xacnhan.Click += new System.EventHandler(this.btn_xacnhan_Click);
@@ -1007,10 +1010,10 @@
             // 
             this.grv_traphong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grv_traphong.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1);
-            this.grv_traphong.Location = new System.Drawing.Point(3, 477);
+            this.grv_traphong.Location = new System.Drawing.Point(3, 524);
             this.grv_traphong.MainView = this.gridView_traphong;
             this.grv_traphong.Name = "grv_traphong";
-            this.grv_traphong.Size = new System.Drawing.Size(1051, 186);
+            this.grv_traphong.Size = new System.Drawing.Size(1051, 139);
             this.grv_traphong.TabIndex = 1;
             this.grv_traphong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_traphong});
@@ -1103,6 +1106,18 @@
             this.TRACOC.VisibleIndex = 7;
             this.TRACOC.Width = 117;
             // 
+            // label18
+            // 
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Red;
+            this.label18.Location = new System.Drawing.Point(439, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(178, 43);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "TRẢ PHÒNG";
+            // 
             // frm_traphong
             // 
             this.Appearance.Options.UseFont = true;
@@ -1118,6 +1133,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_traphong_FormClosing);
             this.Load += new System.EventHandler(this.frm_traphong_Load);
             this.tab_cha.ResumeLayout(false);
+            this.tab_cha.PerformLayout();
             this.tab_top.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.grb_thongtinhd.ResumeLayout(false);
@@ -1229,5 +1245,6 @@
         private DevExpress.XtraEditors.SimpleButton btn_in;
         private DevExpress.XtraEditors.SimpleButton btn_tatcahd;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private System.Windows.Forms.Label label18;
     }
 }

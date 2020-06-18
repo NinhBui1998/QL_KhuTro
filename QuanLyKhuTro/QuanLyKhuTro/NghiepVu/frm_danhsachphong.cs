@@ -43,9 +43,7 @@ namespace QuanLyKhuTro
             cbo_loai.DisplayMember = "TENLOAI";
             cbo_loai.ValueMember = "MALOAI";
 
-            cbo_tang.DataSource = bll_tang.loadBangTang();
-            cbo_tang.DisplayMember = "TENTANG";
-            cbo_tang.ValueMember = "MATANG";
+           
 
             grv_phong.DataSource = bll_dsp.LoadDSPhong();
             //tạo control động
@@ -59,7 +57,6 @@ namespace QuanLyKhuTro
                 l.Size = new Size(60, 30);
                 l.Location = new Point(x, y);
                 panel1.Controls.Add(l);
-
                 for (int i = 0; i < p.sphong(p.stang()[j].MATANG.ToString()).Count; i++)
                 {
                     x += 100;
@@ -73,7 +70,6 @@ namespace QuanLyKhuTro
                     {
                         b.BackColor = Color.Gray;
                         b.Click += showformtraphong;
-
                     }
                     else if (1<=p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT && p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT<p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_TD)
                     {
@@ -85,11 +81,10 @@ namespace QuanLyKhuTro
                     {
                         b.BackColor = Color.White;
                         frm_datphong frm = new frm_datphong(this);
-                        //TenPhong = b.Text;
-                     //   frm.UpdateEventHandler += F2_UpdateEventHandler;
+                       
                         b.Click += showformdatphong;
                     }
-                    //b.Click += btn_Click;
+                    
                     panel1.Controls.Add(b);
                     
                 }
@@ -154,12 +149,64 @@ namespace QuanLyKhuTro
 
         private void btn_taohd_Click(object sender, EventArgs e)
         {
-            grv_phong.DataSource = bll_dsp.LoadDSPhongTheoMa(cbo_tang.SelectedValue.ToString(), cbo_loai.SelectedValue.ToString());
+            //grv_phong.DataSource = bll_dsp.LoadDSPhongTheoMa(cbo_tang.SelectedValue.ToString(), cbo_loai.SelectedValue.ToString());
+            panel1.Controls.Clear();
+            int x = 0;
+            int y = 0;
+            for (int j = 0; j < p.stang().Count; j++)
+            {
+                Label l = new Label();
+                l.Text = ("Tầng" + (j + 1).ToString());
+                l.Tag = (j + 1).ToString();
+                l.Size = new Size(60, 30);
+                l.Location = new Point(x, y);
+                panel1.Controls.Add(l);
+                for (int i = 0; i < p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString()).Count; i++)
+                {
+                    x += 100;
+                    Button b = new Button();
+                    b.Text = p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].TENPHONG.ToString();
+                    b.Tag = (i + 1).ToString();
+                    b.Size = new Size(90, 60);
+                    b.Location = new Point(x, y);
+                    b.BackColor = Color.White;
+                    if (p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].SOLUONG_TD - p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].SOLUONG_HT == 0)
+                    {
+                        b.BackColor = Color.Gray;
+                        b.Click += showformtraphong;
+                    }
+                    else if (1 <= p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].SOLUONG_HT && p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].SOLUONG_HT < p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].SOLUONG_TD)
+                    {
+                        b.BackColor = Color.SeaGreen;
+                        b.Click += showdialog;
+
+                    }
+                    else
+                    {
+                        b.BackColor = Color.White;
+                        frm_datphong frm = new frm_datphong(this);
+
+                        b.Click += showformdatphong;
+                    }
+
+                    panel1.Controls.Add(b);
+
+                }
+
+                x = 0;
+                y += 60;
+            }
         }
 
         private void btn_tatcaphong_Click(object sender, EventArgs e)
         {
             grv_phong.DataSource = bll_dsp.LoadDSPhong();
+        }
+
+        private void btn_lammoi_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            Form1_Load(sender, e);
         }
     }
 }

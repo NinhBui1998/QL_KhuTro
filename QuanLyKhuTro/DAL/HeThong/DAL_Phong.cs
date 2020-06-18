@@ -150,6 +150,10 @@ namespace DAL
             var sp = (from s in data.TANGs select s).ToList<TANG>();
             return sp;
         }
-        
+        public List<PHONG>Laydtphong(string pmat, string pmaloai)
+        {
+            var sp = (from s in data.PHONGs where s.MATANG == pmat && s.MALOAI==pmaloai select s).ToList<PHONG>();
+            return sp;
+        }
     }
 }

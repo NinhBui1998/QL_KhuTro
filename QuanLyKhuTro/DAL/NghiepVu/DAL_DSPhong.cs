@@ -38,12 +38,12 @@ namespace DAL.NghiepVu
             return kq;
         }
 
-        public List<DanhsachPhong> loaddsPhong_theoMa(string pmatang,string pmaloai)
+        public List<DanhsachPhong> loaddsPhong_theoMa(string pmaloai)
         {
             var kt = from s in data.TANGs
                      from l in data.LOAIPHONGs
                      from p in data.PHONGs
-                     where s.MATANG == p.MATANG && p.MALOAI == l.MALOAI && p.MATANG==pmatang
+                     where s.MATANG == p.MATANG && p.MALOAI == l.MALOAI
                      && p.MALOAI==pmaloai
                      select new
                      {
