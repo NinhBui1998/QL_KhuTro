@@ -9,12 +9,13 @@ namespace DAL
    public class DatPhong
     {
         string MAHD;
-        string MANV;
+        string TENNV;
         string MAKT;
         string TENKT;
         DateTime NGAYLAP;
         string THOIHAN;
-        Double TIENCOC;
+        Decimal TIENCOC;
+       
         string TENPHONG;
 
 
@@ -28,10 +29,10 @@ namespace DAL
             get { return TENPHONG; }
             set { TENPHONG = value; }
         }
-        public String Manv
+        public String Tennv
         {
-            get { return MANV; }
-            set { MANV = value; }
+            get { return TENNV; }
+            set { TENNV = value; }
         }
         public String Makt
         {
@@ -53,7 +54,7 @@ namespace DAL
             get { return THOIHAN; }
             set { THOIHAN = value; }
         }
-        public Double Tiencoc
+        public Decimal Tiencoc
         {
             get { return TIENCOC; }
             set { TIENCOC = value; }

@@ -15,11 +15,12 @@ namespace DAL
                      from k in data.HOPDONG_KTs
                      from kth in data.KHACHTHUEs
                      from p in data.PHONGs
-                     where s.MAHD == k.MAHD && k.MAKT==kth.MAKT && p.MAPHONG==s.MAPHONG
+                     from nv in data.NHANVIENs
+                     where s.MAHD == k.MAHD && k.MAKT==kth.MAKT && p.MAPHONG==s.MAPHONG && s.MANV==nv.MANV
                      select new
                      {
                          s.MAHD,
-                         s.MANV,
+                         nv.TENNV,
                          kth.MAKT,
                          kth.TENKT,
                          s.NGAYLAPHD,
@@ -30,51 +31,53 @@ namespace DAL
             var kq = kt.ToList().ConvertAll(t => new DatPhong()
             {
                 Mahd=t.MAHD,
-                Manv=t.MANV,
+                Tennv=t.TENNV,
                 Makt=t.MAKT,
                 Tenkt=t.TENKT,
                 NgayLap = Convert.ToDateTime(t.NGAYLAPHD),
                 Thoihan=t.THOIHAN,
-                Tiencoc= Convert.ToDouble(t.TIENCOC),
+                Tiencoc=Convert.ToDecimal( t.TIENCOC),/* string.Format("{0:#,##0.00}",t.TIENCOC),*/
                 TenPhong=t.TENPHONG,
-            });
+            });;
             kq.ToList<DatPhong>();
             return kq;
         }
 
-        public List<DatPhong> loaddatPhongtheoMa( string pten)
-        {
-            var kt = from s in data.HOPDONGs
-                     from k in data.HOPDONG_KTs
-                     from kth in data.KHACHTHUEs
-                     from p in data.PHONGs
-                     where s.MAHD == k.MAHD && k.MAKT == kth.MAKT && p.MAPHONG == s.MAPHONG && p.TENPHONG==pten
-                     select new
-                     {
-                         s.MAHD,
-                         s.MANV,
-                         kth.MAKT,
-                         kth.TENKT,
-                         s.NGAYLAPHD,
-                         s.THOIHAN,
-                         s.TIENCOC,
-                         p.TENPHONG,
-                     };
-            var kq = kt.ToList().ConvertAll(t => new DatPhong()
+        public List<DatPhong> loaddatPhongtheoMa(string pten)
             {
-                Mahd = t.MAHD,
-                Manv = t.MANV,
-                Makt = t.MAKT,
-                Tenkt = t.TENKT,
-                NgayLap = Convert.ToDateTime(t.NGAYLAPHD),
-                Thoihan = t.THOIHAN,
-                Tiencoc = Convert.ToDouble(t.TIENCOC),
-                TenPhong = t.TENPHONG,
-            });
-            kq.ToList<DatPhong>();
-            return kq;
-        }
-        public List<PHONG> laytenphong(string pmatang, string pmaloai)
+                var kt = from s in data.HOPDONGs
+                         from k in data.HOPDONG_KTs
+                         from kth in data.KHACHTHUEs
+                         from p in data.PHONGs
+                         from nv in data.NHANVIENs
+                         where s.MAHD == k.MAHD && k.MAKT == kth.MAKT &&
+                         p.MAPHONG == s.MAPHONG && s.MANV == nv.MANV && p.TENPHONG==pten
+                         select new
+                         {
+                             s.MAHD,
+                             nv.TENNV,
+                             kth.MAKT,
+                             kth.TENKT,
+                             s.NGAYLAPHD,
+                             s.THOIHAN,
+                             s.TIENCOC,
+                             p.TENPHONG,
+                         };
+                var kq = kt.ToList().ConvertAll(t => new DatPhong()
+                {
+                    Mahd = t.MAHD,
+                    Tennv = t.TENNV,
+                    Makt = t.MAKT,
+                    Tenkt = t.TENKT,
+                    NgayLap = Convert.ToDateTime(t.NGAYLAPHD),
+                    Thoihan = t.THOIHAN,
+                    Tiencoc = Convert.ToDecimal(t.TIENCOC),
+                    TenPhong = t.TENPHONG,
+                });
+                kq.ToList<DatPhong>();
+                return kq;
+            }
+            public List<PHONG> laytenphong(string pmatang, string pmaloai)
         {
             var l = (from p in data.PHONGs
                      from lp in data.LOAIPHONGs

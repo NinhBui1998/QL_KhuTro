@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using BLL;
 using DAL;
 using System.IO;
+using System.Globalization;
 
 namespace QuanLyKhuTro.NghiepVu
 {
@@ -261,6 +262,7 @@ namespace QuanLyKhuTro.NghiepVu
                 txt_soluonght.Text = p.SOLUONG_HT.ToString();
                 txt_loaiphong.Text = lp.TENLOAI;
                 txt_matang.Text = t.TENTANG;
+                txt_gia.Text = String.Format("{0:#,##0.##} VNĐ", lp.GIA);
             }
             catch { MessageBox.Show("Lỗi hệ thống"); }
 
@@ -312,7 +314,8 @@ namespace QuanLyKhuTro.NghiepVu
             {
                 txt_mahd.Text = gridView_datphong.GetRowCellValue(position, "Mahd").ToString();
                 txt_thoihan.Text= gridView_datphong.GetRowCellValue(position, "Thoihan").ToString();
-                txt_tiencoc.Text= gridView_datphong.GetRowCellValue(position, "Tiencoc").ToString();
+                hd.TIENCOC= Convert.ToDecimal(gridView_datphong.GetRowCellValue(position, "Tiencoc").ToString());
+                txt_tiencoc.Text = String.Format("{0:#,##0.##} VNĐ", hd.TIENCOC);
 
 
             }
@@ -350,6 +353,17 @@ namespace QuanLyKhuTro.NghiepVu
             frm.MaNhanVien = MaNV;
             Visible = false;
             frm.ShowDialog();
+        }
+
+        private void txt_tiencoc_TextChanged(object sender, EventArgs e)
+        {
+            //địng dạng tiền tệ
+            System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+            decimal value = decimal.Parse(txt_tiencoc.Text, System.Globalization.NumberStyles.AllowThousands);
+            txt_tiencoc.Text = String.Format(culture, "{0:N0}", value);
+            //texbox1.Text = String.Format(culture, "{0:N0}", value);
+            txt_tiencoc.Select(txt_tiencoc.Text.Length, 0);
+           
         }
     }
 }
