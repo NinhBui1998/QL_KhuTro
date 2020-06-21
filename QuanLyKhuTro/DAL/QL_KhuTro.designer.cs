@@ -45,9 +45,6 @@ namespace DAL
     partial void InsertHOADON(HOADON instance);
     partial void UpdateHOADON(HOADON instance);
     partial void DeleteHOADON(HOADON instance);
-    partial void InsertHOADON_DICHVU(HOADON_DICHVU instance);
-    partial void UpdateHOADON_DICHVU(HOADON_DICHVU instance);
-    partial void DeleteHOADON_DICHVU(HOADON_DICHVU instance);
     partial void InsertHOPDONG(HOPDONG instance);
     partial void UpdateHOPDONG(HOPDONG instance);
     partial void DeleteHOPDONG(HOPDONG instance);
@@ -168,14 +165,6 @@ namespace DAL
 			get
 			{
 				return this.GetTable<HOADON>();
-			}
-		}
-		
-		public System.Data.Linq.Table<HOADON_DICHVU> HOADON_DICHVUs
-		{
-			get
-			{
-				return this.GetTable<HOADON_DICHVU>();
 			}
 		}
 		
@@ -835,7 +824,9 @@ namespace DAL
 		
 		private string _DONVI;
 		
-		private EntitySet<HOADON_DICHVU> _HOADON_DICHVUs;
+		private string _MAHOADON;
+		
+		private EntityRef<HOADON> _HOADON;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -849,11 +840,13 @@ namespace DAL
     partial void OnGIADVChanged();
     partial void OnDONVIChanging(string value);
     partial void OnDONVIChanged();
+    partial void OnMAHOADONChanging(string value);
+    partial void OnMAHOADONChanged();
     #endregion
 		
 		public DICHVU()
 		{
-			this._HOADON_DICHVUs = new EntitySet<HOADON_DICHVU>(new Action<HOADON_DICHVU>(this.attach_HOADON_DICHVUs), new Action<HOADON_DICHVU>(this.detach_HOADON_DICHVUs));
+			this._HOADON = default(EntityRef<HOADON>);
 			OnCreated();
 		}
 		
@@ -937,16 +930,61 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DICHVU_HOADON_DICHVU", Storage="_HOADON_DICHVUs", ThisKey="MADV", OtherKey="MADV")]
-		public EntitySet<HOADON_DICHVU> HOADON_DICHVUs
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAHOADON", DbType="VarChar(10)")]
+		public string MAHOADON
 		{
 			get
 			{
-				return this._HOADON_DICHVUs;
+				return this._MAHOADON;
 			}
 			set
 			{
-				this._HOADON_DICHVUs.Assign(value);
+				if ((this._MAHOADON != value))
+				{
+					if (this._HOADON.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMAHOADONChanging(value);
+					this.SendPropertyChanging();
+					this._MAHOADON = value;
+					this.SendPropertyChanged("MAHOADON");
+					this.OnMAHOADONChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HOADON_DICHVU", Storage="_HOADON", ThisKey="MAHOADON", OtherKey="MAHOADON", IsForeignKey=true)]
+		public HOADON HOADON
+		{
+			get
+			{
+				return this._HOADON.Entity;
+			}
+			set
+			{
+				HOADON previousValue = this._HOADON.Entity;
+				if (((previousValue != value) 
+							|| (this._HOADON.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._HOADON.Entity = null;
+						previousValue.DICHVUs.Remove(this);
+					}
+					this._HOADON.Entity = value;
+					if ((value != null))
+					{
+						value.DICHVUs.Add(this);
+						this._MAHOADON = value.MAHOADON;
+					}
+					else
+					{
+						this._MAHOADON = default(string);
+					}
+					this.SendPropertyChanged("HOADON");
+				}
 			}
 		}
 		
@@ -968,18 +1006,6 @@ namespace DAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_HOADON_DICHVUs(HOADON_DICHVU entity)
-		{
-			this.SendPropertyChanging();
-			entity.DICHVU = this;
-		}
-		
-		private void detach_HOADON_DICHVUs(HOADON_DICHVU entity)
-		{
-			this.SendPropertyChanging();
-			entity.DICHVU = null;
 		}
 	}
 	
@@ -1109,6 +1135,10 @@ namespace DAL
 		
 		private System.Nullable<decimal> _TIENNUOC;
 		
+		private System.Nullable<decimal> _WIFI;
+		
+		private System.Nullable<decimal> _RAC;
+		
 		private System.Nullable<System.DateTime> _NGAYLAP;
 		
 		private System.Nullable<decimal> _TONGTIEN;
@@ -1117,9 +1147,11 @@ namespace DAL
 		
 		private string _MAPHONG;
 		
+		private System.Nullable<bool> _TINHTRANG;
+		
 		private EntityRef<CHISO_DIENNUOC> _CHISO_DIENNUOC;
 		
-		private EntitySet<HOADON_DICHVU> _HOADON_DICHVUs;
+		private EntitySet<DICHVU> _DICHVUs;
 		
 		private EntityRef<NHANVIEN> _NHANVIEN;
 		
@@ -1135,6 +1167,10 @@ namespace DAL
     partial void OnTIENDIENChanged();
     partial void OnTIENNUOCChanging(System.Nullable<decimal> value);
     partial void OnTIENNUOCChanged();
+    partial void OnWIFIChanging(System.Nullable<decimal> value);
+    partial void OnWIFIChanged();
+    partial void OnRACChanging(System.Nullable<decimal> value);
+    partial void OnRACChanged();
     partial void OnNGAYLAPChanging(System.Nullable<System.DateTime> value);
     partial void OnNGAYLAPChanged();
     partial void OnTONGTIENChanging(System.Nullable<decimal> value);
@@ -1143,12 +1179,14 @@ namespace DAL
     partial void OnMANVChanged();
     partial void OnMAPHONGChanging(string value);
     partial void OnMAPHONGChanged();
+    partial void OnTINHTRANGChanging(System.Nullable<bool> value);
+    partial void OnTINHTRANGChanged();
     #endregion
 		
 		public HOADON()
 		{
 			this._CHISO_DIENNUOC = default(EntityRef<CHISO_DIENNUOC>);
-			this._HOADON_DICHVUs = new EntitySet<HOADON_DICHVU>(new Action<HOADON_DICHVU>(this.attach_HOADON_DICHVUs), new Action<HOADON_DICHVU>(this.detach_HOADON_DICHVUs));
+			this._DICHVUs = new EntitySet<DICHVU>(new Action<DICHVU>(this.attach_DICHVUs), new Action<DICHVU>(this.detach_DICHVUs));
 			this._NHANVIEN = default(EntityRef<NHANVIEN>);
 			this._PHONG = default(EntityRef<PHONG>);
 			OnCreated();
@@ -1210,6 +1248,46 @@ namespace DAL
 					this._TIENNUOC = value;
 					this.SendPropertyChanged("TIENNUOC");
 					this.OnTIENNUOCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WIFI", DbType="Money")]
+		public System.Nullable<decimal> WIFI
+		{
+			get
+			{
+				return this._WIFI;
+			}
+			set
+			{
+				if ((this._WIFI != value))
+				{
+					this.OnWIFIChanging(value);
+					this.SendPropertyChanging();
+					this._WIFI = value;
+					this.SendPropertyChanged("WIFI");
+					this.OnWIFIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RAC", DbType="Money")]
+		public System.Nullable<decimal> RAC
+		{
+			get
+			{
+				return this._RAC;
+			}
+			set
+			{
+				if ((this._RAC != value))
+				{
+					this.OnRACChanging(value);
+					this.SendPropertyChanging();
+					this._RAC = value;
+					this.SendPropertyChanged("RAC");
+					this.OnRACChanged();
 				}
 			}
 		}
@@ -1302,6 +1380,26 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TINHTRANG", DbType="Bit")]
+		public System.Nullable<bool> TINHTRANG
+		{
+			get
+			{
+				return this._TINHTRANG;
+			}
+			set
+			{
+				if ((this._TINHTRANG != value))
+				{
+					this.OnTINHTRANGChanging(value);
+					this.SendPropertyChanging();
+					this._TINHTRANG = value;
+					this.SendPropertyChanged("TINHTRANG");
+					this.OnTINHTRANGChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HOADON_CHISO_DIENNUOC", Storage="_CHISO_DIENNUOC", ThisKey="MAHOADON", OtherKey="MAHOADON", IsUnique=true, IsForeignKey=false)]
 		public CHISO_DIENNUOC CHISO_DIENNUOC
 		{
@@ -1331,16 +1429,16 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HOADON_HOADON_DICHVU", Storage="_HOADON_DICHVUs", ThisKey="MAHOADON", OtherKey="MAHOADON")]
-		public EntitySet<HOADON_DICHVU> HOADON_DICHVUs
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HOADON_DICHVU", Storage="_DICHVUs", ThisKey="MAHOADON", OtherKey="MAHOADON")]
+		public EntitySet<DICHVU> DICHVUs
 		{
 			get
 			{
-				return this._HOADON_DICHVUs;
+				return this._DICHVUs;
 			}
 			set
 			{
-				this._HOADON_DICHVUs.Assign(value);
+				this._DICHVUs.Assign(value);
 			}
 		}
 		
@@ -1432,184 +1530,16 @@ namespace DAL
 			}
 		}
 		
-		private void attach_HOADON_DICHVUs(HOADON_DICHVU entity)
+		private void attach_DICHVUs(DICHVU entity)
 		{
 			this.SendPropertyChanging();
 			entity.HOADON = this;
 		}
 		
-		private void detach_HOADON_DICHVUs(HOADON_DICHVU entity)
+		private void detach_DICHVUs(DICHVU entity)
 		{
 			this.SendPropertyChanging();
 			entity.HOADON = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HOADON_DICHVU")]
-	public partial class HOADON_DICHVU : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _MADV;
-		
-		private string _MAHOADON;
-		
-		private EntityRef<HOADON> _HOADON;
-		
-		private EntityRef<DICHVU> _DICHVU;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMADVChanging(string value);
-    partial void OnMADVChanged();
-    partial void OnMAHOADONChanging(string value);
-    partial void OnMAHOADONChanged();
-    #endregion
-		
-		public HOADON_DICHVU()
-		{
-			this._HOADON = default(EntityRef<HOADON>);
-			this._DICHVU = default(EntityRef<DICHVU>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADV", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MADV
-		{
-			get
-			{
-				return this._MADV;
-			}
-			set
-			{
-				if ((this._MADV != value))
-				{
-					if (this._DICHVU.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMADVChanging(value);
-					this.SendPropertyChanging();
-					this._MADV = value;
-					this.SendPropertyChanged("MADV");
-					this.OnMADVChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAHOADON", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MAHOADON
-		{
-			get
-			{
-				return this._MAHOADON;
-			}
-			set
-			{
-				if ((this._MAHOADON != value))
-				{
-					if (this._HOADON.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMAHOADONChanging(value);
-					this.SendPropertyChanging();
-					this._MAHOADON = value;
-					this.SendPropertyChanged("MAHOADON");
-					this.OnMAHOADONChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HOADON_HOADON_DICHVU", Storage="_HOADON", ThisKey="MAHOADON", OtherKey="MAHOADON", IsForeignKey=true)]
-		public HOADON HOADON
-		{
-			get
-			{
-				return this._HOADON.Entity;
-			}
-			set
-			{
-				HOADON previousValue = this._HOADON.Entity;
-				if (((previousValue != value) 
-							|| (this._HOADON.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._HOADON.Entity = null;
-						previousValue.HOADON_DICHVUs.Remove(this);
-					}
-					this._HOADON.Entity = value;
-					if ((value != null))
-					{
-						value.HOADON_DICHVUs.Add(this);
-						this._MAHOADON = value.MAHOADON;
-					}
-					else
-					{
-						this._MAHOADON = default(string);
-					}
-					this.SendPropertyChanged("HOADON");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DICHVU_HOADON_DICHVU", Storage="_DICHVU", ThisKey="MADV", OtherKey="MADV", IsForeignKey=true)]
-		public DICHVU DICHVU
-		{
-			get
-			{
-				return this._DICHVU.Entity;
-			}
-			set
-			{
-				DICHVU previousValue = this._DICHVU.Entity;
-				if (((previousValue != value) 
-							|| (this._DICHVU.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._DICHVU.Entity = null;
-						previousValue.HOADON_DICHVUs.Remove(this);
-					}
-					this._DICHVU.Entity = value;
-					if ((value != null))
-					{
-						value.HOADON_DICHVUs.Add(this);
-						this._MADV = value.MADV;
-					}
-					else
-					{
-						this._MADV = default(string);
-					}
-					this.SendPropertyChanged("DICHVU");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -1624,8 +1554,6 @@ namespace DAL
 		private System.Nullable<decimal> _TIENCOC;
 		
 		private System.Nullable<System.DateTime> _NGAYLAPHD;
-		
-		private string _THOIHAN;
 		
 		private string _MAPHONG;
 		
@@ -1647,8 +1575,6 @@ namespace DAL
     partial void OnTIENCOCChanged();
     partial void OnNGAYLAPHDChanging(System.Nullable<System.DateTime> value);
     partial void OnNGAYLAPHDChanged();
-    partial void OnTHOIHANChanging(string value);
-    partial void OnTHOIHANChanged();
     partial void OnMAPHONGChanging(string value);
     partial void OnMAPHONGChanged();
     partial void OnMANVChanging(string value);
@@ -1719,26 +1645,6 @@ namespace DAL
 					this._NGAYLAPHD = value;
 					this.SendPropertyChanged("NGAYLAPHD");
 					this.OnNGAYLAPHDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_THOIHAN", DbType="NVarChar(20)")]
-		public string THOIHAN
-		{
-			get
-			{
-				return this._THOIHAN;
-			}
-			set
-			{
-				if ((this._THOIHAN != value))
-				{
-					this.OnTHOIHANChanging(value);
-					this.SendPropertyChanging();
-					this._THOIHAN = value;
-					this.SendPropertyChanged("THOIHAN");
-					this.OnTHOIHANChanged();
 				}
 			}
 		}
@@ -2242,7 +2148,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ANH", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ANH", DbType="Image", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary ANH
 		{
 			get
@@ -2613,6 +2519,8 @@ namespace DAL
 		
 		private string _TENNV;
 		
+		private System.Nullable<System.DateTime> _NGAYSINH;
+		
 		private string _SODT_CT;
 		
 		private string _DIACHI;
@@ -2635,6 +2543,8 @@ namespace DAL
     partial void OnCMND_NVChanged();
     partial void OnTENNVChanging(string value);
     partial void OnTENNVChanged();
+    partial void OnNGAYSINHChanging(System.Nullable<System.DateTime> value);
+    partial void OnNGAYSINHChanged();
     partial void OnSODT_CTChanging(string value);
     partial void OnSODT_CTChanged();
     partial void OnDIACHIChanging(string value);
@@ -2706,6 +2616,26 @@ namespace DAL
 					this._TENNV = value;
 					this.SendPropertyChanged("TENNV");
 					this.OnTENNVChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYSINH", DbType="Date")]
+		public System.Nullable<System.DateTime> NGAYSINH
+		{
+			get
+			{
+				return this._NGAYSINH;
+			}
+			set
+			{
+				if ((this._NGAYSINH != value))
+				{
+					this.OnNGAYSINHChanging(value);
+					this.SendPropertyChanging();
+					this._NGAYSINH = value;
+					this.SendPropertyChanged("NGAYSINH");
+					this.OnNGAYSINHChanged();
 				}
 			}
 		}

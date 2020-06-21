@@ -74,7 +74,7 @@ namespace DAL
                 if (hd != null)
                 {
                     hd.TIENCOC = pHopDong.TIENCOC;
-                    hd.THOIHAN = pHopDong.THOIHAN;
+                    
                     data.SubmitChanges();
                 }
                 return true;

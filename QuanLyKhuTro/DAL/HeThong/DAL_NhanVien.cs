@@ -95,6 +95,7 @@ namespace DAL
                     nv.CMND_NV = pnv.CMND_NV;
                     nv.SODT_CT = pnv.SODT_CT;
                     nv.DIACHI = pnv.DIACHI;
+                    nv.NGAYSINH = pnv.NGAYSINH;
                     data.SubmitChanges();
                 }
                 return true;

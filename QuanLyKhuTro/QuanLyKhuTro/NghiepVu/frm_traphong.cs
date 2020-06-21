@@ -78,7 +78,7 @@ namespace QuanLyKhuTro.NghiepVu
             }
             else
             {
-                txt_sonuocdau.Text = kq;
+                txt_sonuocdau.Text = sn;
             }
         }
 
@@ -252,17 +252,8 @@ namespace QuanLyKhuTro.NghiepVu
             grv_traphong.DataSource = traphong.LoadTraPhong();
         }
 
-        private void txt_sodiencuoi_TextChanged(object sender, EventArgs e)
-        {
-            int sd =Convert.ToInt32(txt_sodiencuoi.Text) - Convert.ToInt32(txt_sodiendau.Text);
-            txt_sodien.Text =sd.ToString();
-        }
-
-        private void txt_sonuoccuoi_TextChanged(object sender, EventArgs e)
-        {
-            int sd = Convert.ToInt32(txt_sonuoccuoi.Text) - Convert.ToInt32(txt_sonuocdau.Text);
-            txt_sonuoc.Text = sd.ToString();
-        }
+        
+            
         QL_KhuTroDataContext data = new QL_KhuTroDataContext();
         public string laytienphong(string pma)
         {
@@ -305,7 +296,8 @@ namespace QuanLyKhuTro.NghiepVu
         }
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-                txt_tongtien.Text = TinhTienPhong().ToString();
+            txt_tongtien.Text = String.Format("{0:#,##0.##} VNĐ", TinhTienPhong());
+            
         }
 
         private void frm_traphong_FormClosing(object sender, FormClosingEventArgs e)
@@ -314,6 +306,83 @@ namespace QuanLyKhuTro.NghiepVu
             frm.MaNhanVien = MAnv;
             Visible = false;
             frm.ShowDialog();
+        }
+
+      
+        private void txt_tiendien_TextChanged(object sender, EventArgs e)
+        {
+            ////địng dạng tiền tệ
+            //System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+            //decimal value = decimal.Parse(txt_tiendien.Text, System.Globalization.NumberStyles.AllowThousands);
+            //txt_tiendien.Text = String.Format(culture, "{0:N0}", value);
+            ////texbox1.Text = String.Format(culture, "{0:N0}", value);
+            //txt_tiendien.Select(txt_tiendien.Text.Length, 0);
+
+        }
+
+        private void txt_tiennuoc_TextChanged(object sender, EventArgs e)
+        {
+            //System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+            //decimal value = decimal.Parse(txt_tiennuoc.Text, System.Globalization.NumberStyles.AllowThousands);
+            //txt_tiennuoc.Text = String.Format(culture, "{0:N0}", value);
+            ////texbox1.Text = String.Format(culture, "{0:N0}", value);
+            //txt_tiennuoc.Select(txt_tiendien.Text.Length, 0);
+        }
+
+        private void txt_sodiencuoi_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                int a = Convert.ToInt32(txt_sodiencuoi.Text);
+                int b = Convert.ToInt32(txt_sodiendau.Text);
+                if (a > b)
+                {
+                    int sd = Convert.ToInt32(txt_sodiencuoi.Text) - Convert.ToInt32(txt_sodiendau.Text);
+                    txt_sodien.Text = sd.ToString();
+
+                    string tiendien = bll_dichvu.loaddv("DV001");
+
+                    double TienDien = Convert.ToInt32(txt_sodien.Text) * Convert.ToDouble(tiendien);
+                    txt_tiendien.Text = String.Format("{0:#,##0.##} VNĐ", TienDien);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi! Số điện đầu phải nhỏ hơn số điện cuối");
+                    return;
+                }
+
+
+            }
+            catch
+            {
+                return;
+            }
+        }
+
+        private void txt_sonuoccuoi_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                int a = Convert.ToInt32(txt_sonuoccuoi.Text);
+                int b = Convert.ToInt32(txt_sonuocdau.Text);
+                if (a > b)
+                {
+                    int sd = Convert.ToInt32(txt_sonuoccuoi.Text) - Convert.ToInt32(txt_sonuocdau.Text);
+                    txt_sonuoc.Text = sd.ToString();
+                    string tiennuoc = bll_dichvu.loaddv("DV002");
+                    double TienNuoc = Convert.ToInt32(txt_sonuoc.Text) * Convert.ToDouble(tiennuoc);
+                    txt_tiennuoc.Text = String.Format("{0:#,##0.##} VNĐ", TienNuoc);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi! Số nước đầu phải nhỏ hơn số nước cuối");
+                    return;
+                }
+            }
+            catch
+            {
+                return;
+            }
         }
     }
 }

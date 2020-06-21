@@ -48,11 +48,11 @@
             this.SOLUONG_TD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GIA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.cbo_loai = new System.Windows.Forms.ComboBox();
+            this.btn_lammoi = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_timkiem = new DevExpress.XtraEditors.SimpleButton();
             this.btn_tatcaphong = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_lammoi = new DevExpress.XtraEditors.SimpleButton();
+            this.cbo_loai = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -254,18 +254,18 @@
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 7;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.55882F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.44118F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 201F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.96653F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.03347F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 173F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 285F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 188F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 180F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 181F));
             this.tableLayoutPanel4.Controls.Add(this.btn_lammoi, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.cbo_loai, 4, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label5, 3, 0);
-            this.tableLayoutPanel4.Controls.Add(this.btn_timkiem, 5, 0);
             this.tableLayoutPanel4.Controls.Add(this.btn_tatcaphong, 6, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btn_timkiem, 3, 0);
+            this.tableLayoutPanel4.Controls.Add(this.cbo_loai, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label5, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -274,21 +274,24 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1104, 40);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
-            // cbo_loai
+            // btn_lammoi
             // 
-            this.cbo_loai.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbo_loai.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_loai.FormattingEnabled = true;
-            this.cbo_loai.Location = new System.Drawing.Point(701, 3);
-            this.cbo_loai.Name = "cbo_loai";
-            this.cbo_loai.Size = new System.Drawing.Size(182, 27);
-            this.cbo_loai.TabIndex = 2;
+            this.btn_lammoi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_lammoi.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_lammoi.Appearance.Options.UseFont = true;
+            this.btn_lammoi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_lammoi.ImageOptions.SvgImage")));
+            this.btn_lammoi.Location = new System.Drawing.Point(3, 3);
+            this.btn_lammoi.Name = "btn_lammoi";
+            this.btn_lammoi.Size = new System.Drawing.Size(166, 34);
+            this.btn_lammoi.TabIndex = 8;
+            this.btn_lammoi.Click += new System.EventHandler(this.btn_lammoi_Click);
             // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(635, 13);
+            this.label5.Location = new System.Drawing.Point(176, 13);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 13);
             this.label5.TabIndex = 3;
@@ -299,7 +302,7 @@
             this.btn_timkiem.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_timkiem.Appearance.Options.UseFont = true;
             this.btn_timkiem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_timkiem.ImageOptions.SvgImage")));
-            this.btn_timkiem.Location = new System.Drawing.Point(889, 3);
+            this.btn_timkiem.Location = new System.Drawing.Point(415, 3);
             this.btn_timkiem.Name = "btn_timkiem";
             this.btn_timkiem.Size = new System.Drawing.Size(31, 27);
             this.btn_timkiem.TabIndex = 6;
@@ -312,25 +315,22 @@
             this.btn_tatcaphong.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_tatcaphong.Appearance.Options.UseFont = true;
             this.btn_tatcaphong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_tatcaphong.ImageOptions.SvgImage")));
-            this.btn_tatcaphong.Location = new System.Drawing.Point(926, 3);
+            this.btn_tatcaphong.Location = new System.Drawing.Point(925, 3);
             this.btn_tatcaphong.Name = "btn_tatcaphong";
-            this.btn_tatcaphong.Size = new System.Drawing.Size(175, 27);
+            this.btn_tatcaphong.Size = new System.Drawing.Size(176, 34);
             this.btn_tatcaphong.TabIndex = 7;
             this.btn_tatcaphong.Text = "Tất cả phòng";
             this.btn_tatcaphong.Click += new System.EventHandler(this.btn_tatcaphong_Click);
             // 
-            // btn_lammoi
+            // cbo_loai
             // 
-            this.btn_lammoi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_lammoi.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_lammoi.Appearance.Options.UseFont = true;
-            this.btn_lammoi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.btn_lammoi.Location = new System.Drawing.Point(3, 3);
-            this.btn_lammoi.Name = "btn_lammoi";
-            this.btn_lammoi.Size = new System.Drawing.Size(135, 27);
-            this.btn_lammoi.TabIndex = 8;
-            this.btn_lammoi.Click += new System.EventHandler(this.btn_lammoi_Click);
+            this.cbo_loai.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbo_loai.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_loai.FormattingEnabled = true;
+            this.cbo_loai.Location = new System.Drawing.Point(242, 3);
+            this.cbo_loai.Name = "cbo_loai";
+            this.cbo_loai.Size = new System.Drawing.Size(167, 27);
+            this.cbo_loai.TabIndex = 9;
             // 
             // frm_test
             // 
@@ -367,7 +367,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn SOLUONG_TD;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cbo_loai;
         private DevExpress.XtraGrid.Columns.GridColumn GIA;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TextBox textBox1;
@@ -379,5 +378,6 @@
         private DevExpress.XtraEditors.SimpleButton btn_timkiem;
         private DevExpress.XtraEditors.SimpleButton btn_tatcaphong;
         private DevExpress.XtraEditors.SimpleButton btn_lammoi;
+        private System.Windows.Forms.ComboBox cbo_loai;
     }
 }

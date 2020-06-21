@@ -94,23 +94,5 @@ namespace DAL
                 return false;
             }
         }
-        //kiểm tra tầng có đang được sử dụng
-        public bool kt_XoaDV(string hd)
-        {
-
-            var ktx = (from t in data.DICHVUs
-                       from p in data.HOADON_DICHVUs
-                       where t.MADV == hd && p.MADV == hd
-                       select t).Count();
-            if (ktx > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
     }
 }

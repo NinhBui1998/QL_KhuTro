@@ -83,7 +83,7 @@ namespace QuanLyKhuTro.NghiepVu
             }
             else
             {
-                txt_sonuocdau.Text = kq;
+                txt_sonuocdau.Text = sn;
             }
         }
 
@@ -182,5 +182,7 @@ namespace QuanLyKhuTro.NghiepVu
             }
             return Tong;
         }
+
+      
     }
 }

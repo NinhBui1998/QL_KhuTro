@@ -52,7 +52,6 @@
     <Compile Include="HeThong\DAL_DichVu.cs" />
     <Compile Include="NghiepVu\DAL_DSPhong.cs" />
     <Compile Include="NghiepVu\DAL_HoaDon.cs" />
-    <Compile Include="NghiepVu\DAL_HoaDonDichVu.cs" />
     <Compile Include="NghiepVu\DAL_HopDong.cs" />
     <Compile Include="NghiepVu\DAL_HopDong_KhachThue.cs" />
     <Compile Include="HeThong\DAL_KhachThue.cs" />

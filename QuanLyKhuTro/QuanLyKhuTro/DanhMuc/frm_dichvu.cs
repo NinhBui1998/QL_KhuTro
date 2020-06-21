@@ -85,11 +85,7 @@ namespace QuanLyKhuTro.DanhMuc
                     MessageBox.Show("Mã dịch vụ không được để trống");
                     return;
                 }
-                if (dichvu.ktx_dv(m) == true)
-                {
-                    MessageBox.Show("Dịch vụ hiện đang sử dụng không thể xóa");
-                    return;
-                }
+                
                 if (dichvu.xoa_DichVu(m) == true)
                 {
                     grv_dichvu.DataSource = dichvu.loadBang_DV();

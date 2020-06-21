@@ -140,11 +140,11 @@ namespace QuanLyKhuTro.NghiepVu
             KHACHTHUE kt = new KHACHTHUE();
             HOPDONG hd = new HOPDONG();
             HOPDONG_KT hd_kt = new HOPDONG_KT();
+            //thêm hợp đồng
 
             hd.MAHD = txt_mahd.Text;
             hd.TIENCOC = decimal.Parse(txt_tiencoc.Text);
             hd.NGAYLAPHD = Convert.ToDateTime(txt_ngaylaphd.Text);
-            hd.THOIHAN = txt_thoihan.Text;
             hd.MAPHONG = datphong.laymaphong(Ten);
             hd.MANV = txt_manv.Text;
 
@@ -177,7 +177,7 @@ namespace QuanLyKhuTro.NghiepVu
             hd_kt.MAHD = txt_mahd.Text;
             hd_kt.MAKT = txt_makt.Text;
             hd_kt.TRACOC = false;
-            hd_kt.NGAYTRA = null;
+            hd_kt.NGAYTRA = Convert.ToDateTime(txt_ngaykt.Text);
 
             if (txt_makt.Text == string.Empty && txt_mahd.Text == string.Empty
                     && txt_manv.Text == string.Empty && txt_tenkt.Text == string.Empty)
@@ -313,7 +313,7 @@ namespace QuanLyKhuTro.NghiepVu
             try
             {
                 txt_mahd.Text = gridView_datphong.GetRowCellValue(position, "Mahd").ToString();
-                txt_thoihan.Text= gridView_datphong.GetRowCellValue(position, "Thoihan").ToString();
+                txt_ngaykt.Text= gridView_datphong.GetRowCellValue(position, "NgayTra").ToString();
                 hd.TIENCOC= Convert.ToDecimal(gridView_datphong.GetRowCellValue(position, "Tiencoc").ToString());
                 txt_tiencoc.Text = String.Format("{0:#,##0.##} VNĐ", hd.TIENCOC);
 
@@ -331,7 +331,7 @@ namespace QuanLyKhuTro.NghiepVu
         {
             HOPDONG hd = new HOPDONG();
             hd.MAHD = txt_mahd.Text;
-            hd.THOIHAN = txt_thoihan.Text;
+           
             hd.TIENCOC = Convert.ToDecimal(txt_tiencoc.Text);
             if (hopdong.sua_HopDong(hd) == true)
             {
@@ -343,7 +343,7 @@ namespace QuanLyKhuTro.NghiepVu
             }
             grv_datphong.DataSource = datphong.LoadDatPhongTheoMa(Ten);
             txt_mahd.Text = bll_sinhma.SinhMa_HopDong();
-            txt_thoihan.Clear();txt_tiencoc.Clear();
+            txt_ngaykt.Clear();txt_tiencoc.Clear();
           
         }
 

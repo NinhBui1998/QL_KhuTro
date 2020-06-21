@@ -24,21 +24,21 @@ namespace DAL
                          kth.MAKT,
                          kth.TENKT,
                          s.NGAYLAPHD,
-                         s.THOIHAN,
+                         k.NGAYTRA,
                          s.TIENCOC,
                          p.TENPHONG,
                      };
             var kq = kt.ToList().ConvertAll(t => new DatPhong()
             {
-                Mahd=t.MAHD,
-                Tennv=t.TENNV,
-                Makt=t.MAKT,
-                Tenkt=t.TENKT,
+                Mahd = t.MAHD,
+                Tennv = t.TENNV,
+                Makt = t.MAKT,
+                Tenkt = t.TENKT,
                 NgayLap = Convert.ToDateTime(t.NGAYLAPHD),
-                Thoihan=t.THOIHAN,
-                Tiencoc=Convert.ToDecimal( t.TIENCOC),/* string.Format("{0:#,##0.00}",t.TIENCOC),*/
-                TenPhong=t.TENPHONG,
-            });;
+                NgayTra = Convert.ToDateTime(t.NGAYTRA),
+                Tiencoc = Convert.ToDecimal(t.TIENCOC),/* string.Format("{0:#,##0.00}",t.TIENCOC),*/
+                TenPhong = t.TENPHONG,
+            }) ;;
             kq.ToList<DatPhong>();
             return kq;
         }
@@ -59,7 +59,7 @@ namespace DAL
                              kth.MAKT,
                              kth.TENKT,
                              s.NGAYLAPHD,
-                             s.THOIHAN,
+                             k.NGAYTRA,
                              s.TIENCOC,
                              p.TENPHONG,
                          };
@@ -70,7 +70,7 @@ namespace DAL
                     Makt = t.MAKT,
                     Tenkt = t.TENKT,
                     NgayLap = Convert.ToDateTime(t.NGAYLAPHD),
-                    Thoihan = t.THOIHAN,
+                    NgayTra=Convert.ToDateTime(t.NGAYTRA),
                     Tiencoc = Convert.ToDecimal(t.TIENCOC),
                     TenPhong = t.TENPHONG,
                 });

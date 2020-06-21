@@ -11,7 +11,6 @@ namespace DAL.Model
         string MAHD;
         DateTime NGAYLAP;
         DateTime NGAYTRA;
-
         string MAKT;
         string TENKT;
         string SDT;

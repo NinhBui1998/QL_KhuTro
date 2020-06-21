@@ -20,6 +20,7 @@ namespace DAL.Model
         double RAC;
         double TONGTIEN;
         DateTime NGAYLAP;
+        Boolean TINHTRANG;
 
         public String MaHD
         {
@@ -81,7 +82,8 @@ namespace DAL.Model
             get { return TONGTIEN; }
             set { TONGTIEN = value; }
         }
-       
 
+        public bool TinhTrang
+        { get => TINHTRANG; set => TINHTRANG = value; }
     }
 }

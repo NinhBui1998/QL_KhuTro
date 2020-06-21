@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace DAL
 {
@@ -15,11 +16,14 @@ namespace DAL
             var kt = from s in data.HOPDONGs
                      from k in data.HOPDONG_KTs
                      from kth in data.KHACHTHUEs
-                     where s.MAHD == k.MAHD && k.MAKT == kth.MAKT
+                     from p in data.PHONGs
+                     from nv in data.NHANVIENs
+                     where s.MAHD == k.MAHD && k.MAKT == kth.MAKT && p.MAPHONG == s.MAPHONG && s.MANV==nv.MANV
                      select new
                      {
                          s.MAHD,
                          s.MANV,
+                         nv.TENNV,
                          s.MAPHONG,                       
                          kth.MAKT,
                          kth.TENKT,
@@ -32,6 +36,7 @@ namespace DAL
                 Mahd = t.MAHD,
                 Manv = t.MANV,
                 Maphong = t.MAPHONG,
+                Tennv=t.TENNV,
                 Makt = t.MAKT,
                 Tenkt = t.TENKT,
                 Ngaylap = Convert.ToDateTime(t.NGAYLAPHD),
@@ -47,12 +52,15 @@ namespace DAL
                      from k in data.HOPDONG_KTs
                      from kth in data.KHACHTHUEs
                      from p in data.PHONGs
-                     where s.MAHD == k.MAHD && k.MAKT == kth.MAKT &&p.MAPHONG==s.MAPHONG &&  p.TENPHONG== pten
+                     from nv in data.NHANVIENs
+                     where s.MAHD == k.MAHD && k.MAKT == kth.MAKT && p.MAPHONG == s.MAPHONG &&
+                        s.MANV == nv.MANV && p.TENPHONG == pten
                      select new
                      {
                          s.MAHD,
                          s.MANV,
                          s.MAPHONG,
+                         nv.TENNV,
                          kth.MAKT,
                          kth.TENKT,
                          s.NGAYLAPHD,
@@ -64,6 +72,7 @@ namespace DAL
                 Mahd = t.MAHD,
                 Manv = t.MANV,
                 Maphong = t.MAPHONG,
+                Tennv=t.TENNV,
                 Makt = t.MAKT,
                 Tenkt = t.TENKT,
                 Ngaylap = Convert.ToDateTime(t.NGAYLAPHD),
@@ -89,7 +98,7 @@ namespace DAL
                       from c in data.CHISO_DIENNUOCs
                       from hd in data.HOADONs
                       where p.MAPHONG == hd.MAPHONG && c.MAHOADON == hd.MAHOADON && p.MAPHONG == pma
-                      select c.SODIENMOI).FirstOrDefault();
+                      select c.SONUOCMOI).FirstOrDefault();
             return kq.ToString();
 
         }

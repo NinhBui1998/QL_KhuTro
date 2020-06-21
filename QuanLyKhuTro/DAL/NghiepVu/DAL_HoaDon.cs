@@ -78,9 +78,8 @@ namespace DAL.NghiepVu
         public bool ktx_hoadon(string pmatn)
         {
             var ktx = (from t in data.HOADONs
-                       from p in data.HOADON_DICHVUs
                        from cs in data.CHISO_DIENNUOCs
-                       where t.MAHOADON == p.MAHOADON || p.MAHOADON==cs.MAHOADON && t.MAHOADON==pmatn
+                       where t.MAHOADON == cs.MAHOADON && t.MAHOADON==pmatn
                        select t).Count();
             if (ktx > 0)
             {

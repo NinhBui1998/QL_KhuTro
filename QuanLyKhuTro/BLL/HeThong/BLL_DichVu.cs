@@ -31,10 +31,7 @@ namespace BLL
             return dichvu.them_DichVu(pDichVu);
         }
         //ktra xóa
-        public bool ktx_dv(String dv)
-        {
-            return dichvu.kt_XoaDV(dv);
-        }
+       
         //Xóa
         public bool xoa_DichVu(string pMa)
         {

@@ -45,27 +45,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL_SinhMa.cs" />
-    <Compile Include="BLL_ViPham.cs" />
+    <Compile Include="Model\BLL_SinhMa.cs" />
+    <Compile Include="NghiepVu\BLL_ViPham.cs" />
     <Compile Include="NghiepVu\BLL_ChiSoDienNuoc.cs" />
     <Compile Include="NghiepVu\BLL_DatPhong.cs" />
     <Compile Include="HeThong\BLL_DichVu.cs" />
     <Compile Include="NghiepVu\BLL_DSPhong.cs" />
-    <Compile Include="NghiepVu\BLL_HoaDon_DV.cs" />
     <Compile Include="NghiepVu\BLL_HopDong.cs" />
     <Compile Include="NghiepVu\BLL_HopDong_KhachThue.cs" />
     <Compile Include="HeThong\BLL_KhachThue.cs" />
     <Compile Include="HeThong\BLL_LoaiPhong.cs" />
-    <Compile Include="BLL_NguoiDung_NhomNguoiDung.cs" />
+    <Compile Include="DuLieu\BLL_NguoiDung_NhomNguoiDung.cs" />
     <Compile Include="HeThong\BLL_NhanVien.cs" />
-    <Compile Include="BLL_NhomNguoiDung.cs" />
+    <Compile Include="DuLieu\BLL_NhomNguoiDung.cs" />
     <Compile Include="HeThong\BLL_NoiQuy.cs" />
-    <Compile Include="BLL_PhanQuyen.cs" />
+    <Compile Include="DuLieu\BLL_PhanQuyen.cs" />
     <Compile Include="HeThong\BLL_Phong.cs" />
-    <Compile Include="BLL_Quanlynguoidung.cs" />
+    <Compile Include="DuLieu\BLL_Quanlynguoidung.cs" />
     <Compile Include="HeThong\BLL_Tang.cs" />
     <Compile Include="HeThong\BLL_ThanNhan.cs" />
-    <Compile Include="BLL_ThietBi.cs" />
+    <Compile Include="HeThong\BLL_ThietBi.cs" />
     <Compile Include="NghiepVu\BLL_TraPhong.cs" />
     <Compile Include="NghiepVu\BLL_HoaDon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

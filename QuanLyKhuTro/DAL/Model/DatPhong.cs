@@ -13,7 +13,7 @@ namespace DAL
         string MAKT;
         string TENKT;
         DateTime NGAYLAP;
-        string THOIHAN;
+        DateTime NGAYTRA;
         Decimal TIENCOC;
        
         string TENPHONG;
@@ -49,15 +49,14 @@ namespace DAL
             get { return NGAYLAP; }
             set { NGAYLAP = value; }
         }
-        public String Thoihan
-        {
-            get { return THOIHAN; }
-            set { THOIHAN = value; }
-        }
+       
         public Decimal Tiencoc
         {
             get { return TIENCOC; }
             set { TIENCOC = value; }
         }
+
+        public DateTime NgayTra
+        { get => NGAYTRA; set => NGAYTRA = value; }
     }
 }
