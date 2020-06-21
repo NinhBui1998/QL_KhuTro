@@ -14,6 +14,10 @@ namespace BLL
         {
             return hopdong_khachthue.them_HopDong_KhachThue(phd_kt);
         }
+        public String laymakt(string pma)
+        {
+            return hopdong_khachthue.Laymakt(pma);
+        }
         //Xóa
         public bool xoa_HopDong_KhachThue(string pMaHD, string pMaKT)
         {

@@ -28,6 +28,14 @@ namespace DAL
 
         }
 
+        public String Laymakt(string mahd)
+        {
+            var kq = (from p in data.HOPDONG_KTs
+                      where p.MAHD == mahd
+                      select p.MAKT).FirstOrDefault();
+
+            return kq.ToString();
+        }
         //Xóa
         public bool xoa_HopDong_KhachThue(string pMaHD, string pMaKT)
         {

@@ -12,11 +12,13 @@ using BLL;
 using DAL;
 using System.IO;
 using System.Globalization;
+using DAL.DuLieu;
 
 namespace QuanLyKhuTro.NghiepVu
 {
     public partial class frm_datphong : DevExpress.XtraEditors.XtraForm
     {
+        WordExport we = new WordExport();
         DAL_Phong dal_phong = new DAL_Phong();
         DAL_Tang dal_tang = new DAL_Tang();
         DAL_LoaiPhong dal_lp = new DAL_LoaiPhong();
@@ -28,7 +30,8 @@ namespace QuanLyKhuTro.NghiepVu
         BLL_DatPhong datphong = new BLL_DatPhong();
         BLL_HopDong_KhachThue hopdong_khachthue = new BLL_HopDong_KhachThue();
         BLL_SinhMa bll_sinhma = new BLL_SinhMa();
-
+        DAL_NhanVien dal_nv = new DAL_NhanVien();
+        DAL_KhachThue dal_kt = new DAL_KhachThue();
 
         string Ten;
         public string TenPhong
@@ -364,6 +367,51 @@ namespace QuanLyKhuTro.NghiepVu
             //texbox1.Text = String.Format(culture, "{0:N0}", value);
             txt_tiencoc.Select(txt_tiencoc.Text.Length, 0);
            
+        }
+
+        private void btn_in_Click(object sender, EventArgs e)
+        {
+            int position = gridView_datphong.FocusedRowHandle;
+            string mahd = gridView_datphong.GetRowCellValue(position, "Mahd").ToString();
+            string tenphong = gridView_datphong.GetRowCellValue(position, "TenPhong").ToString();
+
+            string tiencoc = String.Format("{0:#,##0.##} VNĐ", Convert.ToDecimal(gridView_datphong.GetRowCellValue(position, "Tiencoc").ToString()));
+
+            string ngay = DateTime.Now.Day.ToString();
+            string thang = DateTime.Now.Month.ToString();
+            string nam = DateTime.Now.Year.ToString();
+
+
+            NHANVIEN nv = new NHANVIEN();
+            nv = dal_nv.loadTenNV(txt_manv.Text);
+            string tennv = nv.TENNV;
+            string ngaysinhnvtam = nv.NGAYSINH.ToString();
+            string ngaysinhnv = ngaysinhnvtam.Substring(0, 11);
+            string cmndnv = nv.CMND_NV;
+            string quequannv = nv.DIACHI;
+            string sdtnv = nv.SODT_CT;
+
+            KHACHTHUE kt = new KHACHTHUE();
+            kt = dal_kt.loadTenKT(hopdong_khachthue.laymakt(mahd));
+            string tenkt = kt.TENKT;
+            string ngaysinhkttam = kt.NGAYSINH.ToString();
+            string ngaysinhkt = ngaysinhkttam.Substring(0, 11);
+            string cmndkt = kt.SOCMND;
+            string quequankt = kt.QUEQUAN;
+            string sdtkt = kt.SDT;
+
+            PHONG p = new PHONG();
+            LOAIPHONG lp = new LOAIPHONG();
+            TANG t = new TANG();
+            p = dal_phong.loadTenPhong(datphong.laymaphong(tenphong));
+            lp = dal_lp.loadTenLoaiPhong(p.MALOAI);
+            t = dal_tang.loadTenTang(p.MATANG);
+            string loaiphong = lp.TENLOAI;
+            string tang = t.TENTANG;
+            string gia = String.Format("{0:#,##0.##} VNĐ", lp.GIA);
+            we.ThongTinHopDong(mahd, ngay, thang, nam, tennv,ngaysinhnv,cmndnv,
+                quequannv,sdtnv,tenkt,ngaysinhkt,cmndkt,quequankt,sdtkt,
+                tenphong,loaiphong,tang,gia,tiencoc,"22","02","2021");
         }
     }
 }

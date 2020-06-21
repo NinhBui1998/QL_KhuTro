@@ -15,7 +15,10 @@ namespace DAL
             var dulieu = (from s in data.NHANVIENs select s);
             return dulieu.ToList<NHANVIEN>();
         }
-
+        public NHANVIEN loadTenNV(string pMa)
+        {
+            return data.NHANVIENs.Where(t => t.MANV == pMa).FirstOrDefault();
+        }
         //kiểm tra khóa chính
         public bool ktakhoachinh_NhanVien(string hd)
         {
