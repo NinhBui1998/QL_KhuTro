@@ -247,7 +247,8 @@
             // 
             this.btn_phong.Caption = "Phòng";
             this.btn_phong.Id = 15;
-            this.btn_phong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_phong.ImageOptions.SvgImage")));
+            this.btn_phong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_phong.ImageOptions.Image")));
+            this.btn_phong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_phong.ImageOptions.LargeImage")));
             this.btn_phong.Name = "btn_phong";
             this.btn_phong.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
@@ -343,6 +344,7 @@
             // 
             this.btn_vipham.Caption = "Vi phạm";
             this.btn_vipham.Id = 26;
+            this.btn_vipham.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_vipham.ImageOptions.SvgImage")));
             this.btn_vipham.Name = "btn_vipham";
             this.btn_vipham.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_vipham_ItemClick);
             // 
@@ -359,6 +361,7 @@
             // 
             this.btn_tienphong.Caption = "Tiền phòng hàng tháng";
             this.btn_tienphong.Id = 28;
+            this.btn_tienphong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_tienphong.ImageOptions.SvgImage")));
             this.btn_tienphong.Name = "btn_tienphong";
             this.btn_tienphong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_tienphong_ItemClick);
             // 
@@ -374,7 +377,8 @@
             // 
             this.barButtonItem2.Caption = "Phòng";
             this.barButtonItem2.Id = 30;
-            this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
@@ -420,23 +424,18 @@
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.btn_datphong);
-            this.ribbonPageGroup2.ItemLinks.Add(this.btn_traphong);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "ribbonPageGroup2";
             // 
             // ribbonPageGroup9
             // 
             this.ribbonPageGroup9.ItemLinks.Add(this.btn_tienphong);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
-            this.ribbonPageGroup9.Text = "ribbonPageGroup9";
             // 
             // ribbonPageGroup10
             // 
             this.ribbonPageGroup10.ItemLinks.Add(this.btn_vipham);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
-            this.ribbonPageGroup10.Text = "ribbonPageGroup10";
             // 
             // ribbonPage3
             // 

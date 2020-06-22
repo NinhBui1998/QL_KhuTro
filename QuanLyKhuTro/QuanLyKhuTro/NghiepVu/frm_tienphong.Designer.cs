@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_tienphong));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -226,20 +227,16 @@
             // 
             // txt_loaiphong
             // 
-            this.txt_loaiphong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_loaiphong.Location = new System.Drawing.Point(126, 103);
+            this.txt_loaiphong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_loaiphong.Location = new System.Drawing.Point(126, 113);
             this.txt_loaiphong.Name = "txt_loaiphong";
             this.txt_loaiphong.Size = new System.Drawing.Size(411, 27);
             this.txt_loaiphong.TabIndex = 4;
             // 
             // txt_tenphong
             // 
-            this.txt_tenphong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_tenphong.Location = new System.Drawing.Point(126, 156);
+            this.txt_tenphong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_tenphong.Location = new System.Drawing.Point(126, 163);
             this.txt_tenphong.Name = "txt_tenphong";
             this.txt_tenphong.Size = new System.Drawing.Size(411, 27);
             this.txt_tenphong.TabIndex = 4;
@@ -256,12 +253,10 @@
             // 
             // cbo_maphong
             // 
-            this.cbo_maphong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbo_maphong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_maphong.DisplayMember = "MAPHONG";
             this.cbo_maphong.FormattingEnabled = true;
-            this.cbo_maphong.Location = new System.Drawing.Point(126, 53);
+            this.cbo_maphong.Location = new System.Drawing.Point(126, 64);
             this.cbo_maphong.Name = "cbo_maphong";
             this.cbo_maphong.Size = new System.Drawing.Size(411, 27);
             this.cbo_maphong.TabIndex = 5;
@@ -270,12 +265,10 @@
             // 
             // cbo_tang
             // 
-            this.cbo_tang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbo_tang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_tang.DisplayMember = "MAPHONG";
             this.cbo_tang.FormattingEnabled = true;
-            this.cbo_tang.Location = new System.Drawing.Point(126, 3);
+            this.cbo_tang.Location = new System.Drawing.Point(126, 14);
             this.cbo_tang.Name = "cbo_tang";
             this.cbo_tang.Size = new System.Drawing.Size(411, 27);
             this.cbo_tang.TabIndex = 5;
@@ -390,6 +383,7 @@
             this.txt_sonuoccuoi.Size = new System.Drawing.Size(152, 27);
             this.txt_sonuoccuoi.TabIndex = 1;
             this.txt_sonuoccuoi.TextChanged += new System.EventHandler(this.txt_sonuoccuoi_TextChanged);
+            this.txt_sonuoccuoi.Leave += new System.EventHandler(this.txt_sonuoccuoi_Leave);
             // 
             // label7
             // 
@@ -470,6 +464,7 @@
             this.txt_sodiencuoi.Size = new System.Drawing.Size(157, 27);
             this.txt_sodiencuoi.TabIndex = 1;
             this.txt_sodiencuoi.TextChanged += new System.EventHandler(this.txt_sodiencuoi_TextChanged);
+            this.txt_sodiencuoi.Leave += new System.EventHandler(this.txt_sodiencuoi_Leave);
             // 
             // label6
             // 
@@ -760,15 +755,18 @@
             // btn_suahd
             // 
             this.btn_suahd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_suahd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_suahd.ImageOptions.Image")));
             this.btn_suahd.Location = new System.Drawing.Point(125, 8);
             this.btn_suahd.Name = "btn_suahd";
             this.btn_suahd.Size = new System.Drawing.Size(115, 54);
             this.btn_suahd.TabIndex = 3;
             this.btn_suahd.Text = "Sửa tình trạng";
+            this.btn_suahd.Click += new System.EventHandler(this.btn_suahd_Click);
             // 
             // btn_tinhtienphong
             // 
             this.btn_tinhtienphong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_tinhtienphong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_tinhtienphong.ImageOptions.SvgImage")));
             this.btn_tinhtienphong.Location = new System.Drawing.Point(3, 8);
             this.btn_tinhtienphong.Name = "btn_tinhtienphong";
             this.btn_tinhtienphong.Size = new System.Drawing.Size(116, 54);
@@ -779,6 +777,7 @@
             // btn_xuathd
             // 
             this.btn_xuathd.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_xuathd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_xuathd.ImageOptions.Image")));
             this.btn_xuathd.Location = new System.Drawing.Point(500, 8);
             this.btn_xuathd.Name = "btn_xuathd";
             this.btn_xuathd.Size = new System.Drawing.Size(117, 54);

@@ -14,9 +14,9 @@ namespace QuanLyKhuTro.HeThong
     {
         public int Check_Config()
         {
-            if (Properties.Settings.Default.QL_NHATROConnectionString1 == string.Empty)
+            if (Properties.Settings.Default.QL_NHATROConnectionString == string.Empty)
                 return 1;// Chuỗi cấu hình không tồn tại
-            SqlConnection _Sqlconn = new SqlConnection(Properties.Settings.Default.QL_NHATROConnectionString1);
+            SqlConnection _Sqlconn = new SqlConnection(Properties.Settings.Default.QL_NHATROConnectionString);
             try
             {
                 if (_Sqlconn.State == System.Data.ConnectionState.Closed)
@@ -31,7 +31,7 @@ namespace QuanLyKhuTro.HeThong
         public LoginResult Check_User(String pUser, String pPass)
         {
 
-            SqlDataAdapter da = new SqlDataAdapter("select * from QUANLYND where TENDN='" + pUser + "' and MK='" + pPass + "'", Properties.Settings.Default.QL_NHATROConnectionString1);
+            SqlDataAdapter da = new SqlDataAdapter("select * from QUANLYND where TENDN='" + pUser + "' and MK='" + pPass + "'", Properties.Settings.Default.QL_NHATROConnectionString);
             DataTable dt = new DataTable();
             da.Fill(dt);
             if (dt.Rows.Count == 0)

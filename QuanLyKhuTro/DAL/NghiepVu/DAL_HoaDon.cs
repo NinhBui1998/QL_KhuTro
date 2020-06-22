@@ -37,7 +37,7 @@ namespace DAL.NghiepVu
                 data.SubmitChanges();
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
                 return false;
             }
@@ -65,7 +65,8 @@ namespace DAL.NghiepVu
                 HOADON nv = data.HOADONs.Where(t => t.MAHOADON == ptn.MAHOADON).FirstOrDefault();
                 if (nv != null)
                 {
-                    nv.MAPHONG = ptn.MAPHONG;
+                   
+                    nv.TINHTRANG = ptn.TINHTRANG;
                     data.SubmitChanges();
                 }
                 return true;

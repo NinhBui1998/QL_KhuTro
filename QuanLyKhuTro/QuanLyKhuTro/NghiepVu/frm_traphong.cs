@@ -12,6 +12,7 @@ using BLL;
 using DAL;
 using DAL.Model;
 using DevExpress.Utils.Extensions;
+using BLL.NghiepVu;
 
 namespace QuanLyKhuTro.NghiepVu
 {
@@ -33,6 +34,8 @@ namespace QuanLyKhuTro.NghiepVu
         BLL_KhachThue khachthue = new BLL_KhachThue();
         BLL_DatPhong datphong = new BLL_DatPhong();
         BLL_DichVu bll_dichvu = new BLL_DichVu();
+        BLL_HoaDon bll_hoadon = new BLL_HoaDon();
+        BLL_ChiSoDienNuoc bll_csdn = new BLL_ChiSoDienNuoc();
 
         string Ten;
         public string TenPhong
@@ -50,15 +53,16 @@ namespace QuanLyKhuTro.NghiepVu
         {
             InitializeComponent();
         }
-
+       
         private void frm_traphong_Load(object sender, EventArgs e)
         { 
             txt_tenphong.Text = Ten;
             grv_traphong.DataSource = traphong.LoadTraPhongtheoten(Ten);
             txt_maphong.Text = datphong.laymaphong(txt_tenphong.Text);
-            String MaHD = bll_sinhma.SinhMaHoaDon().ToString();
+           
+            
             txt_ngaytra.Text = DateTime.Now.ToShortDateString();
-          
+            txt_manv.Text = MAnv;
             txt_mahd.Enabled = false;
             txt_ngaylap.Enabled = false;
             String kq = traphong.laySoDien(txt_maphong.Text);
@@ -267,9 +271,10 @@ namespace QuanLyKhuTro.NghiepVu
         public Double TinhTienPhong()
         {
             string tiennuoc = bll_dichvu.loaddv("DV002");
+            string tienrac = bll_dichvu.loaddv("DV004");
             string tiendien = bll_dichvu.loaddv("DV001");
             string tienwifi = bll_dichvu.loaddv("DV003");
-            string tienrac = bll_dichvu.loaddv("DV004");
+            
             double TienNuoc = Convert.ToInt32(txt_sonuoc.Text) * Convert.ToDouble(tiennuoc);
             double TienDien = Convert.ToInt32(txt_sodien.Text) * Convert.ToDouble(tiendien);
             double wifi = Convert.ToDouble(tienwifi);
@@ -296,8 +301,73 @@ namespace QuanLyKhuTro.NghiepVu
         }
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            String MaHD = bll_sinhma.SinhMaHoaDon().ToString();
             txt_tongtien.Text = String.Format("{0:#,##0.##} VNĐ", TinhTienPhong());
-            
+          
+            string tienwifi = bll_dichvu.loaddv("DV003");
+            string tienrac = bll_dichvu.loaddv("DV004");
+            string tiendien = bll_dichvu.loaddv("DV001");
+            string tiennuoc = bll_dichvu.loaddv("DV002");
+
+            double TienNuoc = Convert.ToInt32(txt_sonuoc.Text) * Convert.ToDouble(tiennuoc);
+            double TienDien = Convert.ToInt32(txt_sodien.Text) * Convert.ToDouble(tiendien);
+            double wifi = Convert.ToDouble(tienwifi);
+            double rac = Convert.ToDouble(tienrac);
+            //thêm hóa đơn
+            HOADON hd = new HOADON();
+            hd.MAHOADON = MaHD;
+            hd.TIENDIEN =Convert.ToDecimal(tiendien);
+            hd.TIENNUOC= Convert.ToDecimal(TienNuoc);
+            hd.WIFI = Convert.ToDecimal(wifi);
+            hd.RAC= Convert.ToDecimal(rac);
+            hd.NGAYLAP = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            hd.TONGTIEN = Convert.ToDecimal(TinhTienPhong());
+            hd.MANV = txt_manv.Text;
+            hd.MAPHONG = txt_maphong.Text;
+            hd.TINHTRANG = false;
+            //thêm chỉ số điện nước
+
+            CHISO_DIENNUOC csdn = new CHISO_DIENNUOC();
+            csdn.MAHOADON = MaHD;
+            csdn.SODIENCU = Convert.ToInt32( txt_sodiendau.Text);
+            csdn.SODIENMOI = Convert.ToInt32(txt_sodiencuoi.Text);
+            csdn.SONUOCCU = Convert.ToInt32(txt_sonuocdau.Text);
+            csdn.SONUOCMOI = Convert.ToInt32(txt_sonuoccuoi.Text);
+            csdn.SODIEN = Convert.ToInt32(txt_sodien.Text);
+            csdn.SONUOC = Convert.ToInt32(txt_sonuoc.Text);
+
+            if (lb_manv.Text == string.Empty && txt_mahd.Text == string.Empty
+                  && txt_tiendien.Text == string.Empty && txt_tiennuoc.Text == string.Empty
+                  && txt_tongtien.Text==string.Empty && txt_maphong.Text==string.Empty)
+            {
+                MessageBox.Show("không được để trống");
+                return;
+            }
+
+            ////kiểm tra khóa chính
+            if ((bll_hoadon.ktkc_HoaDon(hd.MAHOADON)== true))
+            {
+                MessageBox.Show("Trùng khóa chính Hóa đơn");
+                return;
+            }
+            if (bll_csdn.ktkc_ChiSodn(hd.MAHOADON) == true)
+            {
+                MessageBox.Show("Trùng khóa chính chỉ số điện nước");
+                return;
+            }
+            ////thêm
+
+            if (bll_hoadon.Them_HoaDon(hd) == true && bll_csdn.Them_ChiSonc(csdn) == true )
+            {
+                grv_traphong.DataSource = datphong.LoadDatPhong();
+                MessageBox.Show("Thành công");
+
+            }
+            else
+            {
+                MessageBox.Show("Thất bại");
+            }
+            frm_traphong_Load(sender,e);
         }
 
         private void frm_traphong_FormClosing(object sender, FormClosingEventArgs e)
