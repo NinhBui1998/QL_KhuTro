@@ -120,7 +120,7 @@ namespace QuanLyKhuTro
 
         private void frm_main_Load(object sender, EventArgs e)
         {
-          
+            try { 
             skins();
             //lb_manv.Text = Tendn;
             List<QLPHANQUYEN> manhinh = new List<QLPHANQUYEN>();
@@ -146,7 +146,15 @@ namespace QuanLyKhuTro
                         ribbonPageGroup4 .Visible= ribbonPageGroup5 .Visible= false;
                 }    
             }
-          
+            }
+            catch
+            {
+                ribbonPageGroup1.Visible = ribbonPageGroup7.Visible = ribbonPageGroup8.Visible
+                        = ribbonPageGroup9.Visible = ribbonPageGroup10.Visible = ribbonPageGroup3.Visible =
+                        ribbonPageGroup4.Visible = ribbonPageGroup5.Visible = false;
+            }
+
+
           }
         private void btn_datphong_ItemClick(object sender, ItemClickEventArgs e)
         {

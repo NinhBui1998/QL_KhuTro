@@ -16,22 +16,24 @@ namespace DAL.NghiepVu
                      from t in data.TANGs
                      from hd in data.HOADONs
                      from cs in data.CHISO_DIENNUOCs
-                     //from dv in data.DICHVUs
-                     //from hddv in data.HOADON_DICHVUs
+                    
                      from nv in data.NHANVIENs
                      where  p.MAPHONG == hd.MAPHONG && hd.MAHOADON==cs.MAHOADON
-                    /* && hd.MAHOADON==hddv.MAHOADON && hddv.MADV==dv.MADV*/ &&hd.MANV==nv.MANV && p.MATANG == t.MATANG
+                     &&hd.MANV==nv.MANV && p.MATANG == t.MATANG
                      select new
                      {
                          hd.MAHOADON,
                          nv.TENNV,
                          t.TENTANG,
                          p.TENPHONG,
+                         hd.WIFI,
+                         hd.RAC,
                          cs.SODIEN,
                          cs.SONUOC,
                          hd.TIENDIEN,
                          hd.TIENNUOC,
                          hd.TONGTIEN,
+                         hd.TINHTRANG,
                          hd.NGAYLAP
                      };
             var kq = kt.ToList().ConvertAll(t => new HoaDon()
@@ -39,14 +41,18 @@ namespace DAL.NghiepVu
                 MaHD = t.MAHOADON,
                 TenNV = t.TENNV,
                 TenTang = t.TENTANG,
-                TenPhong = t.TENPHONG,            
+                TenPhong = t.TENPHONG,
+                Wifi=Convert.ToDouble(t.WIFI),
+                Rac = Convert.ToDouble(t.RAC),
                 SoDien = Convert.ToInt32( t.SODIEN),
                 SoNuoc= Convert.ToInt32(t.SONUOC),
                 TienDien=Convert.ToDouble(t.TIENDIEN),
                 TienNuoc=Convert.ToDouble(t.TIENNUOC),
                 TongTien=Convert.ToDouble(t.TONGTIEN),
                 NgayLap = Convert.ToDateTime(t.NGAYLAP),
-            });
+                TinhTrang=Convert.ToBoolean(t.TINHTRANG),
+                
+            });;
             kq.ToList<HoaDon>();
             return kq;
         }

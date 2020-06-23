@@ -83,7 +83,7 @@ namespace DAL.Model
             set { TONGTIEN = value; }
         }
 
-        public bool TinhTrang
+        public Boolean TinhTrang
         { get => TINHTRANG; set => TINHTRANG = value; }
     }
 }

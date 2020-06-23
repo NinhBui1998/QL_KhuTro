@@ -54,7 +54,8 @@ namespace QuanLyKhuTro.NghiepVu
         private void cbo_tang_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbo_maphong.DataSource = bll_phong.loadBang_Phongtheoma(cbo_tang.SelectedValue.ToString());
-            cbo_maphong.DisplayMember = "MAPHONG";
+            cbo_maphong.DisplayMember = "TENPHONG";
+            cbo_maphong.ValueMember = "MAPHONG";
 
         }
 
@@ -62,12 +63,12 @@ namespace QuanLyKhuTro.NghiepVu
         {
             PHONG p = new PHONG();
             LOAIPHONG lp = new LOAIPHONG();
-            p = dal_phong.loadTenPhong(cbo_maphong.Text);
+            p = dal_phong.loadTenPhong(cbo_maphong.SelectedValue.ToString());
             lp = dal_lp.loadTenLoaiPhong(p.MALOAI);
             txt_tenphong.Text = p.TENPHONG.ToString();
             txt_loaiphong.Text = lp.TENLOAI;
-            txt_tienphong.Text =lp.GIA.ToString();
-            String kq = traphong.laySoDien(cbo_maphong.Text);
+            txt_tienphong.Text = String.Format("{0:#,##0.##}", Convert.ToDouble(lp.GIA.ToString()));   
+            String kq = traphong.laySoDien(cbo_maphong.SelectedValue.ToString());
             if (kq == "")
             {
                 txt_sodiendau.Text = "0";
@@ -77,7 +78,7 @@ namespace QuanLyKhuTro.NghiepVu
                 txt_sodiendau.Text = kq;
             }
 
-            String sn = traphong.laySoNuoc(cbo_maphong.Text);
+            String sn = traphong.laySoNuoc(cbo_maphong.SelectedValue.ToString());
             if (sn == "")
             {
                 txt_sonuocdau.Text = "0";
@@ -129,7 +130,8 @@ namespace QuanLyKhuTro.NghiepVu
             {
                 string tiendien = bll_dichvu.loaddv("DV001");
                 double TienDien = Convert.ToInt32(txt_sodien.Text) * Convert.ToDouble(tiendien);
-                txt_tiendien.Text = TienDien.ToString();
+                txt_tiendien.Text = String.Format("{0:#,##0.##}", TienDien.ToString());
+
             }
             catch
             {
@@ -141,13 +143,14 @@ namespace QuanLyKhuTro.NghiepVu
         {
             string tiennuoc = bll_dichvu.loaddv("DV002");
             double TienNuoc = Convert.ToInt32(txt_sonuoc.Text) * Convert.ToDouble(tiennuoc);
-            txt_tiennuoc.Text = TienNuoc.ToString();
+            txt_tiennuoc.Text = String.Format("{0:#,##0.##}", TienNuoc.ToString());
+            
         }
 
      
         private void btn_tinhtienphong_Click(object sender, EventArgs e)
         {
-            txt_tongtien.Text=TinhTienPhong().ToString();
+            txt_tongtien.Text= String.Format("{0:#,##0.##}", TinhTienPhong()); 
             //lấy tiền điện nước
             string tienwifi = bll_dichvu.loaddv("DV003");
             string tienrac = bll_dichvu.loaddv("DV004");
@@ -168,7 +171,7 @@ namespace QuanLyKhuTro.NghiepVu
             hd.NGAYLAP = Convert.ToDateTime(DateTime.Now.ToShortDateString());
             hd.TONGTIEN = Convert.ToDecimal(TinhTienPhong());
             hd.MANV = txt_manv.Text;
-            hd.MAPHONG = cbo_maphong.Text;
+            hd.MAPHONG = cbo_maphong.SelectedValue.ToString();
             if(ckb_Tinhtrang.Checked==true)
             {
                 ckb_Tinhtrang.Text ="Đã đóng";
@@ -222,6 +225,7 @@ namespace QuanLyKhuTro.NghiepVu
                 MessageBox.Show("Thất bại");
             }
             frm_tienphong_Load(sender,e);
+            txt_sodiencuoi.Clear(); txt_sonuoccuoi.Clear();
         }
         public Double TinhTienPhong()
         {

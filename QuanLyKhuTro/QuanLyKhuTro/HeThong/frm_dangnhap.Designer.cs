@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_dangnhap));
             this.btn_huy = new DevExpress.XtraEditors.SimpleButton();
             this.btn_dangnhap = new DevExpress.XtraEditors.SimpleButton();
             this.txt_matkhau = new System.Windows.Forms.TextBox();
@@ -47,6 +48,8 @@
             // 
             // btn_dangnhap
             // 
+            this.btn_dangnhap.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btn_dangnhap.Appearance.Options.UseForeColor = true;
             this.btn_dangnhap.Location = new System.Drawing.Point(145, 156);
             this.btn_dangnhap.Name = "btn_dangnhap";
             this.btn_dangnhap.Size = new System.Drawing.Size(107, 45);
@@ -74,7 +77,8 @@
             // lbl_matkhau
             // 
             this.lbl_matkhau.AutoSize = true;
-            this.lbl_matkhau.Location = new System.Drawing.Point(41, 89);
+            this.lbl_matkhau.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_matkhau.Location = new System.Drawing.Point(58, 89);
             this.lbl_matkhau.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_matkhau.Name = "lbl_matkhau";
             this.lbl_matkhau.Size = new System.Drawing.Size(51, 13);
@@ -84,7 +88,8 @@
             // lbl_taikhoan
             // 
             this.lbl_taikhoan.AutoSize = true;
-            this.lbl_taikhoan.Location = new System.Drawing.Point(39, 49);
+            this.lbl_taikhoan.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_taikhoan.Location = new System.Drawing.Point(56, 49);
             this.lbl_taikhoan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_taikhoan.Name = "lbl_taikhoan";
             this.lbl_taikhoan.Size = new System.Drawing.Size(53, 13);
@@ -95,6 +100,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackgroundImageStore = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImageStore")));
             this.ClientSize = new System.Drawing.Size(467, 218);
             this.Controls.Add(this.btn_huy);
             this.Controls.Add(this.btn_dangnhap);
@@ -102,6 +109,7 @@
             this.Controls.Add(this.txt_taikhoan);
             this.Controls.Add(this.lbl_matkhau);
             this.Controls.Add(this.lbl_taikhoan);
+            this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frm_dangnhap.IconOptions.LargeImage")));
             this.Name = "frm_dangnhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_dn";

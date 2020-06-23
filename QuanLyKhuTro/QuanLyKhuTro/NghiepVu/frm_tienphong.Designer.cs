@@ -350,6 +350,7 @@
             // txt_sonuocdau
             // 
             this.txt_sonuocdau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_sonuocdau.Enabled = false;
             this.txt_sonuocdau.Location = new System.Drawing.Point(109, 11);
             this.txt_sonuocdau.Name = "txt_sonuocdau";
             this.txt_sonuocdau.Size = new System.Drawing.Size(152, 27);
@@ -441,6 +442,7 @@
             // txt_sodiendau
             // 
             this.txt_sodiendau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_sodiendau.Enabled = false;
             this.txt_sodiendau.Location = new System.Drawing.Point(104, 11);
             this.txt_sodiendau.Name = "txt_sodiendau";
             this.txt_sodiendau.Size = new System.Drawing.Size(157, 27);
@@ -935,6 +937,8 @@
             // TienDien
             // 
             this.TienDien.Caption = "Tiền điện";
+            this.TienDien.DisplayFormat.FormatString = "#,###";
+            this.TienDien.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.TienDien.FieldName = "TienDien";
             this.TienDien.Name = "TienDien";
             this.TienDien.Visible = true;
@@ -951,6 +955,8 @@
             // TienNuoc
             // 
             this.TienNuoc.Caption = "Tiền nước";
+            this.TienNuoc.DisplayFormat.FormatString = "#,###";
+            this.TienNuoc.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.TienNuoc.FieldName = "TienNuoc";
             this.TienNuoc.Name = "TienNuoc";
             this.TienNuoc.Visible = true;
@@ -959,6 +965,8 @@
             // Wifi
             // 
             this.Wifi.Caption = "Tiền Wifi";
+            this.Wifi.DisplayFormat.FormatString = "#,###";
+            this.Wifi.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.Wifi.FieldName = "Wifi";
             this.Wifi.Name = "Wifi";
             this.Wifi.Visible = true;
@@ -967,6 +975,8 @@
             // Rac
             // 
             this.Rac.Caption = "Tiền rác";
+            this.Rac.DisplayFormat.FormatString = "#,###";
+            this.Rac.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.Rac.FieldName = "Rac";
             this.Rac.Name = "Rac";
             this.Rac.Visible = true;
@@ -983,6 +993,8 @@
             // TongTien
             // 
             this.TongTien.Caption = "Tổng tiền";
+            this.TongTien.DisplayFormat.FormatString = "#,###";
+            this.TongTien.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.TongTien.FieldName = "TongTien";
             this.TongTien.Name = "TongTien";
             this.TongTien.Visible = true;

@@ -413,5 +413,20 @@ namespace QuanLyKhuTro.NghiepVu
                 quequannv,sdtnv,tenkt,ngaysinhkt,cmndkt,quequankt,sdtkt,
                 tenphong,loaiphong,tang,gia,tiencoc,"22","02","2021");
         }
+
+        private void txt_sdt_TextChanged(object sender, EventArgs e)
+        {
+            System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+            String value =(txt_sdt.Text, System.Globalization.NumberStyles.AllowThousands).ToString();
+            txt_sdt.Text = string.Format("{0:(###) ###-###}", value);
+            //texbox1.Text = String.Format(culture, "{0:N0}", value);
+            txt_sdt.Select(txt_tiencoc.Text.Length, 0);
+        }
+
+        private void txt_sdt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
     }
 }

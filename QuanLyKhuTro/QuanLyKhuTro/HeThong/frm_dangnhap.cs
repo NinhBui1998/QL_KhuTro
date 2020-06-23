@@ -45,6 +45,10 @@ namespace QuanLyKhuTro.HeThong
 
         private void btn_dangnhap_Click(object sender, EventArgs e)
         {
+            try
+            {
+
+          
             if (string.IsNullOrEmpty(txt_taikhoan.Text.Trim()))
             {
                 MessageBox.Show("Không được bỏ trống");
@@ -71,6 +75,11 @@ namespace QuanLyKhuTro.HeThong
             {
                 MessageBox.Show("Chuỗi cấu hình không phù hợp");
                 ProcessConfig();
+            }
+            }
+            catch
+            {
+                MessageBox.Show("Bạn không có quyền đăng nhập");
             }
 
         }

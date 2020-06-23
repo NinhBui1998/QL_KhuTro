@@ -88,7 +88,7 @@ namespace DAL
                           from c in data.CHISO_DIENNUOCs
                           from hd in data.HOADONs
                           where p.MAPHONG == hd.MAPHONG && c.MAHOADON == hd.MAHOADON && p.MAPHONG == pma
-                          select c.SODIENMOI).FirstOrDefault();
+                          select c.SODIEN).Sum();
                 return kq.ToString();
             
         }
@@ -98,7 +98,7 @@ namespace DAL
                       from c in data.CHISO_DIENNUOCs
                       from hd in data.HOADONs
                       where p.MAPHONG == hd.MAPHONG && c.MAHOADON == hd.MAHOADON && p.MAPHONG == pma
-                      select c.SONUOCMOI).FirstOrDefault();
+                      select c.SONUOC).Sum();
             return kq.ToString();
 
         }
