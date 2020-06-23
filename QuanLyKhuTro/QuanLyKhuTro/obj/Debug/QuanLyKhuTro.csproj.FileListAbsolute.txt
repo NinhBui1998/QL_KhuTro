@@ -1,195 +1,6 @@
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\QuanLyKhuTro.exe.config
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\QuanLyKhuTro.exe
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\QuanLyKhuTro.pdb
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\BLL.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DAL.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Charts.v19.2.Core.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Data.v19.2.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.DataAccess.v19.2.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.DataAccess.v19.2.UI.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Office.v19.2.Core.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Printing.v19.2.Core.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.RichEdit.v19.2.Core.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Spreadsheet.v19.2.Core.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Utils.v19.2.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Utils.v19.2.UI.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraBars.v19.2.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraCharts.v19.2.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraEditors.v19.2.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraGrid.v19.2.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraLayout.v19.2.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraNavBar.v19.2.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraPrinting.v19.2.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraRichEdit.v19.2.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraSpreadsheet.v19.2.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraTreeList.v19.2.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Xpo.v19.2.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.CodeParser.v19.2.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraDiagram.v19.2.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Diagram.v19.2.Core.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Pdf.v19.2.Core.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Images.v19.2.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Sparkline.v19.2.Core.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraVerticalGrid.v19.2.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\BLL.pdb
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DAL.pdb
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DAL.dll.config
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Data.v19.2.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.DataAccess.v19.2.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.DataAccess.v19.2.UI.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Office.v19.2.Core.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Printing.v19.2.Core.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.RichEdit.v19.2.Core.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Spreadsheet.v19.2.Core.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Utils.v19.2.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Utils.v19.2.UI.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraBars.v19.2.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraCharts.v19.2.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraEditors.v19.2.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraGrid.v19.2.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraLayout.v19.2.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraNavBar.v19.2.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraPrinting.v19.2.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraRichEdit.v19.2.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraSpreadsheet.v19.2.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraTreeList.v19.2.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Xpo.v19.2.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraDiagram.v19.2.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Diagram.v19.2.Core.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Pdf.v19.2.Core.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Sparkline.v19.2.Core.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraVerticalGrid.v19.2.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\de\DevExpress.Data.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\DevExpress.Data.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.Data.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.Data.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\de\DevExpress.DataAccess.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\DevExpress.DataAccess.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.DataAccess.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.DataAccess.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\de\DevExpress.DataAccess.v19.2.UI.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\DevExpress.DataAccess.v19.2.UI.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.DataAccess.v19.2.UI.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.DataAccess.v19.2.UI.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\de\DevExpress.Office.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\DevExpress.Office.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.Office.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.Office.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\de\DevExpress.Printing.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\DevExpress.Printing.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.Printing.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.Printing.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\de\DevExpress.RichEdit.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\DevExpress.RichEdit.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.RichEdit.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.RichEdit.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\de\DevExpress.Spreadsheet.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\DevExpress.Spreadsheet.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.Spreadsheet.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.Spreadsheet.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\de\DevExpress.Utils.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\DevExpress.Utils.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.Utils.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.Utils.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\de\DevExpress.Utils.v19.2.UI.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\DevExpress.Utils.v19.2.UI.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.Utils.v19.2.UI.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.Utils.v19.2.UI.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\de\DevExpress.XtraBars.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\DevExpress.XtraBars.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.XtraBars.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.XtraBars.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\de\DevExpress.XtraCharts.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\DevExpress.XtraCharts.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.XtraCharts.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.XtraCharts.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\de\DevExpress.XtraEditors.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\DevExpress.XtraEditors.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.XtraEditors.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.XtraEditors.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\de\DevExpress.XtraGrid.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\DevExpress.XtraGrid.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.XtraGrid.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.XtraGrid.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\de\DevExpress.XtraLayout.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\DevExpress.XtraLayout.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.XtraLayout.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.XtraLayout.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\de\DevExpress.XtraNavBar.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\DevExpress.XtraNavBar.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.XtraNavBar.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.XtraNavBar.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\de\DevExpress.XtraPrinting.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\DevExpress.XtraPrinting.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.XtraPrinting.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.XtraPrinting.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\de\DevExpress.XtraRichEdit.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\DevExpress.XtraRichEdit.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.XtraRichEdit.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.XtraRichEdit.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\de\DevExpress.XtraSpreadsheet.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\DevExpress.XtraSpreadsheet.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.XtraSpreadsheet.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.XtraSpreadsheet.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\de\DevExpress.XtraTreeList.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\DevExpress.XtraTreeList.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.XtraTreeList.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.XtraTreeList.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\de\DevExpress.Xpo.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\DevExpress.Xpo.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.Xpo.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.Xpo.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\de\DevExpress.Diagram.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\DevExpress.Diagram.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.Diagram.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.Diagram.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\de\DevExpress.Pdf.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\DevExpress.Pdf.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.Pdf.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.Pdf.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\de\DevExpress.Sparkline.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\DevExpress.Sparkline.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.Sparkline.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.Sparkline.v19.2.Core.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\de\DevExpress.XtraVerticalGrid.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\es\DevExpress.XtraVerticalGrid.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ja\DevExpress.XtraVerticalGrid.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\ru\DevExpress.XtraVerticalGrid.v19.2.resources.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.DanhMuc.frm_dichvu.resources
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.DanhMuc.frm_khachthue.resources
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.DanhMuc.frm_loaiphong.resources
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.DanhMuc.frm_nhanvien.resources
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.DanhMuc.frm_noiquy.resources
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.DanhMuc.frm_phong.resources
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.DanhMuc.frm_thannhan.resources
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.DanhMuc.frm_thietbi.resources
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.DuLieu.frm_Restore.resources
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.DuLieu.frm_backup.resources
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.NghiepVu.dialog_datphong.resources
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.frm_test.resources
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.frm_cauhinh.resources
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.HeThong.frm_dangnhap.resources
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.frm_doimatkhau.resources
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.frm_main.resources
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.frm_tang.resources
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.HeThong.frm_phanquyen.resources
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.NghiepVu.frm_datphong.resources
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.NghiepVu.frm_quanlythietbi.resources
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.NghiepVu.frm_tienphong.resources
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.NghiepVu.frm_traphong.resources
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.NghiepVu.frm_vipham.resources
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.Properties.Resources.resources
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.csproj.GenerateResource.cache
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.exe.licenses
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.csproj.CoreCompileInputs.cache
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.csproj.CopyComplete
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.exe
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.pdb
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.csprojAssemblyReference.cache
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\QuanLyKhuTro.exe.config
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\QuanLyKhuTro.exe
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\QuanLyKhuTro.pdb
-E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\BLL.dll
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DAL.dll
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Charts.v19.2.Core.dll
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Data.v19.2.dll
@@ -211,6 +22,12 @@ E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExp
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraRichEdit.v19.2.dll
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraSpreadsheet.v19.2.dll
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraTreeList.v19.2.dll
+E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.Compression.Base.dll
+E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.Core.dll
+E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.DocIO.Base.dll
+E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.DocIO.Windows.dll
+E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.XlsIO.Base.dll
+E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.XlsIO.Windows.dll
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Xpo.v19.2.dll
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.CodeParser.v19.2.dll
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraDiagram.v19.2.dll
@@ -221,7 +38,6 @@ E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExp
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraVerticalGrid.v19.2.dll
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\BLL.pdb
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DAL.pdb
-E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DAL.dll.config
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Data.v19.2.xml
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.DataAccess.v19.2.xml
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.DataAccess.v19.2.UI.xml
@@ -241,6 +57,11 @@ E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExp
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraRichEdit.v19.2.xml
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraSpreadsheet.v19.2.xml
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraTreeList.v19.2.xml
+E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.Compression.Base.xml
+E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.DocIO.Base.xml
+E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.DocIO.Windows.xml
+E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.XlsIO.Base.xml
+E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.XlsIO.Windows.xml
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Xpo.v19.2.xml
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.XtraDiagram.v19.2.xml
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DevExpress.Diagram.v19.2.Core.xml
@@ -374,25 +195,5 @@ E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLy
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.csproj.CopyComplete
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.exe
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.pdb
-E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.Compression.Base.dll
-E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.Core.dll
-E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.DocIO.Base.dll
-E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.DocIO.Windows.dll
-E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.XlsIO.Base.dll
-E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.XlsIO.Windows.dll
-E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.Compression.Base.xml
-E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.DocIO.Base.xml
-E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.DocIO.Windows.xml
-E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.XlsIO.Base.xml
-E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.XlsIO.Windows.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.Compression.Base.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.Core.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.DocIO.Base.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.DocIO.Windows.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.XlsIO.Base.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.XlsIO.Windows.dll
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.Compression.Base.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.DocIO.Base.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.DocIO.Windows.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.XlsIO.Base.xml
-E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\Syncfusion.XlsIO.Windows.xml
+E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\BLL.dll
+E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DAL.dll.config

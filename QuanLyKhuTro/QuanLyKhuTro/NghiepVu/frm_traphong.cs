@@ -13,11 +13,13 @@ using DAL;
 using DAL.Model;
 using DevExpress.Utils.Extensions;
 using BLL.NghiepVu;
+using DAL.DuLieu;
 
 namespace QuanLyKhuTro.NghiepVu
 {
     public partial class frm_traphong : DevExpress.XtraEditors.XtraForm
     {
+        WordExport we = new WordExport();
         BLL_SinhMa bll_sinhma = new BLL_SinhMa();
         DAL_Phong dal_phong = new DAL_Phong();
       
@@ -453,6 +455,39 @@ namespace QuanLyKhuTro.NghiepVu
             {
                 return;
             }
+        }    
+        private void btn_in_Click(object sender, EventArgs e)
+        {
+            int position = gridView_traphong.FocusedRowHandle;
+            string mahd = gridView_traphong.GetRowCellValue(position, "Mahd").ToString();
+            string maphong = gridView_traphong.GetRowCellValue(position, "Maphong").ToString();
+
+            KHACHTHUE kt = new KHACHTHUE();
+            kt = dal_khachthue.loadTenKT(hopdong_khachthue.laymakt(mahd));
+
+
+            PHONG p = new PHONG();
+            p = dal_phong.loadTenPhong(maphong);
+
+            // data 
+            string ngaytra = DateTime.Now.ToShortDateString();
+            string tenphong = p.TENPHONG;
+            string tenkt = kt.TENKT;
+            string tracoc = "Chưa";
+            string CSDDau = txt_sodiendau.Text;
+            string CSDCuoi = txt_sodiencuoi.Text;
+            string DonGiaDien = "3,000";
+            string TienDien = txt_tiendien.Text;
+            string CSNDau = txt_sonuocdau.Text;
+            string CSNCuoi = txt_sonuoccuoi.Text;
+            string DonGiaNuoc = "6,000";
+            string TienNuoc = txt_tiennuoc.Text;
+            string DonGiaWifi = "60,000";
+            string DonGiaRac = "20,000";
+            string TongTien = txt_tongtien.Text;
+            we.ThongTinTraPhong(ngaytra, tenphong, tenkt, tracoc, CSDDau, CSDCuoi,
+                DonGiaDien, TienDien, CSNDau, CSNCuoi, DonGiaNuoc, TienNuoc, DonGiaWifi,
+                DonGiaRac, TongTien);
         }
     }
 }

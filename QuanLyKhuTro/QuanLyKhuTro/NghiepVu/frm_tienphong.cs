@@ -11,11 +11,13 @@ using DevExpress.XtraEditors;
 using BLL;
 using DAL;
 using BLL.NghiepVu;
+using DAL.DuLieu;
 
 namespace QuanLyKhuTro.NghiepVu
 {
     public partial class frm_tienphong : DevExpress.XtraEditors.XtraForm
     {
+        WordExport we = new WordExport();
         BLL_Phong bll_phong = new BLL_Phong();
         BLL_Tang bll_tang = new BLL_Tang();
         DAL_Phong dal_phong = new DAL_Phong();
@@ -25,6 +27,8 @@ namespace QuanLyKhuTro.NghiepVu
         BLL_DichVu bll_dichvu = new BLL_DichVu();
         BLL_HoaDon bll_hoadon = new BLL_HoaDon();
         BLL_ChiSoDienNuoc bll_csdn = new BLL_ChiSoDienNuoc();
+        DAL_KhachThue dal_khachthue = new DAL_KhachThue();
+        BLL_HopDong_KhachThue hopdong_khachthue = new BLL_HopDong_KhachThue();
         public frm_tienphong()
         {
             InitializeComponent();
@@ -224,17 +228,37 @@ namespace QuanLyKhuTro.NghiepVu
             {
                 MessageBox.Show("Thất bại");
             }
-            frm_tienphong_Load(sender,e);
-            txt_sodiencuoi.Clear(); txt_sonuoccuoi.Clear();
+            //frm_tienphong_Load(sender,e);
+            grv_hoadon.DataSource = bll_hoadon.LoadDataHoaDon();
+
         }
         public Double TinhTienPhong()
         {
+            double TienNuoc=0;
+            double TienDien = 0;
             string tiennuoc = bll_dichvu.loaddv("DV002");
             string tiendien = bll_dichvu.loaddv("DV001");
             string tienwifi = bll_dichvu.loaddv("DV003");
             string tienrac = bll_dichvu.loaddv("DV004");
-            double TienNuoc = Convert.ToInt32(txt_sonuoc.Text) * Convert.ToDouble(tiennuoc);
-            double TienDien = Convert.ToInt32(txt_sodien.Text) * Convert.ToDouble(tiendien);
+          
+            if (Convert.ToInt32(txt_sonuoccuoi.Text)- Convert. ToInt32(txt_sonuocdau.Text)==0)
+            {
+                TienNuoc = 0;
+            }
+            else
+            {
+                TienNuoc = Convert.ToInt32(txt_sonuoc.Text) * Convert.ToDouble(tiennuoc);
+
+            }
+            if (Convert.ToInt32(txt_sodiencuoi.Text) - Convert.ToInt32(txt_sodiendau.Text) == 0)
+            {
+                TienDien = 0;
+            }
+            else
+            {
+
+                TienDien = Convert.ToInt32(txt_sodien.Text) * Convert.ToDouble(tiendien);
+            }
             double wifi = Convert.ToDouble(tienwifi);
             double rac = Convert.ToDouble(tienrac);
             double TienPhong = Convert.ToDouble(txt_tienphong.Text);
@@ -318,8 +342,8 @@ namespace QuanLyKhuTro.NghiepVu
         private void btn_suahd_Click(object sender, EventArgs e)
         {
             HOADON hd = new HOADON();
-            int position = gridView1.FocusedRowHandle;
-            hd.MAHOADON = gridView1.GetRowCellValue(position, "MaHD").ToString();
+            int position = gridView_hoadon.FocusedRowHandle;
+            hd.MAHOADON = gridView_hoadon.GetRowCellValue(position, "MaHD").ToString();
             if(ckb_Tinhtrang.Checked==true)
             {
                 hd.TINHTRANG = true;
@@ -339,6 +363,32 @@ namespace QuanLyKhuTro.NghiepVu
                 MessageBox.Show("Thất bại");
             }
             frm_tienphong_Load(sender,e);
+        }
+
+        private void btn_xuathd_Click(object sender, EventArgs e)
+        {
+            int position = gridView_hoadon.FocusedRowHandle;
+            string mahd = gridView_hoadon.GetRowCellValue(position, "MaHD").ToString();
+
+            // data 
+            string ngaylap = DateTime.Now.ToShortDateString();
+            string tenphong = gridView_hoadon.GetRowCellValue(position, "TenPhong").ToString();
+            string tentang = gridView_hoadon.GetRowCellValue(position, "TenTang").ToString();
+            string tienphong =txt_tienphong.Text;
+            string CSDDau = txt_sodiendau.Text;
+            string CSDCuoi = txt_sodiencuoi.Text;
+            string DonGiaDien = "3,000 VNĐ";
+            string TienDien = txt_tiendien.Text;
+            string CSNDau = txt_sonuocdau.Text;
+            string CSNCuoi = txt_sonuoccuoi.Text;
+            string DonGiaNuoc = "6,000 VNĐ";
+            string TienNuoc = txt_tiennuoc.Text;
+            string DonGiaWifi = "60,000 VNĐ";
+            string DonGiaRac = "20,000 VNĐ";
+            string TongTien = txt_tongtien.Text;
+            we.PhieuThuTienTro(ngaylap, tenphong,tentang, tienphong, CSDDau, CSDCuoi,
+                DonGiaDien, TienDien, CSNDau, CSNCuoi, DonGiaNuoc, TienNuoc, DonGiaWifi,
+                DonGiaRac, TongTien,mahd);
         }
     }
 }

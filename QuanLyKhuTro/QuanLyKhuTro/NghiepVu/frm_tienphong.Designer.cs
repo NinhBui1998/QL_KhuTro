@@ -90,7 +90,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.ckb_Tinhtrang = new System.Windows.Forms.CheckBox();
             this.grv_hoadon = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridView_hoadon = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.MaHD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TenTang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TenPhong = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -123,7 +123,7 @@
             this.tableLayoutPanel14.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grv_hoadon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_hoadon)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -256,7 +256,7 @@
             this.cbo_maphong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_maphong.DisplayMember = "MAPHONG";
             this.cbo_maphong.FormattingEnabled = true;
-            this.cbo_maphong.Location = new System.Drawing.Point(126, 64);
+            this.cbo_maphong.Location = new System.Drawing.Point(126, 61);
             this.cbo_maphong.Name = "cbo_maphong";
             this.cbo_maphong.Size = new System.Drawing.Size(411, 27);
             this.cbo_maphong.TabIndex = 5;
@@ -268,7 +268,7 @@
             this.cbo_tang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_tang.DisplayMember = "MAPHONG";
             this.cbo_tang.FormattingEnabled = true;
-            this.cbo_tang.Location = new System.Drawing.Point(126, 14);
+            this.cbo_tang.Location = new System.Drawing.Point(126, 11);
             this.cbo_tang.Name = "cbo_tang";
             this.cbo_tang.Size = new System.Drawing.Size(411, 27);
             this.cbo_tang.TabIndex = 5;
@@ -741,8 +741,8 @@
             this.tableLayoutPanel14.ColumnCount = 4;
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.67742F));
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.51613F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.80645F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.67911F));
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.29032F));
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.83871F));
             this.tableLayoutPanel14.Controls.Add(this.btn_suahd, 0, 0);
             this.tableLayoutPanel14.Controls.Add(this.btn_tinhtienphong, 0, 0);
             this.tableLayoutPanel14.Controls.Add(this.btn_xuathd, 3, 0);
@@ -758,9 +758,9 @@
             // 
             this.btn_suahd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_suahd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_suahd.ImageOptions.Image")));
-            this.btn_suahd.Location = new System.Drawing.Point(125, 8);
+            this.btn_suahd.Location = new System.Drawing.Point(124, 8);
             this.btn_suahd.Name = "btn_suahd";
-            this.btn_suahd.Size = new System.Drawing.Size(115, 54);
+            this.btn_suahd.Size = new System.Drawing.Size(114, 54);
             this.btn_suahd.TabIndex = 3;
             this.btn_suahd.Text = "Sửa tình trạng";
             this.btn_suahd.Click += new System.EventHandler(this.btn_suahd_Click);
@@ -771,7 +771,7 @@
             this.btn_tinhtienphong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_tinhtienphong.ImageOptions.SvgImage")));
             this.btn_tinhtienphong.Location = new System.Drawing.Point(3, 8);
             this.btn_tinhtienphong.Name = "btn_tinhtienphong";
-            this.btn_tinhtienphong.Size = new System.Drawing.Size(116, 54);
+            this.btn_tinhtienphong.Size = new System.Drawing.Size(115, 54);
             this.btn_tinhtienphong.TabIndex = 2;
             this.btn_tinhtienphong.Text = "Tính tiền phòng";
             this.btn_tinhtienphong.Click += new System.EventHandler(this.btn_tinhtienphong_Click);
@@ -785,6 +785,7 @@
             this.btn_xuathd.Size = new System.Drawing.Size(117, 54);
             this.btn_xuathd.TabIndex = 1;
             this.btn_xuathd.Text = "Xuất hóa đơn";
+            this.btn_xuathd.Click += new System.EventHandler(this.btn_xuathd_Click);
             // 
             // tableLayoutPanel13
             // 
@@ -876,16 +877,16 @@
             // 
             this.grv_hoadon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grv_hoadon.Location = new System.Drawing.Point(3, 488);
-            this.grv_hoadon.MainView = this.gridView1;
+            this.grv_hoadon.MainView = this.gridView_hoadon;
             this.grv_hoadon.Name = "grv_hoadon";
             this.grv_hoadon.Size = new System.Drawing.Size(1196, 231);
             this.grv_hoadon.TabIndex = 1;
             this.grv_hoadon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gridView_hoadon});
             // 
-            // gridView1
+            // gridView_hoadon
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridView_hoadon.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.MaHD,
             this.TenTang,
             this.TenPhong,
@@ -899,8 +900,8 @@
             this.TongTien,
             this.TenNV,
             this.TINHTRANG});
-            this.gridView1.GridControl = this.grv_hoadon;
-            this.gridView1.Name = "gridView1";
+            this.gridView_hoadon.GridControl = this.grv_hoadon;
+            this.gridView_hoadon.Name = "gridView_hoadon";
             // 
             // MaHD
             // 
@@ -1063,7 +1064,7 @@
             this.tableLayoutPanel13.ResumeLayout(false);
             this.tableLayoutPanel13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grv_hoadon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_hoadon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1119,7 +1120,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private DevExpress.XtraEditors.SimpleButton btn_xuathd;
         private DevExpress.XtraGrid.GridControl grv_hoadon;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView_hoadon;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_sonuoc;
         private System.Windows.Forms.Label label6;
