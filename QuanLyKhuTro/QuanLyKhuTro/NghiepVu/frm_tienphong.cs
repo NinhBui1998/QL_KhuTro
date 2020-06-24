@@ -19,6 +19,7 @@ namespace QuanLyKhuTro.NghiepVu
     {
         WordExport we = new WordExport();
         BLL_Phong bll_phong = new BLL_Phong();
+        DAL_NhanVien dal_nv = new DAL_NhanVien();
         BLL_Tang bll_tang = new BLL_Tang();
         DAL_Phong dal_phong = new DAL_Phong();
         DAL_LoaiPhong dal_lp = new DAL_LoaiPhong();
@@ -371,26 +372,29 @@ namespace QuanLyKhuTro.NghiepVu
         {
             int position = gridView_hoadon.FocusedRowHandle;
             string mahd = gridView_hoadon.GetRowCellValue(position, "MaHD").ToString();
-
+            NHANVIEN nv = new NHANVIEN();
+            string manv = txt_manv.Text;
+            nv = dal_nv.loadTenNV(txt_manv.Text);
             // data 
             string ngaylap = DateTime.Now.ToShortDateString();
+            string tennv = nv.TENNV;
             string tenphong = gridView_hoadon.GetRowCellValue(position, "TenPhong").ToString();
             string tentang = gridView_hoadon.GetRowCellValue(position, "TenTang").ToString();
             string tienphong =txt_tienphong.Text;
             string CSDDau = txt_sodiendau.Text;
             string CSDCuoi = txt_sodiencuoi.Text;
-            string DonGiaDien = "3,000 VNĐ";
+            string DonGiaDien = "3,000";
             string TienDien = txt_tiendien.Text;
             string CSNDau = txt_sonuocdau.Text;
             string CSNCuoi = txt_sonuoccuoi.Text;
-            string DonGiaNuoc = "6,000 VNĐ";
+            string DonGiaNuoc = "6,000";
             string TienNuoc = txt_tiennuoc.Text;
-            string DonGiaWifi = "60,000 VNĐ";
-            string DonGiaRac = "20,000 VNĐ";
+            string DonGiaWifi = "60,000";
+            string DonGiaRac = "20,000";
             string TongTien = txt_tongtien.Text;
-            we.PhieuThuTienTro(ngaylap, tenphong,tentang, tienphong, CSDDau, CSDCuoi,
+            we.PhieuThuTienTro(ngaylap,tenphong,tentang, tienphong, CSDDau, CSDCuoi,
                 DonGiaDien, TienDien, CSNDau, CSNCuoi, DonGiaNuoc, TienNuoc, DonGiaWifi,
-                DonGiaRac, TongTien,mahd);
+                DonGiaRac, TongTien,mahd, manv, tennv);
         }
     }
 }

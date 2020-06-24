@@ -425,7 +425,7 @@ namespace DAL.DuLieu
         }
         public void PhieuThuTienTro(string pNgayLap, string pTenPhong,string pTenTang, string pTienPhong, string pCSDDau,
            string pCSDCuoi, string pDonGiaDien, string pTienDien, string pCSNDau, string pCSNCuoi, string PDonGiaNuoc,
-           string pTienNuoc, string pDonGiaWifi, string pDonGiaRac, string pTongTien,string pMaPhieuThu)
+           string pTienNuoc, string pDonGiaWifi, string pDonGiaRac, string pTongTien,string pMaPhieuThu, string pMaNV, string pTenNV)
         {
             #region ===== Core======
             MemoryStream mStream = null;
@@ -477,10 +477,10 @@ namespace DAL.DuLieu
 
 
             string[] fields = new string[] {"NgayLap","TenPhong","TenTang", "TienPhong","CSDDau", "CSDCuoi","DonGiaDien",
-                "TienDien","CSNDau","CSNCuoi","DonGiaNuoc","TienNuoc","DonGiaWifi","DonGiaRac","TongTien","MaPhieuThu"};
+                "TienDien","CSNDau","CSNCuoi","DonGiaNuoc","TienNuoc","DonGiaWifi","DonGiaRac","TongTien","MaPhieuThu","MaNV","TenNV"};
 
             string[] values = new string[] {pNgayLap,pTenPhong,pTenTang, pTienPhong,pCSDDau,pCSDCuoi,pDonGiaDien, pTienDien,
-                pCSNDau,pCSNCuoi,PDonGiaNuoc,pTienNuoc,pDonGiaWifi,pDonGiaRac,pTongTien,pMaPhieuThu};
+                pCSNDau,pCSNCuoi,PDonGiaNuoc,pTienNuoc,pDonGiaWifi,pDonGiaRac,pTongTien,pMaPhieuThu,pMaNV,pTenNV};
 
             #endregion End Set Value=====
 
