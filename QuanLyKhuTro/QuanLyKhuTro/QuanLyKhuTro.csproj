@@ -222,6 +222,12 @@
     <Compile Include="NghiepVu\frm_datphong.Designer.cs">
       <DependentUpon>frm_datphong.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\frm_quanlyhoadon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\frm_quanlyhoadon.Designer.cs">
+      <DependentUpon>frm_quanlyhoadon.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\frm_quanlythietbi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -304,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\frm_datphong.resx">
       <DependentUpon>frm_datphong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\frm_quanlyhoadon.resx">
+      <DependentUpon>frm_quanlyhoadon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\frm_quanlythietbi.resx">
       <DependentUpon>frm_quanlythietbi.cs</DependentUpon>

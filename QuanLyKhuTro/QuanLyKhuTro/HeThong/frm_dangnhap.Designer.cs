@@ -39,6 +39,8 @@
             // 
             // btn_huy
             // 
+            this.btn_huy.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_huy.Appearance.Options.UseFont = true;
             this.btn_huy.Location = new System.Drawing.Point(320, 156);
             this.btn_huy.Name = "btn_huy";
             this.btn_huy.Size = new System.Drawing.Size(107, 45);
@@ -48,7 +50,9 @@
             // 
             // btn_dangnhap
             // 
+            this.btn_dangnhap.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_dangnhap.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btn_dangnhap.Appearance.Options.UseFont = true;
             this.btn_dangnhap.Appearance.Options.UseForeColor = true;
             this.btn_dangnhap.Location = new System.Drawing.Point(145, 156);
             this.btn_dangnhap.Name = "btn_dangnhap";
@@ -60,17 +64,21 @@
             // 
             // txt_matkhau
             // 
+            this.txt_matkhau.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_matkhau.Location = new System.Drawing.Point(145, 81);
+            this.txt_matkhau.Multiline = true;
             this.txt_matkhau.Name = "txt_matkhau";
-            this.txt_matkhau.Size = new System.Drawing.Size(282, 21);
+            this.txt_matkhau.Size = new System.Drawing.Size(282, 32);
             this.txt_matkhau.TabIndex = 2;
             this.txt_matkhau.Text = "123456789";
             // 
             // txt_taikhoan
             // 
-            this.txt_taikhoan.Location = new System.Drawing.Point(145, 41);
+            this.txt_taikhoan.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_taikhoan.Location = new System.Drawing.Point(145, 40);
+            this.txt_taikhoan.Multiline = true;
             this.txt_taikhoan.Name = "txt_taikhoan";
-            this.txt_taikhoan.Size = new System.Drawing.Size(282, 21);
+            this.txt_taikhoan.Size = new System.Drawing.Size(282, 29);
             this.txt_taikhoan.TabIndex = 1;
             this.txt_taikhoan.Text = "NV001";
             // 
@@ -78,10 +86,11 @@
             // 
             this.lbl_matkhau.AutoSize = true;
             this.lbl_matkhau.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_matkhau.Location = new System.Drawing.Point(58, 89);
+            this.lbl_matkhau.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_matkhau.Location = new System.Drawing.Point(77, 89);
             this.lbl_matkhau.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_matkhau.Name = "lbl_matkhau";
-            this.lbl_matkhau.Size = new System.Drawing.Size(51, 13);
+            this.lbl_matkhau.Size = new System.Drawing.Size(64, 17);
             this.lbl_matkhau.TabIndex = 3;
             this.lbl_matkhau.Text = "Mật khẩu";
             // 
@@ -89,10 +98,11 @@
             // 
             this.lbl_taikhoan.AutoSize = true;
             this.lbl_taikhoan.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_taikhoan.Location = new System.Drawing.Point(56, 49);
+            this.lbl_taikhoan.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_taikhoan.Location = new System.Drawing.Point(74, 49);
             this.lbl_taikhoan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_taikhoan.Name = "lbl_taikhoan";
-            this.lbl_taikhoan.Size = new System.Drawing.Size(53, 13);
+            this.lbl_taikhoan.Size = new System.Drawing.Size(66, 17);
             this.lbl_taikhoan.TabIndex = 4;
             this.lbl_taikhoan.Text = "Tài khoản";
             // 

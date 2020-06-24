@@ -61,6 +61,7 @@
             this.btn_tienphong = new DevExpress.XtraBars.BarButtonItem();
             this.btn_thannhan = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -115,10 +116,11 @@
             this.btn_traphong,
             this.btn_tienphong,
             this.btn_thannhan,
-            this.barButtonItem2});
+            this.barButtonItem2,
+            this.barButtonItem4});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbon.MaxItemId = 31;
+            this.ribbon.MaxItemId = 32;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -382,6 +384,14 @@
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Quản lý hóa đơn";
+            this.barButtonItem4.Id = 31;
+            this.barButtonItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -430,6 +440,7 @@
             // ribbonPageGroup9
             // 
             this.ribbonPageGroup9.ItemLinks.Add(this.btn_tienphong);
+            this.ribbonPageGroup9.ItemLinks.Add(this.barButtonItem4);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             // 
             // ribbonPageGroup10
@@ -492,6 +503,7 @@
             // pnl_main
             // 
             this.pnl_main.AutoSize = true;
+            this.pnl_main.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_main.BackgroundImage")));
             this.pnl_main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnl_main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_main.Location = new System.Drawing.Point(0, 158);
@@ -572,5 +584,6 @@
         private DevExpress.XtraBars.BarButtonItem btn_tienphong;
         private DevExpress.XtraBars.BarButtonItem btn_thannhan;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
     }
 }

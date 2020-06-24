@@ -22,6 +22,12 @@ namespace DAL.Model
         DateTime NGAYLAP;
         Boolean TINHTRANG;
 
+        int SODIENCU;
+        int SODIENMOI;
+        int SONUOCCU;
+        int SONUOCMOI;
+
+
         public String MaHD
         {
             get { return MAHD; }
@@ -85,5 +91,9 @@ namespace DAL.Model
 
         public Boolean TinhTrang
         { get => TINHTRANG; set => TINHTRANG = value; }
+        public int SoDienCu { get => SODIENCU; set => SODIENCU = value; }
+        public int SoDienMoi { get => SODIENMOI; set => SODIENMOI = value; }
+        public int SoNuocCu { get => SONUOCCU; set => SONUOCCU = value; }
+        public int SoNuocMoi { get => SONUOCMOI; set => SONUOCMOI = value; }
     }
 }

@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\BLL_SinhMa.cs" />
+    <Compile Include="NghiepVu\BLL_TienPhongHangThang.cs" />
     <Compile Include="NghiepVu\BLL_ViPham.cs" />
     <Compile Include="NghiepVu\BLL_ChiSoDienNuoc.cs" />
     <Compile Include="NghiepVu\BLL_DatPhong.cs" />

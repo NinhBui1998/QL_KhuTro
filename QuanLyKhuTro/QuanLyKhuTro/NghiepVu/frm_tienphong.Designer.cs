@@ -256,7 +256,7 @@
             this.cbo_maphong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_maphong.DisplayMember = "MAPHONG";
             this.cbo_maphong.FormattingEnabled = true;
-            this.cbo_maphong.Location = new System.Drawing.Point(126, 61);
+            this.cbo_maphong.Location = new System.Drawing.Point(126, 64);
             this.cbo_maphong.Name = "cbo_maphong";
             this.cbo_maphong.Size = new System.Drawing.Size(411, 27);
             this.cbo_maphong.TabIndex = 5;
@@ -268,7 +268,7 @@
             this.cbo_tang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_tang.DisplayMember = "MAPHONG";
             this.cbo_tang.FormattingEnabled = true;
-            this.cbo_tang.Location = new System.Drawing.Point(126, 11);
+            this.cbo_tang.Location = new System.Drawing.Point(126, 14);
             this.cbo_tang.Name = "cbo_tang";
             this.cbo_tang.Size = new System.Drawing.Size(411, 27);
             this.cbo_tang.TabIndex = 5;

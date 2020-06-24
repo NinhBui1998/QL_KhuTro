@@ -45,7 +45,7 @@ namespace QuanLyKhuTro
 
            
 
-            grv_phong.DataSource = bll_dsp.LoadDSPhong();
+            //grv_phong.DataSource = bll_dsp.LoadDSPhong();
             //tạo control động
             int x = 0;
             int y = 0;
@@ -200,7 +200,7 @@ namespace QuanLyKhuTro
 
         private void btn_tatcaphong_Click(object sender, EventArgs e)
         {
-            grv_phong.DataSource = bll_dsp.LoadDSPhong();
+            //grv_phong.DataSource = bll_dsp.LoadDSPhong();
         }
 
         private void btn_lammoi_Click(object sender, EventArgs e)

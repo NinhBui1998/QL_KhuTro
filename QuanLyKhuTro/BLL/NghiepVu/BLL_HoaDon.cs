@@ -17,10 +17,7 @@ namespace BLL.NghiepVu
         {
             return dall_hoadon.loadbangHoaDon();
         }
-        public List<HoaDon> LoadDataHoaDon()
-        {
-            return tpht.loadHoaDon();
-        }
+      
         //kiểm tra khóa chính
         public bool ktkc_HoaDon(string pMa)
         {

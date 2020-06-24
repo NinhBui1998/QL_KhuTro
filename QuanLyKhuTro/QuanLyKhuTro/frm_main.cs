@@ -245,5 +245,12 @@ namespace QuanLyKhuTro
             pnl_main.Controls.Clear();
             pnl_main.Controls.Add(vp);
         }
+
+        private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frm_quanlyhoadon qlhd = new frm_quanlyhoadon();
+            pnl_main.Controls.Clear();
+            pnl_main.AddControl(qlhd);
+        }
     }
 }

@@ -29,6 +29,7 @@ namespace QuanLyKhuTro.NghiepVu
         BLL_ChiSoDienNuoc bll_csdn = new BLL_ChiSoDienNuoc();
         DAL_KhachThue dal_khachthue = new DAL_KhachThue();
         BLL_HopDong_KhachThue hopdong_khachthue = new BLL_HopDong_KhachThue();
+        BLL_TienPhongHangThang bLL_TienPhongHangThang = new BLL_TienPhongHangThang();
         public frm_tienphong()
         {
             InitializeComponent();
@@ -50,7 +51,7 @@ namespace QuanLyKhuTro.NghiepVu
             txt_manv.Text = MaNV;
             txt_ngaylaphd.Text= DateTime.Now.ToShortDateString();
 
-            grv_hoadon.DataSource = bll_hoadon.LoadDataHoaDon();
+           
         }
 
       
@@ -91,6 +92,7 @@ namespace QuanLyKhuTro.NghiepVu
             {
                 txt_sonuocdau.Text = sn;
             }
+            grv_hoadon.DataSource = bLL_TienPhongHangThang.LoadDataHoaDontheomaphong(cbo_maphong.SelectedValue.ToString());
         }
 
         private void ckb_wifi_CheckedChanged(object sender, EventArgs e)
@@ -229,7 +231,7 @@ namespace QuanLyKhuTro.NghiepVu
                 MessageBox.Show("Thất bại");
             }
             //frm_tienphong_Load(sender,e);
-            grv_hoadon.DataSource = bll_hoadon.LoadDataHoaDon();
+            grv_hoadon.DataSource = bLL_TienPhongHangThang.LoadDataHoaDontheomaphong(cbo_maphong.SelectedValue.ToString());
 
         }
         public Double TinhTienPhong()
