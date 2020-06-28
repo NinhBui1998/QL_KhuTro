@@ -175,7 +175,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 285F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 188F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 185F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 186F));
             this.tableLayoutPanel4.Controls.Add(this.btn_lammoi, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.btn_timkiem, 3, 0);
             this.tableLayoutPanel4.Controls.Add(this.cbo_loai, 2, 0);
@@ -205,7 +205,7 @@
             this.btn_timkiem.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_timkiem.Appearance.Options.UseFont = true;
             this.btn_timkiem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_timkiem.ImageOptions.SvgImage")));
-            this.btn_timkiem.Location = new System.Drawing.Point(411, 6);
+            this.btn_timkiem.Location = new System.Drawing.Point(410, 6);
             this.btn_timkiem.Name = "btn_timkiem";
             this.btn_timkiem.Size = new System.Drawing.Size(31, 27);
             this.btn_timkiem.TabIndex = 6;
@@ -216,7 +216,7 @@
             this.cbo_loai.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbo_loai.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_loai.FormattingEnabled = true;
-            this.cbo_loai.Location = new System.Drawing.Point(238, 6);
+            this.cbo_loai.Location = new System.Drawing.Point(237, 6);
             this.cbo_loai.Name = "cbo_loai";
             this.cbo_loai.Size = new System.Drawing.Size(167, 27);
             this.cbo_loai.TabIndex = 9;
@@ -225,9 +225,9 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(172, 13);
+            this.label5.Location = new System.Drawing.Point(194, 7);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 13);
+            this.label5.Size = new System.Drawing.Size(37, 26);
             this.label5.TabIndex = 3;
             this.label5.Text = "Loại phòng";
             // 

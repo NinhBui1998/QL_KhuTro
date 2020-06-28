@@ -15,6 +15,16 @@ namespace DAL
             var dulieu = (from s in data.KHACHTHUEs select s);
             return dulieu.ToList<KHACHTHUE>();
         }
+        public List<KHACHTHUE> loadbangKhachThuetheoten(string pmaphong)
+        {
+            var dulieu =(from s in data.KHACHTHUEs 
+                         
+                         from p in data.PHONGs
+                         where p.MAPHONG==s.MAPHONG 
+                         && p.MAPHONG==pmaphong 
+                         select s);
+            return dulieu.ToList<KHACHTHUE>();
+        }
         public KHACHTHUE loadTenKT(string pMa)
         {
             return data.KHACHTHUEs.Where(t => t.MAKT == pMa).FirstOrDefault();
@@ -85,13 +95,11 @@ namespace DAL
         public bool kt_KhachThue(string pkt)
         {
             var ktx = (from kt in data.KHACHTHUEs
-                       from h in data.HOPDONG_KTs
+                      
                        from tr in data.THANNHAN_TAMTRUs
                        from tk in data.VIPHAMs
-                       where kt.MAKT == h.MAKT && kt.MAKT == pkt || kt.MAKT== tr.MAKT && kt.MAKT == pkt
+                       where kt.MAKT == pkt || kt.MAKT== tr.MAKT && kt.MAKT == pkt
                        || kt.MAKT == tk.MAKT && kt.MAKT== pkt
-
-
                        select kt).Count();
             if (ktx > 0)
             {

@@ -84,7 +84,7 @@ namespace DAL
         {
             var ktx = (from nv in data.PHONGs
                        from h in data.HOADONs
-                       from tk in data.HOPDONGs
+                       from tk in data.KHACHTHUEs
                        from tb in data.THIETBI_PHONGs
                        where nv.MAPHONG == h.MAPHONG
                        || nv.MAPHONG == tk.MAPHONG || nv.MAPHONG == tb.MAPHONG && nv.MAPHONG == pPhong

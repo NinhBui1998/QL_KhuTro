@@ -383,7 +383,6 @@
             this.txt_sonuoccuoi.Name = "txt_sonuoccuoi";
             this.txt_sonuoccuoi.Size = new System.Drawing.Size(152, 27);
             this.txt_sonuoccuoi.TabIndex = 1;
-            this.txt_sonuoccuoi.TextChanged += new System.EventHandler(this.txt_sonuoccuoi_TextChanged);
             this.txt_sonuoccuoi.Leave += new System.EventHandler(this.txt_sonuoccuoi_Leave);
             // 
             // label7
@@ -465,7 +464,6 @@
             this.txt_sodiencuoi.Name = "txt_sodiencuoi";
             this.txt_sodiencuoi.Size = new System.Drawing.Size(157, 27);
             this.txt_sodiencuoi.TabIndex = 1;
-            this.txt_sodiencuoi.TextChanged += new System.EventHandler(this.txt_sodiencuoi_TextChanged);
             this.txt_sodiencuoi.Leave += new System.EventHandler(this.txt_sodiencuoi_Leave);
             // 
             // label6
@@ -872,6 +870,7 @@
             this.ckb_Tinhtrang.TabIndex = 9;
             this.ckb_Tinhtrang.Text = "Chưa nạp";
             this.ckb_Tinhtrang.UseVisualStyleBackColor = true;
+            this.ckb_Tinhtrang.Click += new System.EventHandler(this.ckb_Tinhtrang_Click);
             // 
             // grv_hoadon
             // 

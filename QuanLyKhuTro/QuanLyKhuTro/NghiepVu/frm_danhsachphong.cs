@@ -66,16 +66,11 @@ namespace QuanLyKhuTro
                     b.Size = new Size(90, 60);
                     b.Location = new Point(x, y);
                     b.BackColor = Color.White;
-                    if (p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_TD- p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT==0)
+                    if (p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_TD- p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT==0 
+                        || (1 <= p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT && p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT < p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_TD))
                     {
                         b.BackColor = Color.Gray;
                         b.Click += showformtraphong;
-                    }
-                    else if (1<=p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT && p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT<p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_TD)
-                    {
-                        b.BackColor = Color.SeaGreen;                                          
-                        b.Click += showdialog;
-
                     }
                     else
                     {

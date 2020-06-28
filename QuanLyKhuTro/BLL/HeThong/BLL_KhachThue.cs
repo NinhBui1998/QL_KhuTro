@@ -13,6 +13,11 @@ namespace BLL
         {
             return dkt.loadbangKhachThue();
         }
+
+        public List<KHACHTHUE> loadBangKTtheoma(string pmaphong)
+        {
+            return dkt.loadbangKhachThuetheoten(pmaphong );
+        }
         //kiểm tra khóa chính
         public bool ktkc_khachthue(string pMa)
         {

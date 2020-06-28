@@ -31,7 +31,7 @@ namespace QuanLyKhuTro.NghiepVu
 
         BLL_Phong phong = new BLL_Phong();
         BLL_TraPhong traphong = new BLL_TraPhong();
-        BLL_HopDong_KhachThue hopdong_khachthue = new BLL_HopDong_KhachThue();
+      
         BLL_HopDong hopdong = new BLL_HopDong();
         BLL_KhachThue khachthue = new BLL_KhachThue();
         BLL_DatPhong datphong = new BLL_DatPhong();
@@ -139,8 +139,7 @@ namespace QuanLyKhuTro.NghiepVu
                     string m = gridView_traphong.GetRowCellValue(position, "Makt").ToString();
                     string n = gridView_traphong.GetRowCellValue(position, "Mahd").ToString();
 
-                    if (hopdong_khachthue.xoa_HopDong_KhachThue(n, m) == true)
-                    {
+                   
                         if (hopdong.xoa_HopDong(n) == true)
                         {
                             if (khachthue.xoa_KhachThue(m) == true)
@@ -154,11 +153,7 @@ namespace QuanLyKhuTro.NghiepVu
                         {
                             MessageBox.Show("Thất bại");
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Lỗi !!!");
-                    }
+                   
 
 
                     PHONG p = new PHONG();
@@ -217,7 +212,7 @@ namespace QuanLyKhuTro.NghiepVu
         private void grv_traphong_Click(object sender, EventArgs e)
         {
             HOPDONG hd = new HOPDONG();
-            HOPDONG_KT hd_kt = new HOPDONG_KT();
+           
             TraPhong tp = new TraPhong();
             PHONG p = new PHONG();
             int position = gridView_traphong.FocusedRowHandle;
@@ -230,7 +225,6 @@ namespace QuanLyKhuTro.NghiepVu
                 tp.Tenkt = gridView_traphong.GetRowCellValue(position, "Tenkt").ToString();
                 tp.Ngaylap = Convert.ToDateTime(gridView_traphong.GetRowCellValue(position, "Ngaylap").ToString());
               //  tp.Ngaytra = Convert.ToDateTime(gridView_traphong.GetRowCellValue(position, "Ngaytra").ToString());
-                hd_kt.TRACOC = Convert.ToBoolean(gridView_traphong.GetRowCellValue(position, "Tracoc").ToString());
 
 
                 txt_mahd.Text = tp.Mahd.ToString();
@@ -239,7 +233,6 @@ namespace QuanLyKhuTro.NghiepVu
                 txt_tenkt.Text = tp.Tenkt.ToString();
                 txt_ngaylap.Text = tp.Ngaylap.ToString();
              //   txt_ngaytra.Text = tp.Ngaytra.ToString();
-                ckb_tracoc.Checked = hd_kt.TRACOC.Value;
                 if (ckb_tracoc.Checked == true)
                 {
                     ckb_tracoc.Text = "Rồi";
@@ -303,73 +296,80 @@ namespace QuanLyKhuTro.NghiepVu
         }
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            String MaHD = bll_sinhma.SinhMaHoaDon().ToString();
-            txt_tongtien.Text = String.Format("{0:#,##0.##} VNĐ", TinhTienPhong());
+            try
+            {
+                String MaHD = bll_sinhma.SinhMaHoaDon().ToString();
+                txt_tongtien.Text = String.Format("{0:#,##0.##}", TinhTienPhong());
           
-            string tienwifi = bll_dichvu.loaddv("DV003");
-            string tienrac = bll_dichvu.loaddv("DV004");
-            string tiendien = bll_dichvu.loaddv("DV001");
-            string tiennuoc = bll_dichvu.loaddv("DV002");
+                string tienwifi = bll_dichvu.loaddv("DV003");
+                string tienrac = bll_dichvu.loaddv("DV004");
+                string tiendien = bll_dichvu.loaddv("DV001");
+                string tiennuoc = bll_dichvu.loaddv("DV002");
 
-            double TienNuoc = Convert.ToInt32(txt_sonuoc.Text) * Convert.ToDouble(tiennuoc);
-            double TienDien = Convert.ToInt32(txt_sodien.Text) * Convert.ToDouble(tiendien);
-            double wifi = Convert.ToDouble(tienwifi);
-            double rac = Convert.ToDouble(tienrac);
-            //thêm hóa đơn
-            HOADON hd = new HOADON();
-            hd.MAHOADON = MaHD;
-            hd.TIENDIEN =Convert.ToDecimal(tiendien);
-            hd.TIENNUOC= Convert.ToDecimal(TienNuoc);
-            hd.WIFI = Convert.ToDecimal(wifi);
-            hd.RAC= Convert.ToDecimal(rac);
-            hd.NGAYLAP = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-            hd.TONGTIEN = Convert.ToDecimal(TinhTienPhong());
-            hd.MANV = txt_manv.Text;
-            hd.MAPHONG = txt_maphong.Text;
-            hd.TINHTRANG = false;
-            //thêm chỉ số điện nước
+                double TienNuoc = Convert.ToInt32(txt_sonuoc.Text) * Convert.ToDouble(tiennuoc);
+                double TienDien = Convert.ToInt32(txt_sodien.Text) * Convert.ToDouble(tiendien);
+                double wifi = Convert.ToDouble(tienwifi);
+                double rac = Convert.ToDouble(tienrac);
+                //thêm hóa đơn
+                HOADON hd = new HOADON();
+                hd.MAHOADON = MaHD;
+                hd.TIENDIEN =Convert.ToDecimal(tiendien);
+                hd.TIENNUOC= Convert.ToDecimal(TienNuoc);
+                hd.WIFI = Convert.ToDecimal(wifi);
+                hd.RAC= Convert.ToDecimal(rac);
+                hd.NGAYLAP = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+                hd.TONGTIEN = Convert.ToDecimal(TinhTienPhong());
+                hd.MANV = txt_manv.Text;
+                hd.MAPHONG = txt_maphong.Text;
+                hd.TINHTRANG = false;
+                //thêm chỉ số điện nước
 
-            CHISO_DIENNUOC csdn = new CHISO_DIENNUOC();
-            csdn.MAHOADON = MaHD;
-            csdn.SODIENCU = Convert.ToInt32( txt_sodiendau.Text);
-            csdn.SODIENMOI = Convert.ToInt32(txt_sodiencuoi.Text);
-            csdn.SONUOCCU = Convert.ToInt32(txt_sonuocdau.Text);
-            csdn.SONUOCMOI = Convert.ToInt32(txt_sonuoccuoi.Text);
-            csdn.SODIEN = Convert.ToInt32(txt_sodien.Text);
-            csdn.SONUOC = Convert.ToInt32(txt_sonuoc.Text);
+                CHISO_DIENNUOC csdn = new CHISO_DIENNUOC();
+                csdn.MAHOADON = MaHD;
+                csdn.SODIENCU = Convert.ToInt32( txt_sodiendau.Text);
+                csdn.SODIENMOI = Convert.ToInt32(txt_sodiencuoi.Text);
+                csdn.SONUOCCU = Convert.ToInt32(txt_sonuocdau.Text);
+                csdn.SONUOCMOI = Convert.ToInt32(txt_sonuoccuoi.Text);
+                csdn.SODIEN = Convert.ToInt32(txt_sodien.Text);
+                csdn.SONUOC = Convert.ToInt32(txt_sonuoc.Text);
 
-            if (lb_manv.Text == string.Empty && txt_mahd.Text == string.Empty
-                  && txt_tiendien.Text == string.Empty && txt_tiennuoc.Text == string.Empty
-                  && txt_tongtien.Text==string.Empty && txt_maphong.Text==string.Empty)
-            {
-                MessageBox.Show("không được để trống");
-                return;
+                if (lb_manv.Text == string.Empty && txt_mahd.Text == string.Empty
+                      && txt_tiendien.Text == string.Empty && txt_tiennuoc.Text == string.Empty
+                      && txt_tongtien.Text==string.Empty && txt_maphong.Text==string.Empty)
+                {
+                    MessageBox.Show("không được để trống");
+                    return;
+                }
+
+                ////kiểm tra khóa chính
+                if ((bll_hoadon.ktkc_HoaDon(hd.MAHOADON)== true))
+                {
+                    MessageBox.Show("Trùng khóa chính Hóa đơn");
+                    return;
+                }
+                if (bll_csdn.ktkc_ChiSodn(hd.MAHOADON) == true)
+                {
+                    MessageBox.Show("Trùng khóa chính chỉ số điện nước");
+                    return;
+                }
+                ////thêm
+
+                if (bll_hoadon.Them_HoaDon(hd) == true && bll_csdn.Them_ChiSonc(csdn) == true )
+                {
+                    grv_traphong.DataSource = datphong.LoadDatPhong();
+                    MessageBox.Show("Thành công");
+
+                }
+                else
+                {
+                    MessageBox.Show("Thất bại");
+                }
+                frm_traphong_Load(sender,e);
             }
-
-            ////kiểm tra khóa chính
-            if ((bll_hoadon.ktkc_HoaDon(hd.MAHOADON)== true))
+            catch
             {
-                MessageBox.Show("Trùng khóa chính Hóa đơn");
-                return;
+                MessageBox.Show("Lỗi");
             }
-            if (bll_csdn.ktkc_ChiSodn(hd.MAHOADON) == true)
-            {
-                MessageBox.Show("Trùng khóa chính chỉ số điện nước");
-                return;
-            }
-            ////thêm
-
-            if (bll_hoadon.Them_HoaDon(hd) == true && bll_csdn.Them_ChiSonc(csdn) == true )
-            {
-                grv_traphong.DataSource = datphong.LoadDatPhong();
-                MessageBox.Show("Thành công");
-
-            }
-            else
-            {
-                MessageBox.Show("Thất bại");
-            }
-            frm_traphong_Load(sender,e);
         }
 
         private void frm_traphong_FormClosing(object sender, FormClosingEventArgs e)
@@ -407,7 +407,7 @@ namespace QuanLyKhuTro.NghiepVu
             {
                 int a = Convert.ToInt32(txt_sodiencuoi.Text);
                 int b = Convert.ToInt32(txt_sodiendau.Text);
-                if (a > b)
+                if (a >= b)
                 {
                     int sd = Convert.ToInt32(txt_sodiencuoi.Text) - Convert.ToInt32(txt_sodiendau.Text);
                     txt_sodien.Text = sd.ToString();
@@ -415,7 +415,7 @@ namespace QuanLyKhuTro.NghiepVu
                     string tiendien = bll_dichvu.loaddv("DV001");
 
                     double TienDien = Convert.ToInt32(txt_sodien.Text) * Convert.ToDouble(tiendien);
-                    txt_tiendien.Text = String.Format("{0:#,##0.##} VNĐ", TienDien);
+                    txt_tiendien.Text = String.Format("{0:#,##0.##}", TienDien);
                 }
                 else
                 {
@@ -437,13 +437,13 @@ namespace QuanLyKhuTro.NghiepVu
             {
                 int a = Convert.ToInt32(txt_sonuoccuoi.Text);
                 int b = Convert.ToInt32(txt_sonuocdau.Text);
-                if (a > b)
+                if (a >= b)
                 {
                     int sd = Convert.ToInt32(txt_sonuoccuoi.Text) - Convert.ToInt32(txt_sonuocdau.Text);
                     txt_sonuoc.Text = sd.ToString();
                     string tiennuoc = bll_dichvu.loaddv("DV002");
                     double TienNuoc = Convert.ToInt32(txt_sonuoc.Text) * Convert.ToDouble(tiennuoc);
-                    txt_tiennuoc.Text = String.Format("{0:#,##0.##} VNĐ", TienNuoc);
+                    txt_tiennuoc.Text = String.Format("{0:#,##0.##}", TienNuoc);
                 }
                 else
                 {
@@ -463,7 +463,7 @@ namespace QuanLyKhuTro.NghiepVu
             string maphong = gridView_traphong.GetRowCellValue(position, "Maphong").ToString();
 
             KHACHTHUE kt = new KHACHTHUE();
-            kt = dal_khachthue.loadTenKT(hopdong_khachthue.laymakt(mahd));
+        //    kt = dal_khachthue.loadTenKT(hopdong_khachthue.laymakt(mahd));
 
 
             PHONG p = new PHONG();
@@ -488,6 +488,18 @@ namespace QuanLyKhuTro.NghiepVu
             we.ThongTinTraPhong(ngaytra, tenphong, tenkt, tracoc, CSDDau, CSDCuoi,
                 DonGiaDien, TienDien, CSNDau, CSNCuoi, DonGiaNuoc, TienNuoc, DonGiaWifi,
                 DonGiaRac, TongTien);
+        }
+
+        private void ckb_tracoc_CheckedChanged(object sender, EventArgs e)
+        {
+            if(ckb_tracoc.Checked==true)
+            {
+                ckb_tracoc.Text = "Đã trả cọc";
+            }
+            else
+            {
+                ckb_tracoc.Text = "Chưa trả cọc";
+            }    
         }
     }
 }

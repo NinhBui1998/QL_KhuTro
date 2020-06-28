@@ -432,6 +432,8 @@
             // GIATB
             // 
             this.GIATB.Caption = "Giá thiết bị";
+            this.GIATB.DisplayFormat.FormatString = "#,###";
+            this.GIATB.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.GIATB.FieldName = "GIATB";
             this.GIATB.Name = "GIATB";
             this.GIATB.Visible = true;

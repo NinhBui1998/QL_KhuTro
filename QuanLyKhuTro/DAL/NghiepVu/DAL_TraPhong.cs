@@ -14,34 +14,33 @@ namespace DAL
         public List<TraPhong> loadtraphong()
         {
             var kt = from s in data.HOPDONGs
-                     from k in data.HOPDONG_KTs
                      from kth in data.KHACHTHUEs
                      from p in data.PHONGs
                      from nv in data.NHANVIENs
-                     where s.MAHD == k.MAHD && k.MAKT == kth.MAKT && p.MAPHONG == s.MAPHONG && s.MANV==nv.MANV
+                     where s.MAKT == kth.MAKT && kth.MAPHONG==p.MAPHONG && s.MANV==nv.MANV
                      select new
                      {
                          s.MAHD,
                          s.MANV,
                          nv.TENNV,
-                         s.MAPHONG,                       
+                         p.TENPHONG,                       
                          kth.MAKT,
                          kth.TENKT,
                          s.NGAYLAPHD,
-                         k.NGAYTRA,
-                         k.TRACOC                       
+                         s.NGAYTRA,
+                                            
                      };
             var kq = kt.ToList().ConvertAll(t => new TraPhong()
             {
                 Mahd = t.MAHD,
                 Manv = t.MANV,
-                Maphong = t.MAPHONG,
+                Tenphong = t.TENPHONG,
                 Tennv=t.TENNV,
                 Makt = t.MAKT,
                 Tenkt = t.TENKT,
                 Ngaylap = Convert.ToDateTime(t.NGAYLAPHD),
                 Ngaytra = Convert.ToDateTime(t.NGAYTRA),
-                Tracoc = Convert.ToBoolean(t.TRACOC),
+                
             });
             kq.ToList<TraPhong>();
             return kq;
@@ -49,35 +48,34 @@ namespace DAL
         public List<TraPhong> loadtraphongtheoma(string pten)
         {
             var kt = from s in data.HOPDONGs
-                     from k in data.HOPDONG_KTs
                      from kth in data.KHACHTHUEs
                      from p in data.PHONGs
                      from nv in data.NHANVIENs
-                     where s.MAHD == k.MAHD && k.MAKT == kth.MAKT && p.MAPHONG == s.MAPHONG &&
-                        s.MANV == nv.MANV && p.TENPHONG == pten
+                     where s.MAKT == kth.MAKT && kth.MAPHONG == p.MAPHONG &&
+                     s.MANV == nv.MANV && p.TENPHONG==pten
                      select new
                      {
                          s.MAHD,
                          s.MANV,
-                         s.MAPHONG,
                          nv.TENNV,
+                         p.TENPHONG,
                          kth.MAKT,
                          kth.TENKT,
                          s.NGAYLAPHD,
-                         k.NGAYTRA,
-                         k.TRACOC
+                         s.NGAYTRA,
+
                      };
             var kq = kt.ToList().ConvertAll(t => new TraPhong()
             {
                 Mahd = t.MAHD,
                 Manv = t.MANV,
-                Maphong = t.MAPHONG,
-                Tennv=t.TENNV,
+                Tenphong = t.TENPHONG,
+                Tennv = t.TENNV,
                 Makt = t.MAKT,
                 Tenkt = t.TENKT,
                 Ngaylap = Convert.ToDateTime(t.NGAYLAPHD),
                 Ngaytra = Convert.ToDateTime(t.NGAYTRA),
-                Tracoc = Convert.ToBoolean(t.TRACOC),
+
             });
             kq.ToList<TraPhong>();
             return kq;

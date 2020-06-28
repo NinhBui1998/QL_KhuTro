@@ -49,37 +49,37 @@ namespace QuanLyKhuTro.HeThong
             {
 
           
-            if (string.IsNullOrEmpty(txt_taikhoan.Text.Trim()))
-            {
-                MessageBox.Show("Không được bỏ trống");
-                txt_taikhoan.Focus();
-                return;
-            }
-            if (string.IsNullOrEmpty(txt_matkhau.Text.Trim()))
-            {
-                MessageBox.Show("Không được bỏ trống");
-                txt_matkhau.Focus();
-                return;
-            }
-            int kq = kt.Check_Config();
-            if (kq == 0)
-            {
-                Processlogin();
-            }
-            if (kq == 1)
-            {
-                MessageBox.Show("Chuỗi cấu hình không tồn tại");
-                ProcessConfig();
-            }
-            if (kq == 2)
-            {
-                MessageBox.Show("Chuỗi cấu hình không phù hợp");
-                ProcessConfig();
-            }
-            }
+                if (string.IsNullOrEmpty(txt_taikhoan.Text.Trim()))
+                {
+                    MessageBox.Show("Không được bỏ trống");
+                    txt_taikhoan.Focus();
+                    return;
+                }
+                if (string.IsNullOrEmpty(txt_matkhau.Text.Trim()))
+                {
+                    MessageBox.Show("Không được bỏ trống");
+                    txt_matkhau.Focus();
+                    return;
+                }
+                int kq = kt.Check_Config();
+                if (kq == 0)
+                {
+                    Processlogin();
+                }
+                if (kq == 1)
+                {
+                    MessageBox.Show("Chuỗi cấu hình không tồn tại");
+                    ProcessConfig();
+                }
+                if (kq == 2)
+                {
+                    MessageBox.Show("Chuỗi cấu hình không phù hợp");
+                    ProcessConfig();
+                }
+                }
             catch
             {
-                MessageBox.Show("Bạn không có quyền đăng nhập");
+                return;
             }
 
         }

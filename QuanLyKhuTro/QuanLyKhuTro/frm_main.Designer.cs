@@ -49,7 +49,6 @@
             this.btn_thietbi = new DevExpress.XtraBars.BarButtonItem();
             this.btn_dichvu = new DevExpress.XtraBars.BarButtonItem();
             this.btn_noiquy = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_khachthue = new DevExpress.XtraBars.BarButtonItem();
             this.btn_nhanvien = new DevExpress.XtraBars.BarButtonItem();
             this.btn_thongkephong = new DevExpress.XtraBars.BarButtonItem();
             this.btn_thongkedoanhthu = new DevExpress.XtraBars.BarButtonItem();
@@ -78,6 +77,9 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.pnl_main = new System.Windows.Forms.Panel();
+            this.btn_khachthue = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
@@ -105,7 +107,6 @@
             this.btn_thietbi,
             this.btn_dichvu,
             this.btn_noiquy,
-            this.btn_khachthue,
             this.btn_nhanvien,
             this.btn_thongkephong,
             this.btn_thongkedoanhthu,
@@ -117,10 +118,11 @@
             this.btn_tienphong,
             this.btn_thannhan,
             this.barButtonItem2,
-            this.barButtonItem4});
+            this.barButtonItem4,
+            this.barButtonItem5});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbon.MaxItemId = 32;
+            this.ribbon.MaxItemId = 33;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -286,16 +288,6 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btn_noiquy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_noiquy_ItemClick);
             // 
-            // btn_khachthue
-            // 
-            this.btn_khachthue.Caption = "Khách thuê";
-            this.btn_khachthue.Id = 19;
-            this.btn_khachthue.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_khachthue.ImageOptions.SvgImage")));
-            this.btn_khachthue.Name = "btn_khachthue";
-            this.btn_khachthue.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.btn_khachthue.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_khachthue_ItemClick);
-            // 
             // btn_nhanvien
             // 
             this.btn_nhanvien.Caption = "Nhân viên";
@@ -418,7 +410,6 @@
             // 
             // ribbonPageGroup8
             // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.btn_khachthue);
             this.ribbonPageGroup8.ItemLinks.Add(this.btn_nhanvien);
             this.ribbonPageGroup8.ItemLinks.Add(this.btn_thannhan);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
@@ -428,7 +419,8 @@
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup2,
             this.ribbonPageGroup9,
-            this.ribbonPageGroup10});
+            this.ribbonPageGroup10,
+            this.ribbonPageGroup11});
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "Nghiệp vụ";
             // 
@@ -511,6 +503,29 @@
             this.pnl_main.Size = new System.Drawing.Size(772, 578);
             this.pnl_main.TabIndex = 2;
             // 
+            // btn_khachthue
+            // 
+            this.btn_khachthue.Caption = "Khách thuê";
+            this.btn_khachthue.Id = 19;
+            this.btn_khachthue.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_khachthue.ImageOptions.SvgImage")));
+            this.btn_khachthue.Name = "btn_khachthue";
+            this.btn_khachthue.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btn_khachthue.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_khachthue_ItemClick);
+            // 
+            // ribbonPageGroup11
+            // 
+            this.ribbonPageGroup11.ItemLinks.Add(this.barButtonItem5);
+            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "Khách thuê";
+            this.barButtonItem5.Id = 32;
+            this.barButtonItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem5.ImageOptions.SvgImage")));
+            this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
+            // 
             // frm_main
             // 
             this.Appearance.Options.UseFont = true;
@@ -567,7 +582,6 @@
         private DevExpress.XtraBars.BarButtonItem btn_thietbi;
         private DevExpress.XtraBars.BarButtonItem btn_dichvu;
         private DevExpress.XtraBars.BarButtonItem btn_noiquy;
-        private DevExpress.XtraBars.BarButtonItem btn_khachthue;
         private DevExpress.XtraBars.BarButtonItem btn_nhanvien;
         private DevExpress.XtraBars.BarButtonItem btn_thongkephong;
         private DevExpress.XtraBars.BarButtonItem btn_thongkedoanhthu;
@@ -585,5 +599,8 @@
         private DevExpress.XtraBars.BarButtonItem btn_thannhan;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem btn_khachthue;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
     }
 }

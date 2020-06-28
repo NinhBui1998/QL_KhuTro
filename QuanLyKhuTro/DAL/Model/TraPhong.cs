@@ -21,7 +21,7 @@ namespace DAL.Model
 
         string MANV;
         string TENNV;
-        Boolean TRACOC;
+       
 
         public string Mahd { get => MAHD; set => MAHD = value; }
         public DateTime Ngaylap { get => NGAYLAP; set => NGAYLAP = value; }
@@ -35,6 +35,5 @@ namespace DAL.Model
         public string Manv { get => MANV; set => MANV = value; }
         public string Tennv { get => TENNV; set => TENNV = value; }
         //public bool TRACOC1 { get => TRACOC; set => TRACOC = value; }
-        public bool Tracoc { get => TRACOC; set => TRACOC = value; }
     }
 }

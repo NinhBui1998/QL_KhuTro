@@ -12,11 +12,11 @@ namespace DAL
         public List<DatPhong> loaddatphong()
         {
             var kt = from s in data.HOPDONGs
-                     from k in data.HOPDONG_KTs
+                     
                      from kth in data.KHACHTHUEs
                      from p in data.PHONGs
                      from nv in data.NHANVIENs
-                     where s.MAHD == k.MAHD && k.MAKT==kth.MAKT && p.MAPHONG==s.MAPHONG && s.MANV==nv.MANV
+                     where s.MAKT==kth.MAKT && p.MAPHONG==kth.MAPHONG && s.MANV==nv.MANV
                      select new
                      {
                          s.MAHD,
@@ -24,7 +24,7 @@ namespace DAL
                          kth.MAKT,
                          kth.TENKT,
                          s.NGAYLAPHD,
-                         k.NGAYTRA,
+                         s.NGAYTRA,
                          s.TIENCOC,
                          p.TENPHONG,
                      };
@@ -46,12 +46,12 @@ namespace DAL
         public List<DatPhong> loaddatPhongtheoMa(string pten)
             {
                 var kt = from s in data.HOPDONGs
-                         from k in data.HOPDONG_KTs
+                        
                          from kth in data.KHACHTHUEs
                          from p in data.PHONGs
                          from nv in data.NHANVIENs
-                         where s.MAHD == k.MAHD && k.MAKT == kth.MAKT &&
-                         p.MAPHONG == s.MAPHONG && s.MANV == nv.MANV && p.TENPHONG==pten
+                         where s.MAKT == kth.MAKT &&
+                         p.MAPHONG == kth.MAPHONG && s.MANV == nv.MANV && p.TENPHONG==pten
                          select new
                          {
                              s.MAHD,
@@ -59,7 +59,7 @@ namespace DAL
                              kth.MAKT,
                              kth.TENKT,
                              s.NGAYLAPHD,
-                             k.NGAYTRA,
+                             s.NGAYTRA,
                              s.TIENCOC,
                              p.TENPHONG,
                          };
@@ -112,11 +112,17 @@ namespace DAL
         //}
         public int demhopdong(string pmaphong)
         {
-            var kq = (from hd in data.HOPDONGs
+            var kq = (from hd in data.KHACHTHUEs
                       where hd.MAPHONG == pmaphong
                       select hd).Count();
             return kq;
         }
-       
+        public string laysoLuongtd(string pmaphong)
+        {
+            var kq = (from p in data.PHONGs
+                      where p.MAPHONG == pmaphong
+                      select p.SOLUONG_TD).FirstOrDefault();
+            return kq.ToString();
+        }
     }
 }

@@ -23,11 +23,7 @@ namespace BLL
         {
             return hopdong.them_HopDong(pHopDong);
         }
-        //ktra xóa
-        public bool ktx_hd(String hd)
-        {
-            return hopdong.kt_XoaHD(hd);
-        }
+       
         //Xóa
         public bool xoa_HopDong(string pMa)
         {

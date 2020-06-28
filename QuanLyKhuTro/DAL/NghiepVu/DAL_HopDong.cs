@@ -86,22 +86,7 @@ namespace DAL
         }
 
         //kiểm tra có đang được sử dụng
-        public bool kt_XoaHD(string hd)
-        {
-
-            var ktx = (from t in data.HOPDONGs
-                       from p in data.HOPDONG_KTs
-                       where t.MAHD == hd && p.MAHD == hd
-                       select t).Count();
-            if (ktx > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
+       
+       
     }
 }

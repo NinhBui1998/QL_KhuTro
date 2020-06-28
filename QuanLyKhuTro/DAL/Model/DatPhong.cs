@@ -15,7 +15,6 @@ namespace DAL
         DateTime NGAYLAP;
         DateTime NGAYTRA;
         Decimal TIENCOC;
-       
         string TENPHONG;
 
 

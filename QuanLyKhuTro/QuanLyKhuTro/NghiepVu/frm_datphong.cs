@@ -13,6 +13,7 @@ using DAL;
 using System.IO;
 using System.Globalization;
 using DAL.DuLieu;
+using QuanLyKhuTro.DanhMuc;
 
 namespace QuanLyKhuTro.NghiepVu
 {
@@ -28,7 +29,7 @@ namespace QuanLyKhuTro.NghiepVu
         BLL_Phong phong = new BLL_Phong();
         BLL_HopDong hopdong = new BLL_HopDong();
         BLL_DatPhong datphong = new BLL_DatPhong();
-        BLL_HopDong_KhachThue hopdong_khachthue = new BLL_HopDong_KhachThue();
+     
         BLL_SinhMa bll_sinhma = new BLL_SinhMa();
         DAL_NhanVien dal_nv = new DAL_NhanVien();
         DAL_KhachThue dal_kt = new DAL_KhachThue();
@@ -120,7 +121,7 @@ namespace QuanLyKhuTro.NghiepVu
         {
             KHACHTHUE kt = new KHACHTHUE();
             HOPDONG hd = new HOPDONG();
-            HOPDONG_KT hd_kt = new HOPDONG_KT();
+            
             DatPhong dp = new DatPhong();
             //btn_xoa.Enabled = btn_sua.Enabled = btn_huy.Enabled = true;
             //btn_them.Enabled = false;
@@ -142,13 +143,13 @@ namespace QuanLyKhuTro.NghiepVu
 
             KHACHTHUE kt = new KHACHTHUE();
             HOPDONG hd = new HOPDONG();
-            HOPDONG_KT hd_kt = new HOPDONG_KT();
+         
             //thêm hợp đồng
 
             hd.MAHD = txt_mahd.Text;
             hd.TIENCOC = decimal.Parse(txt_tiencoc.Text);
             hd.NGAYLAPHD = Convert.ToDateTime(txt_ngaylaphd.Text);
-            hd.MAPHONG = datphong.laymaphong(Ten);
+            //hd.MAPHONG = datphong.laymaphong(Ten);
             hd.MANV = txt_manv.Text;
 
 
@@ -176,11 +177,8 @@ namespace QuanLyKhuTro.NghiepVu
             kt.SOCMND = txt_cmnd.Text;
             kt.NGAYSINH = Convert.ToDateTime(txt_ngaysinh.Text);
             kt.QUEQUAN = txt_quequan.Text;
-            //Thêm hợp đồng_khách thuê
-            hd_kt.MAHD = txt_mahd.Text;
-            hd_kt.MAKT = txt_makt.Text;
-            hd_kt.TRACOC = false;
-            hd_kt.NGAYTRA = Convert.ToDateTime(txt_ngaykt.Text);
+          
+            hd.NGAYTRA = Convert.ToDateTime(txt_ngaykt.Text);
 
             if (txt_makt.Text == string.Empty && txt_mahd.Text == string.Empty
                     && txt_manv.Text == string.Empty && txt_tenkt.Text == string.Empty)
@@ -202,8 +200,7 @@ namespace QuanLyKhuTro.NghiepVu
             }
             //thêm
 
-            if (khachthue.ThemKT(kt) == true && hopdong.them_HopDong(hd) == true &&
-                hopdong_khachthue.them_HopDong_KhachThue(hd_kt) == true)
+            if (khachthue.ThemKT(kt) == true && hopdong.them_HopDong(hd) == true)
             {
                 grv_datphong.DataSource = datphong.LoadDatPhong();
 
@@ -265,7 +262,7 @@ namespace QuanLyKhuTro.NghiepVu
                 txt_soluonght.Text = p.SOLUONG_HT.ToString();
                 txt_loaiphong.Text = lp.TENLOAI;
                 txt_matang.Text = t.TENTANG;
-                txt_gia.Text = String.Format("{0:#,##0.##} VNĐ", lp.GIA);
+                txt_gia.Text = String.Format("{0:#,##0.##}", lp.GIA);
             }
             catch { MessageBox.Show("Lỗi hệ thống"); }
 
@@ -318,7 +315,7 @@ namespace QuanLyKhuTro.NghiepVu
                 txt_mahd.Text = gridView_datphong.GetRowCellValue(position, "Mahd").ToString();
                 txt_ngaykt.Text= gridView_datphong.GetRowCellValue(position, "NgayTra").ToString();
                 hd.TIENCOC= Convert.ToDecimal(gridView_datphong.GetRowCellValue(position, "Tiencoc").ToString());
-                txt_tiencoc.Text = String.Format("{0:#,##0.##} VNĐ", hd.TIENCOC);
+                txt_tiencoc.Text = String.Format("{0:#,##0.##}", hd.TIENCOC);
 
 
             }
@@ -360,12 +357,19 @@ namespace QuanLyKhuTro.NghiepVu
 
         private void txt_tiencoc_TextChanged(object sender, EventArgs e)
         {
-            //địng dạng tiền tệ
-            System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
-            decimal value = decimal.Parse(txt_tiencoc.Text, System.Globalization.NumberStyles.AllowThousands);
-            txt_tiencoc.Text = String.Format(culture, "{0:N0}", value);
-            //texbox1.Text = String.Format(culture, "{0:N0}", value);
-            txt_tiencoc.Select(txt_tiencoc.Text.Length, 0);
+            try {
+                //địng dạng tiền tệ
+                System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+                decimal value = decimal.Parse(txt_tiencoc.Text, System.Globalization.NumberStyles.AllowThousands);
+                txt_tiencoc.Text = String.Format(culture, "{0:N0}", value);
+                //texbox1.Text = String.Format(culture, "{0:N0}", value);
+                txt_tiencoc.Select(txt_tiencoc.Text.Length, 0);
+            }
+            catch
+            {
+                return;
+            }
+           
            
         }
 
@@ -375,7 +379,7 @@ namespace QuanLyKhuTro.NghiepVu
             string mahd = gridView_datphong.GetRowCellValue(position, "Mahd").ToString();
             string tenphong = gridView_datphong.GetRowCellValue(position, "TenPhong").ToString();
 
-            string tiencoc = String.Format("{0:#,##0.##} VNĐ", Convert.ToDecimal(gridView_datphong.GetRowCellValue(position, "Tiencoc").ToString()));
+            string tiencoc = String.Format("{0:#,##0.##}", Convert.ToDecimal(gridView_datphong.GetRowCellValue(position, "Tiencoc").ToString()));
 
             string ngay = DateTime.Now.Day.ToString();
             string thang = DateTime.Now.Month.ToString();
@@ -392,7 +396,7 @@ namespace QuanLyKhuTro.NghiepVu
             string sdtnv = nv.SODT_CT;
 
             KHACHTHUE kt = new KHACHTHUE();
-            kt = dal_kt.loadTenKT(hopdong_khachthue.laymakt(mahd));
+           // kt = dal_kt.loadTenKT(hopdong_khachthue.laymakt(mahd));
             string tenkt = kt.TENKT;
             string ngaysinhkttam = kt.NGAYSINH.ToString();
             string ngaysinhkt = ngaysinhkttam.Substring(0, 11);
@@ -408,7 +412,7 @@ namespace QuanLyKhuTro.NghiepVu
             t = dal_tang.loadTenTang(p.MATANG);
             string loaiphong = lp.TENLOAI;
             string tang = t.TENTANG;
-            string gia = String.Format("{0:#,##0.##} VNĐ", lp.GIA);
+            string gia = String.Format("{0:#,##0.##}", lp.GIA);
             we.ThongTinHopDong(mahd, ngay, thang, nam, tennv,ngaysinhnv,cmndnv,
                 quequannv,sdtnv,tenkt,ngaysinhkt,cmndkt,quequankt,sdtkt,
                 tenphong,loaiphong,tang,gia,tiencoc,"22","02","2021");
@@ -416,17 +420,23 @@ namespace QuanLyKhuTro.NghiepVu
 
         private void txt_sdt_TextChanged(object sender, EventArgs e)
         {
-            System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
-            String value =(txt_sdt.Text, System.Globalization.NumberStyles.AllowThousands).ToString();
-            txt_sdt.Text = string.Format("{0:(###) ###-###}", value);
+            //System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+            //String value = (txt_sdt.Text, System.Globalization.NumberStyles.AllowThousands).ToString();
+            //txt_sdt.Text = string.Format("{0:(###) ###-###}", value);
             //texbox1.Text = String.Format(culture, "{0:N0}", value);
-            txt_sdt.Select(txt_tiencoc.Text.Length, 0);
+            //txt_sdt.Select(txt_tiencoc.Text.Length, 0);
         }
 
         private void txt_sdt_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            frm_khachthue frm = new frm_khachthue();
+            frm.ShowDialog(); 
         }
     }
 }

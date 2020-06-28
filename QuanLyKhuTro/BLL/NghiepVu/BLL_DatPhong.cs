@@ -34,5 +34,9 @@ namespace BLL
         {
             return dp.demhopdong(pmaphong);
         }
+        public string laysoLuongtd(string pmaphong)
+        {
+            return dp.laysoLuongtd(pmaphong);
+        }
     }
 }

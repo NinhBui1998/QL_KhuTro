@@ -53,9 +53,8 @@
             this.TenNV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TINHTRANG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.cbo_phong = new System.Windows.Forms.ComboBox();
             this.btn_timkiem = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_in = new DevExpress.XtraEditors.SimpleButton();
+            this.cbo_phong = new System.Windows.Forms.ComboBox();
             this.btn_tatcahd = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -309,10 +308,9 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.92036F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.07965F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel3.Controls.Add(this.btn_timkiem, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.cbo_phong, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btn_in, 4, 0);
             this.tableLayoutPanel3.Controls.Add(this.btn_tatcahd, 3, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 39);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -320,15 +318,6 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(913, 42);
             this.tableLayoutPanel3.TabIndex = 2;
-            // 
-            // cbo_phong
-            // 
-            this.cbo_phong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbo_phong.FormattingEnabled = true;
-            this.cbo_phong.Location = new System.Drawing.Point(3, 10);
-            this.cbo_phong.Name = "cbo_phong";
-            this.cbo_phong.Size = new System.Drawing.Size(155, 21);
-            this.cbo_phong.TabIndex = 3;
             // 
             // btn_timkiem
             // 
@@ -342,17 +331,14 @@
             this.btn_timkiem.TabIndex = 7;
             this.btn_timkiem.Click += new System.EventHandler(this.btn_timkiem_Click);
             // 
-            // btn_in
+            // cbo_phong
             // 
-            this.btn_in.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_in.Appearance.Options.UseFont = true;
-            this.btn_in.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_in.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_in.ImageOptions.Image")));
-            this.btn_in.Location = new System.Drawing.Point(765, 3);
-            this.btn_in.Name = "btn_in";
-            this.btn_in.Size = new System.Drawing.Size(145, 36);
-            this.btn_in.TabIndex = 8;
-            this.btn_in.Text = "Xuất hóa đơn";
+            this.cbo_phong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbo_phong.FormattingEnabled = true;
+            this.cbo_phong.Location = new System.Drawing.Point(3, 10);
+            this.cbo_phong.Name = "cbo_phong";
+            this.cbo_phong.Size = new System.Drawing.Size(155, 21);
+            this.cbo_phong.TabIndex = 3;
             // 
             // btn_tatcahd
             // 
@@ -360,9 +346,9 @@
             this.btn_tatcahd.Appearance.Options.UseFont = true;
             this.btn_tatcahd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_tatcahd.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_tatcahd.ImageOptions.SvgImage")));
-            this.btn_tatcahd.Location = new System.Drawing.Point(612, 3);
+            this.btn_tatcahd.Location = new System.Drawing.Point(716, 3);
             this.btn_tatcahd.Name = "btn_tatcahd";
-            this.btn_tatcahd.Size = new System.Drawing.Size(147, 36);
+            this.btn_tatcahd.Size = new System.Drawing.Size(185, 36);
             this.btn_tatcahd.TabIndex = 9;
             this.btn_tatcahd.Text = "Tất cả hóa đơn";
             this.btn_tatcahd.Click += new System.EventHandler(this.btn_tatcahd_Click);
@@ -414,7 +400,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.ComboBox cbo_phong;
         private DevExpress.XtraEditors.SimpleButton btn_timkiem;
-        private DevExpress.XtraEditors.SimpleButton btn_in;
         private DevExpress.XtraEditors.SimpleButton btn_tatcahd;
     }
 }

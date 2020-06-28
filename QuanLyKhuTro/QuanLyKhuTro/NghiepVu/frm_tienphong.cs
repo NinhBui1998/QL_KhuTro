@@ -29,7 +29,7 @@ namespace QuanLyKhuTro.NghiepVu
         BLL_HoaDon bll_hoadon = new BLL_HoaDon();
         BLL_ChiSoDienNuoc bll_csdn = new BLL_ChiSoDienNuoc();
         DAL_KhachThue dal_khachthue = new DAL_KhachThue();
-        BLL_HopDong_KhachThue hopdong_khachthue = new BLL_HopDong_KhachThue();
+    
         BLL_TienPhongHangThang bLL_TienPhongHangThang = new BLL_TienPhongHangThang();
         public frm_tienphong()
         {
@@ -300,7 +300,7 @@ namespace QuanLyKhuTro.NghiepVu
 
                     string tiendien = bll_dichvu.loaddv("DV001");
                     double TienDien = Convert.ToInt32(txt_sodien.Text) * Convert.ToDouble(tiendien);
-                    txt_tiendien.Text = String.Format("{0:#,##0.##} VNĐ", TienDien);
+                    txt_tiendien.Text = String.Format("{0:#,##0.##} ", TienDien);
                 }
                 else
                 {
@@ -327,7 +327,7 @@ namespace QuanLyKhuTro.NghiepVu
                     txt_sonuoc.Text = sd.ToString();
                     string tiennuoc = bll_dichvu.loaddv("DV002");
                     double TienNuoc = Convert.ToInt32(txt_sonuoc.Text) * Convert.ToDouble(tiennuoc);
-                    txt_tiennuoc.Text = String.Format("{0:#,##0.##} VNĐ", TienNuoc);
+                    txt_tiennuoc.Text = String.Format("{0:#,##0.##} ", TienNuoc);
                 }
                 else
                 {
@@ -395,6 +395,18 @@ namespace QuanLyKhuTro.NghiepVu
             we.PhieuThuTienTro(ngaylap,tenphong,tentang, tienphong, CSDDau, CSDCuoi,
                 DonGiaDien, TienDien, CSNDau, CSNCuoi, DonGiaNuoc, TienNuoc, DonGiaWifi,
                 DonGiaRac, TongTien,mahd, manv, tennv);
+        }
+
+        private void ckb_Tinhtrang_Click(object sender, EventArgs e)
+        {
+            if(ckb_Tinhtrang.Checked==true)
+            {
+                ckb_Tinhtrang.Text = "Đã nạp";
+            }   
+            else
+            {
+                ckb_Tinhtrang.Text = "Chưa nạp";
+            }    
         }
     }
 }
