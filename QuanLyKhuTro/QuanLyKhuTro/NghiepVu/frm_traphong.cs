@@ -57,7 +57,9 @@ namespace QuanLyKhuTro.NghiepVu
         }
        
         private void frm_traphong_Load(object sender, EventArgs e)
-        { 
+        {
+            DateTime d = DateTime.Now;
+            txt_nam.Text = d.Year.ToString();
             txt_tenphong.Text = Ten;
             grv_traphong.DataSource = traphong.LoadTraPhongtheoten(Ten);
             txt_maphong.Text = datphong.laymaphong(txt_tenphong.Text);
@@ -322,6 +324,7 @@ namespace QuanLyKhuTro.NghiepVu
                 hd.MANV = txt_manv.Text;
                 hd.MAPHONG = txt_maphong.Text;
                 hd.TINHTRANG = false;
+                hd.THANGNAM = cbo_thang.Text + '/' + txt_nam.Text;
                 //thêm chỉ số điện nước
 
                 CHISO_DIENNUOC csdn = new CHISO_DIENNUOC();
@@ -460,14 +463,14 @@ namespace QuanLyKhuTro.NghiepVu
         {
             int position = gridView_traphong.FocusedRowHandle;
             string mahd = gridView_traphong.GetRowCellValue(position, "Mahd").ToString();
-            string maphong = gridView_traphong.GetRowCellValue(position, "Maphong").ToString();
+            string Tenphong = txt_tenphong.Text; /* gridView_traphong.GetRowCellValue(position, "TenPhong").ToString();*/
 
             KHACHTHUE kt = new KHACHTHUE();
-        //    kt = dal_khachthue.loadTenKT(hopdong_khachthue.laymakt(mahd));
+            kt = dal_khachthue.loadTenKT(datphong.laymakt(mahd));
 
 
             PHONG p = new PHONG();
-            p = dal_phong.loadTenPhong(maphong);
+            p = dal_phong.loadTenPhong(datphong.laymaphong(Tenphong));
 
             // data 
             string ngaytra = DateTime.Now.ToShortDateString();

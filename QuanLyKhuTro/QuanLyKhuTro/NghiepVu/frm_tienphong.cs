@@ -43,7 +43,8 @@ namespace QuanLyKhuTro.NghiepVu
         }
         private void frm_tienphong_Load(object sender, EventArgs e)
         {
-
+            DateTime d = DateTime.Now;
+            txt_nam.Text = d.Year.ToString();
             cbo_tang.DataSource = bll_tang.loadBangTang();
             cbo_tang.DisplayMember = "TENTANG";
             cbo_tang.ValueMember = "MATANG";
@@ -179,6 +180,7 @@ namespace QuanLyKhuTro.NghiepVu
             hd.TONGTIEN = Convert.ToDecimal(TinhTienPhong());
             hd.MANV = txt_manv.Text;
             hd.MAPHONG = cbo_maphong.SelectedValue.ToString();
+            hd.THANGNAM = cbo_thang.Text + '/' + txt_nam.Text;
             if(ckb_Tinhtrang.Checked==true)
             {
                 ckb_Tinhtrang.Text ="Đã đóng";
@@ -365,7 +367,8 @@ namespace QuanLyKhuTro.NghiepVu
             {
                 MessageBox.Show("Thất bại");
             }
-            frm_tienphong_Load(sender,e);
+            grv_hoadon.DataSource = bLL_TienPhongHangThang.LoadDataHoaDontheomaphong(cbo_maphong.SelectedValue.ToString());
+
         }
 
         private void btn_xuathd_Click(object sender, EventArgs e)

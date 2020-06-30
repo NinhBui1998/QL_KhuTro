@@ -27,13 +27,22 @@ namespace QuanLyKhuTro.DanhMuc
         {
             InitializeComponent();
         }
-
+        string Ten;
+        public string TenPhong
+        {
+            get { return Ten; }
+            set { Ten = value; }
+        }
         private void frm_khachthue_Load(object sender, EventArgs e)
         {
+            txt_tenphong.Text = Ten; 
+            
+            
             cbo_phong.DataSource = bll_phong.loadBang_Phong();
             cbo_phong.DisplayMember = "TENPHONG";
             cbo_phong.ValueMember = "MAPHONG";
-            grv_khachthue.DataSource = khachthue.loadBangKTtheoma(cbo_phong.SelectedValue.ToString());
+
+            
             btn_sua.Enabled = btn_xoa.Enabled = false;
             txt_makt.Enabled = txt_tenkt.Enabled = txt_sdt.Enabled
                 = txt_quequan.Enabled = txt_ngaysinh.Enabled = false;
@@ -44,7 +53,9 @@ namespace QuanLyKhuTro.DanhMuc
             if (bll_datphong.demsohd(cbo_phong.SelectedValue.ToString())<=sltd)
             {
                 btn_them.Enabled = false;
-            }    
+            }
+            grv_khachthue.DataSource = khachthue.loadBangKT();
+
         }
 
         private void gridView_khachthue_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -56,7 +67,7 @@ namespace QuanLyKhuTro.DanhMuc
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
-           
+            btn_them.Enabled = false;
             txt_makt.Enabled = false;
             btn_luu.Enabled = true;
             btn_xoa.Enabled = false;
@@ -133,7 +144,7 @@ namespace QuanLyKhuTro.DanhMuc
             }
            
             txt_makt.Text = bll_sinhma.SinhMa_KhachThue();
-            grv_khachthue.DataSource = khachthue.loadBangKTtheoma(cbo_phong.SelectedValue.ToString());
+            grv_khachthue.DataSource = khachthue.loadBangKT();
             ckb_truongphong.Enabled = false;
         }
 
@@ -271,7 +282,7 @@ namespace QuanLyKhuTro.DanhMuc
             }
         }
 
-        private void cbo_phong_SelectionChangeCommitted(object sender, EventArgs e)
+        private void btn_timkiem_Click(object sender, EventArgs e)
         {
             grv_khachthue.DataSource = khachthue.loadBangKTtheoma(cbo_phong.SelectedValue.ToString());
             int sltd = Convert.ToInt32(bll_datphong.laysoLuongtd(cbo_phong.SelectedValue.ToString()));
@@ -279,6 +290,11 @@ namespace QuanLyKhuTro.DanhMuc
             {
                 btn_them.Enabled = false;
             }
+        }
+
+        private void btn_tatcahd_Click(object sender, EventArgs e)
+        {
+            grv_khachthue.DataSource = khachthue.loadBangKT();
         }
     }
 }

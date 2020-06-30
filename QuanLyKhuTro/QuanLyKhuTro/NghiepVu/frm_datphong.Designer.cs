@@ -52,7 +52,7 @@
             this.txt_cmnd = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pic_anh = new System.Windows.Forms.PictureBox();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_themkhach = new DevExpress.XtraEditors.SimpleButton();
             this.grb_thongtinphong = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_loaiphong = new System.Windows.Forms.Label();
@@ -202,7 +202,7 @@
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel11, 1, 2);
             this.tableLayoutPanel5.Controls.Add(this.txt_cmnd, 1, 5);
             this.tableLayoutPanel5.Controls.Add(this.groupBox1, 0, 7);
-            this.tableLayoutPanel5.Controls.Add(this.simpleButton1, 1, 7);
+            this.tableLayoutPanel5.Controls.Add(this.btn_themkhach, 1, 7);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel5.ForeColor = System.Drawing.Color.Black;
@@ -406,18 +406,18 @@
             this.pic_anh.TabStop = false;
             this.pic_anh.Click += new System.EventHandler(this.pic_anh_Click);
             // 
-            // simpleButton1
+            // btn_themkhach
             // 
-            this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(244, 278);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(137, 41);
-            this.simpleButton1.TabIndex = 9;
-            this.simpleButton1.Text = "Tạo hợp đồng";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.btn_themkhach.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_themkhach.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_themkhach.Appearance.Options.UseFont = true;
+            this.btn_themkhach.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_themkhach.ImageOptions.SvgImage")));
+            this.btn_themkhach.Location = new System.Drawing.Point(237, 278);
+            this.btn_themkhach.Name = "btn_themkhach";
+            this.btn_themkhach.Size = new System.Drawing.Size(150, 41);
+            this.btn_themkhach.TabIndex = 9;
+            this.btn_themkhach.Text = "Khách thuê";
+            this.btn_themkhach.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // grb_thongtinphong
             // 
@@ -854,8 +854,8 @@
             this.tableLayoutPanel10.ColumnCount = 4;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.30208F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.69792F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 322F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 113F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 331F));
             this.tableLayoutPanel10.Controls.Add(this.btn_sua, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.btn_taohd, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel2, 3, 0);
@@ -875,9 +875,9 @@
             this.btn_sua.Appearance.Options.UseFont = true;
             this.btn_sua.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_sua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_sua.ImageOptions.SvgImage")));
-            this.btn_sua.Location = new System.Drawing.Point(144, 3);
+            this.btn_sua.Location = new System.Drawing.Point(147, 3);
             this.btn_sua.Name = "btn_sua";
-            this.btn_sua.Size = new System.Drawing.Size(128, 41);
+            this.btn_sua.Size = new System.Drawing.Size(130, 41);
             this.btn_sua.TabIndex = 2;
             this.btn_sua.Text = "Sửa hợp đồng";
             this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
@@ -890,7 +890,7 @@
             this.btn_taohd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_taohd.ImageOptions.Image")));
             this.btn_taohd.Location = new System.Drawing.Point(3, 3);
             this.btn_taohd.Name = "btn_taohd";
-            this.btn_taohd.Size = new System.Drawing.Size(135, 41);
+            this.btn_taohd.Size = new System.Drawing.Size(138, 41);
             this.btn_taohd.TabIndex = 0;
             this.btn_taohd.Text = "Tạo hợp đồng";
             this.btn_taohd.Click += new System.EventHandler(this.btn_taohd_Click);
@@ -903,12 +903,12 @@
             this.tableLayoutPanel2.Controls.Add(this.btn_in, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btn_tatcahd, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(405, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(396, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(317, 41);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(326, 41);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // btn_in
@@ -917,9 +917,9 @@
             this.btn_in.Appearance.Options.UseFont = true;
             this.btn_in.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_in.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_in.ImageOptions.Image")));
-            this.btn_in.Location = new System.Drawing.Point(161, 3);
+            this.btn_in.Location = new System.Drawing.Point(166, 3);
             this.btn_in.Name = "btn_in";
-            this.btn_in.Size = new System.Drawing.Size(153, 35);
+            this.btn_in.Size = new System.Drawing.Size(157, 35);
             this.btn_in.TabIndex = 4;
             this.btn_in.Text = "Xuất hợp đồng";
             this.btn_in.Click += new System.EventHandler(this.btn_in_Click);
@@ -932,7 +932,7 @@
             this.btn_tatcahd.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_tatcahd.ImageOptions.SvgImage")));
             this.btn_tatcahd.Location = new System.Drawing.Point(3, 3);
             this.btn_tatcahd.Name = "btn_tatcahd";
-            this.btn_tatcahd.Size = new System.Drawing.Size(152, 35);
+            this.btn_tatcahd.Size = new System.Drawing.Size(157, 35);
             this.btn_tatcahd.TabIndex = 2;
             this.btn_tatcahd.Text = "Hợp đồng";
             this.btn_tatcahd.Click += new System.EventHandler(this.btn_tatcahd_Click);
@@ -1064,6 +1064,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn TENPHONG;
         private DevExpress.XtraGrid.Columns.GridColumn TENKT;
         private System.Windows.Forms.MaskedTextBox txt_ngaykt;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btn_themkhach;
     }
 }

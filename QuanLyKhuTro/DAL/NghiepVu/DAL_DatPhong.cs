@@ -12,11 +12,10 @@ namespace DAL
         public List<DatPhong> loaddatphong()
         {
             var kt = from s in data.HOPDONGs
-                     
                      from kth in data.KHACHTHUEs
                      from p in data.PHONGs
                      from nv in data.NHANVIENs
-                     where s.MAKT==kth.MAKT && p.MAPHONG==kth.MAPHONG && s.MANV==nv.MANV
+                     where s.MAKT==kth.MAKT && kth.MAPHONG==p.MAPHONG && s.MANV==nv.MANV
                      select new
                      {
                          s.MAHD,
@@ -45,38 +44,36 @@ namespace DAL
 
         public List<DatPhong> loaddatPhongtheoMa(string pten)
             {
-                var kt = from s in data.HOPDONGs
-                        
-                         from kth in data.KHACHTHUEs
-                         from p in data.PHONGs
-                         from nv in data.NHANVIENs
-                         where s.MAKT == kth.MAKT &&
-                         p.MAPHONG == kth.MAPHONG && s.MANV == nv.MANV && p.TENPHONG==pten
-                         select new
-                         {
-                             s.MAHD,
-                             nv.TENNV,
-                             kth.MAKT,
-                             kth.TENKT,
-                             s.NGAYLAPHD,
-                             s.NGAYTRA,
-                             s.TIENCOC,
-                             p.TENPHONG,
-                         };
-                var kq = kt.ToList().ConvertAll(t => new DatPhong()
-                {
-                    Mahd = t.MAHD,
-                    Tennv = t.TENNV,
-                    Makt = t.MAKT,
-                    Tenkt = t.TENKT,
-                    NgayLap = Convert.ToDateTime(t.NGAYLAPHD),
-                    NgayTra=Convert.ToDateTime(t.NGAYTRA),
-                    Tiencoc = Convert.ToDecimal(t.TIENCOC),
-                    TenPhong = t.TENPHONG,
-                });
-                kq.ToList<DatPhong>();
-                return kq;
-            }
+            var kt = from s in data.HOPDONGs
+                     from kth in data.KHACHTHUEs
+                     from p in data.PHONGs
+                     from nv in data.NHANVIENs
+                     where s.MAKT == kth.MAKT && kth.MAPHONG == p.MAPHONG && s.MANV == nv.MANV && p.TENPHONG==pten
+                     select new
+                     {
+                         s.MAHD,
+                         nv.TENNV,
+                         kth.MAKT,
+                         kth.TENKT,
+                         s.NGAYLAPHD,
+                         s.NGAYTRA,
+                         s.TIENCOC,
+                         p.TENPHONG,
+                     };
+            var kq = kt.ToList().ConvertAll(t => new DatPhong()
+            {
+                Mahd = t.MAHD,
+                Tennv = t.TENNV,
+                Makt = t.MAKT,
+                Tenkt = t.TENKT,
+                NgayLap = Convert.ToDateTime(t.NGAYLAPHD),
+                NgayTra = Convert.ToDateTime(t.NGAYTRA),
+                Tiencoc = Convert.ToDecimal(t.TIENCOC),/* string.Format("{0:#,##0.00}",t.TIENCOC),*/
+                TenPhong = t.TENPHONG,
+            }); ;
+            kq.ToList<DatPhong>();
+            return kq;
+        }
             public List<PHONG> laytenphong(string pmatang, string pmaloai)
         {
             var l = (from p in data.PHONGs
@@ -122,6 +119,13 @@ namespace DAL
             var kq = (from p in data.PHONGs
                       where p.MAPHONG == pmaphong
                       select p.SOLUONG_TD).FirstOrDefault();
+            return kq.ToString();
+        }
+        public string laymakt (string pmahd)
+        {
+            var kq = (from hd in data.HOPDONGs
+                      where hd.MAHD == pmahd
+                      select hd.MAKT).FirstOrDefault();
             return kq.ToString();
         }
     }

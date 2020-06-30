@@ -87,6 +87,7 @@
       <Association Name="KHACHTHUE_HOPDONG" Member="HOPDONGs" ThisKey="MAKT" OtherKey="MAKT" Type="HOPDONG" />
       <Association Name="KHACHTHUE_TAMTRU" Member="TAMTRUs" ThisKey="MAKT" OtherKey="MAKT" Type="TAMTRU" />
       <Association Name="KHACHTHUE_THANNHAN_TAMTRU" Member="THANNHAN_TAMTRUs" ThisKey="MAKT" OtherKey="MAKT" Type="THANNHAN_TAMTRU" />
+      <Association Name="KHACHTHUE_THANNHAN_TAMTRU1" Member="THANNHAN_TAMTRUs1" ThisKey="MAKT" OtherKey="MAKT" Type="THANNHAN_TAMTRU" />
       <Association Name="PHONG_KHACHTHUE" Member="PHONG" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONG" IsForeignKey="true" />
     </Type>
   </Table>
@@ -174,10 +175,12 @@
   </Table>
   <Table Name="dbo.TAMTRU" Member="TAMTRUs">
     <Type Name="TAMTRU">
-      <Column Name="MAKT" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MANV" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MATAMTRU" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MAKT" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MANV" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="NGAYLAMGIAY" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="NGAYHETHAN_TAMTRU" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="QUANHEVOICHUTRO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="KHACHTHUE_TAMTRU" Member="KHACHTHUE" ThisKey="MAKT" OtherKey="MAKT" Type="KHACHTHUE" IsForeignKey="true" />
       <Association Name="NHANVIEN_TAMTRU" Member="NHANVIEN" ThisKey="MANV" OtherKey="MANV" Type="NHANVIEN" IsForeignKey="true" />
     </Type>
@@ -196,6 +199,7 @@
       <Column Name="SOCMNDTN" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
       <Column Name="GIOITINH_TN" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
       <Association Name="THANNHAN_THANNHAN_TAMTRU" Member="THANNHAN_TAMTRUs" ThisKey="MATN" OtherKey="MATN" Type="THANNHAN_TAMTRU" />
+      <Association Name="THANNHAN_THANNHAN_TAMTRU1" Member="THANNHAN_TAMTRUs1" ThisKey="MATN" OtherKey="MATN" Type="THANNHAN_TAMTRU" />
     </Type>
   </Table>
   <Table Name="dbo.THANNHAN_TAMTRU" Member="THANNHAN_TAMTRUs">
@@ -205,7 +209,9 @@
       <Column Name="NGAYVAO" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="NGAYRA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Association Name="KHACHTHUE_THANNHAN_TAMTRU" Member="KHACHTHUE" ThisKey="MAKT" OtherKey="MAKT" Type="KHACHTHUE" IsForeignKey="true" />
+      <Association Name="KHACHTHUE_THANNHAN_TAMTRU1" Member="KHACHTHUE1" ThisKey="MAKT" OtherKey="MAKT" Type="KHACHTHUE" IsForeignKey="true" />
       <Association Name="THANNHAN_THANNHAN_TAMTRU" Member="THANNHAN" ThisKey="MATN" OtherKey="MATN" Type="THANNHAN" IsForeignKey="true" />
+      <Association Name="THANNHAN_THANNHAN_TAMTRU1" Member="THANNHAN1" ThisKey="MATN" OtherKey="MATN" Type="THANNHAN" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.THIETBI" Member="THIETBIs">
@@ -236,6 +242,9 @@
     <Return Type="System.String" />
   </Function>
   <Function Name="dbo.SINHMA_HOPDONG" Method="SINHMA_HOPDONG" IsComposable="true">
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.SINHMA_TAMTRU" Method="SINHMA_TAMTRU" IsComposable="true">
     <Return Type="System.String" />
   </Function>
 </Database>

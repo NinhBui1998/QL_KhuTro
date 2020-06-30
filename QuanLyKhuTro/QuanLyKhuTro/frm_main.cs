@@ -257,6 +257,7 @@ namespace QuanLyKhuTro
         {
             frm_khachthue frm = new frm_khachthue();
             frm.TopLevel = false;
+            pnl_main.Controls.Clear();
             pnl_main.Controls.Add(frm);
             frm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
            
@@ -273,6 +274,20 @@ namespace QuanLyKhuTro
 
             //// Hiển thị form
             //frmChild.Show();
+        }
+
+        private void barButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frm_tamtru frm = new frm_tamtru();
+            frm.TopLevel = false;
+            frm.Manv = Tendn;
+            pnl_main.Controls.Clear();
+            pnl_main.Controls.Add(frm);
+
+            frm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+
         }
     }
 }

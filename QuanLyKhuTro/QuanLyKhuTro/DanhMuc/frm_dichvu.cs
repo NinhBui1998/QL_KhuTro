@@ -186,5 +186,10 @@ namespace QuanLyKhuTro.DanhMuc
 
             frm_dichvu_Load(sender, e);
         }
+
+        private void grv_dichvu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

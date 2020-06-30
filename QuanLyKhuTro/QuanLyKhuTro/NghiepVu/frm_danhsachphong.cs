@@ -69,7 +69,7 @@ namespace QuanLyKhuTro
                     if (p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_TD- p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT==0 
                         || (1 <= p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT && p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT < p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_TD))
                     {
-                        b.BackColor = Color.Gray;
+                        b.BackColor = Color.SeaGreen;
                         b.Click += showformtraphong;
                     }
                     else
@@ -156,25 +156,20 @@ namespace QuanLyKhuTro
                 l.Size = new Size(60, 30);
                 l.Location = new Point(x, y);
                 panel1.Controls.Add(l);
-                for (int i = 0; i < p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString()).Count; i++)
+                for (int i = 0; i < p.sphong(p.stang()[j].MATANG.ToString()).Count; i++)
                 {
                     x += 100;
                     Button b = new Button();
-                    b.Text = p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].TENPHONG.ToString();
+                    b.Text = p.sphong(p.stang()[j].MATANG.ToString())[i].TENPHONG.ToString();
                     b.Tag = (i + 1).ToString();
                     b.Size = new Size(90, 60);
                     b.Location = new Point(x, y);
                     b.BackColor = Color.White;
-                    if (p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].SOLUONG_TD - p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].SOLUONG_HT == 0)
-                    {
-                        b.BackColor = Color.Gray;
-                        b.Click += showformtraphong;
-                    }
-                    else if (1 <= p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].SOLUONG_HT && p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].SOLUONG_HT < p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].SOLUONG_TD)
+                    if (p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_TD - p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT == 0
+                        || (1 <= p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT && p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT < p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_TD))
                     {
                         b.BackColor = Color.SeaGreen;
-                        b.Click += showdialog;
-
+                        b.Click += showformtraphong;
                     }
                     else
                     {

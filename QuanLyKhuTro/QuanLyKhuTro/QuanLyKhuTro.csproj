@@ -234,6 +234,12 @@
     <Compile Include="NghiepVu\frm_quanlythietbi.Designer.cs">
       <DependentUpon>frm_quanlythietbi.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\frm_tamtru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\frm_tamtru.Designer.cs">
+      <DependentUpon>frm_tamtru.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\frm_tienphong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -316,6 +322,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\frm_quanlythietbi.resx">
       <DependentUpon>frm_quanlythietbi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\frm_tamtru.resx">
+      <DependentUpon>frm_tamtru.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\frm_tienphong.resx">
       <DependentUpon>frm_tienphong.cs</DependentUpon>

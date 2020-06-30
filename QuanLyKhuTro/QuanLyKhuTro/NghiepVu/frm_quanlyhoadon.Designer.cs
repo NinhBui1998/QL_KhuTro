@@ -56,6 +56,7 @@
             this.btn_timkiem = new DevExpress.XtraEditors.SimpleButton();
             this.cbo_phong = new System.Windows.Forms.ComboBox();
             this.btn_tatcahd = new DevExpress.XtraEditors.SimpleButton();
+            this.THANGNAM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.grb_thongtinphong.SuspendLayout();
@@ -136,6 +137,7 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.MaHD,
+            this.THANGNAM,
             this.TenTang,
             this.TenPhong,
             this.SODIENCU,
@@ -169,7 +171,7 @@
             this.TenTang.FieldName = "TenTang";
             this.TenTang.Name = "TenTang";
             this.TenTang.Visible = true;
-            this.TenTang.VisibleIndex = 1;
+            this.TenTang.VisibleIndex = 2;
             // 
             // TenPhong
             // 
@@ -177,7 +179,7 @@
             this.TenPhong.FieldName = "TenPhong";
             this.TenPhong.Name = "TenPhong";
             this.TenPhong.Visible = true;
-            this.TenPhong.VisibleIndex = 2;
+            this.TenPhong.VisibleIndex = 3;
             // 
             // SODIENCU
             // 
@@ -185,7 +187,7 @@
             this.SODIENCU.FieldName = "SoDienCu";
             this.SODIENCU.Name = "SODIENCU";
             this.SODIENCU.Visible = true;
-            this.SODIENCU.VisibleIndex = 3;
+            this.SODIENCU.VisibleIndex = 4;
             // 
             // SODIENMOI
             // 
@@ -193,7 +195,7 @@
             this.SODIENMOI.FieldName = "SoDienMoi";
             this.SODIENMOI.Name = "SODIENMOI";
             this.SODIENMOI.Visible = true;
-            this.SODIENMOI.VisibleIndex = 4;
+            this.SODIENMOI.VisibleIndex = 5;
             // 
             // SoDien
             // 
@@ -201,7 +203,7 @@
             this.SoDien.FieldName = "SoDien";
             this.SoDien.Name = "SoDien";
             this.SoDien.Visible = true;
-            this.SoDien.VisibleIndex = 5;
+            this.SoDien.VisibleIndex = 6;
             // 
             // TienDien
             // 
@@ -211,7 +213,7 @@
             this.TienDien.FieldName = "TienDien";
             this.TienDien.Name = "TienDien";
             this.TienDien.Visible = true;
-            this.TienDien.VisibleIndex = 6;
+            this.TienDien.VisibleIndex = 7;
             // 
             // SONUOCCU
             // 
@@ -219,7 +221,7 @@
             this.SONUOCCU.FieldName = "SoNuocCu";
             this.SONUOCCU.Name = "SONUOCCU";
             this.SONUOCCU.Visible = true;
-            this.SONUOCCU.VisibleIndex = 7;
+            this.SONUOCCU.VisibleIndex = 8;
             // 
             // SONUOCMOI
             // 
@@ -227,7 +229,7 @@
             this.SONUOCMOI.FieldName = "SoNuocMoi";
             this.SONUOCMOI.Name = "SONUOCMOI";
             this.SONUOCMOI.Visible = true;
-            this.SONUOCMOI.VisibleIndex = 8;
+            this.SONUOCMOI.VisibleIndex = 9;
             // 
             // SoNuoc
             // 
@@ -235,7 +237,7 @@
             this.SoNuoc.FieldName = "SoNuoc";
             this.SoNuoc.Name = "SoNuoc";
             this.SoNuoc.Visible = true;
-            this.SoNuoc.VisibleIndex = 9;
+            this.SoNuoc.VisibleIndex = 10;
             // 
             // TienNuoc
             // 
@@ -245,7 +247,7 @@
             this.TienNuoc.FieldName = "TienNuoc";
             this.TienNuoc.Name = "TienNuoc";
             this.TienNuoc.Visible = true;
-            this.TienNuoc.VisibleIndex = 10;
+            this.TienNuoc.VisibleIndex = 11;
             // 
             // Wifi
             // 
@@ -255,7 +257,7 @@
             this.Wifi.FieldName = "Wifi";
             this.Wifi.Name = "Wifi";
             this.Wifi.Visible = true;
-            this.Wifi.VisibleIndex = 11;
+            this.Wifi.VisibleIndex = 12;
             // 
             // Rac
             // 
@@ -265,7 +267,7 @@
             this.Rac.FieldName = "Rac";
             this.Rac.Name = "Rac";
             this.Rac.Visible = true;
-            this.Rac.VisibleIndex = 12;
+            this.Rac.VisibleIndex = 13;
             // 
             // NgayLap
             // 
@@ -273,7 +275,7 @@
             this.NgayLap.FieldName = "NgayLap";
             this.NgayLap.Name = "NgayLap";
             this.NgayLap.Visible = true;
-            this.NgayLap.VisibleIndex = 13;
+            this.NgayLap.VisibleIndex = 14;
             // 
             // TongTien
             // 
@@ -283,7 +285,7 @@
             this.TongTien.FieldName = "TongTien";
             this.TongTien.Name = "TongTien";
             this.TongTien.Visible = true;
-            this.TongTien.VisibleIndex = 14;
+            this.TongTien.VisibleIndex = 15;
             // 
             // TenNV
             // 
@@ -291,7 +293,7 @@
             this.TenNV.FieldName = "TenNV";
             this.TenNV.Name = "TenNV";
             this.TenNV.Visible = true;
-            this.TenNV.VisibleIndex = 15;
+            this.TenNV.VisibleIndex = 16;
             // 
             // TINHTRANG
             // 
@@ -299,7 +301,7 @@
             this.TINHTRANG.FieldName = "TinhTrang";
             this.TINHTRANG.Name = "TINHTRANG";
             this.TINHTRANG.Visible = true;
-            this.TINHTRANG.VisibleIndex = 16;
+            this.TINHTRANG.VisibleIndex = 17;
             // 
             // tableLayoutPanel3
             // 
@@ -353,6 +355,14 @@
             this.btn_tatcahd.Text = "Tất cả hóa đơn";
             this.btn_tatcahd.Click += new System.EventHandler(this.btn_tatcahd_Click);
             // 
+            // THANGNAM
+            // 
+            this.THANGNAM.Caption = "Tháng năm";
+            this.THANGNAM.FieldName = "ThangNam";
+            this.THANGNAM.Name = "THANGNAM";
+            this.THANGNAM.Visible = true;
+            this.THANGNAM.VisibleIndex = 1;
+            // 
             // frm_quanlyhoadon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -401,5 +411,6 @@
         private System.Windows.Forms.ComboBox cbo_phong;
         private DevExpress.XtraEditors.SimpleButton btn_timkiem;
         private DevExpress.XtraEditors.SimpleButton btn_tatcahd;
+        private DevExpress.XtraGrid.Columns.GridColumn THANGNAM;
     }
 }

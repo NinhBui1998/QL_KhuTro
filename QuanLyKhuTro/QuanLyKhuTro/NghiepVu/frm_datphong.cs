@@ -119,28 +119,26 @@ namespace QuanLyKhuTro.NghiepVu
 
         private void gridView_datphong_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            KHACHTHUE kt = new KHACHTHUE();
-            HOPDONG hd = new HOPDONG();
-            
-            DatPhong dp = new DatPhong();
-            //btn_xoa.Enabled = btn_sua.Enabled = btn_huy.Enabled = true;
-            //btn_them.Enabled = false;
-            int position = gridView_datphong.FocusedRowHandle;
-            try
-            {
-                dp.Mahd = gridView_datphong.GetRowCellValue(position, "Mahd").ToString();
-                dp.Makt = gridView_datphong.GetRowCellValue(position, "Makt").ToString();
+            //KHACHTHUE kt = new KHACHTHUE();
+            //HOPDONG hd = new HOPDONG();
 
-                txt_mahd.Text = dp.Mahd.ToString();
-                txt_makt.Text = dp.Makt.ToString();
-            }
-            catch { }
+            //DatPhong dp = new DatPhong();
+            ////btn_xoa.Enabled = btn_sua.Enabled = btn_huy.Enabled = true;
+            ////btn_them.Enabled = false;
+            //int position = gridView_datphong.FocusedRowHandle;
+            //try
+            //{
+            //    dp.Mahd = gridView_datphong.GetRowCellValue(position, "MAHD").ToString();
+            //    dp.Makt = gridView_datphong.GetRowCellValue(position, "Makt").ToString();
+
+            //    txt_mahd.Text = dp.Mahd.ToString();
+            //    txt_makt.Text = dp.Makt.ToString();
+            //}
+            //catch { }
         }
 
         private void btn_taohd_Click(object sender, EventArgs e)
         {
-
-
             KHACHTHUE kt = new KHACHTHUE();
             HOPDONG hd = new HOPDONG();
          
@@ -151,12 +149,16 @@ namespace QuanLyKhuTro.NghiepVu
             hd.NGAYLAPHD = Convert.ToDateTime(txt_ngaylaphd.Text);
             //hd.MAPHONG = datphong.laymaphong(Ten);
             hd.MANV = txt_manv.Text;
+            hd.MAKT = txt_makt.Text;
+            hd.NGAYTRA = Convert.ToDateTime(txt_ngaykt.Text);
 
 
             //Thêm khách thuê vào hợp đồng
             kt.MAKT = txt_makt.Text;
             kt.TENKT = txt_tenkt.Text;
             kt.SDT = txt_sdt.Text;
+            kt.MAPHONG = datphong.laymaphong(Ten);
+            kt.TRUONGPHONG = true;
             if (pic_anh.Image != null)
             {
                 byte[] b = convertImage(pic_anh.Image);
@@ -178,7 +180,7 @@ namespace QuanLyKhuTro.NghiepVu
             kt.NGAYSINH = Convert.ToDateTime(txt_ngaysinh.Text);
             kt.QUEQUAN = txt_quequan.Text;
           
-            hd.NGAYTRA = Convert.ToDateTime(txt_ngaykt.Text);
+            
 
             if (txt_makt.Text == string.Empty && txt_mahd.Text == string.Empty
                     && txt_manv.Text == string.Empty && txt_tenkt.Text == string.Empty)
@@ -202,7 +204,7 @@ namespace QuanLyKhuTro.NghiepVu
 
             if (khachthue.ThemKT(kt) == true && hopdong.them_HopDong(hd) == true)
             {
-                grv_datphong.DataSource = datphong.LoadDatPhong();
+                grv_datphong.DataSource = datphong.LoadDatPhongTheoMa(Ten);
 
             }
             else
@@ -223,11 +225,9 @@ namespace QuanLyKhuTro.NghiepVu
             {
                 MessageBox.Show("Thất bại");
             }
-
             frm_datphong_Load(sender, e);
             txt_soluonght.Text = (datphong.demsohd(datphong.laymaphong(Ten))).ToString();
         }
-
 
         private void cbb_phong_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -304,7 +304,8 @@ namespace QuanLyKhuTro.NghiepVu
 
         private void grv_datphong_Click(object sender, EventArgs e)
         {
-          
+          try
+            { 
             HOPDONG hd = new HOPDONG();
            
             //btn_xoa.Enabled = btn_sua.Enabled = btn_huy.Enabled = true;
@@ -320,6 +321,11 @@ namespace QuanLyKhuTro.NghiepVu
 
             }
             catch { }
+            }
+            catch
+            {
+                return;
+            }
         }
 
         private void btn_tatcahd_Click(object sender, EventArgs e)
@@ -396,7 +402,7 @@ namespace QuanLyKhuTro.NghiepVu
             string sdtnv = nv.SODT_CT;
 
             KHACHTHUE kt = new KHACHTHUE();
-           // kt = dal_kt.loadTenKT(hopdong_khachthue.laymakt(mahd));
+            kt = dal_kt.loadTenKT(datphong.laymakt(mahd));
             string tenkt = kt.TENKT;
             string ngaysinhkttam = kt.NGAYSINH.ToString();
             string ngaysinhkt = ngaysinhkttam.Substring(0, 11);
@@ -436,6 +442,7 @@ namespace QuanLyKhuTro.NghiepVu
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             frm_khachthue frm = new frm_khachthue();
+            frm.TenPhong = datphong.laymaphong(Ten);
             frm.ShowDialog(); 
         }
     }

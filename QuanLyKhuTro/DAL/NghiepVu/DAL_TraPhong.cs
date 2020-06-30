@@ -17,7 +17,7 @@ namespace DAL
                      from kth in data.KHACHTHUEs
                      from p in data.PHONGs
                      from nv in data.NHANVIENs
-                     where s.MAKT == kth.MAKT && kth.MAPHONG==p.MAPHONG && s.MANV==nv.MANV
+                     where s.MAKT == kth.MAKT && kth.MAPHONG == p.MAPHONG && s.MANV == nv.MANV
                      select new
                      {
                          s.MAHD,
@@ -51,8 +51,8 @@ namespace DAL
                      from kth in data.KHACHTHUEs
                      from p in data.PHONGs
                      from nv in data.NHANVIENs
-                     where s.MAKT == kth.MAKT && kth.MAPHONG == p.MAPHONG &&
-                     s.MANV == nv.MANV && p.TENPHONG==pten
+                     where s.MAKT == kth.MAKT && kth.MAPHONG == p.MAPHONG && s.MANV == nv.MANV
+                     && p.TENPHONG==pten
                      select new
                      {
                          s.MAHD,

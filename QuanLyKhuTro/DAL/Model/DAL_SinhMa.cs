@@ -21,5 +21,9 @@ namespace DAL.Model
         {
             return data.SINHMA_HOPDONG();
         }
+        public String SinhMaTamTru()
+        {
+            return data.SINHMA_TAMTRU();
+        }
     }
 }

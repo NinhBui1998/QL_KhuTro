@@ -23,6 +23,10 @@ namespace BLL
         {
             return dal_sm.SinhMaHOPDONG();
         }
+        public String SinhMa_TAMTRU()
+        {
+            return dal_sm.SinhMaTamTru();
+        }
 
     }
 }

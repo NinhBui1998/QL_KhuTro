@@ -398,3 +398,4 @@ E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTr
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.NghiepVu.frm_quanlyhoadon.resources
 E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\BLL.dll
 E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.csprojAssemblyReference.cache
+E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.NghiepVu.frm_tamtru.resources

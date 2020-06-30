@@ -38,7 +38,8 @@ namespace DAL.NghiepVu
                          cs.SODIENMOI,
                          cs.SODIENCU,
                          cs.SONUOCCU,
-                         cs.SONUOCMOI
+                         cs.SONUOCMOI,
+                         hd.THANGNAM
 
                      };
             var kq = kt.ToList().ConvertAll(t => new HoaDon()
@@ -60,8 +61,9 @@ namespace DAL.NghiepVu
                 SoDienMoi = Convert.ToInt32(t.SODIENMOI),
                 SoNuocCu = Convert.ToInt32(t.SONUOCCU),
                 SoNuocMoi = Convert.ToInt32(t.SONUOCMOI),
+                ThangNam=t.THANGNAM,
 
-            });; ;
+            });;; ;
             kq.ToList<HoaDon>();
             return kq;
         }
@@ -93,7 +95,8 @@ namespace DAL.NghiepVu
                          cs.SODIENMOI,
                          cs.SODIENCU,
                          cs.SONUOCCU,
-                         cs.SONUOCMOI
+                         cs.SONUOCMOI,
+                         hd.THANGNAM
                      };
             var kq = kt.ToList().ConvertAll(t => new HoaDon()
             {
@@ -114,6 +117,7 @@ namespace DAL.NghiepVu
                 SoDienMoi = Convert.ToInt32(t.SODIENMOI),
                 SoNuocCu = Convert.ToInt32(t.SONUOCCU),
                 SoNuocMoi = Convert.ToInt32(t.SONUOCMOI),
+                ThangNam = t.THANGNAM,
 
             }); ;
             kq.ToList<HoaDon>();
