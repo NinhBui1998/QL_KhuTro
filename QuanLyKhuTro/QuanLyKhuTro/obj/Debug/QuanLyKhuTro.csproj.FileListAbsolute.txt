@@ -196,7 +196,6 @@ E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLy
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.exe
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.pdb
 E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\BLL.dll
-E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DAL.dll.config
 E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.DanhMuc.frm_dichvu.resources
 E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.DanhMuc.frm_khachthue.resources
 E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.DanhMuc.frm_loaiphong.resources
@@ -399,3 +398,4 @@ E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLy
 E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\BLL.dll
 E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.csprojAssemblyReference.cache
 E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.NghiepVu.frm_tamtru.resources
+E:\Bai Tap C#\DoAnTotNghiep\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.NghiepVu.frm_tamtru.resources
