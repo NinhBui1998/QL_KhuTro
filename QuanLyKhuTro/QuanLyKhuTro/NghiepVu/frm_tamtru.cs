@@ -17,6 +17,8 @@ namespace QuanLyKhuTro.NghiepVu
     {
         BLL_tamtru bll_tamtru = new BLL_tamtru();
         BLL_SinhMa bll_sinhma = new BLL_SinhMa();
+        BLL_Phong bll_phong = new BLL_Phong();
+        BLL_KhachThue bll_khachthue = new BLL_KhachThue();
         public frm_tamtru()
         {
             InitializeComponent();
@@ -27,6 +29,12 @@ namespace QuanLyKhuTro.NghiepVu
 
         private void frm_tamtru_Load(object sender, EventArgs e)
         {
+            cbo_phong.DataSource = bll_phong.loadBang_Phong();
+            cbo_phong.DisplayMember = "TENPHONG";
+            cbo_phong.ValueMember = "MAPHONG";
+
+            grv_khachthue.DataSource = bll_khachthue.loadBangKT();
+
             txt_manv.Text = MaNV;
             txt_ngaylamgiay.Text = DateTime.Now.ToShortDateString();
             grv_tamtru.DataSource = bll_tamtru.Loadtamtru();
@@ -38,7 +46,7 @@ namespace QuanLyKhuTro.NghiepVu
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-            txt_makt.Clear(); txt_ngayhethan.Clear(); txt_quanhect.Clear();
+            txt_ngayhethan.Clear(); txt_quanhect.Clear();
             txt_matt.Text = bll_sinhma.SinhMa_TAMTRU();
             txt_makt.Enabled = txt_ngayhethan.Enabled = txt_quanhect.Enabled = true;
             btn_luu.Enabled = true;
@@ -89,7 +97,9 @@ namespace QuanLyKhuTro.NghiepVu
                     MessageBox.Show("Thất bại");
                 }
             }
-            frm_tamtru_Load(sender, e);
+            grv_tamtru.DataSource = bll_tamtru.Loadtamtrukt(txt_makt.Text);
+            txt_matt.Text = bll_sinhma.SinhMa_TAMTRU();
+            btn_luu.Enabled = btn_huy.Enabled = false;
 
         }
 
@@ -142,6 +152,32 @@ namespace QuanLyKhuTro.NghiepVu
                 return;
             }
             frm_tamtru_Load(sender,e);
+        }
+
+        private void btn_tatcahd_Click(object sender, EventArgs e)
+        {
+            grv_khachthue.DataSource = bll_khachthue.loadBangKT();
+            grv_tamtru.DataSource = bll_tamtru.Loadtamtru();
+        }
+
+        private void btn_timkiem_Click(object sender, EventArgs e)
+        {
+            grv_khachthue.DataSource = bll_khachthue.loadBangKTtheoma(cbo_phong.SelectedValue.ToString());
+        }
+
+        private void grv_khachthue_Click(object sender, EventArgs e)
+        {
+            int position = gridView_kt.FocusedRowHandle;
+            try
+            {
+               string MAKT = gridView_kt.GetRowCellValue(position, "MAKT").ToString();
+                txt_makt.Text = MAKT;
+                grv_tamtru.DataSource = bll_tamtru.Loadtamtrukt(MAKT);
+            }
+            catch
+            {
+                return;
+            }
         }
     }
 }

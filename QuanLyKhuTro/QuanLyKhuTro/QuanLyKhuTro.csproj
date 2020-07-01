@@ -240,6 +240,18 @@
     <Compile Include="NghiepVu\frm_tamtru.Designer.cs">
       <DependentUpon>frm_tamtru.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\frm_thongkedoanhthu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\frm_thongkedoanhthu.Designer.cs">
+      <DependentUpon>frm_thongkedoanhthu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NghiepVu\frm_thongkekhachthue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\frm_thongkekhachthue.Designer.cs">
+      <DependentUpon>frm_thongkekhachthue.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\frm_tienphong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -325,6 +337,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\frm_tamtru.resx">
       <DependentUpon>frm_tamtru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\frm_thongkedoanhthu.resx">
+      <DependentUpon>frm_thongkedoanhthu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\frm_thongkekhachthue.resx">
+      <DependentUpon>frm_thongkekhachthue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\frm_tienphong.resx">
       <DependentUpon>frm_tienphong.cs</DependentUpon>

@@ -242,8 +242,17 @@ namespace QuanLyKhuTro
         private void btn_vipham_ItemClick(object sender, ItemClickEventArgs e)
         {
             frm_vipham vp = new frm_vipham();
+            vp.TopLevel = false;
             pnl_main.Controls.Clear();
+            vp.MaNV = Tendn;
             pnl_main.Controls.Add(vp);
+
+            vp.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+
+            vp.Dock = DockStyle.Fill;
+            vp.Show();
+            //pnl_main.Controls.Clear();
+            //pnl_main.Controls.Add(vp);
         }
 
         private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
@@ -288,6 +297,29 @@ namespace QuanLyKhuTro
             frm.Dock = DockStyle.Fill;
             frm.Show();
 
+        }
+
+        private void barButtonItem8_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frm_thongkekhachthue frm = new frm_thongkekhachthue();
+            frm.TopLevel = false;
+            frm.MaNV = Tendn;
+            pnl_main.Controls.Clear();
+            pnl_main.Controls.Add(frm);
+
+            frm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
+
+        private void btn_thongkedoanhthu_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frm_thongkedoanhthu frm = new frm_thongkedoanhthu();
+           
+            pnl_main.Controls.Clear();
+            pnl_main.Controls.Add(frm);
+
+            
         }
     }
 }

@@ -16,6 +16,25 @@ namespace BLL
         public List<ViPham> LoadViPham()
         {
             return vp.loadvipham();
-        }        
+        }
+        public List<ViPham> Loadviphamtheoma(string pmakt)
+        {
+            return vp.loadviphamtheoma(pmakt);
+        }
+        public bool them_vipham(VIPHAM ptamtru)
+        {
+            return vp.them_vipham(ptamtru);
+        }
+
+        //Xóa
+        public bool xoa_vipham(string pMa, string pmakt)
+        {
+            return vp.xoa_vipham(pMa, pmakt);
+        }
+        //Sửa
+        public bool sua_vipham(VIPHAM pvipham)
+        {
+            return vp.sua_vipham(pvipham);
+        }
     }   
 }

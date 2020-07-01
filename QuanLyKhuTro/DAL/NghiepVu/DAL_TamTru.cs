@@ -46,6 +46,42 @@ namespace DAL.NghiepVu
             kq.ToList<tamtru>();
             return kq;
         }
+        public List<tamtru> loadtamtrukt(string pmakt)
+        {
+            var kt = from s in data.TAMTRUs
+                     from kth in data.KHACHTHUEs
+                     from p in data.PHONGs
+                     from nv in data.NHANVIENs
+                     where s.MAKT == kth.MAKT && kth.MAPHONG == p.MAPHONG && s.MANV == nv.MANV && kth.MAKT==pmakt
+                     select new
+                     {
+                         s.MAKT,
+                         kth.TENKT,
+                         nv.MANV,
+                         nv.TENNV,
+                         p.TENPHONG,
+                         s.NGAYLAMGIAY,
+                         s.NGAYHETHAN_TAMTRU,
+                         s.MATAMTRU,
+                         s.QUANHEVOICHUTRO
+
+                     };
+            var kq = kt.ToList().ConvertAll(t => new tamtru()
+            {
+                MAKT1 = t.MAKT,
+                TENKT1 = t.TENKT,
+                MANV1 = t.MANV,
+                TENNV1 = t.TENNV,
+                TENPHONG1 = t.TENPHONG,
+                NGAYLAMGIAY1 = Convert.ToDateTime(t.NGAYLAMGIAY),
+                NGAYHETHAN1 = Convert.ToDateTime(t.NGAYHETHAN_TAMTRU),
+                MATT1 = t.MATAMTRU,
+                QUANHEVOICHUTRO1 = t.QUANHEVOICHUTRO,
+
+            }); ;
+            kq.ToList<tamtru>();
+            return kq;
+        }
         public bool ktakhoachinh_tamtru(string hd)
         {
             var kt = (from h in data.TAMTRUs
@@ -111,6 +147,44 @@ namespace DAL.NghiepVu
             {
                 return false;
             }
+        }
+
+        ///
+        public List<tamtru> loadtamtruhethan(DateTime pngay)
+        {
+            var kt = from s in data.TAMTRUs
+                     from kth in data.KHACHTHUEs
+                     from p in data.PHONGs
+                     from nv in data.NHANVIENs
+                     where s.MAKT == kth.MAKT && kth.MAPHONG == p.MAPHONG && s.MANV == nv.MANV && s.NGAYHETHAN_TAMTRU==pngay
+                     select new
+                     {
+                         s.MAKT,
+                         kth.TENKT,
+                         nv.MANV,
+                         nv.TENNV,
+                         p.TENPHONG,
+                         s.NGAYLAMGIAY,
+                         s.NGAYHETHAN_TAMTRU,
+                         s.MATAMTRU,
+                         s.QUANHEVOICHUTRO
+
+                     };
+            var kq = kt.ToList().ConvertAll(t => new tamtru()
+            {
+                MAKT1 = t.MAKT,
+                TENKT1 = t.TENKT,
+                MANV1 = t.MANV,
+                TENNV1 = t.TENNV,
+                TENPHONG1 = t.TENPHONG,
+                NGAYLAMGIAY1 = Convert.ToDateTime(t.NGAYLAMGIAY),
+                NGAYHETHAN1 = Convert.ToDateTime(t.NGAYHETHAN_TAMTRU),
+                MATT1 = t.MATAMTRU,
+                QUANHEVOICHUTRO1 = t.QUANHEVOICHUTRO,
+
+            }); ;
+            kq.ToList<tamtru>();
+            return kq;
         }
     }
 }

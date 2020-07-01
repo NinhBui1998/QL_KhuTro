@@ -411,5 +411,31 @@ namespace QuanLyKhuTro.NghiepVu
                 ckb_Tinhtrang.Text = "Chưa nạp";
             }    
         }
+
+        private void cbo_thang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txt_sodiencuoi.Clear();
+            txt_sonuoccuoi.Clear();
+            //String kq = traphong.laySoDien(cbo_maphong.SelectedValue.ToString());
+            //if (kq == "")
+            //{
+            //    txt_sodiendau.Text = "0";
+            //}
+            //else
+            //{
+            //    txt_sodiendau.Text = kq;
+            //}
+
+            //String sn = traphong.laySoNuoc(cbo_maphong.SelectedValue.ToString());
+            //if (sn == "")
+            //{
+            //    txt_sonuocdau.Text = "0";
+            //}
+            //else
+            //{
+            //    txt_sonuocdau.Text = sn;
+            //}
+            //grv_hoadon.DataSource = bLL_TienPhongHangThang.LoadDataHoaDontheomaphong(cbo_maphong.SelectedValue.ToString());
+        }
     }
 }

@@ -1110,6 +1110,7 @@
             this.cbo_thang.Name = "cbo_thang";
             this.cbo_thang.Size = new System.Drawing.Size(145, 27);
             this.cbo_thang.TabIndex = 1;
+            this.cbo_thang.SelectedIndexChanged += new System.EventHandler(this.cbo_thang_SelectedIndexChanged);
             // 
             // txt_nam
             // 

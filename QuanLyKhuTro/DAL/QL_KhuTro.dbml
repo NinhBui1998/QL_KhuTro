@@ -19,8 +19,12 @@
       <Column Name="NGAYVIPHAM" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="SOLAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="GHICHU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MANV" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Association Name="KHACHTHUE_VIPHAM" Member="KHACHTHUE" ThisKey="MAKT" OtherKey="MAKT" Type="KHACHTHUE" IsForeignKey="true" />
+      <Association Name="KHACHTHUE_VIPHAM1" Member="KHACHTHUE1" ThisKey="MAKT" OtherKey="MAKT" Type="KHACHTHUE" IsForeignKey="true" />
+      <Association Name="NHANVIEN_VIPHAM" Member="NHANVIEN" ThisKey="MANV" OtherKey="MANV" Type="NHANVIEN" IsForeignKey="true" />
       <Association Name="NOIQUY_VIPHAM" Member="NOIQUY" ThisKey="MANOIQUY" OtherKey="MANOIQUY" Type="NOIQUY" IsForeignKey="true" />
+      <Association Name="NOIQUY_VIPHAM1" Member="NOIQUY1" ThisKey="MANOIQUY" OtherKey="MANOIQUY" Type="NOIQUY" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.DICHVU" Member="DICHVUs">
@@ -84,6 +88,7 @@
       <Column Name="TRUONGPHONG" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="MAPHONG" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Association Name="KHACHTHUE_VIPHAM" Member="VIPHAMs" ThisKey="MAKT" OtherKey="MAKT" Type="VIPHAM" />
+      <Association Name="KHACHTHUE_VIPHAM1" Member="VIPHAMs1" ThisKey="MAKT" OtherKey="MAKT" Type="VIPHAM" />
       <Association Name="KHACHTHUE_HOPDONG" Member="HOPDONGs" ThisKey="MAKT" OtherKey="MAKT" Type="HOPDONG" />
       <Association Name="KHACHTHUE_TAMTRU" Member="TAMTRUs" ThisKey="MAKT" OtherKey="MAKT" Type="TAMTRU" />
       <Association Name="KHACHTHUE_THANNHAN_TAMTRU" Member="THANNHAN_TAMTRUs" ThisKey="MAKT" OtherKey="MAKT" Type="THANNHAN_TAMTRU" />
@@ -107,6 +112,7 @@
       <Column Name="NGAYSINH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="SODT_CT" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="DIACHI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="NHANVIEN_VIPHAM" Member="VIPHAMs" ThisKey="MANV" OtherKey="MANV" Type="VIPHAM" />
       <Association Name="NHANVIEN_HOADON" Member="HOADONs" ThisKey="MANV" OtherKey="MANV" Type="HOADON" />
       <Association Name="NHANVIEN_HOPDONG" Member="HOPDONGs" ThisKey="MANV" OtherKey="MANV" Type="HOPDONG" />
       <Association Name="NHANVIEN_QUANLYND" Member="QUANLYND" ThisKey="MANV" OtherKey="TENDN" Type="QUANLYND" Cardinality="One" />
@@ -119,6 +125,7 @@
       <Column Name="NOIDUNG" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="HINHPHAT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="NOIQUY_VIPHAM" Member="VIPHAMs" ThisKey="MANOIQUY" OtherKey="MANOIQUY" Type="VIPHAM" />
+      <Association Name="NOIQUY_VIPHAM1" Member="VIPHAMs1" ThisKey="MANOIQUY" OtherKey="MANOIQUY" Type="VIPHAM" />
     </Type>
   </Table>
   <Table Name="dbo.PHONG" Member="PHONGs">

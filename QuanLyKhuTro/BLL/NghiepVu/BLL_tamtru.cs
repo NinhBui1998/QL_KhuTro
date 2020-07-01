@@ -16,6 +16,10 @@ namespace BLL.NghiepVu
         {
             return tt.loadtamtru();
         }
+        public List<tamtru> Loadtamtrukt(string pmakt)
+        {
+            return tt.loadtamtrukt(pmakt);
+        }
         //kiểm tra khóa chính
         public bool ktkc_tamtru(string pMa)
         {
