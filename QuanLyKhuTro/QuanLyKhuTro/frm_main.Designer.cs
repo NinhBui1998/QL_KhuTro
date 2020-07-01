@@ -310,6 +310,7 @@
             this.btn_thongkephong.Id = 21;
             this.btn_thongkephong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_thongkephong.ImageOptions.SvgImage")));
             this.btn_thongkephong.Name = "btn_thongkephong";
+            this.btn_thongkephong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_thongkephong_ItemClick);
             // 
             // btn_thongkedoanhthu
             // 

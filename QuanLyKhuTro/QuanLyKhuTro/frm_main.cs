@@ -15,6 +15,7 @@ using QuanLyKhuTro.DuLieu;
 using DAL;
 using BLL;
 using QuanLyKhuTro.HeThong;
+using QuanLyKhuTro.ThongKe;
 
 namespace QuanLyKhuTro
 {
@@ -301,25 +302,37 @@ namespace QuanLyKhuTro
 
         private void barButtonItem8_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frm_thongkekhachthue frm = new frm_thongkekhachthue();
+            frm_tkkhachthue frm = new frm_tkkhachthue();
+            frm.ShowDialog();
+            //frm.TopLevel = false;
+            ////frm.MaNV = Tendn;
+            //pnl_main.Controls.Clear();
+            //pnl_main.Controls.Add(frm);
+
+            //frm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            //frm.Dock = DockStyle.Fill;
+            //frm.Show();
+        }
+
+        private void btn_thongkedoanhthu_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frm_tkdoanhthu frm = new frm_tkdoanhthu();
+
             frm.TopLevel = false;
-            frm.MaNV = Tendn;
+            
             pnl_main.Controls.Clear();
             pnl_main.Controls.Add(frm);
 
             frm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             frm.Dock = DockStyle.Fill;
             frm.Show();
+
         }
 
-        private void btn_thongkedoanhthu_ItemClick(object sender, ItemClickEventArgs e)
+        private void btn_thongkephong_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frm_thongkedoanhthu frm = new frm_thongkedoanhthu();
-           
-            pnl_main.Controls.Clear();
-            pnl_main.Controls.Add(frm);
-
-            
+            frm_tkphong frm = new frm_tkphong();
+            frm.ShowDialog();
         }
     }
 }

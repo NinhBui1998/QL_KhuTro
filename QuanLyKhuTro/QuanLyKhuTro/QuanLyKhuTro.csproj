@@ -60,6 +60,7 @@
     <Reference Include="DevExpress.XtraRichEdit.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraSpreadsheet.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraTreeList.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraWizard.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -109,7 +110,7 @@
       <DependentUpon>frm_dichvu.cs</DependentUpon>
     </Compile>
     <Compile Include="DanhMuc\frm_khachthue.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="DanhMuc\frm_khachthue.Designer.cs">
       <DependentUpon>frm_khachthue.cs</DependentUpon>
@@ -173,7 +174,7 @@
       <DependentUpon>dialog_datphong.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\frm_danhsachphong.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="NghiepVu\frm_danhsachphong.Designer.cs">
       <DependentUpon>frm_danhsachphong.cs</DependentUpon>
@@ -265,13 +266,31 @@
       <DependentUpon>frm_traphong.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\frm_vipham.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="NghiepVu\frm_vipham.Designer.cs">
       <DependentUpon>frm_vipham.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThongKe\frm_tkdoanhthu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongKe\frm_tkdoanhthu.Designer.cs">
+      <DependentUpon>frm_tkdoanhthu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKe\frm_tkkhachthue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongKe\frm_tkkhachthue.Designer.cs">
+      <DependentUpon>frm_tkkhachthue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKe\frm_tkphong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongKe\frm_tkphong.Designer.cs">
+      <DependentUpon>frm_tkphong.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DanhMuc\frm_dichvu.resx">
       <DependentUpon>frm_dichvu.cs</DependentUpon>
     </EmbeddedResource>
@@ -364,6 +383,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ThongKe\frm_tkdoanhthu.resx">
+      <DependentUpon>frm_tkdoanhthu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongKe\frm_tkkhachthue.resx">
+      <DependentUpon>frm_tkkhachthue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongKe\frm_tkphong.resx">
+      <DependentUpon>frm_tkphong.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

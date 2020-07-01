@@ -64,6 +64,10 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.cbo_ngay = new System.Windows.Forms.ComboBox();
             this.cbo_thang = new System.Windows.Forms.ComboBox();
+            this.cbo_nam = new System.Windows.Forms.TextBox();
+            this.rdo_ngay = new System.Windows.Forms.RadioButton();
+            this.rdo_thang = new System.Windows.Forms.RadioButton();
+            this.rdo_nam = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
@@ -75,10 +79,6 @@
             this.btn_tatcahd = new DevExpress.XtraEditors.SimpleButton();
             this.btn_timkiem = new DevExpress.XtraEditors.SimpleButton();
             this.cbo_phong = new System.Windows.Forms.ComboBox();
-            this.cbo_nam = new System.Windows.Forms.TextBox();
-            this.rdo_ngay = new System.Windows.Forms.RadioButton();
-            this.rdo_thang = new System.Windows.Forms.RadioButton();
-            this.rdo_nam = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -494,6 +494,56 @@
             this.cbo_thang.Size = new System.Drawing.Size(214, 27);
             this.cbo_thang.TabIndex = 0;
             // 
+            // cbo_nam
+            // 
+            this.cbo_nam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbo_nam.Location = new System.Drawing.Point(102, 69);
+            this.cbo_nam.Name = "cbo_nam";
+            this.cbo_nam.Size = new System.Drawing.Size(214, 26);
+            this.cbo_nam.TabIndex = 3;
+            // 
+            // rdo_ngay
+            // 
+            this.rdo_ngay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdo_ngay.AutoSize = true;
+            this.rdo_ngay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdo_ngay.ForeColor = System.Drawing.Color.Black;
+            this.rdo_ngay.Location = new System.Drawing.Point(3, 3);
+            this.rdo_ngay.Name = "rdo_ngay";
+            this.rdo_ngay.Size = new System.Drawing.Size(93, 23);
+            this.rdo_ngay.TabIndex = 4;
+            this.rdo_ngay.TabStop = true;
+            this.rdo_ngay.Text = "Ngày";
+            this.rdo_ngay.UseVisualStyleBackColor = true;
+            // 
+            // rdo_thang
+            // 
+            this.rdo_thang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdo_thang.AutoSize = true;
+            this.rdo_thang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdo_thang.ForeColor = System.Drawing.Color.Black;
+            this.rdo_thang.Location = new System.Drawing.Point(3, 36);
+            this.rdo_thang.Name = "rdo_thang";
+            this.rdo_thang.Size = new System.Drawing.Size(93, 23);
+            this.rdo_thang.TabIndex = 5;
+            this.rdo_thang.TabStop = true;
+            this.rdo_thang.Text = "Tháng";
+            this.rdo_thang.UseVisualStyleBackColor = true;
+            // 
+            // rdo_nam
+            // 
+            this.rdo_nam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdo_nam.AutoSize = true;
+            this.rdo_nam.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdo_nam.ForeColor = System.Drawing.Color.Black;
+            this.rdo_nam.Location = new System.Drawing.Point(3, 70);
+            this.rdo_nam.Name = "rdo_nam";
+            this.rdo_nam.Size = new System.Drawing.Size(93, 23);
+            this.rdo_nam.TabIndex = 5;
+            this.rdo_nam.TabStop = true;
+            this.rdo_nam.Text = "Năm";
+            this.rdo_nam.UseVisualStyleBackColor = true;
+            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 1;
@@ -638,56 +688,6 @@
             this.cbo_phong.Name = "cbo_phong";
             this.cbo_phong.Size = new System.Drawing.Size(164, 21);
             this.cbo_phong.TabIndex = 11;
-            // 
-            // cbo_nam
-            // 
-            this.cbo_nam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbo_nam.Location = new System.Drawing.Point(102, 69);
-            this.cbo_nam.Name = "cbo_nam";
-            this.cbo_nam.Size = new System.Drawing.Size(214, 26);
-            this.cbo_nam.TabIndex = 3;
-            // 
-            // rdo_ngay
-            // 
-            this.rdo_ngay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdo_ngay.AutoSize = true;
-            this.rdo_ngay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdo_ngay.ForeColor = System.Drawing.Color.Black;
-            this.rdo_ngay.Location = new System.Drawing.Point(3, 3);
-            this.rdo_ngay.Name = "rdo_ngay";
-            this.rdo_ngay.Size = new System.Drawing.Size(93, 23);
-            this.rdo_ngay.TabIndex = 4;
-            this.rdo_ngay.TabStop = true;
-            this.rdo_ngay.Text = "Ngày";
-            this.rdo_ngay.UseVisualStyleBackColor = true;
-            // 
-            // rdo_thang
-            // 
-            this.rdo_thang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdo_thang.AutoSize = true;
-            this.rdo_thang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdo_thang.ForeColor = System.Drawing.Color.Black;
-            this.rdo_thang.Location = new System.Drawing.Point(3, 36);
-            this.rdo_thang.Name = "rdo_thang";
-            this.rdo_thang.Size = new System.Drawing.Size(93, 23);
-            this.rdo_thang.TabIndex = 5;
-            this.rdo_thang.TabStop = true;
-            this.rdo_thang.Text = "Tháng";
-            this.rdo_thang.UseVisualStyleBackColor = true;
-            // 
-            // rdo_nam
-            // 
-            this.rdo_nam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdo_nam.AutoSize = true;
-            this.rdo_nam.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdo_nam.ForeColor = System.Drawing.Color.Black;
-            this.rdo_nam.Location = new System.Drawing.Point(3, 70);
-            this.rdo_nam.Name = "rdo_nam";
-            this.rdo_nam.Size = new System.Drawing.Size(93, 23);
-            this.rdo_nam.TabIndex = 5;
-            this.rdo_nam.TabStop = true;
-            this.rdo_nam.Text = "Năm";
-            this.rdo_nam.UseVisualStyleBackColor = true;
             // 
             // frm_thongkedoanhthu
             // 

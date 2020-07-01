@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL_NHATRO" Class="QL_KhuTroDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-T8SC55E\SQLEXPRESS;Initial Catalog=QL_NHATRO;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="QL_NHATROConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ADMIN\SQLEXPRESS;Initial Catalog=QL_NHATRO;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="QL_NHATROConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CHISO_DIENNUOC" Member="CHISO_DIENNUOCs">
     <Type Name="CHISO_DIENNUOC">
       <Column Name="MAHOADON" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -21,10 +21,8 @@
       <Column Name="GHICHU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MANV" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Association Name="KHACHTHUE_VIPHAM" Member="KHACHTHUE" ThisKey="MAKT" OtherKey="MAKT" Type="KHACHTHUE" IsForeignKey="true" />
-      <Association Name="KHACHTHUE_VIPHAM1" Member="KHACHTHUE1" ThisKey="MAKT" OtherKey="MAKT" Type="KHACHTHUE" IsForeignKey="true" />
       <Association Name="NHANVIEN_VIPHAM" Member="NHANVIEN" ThisKey="MANV" OtherKey="MANV" Type="NHANVIEN" IsForeignKey="true" />
       <Association Name="NOIQUY_VIPHAM" Member="NOIQUY" ThisKey="MANOIQUY" OtherKey="MANOIQUY" Type="NOIQUY" IsForeignKey="true" />
-      <Association Name="NOIQUY_VIPHAM1" Member="NOIQUY1" ThisKey="MANOIQUY" OtherKey="MANOIQUY" Type="NOIQUY" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.DICHVU" Member="DICHVUs">
@@ -88,11 +86,9 @@
       <Column Name="TRUONGPHONG" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="MAPHONG" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Association Name="KHACHTHUE_VIPHAM" Member="VIPHAMs" ThisKey="MAKT" OtherKey="MAKT" Type="VIPHAM" />
-      <Association Name="KHACHTHUE_VIPHAM1" Member="VIPHAMs1" ThisKey="MAKT" OtherKey="MAKT" Type="VIPHAM" />
       <Association Name="KHACHTHUE_HOPDONG" Member="HOPDONGs" ThisKey="MAKT" OtherKey="MAKT" Type="HOPDONG" />
       <Association Name="KHACHTHUE_TAMTRU" Member="TAMTRUs" ThisKey="MAKT" OtherKey="MAKT" Type="TAMTRU" />
       <Association Name="KHACHTHUE_THANNHAN_TAMTRU" Member="THANNHAN_TAMTRUs" ThisKey="MAKT" OtherKey="MAKT" Type="THANNHAN_TAMTRU" />
-      <Association Name="KHACHTHUE_THANNHAN_TAMTRU1" Member="THANNHAN_TAMTRUs1" ThisKey="MAKT" OtherKey="MAKT" Type="THANNHAN_TAMTRU" />
       <Association Name="PHONG_KHACHTHUE" Member="PHONG" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONG" IsForeignKey="true" />
     </Type>
   </Table>
@@ -125,7 +121,6 @@
       <Column Name="NOIDUNG" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="HINHPHAT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="NOIQUY_VIPHAM" Member="VIPHAMs" ThisKey="MANOIQUY" OtherKey="MANOIQUY" Type="VIPHAM" />
-      <Association Name="NOIQUY_VIPHAM1" Member="VIPHAMs1" ThisKey="MANOIQUY" OtherKey="MANOIQUY" Type="VIPHAM" />
     </Type>
   </Table>
   <Table Name="dbo.PHONG" Member="PHONGs">
@@ -206,7 +201,6 @@
       <Column Name="SOCMNDTN" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
       <Column Name="GIOITINH_TN" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
       <Association Name="THANNHAN_THANNHAN_TAMTRU" Member="THANNHAN_TAMTRUs" ThisKey="MATN" OtherKey="MATN" Type="THANNHAN_TAMTRU" />
-      <Association Name="THANNHAN_THANNHAN_TAMTRU1" Member="THANNHAN_TAMTRUs1" ThisKey="MATN" OtherKey="MATN" Type="THANNHAN_TAMTRU" />
     </Type>
   </Table>
   <Table Name="dbo.THANNHAN_TAMTRU" Member="THANNHAN_TAMTRUs">
@@ -216,9 +210,7 @@
       <Column Name="NGAYVAO" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="NGAYRA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Association Name="KHACHTHUE_THANNHAN_TAMTRU" Member="KHACHTHUE" ThisKey="MAKT" OtherKey="MAKT" Type="KHACHTHUE" IsForeignKey="true" />
-      <Association Name="KHACHTHUE_THANNHAN_TAMTRU1" Member="KHACHTHUE1" ThisKey="MAKT" OtherKey="MAKT" Type="KHACHTHUE" IsForeignKey="true" />
       <Association Name="THANNHAN_THANNHAN_TAMTRU" Member="THANNHAN" ThisKey="MATN" OtherKey="MATN" Type="THANNHAN" IsForeignKey="true" />
-      <Association Name="THANNHAN_THANNHAN_TAMTRU1" Member="THANNHAN1" ThisKey="MATN" OtherKey="MATN" Type="THANNHAN" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.THIETBI" Member="THIETBIs">
@@ -245,13 +237,13 @@
   <Function Name="dbo.SINHMA_HOADON" Method="SINHMA_HOADON" IsComposable="true">
     <Return Type="System.String" />
   </Function>
-  <Function Name="dbo.SINHMA_KHACHTHUE" Method="SINHMA_KHACHTHUE" IsComposable="true">
+  <Function Name="dbo.SINHMA_TAMTRU" Method="SINHMA_TAMTRU" IsComposable="true">
     <Return Type="System.String" />
   </Function>
   <Function Name="dbo.SINHMA_HOPDONG" Method="SINHMA_HOPDONG" IsComposable="true">
     <Return Type="System.String" />
   </Function>
-  <Function Name="dbo.SINHMA_TAMTRU" Method="SINHMA_TAMTRU" IsComposable="true">
+  <Function Name="dbo.SINHMA_KHACHTHUE" Method="SINHMA_KHACHTHUE" IsComposable="true">
     <Return Type="System.String" />
   </Function>
 </Database>

@@ -96,7 +96,7 @@ namespace DAL
     #endregion
 		
 		public QL_KhuTroDataContext() : 
-				base(global::DAL.Properties.Settings.Default.QL_NHATROConnectionString, mappingSource)
+				base(global::DAL.Properties.Settings.Default.QL_NHATROConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -299,8 +299,8 @@ namespace DAL
 			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod()))).ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SINHMA_KHACHTHUE", IsComposable=true)]
-		public string SINHMA_KHACHTHUE()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SINHMA_TAMTRU", IsComposable=true)]
+		public string SINHMA_TAMTRU()
 		{
 			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod()))).ReturnValue));
 		}
@@ -311,8 +311,8 @@ namespace DAL
 			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod()))).ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SINHMA_TAMTRU", IsComposable=true)]
-		public string SINHMA_TAMTRU()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SINHMA_KHACHTHUE", IsComposable=true)]
+		public string SINHMA_KHACHTHUE()
 		{
 			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod()))).ReturnValue));
 		}
@@ -585,13 +585,9 @@ namespace DAL
 		
 		private EntityRef<KHACHTHUE> _KHACHTHUE;
 		
-		private EntityRef<KHACHTHUE> _KHACHTHUE1;
-		
 		private EntityRef<NHANVIEN> _NHANVIEN;
 		
 		private EntityRef<NOIQUY> _NOIQUY;
-		
-		private EntityRef<NOIQUY> _NOIQUY1;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -614,10 +610,8 @@ namespace DAL
 		public VIPHAM()
 		{
 			this._KHACHTHUE = default(EntityRef<KHACHTHUE>);
-			this._KHACHTHUE1 = default(EntityRef<KHACHTHUE>);
 			this._NHANVIEN = default(EntityRef<NHANVIEN>);
 			this._NOIQUY = default(EntityRef<NOIQUY>);
-			this._NOIQUY1 = default(EntityRef<NOIQUY>);
 			OnCreated();
 		}
 		
@@ -632,7 +626,7 @@ namespace DAL
 			{
 				if ((this._MANOIQUY != value))
 				{
-					if ((this._NOIQUY.HasLoadedOrAssignedValue || this._NOIQUY1.HasLoadedOrAssignedValue))
+					if (this._NOIQUY.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -656,7 +650,7 @@ namespace DAL
 			{
 				if ((this._MAKT != value))
 				{
-					if ((this._KHACHTHUE.HasLoadedOrAssignedValue || this._KHACHTHUE1.HasLoadedOrAssignedValue))
+					if (this._KHACHTHUE.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -787,40 +781,6 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHTHUE_VIPHAM1", Storage="_KHACHTHUE1", ThisKey="MAKT", OtherKey="MAKT", IsForeignKey=true)]
-		public KHACHTHUE KHACHTHUE1
-		{
-			get
-			{
-				return this._KHACHTHUE1.Entity;
-			}
-			set
-			{
-				KHACHTHUE previousValue = this._KHACHTHUE1.Entity;
-				if (((previousValue != value) 
-							|| (this._KHACHTHUE1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._KHACHTHUE1.Entity = null;
-						previousValue.VIPHAMs1.Remove(this);
-					}
-					this._KHACHTHUE1.Entity = value;
-					if ((value != null))
-					{
-						value.VIPHAMs1.Add(this);
-						this._MAKT = value.MAKT;
-					}
-					else
-					{
-						this._MAKT = default(string);
-					}
-					this.SendPropertyChanged("KHACHTHUE1");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NHANVIEN_VIPHAM", Storage="_NHANVIEN", ThisKey="MANV", OtherKey="MANV", IsForeignKey=true)]
 		public NHANVIEN NHANVIEN
 		{
@@ -885,40 +845,6 @@ namespace DAL
 						this._MANOIQUY = default(string);
 					}
 					this.SendPropertyChanged("NOIQUY");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NOIQUY_VIPHAM1", Storage="_NOIQUY1", ThisKey="MANOIQUY", OtherKey="MANOIQUY", IsForeignKey=true)]
-		public NOIQUY NOIQUY1
-		{
-			get
-			{
-				return this._NOIQUY1.Entity;
-			}
-			set
-			{
-				NOIQUY previousValue = this._NOIQUY1.Entity;
-				if (((previousValue != value) 
-							|| (this._NOIQUY1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._NOIQUY1.Entity = null;
-						previousValue.VIPHAMs1.Remove(this);
-					}
-					this._NOIQUY1.Entity = value;
-					if ((value != null))
-					{
-						value.VIPHAMs1.Add(this);
-						this._MANOIQUY = value.MANOIQUY;
-					}
-					else
-					{
-						this._MANOIQUY = default(string);
-					}
-					this.SendPropertyChanged("NOIQUY1");
 				}
 			}
 		}
@@ -1993,15 +1919,11 @@ namespace DAL
 		
 		private EntitySet<VIPHAM> _VIPHAMs;
 		
-		private EntitySet<VIPHAM> _VIPHAMs1;
-		
 		private EntitySet<HOPDONG> _HOPDONGs;
 		
 		private EntitySet<TAMTRU> _TAMTRUs;
 		
 		private EntitySet<THANNHAN_TAMTRU> _THANNHAN_TAMTRUs;
-		
-		private EntitySet<THANNHAN_TAMTRU> _THANNHAN_TAMTRUs1;
 		
 		private EntityRef<PHONG> _PHONG;
 		
@@ -2034,11 +1956,9 @@ namespace DAL
 		public KHACHTHUE()
 		{
 			this._VIPHAMs = new EntitySet<VIPHAM>(new Action<VIPHAM>(this.attach_VIPHAMs), new Action<VIPHAM>(this.detach_VIPHAMs));
-			this._VIPHAMs1 = new EntitySet<VIPHAM>(new Action<VIPHAM>(this.attach_VIPHAMs1), new Action<VIPHAM>(this.detach_VIPHAMs1));
 			this._HOPDONGs = new EntitySet<HOPDONG>(new Action<HOPDONG>(this.attach_HOPDONGs), new Action<HOPDONG>(this.detach_HOPDONGs));
 			this._TAMTRUs = new EntitySet<TAMTRU>(new Action<TAMTRU>(this.attach_TAMTRUs), new Action<TAMTRU>(this.detach_TAMTRUs));
 			this._THANNHAN_TAMTRUs = new EntitySet<THANNHAN_TAMTRU>(new Action<THANNHAN_TAMTRU>(this.attach_THANNHAN_TAMTRUs), new Action<THANNHAN_TAMTRU>(this.detach_THANNHAN_TAMTRUs));
-			this._THANNHAN_TAMTRUs1 = new EntitySet<THANNHAN_TAMTRU>(new Action<THANNHAN_TAMTRU>(this.attach_THANNHAN_TAMTRUs1), new Action<THANNHAN_TAMTRU>(this.detach_THANNHAN_TAMTRUs1));
 			this._PHONG = default(EntityRef<PHONG>);
 			OnCreated();
 		}
@@ -2260,19 +2180,6 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHTHUE_VIPHAM1", Storage="_VIPHAMs1", ThisKey="MAKT", OtherKey="MAKT")]
-		public EntitySet<VIPHAM> VIPHAMs1
-		{
-			get
-			{
-				return this._VIPHAMs1;
-			}
-			set
-			{
-				this._VIPHAMs1.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHTHUE_HOPDONG", Storage="_HOPDONGs", ThisKey="MAKT", OtherKey="MAKT")]
 		public EntitySet<HOPDONG> HOPDONGs
 		{
@@ -2309,19 +2216,6 @@ namespace DAL
 			set
 			{
 				this._THANNHAN_TAMTRUs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHTHUE_THANNHAN_TAMTRU1", Storage="_THANNHAN_TAMTRUs1", ThisKey="MAKT", OtherKey="MAKT")]
-		public EntitySet<THANNHAN_TAMTRU> THANNHAN_TAMTRUs1
-		{
-			get
-			{
-				return this._THANNHAN_TAMTRUs1;
-			}
-			set
-			{
-				this._THANNHAN_TAMTRUs1.Assign(value);
 			}
 		}
 		
@@ -2391,18 +2285,6 @@ namespace DAL
 			entity.KHACHTHUE = null;
 		}
 		
-		private void attach_VIPHAMs1(VIPHAM entity)
-		{
-			this.SendPropertyChanging();
-			entity.KHACHTHUE1 = this;
-		}
-		
-		private void detach_VIPHAMs1(VIPHAM entity)
-		{
-			this.SendPropertyChanging();
-			entity.KHACHTHUE1 = null;
-		}
-		
 		private void attach_HOPDONGs(HOPDONG entity)
 		{
 			this.SendPropertyChanging();
@@ -2437,18 +2319,6 @@ namespace DAL
 		{
 			this.SendPropertyChanging();
 			entity.KHACHTHUE = null;
-		}
-		
-		private void attach_THANNHAN_TAMTRUs1(THANNHAN_TAMTRU entity)
-		{
-			this.SendPropertyChanging();
-			entity.KHACHTHUE1 = this;
-		}
-		
-		private void detach_THANNHAN_TAMTRUs1(THANNHAN_TAMTRU entity)
-		{
-			this.SendPropertyChanging();
-			entity.KHACHTHUE1 = null;
 		}
 	}
 	
@@ -2930,8 +2800,6 @@ namespace DAL
 		
 		private EntitySet<VIPHAM> _VIPHAMs;
 		
-		private EntitySet<VIPHAM> _VIPHAMs1;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2947,7 +2815,6 @@ namespace DAL
 		public NOIQUY()
 		{
 			this._VIPHAMs = new EntitySet<VIPHAM>(new Action<VIPHAM>(this.attach_VIPHAMs), new Action<VIPHAM>(this.detach_VIPHAMs));
-			this._VIPHAMs1 = new EntitySet<VIPHAM>(new Action<VIPHAM>(this.attach_VIPHAMs1), new Action<VIPHAM>(this.detach_VIPHAMs1));
 			OnCreated();
 		}
 		
@@ -3024,19 +2891,6 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NOIQUY_VIPHAM1", Storage="_VIPHAMs1", ThisKey="MANOIQUY", OtherKey="MANOIQUY")]
-		public EntitySet<VIPHAM> VIPHAMs1
-		{
-			get
-			{
-				return this._VIPHAMs1;
-			}
-			set
-			{
-				this._VIPHAMs1.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -3067,18 +2921,6 @@ namespace DAL
 		{
 			this.SendPropertyChanging();
 			entity.NOIQUY = null;
-		}
-		
-		private void attach_VIPHAMs1(VIPHAM entity)
-		{
-			this.SendPropertyChanging();
-			entity.NOIQUY1 = this;
-		}
-		
-		private void detach_VIPHAMs1(VIPHAM entity)
-		{
-			this.SendPropertyChanging();
-			entity.NOIQUY1 = null;
 		}
 	}
 	
@@ -4577,8 +4419,6 @@ namespace DAL
 		
 		private EntitySet<THANNHAN_TAMTRU> _THANNHAN_TAMTRUs;
 		
-		private EntitySet<THANNHAN_TAMTRU> _THANNHAN_TAMTRUs1;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -4596,7 +4436,6 @@ namespace DAL
 		public THANNHAN()
 		{
 			this._THANNHAN_TAMTRUs = new EntitySet<THANNHAN_TAMTRU>(new Action<THANNHAN_TAMTRU>(this.attach_THANNHAN_TAMTRUs), new Action<THANNHAN_TAMTRU>(this.detach_THANNHAN_TAMTRUs));
-			this._THANNHAN_TAMTRUs1 = new EntitySet<THANNHAN_TAMTRU>(new Action<THANNHAN_TAMTRU>(this.attach_THANNHAN_TAMTRUs1), new Action<THANNHAN_TAMTRU>(this.detach_THANNHAN_TAMTRUs1));
 			OnCreated();
 		}
 		
@@ -4693,19 +4532,6 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="THANNHAN_THANNHAN_TAMTRU1", Storage="_THANNHAN_TAMTRUs1", ThisKey="MATN", OtherKey="MATN")]
-		public EntitySet<THANNHAN_TAMTRU> THANNHAN_TAMTRUs1
-		{
-			get
-			{
-				return this._THANNHAN_TAMTRUs1;
-			}
-			set
-			{
-				this._THANNHAN_TAMTRUs1.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -4737,18 +4563,6 @@ namespace DAL
 			this.SendPropertyChanging();
 			entity.THANNHAN = null;
 		}
-		
-		private void attach_THANNHAN_TAMTRUs1(THANNHAN_TAMTRU entity)
-		{
-			this.SendPropertyChanging();
-			entity.THANNHAN1 = this;
-		}
-		
-		private void detach_THANNHAN_TAMTRUs1(THANNHAN_TAMTRU entity)
-		{
-			this.SendPropertyChanging();
-			entity.THANNHAN1 = null;
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.THANNHAN_TAMTRU")]
@@ -4767,11 +4581,7 @@ namespace DAL
 		
 		private EntityRef<KHACHTHUE> _KHACHTHUE;
 		
-		private EntityRef<KHACHTHUE> _KHACHTHUE1;
-		
 		private EntityRef<THANNHAN> _THANNHAN;
-		
-		private EntityRef<THANNHAN> _THANNHAN1;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -4790,9 +4600,7 @@ namespace DAL
 		public THANNHAN_TAMTRU()
 		{
 			this._KHACHTHUE = default(EntityRef<KHACHTHUE>);
-			this._KHACHTHUE1 = default(EntityRef<KHACHTHUE>);
 			this._THANNHAN = default(EntityRef<THANNHAN>);
-			this._THANNHAN1 = default(EntityRef<THANNHAN>);
 			OnCreated();
 		}
 		
@@ -4807,7 +4615,7 @@ namespace DAL
 			{
 				if ((this._MATN != value))
 				{
-					if ((this._THANNHAN.HasLoadedOrAssignedValue || this._THANNHAN1.HasLoadedOrAssignedValue))
+					if (this._THANNHAN.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -4831,7 +4639,7 @@ namespace DAL
 			{
 				if ((this._MAKT != value))
 				{
-					if ((this._KHACHTHUE.HasLoadedOrAssignedValue || this._KHACHTHUE1.HasLoadedOrAssignedValue))
+					if (this._KHACHTHUE.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -4918,40 +4726,6 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHTHUE_THANNHAN_TAMTRU1", Storage="_KHACHTHUE1", ThisKey="MAKT", OtherKey="MAKT", IsForeignKey=true)]
-		public KHACHTHUE KHACHTHUE1
-		{
-			get
-			{
-				return this._KHACHTHUE1.Entity;
-			}
-			set
-			{
-				KHACHTHUE previousValue = this._KHACHTHUE1.Entity;
-				if (((previousValue != value) 
-							|| (this._KHACHTHUE1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._KHACHTHUE1.Entity = null;
-						previousValue.THANNHAN_TAMTRUs1.Remove(this);
-					}
-					this._KHACHTHUE1.Entity = value;
-					if ((value != null))
-					{
-						value.THANNHAN_TAMTRUs1.Add(this);
-						this._MAKT = value.MAKT;
-					}
-					else
-					{
-						this._MAKT = default(string);
-					}
-					this.SendPropertyChanged("KHACHTHUE1");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="THANNHAN_THANNHAN_TAMTRU", Storage="_THANNHAN", ThisKey="MATN", OtherKey="MATN", IsForeignKey=true)]
 		public THANNHAN THANNHAN
 		{
@@ -4982,40 +4756,6 @@ namespace DAL
 						this._MATN = default(string);
 					}
 					this.SendPropertyChanged("THANNHAN");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="THANNHAN_THANNHAN_TAMTRU1", Storage="_THANNHAN1", ThisKey="MATN", OtherKey="MATN", IsForeignKey=true)]
-		public THANNHAN THANNHAN1
-		{
-			get
-			{
-				return this._THANNHAN1.Entity;
-			}
-			set
-			{
-				THANNHAN previousValue = this._THANNHAN1.Entity;
-				if (((previousValue != value) 
-							|| (this._THANNHAN1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._THANNHAN1.Entity = null;
-						previousValue.THANNHAN_TAMTRUs1.Remove(this);
-					}
-					this._THANNHAN1.Entity = value;
-					if ((value != null))
-					{
-						value.THANNHAN_TAMTRUs1.Add(this);
-						this._MATN = value.MATN;
-					}
-					else
-					{
-						this._MATN = default(string);
-					}
-					this.SendPropertyChanged("THANNHAN1");
 				}
 			}
 		}
