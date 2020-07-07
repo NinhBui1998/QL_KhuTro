@@ -84,5 +84,15 @@ namespace QuanLyKhuTro.NghiepVu
             }
             else { return; }
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            //tính khoảng cách giữa hai ngày
+            DateTime ngaymuon = Convert.ToDateTime("05/05/2020");
+            DateTime ngaytra = Convert.ToDateTime("15/06/2020");
+            TimeSpan Time = ngaytra - ngaymuon;
+            int TongSoNgay = Time.Days;
+            return;
+        }
     }
 }

@@ -16,9 +16,35 @@ namespace BLL.NghiepVu
         {
             return dal_dsp.loaddsPhong ();
         }
+      
         public List<DanhsachPhong> LoadDSPhongTheoMa(string pmaloai)
         {
             return dal_dsp.loaddsPhong_theoMa( pmaloai);
+        }
+        public string tongphongtrong()
+        {
+            return dal_dsp.Tinhtongphongtrong();
+        }
+        public string tongphongcokhach()
+        {
+            return dal_dsp.Tinhtongphongcokhach();
+        }
+        public string tongphongcokhachcoc()
+        {
+            return dal_dsp.Tinhtongphongcokhachcoc();
+        }
+        public string tongphongsapdenhan()
+        {
+            return dal_dsp.Tinhtongphongsaphethan();
+        }
+        public string laytinhtranghopdong()
+        {
+            return dal_dsp.laytinhtranghopdong();
+        }
+
+        public string layngaytra()
+        {
+            return dal_dsp.layngaytronghopdong();
         }
     }
 }

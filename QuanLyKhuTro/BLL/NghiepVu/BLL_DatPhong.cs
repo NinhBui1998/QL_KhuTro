@@ -26,6 +26,11 @@ namespace BLL
         {
             return dp.Laymaphong(pten);
         }
+        
+        public String Laytenphongtheoma(string pma)
+        {
+            return dp.Laytenphongtheoma(pma);
+        }
         public String layslht(string pma)
         {
             return dp.LaySLHTPhong(pma);

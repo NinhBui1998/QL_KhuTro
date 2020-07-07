@@ -54,10 +54,16 @@ namespace QuanLyKhuTro.NghiepVu
 
         private void dialog_datphong_FormClosing(object sender, FormClosingEventArgs e)
         {
+            
             frm_test frm = new frm_test();
             frm.MaNhanVien = MAnv;
             Visible = false;
             frm.ShowDialog();
+
+        }
+
+        private void dialog_datphong_Load(object sender, EventArgs e)
+        {
 
         }
     }

@@ -16,16 +16,17 @@ namespace DAL.NghiepVu
                      from t in data.TANGs
                      from hd in data.HOADONs
                      from cs in data.CHISO_DIENNUOCs
-
+                     from lp in data.LOAIPHONGs
                      from nv in data.NHANVIENs
                      where p.MAPHONG == hd.MAPHONG && hd.MAHOADON == cs.MAHOADON
-                     && hd.MANV == nv.MANV && p.MATANG == t.MATANG
+                     && hd.MANV == nv.MANV && p.MATANG == t.MATANG && lp.MALOAI==p.MALOAI
                      select new
                      {
                          hd.MAHOADON,
                          nv.TENNV,
                          t.TENTANG,
                          p.TENPHONG,
+                         lp.GIA,
                          hd.WIFI,
                          hd.RAC,
                          cs.SODIEN,
@@ -39,7 +40,8 @@ namespace DAL.NghiepVu
                          cs.SODIENCU,
                          cs.SONUOCCU,
                          cs.SONUOCMOI,
-                         hd.THANGNAM
+                         hd.THANGNAM,
+                         lp.TENLOAI
 
                      };
             var kq = kt.ToList().ConvertAll(t => new HoaDon()
@@ -61,7 +63,9 @@ namespace DAL.NghiepVu
                 SoDienMoi = Convert.ToInt32(t.SODIENMOI),
                 SoNuocCu = Convert.ToInt32(t.SONUOCCU),
                 SoNuocMoi = Convert.ToInt32(t.SONUOCMOI),
+                TIENPHONG1=Convert.ToDecimal(t.GIA),
                 ThangNam=t.THANGNAM,
+                TENLOAI1=t.TENLOAI,
 
             });;; ;
             kq.ToList<HoaDon>();
@@ -73,9 +77,9 @@ namespace DAL.NghiepVu
                      from t in data.TANGs
                      from hd in data.HOADONs
                      from cs in data.CHISO_DIENNUOCs
-
+                     from lp in data.LOAIPHONGs
                      from nv in data.NHANVIENs
-                     where p.MAPHONG == hd.MAPHONG && hd.MAHOADON == cs.MAHOADON
+                     where lp.MALOAI==p.MALOAI && p.MAPHONG == hd.MAPHONG && hd.MAHOADON == cs.MAHOADON
                      && hd.MANV == nv.MANV && p.MATANG == t.MATANG && hd.MAPHONG == pmaphong
                      select new
                      {
@@ -96,7 +100,9 @@ namespace DAL.NghiepVu
                          cs.SODIENCU,
                          cs.SONUOCCU,
                          cs.SONUOCMOI,
-                         hd.THANGNAM
+                         hd.THANGNAM,
+                         lp.GIA,
+                         
                      };
             var kq = kt.ToList().ConvertAll(t => new HoaDon()
             {
@@ -118,6 +124,7 @@ namespace DAL.NghiepVu
                 SoNuocCu = Convert.ToInt32(t.SONUOCCU),
                 SoNuocMoi = Convert.ToInt32(t.SONUOCMOI),
                 ThangNam = t.THANGNAM,
+                TIENPHONG1=Convert.ToDecimal(t.GIA)
 
             }); ;
             kq.ToList<HoaDon>();

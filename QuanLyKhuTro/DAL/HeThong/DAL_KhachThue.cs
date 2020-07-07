@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -126,6 +127,7 @@ namespace DAL
                     kt.QUEQUAN = pkt.QUEQUAN;
                     kt.SOCMND = pkt.SOCMND;
                     kt.NGAYSINH = pkt.NGAYSINH;
+                    kt.TINHTRANGTAMTRU = pkt.TINHTRANGTAMTRU;
                     data.SubmitChanges();
                 }
                 return true;
@@ -134,6 +136,68 @@ namespace DAL
             {
                 return false;
             }
+        }
+        public bool sua_tinhtrangkt(KHACHTHUE pkt)
+        {
+            try
+            {
+                KHACHTHUE kt = data.KHACHTHUEs.Where(t => t.MAKT == pkt.MAKT).FirstOrDefault();
+                if (kt != null)
+                {
+                   
+                    kt.TINHTRANGTAMTRU = pkt.TINHTRANGTAMTRU;
+                    data.SubmitChanges();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool KT_SCMKT(string socm)
+        {
+
+            //var kq = (from kc in data.KHACHCOCPHONGs
+            //          from kt in data.KHACHTHUEs
+            //          from p in data.PHONGs
+            //          where kc.MAPHONG == p.MAPHONG && p.MAPHONG == kt.MAPHONG &&
+            //              kt.SOCMND == socm || kc.MAPHONG == p.MAPHONG && p.MAPHONG == kt.MAPHONG && kc.SOCMND == socm
+            //          select kt).Count();
+            var kq = (from kt in data.KHACHTHUEs
+                      where kt.SOCMND == socm
+                      select kt).Count();
+            if (kq>0)
+            {
+                return true;
+            }    
+            else
+            {
+                return false;
+            }    
+            
+        }
+        public bool KT_SODT(string Sodt)
+        {
+
+            //var kq = (from kc in data.KHACHCOCPHONGs
+            //          from kt in data.KHACHTHUEs
+            //          from p in data.PHONGs
+            //          where kc.MAPHONG == p.MAPHONG && p.MAPHONG == kt.MAPHONG &&
+            //              kt.SOCMND == socm || kc.MAPHONG == p.MAPHONG && p.MAPHONG == kt.MAPHONG && kc.SOCMND == socm
+            //          select kt).Count();
+            var kq = (from kt in data.KHACHTHUEs
+                      where kt.SDT == Sodt
+                      select kt).Count();
+            if (kq > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
     }
 }

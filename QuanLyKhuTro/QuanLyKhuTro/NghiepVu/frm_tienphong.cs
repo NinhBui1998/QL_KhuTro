@@ -53,7 +53,8 @@ namespace QuanLyKhuTro.NghiepVu
             txt_manv.Text = MaNV;
             txt_ngaylaphd.Text= DateTime.Now.ToShortDateString();
 
-           
+            string[] s = { "01", "02", "03", "04",  "05", "06", "07", "08", "09", "10", "11", "12" };
+            cbo_thang.DataSource = s;
         }
 
       
@@ -412,30 +413,20 @@ namespace QuanLyKhuTro.NghiepVu
             }    
         }
 
-        private void cbo_thang_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbo_thang_Click(object sender, EventArgs e)
         {
-            txt_sodiencuoi.Clear();
-            txt_sonuoccuoi.Clear();
-            //String kq = traphong.laySoDien(cbo_maphong.SelectedValue.ToString());
-            //if (kq == "")
-            //{
-            //    txt_sodiendau.Text = "0";
-            //}
-            //else
-            //{
-            //    txt_sodiendau.Text = kq;
-            //}
-
-            //String sn = traphong.laySoNuoc(cbo_maphong.SelectedValue.ToString());
-            //if (sn == "")
-            //{
-            //    txt_sonuocdau.Text = "0";
-            //}
-            //else
-            //{
-            //    txt_sonuocdau.Text = sn;
-            //}
-            //grv_hoadon.DataSource = bLL_TienPhongHangThang.LoadDataHoaDontheomaphong(cbo_maphong.SelectedValue.ToString());
+            try { 
+           
+                txt_sodiencuoi.Clear();
+                txt_sonuoccuoi.Clear();
+                txt_mahd.Text = bll_sm.SinhMaHoaDon();
+            }
+            catch
+            {
+                return;
+            }
         }
+
+        
     }
 }

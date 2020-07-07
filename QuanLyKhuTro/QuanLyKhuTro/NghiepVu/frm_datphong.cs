@@ -445,5 +445,31 @@ namespace QuanLyKhuTro.NghiepVu
             frm.TenPhong = datphong.laymaphong(Ten);
             frm.ShowDialog(); 
         }
+
+        private void txt_sdt_Leave(object sender, EventArgs e)
+        {
+            if (khachthue.kt_SoDT(txt_sdt.Text) == true)
+            {
+                MessageBox.Show("Trùng số điện thoại");
+                return;
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void txt_cmnd_Leave(object sender, EventArgs e)
+        {
+            if (khachthue.kt_Socm(txt_cmnd.Text) == true)
+            {
+                MessageBox.Show("Trùng số chứng minh");
+                return;
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }

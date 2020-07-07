@@ -80,6 +80,8 @@
             this.Sochungminh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Quequan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Maphong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -391,6 +393,7 @@
             // txt_ngaylamgiay
             // 
             this.txt_ngaylamgiay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_ngaylamgiay.Enabled = false;
             this.txt_ngaylamgiay.Location = new System.Drawing.Point(158, 120);
             this.txt_ngaylamgiay.Mask = "00/00/0000";
             this.txt_ngaylamgiay.Name = "txt_ngaylamgiay";
@@ -581,11 +584,12 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.21548F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.78451F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 141F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
             this.tableLayoutPanel10.Controls.Add(this.btn_tatcahd, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.btn_timkiem, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.cbo_phong, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.simpleButton3, 4, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
@@ -600,7 +604,7 @@
             this.btn_tatcahd.Appearance.Options.UseFont = true;
             this.btn_tatcahd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_tatcahd.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_tatcahd.ImageOptions.SvgImage")));
-            this.btn_tatcahd.Location = new System.Drawing.Point(295, 3);
+            this.btn_tatcahd.Location = new System.Drawing.Point(292, 3);
             this.btn_tatcahd.Name = "btn_tatcahd";
             this.btn_tatcahd.Size = new System.Drawing.Size(95, 44);
             this.btn_tatcahd.TabIndex = 10;
@@ -613,7 +617,7 @@
             this.btn_timkiem.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_timkiem.Appearance.Options.UseFont = true;
             this.btn_timkiem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_timkiem.ImageOptions.SvgImage")));
-            this.btn_timkiem.Location = new System.Drawing.Point(261, 14);
+            this.btn_timkiem.Location = new System.Drawing.Point(258, 14);
             this.btn_timkiem.Name = "btn_timkiem";
             this.btn_timkiem.Size = new System.Drawing.Size(28, 21);
             this.btn_timkiem.TabIndex = 8;
@@ -625,7 +629,7 @@
             this.cbo_phong.FormattingEnabled = true;
             this.cbo_phong.Location = new System.Drawing.Point(3, 14);
             this.cbo_phong.Name = "cbo_phong";
-            this.cbo_phong.Size = new System.Drawing.Size(252, 21);
+            this.cbo_phong.Size = new System.Drawing.Size(249, 21);
             this.cbo_phong.TabIndex = 4;
             // 
             // grv_khachthue
@@ -647,7 +651,8 @@
             this.Tenkhachthue,
             this.Sochungminh,
             this.Quequan,
-            this.Maphong});
+            this.Maphong,
+            this.gridColumn3});
             this.gridView_kt.GridControl = this.grv_khachthue;
             this.gridView_kt.Name = "gridView_kt";
             // 
@@ -690,6 +695,27 @@
             this.Maphong.Name = "Maphong";
             this.Maphong.Visible = true;
             this.Maphong.VisibleIndex = 4;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Tình trạng tạm trú";
+            this.gridColumn3.FieldName = "TINHTRANGTAMTRU";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 5;
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
+            this.simpleButton3.Location = new System.Drawing.Point(489, 3);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(165, 44);
+            this.simpleButton3.TabIndex = 11;
+            this.simpleButton3.Text = "Xuất danh sách tạm trú";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // frm_tamtru
             // 
@@ -775,5 +801,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn Quequan;
         private DevExpress.XtraGrid.Columns.GridColumn Maphong;
         private DevExpress.XtraEditors.SimpleButton btn_tatcahd;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
     }
 }

@@ -43,12 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\cocphong.cs" />
     <Compile Include="Model\DAL_SinhMa.cs" />
     <Compile Include="Model\DanhsachPhong.cs" />
     <Compile Include="Model\HoaDon.cs" />
     <Compile Include="Model\tamtru.cs" />
+    <Compile Include="Model\Thongkekhach.cs" />
+    <Compile Include="Model\Thongkephong.cs" />
     <Compile Include="Model\ViPham.cs" />
     <Compile Include="NghiepVu\DAL_ChiSoDienNuoc.cs" />
+    <Compile Include="NghiepVu\DAL_CocPhong.cs" />
     <Compile Include="NghiepVu\DAL_DatPhong.cs" />
     <Compile Include="HeThong\DAL_DichVu.cs" />
     <Compile Include="NghiepVu\DAL_DSPhong.cs" />
@@ -85,7 +89,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QL_KhuTro.dbml</DependentUpon>
     </Compile>
+    <Compile Include="ThongKe\DAL_ThongKeDoanhThu.cs" />
     <Compile Include="ThongKe\DAL_ThongKeKhachThue.cs" />
+    <Compile Include="ThongKe\DAL_Thongkephong.cs" />
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>

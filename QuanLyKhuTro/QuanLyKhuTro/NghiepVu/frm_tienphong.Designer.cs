@@ -111,6 +111,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.cbo_thang = new System.Windows.Forms.ComboBox();
             this.txt_nam = new System.Windows.Forms.TextBox();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -265,7 +266,7 @@
             this.cbo_maphong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_maphong.DisplayMember = "MAPHONG";
             this.cbo_maphong.FormattingEnabled = true;
-            this.cbo_maphong.Location = new System.Drawing.Point(126, 55);
+            this.cbo_maphong.Location = new System.Drawing.Point(126, 52);
             this.cbo_maphong.Name = "cbo_maphong";
             this.cbo_maphong.Size = new System.Drawing.Size(411, 27);
             this.cbo_maphong.TabIndex = 5;
@@ -277,7 +278,7 @@
             this.cbo_tang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_tang.DisplayMember = "MAPHONG";
             this.cbo_tang.FormattingEnabled = true;
-            this.cbo_tang.Location = new System.Drawing.Point(126, 11);
+            this.cbo_tang.Location = new System.Drawing.Point(126, 8);
             this.cbo_tang.Name = "cbo_tang";
             this.cbo_tang.Size = new System.Drawing.Size(411, 27);
             this.cbo_tang.TabIndex = 5;
@@ -899,6 +900,7 @@
             this.THANGNAM,
             this.TenTang,
             this.TenPhong,
+            this.gridColumn1,
             this.SoDien,
             this.TienDien,
             this.SoNuoc,
@@ -950,7 +952,7 @@
             this.SoDien.FieldName = "SoDien";
             this.SoDien.Name = "SoDien";
             this.SoDien.Visible = true;
-            this.SoDien.VisibleIndex = 4;
+            this.SoDien.VisibleIndex = 5;
             // 
             // TienDien
             // 
@@ -960,7 +962,7 @@
             this.TienDien.FieldName = "TienDien";
             this.TienDien.Name = "TienDien";
             this.TienDien.Visible = true;
-            this.TienDien.VisibleIndex = 5;
+            this.TienDien.VisibleIndex = 6;
             // 
             // SoNuoc
             // 
@@ -968,7 +970,7 @@
             this.SoNuoc.FieldName = "SoNuoc";
             this.SoNuoc.Name = "SoNuoc";
             this.SoNuoc.Visible = true;
-            this.SoNuoc.VisibleIndex = 6;
+            this.SoNuoc.VisibleIndex = 7;
             // 
             // TienNuoc
             // 
@@ -978,7 +980,7 @@
             this.TienNuoc.FieldName = "TienNuoc";
             this.TienNuoc.Name = "TienNuoc";
             this.TienNuoc.Visible = true;
-            this.TienNuoc.VisibleIndex = 7;
+            this.TienNuoc.VisibleIndex = 8;
             // 
             // Wifi
             // 
@@ -988,7 +990,7 @@
             this.Wifi.FieldName = "Wifi";
             this.Wifi.Name = "Wifi";
             this.Wifi.Visible = true;
-            this.Wifi.VisibleIndex = 8;
+            this.Wifi.VisibleIndex = 9;
             // 
             // Rac
             // 
@@ -998,7 +1000,7 @@
             this.Rac.FieldName = "Rac";
             this.Rac.Name = "Rac";
             this.Rac.Visible = true;
-            this.Rac.VisibleIndex = 9;
+            this.Rac.VisibleIndex = 10;
             // 
             // NgayLap
             // 
@@ -1006,7 +1008,7 @@
             this.NgayLap.FieldName = "NgayLap";
             this.NgayLap.Name = "NgayLap";
             this.NgayLap.Visible = true;
-            this.NgayLap.VisibleIndex = 10;
+            this.NgayLap.VisibleIndex = 11;
             // 
             // TongTien
             // 
@@ -1016,7 +1018,7 @@
             this.TongTien.FieldName = "TongTien";
             this.TongTien.Name = "TongTien";
             this.TongTien.Visible = true;
-            this.TongTien.VisibleIndex = 11;
+            this.TongTien.VisibleIndex = 12;
             // 
             // TenNV
             // 
@@ -1024,7 +1026,7 @@
             this.TenNV.FieldName = "TenNV";
             this.TenNV.Name = "TenNV";
             this.TenNV.Visible = true;
-            this.TenNV.VisibleIndex = 12;
+            this.TenNV.VisibleIndex = 13;
             // 
             // TINHTRANG
             // 
@@ -1032,7 +1034,7 @@
             this.TINHTRANG.FieldName = "TinhTrang";
             this.TINHTRANG.Name = "TINHTRANG";
             this.TINHTRANG.Visible = true;
-            this.TINHTRANG.VisibleIndex = 13;
+            this.TINHTRANG.VisibleIndex = 14;
             // 
             // label17
             // 
@@ -1052,8 +1054,8 @@
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.61613F));
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.38386F));
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 151F));
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 115F));
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 521F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 578F));
             this.tableLayoutPanel15.Controls.Add(this.label19, 1, 0);
             this.tableLayoutPanel15.Controls.Add(this.label20, 3, 0);
             this.tableLayoutPanel15.Controls.Add(this.cbo_thang, 2, 0);
@@ -1082,7 +1084,7 @@
             this.label20.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(597, 8);
+            this.label20.Location = new System.Drawing.Point(568, 8);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(41, 19);
             this.label20.TabIndex = 0;
@@ -1093,33 +1095,28 @@
             this.cbo_thang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_thang.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_thang.FormattingEnabled = true;
-            this.cbo_thang.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
             this.cbo_thang.Location = new System.Drawing.Point(412, 4);
             this.cbo_thang.Name = "cbo_thang";
             this.cbo_thang.Size = new System.Drawing.Size(145, 27);
             this.cbo_thang.TabIndex = 1;
-            this.cbo_thang.SelectedIndexChanged += new System.EventHandler(this.cbo_thang_SelectedIndexChanged);
+            this.cbo_thang.Click += new System.EventHandler(this.cbo_thang_Click);
             // 
             // txt_nam
             // 
             this.txt_nam.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_nam.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nam.Location = new System.Drawing.Point(678, 4);
+            this.txt_nam.Location = new System.Drawing.Point(621, 4);
             this.txt_nam.Name = "txt_nam";
-            this.txt_nam.Size = new System.Drawing.Size(100, 27);
+            this.txt_nam.Size = new System.Drawing.Size(116, 27);
             this.txt_nam.TabIndex = 2;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Tiền Phòng";
+            this.gridColumn1.FieldName = "TIENPHONG1";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 4;
             // 
             // frm_tienphong
             // 
@@ -1247,5 +1244,6 @@
         private System.Windows.Forms.ComboBox cbo_thang;
         private System.Windows.Forms.TextBox txt_nam;
         private DevExpress.XtraGrid.Columns.GridColumn THANGNAM;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

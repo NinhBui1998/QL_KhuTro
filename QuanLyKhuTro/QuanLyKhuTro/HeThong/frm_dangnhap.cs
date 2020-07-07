@@ -8,6 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DAL;
+using DAL.Model;
 
 namespace QuanLyKhuTro.HeThong
 {
@@ -47,8 +49,6 @@ namespace QuanLyKhuTro.HeThong
         {
             try
             {
-
-          
                 if (string.IsNullOrEmpty(txt_taikhoan.Text.Trim()))
                 {
                     MessageBox.Show("Không được bỏ trống");
@@ -95,7 +95,17 @@ namespace QuanLyKhuTro.HeThong
             txt_matkhau.Clear();
             txt_taikhoan.Clear();
         }
-
-       
+        DAL_SinhMa dal_sm = new DAL_SinhMa();
+        private void frm_dangnhap_Load(object sender, EventArgs e)
+        {
+            dal_sm.updatekhachthuesaphethantt();
+            dal_sm.updatekhachthuedadktt();
+            dal_sm.updatekhachthuedahethantt();
+            
+            dal_sm.updatehopdongconthoihan();
+            dal_sm.updatehopdonghethan();
+            dal_sm.updatehopdongsaphethan();
+            dal_sm.Capnhapphongdacoc();
+        }
     }
 }

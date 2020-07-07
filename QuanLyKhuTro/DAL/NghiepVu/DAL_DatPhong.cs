@@ -95,6 +95,15 @@ namespace DAL
 
             return kq.ToString();
         }
+        public String Laytenphongtheoma(string ma)
+        {
+            var kq = (from p in data.PHONGs
+                      where p.MAPHONG == ma
+                      select p.TENPHONG).FirstOrDefault();
+
+            return kq.ToString();
+        }
+
         public string LaySLHTPhong(string pMa)
         {
             var kq = (from p in data.PHONGs

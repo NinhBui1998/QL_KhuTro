@@ -233,6 +233,7 @@ namespace QuanLyKhuTro
             pnl_main.Controls.Clear();
             frm_test forms = new frm_test();
             forms.MaNhanVien = Tendn;
+            Visible = false;
             forms.ShowDialog();
             //frm_test test = new frm_test();
             
@@ -332,6 +333,14 @@ namespace QuanLyKhuTro
         private void btn_thongkephong_ItemClick(object sender, ItemClickEventArgs e)
         {
             frm_tkphong frm = new frm_tkphong();
+            frm.ShowDialog();
+        }
+
+        private void frm_main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frm_dangnhap frm = new frm_dangnhap();
+            
+            Visible = false;
             frm.ShowDialog();
         }
     }

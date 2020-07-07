@@ -173,6 +173,12 @@
     <Compile Include="NghiepVu\dialog_datphong.Designer.cs">
       <DependentUpon>dialog_datphong.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\frm_cocphong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\frm_cocphong.Designer.cs">
+      <DependentUpon>frm_cocphong.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\frm_danhsachphong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -291,6 +297,36 @@
     <Compile Include="ThongKe\frm_tkphong.Designer.cs">
       <DependentUpon>frm_tkphong.cs</DependentUpon>
     </Compile>
+    <Compile Include="user_thongkePhong\frm_dsphongcokhach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user_thongkePhong\frm_dsphongcokhach.Designer.cs">
+      <DependentUpon>frm_dsphongcokhach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="user_thongkePhong\frm_dsphongdcoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user_thongkePhong\frm_dsphongdcoc.Designer.cs">
+      <DependentUpon>frm_dsphongdcoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="user_thongkePhong\frm_dsphongsaptra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user_thongkePhong\frm_dsphongsaptra.Designer.cs">
+      <DependentUpon>frm_dsphongsaptra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="user_thongkePhong\frm_phongtrong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user_thongkePhong\frm_phongtrong.Designer.cs">
+      <DependentUpon>frm_phongtrong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="user_thongkePhong\frm_tongphong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user_thongkePhong\frm_tongphong.Designer.cs">
+      <DependentUpon>frm_tongphong.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DanhMuc\frm_dichvu.resx">
       <DependentUpon>frm_dichvu.cs</DependentUpon>
     </EmbeddedResource>
@@ -323,6 +359,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\dialog_datphong.resx">
       <DependentUpon>dialog_datphong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\frm_cocphong.resx">
+      <DependentUpon>frm_cocphong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\frm_danhsachphong.resx">
       <DependentUpon>frm_danhsachphong.cs</DependentUpon>
@@ -391,6 +430,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ThongKe\frm_tkphong.resx">
       <DependentUpon>frm_tkphong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_thongkePhong\frm_dsphongcokhach.resx">
+      <DependentUpon>frm_dsphongcokhach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_thongkePhong\frm_dsphongdcoc.resx">
+      <DependentUpon>frm_dsphongdcoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_thongkePhong\frm_dsphongsaptra.resx">
+      <DependentUpon>frm_dsphongsaptra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_thongkePhong\frm_phongtrong.resx">
+      <DependentUpon>frm_phongtrong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_thongkePhong\frm_tongphong.resx">
+      <DependentUpon>frm_tongphong.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

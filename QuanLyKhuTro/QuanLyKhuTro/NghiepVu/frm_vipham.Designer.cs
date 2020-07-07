@@ -714,7 +714,7 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.6051F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 296F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 161F));
             this.tableLayoutPanel10.Controls.Add(this.btn_tatcahd, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.btn_timkiem, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.cbo_phong, 0, 0);
@@ -733,7 +733,7 @@
             this.btn_tatcahd.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_tatcahd.Appearance.Options.UseFont = true;
             this.btn_tatcahd.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_tatcahd.ImageOptions.SvgImage")));
-            this.btn_tatcahd.Location = new System.Drawing.Point(309, 3);
+            this.btn_tatcahd.Location = new System.Drawing.Point(307, 3);
             this.btn_tatcahd.Name = "btn_tatcahd";
             this.btn_tatcahd.Size = new System.Drawing.Size(159, 40);
             this.btn_tatcahd.TabIndex = 10;
@@ -746,7 +746,7 @@
             this.btn_timkiem.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_timkiem.Appearance.Options.UseFont = true;
             this.btn_timkiem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_timkiem.ImageOptions.SvgImage")));
-            this.btn_timkiem.Location = new System.Drawing.Point(262, 3);
+            this.btn_timkiem.Location = new System.Drawing.Point(260, 3);
             this.btn_timkiem.Name = "btn_timkiem";
             this.btn_timkiem.Size = new System.Drawing.Size(41, 39);
             this.btn_timkiem.TabIndex = 8;
@@ -758,19 +758,19 @@
             this.cbo_phong.FormattingEnabled = true;
             this.cbo_phong.Location = new System.Drawing.Point(3, 9);
             this.cbo_phong.Name = "cbo_phong";
-            this.cbo_phong.Size = new System.Drawing.Size(253, 27);
+            this.cbo_phong.Size = new System.Drawing.Size(251, 27);
             this.cbo_phong.TabIndex = 4;
             // 
             // btn_xuathd
             // 
             this.btn_xuathd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_xuathd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_xuathd.ImageOptions.Image")));
-            this.btn_xuathd.Location = new System.Drawing.Point(770, 3);
+            this.btn_xuathd.Location = new System.Drawing.Point(768, 3);
             this.btn_xuathd.Name = "btn_xuathd";
-            this.btn_xuathd.Size = new System.Drawing.Size(154, 40);
+            this.btn_xuathd.Size = new System.Drawing.Size(156, 40);
             this.btn_xuathd.TabIndex = 13;
-            this.btn_xuathd.Text = "Xuất tạm trú";
-            this.btn_xuathd.Visible = false;
+            this.btn_xuathd.Text = "Xuất vi phạm";
+            this.btn_xuathd.Click += new System.EventHandler(this.btn_xuathd_Click);
             // 
             // label17
             // 

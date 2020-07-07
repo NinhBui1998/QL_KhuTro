@@ -25,7 +25,7 @@ namespace QuanLyKhuTro
         BLL_LoaiPhong bll_loai = new BLL_LoaiPhong();
         BLL_Tang bll_tang = new BLL_Tang();
         BLL_DSPhong bll_dsp = new BLL_DSPhong();
-        
+        BLL_HopDong bll_hd = new BLL_HopDong();
        
         public frm_test()
         {
@@ -39,6 +39,18 @@ namespace QuanLyKhuTro
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            //HOPDONG hd = new HOPDONG();
+            //hd = bll_hd.loadBang_hopdong();
+            //TimeSpan Time = Convert.ToDateTime(bll_dsp.layngaytra()) - Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            //int TongSoNgay = Time.Days;
+            lb_saptoihantra.Text = bll_dsp.tongphongsapdenhan();
+            lb_cokhach.Text = bll_dsp.tongphongcokhach();
+            lb_cokhachdat.Text = bll_dsp.tongphongcokhachcoc();
+            lb_Phongtrong.Text = bll_dsp.tongphongtrong();
+            //lb_saptoihantra.Text = bll_dsp.tongphongsapdenhan(TongSoNgay);
+
+
+
             cbo_loai.DataSource = bll_loai.loadBangLoaiPhong();
             cbo_loai.DisplayMember = "TENLOAI";
             cbo_loai.ValueMember = "MALOAI";
@@ -59,6 +71,8 @@ namespace QuanLyKhuTro
                 panel1.Controls.Add(l);
                 for (int i = 0; i < p.sphong(p.stang()[j].MATANG.ToString()).Count; i++)
                 {
+                  
+                    ///
                     x += 100;
                     Button b = new Button();
                     b.Text = p.sphong(p.stang()[j].MATANG.ToString())[i].TENPHONG.ToString();
@@ -69,9 +83,27 @@ namespace QuanLyKhuTro
                     if (p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_TD- p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT==0 
                         || (1 <= p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT && p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT < p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_TD))
                     {
+
+                        if (p.sphong(p.stang()[j].MATANG.ToString())[i].TINHTRANGHOPDONG == "Sắp hết hạn hợp đồng")
+                        {
+                           
+                                b.BackColor = Color.Crimson;
+                                b.Click += showdialog;
+                            
+                           
+                        }
+                        else if (p.sphong(p.stang()[j].MATANG.ToString())[i].TINHTRANGHOPDONG == "Đã có khách cọc")
+                        {
+                            b.BackColor = Color.Gray;
+                            b.Click += showformdatphong;
+                        }
+                        else
+                        {
                         b.BackColor = Color.SeaGreen;
-                        b.Click += showformtraphong;
+                            b.Click += showformtraphong;
+                        }
                     }
+                    ////////////////////////////////////////// 
                     else
                     {
                         b.BackColor = Color.White;
@@ -79,7 +111,10 @@ namespace QuanLyKhuTro
                        
                         b.Click += showformdatphong;
                     }
-                    
+                  
+                    ///////
+
+
                     panel1.Controls.Add(b);
                     
                 }
@@ -91,12 +126,12 @@ namespace QuanLyKhuTro
         }
         void showdialog(object sender, EventArgs e)
         {
-            dialog_datphong dialog = new dialog_datphong();
+            dialog_datphong frm = new dialog_datphong();
             Button btn = (Button)sender;
-            dialog.TenPhong = btn.Text;
-            dialog.MaNhanVien = MaNV;
+            frm.TenPhong = btn.Text;
+            frm.MaNhanVien = MaNV;
             Visible = false;
-            dialog.ShowDialog();
+            frm.ShowDialog();
         }
         void showformtraphong(object sender, EventArgs e)
         {
@@ -156,20 +191,39 @@ namespace QuanLyKhuTro
                 l.Size = new Size(60, 30);
                 l.Location = new Point(x, y);
                 panel1.Controls.Add(l);
-                for (int i = 0; i < p.sphong(p.stang()[j].MATANG.ToString()).Count; i++)
+                //for (int i = 0; i < p.sphong(p.stang()[j].MATANG.ToString()).Count; i++)
+                for (int i = 0; i < p.loadphong(p.stang()[j].MATANG.ToString(),cbo_loai.SelectedValue.ToString()).Count; i++)
                 {
                     x += 100;
                     Button b = new Button();
-                    b.Text = p.sphong(p.stang()[j].MATANG.ToString())[i].TENPHONG.ToString();
+                    //b.Text = p.sphong(p.stang()[j].MATANG.ToString())[i].TENPHONG.ToString();
+                    b.Text = p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].TENPHONG.ToString();
                     b.Tag = (i + 1).ToString();
                     b.Size = new Size(90, 60);
                     b.Location = new Point(x, y);
                     b.BackColor = Color.White;
-                    if (p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_TD - p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT == 0
-                        || (1 <= p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT && p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT < p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_TD))
+                    if (p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].SOLUONG_TD - p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].SOLUONG_HT == 0
+                        || (1 <= p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].SOLUONG_HT && 
+                        p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].SOLUONG_HT < p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].SOLUONG_TD))
                     {
-                        b.BackColor = Color.SeaGreen;
-                        b.Click += showformtraphong;
+                        if (p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].TINHTRANGHOPDONG == "Sắp hết hạn hợp đồng")
+                        {
+
+                            b.BackColor = Color.Crimson;
+                            b.Click += showdialog;
+
+
+                        }
+                        else if (p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].TINHTRANGHOPDONG == "Đã có khách cọc")
+                        {
+                            b.BackColor = Color.Gray;
+                            b.Click += showformdatphong;
+                        }
+                        else
+                        {
+                            b.BackColor = Color.SeaGreen;
+                            b.Click += showformtraphong;
+                        }
                     }
                     else
                     {
@@ -197,6 +251,14 @@ namespace QuanLyKhuTro
         {
             panel1.Controls.Clear();
             Form1_Load(sender, e);
+        }
+
+        private void frm_test_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frm_main frm = new frm_main();
+            frm.Tendn = MaNV;
+            Visible = false;
+            frm.ShowDialog();
         }
     }
 }

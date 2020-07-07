@@ -21,7 +21,8 @@ namespace DAL.Model
         double TONGTIEN;
         DateTime NGAYLAP;
         Boolean TINHTRANG;
-
+        string TENLOAI;
+        Decimal TIENPHONG;
         int SODIENCU;
         int SODIENMOI;
         int SONUOCCU;
@@ -97,5 +98,7 @@ namespace DAL.Model
         public int SoNuocCu { get => SONUOCCU; set => SONUOCCU = value; }
         public int SoNuocMoi { get => SONUOCMOI; set => SONUOCMOI = value; }
         public string ThangNam { get => THANGNAM; set => THANGNAM = value; }
+        public string TENLOAI1 { get => TENLOAI; set => TENLOAI = value; }
+        public decimal TIENPHONG1 { get => TIENPHONG; set => TIENPHONG = value; }
     }
 }

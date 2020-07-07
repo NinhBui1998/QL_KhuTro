@@ -34,16 +34,16 @@
             // 
             // btn_datphong
             // 
-            this.btn_datphong.Location = new System.Drawing.Point(50, 58);
+            this.btn_datphong.Location = new System.Drawing.Point(12, 12);
             this.btn_datphong.Name = "btn_datphong";
             this.btn_datphong.Size = new System.Drawing.Size(130, 52);
             this.btn_datphong.TabIndex = 0;
-            this.btn_datphong.Text = "Đặt phòng";
+            this.btn_datphong.Text = "Cọc phòng";
             this.btn_datphong.Click += new System.EventHandler(this.btn_datphong_Click);
             // 
             // btn_traphong
             // 
-            this.btn_traphong.Location = new System.Drawing.Point(249, 58);
+            this.btn_traphong.Location = new System.Drawing.Point(180, 12);
             this.btn_traphong.Name = "btn_traphong";
             this.btn_traphong.Size = new System.Drawing.Size(130, 52);
             this.btn_traphong.TabIndex = 0;
@@ -54,12 +54,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 155);
+            this.ClientSize = new System.Drawing.Size(330, 75);
             this.Controls.Add(this.btn_traphong);
             this.Controls.Add(this.btn_datphong);
             this.Name = "dialog_datphong";
             this.Text = "dialog_datphong";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.dialog_datphong_FormClosing);
+            this.Load += new System.EventHandler(this.dialog_datphong_Load);
             this.ResumeLayout(false);
 
         }

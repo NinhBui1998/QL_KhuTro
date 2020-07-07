@@ -84,6 +84,7 @@ namespace QuanLyKhuTro.DanhMuc
             kt.TENKT = txt_tenkt.Text;
             kt.SDT = txt_sdt.Text;
             kt.ANH = b;
+            kt.TINHTRANGTAMTRU = "chưa đăng ký";
             if (rdb_nam.Checked == true)
             {
                 kt.GIOITINH = rdb_nam.Text;
@@ -295,6 +296,37 @@ namespace QuanLyKhuTro.DanhMuc
         private void btn_tatcahd_Click(object sender, EventArgs e)
         {
             grv_khachthue.DataSource = khachthue.loadBangKT();
+        }
+
+        private void txt_cmnd_Leave(object sender, EventArgs e)
+        {
+            if(khachthue.kt_Socm(txt_cmnd.Text)==true)
+            {
+                MessageBox.Show("Trùng số chứng minh");
+                return;
+            }
+            else
+            {
+                return;
+            }    
+        }
+
+        private void txt_sdt_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txt_sdt_Leave(object sender, EventArgs e)
+        {
+            if (khachthue.kt_SoDT(txt_sdt.Text) == true)
+            {
+                MessageBox.Show("Trùng số điện thoại");
+                return;
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

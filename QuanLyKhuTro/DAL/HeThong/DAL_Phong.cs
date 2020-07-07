@@ -145,6 +145,7 @@ namespace DAL
             return sp;
         }
 
+
         public List<TANG> st()
         {
             var sp = (from s in data.TANGs select s).ToList<TANG>();

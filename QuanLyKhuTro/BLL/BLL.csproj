@@ -69,6 +69,8 @@
     <Compile Include="NghiepVu\BLL_TraPhong.cs" />
     <Compile Include="NghiepVu\BLL_HoaDon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThongKe\BLL_ThongKeDoanhThu.cs" />
+    <Compile Include="ThongKe\BLL_ThongKePhong.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

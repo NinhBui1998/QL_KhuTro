@@ -255,35 +255,40 @@
             // 
             // txt_tenkt
             // 
-            this.txt_tenkt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_tenkt.Location = new System.Drawing.Point(124, 94);
+            this.txt_tenkt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_tenkt.Location = new System.Drawing.Point(124, 101);
             this.txt_tenkt.Name = "txt_tenkt";
             this.txt_tenkt.Size = new System.Drawing.Size(262, 30);
             this.txt_tenkt.TabIndex = 1;
             // 
             // txt_sdt
             // 
-            this.txt_sdt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_sdt.Location = new System.Drawing.Point(124, 196);
+            this.txt_sdt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_sdt.Location = new System.Drawing.Point(124, 203);
+            this.txt_sdt.MaxLength = 10;
             this.txt_sdt.Name = "txt_sdt";
             this.txt_sdt.Size = new System.Drawing.Size(262, 30);
             this.txt_sdt.TabIndex = 1;
+            this.txt_sdt.TextChanged += new System.EventHandler(this.txt_sdt_TextChanged);
+            this.txt_sdt.Leave += new System.EventHandler(this.txt_sdt_Leave);
             // 
             // txt_quequan
             // 
-            this.txt_quequan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_quequan.Location = new System.Drawing.Point(124, 247);
+            this.txt_quequan.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_quequan.Location = new System.Drawing.Point(124, 254);
             this.txt_quequan.Name = "txt_quequan";
             this.txt_quequan.Size = new System.Drawing.Size(262, 30);
             this.txt_quequan.TabIndex = 1;
             // 
             // txt_cmnd
             // 
-            this.txt_cmnd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_cmnd.Location = new System.Drawing.Point(124, 298);
+            this.txt_cmnd.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_cmnd.Location = new System.Drawing.Point(124, 305);
+            this.txt_cmnd.MaxLength = 9;
             this.txt_cmnd.Name = "txt_cmnd";
             this.txt_cmnd.Size = new System.Drawing.Size(262, 30);
             this.txt_cmnd.TabIndex = 1;
+            this.txt_cmnd.Leave += new System.EventHandler(this.txt_cmnd_Leave);
             // 
             // txt_ngaysinh
             // 
@@ -312,10 +317,11 @@
             // 
             // rdb_nam
             // 
+            this.rdb_nam.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rdb_nam.AutoSize = true;
             this.rdb_nam.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdb_nam.ForeColor = System.Drawing.Color.Black;
-            this.rdb_nam.Location = new System.Drawing.Point(3, 3);
+            this.rdb_nam.Location = new System.Drawing.Point(3, 11);
             this.rdb_nam.Name = "rdb_nam";
             this.rdb_nam.Size = new System.Drawing.Size(59, 23);
             this.rdb_nam.TabIndex = 0;
@@ -325,10 +331,11 @@
             // 
             // rdb_nu
             // 
+            this.rdb_nu.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rdb_nu.AutoSize = true;
             this.rdb_nu.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdb_nu.ForeColor = System.Drawing.Color.Black;
-            this.rdb_nu.Location = new System.Drawing.Point(81, 3);
+            this.rdb_nu.Location = new System.Drawing.Point(81, 11);
             this.rdb_nu.Name = "rdb_nu";
             this.rdb_nu.Size = new System.Drawing.Size(48, 23);
             this.rdb_nu.TabIndex = 0;

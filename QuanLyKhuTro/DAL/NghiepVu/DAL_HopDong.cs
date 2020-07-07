@@ -16,6 +16,11 @@ namespace DAL
             var dulieu = (from s in data.HOPDONGs select s);
             return dulieu.ToList<HOPDONG>();
         }
+        public HOPDONG loadbangHd()
+        {
+            var dulieu = (from s in data.HOPDONGs select s).FirstOrDefault();
+            return dulieu;
+        }
 
         //kiểm tra khóa chính
         public bool ktakhoachinh_HopDong(string hd)

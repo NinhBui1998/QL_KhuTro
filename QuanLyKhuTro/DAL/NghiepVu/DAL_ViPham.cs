@@ -155,6 +155,12 @@ namespace DAL.NghiepVu
                 return false;
             }
         }
+        public string laymaphong (string makt)
+        {
+            var kq = (from kt in data.KHACHTHUEs
+                      select kt.MAPHONG).FirstOrDefault();
+            return kq.ToString();
+        }
     }
    
 }

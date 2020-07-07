@@ -36,10 +36,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.txt_nam = new System.Windows.Forms.TextBox();
             this.cbb_thang = new System.Windows.Forms.ComboBox();
-            this.cbb_nam = new System.Windows.Forms.ComboBox();
+            this.ckb_thang = new System.Windows.Forms.CheckBox();
+            this.ckb_nam = new System.Windows.Forms.CheckBox();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
@@ -49,14 +49,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txt_tongtiendien = new System.Windows.Forms.TextBox();
+            this.txt_tongtiennuoc = new System.Windows.Forms.TextBox();
+            this.txt_tienwifi = new System.Windows.Forms.TextBox();
+            this.txt_tongtienrac = new System.Windows.Forms.TextBox();
+            this.txt_tongtienphong = new System.Windows.Forms.TextBox();
+            this.txt_tongdt = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_tinhtunam = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -69,17 +69,17 @@
             this.gridView_hoadon = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.MaHD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.THANGNAM = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TenTang = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TenPhong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.SoDien = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TienDien = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.SoNuoc = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TienNuoc = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Wifi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Rac = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NgayLap = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TongTien = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TenNV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TENTANG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TENLOAI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TENPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TIENPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TIENDIEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TIENNUOC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.WIFI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.RAC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NGAYLAP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TONGTIEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TENNV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TINHTRANG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
@@ -138,12 +138,12 @@
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel9, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 35);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 36);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1378, 573);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 572F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1378, 572);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -161,7 +161,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.75661F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.78484F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(348, 567);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(348, 566);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // groupBox1
@@ -203,10 +203,10 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.88372F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.11628F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Controls.Add(this.radioButton1, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.radioButton2, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.txt_nam, 1, 1);
             this.tableLayoutPanel5.Controls.Add(this.cbb_thang, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.cbb_nam, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.ckb_thang, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.ckb_nam, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(76, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -216,47 +216,57 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(257, 75);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
-            // radioButton1
+            // txt_nam
             // 
-            this.radioButton1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(3, 7);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(67, 23);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Tháng";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(3, 44);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(59, 23);
-            this.radioButton2.TabIndex = 0;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Năm";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.txt_nam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_nam.Location = new System.Drawing.Point(92, 42);
+            this.txt_nam.Name = "txt_nam";
+            this.txt_nam.Size = new System.Drawing.Size(162, 27);
+            this.txt_nam.TabIndex = 4;
             // 
             // cbb_thang
             // 
             this.cbb_thang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbb_thang.FormattingEnabled = true;
+            this.cbb_thang.Items.AddRange(new object[] {
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12"});
             this.cbb_thang.Location = new System.Drawing.Point(92, 5);
             this.cbb_thang.Name = "cbb_thang";
             this.cbb_thang.Size = new System.Drawing.Size(162, 27);
             this.cbb_thang.TabIndex = 2;
             // 
-            // cbb_nam
+            // ckb_thang
             // 
-            this.cbb_nam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbb_nam.FormattingEnabled = true;
-            this.cbb_nam.Location = new System.Drawing.Point(92, 42);
-            this.cbb_nam.Name = "cbb_nam";
-            this.cbb_nam.Size = new System.Drawing.Size(162, 27);
-            this.cbb_nam.TabIndex = 2;
+            this.ckb_thang.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.ckb_thang.AutoSize = true;
+            this.ckb_thang.Location = new System.Drawing.Point(3, 7);
+            this.ckb_thang.Name = "ckb_thang";
+            this.ckb_thang.Size = new System.Drawing.Size(68, 23);
+            this.ckb_thang.TabIndex = 3;
+            this.ckb_thang.Text = "Tháng";
+            this.ckb_thang.UseVisualStyleBackColor = true;
+            // 
+            // ckb_nam
+            // 
+            this.ckb_nam.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.ckb_nam.AutoSize = true;
+            this.ckb_nam.Location = new System.Drawing.Point(3, 44);
+            this.ckb_nam.Name = "ckb_nam";
+            this.ckb_nam.Size = new System.Drawing.Size(60, 23);
+            this.ckb_nam.TabIndex = 3;
+            this.ckb_nam.Text = "Năm";
+            this.ckb_nam.UseVisualStyleBackColor = true;
             // 
             // simpleButton1
             // 
@@ -270,6 +280,7 @@
             this.simpleButton1.Size = new System.Drawing.Size(67, 75);
             this.simpleButton1.TabIndex = 1;
             this.simpleButton1.Text = "Tính";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // groupBox2
             // 
@@ -279,7 +290,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.Red;
             this.groupBox2.Location = new System.Drawing.Point(3, 196);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(342, 368);
+            this.groupBox2.Size = new System.Drawing.Size(342, 367);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Doanh thu";
@@ -295,12 +306,12 @@
             this.tableLayoutPanel6.Controls.Add(this.label7, 0, 3);
             this.tableLayoutPanel6.Controls.Add(this.label8, 0, 4);
             this.tableLayoutPanel6.Controls.Add(this.label9, 0, 5);
-            this.tableLayoutPanel6.Controls.Add(this.textBox1, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.textBox2, 1, 1);
-            this.tableLayoutPanel6.Controls.Add(this.textBox3, 1, 2);
-            this.tableLayoutPanel6.Controls.Add(this.textBox4, 1, 3);
-            this.tableLayoutPanel6.Controls.Add(this.textBox5, 1, 4);
-            this.tableLayoutPanel6.Controls.Add(this.textBox6, 1, 5);
+            this.tableLayoutPanel6.Controls.Add(this.txt_tongtiendien, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.txt_tongtiennuoc, 1, 1);
+            this.tableLayoutPanel6.Controls.Add(this.txt_tienwifi, 1, 2);
+            this.tableLayoutPanel6.Controls.Add(this.txt_tongtienrac, 1, 3);
+            this.tableLayoutPanel6.Controls.Add(this.txt_tongtienphong, 1, 4);
+            this.tableLayoutPanel6.Controls.Add(this.txt_tongdt, 1, 5);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel6.ForeColor = System.Drawing.Color.Black;
@@ -313,7 +324,7 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(336, 339);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(336, 338);
             this.tableLayoutPanel6.TabIndex = 2;
             // 
             // label4
@@ -377,67 +388,67 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(3, 300);
+            this.label9.Location = new System.Drawing.Point(3, 299);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(145, 19);
             this.label9.TabIndex = 0;
             this.label9.Text = "Tổng doanh thu";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // txt_tongtiendien
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(154, 14);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 27);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_tongtiendien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_tongtiendien.Location = new System.Drawing.Point(154, 14);
+            this.txt_tongtiendien.Name = "txt_tongtiendien";
+            this.txt_tongtiendien.Size = new System.Drawing.Size(179, 27);
+            this.txt_tongtiendien.TabIndex = 1;
+            this.txt_tongtiendien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox2
+            // txt_tongtiennuoc
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(154, 70);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(179, 27);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_tongtiennuoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_tongtiennuoc.Location = new System.Drawing.Point(154, 70);
+            this.txt_tongtiennuoc.Name = "txt_tongtiennuoc";
+            this.txt_tongtiennuoc.Size = new System.Drawing.Size(179, 27);
+            this.txt_tongtiennuoc.TabIndex = 1;
+            this.txt_tongtiennuoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox3
+            // txt_tienwifi
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(154, 126);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(179, 27);
-            this.textBox3.TabIndex = 1;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_tienwifi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_tienwifi.Location = new System.Drawing.Point(154, 126);
+            this.txt_tienwifi.Name = "txt_tienwifi";
+            this.txt_tienwifi.Size = new System.Drawing.Size(179, 27);
+            this.txt_tienwifi.TabIndex = 1;
+            this.txt_tienwifi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox4
+            // txt_tongtienrac
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(154, 182);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(179, 27);
-            this.textBox4.TabIndex = 1;
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_tongtienrac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_tongtienrac.Location = new System.Drawing.Point(154, 182);
+            this.txt_tongtienrac.Name = "txt_tongtienrac";
+            this.txt_tongtienrac.Size = new System.Drawing.Size(179, 27);
+            this.txt_tongtienrac.TabIndex = 1;
+            this.txt_tongtienrac.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox5
+            // txt_tongtienphong
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Location = new System.Drawing.Point(154, 238);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(179, 27);
-            this.textBox5.TabIndex = 1;
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_tongtienphong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_tongtienphong.Location = new System.Drawing.Point(154, 238);
+            this.txt_tongtienphong.Name = "txt_tongtienphong";
+            this.txt_tongtienphong.Size = new System.Drawing.Size(179, 27);
+            this.txt_tongtienphong.TabIndex = 1;
+            this.txt_tongtienphong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox6
+            // txt_tongdt
             // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(154, 296);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(179, 27);
-            this.textBox6.TabIndex = 1;
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_tongdt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_tongdt.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tongdt.Location = new System.Drawing.Point(154, 295);
+            this.txt_tongdt.Name = "txt_tongdt";
+            this.txt_tongdt.Size = new System.Drawing.Size(179, 27);
+            this.txt_tongdt.TabIndex = 1;
+            this.txt_tongdt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel7
             // 
@@ -445,29 +456,30 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.51462F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.48538F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel7.Controls.Add(this.simpleButton2, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.btn_tinhtunam, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel8, 1, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 119);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(342, 71);
             this.tableLayoutPanel7.TabIndex = 3;
             // 
-            // simpleButton2
+            // btn_tinhtunam
             // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Appearance.Options.UseForeColor = true;
-            this.simpleButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.simpleButton2.Location = new System.Drawing.Point(3, 3);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(70, 65);
-            this.simpleButton2.TabIndex = 2;
-            this.simpleButton2.Text = "Tính";
+            this.btn_tinhtunam.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_tinhtunam.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_tinhtunam.Appearance.Options.UseFont = true;
+            this.btn_tinhtunam.Appearance.Options.UseForeColor = true;
+            this.btn_tinhtunam.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_tinhtunam.Location = new System.Drawing.Point(3, 3);
+            this.btn_tinhtunam.Name = "btn_tinhtunam";
+            this.btn_tinhtunam.Size = new System.Drawing.Size(70, 65);
+            this.btn_tinhtunam.TabIndex = 2;
+            this.btn_tinhtunam.Text = "Tính";
+            this.btn_tinhtunam.Click += new System.EventHandler(this.btn_tinhtunam_Click);
             // 
             // tableLayoutPanel8
             // 
@@ -524,6 +536,19 @@
             // 
             this.cbb_denthang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbb_denthang.FormattingEnabled = true;
+            this.cbb_denthang.Items.AddRange(new object[] {
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12"});
             this.cbb_denthang.Location = new System.Drawing.Point(92, 35);
             this.cbb_denthang.Name = "cbb_denthang";
             this.cbb_denthang.Size = new System.Drawing.Size(56, 27);
@@ -533,6 +558,19 @@
             // 
             this.cbb_tuthang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbb_tuthang.FormattingEnabled = true;
+            this.cbb_tuthang.Items.AddRange(new object[] {
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12"});
             this.cbb_tuthang.Location = new System.Drawing.Point(92, 3);
             this.cbb_tuthang.Name = "cbb_tuthang";
             this.cbb_tuthang.Size = new System.Drawing.Size(56, 27);
@@ -559,17 +597,17 @@
             this.tableLayoutPanel9.RowCount = 2;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.447415F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.55258F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(1018, 567);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(1018, 566);
             this.tableLayoutPanel9.TabIndex = 1;
             // 
             // grv_hoadon
             // 
             this.grv_hoadon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grv_hoadon.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.grv_hoadon.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1);
             this.grv_hoadon.Location = new System.Drawing.Point(3, 56);
             this.grv_hoadon.MainView = this.gridView_hoadon;
             this.grv_hoadon.Name = "grv_hoadon";
-            this.grv_hoadon.Size = new System.Drawing.Size(1012, 508);
+            this.grv_hoadon.Size = new System.Drawing.Size(1012, 507);
             this.grv_hoadon.TabIndex = 2;
             this.grv_hoadon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_hoadon});
@@ -579,17 +617,17 @@
             this.gridView_hoadon.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.MaHD,
             this.THANGNAM,
-            this.TenTang,
-            this.TenPhong,
-            this.SoDien,
-            this.TienDien,
-            this.SoNuoc,
-            this.TienNuoc,
-            this.Wifi,
-            this.Rac,
-            this.NgayLap,
-            this.TongTien,
-            this.TenNV,
+            this.TENTANG,
+            this.TENLOAI,
+            this.TENPHONG,
+            this.TIENPHONG,
+            this.TIENDIEN,
+            this.TIENNUOC,
+            this.WIFI,
+            this.RAC,
+            this.NGAYLAP,
+            this.TONGTIEN,
+            this.TENNV,
             this.TINHTRANG});
             this.gridView_hoadon.GridControl = this.grv_hoadon;
             this.gridView_hoadon.Name = "gridView_hoadon";
@@ -610,103 +648,107 @@
             this.THANGNAM.Visible = true;
             this.THANGNAM.VisibleIndex = 1;
             // 
-            // TenTang
+            // TENTANG
             // 
-            this.TenTang.Caption = "Tên tầng";
-            this.TenTang.FieldName = "TenTang";
-            this.TenTang.Name = "TenTang";
-            this.TenTang.Visible = true;
-            this.TenTang.VisibleIndex = 2;
+            this.TENTANG.Caption = "Tên tầng";
+            this.TENTANG.FieldName = "TenTang";
+            this.TENTANG.Name = "TENTANG";
+            this.TENTANG.Visible = true;
+            this.TENTANG.VisibleIndex = 2;
             // 
-            // TenPhong
+            // TENLOAI
             // 
-            this.TenPhong.Caption = "Tên Phòng";
-            this.TenPhong.FieldName = "TenPhong";
-            this.TenPhong.Name = "TenPhong";
-            this.TenPhong.Visible = true;
-            this.TenPhong.VisibleIndex = 3;
+            this.TENLOAI.Caption = "Tên loại phòng";
+            this.TENLOAI.FieldName = "TENLOAI1";
+            this.TENLOAI.Name = "TENLOAI";
+            this.TENLOAI.Visible = true;
+            this.TENLOAI.VisibleIndex = 3;
             // 
-            // SoDien
+            // TENPHONG
             // 
-            this.SoDien.Caption = "Số điện";
-            this.SoDien.FieldName = "SoDien";
-            this.SoDien.Name = "SoDien";
-            this.SoDien.Visible = true;
-            this.SoDien.VisibleIndex = 4;
+            this.TENPHONG.Caption = "Tên Phòng";
+            this.TENPHONG.FieldName = "TenPhong";
+            this.TENPHONG.Name = "TENPHONG";
+            this.TENPHONG.Visible = true;
+            this.TENPHONG.VisibleIndex = 4;
             // 
-            // TienDien
+            // TIENPHONG
             // 
-            this.TienDien.Caption = "Tiền điện";
-            this.TienDien.DisplayFormat.FormatString = "#,###";
-            this.TienDien.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.TienDien.FieldName = "TienDien";
-            this.TienDien.Name = "TienDien";
-            this.TienDien.Visible = true;
-            this.TienDien.VisibleIndex = 5;
+            this.TIENPHONG.Caption = "Tiền phòng";
+            this.TIENPHONG.DisplayFormat.FormatString = "#,###";
+            this.TIENPHONG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.TIENPHONG.FieldName = "TIENPHONG1";
+            this.TIENPHONG.GroupFormat.FormatString = "#,###";
+            this.TIENPHONG.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.TIENPHONG.Name = "TIENPHONG";
+            this.TIENPHONG.Visible = true;
+            this.TIENPHONG.VisibleIndex = 5;
             // 
-            // SoNuoc
+            // TIENDIEN
             // 
-            this.SoNuoc.Caption = "Số nước";
-            this.SoNuoc.FieldName = "SoNuoc";
-            this.SoNuoc.Name = "SoNuoc";
-            this.SoNuoc.Visible = true;
-            this.SoNuoc.VisibleIndex = 6;
+            this.TIENDIEN.Caption = "Tiền điện";
+            this.TIENDIEN.DisplayFormat.FormatString = "#,###";
+            this.TIENDIEN.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.TIENDIEN.FieldName = "TienDien";
+            this.TIENDIEN.Name = "TIENDIEN";
+            this.TIENDIEN.Visible = true;
+            this.TIENDIEN.VisibleIndex = 6;
             // 
-            // TienNuoc
+            // TIENNUOC
             // 
-            this.TienNuoc.Caption = "Tiền nước";
-            this.TienNuoc.DisplayFormat.FormatString = "#,###";
-            this.TienNuoc.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.TienNuoc.FieldName = "TienNuoc";
-            this.TienNuoc.Name = "TienNuoc";
-            this.TienNuoc.Visible = true;
-            this.TienNuoc.VisibleIndex = 7;
+            this.TIENNUOC.Caption = "Tiền nước";
+            this.TIENNUOC.DisplayFormat.FormatString = "#,###";
+            this.TIENNUOC.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.TIENNUOC.FieldName = "TienNuoc";
+            this.TIENNUOC.Name = "TIENNUOC";
+            this.TIENNUOC.Visible = true;
+            this.TIENNUOC.VisibleIndex = 7;
             // 
-            // Wifi
+            // WIFI
             // 
-            this.Wifi.Caption = "Tiền Wifi";
-            this.Wifi.DisplayFormat.FormatString = "#,###";
-            this.Wifi.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.Wifi.FieldName = "Wifi";
-            this.Wifi.Name = "Wifi";
-            this.Wifi.Visible = true;
-            this.Wifi.VisibleIndex = 8;
+            this.WIFI.Caption = "Tiền Wifi";
+            this.WIFI.DisplayFormat.FormatString = "#,###";
+            this.WIFI.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.WIFI.FieldName = "Wifi";
+            this.WIFI.Name = "WIFI";
+            this.WIFI.Visible = true;
+            this.WIFI.VisibleIndex = 8;
             // 
-            // Rac
+            // RAC
             // 
-            this.Rac.Caption = "Tiền rác";
-            this.Rac.DisplayFormat.FormatString = "#,###";
-            this.Rac.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.Rac.FieldName = "Rac";
-            this.Rac.Name = "Rac";
-            this.Rac.Visible = true;
-            this.Rac.VisibleIndex = 9;
+            this.RAC.Caption = "Tiền rác";
+            this.RAC.DisplayFormat.FormatString = "#,###";
+            this.RAC.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.RAC.FieldName = "Rac";
+            this.RAC.Name = "RAC";
+            this.RAC.Visible = true;
+            this.RAC.VisibleIndex = 9;
             // 
-            // NgayLap
+            // NGAYLAP
             // 
-            this.NgayLap.Caption = "Ngày lập";
-            this.NgayLap.FieldName = "NgayLap";
-            this.NgayLap.Name = "NgayLap";
-            this.NgayLap.Visible = true;
-            this.NgayLap.VisibleIndex = 10;
+            this.NGAYLAP.Caption = "Ngày lập";
+            this.NGAYLAP.FieldName = "NgayLap";
+            this.NGAYLAP.Name = "NGAYLAP";
+            this.NGAYLAP.Visible = true;
+            this.NGAYLAP.VisibleIndex = 10;
             // 
-            // TongTien
+            // TONGTIEN
             // 
-            this.TongTien.Caption = "Tổng tiền";
-            this.TongTien.DisplayFormat.FormatString = "#,###";
-            this.TongTien.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.TongTien.FieldName = "TongTien";
-            this.TongTien.Name = "TongTien";
-            this.TongTien.Visible = true;
-            this.TongTien.VisibleIndex = 11;
+            this.TONGTIEN.Caption = "Tổng tiền";
+            this.TONGTIEN.DisplayFormat.FormatString = "#,###";
+            this.TONGTIEN.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.TONGTIEN.FieldName = "TongTien";
+            this.TONGTIEN.Name = "TONGTIEN";
+            this.TONGTIEN.Visible = true;
+            this.TONGTIEN.VisibleIndex = 11;
             // 
-            // TenNV
+            // TENNV
             // 
-            this.TenNV.Caption = "Tên nhân viên";
-            this.TenNV.FieldName = "TenNV";
-            this.TenNV.Name = "TenNV";
-            this.TenNV.Visible = true;
-            this.TenNV.VisibleIndex = 12;
+            this.TENNV.Caption = "Tên nhân viên";
+            this.TENNV.FieldName = "TenNV";
+            this.TENNV.Name = "TENNV";
+            this.TENNV.Visible = true;
+            this.TENNV.VisibleIndex = 12;
             // 
             // TINHTRANG
             // 
@@ -742,6 +784,7 @@
             this.simpleButton3.Size = new System.Drawing.Size(131, 41);
             this.simpleButton3.TabIndex = 3;
             this.simpleButton3.Text = "Xuất danh sách";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // frm_tkdoanhthu
             // 
@@ -754,6 +797,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_tkdoanhthu";
             this.Text = "frm_tkdoanhthu";
+            this.Load += new System.EventHandler(this.frm_tkdoanhthu_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -784,12 +828,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private System.Windows.Forms.ComboBox cbb_thang;
-        private System.Windows.Forms.ComboBox cbb_nam;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Label label4;
@@ -798,14 +837,14 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txt_tongtiendien;
+        private System.Windows.Forms.TextBox txt_tongtiennuoc;
+        private System.Windows.Forms.TextBox txt_tienwifi;
+        private System.Windows.Forms.TextBox txt_tongtienrac;
+        private System.Windows.Forms.TextBox txt_tongtienphong;
+        private System.Windows.Forms.TextBox txt_tongdt;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btn_tinhtunam;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -819,18 +858,23 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView_hoadon;
         private DevExpress.XtraGrid.Columns.GridColumn MaHD;
         private DevExpress.XtraGrid.Columns.GridColumn THANGNAM;
-        private DevExpress.XtraGrid.Columns.GridColumn TenTang;
-        private DevExpress.XtraGrid.Columns.GridColumn TenPhong;
-        private DevExpress.XtraGrid.Columns.GridColumn SoDien;
-        private DevExpress.XtraGrid.Columns.GridColumn TienDien;
-        private DevExpress.XtraGrid.Columns.GridColumn SoNuoc;
-        private DevExpress.XtraGrid.Columns.GridColumn TienNuoc;
-        private DevExpress.XtraGrid.Columns.GridColumn Wifi;
-        private DevExpress.XtraGrid.Columns.GridColumn Rac;
-        private DevExpress.XtraGrid.Columns.GridColumn NgayLap;
-        private DevExpress.XtraGrid.Columns.GridColumn TongTien;
-        private DevExpress.XtraGrid.Columns.GridColumn TenNV;
+        private DevExpress.XtraGrid.Columns.GridColumn TENTANG;
+        private DevExpress.XtraGrid.Columns.GridColumn TENPHONG;
+        private DevExpress.XtraGrid.Columns.GridColumn TIENDIEN;
+        private DevExpress.XtraGrid.Columns.GridColumn TIENNUOC;
+        private DevExpress.XtraGrid.Columns.GridColumn WIFI;
+        private DevExpress.XtraGrid.Columns.GridColumn RAC;
+        private DevExpress.XtraGrid.Columns.GridColumn NGAYLAP;
+        private DevExpress.XtraGrid.Columns.GridColumn TONGTIEN;
+        private DevExpress.XtraGrid.Columns.GridColumn TENNV;
         private DevExpress.XtraGrid.Columns.GridColumn TINHTRANG;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraGrid.Columns.GridColumn TENLOAI;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.ComboBox cbb_thang;
+        private System.Windows.Forms.CheckBox ckb_thang;
+        private System.Windows.Forms.CheckBox ckb_nam;
+        private System.Windows.Forms.TextBox txt_nam;
+        private DevExpress.XtraGrid.Columns.GridColumn TIENPHONG;
     }
 }

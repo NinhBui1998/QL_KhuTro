@@ -276,7 +276,7 @@
             this.tableLayoutPanel4.ColumnCount = 3;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.74397F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.25604F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
             this.tableLayoutPanel4.Controls.Add(this.cbo_phong, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.btn_tatcahd, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.btn_timkiem, 1, 0);
@@ -295,7 +295,7 @@
             this.cbo_phong.FormattingEnabled = true;
             this.cbo_phong.Location = new System.Drawing.Point(3, 31);
             this.cbo_phong.Name = "cbo_phong";
-            this.cbo_phong.Size = new System.Drawing.Size(153, 27);
+            this.cbo_phong.Size = new System.Drawing.Size(152, 27);
             this.cbo_phong.TabIndex = 10;
             // 
             // btn_tatcahd
@@ -304,9 +304,9 @@
             this.btn_tatcahd.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_tatcahd.Appearance.Options.UseFont = true;
             this.btn_tatcahd.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_tatcahd.ImageOptions.SvgImage")));
-            this.btn_tatcahd.Location = new System.Drawing.Point(205, 26);
+            this.btn_tatcahd.Location = new System.Drawing.Point(203, 26);
             this.btn_tatcahd.Name = "btn_tatcahd";
-            this.btn_tatcahd.Size = new System.Drawing.Size(68, 31);
+            this.btn_tatcahd.Size = new System.Drawing.Size(70, 31);
             this.btn_tatcahd.TabIndex = 11;
             this.btn_tatcahd.Text = "Tất cả";
             this.btn_tatcahd.Click += new System.EventHandler(this.btn_tatcahd_Click);
@@ -317,9 +317,9 @@
             this.btn_timkiem.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_timkiem.Appearance.Options.UseFont = true;
             this.btn_timkiem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_timkiem.ImageOptions.SvgImage")));
-            this.btn_timkiem.Location = new System.Drawing.Point(162, 29);
+            this.btn_timkiem.Location = new System.Drawing.Point(161, 29);
             this.btn_timkiem.Name = "btn_timkiem";
-            this.btn_timkiem.Size = new System.Drawing.Size(37, 24);
+            this.btn_timkiem.Size = new System.Drawing.Size(36, 24);
             this.btn_timkiem.TabIndex = 9;
             this.btn_timkiem.Click += new System.EventHandler(this.btn_timkiem_Click);
             // 
@@ -421,6 +421,7 @@
             this.simpleButton1.Size = new System.Drawing.Size(132, 27);
             this.simpleButton1.TabIndex = 12;
             this.simpleButton1.Text = "Tạm trú";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // btn_tinh
             // 

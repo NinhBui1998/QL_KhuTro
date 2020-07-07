@@ -43,6 +43,10 @@ namespace BLL
         {
             return dkt.sua_KhachThue(pkt);
         }
+        public bool sua_tinhtrangkt(KHACHTHUE pkt)
+        {
+            return dkt.sua_tinhtrangkt(pkt);
+        }
         public Array layanh(string pma)
         {
             try
@@ -54,6 +58,14 @@ namespace BLL
                 return null;
             }
             
+        }
+        public bool kt_Socm(string scm)
+        {
+            return dkt.KT_SCMKT(scm);
+        }
+        public bool kt_SoDT(string sdt)
+        {
+            return dkt.KT_SODT(sdt);
         }
     }
 }

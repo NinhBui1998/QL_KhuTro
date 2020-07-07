@@ -25,5 +25,34 @@ namespace DAL.Model
         {
             return data.SINHMA_TAMTRU();
         }
+        public int updatekhachthuesaphethantt()
+        {
+            return data.updatehopdongsaphethan();
+        }
+        public int updatekhachthuedadktt()
+        {
+            return data.updatekhachthuedadktt();
+        }
+        public int updatekhachthuedahethantt()
+        {
+            return data.updatekhachthuedahethantt();
+        }
+        public int updatehopdongsaphethan()
+        {
+            return data.updatehopdongsaphethan();
+        }
+        public int updatehopdongconthoihan()
+        {
+            return data.updatehopdongconthoihan();
+        }
+        public int updatehopdonghethan()
+        {
+            return data.updatehopdonghethan();
+        }
+
+        public int Capnhapphongdacoc()
+        {
+            return data.updatephongdacoc();
+        }
     }
 }

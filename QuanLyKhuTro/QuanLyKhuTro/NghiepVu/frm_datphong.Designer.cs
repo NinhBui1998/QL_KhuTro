@@ -260,6 +260,7 @@
             this.txt_sdt.TabIndex = 2;
             this.txt_sdt.TextChanged += new System.EventHandler(this.txt_sdt_TextChanged);
             this.txt_sdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sdt_KeyPress);
+            this.txt_sdt.Leave += new System.EventHandler(this.txt_sdt_Leave);
             // 
             // label6
             // 
@@ -381,6 +382,7 @@
             this.txt_cmnd.Name = "txt_cmnd";
             this.txt_cmnd.Size = new System.Drawing.Size(313, 27);
             this.txt_cmnd.TabIndex = 2;
+            this.txt_cmnd.Leave += new System.EventHandler(this.txt_cmnd_Leave);
             // 
             // groupBox1
             // 
@@ -399,6 +401,8 @@
             this.pic_anh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pic_anh.BackColor = System.Drawing.Color.DarkKhaki;
+            this.pic_anh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pic_anh.BackgroundImage")));
+            this.pic_anh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pic_anh.Location = new System.Drawing.Point(6, 26);
             this.pic_anh.Name = "pic_anh";
             this.pic_anh.Size = new System.Drawing.Size(99, 105);
@@ -855,7 +859,7 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.30208F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.69792F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 113F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 338F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 348F));
             this.tableLayoutPanel10.Controls.Add(this.btn_sua, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.btn_taohd, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel2, 3, 0);
@@ -875,9 +879,9 @@
             this.btn_sua.Appearance.Options.UseFont = true;
             this.btn_sua.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_sua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_sua.ImageOptions.SvgImage")));
-            this.btn_sua.Location = new System.Drawing.Point(143, 3);
+            this.btn_sua.Location = new System.Drawing.Point(138, 3);
             this.btn_sua.Name = "btn_sua";
-            this.btn_sua.Size = new System.Drawing.Size(127, 41);
+            this.btn_sua.Size = new System.Drawing.Size(122, 41);
             this.btn_sua.TabIndex = 2;
             this.btn_sua.Text = "Sửa hợp đồng";
             this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
@@ -890,7 +894,7 @@
             this.btn_taohd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_taohd.ImageOptions.Image")));
             this.btn_taohd.Location = new System.Drawing.Point(3, 3);
             this.btn_taohd.Name = "btn_taohd";
-            this.btn_taohd.Size = new System.Drawing.Size(134, 41);
+            this.btn_taohd.Size = new System.Drawing.Size(129, 41);
             this.btn_taohd.TabIndex = 0;
             this.btn_taohd.Text = "Tạo hợp đồng";
             this.btn_taohd.Click += new System.EventHandler(this.btn_taohd_Click);
@@ -903,12 +907,12 @@
             this.tableLayoutPanel2.Controls.Add(this.btn_in, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btn_tatcahd, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(389, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(379, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(333, 41);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(343, 41);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // btn_in
@@ -917,9 +921,9 @@
             this.btn_in.Appearance.Options.UseFont = true;
             this.btn_in.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_in.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_in.ImageOptions.Image")));
-            this.btn_in.Location = new System.Drawing.Point(169, 3);
+            this.btn_in.Location = new System.Drawing.Point(174, 3);
             this.btn_in.Name = "btn_in";
-            this.btn_in.Size = new System.Drawing.Size(161, 35);
+            this.btn_in.Size = new System.Drawing.Size(166, 35);
             this.btn_in.TabIndex = 4;
             this.btn_in.Text = "Xuất hợp đồng";
             this.btn_in.Click += new System.EventHandler(this.btn_in_Click);
@@ -932,20 +936,20 @@
             this.btn_tatcahd.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_tatcahd.ImageOptions.SvgImage")));
             this.btn_tatcahd.Location = new System.Drawing.Point(3, 3);
             this.btn_tatcahd.Name = "btn_tatcahd";
-            this.btn_tatcahd.Size = new System.Drawing.Size(160, 35);
+            this.btn_tatcahd.Size = new System.Drawing.Size(165, 35);
             this.btn_tatcahd.TabIndex = 2;
             this.btn_tatcahd.Text = "Hợp đồng";
             this.btn_tatcahd.Click += new System.EventHandler(this.btn_tatcahd_Click);
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
             this.label4.Location = new System.Drawing.Point(533, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(167, 32);
+            this.label4.Size = new System.Drawing.Size(167, 31);
             this.label4.TabIndex = 2;
             this.label4.Text = "ĐẶT PHÒNG";
             // 

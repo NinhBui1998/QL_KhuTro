@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL_NHATRO" Class="QL_KhuTroDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=ADMIN\SQLEXPRESS;Initial Catalog=QL_NHATRO;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="QL_NHATROConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-T8SC55E\SQLEXPRESS;Initial Catalog=QL_NHATRO;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="QL_NHATROConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CHISO_DIENNUOC" Member="CHISO_DIENNUOCs">
     <Type Name="CHISO_DIENNUOC">
       <Column Name="MAHOADON" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -73,6 +73,17 @@
       <Association Name="NHANVIEN_HOPDONG" Member="NHANVIEN" ThisKey="MANV" OtherKey="MANV" Type="NHANVIEN" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.KHACHCOCPHONG" Member="KHACHCOCPHONGs">
+    <Type Name="KHACHCOCPHONG">
+      <Column Name="MAKHCP" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SOCMND" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+      <Column Name="SODT" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MAPHONG" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TIENCOCPHONG" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="PHONG_KHACHCOCPHONG" Member="PHONG" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONG" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.KHACHTHUE" Member="KHACHTHUEs">
     <Type Name="KHACHTHUE">
       <Column Name="MAKT" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -85,6 +96,8 @@
       <Column Name="NGAYSINH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="TRUONGPHONG" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="MAPHONG" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TINHTRANGTAMTRU" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="MK" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Association Name="KHACHTHUE_VIPHAM" Member="VIPHAMs" ThisKey="MAKT" OtherKey="MAKT" Type="VIPHAM" />
       <Association Name="KHACHTHUE_HOPDONG" Member="HOPDONGs" ThisKey="MAKT" OtherKey="MAKT" Type="HOPDONG" />
       <Association Name="KHACHTHUE_TAMTRU" Member="TAMTRUs" ThisKey="MAKT" OtherKey="MAKT" Type="TAMTRU" />
@@ -121,22 +134,6 @@
       <Column Name="NOIDUNG" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="HINHPHAT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="NOIQUY_VIPHAM" Member="VIPHAMs" ThisKey="MANOIQUY" OtherKey="MANOIQUY" Type="VIPHAM" />
-    </Type>
-  </Table>
-  <Table Name="dbo.PHONG" Member="PHONGs">
-    <Type Name="PHONG">
-      <Column Name="MAPHONG" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TENPHONG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="TINHTRANG" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="SOLUONG_HT" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SOLUONG_TD" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MATANG" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="MALOAI" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Association Name="PHONG_HOADON" Member="HOADONs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="HOADON" />
-      <Association Name="PHONG_KHACHTHUE" Member="KHACHTHUEs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="KHACHTHUE" />
-      <Association Name="PHONG_THIETBI_PHONG" Member="THIETBI_PHONGs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="THIETBI_PHONG" />
-      <Association Name="LOAIPHONG_PHONG" Member="LOAIPHONG" ThisKey="MALOAI" OtherKey="MALOAI" Type="LOAIPHONG" IsForeignKey="true" />
-      <Association Name="TANG_PHONG" Member="TANG" ThisKey="MATANG" OtherKey="MATANG" Type="TANG" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.QLND_NHOMND" Member="QLND_NHOMNDs">
@@ -230,8 +227,26 @@
       <Column Name="MAPHONG" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="THOIGIANCAP" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="TRANGTHAI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="PHONG_THIETBI_PHONG" Member="PHONG" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONG" IsForeignKey="true" />
       <Association Name="THIETBI_THIETBI_PHONG" Member="THIETBI" ThisKey="MATHIETBI" OtherKey="MATHIETBI" Type="THIETBI" IsForeignKey="true" />
+      <Association Name="PHONG_THIETBI_PHONG" Member="PHONG" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PHONG" Member="PHONGs">
+    <Type Name="PHONG">
+      <Column Name="MAPHONG" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENPHONG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TINHTRANG" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SOLUONG_HT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOLUONG_TD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MATANG" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MALOAI" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TINHTRANGHOPDONG" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="PHONG_HOADON" Member="HOADONs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="HOADON" />
+      <Association Name="PHONG_KHACHCOCPHONG" Member="KHACHCOCPHONGs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="KHACHCOCPHONG" />
+      <Association Name="PHONG_KHACHTHUE" Member="KHACHTHUEs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="KHACHTHUE" />
+      <Association Name="PHONG_THIETBI_PHONG" Member="THIETBI_PHONGs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="THIETBI_PHONG" />
+      <Association Name="LOAIPHONG_PHONG" Member="LOAIPHONG" ThisKey="MALOAI" OtherKey="MALOAI" Type="LOAIPHONG" IsForeignKey="true" />
+      <Association Name="TANG_PHONG" Member="TANG" ThisKey="MATANG" OtherKey="MATANG" Type="TANG" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.SINHMA_HOADON" Method="SINHMA_HOADON" IsComposable="true">
@@ -245,5 +260,26 @@
   </Function>
   <Function Name="dbo.SINHMA_KHACHTHUE" Method="SINHMA_KHACHTHUE" IsComposable="true">
     <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.updatehopdongconthoihan" Method="updatehopdongconthoihan">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.updatekhachthuesaphethan" Method="updatekhachthuesaphethan">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.updatehopdonghethan" Method="updatehopdonghethan">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.updatehopdongsaphethan" Method="updatehopdongsaphethan">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.updatekhachthuedadktt" Method="updatekhachthuedadktt">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.updatekhachthuedahethantt" Method="updatekhachthuedahethantt">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.updatephongdacoc" Method="updatephongdacoc">
+    <Return Type="System.Int32" />
   </Function>
 </Database>

@@ -13,6 +13,10 @@ namespace BLL
         {
             return hopdong.loadbangHopDong();
         }
+        public HOPDONG loadBang_hopdong()
+        {
+            return hopdong.loadbangHd();
+        }
         //kiểm tra khóa chính
         public bool ktkc_HopDong(string pMa)
         {
