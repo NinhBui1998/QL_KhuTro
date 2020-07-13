@@ -48,13 +48,13 @@ namespace QuanLyKhuTro.ThongKe
             if (ckb_thang.Checked == true)
             {
 
-                grv_hoadon.DataSource = bll_thongkedt.loadtkdoanhthutheothang(cbb_thang.Text);
+                grv_hoadon.DataSource = bll_thongkedt.loadtkdoanhthutheothang(Convert.ToInt32(cbb_thang.Text));
 
 
             }
             if (ckb_nam.Checked == true)
             {
-                grv_hoadon.DataSource = bll_thongkedt.loadtkdoanhthutheonam(txt_nam.Text);
+                grv_hoadon.DataSource = bll_thongkedt.loadtkdoanhthutheonam(Convert.ToInt32( txt_nam.Text));
 
             }
 
@@ -65,7 +65,7 @@ namespace QuanLyKhuTro.ThongKe
                     MessageBox.Show("nhâp năm");
                     return;
                 }
-                grv_hoadon.DataSource = bll_thongkedt.loadtkdoanhthutheothangnam(cbb_thang.Text + '/' + txt_nam.Text);
+                grv_hoadon.DataSource = bll_thongkedt.loadtkdoanhthutheothangnam(Convert.ToDateTime("05"+cbb_thang.Text + '/' + txt_nam.Text));
             }
             if (ckb_thang.Checked == false && ckb_nam.Checked == false)
             {
@@ -74,7 +74,7 @@ namespace QuanLyKhuTro.ThongKe
                     MessageBox.Show("nhâp năm");
                     return;
                 }
-                grv_hoadon.DataSource = bll_thongkedt.loadtkdoanhthutheothangnam(cbb_thang.Text + '/' + txt_nam.Text);
+                grv_hoadon.DataSource = bll_thongkedt.loadtkdoanhthutheothangnam(Convert.ToDateTime("05" + cbb_thang.Text + '/' + txt_nam.Text));
             }
             //tong doanh thu
             Decimal Tong = 0;

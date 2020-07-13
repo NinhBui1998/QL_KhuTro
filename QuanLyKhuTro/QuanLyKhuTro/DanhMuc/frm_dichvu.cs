@@ -10,36 +10,19 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using BLL;
 using DAL;
+using BLL.HeThong;
 
 namespace QuanLyKhuTro.DanhMuc
 {
     public partial class frm_dichvu : DevExpress.XtraEditors.XtraUserControl
     {
         BLL_DichVu dichvu = new BLL_DichVu();
+        BLL_DichVuDien bll_dvdien = new BLL_DichVuDien();
         public frm_dichvu()
         {
             InitializeComponent();
         }
-        private void gridView_DichVu_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
-        {
-            DICHVU dv = new DICHVU();
-            btn_xoa.Enabled = btn_sua.Enabled = btn_huy.Enabled = true;
-            btn_them.Enabled = false;
-            int position = gridView_DichVu.FocusedRowHandle;
-            try
-            {         
-                dv.TENDV = gridView_DichVu.GetRowCellValue(position, "TENDV").ToString();
-                dv.MADV = gridView_DichVu.GetRowCellValue(position, "MADV").ToString();
-                dv.GIADV =decimal.Parse(gridView_DichVu.GetRowCellValue(position, "GIADV").ToString());
-                dv.DONVI = gridView_DichVu.GetRowCellValue(position,"DONVI").ToString();
-
-                txt_madichvu.Text = dv.MADV.ToString();
-                txt_tendichvu.Text = dv.TENDV.ToString();
-                txt_gia.Text = String.Format("{0:#,##0.##} VNĐ", dv.GIADV);
-                txt_donvi.Text = dv.DONVI.ToString();
-            }
-            catch { }
-        }
+        
         private void frm_dichvu_Load(object sender, EventArgs e)
         {
             txt_madichvu.Enabled = false;
@@ -47,6 +30,8 @@ namespace QuanLyKhuTro.DanhMuc
             btn_sua.Enabled = btn_xoa.Enabled = btn_huy.Enabled = btn_luu.Enabled = txt_madichvu.Enabled
                 = txt_tendichvu.Enabled=txt_gia.Enabled=txt_donvi.Enabled = false;
             btn_them.Enabled = true;
+            txt_madvd.Enabled = txt_luytuyen.Enabled = txt_giadvd.Enabled = false;
+            grv_dvdien.DataSource = bll_dvdien.loaddichvudien();
         }
         private void btn_them_Click(object sender, EventArgs e)
         {
@@ -109,6 +94,9 @@ namespace QuanLyKhuTro.DanhMuc
             btn_luu.Enabled = true;
             btn_xoa.Enabled = btn_them.Enabled = false;
             txt_tendichvu.Enabled =txt_gia.Enabled=txt_donvi.Enabled= true;
+            txt_giadvd.Enabled = false;
+            txt_luytuyen.Enabled = false;
+            txt_giadvd.Enabled = true;
         }
         private void btn_luu_Click(object sender, EventArgs e)
         {
@@ -146,6 +134,7 @@ namespace QuanLyKhuTro.DanhMuc
             }
             if (btn_sua.Enabled == true)
             {
+               
                 try
                 {
                     if (txt_tendichvu.Text == string.Empty)
@@ -162,10 +151,13 @@ namespace QuanLyKhuTro.DanhMuc
                     dv.TENDV = txt_tendichvu.Text;
                     dv.GIADV = decimal.Parse(txt_gia.Text);
                     dv.DONVI = txt_donvi.Text;
-
-                    if (dichvu.sua_DichVu(dv) == true)
+                    DICHVUDIEN dvd = new DICHVUDIEN();
+                    dvd.MADVD = txt_madvd.Text;
+                    dvd.GIA = Convert.ToDecimal(txt_giadvd.Text);
+                    if (dichvu.sua_DichVu(dv) == true && bll_dvdien.sua_dvdien(dvd)==true)
                     {
                         grv_dichvu.DataSource = dichvu.loadBang_DV();
+                        grv_dvdien.DataSource = bll_dvdien.loaddichvudien();
                         MessageBox.Show("Thành công");
                     }
                 }
@@ -183,11 +175,95 @@ namespace QuanLyKhuTro.DanhMuc
             txt_gia.Clear();
             txt_donvi.Clear();
             btn_them.Enabled = true;
+            txt_madvd.Clear();
+            txt_luytuyen.Clear();
+            txt_giadvd.Clear();
 
             frm_dichvu_Load(sender, e);
         }
 
-        private void grv_dichvu_Click(object sender, EventArgs e)
+      
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+          
+            btn_xoa.Enabled = btn_sua.Enabled = btn_huy.Enabled = true;
+            btn_them.Enabled = false;
+            int position = gridView_dichcudien.FocusedRowHandle;
+            try
+            {
+               txt_madvd.Text = gridView_dichcudien.GetRowCellValue(position, "MADVD").ToString();
+              txt_luytuyen.Text= gridView_dichcudien.GetRowCellValue(position, "LUYTUYEN").ToString();
+                decimal giadien = Convert.ToDecimal(gridView_dichcudien.GetRowCellValue(position, "GIA").ToString());
+                txt_giadvd.Text = String.Format("{0:#,##0.##}", giadien);
+
+
+            }
+            catch { }
+        }
+
+       
+
+        private void grv_dichvu_Click_1(object sender, EventArgs e)
+        {
+            DICHVU dv = new DICHVU();
+            btn_xoa.Enabled = btn_sua.Enabled = btn_huy.Enabled = true;
+            btn_them.Enabled = false;
+            int position = gridView_DichVu.FocusedRowHandle;
+            try
+            {
+                dv.TENDV = gridView_DichVu.GetRowCellValue(position, "TENDV").ToString();
+                dv.MADV = gridView_DichVu.GetRowCellValue(position, "MADV").ToString();
+                dv.GIADV = decimal.Parse(gridView_DichVu.GetRowCellValue(position, "GIADV").ToString());
+                dv.DONVI = gridView_DichVu.GetRowCellValue(position, "DONVI").ToString();
+
+                txt_madichvu.Text = dv.MADV.ToString();
+                txt_tendichvu.Text = dv.TENDV.ToString();
+                txt_gia.Text = String.Format("{0:#,##0.##} VNĐ", dv.GIADV);
+                txt_donvi.Text = dv.DONVI.ToString();
+            }
+            catch { }
+        }
+
+        private void gridView_DichVu_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            DICHVU dv = new DICHVU();
+            btn_xoa.Enabled = btn_sua.Enabled = btn_huy.Enabled = true;
+            btn_them.Enabled = false;
+            int position = gridView_DichVu.FocusedRowHandle;
+            try
+            {
+                dv.TENDV = gridView_DichVu.GetRowCellValue(position, "TENDV").ToString();
+                dv.MADV = gridView_DichVu.GetRowCellValue(position, "MADV").ToString();
+                dv.GIADV = decimal.Parse(gridView_DichVu.GetRowCellValue(position, "GIADV").ToString());
+                dv.DONVI = gridView_DichVu.GetRowCellValue(position, "DONVI").ToString();
+
+                txt_madichvu.Text = dv.MADV.ToString();
+                txt_tendichvu.Text = dv.TENDV.ToString();
+                txt_gia.Text = String.Format("{0:#,##0.##}", dv.GIADV);
+                txt_donvi.Text = dv.DONVI.ToString();
+            }
+            catch { }
+        }
+
+        private void gridView_dichcudien_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            btn_xoa.Enabled = btn_sua.Enabled = btn_huy.Enabled = true;
+            btn_them.Enabled = false;
+            int position = gridView_dichcudien.FocusedRowHandle;
+            try
+            {
+                txt_madvd.Text = gridView_dichcudien.GetRowCellValue(position, "MADVD").ToString();
+                txt_luytuyen.Text = gridView_dichcudien.GetRowCellValue(position, "LUYTUYEN").ToString();
+                decimal giadien =Convert.ToDecimal( gridView_dichcudien.GetRowCellValue(position, "GIA").ToString());
+                txt_giadvd.Text = String.Format("{0:#,##0.##}", giadien);
+
+
+            }
+            catch { }
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
         {
 
         }

@@ -105,10 +105,41 @@ namespace DAL.ThongKe
             var kt = from p in data.PHONGs
                      from t in data.TANGs
                      from hd in data.LOAIPHONGs
+                     where p.MALOAI == hd.MALOAI && p.MATANG == t.MATANG && p.SOLUONG_HT==0
+
+                     select new
+                     {
+                         p.MAPHONG,
+                         p.TINHTRANG,
+                         p.TENPHONG,
+                         p.SOLUONG_HT,
+                         p.SOLUONG_TD,
+                         t.TENTANG,
+                         hd.TENLOAI
 
 
-                     where p.MALOAI == hd.MALOAI && p.MATANG == t.MATANG where p.SOLUONG_HT==0
+                     };
+            var kq = kt.ToList().ConvertAll(t => new Thongkephong()
+            {
+                MAPHONG1 = t.MAPHONG,
+                TINHTRANG1 = Convert.ToBoolean(t.TINHTRANG),
+                TENPHONG1 = t.TENPHONG,
+                SOLUONG_HT1 = Convert.ToInt32(t.SOLUONG_HT),
+                SOLUONG_TD1 = Convert.ToInt32(t.SOLUONG_TD),
+                TENLOAI1 = t.TENLOAI,
+                TENTANG1 = t.TENTANG
 
+            }); ; ; ;
+            kq.ToList<Thongkephong>();
+            return kq;
+        }
+        public List<Thongkephong> Loadphongsaptra()
+        {
+            var kt = from p in data.PHONGs
+                     from t in data.TANGs
+                     from hd in data.LOAIPHONGs
+                     where p.MALOAI == hd.MALOAI && p.MATANG == t.MATANG
+                    && p.TINHTRANGHOPDONG== "Sắp hết hạn hợp đồng"
                      select new
                      {
                          p.MAPHONG,

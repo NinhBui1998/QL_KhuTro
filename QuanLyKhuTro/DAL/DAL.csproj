@@ -43,11 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HeThong\DAL_DichVuDien.cs" />
     <Compile Include="Model\cocphong.cs" />
     <Compile Include="Model\DAL_SinhMa.cs" />
     <Compile Include="Model\DanhsachPhong.cs" />
     <Compile Include="Model\HoaDon.cs" />
     <Compile Include="Model\tamtru.cs" />
+    <Compile Include="Model\Thannhantamtru.cs" />
     <Compile Include="Model\Thongkekhach.cs" />
     <Compile Include="Model\Thongkephong.cs" />
     <Compile Include="Model\ViPham.cs" />
@@ -110,6 +112,5 @@
       <DependentUpon>QL_KhuTro.dbml</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

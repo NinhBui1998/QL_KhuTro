@@ -14,6 +14,8 @@ using DevExpress.Export;
 using DevExpress.Utils.Extensions;
 using DevExpress.XtraEditors;
 using DevExpress.XtraExport.Helpers;
+using Microsoft.Office.Interop.Word;
+using QuanLyKhuTro.DuLieu;
 using QuanLyKhuTro.NghiepVu;
 
 namespace QuanLyKhuTro
@@ -26,6 +28,7 @@ namespace QuanLyKhuTro
         BLL_Tang bll_tang = new BLL_Tang();
         BLL_DSPhong bll_dsp = new BLL_DSPhong();
         BLL_HopDong bll_hd = new BLL_HopDong();
+        capnhatdulieu cn = new capnhatdulieu();
        
         public frm_test()
         {
@@ -39,15 +42,13 @@ namespace QuanLyKhuTro
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            //HOPDONG hd = new HOPDONG();
-            //hd = bll_hd.loadBang_hopdong();
-            //TimeSpan Time = Convert.ToDateTime(bll_dsp.layngaytra()) - Convert.ToDateTime(DateTime.Now.ToShortDateString());
-            //int TongSoNgay = Time.Days;
+            cn.update();
+            
             lb_saptoihantra.Text = bll_dsp.tongphongsapdenhan();
             lb_cokhach.Text = bll_dsp.tongphongcokhach();
             lb_cokhachdat.Text = bll_dsp.tongphongcokhachcoc();
             lb_Phongtrong.Text = bll_dsp.tongphongtrong();
-            //lb_saptoihantra.Text = bll_dsp.tongphongsapdenhan(TongSoNgay);
+            lb_phongsuachua.Text = bll_dsp.tongphongdangsua();
 
 
 
@@ -67,7 +68,7 @@ namespace QuanLyKhuTro
                 l.Text = ("Tầng" + (j + 1).ToString());
                 l.Tag = (j + 1).ToString();
                 l.Size = new Size(60, 30);
-                l.Location = new Point(x, y);
+                l.Location = new System.Drawing.Point(x, y);
                 panel1.Controls.Add(l);
                 for (int i = 0; i < p.sphong(p.stang()[j].MATANG.ToString()).Count; i++)
                 {
@@ -78,24 +79,33 @@ namespace QuanLyKhuTro
                     b.Text = p.sphong(p.stang()[j].MATANG.ToString())[i].TENPHONG.ToString();
                     b.Tag = (i + 1).ToString();
                     b.Size = new Size(90, 60);
-                    b.Location = new Point(x, y);
+                    b.Location = new System.Drawing.Point(x, y);
                     b.BackColor = Color.White;
-                    if (p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_TD- p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT==0 
-                        || (1 <= p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT && p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_HT < p.sphong(p.stang()[j].MATANG.ToString())[i].SOLUONG_TD))
+                    
+                    if (p.sphong(p.stang()[j].MATANG.ToString())[i].TINHTRANG==true)
                     {
 
                         if (p.sphong(p.stang()[j].MATANG.ToString())[i].TINHTRANGHOPDONG == "Sắp hết hạn hợp đồng")
                         {
-                           
-                                b.BackColor = Color.Crimson;
-                                b.Click += showdialog;
-                            
-                           
+                            if (p.sphong(p.stang()[j].MATANG.ToString())[i].TRANGTHAIPHONG == "Gia hạn hợp đồng")
+                            {
+                                b.BackColor = Color.Red;
+                                b.Image = new Bitmap("dautick.png");
+                                b.ImageAlign = ContentAlignment.TopRight;
+                                b.Click += showformdatphong;
+                            }
+                            else
+                            { 
+                                b.BackColor = Color.Red;
+                                    b.Click += showdialog;
+                            }
+
+
                         }
                         else if (p.sphong(p.stang()[j].MATANG.ToString())[i].TINHTRANGHOPDONG == "Đã có khách cọc")
                         {
                             b.BackColor = Color.Gray;
-                            b.Click += showformdatphong;
+                            b.Click += show;
                         }
                         else
                         {
@@ -111,7 +121,14 @@ namespace QuanLyKhuTro
                        
                         b.Click += showformdatphong;
                     }
-                  
+                    if (p.sphong(p.stang()[j].MATANG.ToString())[i].TRANGTHAIPHONG == "Đang sửa chữa")
+                    {
+                        b.BackgroundImage = new Bitmap("suachua.png");
+                        b.BackgroundImageLayout = ImageLayout.Stretch;
+                        b.Enabled = false;
+                    }
+                   
+
                     ///////
 
 
@@ -127,6 +144,15 @@ namespace QuanLyKhuTro
         void showdialog(object sender, EventArgs e)
         {
             dialog_datphong frm = new dialog_datphong();
+            Button btn = (Button)sender;
+            frm.TenPhong = btn.Text;
+            frm.MaNhanVien = MaNV;
+            Visible = false;
+            frm.ShowDialog();
+        }
+        void show(object sender, EventArgs e)
+        {
+            frm_dialog frm = new frm_dialog();
             Button btn = (Button)sender;
             frm.TenPhong = btn.Text;
             frm.MaNhanVien = MaNV;
@@ -189,7 +215,7 @@ namespace QuanLyKhuTro
                 l.Text = ("Tầng" + (j + 1).ToString());
                 l.Tag = (j + 1).ToString();
                 l.Size = new Size(60, 30);
-                l.Location = new Point(x, y);
+                l.Location = new System.Drawing.Point(x, y);
                 panel1.Controls.Add(l);
                 //for (int i = 0; i < p.sphong(p.stang()[j].MATANG.ToString()).Count; i++)
                 for (int i = 0; i < p.loadphong(p.stang()[j].MATANG.ToString(),cbo_loai.SelectedValue.ToString()).Count; i++)
@@ -200,7 +226,7 @@ namespace QuanLyKhuTro
                     b.Text = p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].TENPHONG.ToString();
                     b.Tag = (i + 1).ToString();
                     b.Size = new Size(90, 60);
-                    b.Location = new Point(x, y);
+                    b.Location = new System.Drawing.Point(x, y);
                     b.BackColor = Color.White;
                     if (p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].SOLUONG_TD - p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].SOLUONG_HT == 0
                         || (1 <= p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].SOLUONG_HT && 
@@ -208,16 +234,23 @@ namespace QuanLyKhuTro
                     {
                         if (p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].TINHTRANGHOPDONG == "Sắp hết hạn hợp đồng")
                         {
-
-                            b.BackColor = Color.Crimson;
-                            b.Click += showdialog;
-
-
+                            if (p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].TRANGTHAIPHONG == "Gia hạn hợp đồng")
+                            {
+                                b.BackColor = Color.Red;
+                                b.Image = new Bitmap("dautick.png");
+                                b.ImageAlign = ContentAlignment.TopRight;
+                                b.Click += showformdatphong;
+                            }
+                            else
+                            {
+                                b.BackColor = Color.Red;
+                                b.Click += showdialog;
+                            }
                         }
                         else if (p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].TINHTRANGHOPDONG == "Đã có khách cọc")
                         {
                             b.BackColor = Color.Gray;
-                            b.Click += showformdatphong;
+                            b.Click += show;
                         }
                         else
                         {
@@ -232,6 +265,12 @@ namespace QuanLyKhuTro
 
                         b.Click += showformdatphong;
                     }
+                    if (p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].TRANGTHAIPHONG == "Đang sửa chữa")
+                    {
+                        b.BackgroundImage = new Bitmap("suachua.png");
+                        b.BackgroundImageLayout = ImageLayout.Stretch;
+                        b.Enabled = false;
+                    }
 
                     panel1.Controls.Add(b);
 
@@ -241,7 +280,6 @@ namespace QuanLyKhuTro
                 y += 60;
             }
         }
-
         private void btn_tatcaphong_Click(object sender, EventArgs e)
         {
             //grv_phong.DataSource = bll_dsp.LoadDSPhong();
@@ -260,5 +298,7 @@ namespace QuanLyKhuTro
             Visible = false;
             frm.ShowDialog();
         }
+
+      
     }
 }

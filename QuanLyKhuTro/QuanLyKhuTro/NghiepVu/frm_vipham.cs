@@ -34,6 +34,7 @@ namespace QuanLyKhuTro.NghiepVu
 
         private void frm_vipham_Load(object sender, EventArgs e)
         {
+            txt_mavp.Text = bll_sm.Sinhma_vipham();
             cbb_manoiquy.DataSource = bll_noiquy.loadBang_NoiQuy();
             //cbb_manoiquy.ValueMember = "NOIDUNG";
             cbb_manoiquy.DisplayMember = "MANOIQUY";
@@ -49,6 +50,7 @@ namespace QuanLyKhuTro.NghiepVu
             btn_them.Enabled = true;
             txt_solan.Enabled = txt_ghichu.Enabled = false;
             txt_ngayvipham.Text = DateTime.Now.ToShortDateString();
+            txt_mavp.Enabled = false;
 
         }
         
@@ -65,14 +67,20 @@ namespace QuanLyKhuTro.NghiepVu
             grv_khachthue.DataSource = bll_khachthue.loadBangKTtheoma(cbo_phong.SelectedValue.ToString());
 
         }
-
+        
         private void grv_khachthue_Click(object sender, EventArgs e)
         {
             int position = gridView_kt.FocusedRowHandle;
             try
             {
+                NOIQUY nq = new NOIQUY();
+                nq = dal_vipham.loadnoiquy(cbb_manoiquy.Text);
+                
+
                 string MAKT = gridView_kt.GetRowCellValue(position, "MAKT").ToString();
-               
+   
+                    txt_solan.Text = (bll_vipham.laylanvipham(MAKT, cbb_manoiquy.Text) + 1).ToString();
+                txt_tienphat.Text = String.Format("{0:#,##0.##}", (Convert.ToDecimal(nq.HINHPHAT) * Convert.ToInt32(txt_solan.Text)));
                 grv_vipham.DataSource = bll_vipham.Loadviphamtheoma(MAKT);
             }
             catch
@@ -85,12 +93,16 @@ namespace QuanLyKhuTro.NghiepVu
         {
 
         }
-
+        BLL_SinhMa bll_sm = new BLL_SinhMa();
         private void btn_them_Click(object sender, EventArgs e)
         {
             txt_solan.Enabled = txt_ghichu.Enabled = true;
             btn_sua.Enabled = btn_xoa.Enabled = false;
             btn_huy.Enabled = btn_luu.Enabled = true;
+            txt_mavp.Text = bll_sm.Sinhma_vipham();
+            txt_ngayvipham.Enabled = true;
+            txt_solan.Enabled = false;
+            txt_hinhphat.Enabled = true;
         }
 
         private void grv_vipham_Click(object sender, EventArgs e)
@@ -102,7 +114,7 @@ namespace QuanLyKhuTro.NghiepVu
                // txt_ghichu.Text = gridView_ViPham.GetRowCellValue(position, "Ghichu").ToString();
                 cbb_manoiquy.Text = gridView_ViPham.GetRowCellValue(position, "Manoiquy").ToString();
                 txt_noidung.Text = gridView_ViPham.GetRowCellValue(position, "Noidung").ToString();
-
+                txt_mavp.Text= gridView_ViPham.GetRowCellValue(position, "MAVIPHAM1").ToString();
                 btn_sua.Enabled = true;
                 btn_xoa.Enabled = true;
                 btn_them.Enabled = true;
@@ -124,11 +136,12 @@ namespace QuanLyKhuTro.NghiepVu
         private void btn_xoa_Click(object sender, EventArgs e)
         {
             VIPHAM vp = new VIPHAM();
+            vp.MAVIPHAM = txt_mavp.Text;
             int position = gridView_kt.FocusedRowHandle;
             vp.MANOIQUY = gridView_ViPham.GetRowCellValue(position, "Manoiquy").ToString();
             vp.MAKT = gridView_ViPham.GetRowCellValue(position, "Makt").ToString();
 
-            if (bll_vipham.xoa_vipham(vp.MANOIQUY,vp.MAKT) == true)
+            if (bll_vipham.xoa_vipham(txt_mavp.Text) == true)
             {
                 MessageBox.Show("Xóa thành công");
                 grv_vipham.DataSource = bll_vipham.Loadviphamtheoma(vp.MAKT);
@@ -138,7 +151,6 @@ namespace QuanLyKhuTro.NghiepVu
                 MessageBox.Show("Xóa thất bại");
             }
         }
-
         private void btn_sua_Click(object sender, EventArgs e)
         {
             btn_them.Enabled = false;
@@ -154,12 +166,14 @@ namespace QuanLyKhuTro.NghiepVu
             string MAKT = gridView_kt.GetRowCellValue(position, "MAKT").ToString();
           
             VIPHAM vp = new VIPHAM();
+            vp.MAVIPHAM = txt_mavp.Text;
             vp.MANOIQUY = cbb_manoiquy.Text;
             vp.MAKT = MAKT;
             vp.NGAYVIPHAM = Convert.ToDateTime(txt_ngayvipham.Text);
-            vp.SOLAN =Convert.ToInt32( txt_solan.Text);
+            vp.LAN =Convert.ToInt32( txt_solan.Text);
             vp.GHICHU = txt_ghichu.Text;
             vp.MANV = txt_manv.Text;
+            vp.TIENPHAT = Convert.ToDecimal( lb.Text);
             if(txt_solan.Text==string.Empty)
             {
                 MessageBox.Show("Không được để trống");
@@ -178,10 +192,8 @@ namespace QuanLyKhuTro.NghiepVu
             }
             if (btn_them.Enabled == false && btn_sua.Enabled == true)
             {
-
                     vp.MANOIQUY = gridView_ViPham.GetRowCellValue(position, "Manoiquy").ToString();
                     vp.MAKT= gridView_ViPham.GetRowCellValue(position, "Makt").ToString();
-
                 if (bll_vipham.sua_vipham(vp) == true)
                 {
                     MessageBox.Show("sửa thành công");
@@ -192,21 +204,31 @@ namespace QuanLyKhuTro.NghiepVu
                     MessageBox.Show("sửa thất bại");
                 }
             }
-          
+            btn_them.Enabled = true;
+            btn_sua.Enabled = btn_xoa.Enabled = false;
           
         }
 
-        private void cbb_manoiquy_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
+       
         private void cbb_manoiquy_Click(object sender, EventArgs e)
         {
             NOIQUY nq = new NOIQUY();
             nq = dal_vipham.loadnoiquy(cbb_manoiquy.Text);
             txt_noidung.Text = nq.NOIDUNG;
             txt_hinhphat.Text = String.Format("{0:#,##0.##}",Convert.ToDecimal( nq.HINHPHAT)); ;
+            int position = gridView_kt.FocusedRowHandle;
+            try
+            {
+                string MAKT = gridView_kt.GetRowCellValue(position, "MAKT").ToString();
+                    txt_solan.Text = (bll_vipham.laylanvipham(MAKT, cbb_manoiquy.Text) + 1).ToString();
+             
+                txt_tienphat.Text =String.Format("{0:#,##0.##}",( Convert.ToDecimal(nq.HINHPHAT)*Convert.ToInt32(txt_solan.Text)));
+
+            }
+            catch
+            {
+                return;
+            }
         }
 
         private void btn_xuathd_Click(object sender, EventArgs e)

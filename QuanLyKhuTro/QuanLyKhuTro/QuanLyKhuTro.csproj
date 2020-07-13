@@ -151,6 +151,13 @@
     <Compile Include="DanhMuc\frm_thietbi.Designer.cs">
       <DependentUpon>frm_thietbi.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\frm_thietbiphong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\frm_thietbiphong.Designer.cs">
+      <DependentUpon>frm_thietbiphong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DuLieu\capnhatdulieu.cs" />
     <Compile Include="DuLieu\Restore.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -228,6 +235,12 @@
     </Compile>
     <Compile Include="NghiepVu\frm_datphong.Designer.cs">
       <DependentUpon>frm_datphong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NghiepVu\frm_dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\frm_dialog.Designer.cs">
+      <DependentUpon>frm_dialog.cs</DependentUpon>
     </Compile>
     <Compile Include="NghiepVu\frm_quanlyhoadon.cs">
       <SubType>UserControl</SubType>
@@ -351,6 +364,9 @@
     <EmbeddedResource Include="DanhMuc\frm_thietbi.resx">
       <DependentUpon>frm_thietbi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\frm_thietbiphong.resx">
+      <DependentUpon>frm_thietbiphong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DuLieu\Restore.resx">
       <DependentUpon>Restore.cs</DependentUpon>
     </EmbeddedResource>
@@ -386,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\frm_datphong.resx">
       <DependentUpon>frm_datphong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\frm_dialog.resx">
+      <DependentUpon>frm_dialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\frm_quanlyhoadon.resx">
       <DependentUpon>frm_quanlyhoadon.cs</DependentUpon>
@@ -460,7 +479,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\anh.jpg" />
+    <None Include="bin\Debug\suachua.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\giahan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dauX.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

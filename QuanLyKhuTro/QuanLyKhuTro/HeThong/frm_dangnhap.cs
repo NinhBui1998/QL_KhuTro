@@ -74,7 +74,9 @@ namespace QuanLyKhuTro.HeThong
                 if (kq == 2)
                 {
                     MessageBox.Show("Chuỗi cấu hình không phù hợp");
-                    ProcessConfig();
+                    //ProcessConfig();
+                    frm_cauhinh frm_cauhinh = new frm_cauhinh();
+                    frm_cauhinh.Show();
                 }
                 }
             catch
@@ -86,7 +88,6 @@ namespace QuanLyKhuTro.HeThong
         private void ProcessConfig()
         {
             frm_cauhinh frm_cauhinh = new frm_cauhinh();
-
             frm_cauhinh.Show();
         }
 
@@ -106,6 +107,11 @@ namespace QuanLyKhuTro.HeThong
             dal_sm.updatehopdonghethan();
             dal_sm.updatehopdongsaphethan();
             dal_sm.Capnhapphongdacoc();
+        }
+
+        private void frm_dangnhap_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           
         }
     }
 }

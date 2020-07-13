@@ -21,9 +21,21 @@ namespace DAL.Model
         {
             return data.SINHMA_HOPDONG();
         }
+        public string SINHMAVIPHAM()
+        {
+            return data.SINHMA_ViPham();
+        }
         public String SinhMaTamTru()
         {
             return data.SINHMA_TAMTRU();
+        }
+        public String SinhMaKHACHCOC()
+        {
+            return data.SINHMA_KHACHCOC();
+        }
+        public String SINHMA_THANNHAN()
+        {
+            return data.SINHMA_Thannhan();
         }
         public int updatekhachthuesaphethantt()
         {
@@ -53,6 +65,10 @@ namespace DAL.Model
         public int Capnhapphongdacoc()
         {
             return data.updatephongdacoc();
+        }
+        public int updatetinhtrangKT(string pma)
+        {
+            return data.updatetinhtrangKT(pma);
         }
     }
 }

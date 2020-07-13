@@ -139,6 +139,23 @@ namespace DAL
                 return false;
             }
         }
+        public bool suaSLH(PHONG pma)
+        {
+            try
+            {
+                PHONG phong = data.PHONGs.Where(t => t.MAPHONG == pma.MAPHONG).FirstOrDefault();
+                if (phong != null)
+                {
+                    phong.SOLUONG_HT = pma.SOLUONG_HT;
+                    data.SubmitChanges();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         public List<PHONG> sp(string t)
         {
             var sp = (from s in data.PHONGs where s.MATANG == t select s).ToList<PHONG>();

@@ -20,7 +20,7 @@ namespace QuanLyKhuTro
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frm_main());
             Application.Run(new frm_dangnhap());
-            //Application.Run(new frm_test());
+            //Application.Run(new frm_thietbiphong());
         }
     }
 }

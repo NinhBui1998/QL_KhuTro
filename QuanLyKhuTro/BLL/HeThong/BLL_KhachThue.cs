@@ -13,10 +13,21 @@ namespace BLL
         {
             return dkt.loadbangKhachThue();
         }
-
+        public List<KHACHTHUE> loadphongcokhach()
+        {
+            return dkt.loadbangphongcokhachthue();
+        }
+        public KHACHTHUE layttkt(string pma)
+        {
+            return dkt.loadTenKT(pma);
+        }
         public List<KHACHTHUE> loadBangKTtheoma(string pmaphong)
         {
             return dkt.loadbangKhachThuetheoten(pmaphong );
+        }
+        public string Laytenkt (string pmakt)
+        {
+            return dkt.Laytenkt(pmakt);
         }
         //kiểm tra khóa chính
         public bool ktkc_khachthue(string pMa)
@@ -46,6 +57,11 @@ namespace BLL
         public bool sua_tinhtrangkt(KHACHTHUE pkt)
         {
             return dkt.sua_tinhtrangkt(pkt);
+        }
+
+        public bool sua_tinhtrangOKhachthue(KHACHTHUE pkt)
+        {
+            return dkt.sua_tinhtrangOkhachthue(pkt);
         }
         public Array layanh(string pma)
         {

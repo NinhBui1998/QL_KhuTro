@@ -27,7 +27,7 @@ namespace QuanLyKhuTro.user_thongkePhong
 
         private void frm_dsphongcokhach_Load(object sender, EventArgs e)
         {
-            grv_khachthue.DataSource = bll_kt.loadBangKT();
+            grv_khachthue.DataSource = bll_kt.loadphongcokhach();
             txt_tongphongdacoc.Text = bll_ds.tongphongcokhach();
         }
         QL_KhuTroDataContext data = new QL_KhuTroDataContext();

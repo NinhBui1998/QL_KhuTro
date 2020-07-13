@@ -64,7 +64,7 @@ namespace DAL.NghiepVu
                 SoNuocCu = Convert.ToInt32(t.SONUOCCU),
                 SoNuocMoi = Convert.ToInt32(t.SONUOCMOI),
                 TIENPHONG1=Convert.ToDecimal(t.GIA),
-                ThangNam=t.THANGNAM,
+                ThangNam=Convert.ToDateTime( t.THANGNAM),
                 TENLOAI1=t.TENLOAI,
 
             });;; ;
@@ -123,7 +123,7 @@ namespace DAL.NghiepVu
                 SoDienMoi = Convert.ToInt32(t.SODIENMOI),
                 SoNuocCu = Convert.ToInt32(t.SONUOCCU),
                 SoNuocMoi = Convert.ToInt32(t.SONUOCMOI),
-                ThangNam = t.THANGNAM,
+                ThangNam =Convert.ToDateTime( t.THANGNAM),
                 TIENPHONG1=Convert.ToDecimal(t.GIA)
 
             }); ;
@@ -182,7 +182,7 @@ namespace DAL.NghiepVu
                 SoDienMoi = Convert.ToInt32(t.SODIENMOI),
                 SoNuocCu = Convert.ToInt32(t.SONUOCCU),
                 SoNuocMoi = Convert.ToInt32(t.SONUOCMOI),
-                ThangNam = t.THANGNAM,
+                ThangNam = Convert.ToDateTime( t.THANGNAM),
 
             }); ;
             kq.ToList<HoaDon>();

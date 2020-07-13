@@ -59,7 +59,7 @@ namespace QuanLyKhuTro.NghiepVu
         private void frm_traphong_Load(object sender, EventArgs e)
         {
             DateTime d = DateTime.Now;
-            txt_nam.Text = d.Year.ToString();
+          
             txt_tenphong.Text = Ten;
             grv_traphong.DataSource = traphong.LoadTraPhongtheoten(Ten);
             txt_maphong.Text = datphong.laymaphong(txt_tenphong.Text);
@@ -126,7 +126,7 @@ namespace QuanLyKhuTro.NghiepVu
             }
             catch { MessageBox.Show("Lỗi hệ thống"); }
         }
-
+        DAL_SinhMa dal_sm = new DAL_SinhMa();
         private void btn_xacnhan_Click(object sender, EventArgs e)
         {
             DialogResult res;
@@ -135,33 +135,34 @@ namespace QuanLyKhuTro.NghiepVu
             {
                 try
                 {
-
-
                     int position = gridView_traphong.FocusedRowHandle;
                     string m = gridView_traphong.GetRowCellValue(position, "Makt").ToString();
                     string n = gridView_traphong.GetRowCellValue(position, "Mahd").ToString();
 
-                   
-                        if (hopdong.xoa_HopDong(n) == true)
-                        {
-                            if (khachthue.xoa_KhachThue(m) == true)
-                            {
+                    HOPDONG hd = new HOPDONG();
+                    hd.MAHD = n;
+                    hd.TINHTRANG = false;
 
+                    KHACHTHUE kt = new KHACHTHUE();
+                    kt.MAKT = m;
+                    kt.TINHTRANG = false;
+
+                        if (hopdong.sua_tinhtrangHopDong(hd) == true)
+                        {
+                          
+                            dal_sm.updatetinhtrangKT(hd.MAHD);
                                 grv_traphong.DataSource = traphong.LoadTraPhong();
-                            }
+                            
 
                         }
                         else
                         {
                             MessageBox.Show("Thất bại");
                         }
-                   
-
-
                     PHONG p = new PHONG();
                     p.MAPHONG = txt_maphong.Text;
                     p.TINHTRANG = false;
-                    p.SOLUONG_HT = datphong.demsohd(p.MAPHONG);
+                    p.SOLUONG_HT = 0;
 
                     if (phong.sua_slhientai(p) == true)
                     {
@@ -179,7 +180,7 @@ namespace QuanLyKhuTro.NghiepVu
                 }
 
                 frm_traphong_Load(sender, e);
-                txt_slhientai.Text = (datphong.demsohd(datphong.laymaphong(Ten))).ToString();
+                txt_slhientai.Text = "0";
             }
             else
             {
@@ -264,35 +265,87 @@ namespace QuanLyKhuTro.NghiepVu
                      select lp.GIA).FirstOrDefault();
             return k.ToString();
         }
+        public double tinhtiendien()
+        {
+
+            double dientuyen1 = bll_dichvu.laygiadien("BAC001");
+            double dientuyen2 = bll_dichvu.laygiadien("BAC002");
+            double dientuyen3 = bll_dichvu.laygiadien("BAC003");
+            double dientuyen4 = bll_dichvu.laygiadien("BAC004");
+            double dientuyen5 = bll_dichvu.laygiadien("BAC005");
+            double dientuyen6 = bll_dichvu.laygiadien("BAC006");
+            double TienDien=0;
+            int sodien = Convert.ToInt32(txt_sodien.Text);
+            if (sodien >= 0 && sodien <= 50)
+            {
+                TienDien += sodien * dientuyen1;
+            }
+            else if (sodien > 50 && sodien <= 100)
+            {
+                TienDien += (sodien - (sodien - 50)) * dientuyen1 + (sodien - 50) * dientuyen2;
+            }
+            else if (sodien > 100 && sodien <= 200)
+            {
+                TienDien += 50 * dientuyen1 + 50 * dientuyen2 + (sodien - 100) * dientuyen3;
+
+            }
+            else if(sodien > 200 && sodien <= 300)
+            {
+                TienDien += 50 * dientuyen1 + 50 * dientuyen2 + 100 * dientuyen3 + (sodien - 200)*dientuyen4;            }
+            else if (sodien > 300 && sodien <= 400)
+            {
+                TienDien += 50 * dientuyen1 + 50 * dientuyen2 + 100 * dientuyen3 + 100*dientuyen4 + (sodien-300)*dientuyen5;
+            }
+            else
+            {
+                TienDien += 50 * dientuyen1 + 50 * dientuyen2 + 100 * dientuyen3 + 100 * dientuyen4 + 100 * dientuyen5+ (sodien-400)*dientuyen6;
+
+            }
+            return TienDien;
+
+        }
+        public double tiennuoc()
+        {
+            string tiennuoc = bll_dichvu.loaddv("DV001");
+            double TienNuoc = Convert.ToInt32(txt_sonuoc.Text) * Convert.ToDouble(tiennuoc);
+            return TienNuoc;
+        }
+        public double tienrac()
+        {
+            string tienrac = bll_dichvu.loaddv("DV003");
+            double rac = Convert.ToDouble(tienrac);
+            return rac;
+        }
+        public double tienwifi()
+        {
+            string tienwifi = bll_dichvu.loaddv("DV002");
+            double wifi = Convert.ToDouble(tienwifi);
+            return wifi;
+        }    
 
         public Double TinhTienPhong()
         {
-            string tiennuoc = bll_dichvu.loaddv("DV002");
-            string tienrac = bll_dichvu.loaddv("DV004");
-            string tiendien = bll_dichvu.loaddv("DV001");
-            string tienwifi = bll_dichvu.loaddv("DV003");
-            
-            double TienNuoc = Convert.ToInt32(txt_sonuoc.Text) * Convert.ToDouble(tiennuoc);
-            double TienDien = Convert.ToInt32(txt_sodien.Text) * Convert.ToDouble(tiendien);
-            double wifi = Convert.ToDouble(tienwifi);
-            double rac = Convert.ToDouble(tienrac);
+           
+           
+           
+           
             // String tienphong = laytienphong(txt_maphong.Text);
             double Tong;
             if (ckb_wifi.Checked == true && ckb_rac.Checked == false)
             {
-                Tong = (TienDien + TienNuoc + wifi);
+                Tong = (tinhtiendien() + tiennuoc() + tienwifi());
             }
             else if (ckb_wifi.Checked == false && ckb_rac.Checked == true)
             {
-                Tong = (TienDien + TienNuoc + rac);
+                Tong = (tinhtiendien() + tiennuoc() + tienrac());
             }
             else if (ckb_wifi.Checked == false && ckb_rac.Checked == false)
             {
-                Tong = (TienDien + TienNuoc);
+                Tong = (tinhtiendien() + tiennuoc());
             }
             else
             {
-                Tong = (TienDien + TienNuoc + wifi + rac);
+                Tong = (tinhtiendien() + tiennuoc() + tienrac() + tienwifi());
             }
             return Tong;
         }
@@ -302,29 +355,22 @@ namespace QuanLyKhuTro.NghiepVu
             {
                 String MaHD = bll_sinhma.SinhMaHoaDon().ToString();
                 txt_tongtien.Text = String.Format("{0:#,##0.##}", TinhTienPhong());
-          
-                string tienwifi = bll_dichvu.loaddv("DV003");
-                string tienrac = bll_dichvu.loaddv("DV004");
-                string tiendien = bll_dichvu.loaddv("DV001");
-                string tiennuoc = bll_dichvu.loaddv("DV002");
-
-                double TienNuoc = Convert.ToInt32(txt_sonuoc.Text) * Convert.ToDouble(tiennuoc);
-                double TienDien = Convert.ToInt32(txt_sodien.Text) * Convert.ToDouble(tiendien);
-                double wifi = Convert.ToDouble(tienwifi);
-                double rac = Convert.ToDouble(tienrac);
                 //thêm hóa đơn
                 HOADON hd = new HOADON();
                 hd.MAHOADON = MaHD;
-                hd.TIENDIEN =Convert.ToDecimal(tiendien);
-                hd.TIENNUOC= Convert.ToDecimal(TienNuoc);
-                hd.WIFI = Convert.ToDecimal(wifi);
-                hd.RAC= Convert.ToDecimal(rac);
+                hd.TIENDIEN =Convert.ToDecimal(tinhtiendien());
+                hd.TIENNUOC= Convert.ToDecimal(tiennuoc());
+                hd.WIFI = Convert.ToDecimal(tienwifi());
+                hd.RAC= Convert.ToDecimal(tienrac());
                 hd.NGAYLAP = Convert.ToDateTime(DateTime.Now.ToShortDateString());
                 hd.TONGTIEN = Convert.ToDecimal(TinhTienPhong());
                 hd.MANV = txt_manv.Text;
                 hd.MAPHONG = txt_maphong.Text;
                 hd.TINHTRANG = false;
-                hd.THANGNAM = cbo_thang.Text + '/' + txt_nam.Text;
+                //string nht = DateTime.Now.ToShortDateString();
+                string tn = "05" +"/"+ DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
+                hd.THANGNAM = Convert.ToDateTime(tn);
+                    /*cbo_thang.Text + '/' + txt_nam.Text;*/
                 //thêm chỉ số điện nước
 
                 CHISO_DIENNUOC csdn = new CHISO_DIENNUOC();
@@ -415,10 +461,10 @@ namespace QuanLyKhuTro.NghiepVu
                     int sd = Convert.ToInt32(txt_sodiencuoi.Text) - Convert.ToInt32(txt_sodiendau.Text);
                     txt_sodien.Text = sd.ToString();
 
-                    string tiendien = bll_dichvu.loaddv("DV001");
+                    //string tiendien = bll_dichvu.loaddv("DV001");
 
-                    double TienDien = Convert.ToInt32(txt_sodien.Text) * Convert.ToDouble(tiendien);
-                    txt_tiendien.Text = String.Format("{0:#,##0.##}", TienDien);
+                    //double TienDien = Convert.ToInt32(txt_sodien.Text) * Convert.ToDouble(tiendien);
+                    txt_tiendien.Text = String.Format("{0:#,##0.##}", tinhtiendien());
                 }
                 else
                 {
@@ -444,9 +490,8 @@ namespace QuanLyKhuTro.NghiepVu
                 {
                     int sd = Convert.ToInt32(txt_sonuoccuoi.Text) - Convert.ToInt32(txt_sonuocdau.Text);
                     txt_sonuoc.Text = sd.ToString();
-                    string tiennuoc = bll_dichvu.loaddv("DV002");
-                    double TienNuoc = Convert.ToInt32(txt_sonuoc.Text) * Convert.ToDouble(tiennuoc);
-                    txt_tiennuoc.Text = String.Format("{0:#,##0.##}", TienNuoc);
+                    
+                    txt_tiennuoc.Text = String.Format("{0:#,##0.##}", tiennuoc());
                 }
                 else
                 {
@@ -479,14 +524,40 @@ namespace QuanLyKhuTro.NghiepVu
             string tracoc = "Chưa";
             string CSDDau = txt_sodiendau.Text;
             string CSDCuoi = txt_sodiencuoi.Text;
-            string DonGiaDien = "3,000";
+            int sodien = Convert.ToInt32(txt_sodien.Text);
+            //string DonGiaDien = "3,000";
+            string DonGiaDien;
+            if (sodien >= 0 && sodien <= 50)
+            {
+                 DonGiaDien = (String.Format("{0:#,##0.##}", Convert.ToDouble(bll_dichvu.laygiadien("BAC001"))).ToString());
+            }
+            else if (sodien > 50 && sodien <= 100)
+            {
+                 DonGiaDien = (String.Format("{0:#,##0.##}", Convert.ToDouble(bll_dichvu.laygiadien("BAC001"))).ToString()) +"-"+ (String.Format("{0:#,##0.##}", Convert.ToDouble(bll_dichvu.laygiadien("BAC002"))).ToString());         
+            }
+            else if (sodien > 100 && sodien <= 200)
+            {
+                DonGiaDien = (String.Format("{0:#,##0.##}", Convert.ToDouble(bll_dichvu.laygiadien("BAC001"))).ToString()) + "-" + (String.Format("{0:#,##0.##}", Convert.ToDouble(bll_dichvu.laygiadien("BAC002"))).ToString()) + "-" + (String.Format("{0:#,##0.##}", Convert.ToDouble(bll_dichvu.laygiadien("BAC003"))).ToString());
+            }
+            else if (sodien > 200 && sodien <= 300)
+            {
+                 DonGiaDien = bll_dichvu.laygiadien("BAC004").ToString();
+            }
+            else if (sodien > 300 && sodien <= 400)
+            {
+                 DonGiaDien = bll_dichvu.laygiadien("BAC005").ToString();
+            }
+            else
+            {
+                 DonGiaDien = bll_dichvu.laygiadien("BAC006").ToString();
+            }
             string TienDien = txt_tiendien.Text;
             string CSNDau = txt_sonuocdau.Text;
             string CSNCuoi = txt_sonuoccuoi.Text;
-            string DonGiaNuoc = "6,000";
+            string DonGiaNuoc = (String.Format("{0:#,##0.##}",Convert.ToDouble( bll_dichvu.loaddv("DV001"))).ToString());
             string TienNuoc = txt_tiennuoc.Text;
-            string DonGiaWifi = "60,000";
-            string DonGiaRac = "20,000";
+            string DonGiaWifi = (String.Format("{0:#,##0.##}", Convert.ToDouble(bll_dichvu.loaddv("DV002"))).ToString());
+            string DonGiaRac = (String.Format("{0:#,##0.##}", Convert.ToDouble(bll_dichvu.loaddv("DV003"))).ToString());
             string TongTien = txt_tongtien.Text;
             we.ThongTinTraPhong(ngaytra, tenphong, tenkt, tracoc, CSDDau, CSDCuoi,
                 DonGiaDien, TienDien, CSNDau, CSNCuoi, DonGiaNuoc, TienNuoc, DonGiaWifi,

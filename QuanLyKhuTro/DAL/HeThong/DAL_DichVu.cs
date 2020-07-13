@@ -24,6 +24,13 @@ namespace DAL
                         select dv.GIADV).FirstOrDefault();
             return tien.ToString();
         }
+        public double laydongiadien(string pma)
+        {
+            var gia = (from dv in data.DICHVUDIENs
+                       where dv.MADVD == pma
+                       select dv.GIA).FirstOrDefault();
+            return Convert.ToDouble( gia);
+        }
 
         //kiểm tra khóa chính
         public bool ktakhoachinh_DichVu(string hd)

@@ -161,6 +161,7 @@ namespace QuanLyKhuTro.DanhMuc
             nq.SOLUONG_HT= Convert.ToInt32(txt_slhientai.Text);
             nq.MALOAI = cbb_loaiphong.SelectedValue.ToString();
             nq.MATANG = cbb_tang.SelectedValue.ToString();
+            nq.TRANGTHAIPHONG = cbo_ttphong.Text;
             if (btn_them.Enabled == true && btn_sua.Enabled == false)
             {               
                 if (txt_maphong.Text == string.Empty && txt_slhientai.Text == string.Empty && txt_sltoida.Text==string.Empty 

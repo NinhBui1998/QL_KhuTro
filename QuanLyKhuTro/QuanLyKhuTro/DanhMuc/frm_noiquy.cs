@@ -31,21 +31,7 @@ namespace QuanLyKhuTro.DanhMuc
 
         private void gridView_noiquy_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            NOIQUY nq = new NOIQUY();
-            btn_xoa.Enabled = btn_sua.Enabled = btn_huy.Enabled = true;
-            btn_them.Enabled = false;
-            int position = gridView_noiquy.FocusedRowHandle;
-            try
-            {
-                nq.NOIDUNG = gridView_noiquy.GetRowCellValue(position, "NOIDUNG").ToString();
-                nq.MANOIQUY = gridView_noiquy.GetRowCellValue(position, "MANOIQUY").ToString();
-                nq.HINHPHAT= gridView_noiquy.GetRowCellValue(position, "HINHPHAT").ToString();
-              
-                txt_manoiquy.Text = nq.MANOIQUY.ToString();
-                txt_hinhphat.Text = nq.HINHPHAT.ToString();
-                txt_noidung.Text = nq.NOIDUNG.ToString();
-            }
-            catch { }
+            
         }
 
         private void btn_them_Click(object sender, EventArgs e)
@@ -188,6 +174,25 @@ namespace QuanLyKhuTro.DanhMuc
             txt_noidung.Clear();
             frm_noiquy_Load(sender,e);
            
+        }
+
+        private void grv_noiquy_Click(object sender, EventArgs e)
+        {
+            NOIQUY nq = new NOIQUY();
+            btn_xoa.Enabled = btn_sua.Enabled = btn_huy.Enabled = true;
+            btn_them.Enabled = false;
+            int position = gridView_noiquy.FocusedRowHandle;
+            try
+            {
+                nq.NOIDUNG = gridView_noiquy.GetRowCellValue(position, "NOIDUNG").ToString();
+                nq.MANOIQUY = gridView_noiquy.GetRowCellValue(position, "MANOIQUY").ToString();
+                nq.HINHPHAT = gridView_noiquy.GetRowCellValue(position, "HINHPHAT").ToString();
+
+                txt_manoiquy.Text = nq.MANOIQUY.ToString();
+                txt_hinhphat.Text = nq.HINHPHAT.ToString();
+                txt_noidung.Text = nq.NOIDUNG.ToString();
+            }
+            catch { }
         }
     }
 }

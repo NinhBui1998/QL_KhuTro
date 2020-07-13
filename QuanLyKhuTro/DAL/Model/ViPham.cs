@@ -17,7 +17,10 @@ namespace DAL.Model
         string SOCMND;
         string NOIDUNG;
         Decimal HINHPHAT;
-     
+        string MAVIPHAM;
+        Decimal TIENPHAT;
+
+
 
         public string Manoiquy { get => MANOIQUY; set => MANOIQUY = value; }
         public string Makt { get => MAKT; set => MAKT = value; }
@@ -28,5 +31,7 @@ namespace DAL.Model
         public string Noidung { get => NOIDUNG; set => NOIDUNG = value; }
         public Decimal Hinhphat { get => HINHPHAT; set => HINHPHAT = value; }
         public DateTime Ngayvipham { get => NGAYVIPHAM; set => NGAYVIPHAM = value; }
+        public string MAVIPHAM1 { get => MAVIPHAM; set => MAVIPHAM = value; }
+        public decimal TIENPHAT1 { get => TIENPHAT; set => TIENPHAT = value; }
     }
 }

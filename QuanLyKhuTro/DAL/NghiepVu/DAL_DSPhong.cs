@@ -110,5 +110,12 @@ namespace DAL.NghiepVu
                       select hd.NGAYTRA).FirstOrDefault();
             return kq.ToString();
         }
+        public String tongphongdangsua()
+        {
+            var kq = (from hd in data.PHONGs
+                      where hd.TRANGTHAIPHONG == "Đang sửa chữa"
+                      select hd).Count();
+            return kq.ToString();
+        }
     }
 }

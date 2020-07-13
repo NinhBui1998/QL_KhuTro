@@ -62,6 +62,10 @@ namespace BLL
         {
             return phong.suaSLHTPhong(p);
         }
+        public bool sua_sl(PHONG p)
+        {
+            return phong.suaSLH(p);
+        }
         public List<PHONG>loadphong(string pmatang, string pmaloai)
         {
             return phong.Laydtphong(pmatang, pmaloai);

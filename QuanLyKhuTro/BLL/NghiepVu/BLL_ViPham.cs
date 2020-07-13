@@ -27,14 +27,18 @@ namespace BLL
         }
 
         //Xóa
-        public bool xoa_vipham(string pMa, string pmakt)
+        public bool xoa_vipham(string pMa)
         {
-            return vp.xoa_vipham(pMa, pmakt);
+            return vp.xoa_vipham(pMa);
         }
         //Sửa
         public bool sua_vipham(VIPHAM pvipham)
         {
             return vp.sua_vipham(pvipham);
+        }
+        public int laylanvipham(string makt, string mavp )
+        {
+            return vp.laylanvipham(makt,mavp);
         }
     }   
 }

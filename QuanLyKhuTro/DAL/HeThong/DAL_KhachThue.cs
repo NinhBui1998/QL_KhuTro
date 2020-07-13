@@ -16,6 +16,14 @@ namespace DAL
             var dulieu = (from s in data.KHACHTHUEs select s);
             return dulieu.ToList<KHACHTHUE>();
         }
+        public List<KHACHTHUE> loadbangphongcokhachthue()
+        {
+            var dulieu = (from s in data.KHACHTHUEs 
+                          from hd in data.HOPDONGs
+                          where s.MAKT==hd.MAKT
+                          select s);
+            return dulieu.ToList<KHACHTHUE>();
+        }
         public List<KHACHTHUE> loadbangKhachThuetheoten(string pmaphong)
         {
             var dulieu =(from s in data.KHACHTHUEs 
@@ -29,6 +37,13 @@ namespace DAL
         public KHACHTHUE loadTenKT(string pMa)
         {
             return data.KHACHTHUEs.Where(t => t.MAKT == pMa).FirstOrDefault();
+        }
+        public string Laytenkt(string pma)
+        {
+            var kq = (from k in data.KHACHTHUEs
+                      where k.MAKT == pma
+                      select k.TENKT).FirstOrDefault();
+            return kq.ToString();
         }
         public Array layanh(string pma)
         {
@@ -96,10 +111,9 @@ namespace DAL
         public bool kt_KhachThue(string pkt)
         {
             var ktx = (from kt in data.KHACHTHUEs
-                      
                        from tr in data.THANNHAN_TAMTRUs
                        from tk in data.VIPHAMs
-                       where kt.MAKT == pkt || kt.MAKT== tr.MAKT && kt.MAKT == pkt
+                       where kt.MAKT== tr.MAKT && kt.MAKT == pkt
                        || kt.MAKT == tk.MAKT && kt.MAKT== pkt
                        select kt).Count();
             if (ktx > 0)
@@ -128,6 +142,7 @@ namespace DAL
                     kt.SOCMND = pkt.SOCMND;
                     kt.NGAYSINH = pkt.NGAYSINH;
                     kt.TINHTRANGTAMTRU = pkt.TINHTRANGTAMTRU;
+                    
                     data.SubmitChanges();
                 }
                 return true;
@@ -144,8 +159,26 @@ namespace DAL
                 KHACHTHUE kt = data.KHACHTHUEs.Where(t => t.MAKT == pkt.MAKT).FirstOrDefault();
                 if (kt != null)
                 {
-                   
+
                     kt.TINHTRANGTAMTRU = pkt.TINHTRANGTAMTRU;
+                    data.SubmitChanges();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool sua_tinhtrangOkhachthue(KHACHTHUE pkt)
+        {
+            try
+            {
+                KHACHTHUE kt = data.KHACHTHUEs.Where(t => t.MAKT == pkt.MAKT).FirstOrDefault();
+                if (kt != null)
+                {
+
+                    kt.TINHTRANG = pkt.TINHTRANG;
                     data.SubmitChanges();
                 }
                 return true;
@@ -167,7 +200,13 @@ namespace DAL
             var kq = (from kt in data.KHACHTHUEs
                       where kt.SOCMND == socm
                       select kt).Count();
-            if (kq>0)
+            var kq1 = (from kt in data.KHACHCOCPHONGs
+                       where kt.SOCMND == socm
+                       select kt).Count();
+            var kq2 = (from kt in data.THANNHANs
+                       where kt.SOCMNDTN == socm
+                       select kt).Count();
+            if (kq>0 || kq1>0|| kq2>0)
             {
                 return true;
             }    
@@ -189,7 +228,11 @@ namespace DAL
             var kq = (from kt in data.KHACHTHUEs
                       where kt.SDT == Sodt
                       select kt).Count();
-            if (kq > 0)
+            var kq1 = (from kt in data.KHACHCOCPHONGs
+                      where kt.SODT == Sodt
+                      select kt).Count();
+            
+            if (kq > 0|| kq1>0)
             {
                 return true;
             }

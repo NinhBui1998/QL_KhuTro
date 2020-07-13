@@ -18,11 +18,13 @@ namespace DAL.NghiepVu
                      where s.MAKT== k.MAKT && k.MANOIQUY == kth.MANOIQUY
                      select new
                      {
+                         k.TIENPHAT,
+                         k.MAVIPHAM,
                          s.MAKT,
                          s.TENKT,
                          s.SOCMND,
                          k.NGAYVIPHAM,
-                         k.SOLAN,
+                         k.LAN,
                          k.GHICHU,
                          kth.MANOIQUY,
                          kth.NOIDUNG,
@@ -30,16 +32,19 @@ namespace DAL.NghiepVu
                      };
             var kq = kt.ToList().ConvertAll(t => new ViPham()
             {
+                MAVIPHAM1=t.MAVIPHAM,
                 Manoiquy = t.MANOIQUY,
                 Makt = t.MAKT,
                 Tenkt = t.TENKT,
                 Socmnd = t.SOCMND,
                 Ngayvipham = Convert.ToDateTime(t.NGAYVIPHAM),
-                Solan = Convert.ToInt32(t.SOLAN),
-                Ghichu=t.GHICHU,
+                Solan = Convert.ToInt32(t.LAN),
+                Ghichu = t.GHICHU,
                 Noidung=t.NOIDUNG,
-                Hinhphat=Convert.ToDecimal( t.HINHPHAT)
-            }); 
+                Hinhphat=Convert.ToDecimal( t.HINHPHAT),
+                TIENPHAT1= Convert.ToDecimal(t.TIENPHAT),
+
+            });; 
             kq.ToList<ViPham>();
             return kq;
         }
@@ -52,27 +57,31 @@ namespace DAL.NghiepVu
                      where s.MAKT == k.MAKT && k.MANOIQUY == kth.MANOIQUY && k.MAKT==pmakt
                      select new
                      {
+                         k.MAVIPHAM,
                          s.MAKT,
                          s.TENKT,
                          s.SOCMND,
                          k.NGAYVIPHAM,
-                         k.SOLAN,
+                         k.LAN,
                          k.GHICHU,
                          kth.MANOIQUY,
                          kth.NOIDUNG,
-                         kth.HINHPHAT
+                         kth.HINHPHAT,
+                         k.TIENPHAT,
                      };
             var kq = kt.ToList().ConvertAll(t => new ViPham()
             {
+                MAVIPHAM1=t.MAVIPHAM,
                 Manoiquy = t.MANOIQUY,
                 Makt = t.MAKT,
                 Tenkt = t.TENKT,
                 Socmnd = t.SOCMND,
                 Ngayvipham = Convert.ToDateTime(t.NGAYVIPHAM),
-                Solan = Convert.ToInt32(t.SOLAN),
+                Solan = Convert.ToInt32(t.LAN),
                 Ghichu = t.GHICHU,
                 Noidung = t.NOIDUNG,
-                Hinhphat = Convert.ToDecimal(t.HINHPHAT)
+                Hinhphat = Convert.ToDecimal(t.HINHPHAT),
+                TIENPHAT1 = Convert.ToDecimal(t.TIENPHAT),
             });
             kq.ToList<ViPham>();
             return kq;
@@ -88,10 +97,10 @@ namespace DAL.NghiepVu
         {
             return data.NOIQUYs.Where(t => t.MANOIQUY == pMa).FirstOrDefault();
         }
-        public bool ktakhoachinh_ViPham(string manq, string makt)
+        public bool ktakhoachinh_ViPham(string manq)
         {
             var kt = (from h in data.VIPHAMs
-                      where h.MANOIQUY == manq && h.MAKT ==makt
+                      where h.MAVIPHAM == manq 
                       select h).Count();
             if (kt > 0)
             {
@@ -120,11 +129,11 @@ namespace DAL.NghiepVu
         }
 
         //Xóa
-        public bool xoa_vipham(string pmanq, string pmakt)
+        public bool xoa_vipham(string pmanq)
         {
             try
             {
-                VIPHAM hd = data.VIPHAMs.Where(t => t.MANOIQUY == pmanq && t.MAKT==pmakt).FirstOrDefault();
+                VIPHAM hd = data.VIPHAMs.Where(t => t.MAVIPHAM == pmanq).FirstOrDefault();
                 data.VIPHAMs.DeleteOnSubmit(hd);
                 data.SubmitChanges();
                 return true;
@@ -143,7 +152,7 @@ namespace DAL.NghiepVu
                 VIPHAM hd = data.VIPHAMs.Where(t => t.MANOIQUY == pvipham.MANOIQUY && t.MAKT== pvipham.MAKT).FirstOrDefault();
                 if (hd != null)
                 {
-                    hd.SOLAN = pvipham.SOLAN;
+                    hd.NGAYVIPHAM = pvipham.NGAYVIPHAM;
                     hd.GHICHU = pvipham.GHICHU;
 
                     data.SubmitChanges();
@@ -160,6 +169,22 @@ namespace DAL.NghiepVu
             var kq = (from kt in data.KHACHTHUEs
                       select kt.MAPHONG).FirstOrDefault();
             return kq.ToString();
+        }
+        public int laylanvipham (string makt, string pmanq)
+        {
+
+            var kq = (from vp in data.VIPHAMs
+                      where vp.MAKT == makt && vp.MANOIQUY == pmanq
+                      select vp).Count();
+            if (kq > 0)
+            {
+                return kq;
+            }
+            else
+            {
+                return 0;
+            }    
+
         }
     }
    

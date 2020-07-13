@@ -428,3 +428,5 @@ E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTr
 E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\DAL.dll
 E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.NghiepVu.frm_cocphong.resources
 E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\bin\Debug\BLL.dll
+E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.NghiepVu.frm_dialog.resources
+E:\DA_TotNghiep\GitHub\QL_KhuTro\QuanLyKhuTro\QuanLyKhuTro\obj\Debug\QuanLyKhuTro.DanhMuc.frm_thietbiphong.resources

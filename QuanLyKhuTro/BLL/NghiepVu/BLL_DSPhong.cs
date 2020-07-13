@@ -46,5 +46,9 @@ namespace BLL.NghiepVu
         {
             return dal_dsp.layngaytronghopdong();
         }
+        public string tongphongdangsua()
+        {
+            return dal_dsp.tongphongdangsua();
+        }
     }
 }

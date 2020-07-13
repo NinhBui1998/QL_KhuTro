@@ -497,7 +497,6 @@
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.btn_thongkephong);
             this.ribbonPageGroup3.ItemLinks.Add(this.btn_thongkedoanhthu);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btn_thongkevipham);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem8);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
@@ -542,7 +541,6 @@
             // pnl_main
             // 
             this.pnl_main.AutoSize = true;
-            this.pnl_main.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_main.BackgroundImage")));
             this.pnl_main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnl_main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_main.Location = new System.Drawing.Point(0, 158);
@@ -570,11 +568,12 @@
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frm_main.IconOptions.LargeImage")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_main";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
-            this.Text = "frm_main";
+            this.Text = "NHÀ TRỌ HN";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_main_FormClosing);
             this.Load += new System.EventHandler(this.frm_main_Load);

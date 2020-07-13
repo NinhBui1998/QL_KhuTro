@@ -20,6 +20,10 @@ namespace BLL
         {
             return dichvu.loadDV(pma);
         }
+        public Double laygiadien(string ma)
+        {
+            return dichvu.laydongiadien(ma);
+        }
         //kiểm tra khóa chính
         public bool ktkc_DichVu(string pMa)
         {

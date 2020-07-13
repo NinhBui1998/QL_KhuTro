@@ -49,8 +49,19 @@ namespace DAL.ThongKe
                       select l.GIA).Sum();
             return Convert.ToDecimal(kq);
         }
-
-        public List<HoaDon> loadHoaDontheothang(string thang)
+        public decimal tongtiencoc()
+        {
+            var kq = (from h in data.HOPDONGs
+                      select h.TIENCOC).Sum();
+            return Convert.ToDecimal(kq);
+        }
+        public decimal tongtienvipham()
+        {
+            var kq = (from h in data.VIPHAMs
+                      select h.TIENPHAT).Sum();
+            return Convert.ToDecimal(kq);
+        }
+        public List<HoaDon> loadHoaDontheothang(int thang)
         {
             var kt = from p in data.PHONGs
                      from t in data.TANGs
@@ -60,7 +71,7 @@ namespace DAL.ThongKe
                      from nv in data.NHANVIENs
                      where p.MAPHONG == hd.MAPHONG && hd.MAHOADON == cs.MAHOADON
                      && hd.MANV == nv.MANV && p.MATANG == t.MATANG && 
-                     lp.MALOAI == p.MALOAI &&hd.THANGNAM.Substring(0,2)==thang
+                     lp.MALOAI == p.MALOAI &&hd.THANGNAM.Value.Month==thang
                      select new
                      {
                          hd.MAHOADON,
@@ -104,7 +115,7 @@ namespace DAL.ThongKe
                 SoDienMoi = Convert.ToInt32(t.SODIENMOI),
                 SoNuocCu = Convert.ToInt32(t.SONUOCCU),
                 SoNuocMoi = Convert.ToInt32(t.SONUOCMOI),
-                ThangNam = t.THANGNAM,
+                ThangNam =Convert.ToDateTime( t.THANGNAM),
                 TENLOAI1 = t.TENLOAI,
                 TIENPHONG1 = Convert.ToDecimal(t.GIA)
 
@@ -112,7 +123,7 @@ namespace DAL.ThongKe
             kq.ToList<HoaDon>();
             return kq;
         }
-        public List<HoaDon> loadHoaDontheonam(string nam)
+        public List<HoaDon> loadHoaDontheonam(int nam)
         {
             var kt = from p in data.PHONGs
                      from t in data.TANGs
@@ -122,7 +133,7 @@ namespace DAL.ThongKe
                      from nv in data.NHANVIENs
                      where p.MAPHONG == hd.MAPHONG && hd.MAHOADON == cs.MAHOADON
                      && hd.MANV == nv.MANV && p.MATANG == t.MATANG &&
-                     lp.MALOAI == p.MALOAI && hd.THANGNAM.Substring(hd.THANGNAM.Length - 4, 4) == nam
+                     lp.MALOAI == p.MALOAI && hd.THANGNAM.Value.Year == nam
                      select new
                      {
                          hd.MAHOADON,
@@ -166,7 +177,7 @@ namespace DAL.ThongKe
                 SoDienMoi = Convert.ToInt32(t.SODIENMOI),
                 SoNuocCu = Convert.ToInt32(t.SONUOCCU),
                 SoNuocMoi = Convert.ToInt32(t.SONUOCMOI),
-                ThangNam = t.THANGNAM,
+                ThangNam =Convert.ToDateTime( t.THANGNAM),
                 TENLOAI1 = t.TENLOAI,
                 TIENPHONG1 = Convert.ToDecimal(t.GIA)
 
@@ -174,7 +185,7 @@ namespace DAL.ThongKe
             kq.ToList<HoaDon>();
             return kq;
         }
-        public List<HoaDon> loadHoaDontheothangnam(string thangnam)
+        public List<HoaDon> loadHoaDontheothangnam(DateTime thangnam)
         {
             var kt = from p in data.PHONGs
                      from t in data.TANGs
@@ -228,7 +239,7 @@ namespace DAL.ThongKe
                 SoDienMoi = Convert.ToInt32(t.SODIENMOI),
                 SoNuocCu = Convert.ToInt32(t.SONUOCCU),
                 SoNuocMoi = Convert.ToInt32(t.SONUOCMOI),
-                ThangNam = t.THANGNAM,
+                ThangNam =Convert.ToDateTime( t.THANGNAM),
                 TENLOAI1 = t.TENLOAI,
                 TIENPHONG1 = Convert.ToDecimal(t.GIA)
 
@@ -246,8 +257,8 @@ namespace DAL.ThongKe
                      from nv in data.NHANVIENs
                      where p.MAPHONG == hd.MAPHONG && hd.MAHOADON == cs.MAHOADON
                      && hd.MANV == nv.MANV && p.MATANG == t.MATANG &&
-                     lp.MALOAI == p.MALOAI &&  tuthang<= hd.NGAYLAP &&
-                    denthang >= hd.NGAYLAP
+                     lp.MALOAI == p.MALOAI &&  tuthang<= hd.THANGNAM &&
+                    denthang >= hd.THANGNAM
                      select new
                      {
                          hd.MAHOADON,
@@ -291,7 +302,7 @@ namespace DAL.ThongKe
                 SoDienMoi = Convert.ToInt32(t.SODIENMOI),
                 SoNuocCu = Convert.ToInt32(t.SONUOCCU),
                 SoNuocMoi = Convert.ToInt32(t.SONUOCMOI),
-                ThangNam = t.THANGNAM,
+                ThangNam =Convert.ToDateTime( t.THANGNAM),
                 TENLOAI1 = t.TENLOAI,
                 TIENPHONG1 = Convert.ToDecimal(t.GIA)
 

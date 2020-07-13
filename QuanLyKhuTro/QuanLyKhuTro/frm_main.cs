@@ -267,12 +267,12 @@ namespace QuanLyKhuTro
         private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
         {
             frm_khachthue frm = new frm_khachthue();
-            frm.TopLevel = false;
-            pnl_main.Controls.Clear();
-            pnl_main.Controls.Add(frm);
-            frm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            //frm.TopLevel = false;
+            //pnl_main.Controls.Clear();
+            //pnl_main.Controls.Add(frm);
+            //frm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
            
-            frm.Dock = DockStyle.Fill;
+            //frm.Dock = DockStyle.Fill;
             frm.Show();
             //// Xóa hết controls đang tồn tại trong pnlContain (nếu có)
             //this.pnl_main.Controls.Clear();

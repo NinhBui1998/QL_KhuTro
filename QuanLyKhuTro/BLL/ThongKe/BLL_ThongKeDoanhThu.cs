@@ -36,15 +36,15 @@ namespace BLL.ThongKe
         {
             return dal_tkdt.TinhTongTienPhong();
         }
-        public List<HoaDon> loadtkdoanhthutheothang(string thang)
+        public List<HoaDon> loadtkdoanhthutheothang(int thang)
         {
             return dal_tkdt.loadHoaDontheothang(thang);
         }
-        public List<HoaDon> loadtkdoanhthutheonam(string nam)
+        public List<HoaDon> loadtkdoanhthutheonam(int nam)
         {
             return dal_tkdt.loadHoaDontheonam(nam);
         }
-        public List<HoaDon> loadtkdoanhthutheothangnam(string thangnam)
+        public List<HoaDon> loadtkdoanhthutheothangnam(DateTime thangnam)
         {
             return dal_tkdt.loadHoaDontheothangnam(thangnam);
         }

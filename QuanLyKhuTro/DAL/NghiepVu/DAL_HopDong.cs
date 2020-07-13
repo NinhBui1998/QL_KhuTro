@@ -89,9 +89,26 @@ namespace DAL
                 return false;
             }
         }
+        public bool sua_TinhtrangHopDong(HOPDONG pHopDong)
+        {
+            try
+            {
+                HOPDONG hd = data.HOPDONGs.Where(t => t.MAHD == pHopDong.MAHD).FirstOrDefault();
+                if (hd != null)
+                {
+                    hd.TINHTRANG = pHopDong.TINHTRANG;
 
+                    data.SubmitChanges();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         //kiểm tra có đang được sử dụng
-       
-       
+
+
     }
 }

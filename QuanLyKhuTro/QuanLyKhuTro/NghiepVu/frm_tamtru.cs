@@ -111,7 +111,7 @@ namespace QuanLyKhuTro.NghiepVu
                     if(bll_khachthue.sua_tinhtrangkt(kt)==true)
                     {
                         MessageBox.Show("Thành công");
-                        grv_khachthue.DataSource = bll_khachthue.loadBangKTtheoma(cbo_phong.SelectedValue.ToString());
+                        //grv_khachthue.DataSource = bll_khachthue.loadBangKTtheoma(cbo_phong.SelectedValue.ToString());
                     }
                     else
                     {
@@ -145,16 +145,23 @@ namespace QuanLyKhuTro.NghiepVu
                 {
                     kt.TINHTRANGTAMTRU = "đã đăng ký";
                 }
-                if (bll_khachthue.sua_tinhtrangkt(kt) == true)
-                {
-                    MessageBox.Show("Thành công");
-                    grv_khachthue.DataSource = bll_khachthue.loadBangKTtheoma(cbo_phong.SelectedValue.ToString());
+                if(bll_tamtru.sua_tamtru(tt)==true)
+                    {   
+                    if (bll_khachthue.sua_tinhtrangkt(kt) == true)
+                    {
+                        MessageBox.Show("Thành công");
+                        grv_khachthue.DataSource = bll_khachthue.loadBangKTtheoma(cbo_phong.SelectedValue.ToString());
+                    }
+                    else
+                    {
+                        MessageBox.Show("thất bại ");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("thất bại ");
+                    else
+                    {
+                        MessageBox.Show("thất bại ");
+                    }
                 }
-            }
             }
            catch
             {

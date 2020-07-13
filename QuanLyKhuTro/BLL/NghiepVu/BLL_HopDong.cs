@@ -38,5 +38,9 @@ namespace BLL
         {
             return hopdong.sua_HopDong(pHopDong);
         }
+        public bool sua_tinhtrangHopDong(HOPDONG pHopDong)
+        {
+            return hopdong.sua_TinhtrangHopDong(pHopDong);
+        }
     }
 }

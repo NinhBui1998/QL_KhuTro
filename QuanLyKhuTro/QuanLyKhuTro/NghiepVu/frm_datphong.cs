@@ -14,6 +14,7 @@ using System.IO;
 using System.Globalization;
 using DAL.DuLieu;
 using QuanLyKhuTro.DanhMuc;
+using BLL.NghiepVu;
 
 namespace QuanLyKhuTro.NghiepVu
 {
@@ -154,7 +155,7 @@ namespace QuanLyKhuTro.NghiepVu
 
 
             //Thêm khách thuê vào hợp đồng
-            kt.MAKT = txt_makt.Text;
+            kt.MAKT = bll_sinhma.SinhMa_KhachThue();
             kt.TENKT = txt_tenkt.Text;
             kt.SDT = txt_sdt.Text;
             kt.MAPHONG = datphong.laymaphong(Ten);
@@ -179,8 +180,9 @@ namespace QuanLyKhuTro.NghiepVu
             kt.SOCMND = txt_cmnd.Text;
             kt.NGAYSINH = Convert.ToDateTime(txt_ngaysinh.Text);
             kt.QUEQUAN = txt_quequan.Text;
-          
-            
+            kt.MK = "abc";
+            kt.GHICHU = null;
+            kt.TINHTRANG = true;
 
             if (txt_makt.Text == string.Empty && txt_mahd.Text == string.Empty
                     && txt_manv.Text == string.Empty && txt_tenkt.Text == string.Empty)
@@ -263,6 +265,27 @@ namespace QuanLyKhuTro.NghiepVu
                 txt_loaiphong.Text = lp.TENLOAI;
                 txt_matang.Text = t.TENTANG;
                 txt_gia.Text = String.Format("{0:#,##0.##}", lp.GIA);
+                if(bll_cocphong.kt_phongcococ(datphong.laymaphong(Ten))==true)
+                {
+                    KHACHCOCPHONG kc = new KHACHCOCPHONG();
+                    kc = bll_cocphong.loadkhcocphong(datphong.laymaphong(Ten));
+                    txt_tenkt.Text = kc.TEN;
+                    txt_sdt.Text = kc.SODT.ToString();
+                    txt_cmnd.Text = kc.SOCMND;
+                    txt_quequan.Text = kc.QUEQUAN;
+                    if(kc.GIOITINHKC == "Nam")
+                    {
+                        rdb_nam.Checked = true;
+                    }  
+                    else
+                    {
+                        rdb_nu.Checked = true;
+                    }    
+                }    
+                else
+                {
+                    return;
+                }    
             }
             catch { MessageBox.Show("Lỗi hệ thống"); }
 
@@ -280,16 +303,12 @@ namespace QuanLyKhuTro.NghiepVu
                 pic_anh.ImageLocation = open.FileName;
                 pic_anh.SizeMode = PictureBoxSizeMode.StretchImage;
             }
-           
         }
          private byte[] convertImage(Image img)//chuyen image sang byte
          {
-         
                 MemoryStream m = new MemoryStream();
                 img.Save(m, System.Drawing.Imaging.ImageFormat.Png);
                 return m.ToArray();
-            
-           
          }
             private Image bytetoimage(byte[] b)//chuyen byte sang image
             {
@@ -317,10 +336,27 @@ namespace QuanLyKhuTro.NghiepVu
                 txt_ngaykt.Text= gridView_datphong.GetRowCellValue(position, "NgayTra").ToString();
                 hd.TIENCOC= Convert.ToDecimal(gridView_datphong.GetRowCellValue(position, "Tiencoc").ToString());
                 txt_tiencoc.Text = String.Format("{0:#,##0.##}", hd.TIENCOC);
+                txt_makt.Text = gridView_datphong.GetRowCellValue(position, "Makt").ToString();
+                txt_tenkt.Text = gridView_datphong.GetRowCellValue(position, "Tenkt").ToString();
 
-
-            }
-            catch { }
+                    KHACHTHUE kt = new KHACHTHUE();
+                    kt = khachthue.layttkt(txt_makt.Text);
+                    txt_sdt.Text = kt.SDT;
+                    txt_cmnd.Text = kt.SOCMND;
+                    txt_quequan.Text = kt.QUEQUAN;
+                    txt_ngaysinh.Text = kt.NGAYSINH.ToString();
+                    try
+                    {
+                        byte[] b = (byte[])khachthue.layanh(kt.MAKT);
+                        pic_anh.Image = bytetoimage(b);
+                        pic_anh.SizeMode = PictureBoxSizeMode.StretchImage;
+                    }
+                    catch
+                    {
+                        return;
+                    }
+                }
+                catch { }
             }
             catch
             {
@@ -419,9 +455,14 @@ namespace QuanLyKhuTro.NghiepVu
             string loaiphong = lp.TENLOAI;
             string tang = t.TENTANG;
             string gia = String.Format("{0:#,##0.##}", lp.GIA);
+
+            string ngaykt_tam = txt_ngaykt.Text;
+            string ngaykt =ngaykt_tam.Substring(0,2);
+            string thangkt = ngaykt_tam.Substring(3,2);
+            string namkt = ngaykt_tam.Substring(6,4);
             we.ThongTinHopDong(mahd, ngay, thang, nam, tennv,ngaysinhnv,cmndnv,
                 quequannv,sdtnv,tenkt,ngaysinhkt,cmndkt,quequankt,sdtkt,
-                tenphong,loaiphong,tang,gia,tiencoc,"22","02","2021");
+                tenphong,loaiphong,tang,gia,tiencoc,ngaykt,thangkt,namkt);
         }
 
         private void txt_sdt_TextChanged(object sender, EventArgs e)
@@ -445,31 +486,37 @@ namespace QuanLyKhuTro.NghiepVu
             frm.TenPhong = datphong.laymaphong(Ten);
             frm.ShowDialog(); 
         }
-
-        private void txt_sdt_Leave(object sender, EventArgs e)
+        BLL_CocPhong bll_cocphong = new BLL_CocPhong();
+        private void txt_sdt_Validating(object sender, CancelEventArgs e)
         {
             if (khachthue.kt_SoDT(txt_sdt.Text) == true)
             {
-                MessageBox.Show("Trùng số điện thoại");
-                return;
+                errorProvider1.SetError(txt_sdt, "trùng số điện thoại");
             }
             else
             {
-                return;
+                e.Cancel = false;
+                errorProvider1.SetError(txt_sdt, null);
             }
         }
 
-        private void txt_cmnd_Leave(object sender, EventArgs e)
+        private void txt_cmnd_Validating(object sender, CancelEventArgs e)
         {
             if (khachthue.kt_Socm(txt_cmnd.Text) == true)
             {
-                MessageBox.Show("Trùng số chứng minh");
-                return;
+                errorProvider1.SetError(txt_cmnd, "trùng số chứng minh");
             }
             else
             {
-                return;
+                e.Cancel = false;
+                errorProvider1.SetError(txt_cmnd, null);
             }
+        }
+
+        private void txt_makt_TextChanged(object sender, EventArgs e)
+        {
+            
+
         }
     }
 }

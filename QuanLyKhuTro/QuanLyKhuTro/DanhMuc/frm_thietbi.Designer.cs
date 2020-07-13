@@ -48,20 +48,11 @@
             this.txt_tenloai = new System.Windows.Forms.TextBox();
             this.txt_gia = new System.Windows.Forms.TextBox();
             this.lbl_giathietbi = new System.Windows.Forms.Label();
-            this.lbl_slphanbo = new System.Windows.Forms.Label();
-            this.lbl_sltonkho = new System.Windows.Forms.Label();
-            this.lbl_slhuhong = new System.Windows.Forms.Label();
-            this.txt_slphanbo = new System.Windows.Forms.TextBox();
-            this.txt_slhuhong = new System.Windows.Forms.TextBox();
-            this.txt_sltonkho = new System.Windows.Forms.TextBox();
             this.grv_thietbi = new DevExpress.XtraGrid.GridControl();
             this.gridView_ThietBi = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.MATHETBI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENTB = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GIATB = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.SOLUONG_PHANBO = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.SOLUONG_HUHONG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.SOLUONG_TONKHO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -252,42 +243,34 @@
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.62946F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.37054F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.46341F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.53659F));
             this.tableLayoutPanel3.Controls.Add(this.lbl_mathietbi, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.lbl_tenthietbi, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.txt_maloai, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.txt_tenloai, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.txt_gia, 1, 2);
             this.tableLayoutPanel3.Controls.Add(this.lbl_giathietbi, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.lbl_slphanbo, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.lbl_sltonkho, 0, 5);
-            this.tableLayoutPanel3.Controls.Add(this.lbl_slhuhong, 0, 4);
-            this.tableLayoutPanel3.Controls.Add(this.txt_slphanbo, 1, 3);
-            this.tableLayoutPanel3.Controls.Add(this.txt_slhuhong, 1, 4);
-            this.tableLayoutPanel3.Controls.Add(this.txt_sltonkho, 1, 5);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel3.ForeColor = System.Drawing.Color.Black;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 26);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 6;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(369, 271);
-            this.tableLayoutPanel3.TabIndex = 0;
+            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(369, 171);
+            this.tableLayoutPanel3.TabIndex = 1;
             // 
             // lbl_mathietbi
             // 
             this.lbl_mathietbi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_mathietbi.AutoSize = true;
-            this.lbl_mathietbi.Location = new System.Drawing.Point(3, 13);
+            this.lbl_mathietbi.Location = new System.Drawing.Point(3, 19);
             this.lbl_mathietbi.Name = "lbl_mathietbi";
-            this.lbl_mathietbi.Size = new System.Drawing.Size(125, 19);
+            this.lbl_mathietbi.Size = new System.Drawing.Size(146, 19);
             this.lbl_mathietbi.TabIndex = 0;
             this.lbl_mathietbi.Text = "Mã thiết bị";
             // 
@@ -295,99 +278,45 @@
             // 
             this.lbl_tenthietbi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_tenthietbi.AutoSize = true;
-            this.lbl_tenthietbi.Location = new System.Drawing.Point(3, 58);
+            this.lbl_tenthietbi.Location = new System.Drawing.Point(3, 76);
             this.lbl_tenthietbi.Name = "lbl_tenthietbi";
-            this.lbl_tenthietbi.Size = new System.Drawing.Size(125, 19);
+            this.lbl_tenthietbi.Size = new System.Drawing.Size(146, 19);
             this.lbl_tenthietbi.TabIndex = 1;
             this.lbl_tenthietbi.Text = "Tên thiết bị";
             // 
             // txt_maloai
             // 
             this.txt_maloai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_maloai.Location = new System.Drawing.Point(134, 9);
+            this.txt_maloai.Location = new System.Drawing.Point(155, 15);
             this.txt_maloai.Name = "txt_maloai";
-            this.txt_maloai.Size = new System.Drawing.Size(232, 27);
+            this.txt_maloai.Size = new System.Drawing.Size(211, 27);
             this.txt_maloai.TabIndex = 2;
             // 
             // txt_tenloai
             // 
             this.txt_tenloai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_tenloai.Location = new System.Drawing.Point(134, 54);
+            this.txt_tenloai.Location = new System.Drawing.Point(155, 72);
             this.txt_tenloai.Name = "txt_tenloai";
-            this.txt_tenloai.Size = new System.Drawing.Size(232, 27);
+            this.txt_tenloai.Size = new System.Drawing.Size(211, 27);
             this.txt_tenloai.TabIndex = 2;
             // 
             // txt_gia
             // 
             this.txt_gia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_gia.Location = new System.Drawing.Point(134, 99);
+            this.txt_gia.Location = new System.Drawing.Point(155, 129);
             this.txt_gia.Name = "txt_gia";
-            this.txt_gia.Size = new System.Drawing.Size(232, 27);
+            this.txt_gia.Size = new System.Drawing.Size(211, 27);
             this.txt_gia.TabIndex = 2;
             // 
             // lbl_giathietbi
             // 
             this.lbl_giathietbi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_giathietbi.AutoSize = true;
-            this.lbl_giathietbi.Location = new System.Drawing.Point(3, 103);
+            this.lbl_giathietbi.Location = new System.Drawing.Point(3, 133);
             this.lbl_giathietbi.Name = "lbl_giathietbi";
-            this.lbl_giathietbi.Size = new System.Drawing.Size(125, 19);
+            this.lbl_giathietbi.Size = new System.Drawing.Size(146, 19);
             this.lbl_giathietbi.TabIndex = 1;
-            this.lbl_giathietbi.Text = "Giá thiết bị";
-            // 
-            // lbl_slphanbo
-            // 
-            this.lbl_slphanbo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_slphanbo.AutoSize = true;
-            this.lbl_slphanbo.Location = new System.Drawing.Point(3, 138);
-            this.lbl_slphanbo.Name = "lbl_slphanbo";
-            this.lbl_slphanbo.Size = new System.Drawing.Size(125, 38);
-            this.lbl_slphanbo.TabIndex = 1;
-            this.lbl_slphanbo.Text = "Số lượng phân bổ";
-            // 
-            // lbl_sltonkho
-            // 
-            this.lbl_sltonkho.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_sltonkho.AutoSize = true;
-            this.lbl_sltonkho.Location = new System.Drawing.Point(3, 238);
-            this.lbl_sltonkho.Name = "lbl_sltonkho";
-            this.lbl_sltonkho.Size = new System.Drawing.Size(125, 19);
-            this.lbl_sltonkho.TabIndex = 1;
-            this.lbl_sltonkho.Text = "Số lượng tồn kho";
-            // 
-            // lbl_slhuhong
-            // 
-            this.lbl_slhuhong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_slhuhong.AutoSize = true;
-            this.lbl_slhuhong.Location = new System.Drawing.Point(3, 183);
-            this.lbl_slhuhong.Name = "lbl_slhuhong";
-            this.lbl_slhuhong.Size = new System.Drawing.Size(125, 38);
-            this.lbl_slhuhong.TabIndex = 1;
-            this.lbl_slhuhong.Text = "Số lượng hư hỏng";
-            // 
-            // txt_slphanbo
-            // 
-            this.txt_slphanbo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_slphanbo.Location = new System.Drawing.Point(134, 144);
-            this.txt_slphanbo.Name = "txt_slphanbo";
-            this.txt_slphanbo.Size = new System.Drawing.Size(232, 27);
-            this.txt_slphanbo.TabIndex = 2;
-            // 
-            // txt_slhuhong
-            // 
-            this.txt_slhuhong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_slhuhong.Location = new System.Drawing.Point(134, 189);
-            this.txt_slhuhong.Name = "txt_slhuhong";
-            this.txt_slhuhong.Size = new System.Drawing.Size(232, 27);
-            this.txt_slhuhong.TabIndex = 2;
-            // 
-            // txt_sltonkho
-            // 
-            this.txt_sltonkho.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_sltonkho.Location = new System.Drawing.Point(134, 234);
-            this.txt_sltonkho.Name = "txt_sltonkho";
-            this.txt_sltonkho.Size = new System.Drawing.Size(232, 27);
-            this.txt_sltonkho.TabIndex = 2;
+            this.lbl_giathietbi.Text = "Giá đền bù hư hại";
             // 
             // grv_thietbi
             // 
@@ -399,16 +328,14 @@
             this.grv_thietbi.TabIndex = 1;
             this.grv_thietbi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_ThietBi});
+            this.grv_thietbi.Click += new System.EventHandler(this.grv_thietbi_Click);
             // 
             // gridView_ThietBi
             // 
             this.gridView_ThietBi.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.MATHETBI,
             this.TENTB,
-            this.GIATB,
-            this.SOLUONG_PHANBO,
-            this.SOLUONG_HUHONG,
-            this.SOLUONG_TONKHO});
+            this.GIATB});
             this.gridView_ThietBi.GridControl = this.grv_thietbi;
             this.gridView_ThietBi.Name = "gridView_ThietBi";
             this.gridView_ThietBi.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView_ThietBi_FocusedRowChanged);
@@ -431,37 +358,13 @@
             // 
             // GIATB
             // 
-            this.GIATB.Caption = "Giá thiết bị";
+            this.GIATB.Caption = "Giá đền bù hư hại";
             this.GIATB.DisplayFormat.FormatString = "#,###";
             this.GIATB.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.GIATB.FieldName = "GIATB";
+            this.GIATB.FieldName = "GIADENBUHUHAI";
             this.GIATB.Name = "GIATB";
             this.GIATB.Visible = true;
             this.GIATB.VisibleIndex = 2;
-            // 
-            // SOLUONG_PHANBO
-            // 
-            this.SOLUONG_PHANBO.Caption = "Số lượng phân bổ";
-            this.SOLUONG_PHANBO.FieldName = "SOLUONG_PHANBO";
-            this.SOLUONG_PHANBO.Name = "SOLUONG_PHANBO";
-            this.SOLUONG_PHANBO.Visible = true;
-            this.SOLUONG_PHANBO.VisibleIndex = 3;
-            // 
-            // SOLUONG_HUHONG
-            // 
-            this.SOLUONG_HUHONG.Caption = "Số lượng hư hỏng";
-            this.SOLUONG_HUHONG.FieldName = "SOLUONG_HUHONG";
-            this.SOLUONG_HUHONG.Name = "SOLUONG_HUHONG";
-            this.SOLUONG_HUHONG.Visible = true;
-            this.SOLUONG_HUHONG.VisibleIndex = 4;
-            // 
-            // SOLUONG_TONKHO
-            // 
-            this.SOLUONG_TONKHO.Caption = "Số lượng tồn kho";
-            this.SOLUONG_TONKHO.FieldName = "SOLUONG_TONKHO";
-            this.SOLUONG_TONKHO.Name = "SOLUONG_TONKHO";
-            this.SOLUONG_TONKHO.Visible = true;
-            this.SOLUONG_TONKHO.VisibleIndex = 5;
             // 
             // frm_thietbi
             // 
@@ -491,19 +394,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.GroupBox grb_thongtinthietbi;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label lbl_mathietbi;
-        private System.Windows.Forms.Label lbl_tenthietbi;
-        private System.Windows.Forms.TextBox txt_maloai;
-        private System.Windows.Forms.TextBox txt_tenloai;
-        private System.Windows.Forms.TextBox txt_gia;
-        private System.Windows.Forms.Label lbl_giathietbi;
-        private System.Windows.Forms.Label lbl_slphanbo;
-        private System.Windows.Forms.Label lbl_sltonkho;
-        private System.Windows.Forms.Label lbl_slhuhong;
-        private System.Windows.Forms.TextBox txt_slphanbo;
-        private System.Windows.Forms.TextBox txt_slhuhong;
-        private System.Windows.Forms.TextBox txt_sltonkho;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
@@ -518,8 +408,12 @@
         private DevExpress.XtraGrid.Columns.GridColumn MATHETBI;
         private DevExpress.XtraGrid.Columns.GridColumn TENTB;
         private DevExpress.XtraGrid.Columns.GridColumn GIATB;
-        private DevExpress.XtraGrid.Columns.GridColumn SOLUONG_PHANBO;
-        private DevExpress.XtraGrid.Columns.GridColumn SOLUONG_HUHONG;
-        private DevExpress.XtraGrid.Columns.GridColumn SOLUONG_TONKHO;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Label lbl_mathietbi;
+        private System.Windows.Forms.Label lbl_tenthietbi;
+        private System.Windows.Forms.TextBox txt_maloai;
+        private System.Windows.Forms.TextBox txt_tenloai;
+        private System.Windows.Forms.TextBox txt_gia;
+        private System.Windows.Forms.Label lbl_giathietbi;
     }
 }

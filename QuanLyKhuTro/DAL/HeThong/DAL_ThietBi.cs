@@ -17,11 +17,32 @@ namespace DAL
             return dulieu.ToList<THIETBI>();
         }
 
+       public string laytentb(string pma)
+        {
+            var kq = (from t in data.THIETBIs
+                      where t.MATHIETBI == pma
+                      select t.TENTB).FirstOrDefault();
+            return kq.ToString();
+        }
         //kiểm tra khóa chính
         public bool ktakhoachinh_ThietBi(string hd)
         {
             var kt = (from h in data.THIETBIs
                       where h.MATHIETBI == hd
+                      select h).Count();
+            if (kt > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool ktakhoachinh_ThietBiphong(string hd, string pmaphong)
+        {
+            var kt = (from h in data.THIETBI_PHONGs
+                      where h.MATHIETBI == hd && h.MAPHONG==pmaphong
                       select h).Count();
             if (kt > 0)
             {
@@ -74,10 +95,10 @@ namespace DAL
                 if (nv != null)
                 {
                     nv.TENTB = pThietBi.TENTB;
-                    nv.GIATB = pThietBi.GIATB;
-                    nv.SOLUONG_PHANBO = pThietBi.SOLUONG_PHANBO;
-                    nv.SOLUONG_HUHONG = pThietBi.SOLUONG_HUHONG;
-                    nv.SOLUONG_TONKHO = pThietBi.SOLUONG_TONKHO;
+                    //nv.GIATB = pThietBi.GIATB;
+                    //nv.SOLUONG_PHANBO = pThietBi.SOLUONG_PHANBO;
+                    //nv.SOLUONG_HUHONG = pThietBi.SOLUONG_HUHONG;
+                    //nv.SOLUONG_TONKHO = pThietBi.SOLUONG_TONKHO;
                     data.SubmitChanges();
                 }
                 return true;
@@ -105,6 +126,60 @@ namespace DAL
                 return false;
             }
 
+        }
+        public List<THIETBI_PHONG> loadbangThietBiPhong()
+        {
+            var dulieu = (from s in data.THIETBI_PHONGs select s);
+            return dulieu.ToList<THIETBI_PHONG>();
+        }
+        public bool them_ThietBiphong(THIETBI_PHONG tb)
+        {
+            try
+            {
+                data.THIETBI_PHONGs.InsertOnSubmit(tb);
+                data.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
+
+        //Xóa
+        
+        public bool xoa_ThietBiphong(string pMaTB, string pmaphong)
+        {
+            try
+            {
+                THIETBI_PHONG tb = data.THIETBI_PHONGs.Where(t => t.MATHIETBI == pMaTB && t.MAPHONG==pmaphong).FirstOrDefault();
+                data.THIETBI_PHONGs.DeleteOnSubmit(tb);
+                data.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool sua_ThietBiphong(THIETBI_PHONG pThietBi)
+        {
+            try
+            {
+                THIETBI_PHONG nv = data.THIETBI_PHONGs.Where(t => t.MATHIETBI == pThietBi.MATHIETBI && t.MAPHONG==pThietBi.MAPHONG).FirstOrDefault();
+                if (nv != null)
+                {
+                    nv.TRANGTHAI = pThietBi.TRANGTHAI;
+                  
+                    data.SubmitChanges();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

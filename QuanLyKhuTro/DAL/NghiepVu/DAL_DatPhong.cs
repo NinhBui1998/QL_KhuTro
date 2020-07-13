@@ -50,7 +50,8 @@ namespace DAL
                      from kth in data.KHACHTHUEs
                      from p in data.PHONGs
                      from nv in data.NHANVIENs
-                     where s.MAKT == kth.MAKT && kth.MAPHONG == p.MAPHONG && s.MANV == nv.MANV && p.TENPHONG == pten
+                     where s.MAKT == kth.MAKT && kth.MAPHONG == p.MAPHONG && s.MANV == nv.MANV
+                            && p.TENPHONG == pten && s.TINHTRANG == true
                      select new
                      {
                          s.MAHD,
@@ -121,7 +122,7 @@ namespace DAL
         public int demhopdong(string pmaphong)
         {
             var kq = (from hd in data.KHACHTHUEs
-                      where hd.MAPHONG == pmaphong
+                      where hd.MAPHONG == pmaphong && hd.TINHTRANG==true
                       select hd).Count();
             return kq;
         }

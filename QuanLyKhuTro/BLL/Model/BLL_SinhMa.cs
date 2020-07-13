@@ -27,6 +27,17 @@ namespace BLL
         {
             return dal_sm.SinhMaTamTru();
         }
-
+        public string Sinhma_vipham()
+        {
+            return dal_sm.SINHMAVIPHAM();
+        }    
+        public String SinhMa_khachcoc()
+        {
+            return dal_sm.SinhMaKHACHCOC();
+        }
+        public String SINHMATHANNHAN()
+        {
+            return dal_sm.SINHMA_THANNHAN();
+        }
     }
 }

@@ -202,12 +202,12 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(3, 51);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(132, 38);
             this.label6.TabIndex = 0;
-            this.label6.Text = "Tổng số khách thuê";
+            this.label6.Text = "Tổng số khách thuê trong nhà trọ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btn_timkiem
@@ -226,7 +226,7 @@
             // 
             this.cbo_phong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_phong.FormattingEnabled = true;
-            this.cbo_phong.Location = new System.Drawing.Point(3, 7);
+            this.cbo_phong.Location = new System.Drawing.Point(3, 4);
             this.cbo_phong.Name = "cbo_phong";
             this.cbo_phong.Size = new System.Drawing.Size(132, 27);
             this.cbo_phong.TabIndex = 11;
@@ -349,10 +349,10 @@
             // 
             this.grv_khachthue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grv_khachthue.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(1);
-            this.grv_khachthue.Location = new System.Drawing.Point(3, 52);
+            this.grv_khachthue.Location = new System.Drawing.Point(3, 53);
             this.grv_khachthue.MainView = this.gridView_khachthue;
             this.grv_khachthue.Name = "grv_khachthue";
-            this.grv_khachthue.Size = new System.Drawing.Size(968, 438);
+            this.grv_khachthue.Size = new System.Drawing.Size(968, 437);
             this.grv_khachthue.TabIndex = 6;
             this.grv_khachthue.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_khachthue});
@@ -477,7 +477,7 @@
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(968, 43);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(968, 44);
             this.tableLayoutPanel7.TabIndex = 8;
             // 
             // simpleButton3
@@ -488,7 +488,7 @@
             this.simpleButton3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
             this.simpleButton3.Location = new System.Drawing.Point(829, 3);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(136, 37);
+            this.simpleButton3.Size = new System.Drawing.Size(136, 38);
             this.simpleButton3.TabIndex = 2;
             this.simpleButton3.Text = "Xuất danh sách";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);

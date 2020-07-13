@@ -18,6 +18,10 @@ namespace BLL
         {
             return thietbi.ktakhoachinh_ThietBi(pMa);
         }
+        public string laytenthietbi(string pma)
+        {
+            return thietbi.laytentb(pma);
+        }
         //Thêm
         public bool them_ThietBi(THIETBI pThietBi)
         {
@@ -38,5 +42,33 @@ namespace BLL
         {
             return thietbi.sua_ThietBi(pThietBi);
         }
+
+        public List<THIETBI_PHONG> loadBang_TBPhong()
+        {
+            return thietbi.loadbangThietBiPhong();
+        }
+        //kiểm tra khóa chính
+        public bool ktkc_ThietBiphong(string pMa, string pmaphong)
+        {
+            return thietbi.ktakhoachinh_ThietBiphong(pMa,pmaphong);
+        }
+        //Thêm
+        public bool them_ThietBiphong(THIETBI_PHONG pThietBi)
+        {
+            return thietbi.them_ThietBiphong(pThietBi);
+        }
+        //ktra xóa
+     
+        //Xóa
+        public bool xoa_ThietBiphong(string pMa, string pmaphong)
+        {
+            return thietbi.xoa_ThietBiphong(pMa,pmaphong);
+        }
+        //Sửa
+        public bool sua_ThietBiphong(THIETBI_PHONG pThietBi)
+        {
+            return thietbi.sua_ThietBiphong(pThietBi);
+        }
+
     }
 }

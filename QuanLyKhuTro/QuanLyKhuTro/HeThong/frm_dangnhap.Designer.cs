@@ -122,7 +122,8 @@
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frm_dangnhap.IconOptions.LargeImage")));
             this.Name = "frm_dangnhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_dn";
+            this.Text = "ĐĂNG NHẬP";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_dangnhap_FormClosing);
             this.Load += new System.EventHandler(this.frm_dangnhap_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

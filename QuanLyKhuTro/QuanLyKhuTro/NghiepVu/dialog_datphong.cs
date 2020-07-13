@@ -33,13 +33,11 @@ namespace QuanLyKhuTro.NghiepVu
         }
         private void btn_datphong_Click(object sender, EventArgs e)
         {
-            frm_datphong frm = new frm_datphong();
+            frm_cocphong frm = new frm_cocphong();
             frm.TenPhong = TENPHONG;
             frm.MaNhanVien = MAnv;
             Visible = false;
             frm.ShowDialog();
-            
-           // this.Close();
         }
 
         private void btn_traphong_Click(object sender, EventArgs e)

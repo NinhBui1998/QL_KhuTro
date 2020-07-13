@@ -52,7 +52,7 @@ namespace DAL
                      from p in data.PHONGs
                      from nv in data.NHANVIENs
                      where s.MAKT == kth.MAKT && kth.MAPHONG == p.MAPHONG && s.MANV == nv.MANV
-                     && p.TENPHONG==pten
+                     && p.TENPHONG==pten && s.TINHTRANG==true
                      select new
                      {
                          s.MAHD,
@@ -99,6 +99,42 @@ namespace DAL
                       select c.SONUOC).Sum();
             return kq.ToString();
 
+        }
+        public bool suatinhtrangkhachthue(KHACHTHUE kt)
+        {
+            try
+            {
+                KHACHTHUE hd = data.KHACHTHUEs.Where(t => t.MAKT ==kt.MAKT ).FirstOrDefault();
+                if (hd != null)
+                {
+                    //hd.SOLAN = pvipham.SOLAN;
+                    hd.TINHTRANG = kt.TINHTRANG;
+                    data.SubmitChanges();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool suatinhtranghopdong(HOPDONG kt)
+        {
+            try
+            {
+                HOPDONG hd = data.HOPDONGs.Where(t => t.MAHD == kt.MAHD).FirstOrDefault();
+                if (hd != null)
+                {
+                    //hd.SOLAN = pvipham.SOLAN;
+                    hd.TINHTRANG = kt.TINHTRANG;
+                    data.SubmitChanges();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
     }

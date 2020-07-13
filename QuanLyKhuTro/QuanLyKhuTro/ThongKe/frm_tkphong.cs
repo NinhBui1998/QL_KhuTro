@@ -29,7 +29,6 @@ namespace QuanLyKhuTro.ThongKe
            
 
         }
-
         private void btn_phongdc_Click(object sender, EventArgs e)
         {
             frm_dsphongdcoc vp = new frm_dsphongdcoc();
@@ -76,7 +75,13 @@ namespace QuanLyKhuTro.ThongKe
 
         private void btn_xemphongst_Click(object sender, EventArgs e)
         {
-
+            frm_dsphongsaptra vp = new frm_dsphongsaptra();
+            vp.TopLevel = false;
+            pnl_tkp.Controls.Clear();
+            pnl_tkp.Controls.Add(vp);
+            vp.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            vp.Dock = DockStyle.Fill;
+            vp.Show();
         }
     }
 }

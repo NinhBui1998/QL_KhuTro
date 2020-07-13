@@ -32,5 +32,11 @@ namespace BLL.ThongKe
         {
             return da_tkp.Loadphongtrong();
         }
+        public List<Thongkephong> loadphongsapdenhan()
+        {
+            return da_tkp.Loadphongsaptra();
+        }
+
+
     }
 }
