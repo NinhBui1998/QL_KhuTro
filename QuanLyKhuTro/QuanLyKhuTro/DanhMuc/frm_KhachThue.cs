@@ -13,6 +13,7 @@ using DAL;
 using System.IO;
 using DevExpress.Utils.Extensions;
 using DevExpress.Data.WcfLinq.Helpers;
+using QuanLyKhuTro.NghiepVu;
 
 namespace QuanLyKhuTro.DanhMuc
 {
@@ -46,22 +47,28 @@ namespace QuanLyKhuTro.DanhMuc
             cbo_phong.ValueMember = "MAPHONG";
 
             
-            btn_sua.Enabled = btn_xoa.Enabled = false;
+            btn_sua.Enabled = btn_xoa.Enabled=btn_huy.Enabled=btn_luu.Enabled = false;
             txt_makt.Enabled = txt_tenkt.Enabled = txt_sdt.Enabled
                 = txt_quequan.Enabled = txt_ngaysinh.Enabled = false;
             txt_cmnd.Enabled = rdb_nam.Enabled = rdb_nu.Enabled =  false;
             txt_makt.Text = bll_sinhma.SinhMa_KhachThue();
            
-            //int sltd =Convert.ToInt32( bll_datphong.laysoLuongtd(cbo_phong.SelectedValue.ToString()));
-            //if (bll_datphong.demsohd(cbo_phong.SelectedValue.ToString()) <= sltd && bll_datphong.demsohd(cbo_phong.SelectedValue.ToString()) >0)
-            //{
 
-            //    btn_them.Enabled = false;
-            //}
             ckb_tinhtrang.Checked = true;
             rdb_nam.Checked = true;
             ckb_tinhtrang.Text = "đang ở";
              btn_them.Enabled = true;
+            if(khachthue.ktTRuongPhong(txt_tenphong.Text)==true)
+            {
+                ckb_truongphong.Checked = false;
+                ckb_truongphong.Enabled = false;
+            }
+            else
+            {
+                ckb_truongphong.Checked = true;
+                ckb_truongphong.Enabled = true;
+            }
+            btn_them.Enabled = true;
         }
         
 
@@ -79,6 +86,7 @@ namespace QuanLyKhuTro.DanhMuc
         {
 
             byte[] b = convertImage(pic_anhkt.Image);
+
             KHACHTHUE kt = new KHACHTHUE();
             kt.MAKT = txt_makt.Text;
             kt.TENKT = txt_tenkt.Text;
@@ -106,7 +114,7 @@ namespace QuanLyKhuTro.DanhMuc
             {
                 kt.TRUONGPHONG = false;
             }
-            kt.MAPHONG = cbo_phong.SelectedValue.ToString();
+            kt.MAPHONG = txt_tenphong.Text;
             kt.MK = "abc";
             kt.TINHTRANG = true;
             if (btn_sua.Enabled == false && btn_them.Enabled == true)
@@ -126,8 +134,30 @@ namespace QuanLyKhuTro.DanhMuc
                     }    
                     if(khachthue.ThemKT(kt)==true)
                     {
-                        MessageBox.Show("Thành công");
-                    }    
+                        PHONG ph = new PHONG();
+                        ph.MAPHONG =txt_tenphong.Text;
+                      
+                        ph.SOLUONG_HT = datphong.demsohd(ph.MAPHONG);
+                        if (phong.sua_sl(ph) == true)
+                        {
+
+                            MessageBox.Show("Thành công");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Thất bại");
+                        }
+                       
+                    }
+                    if (khachthue.ktTRuongPhong(txt_tenphong.Text) == true)
+                    {
+                        ckb_truongphong.Enabled = false;
+                    }
+                    else
+                    {
+                        ckb_truongphong.Enabled = true;
+                    }
+                    
                 }
                 catch
                 {
@@ -154,10 +184,15 @@ namespace QuanLyKhuTro.DanhMuc
                     MessageBox.Show("thất bại");
                 }
             }
-           
+            txt_makt.Enabled = txt_tenkt.Enabled = txt_sdt.Enabled
+                 = txt_quequan.Enabled = txt_ngaysinh.Enabled = false;
+            txt_cmnd.Enabled = rdb_nam.Enabled = rdb_nu.Enabled = false;
+
             txt_makt.Text = bll_sinhma.SinhMa_KhachThue();
-            grv_khachthue.DataSource = khachthue.loadBangKT();
-            ckb_truongphong.Enabled = false;
+            grv_khachthue.DataSource = khachthue.loadBangKTtheoma(txt_tenphong.Text);
+            btn_huy.Enabled = btn_luu.Enabled = btn_xoa.Enabled = btn_sua.Enabled = false;
+            ckb_truongphong.Checked = false;
+
         }
         BLL_DatPhong datphong = new BLL_DatPhong();
         BLL_Phong phong = new BLL_Phong();
@@ -169,6 +204,8 @@ namespace QuanLyKhuTro.DanhMuc
             {
                 int position = gridView_khachthue.FocusedRowHandle;
                 string m = gridView_khachthue.GetRowCellValue(position, "MAKT").ToString();
+                string ma = gridView_khachthue.GetRowCellValue(position, "MAPHONG").ToString();
+
                 if (m == string.Empty)
                 {
                     MessageBox.Show("Mã phòng không được để trống");
@@ -184,7 +221,7 @@ namespace QuanLyKhuTro.DanhMuc
                     grv_khachthue.DataSource = khachthue.loadBangKT();
                     //sửa số lượng hiện tại trong phòng
                     PHONG ph = new PHONG();
-                    ph.MAPHONG = datphong.laymaphong(Ten);
+                    ph.MAPHONG = ma;
                     ph.SOLUONG_HT = datphong.demsohd(ph.MAPHONG);
                     if (phong.sua_sl(ph) == true)
                     {
@@ -195,7 +232,7 @@ namespace QuanLyKhuTro.DanhMuc
                     {
                         MessageBox.Show("Thất bại");
                     }
-                    MessageBox.Show("Thành công");
+
                 }
                 else
                 {
@@ -220,6 +257,7 @@ namespace QuanLyKhuTro.DanhMuc
                
                 pic_anhkt.ImageLocation = open.FileName;
                 pic_anhkt.SizeMode = PictureBoxSizeMode.StretchImage;
+                
             }
         }
         private byte[] convertImage(Image img)//chuyen image sang byte
@@ -228,6 +266,15 @@ namespace QuanLyKhuTro.DanhMuc
             img.Save(m, System.Drawing.Imaging.ImageFormat.Png);
             return m.ToArray();
         }
+        //chuyển kểu ảnh
+        //private byte[] chuyenKieuAnh()
+        //{
+        //    FileStream fs = new FileStream(textBox1.Text,FileMode.Open, FileAccess.Read);
+        //    byte[] picByte = new byte[fs.Length];
+        //    fs.Read(picByte, 0, System.Convert.ToInt32(fs.Length));
+        //    fs.Close();
+        //    return picByte;
+        //}
         private Image bytetoimage(byte[] b)//chuyen byte sang image
         {
             MemoryStream m = new MemoryStream(b);
@@ -236,14 +283,31 @@ namespace QuanLyKhuTro.DanhMuc
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-            btn_sua.Enabled = btn_xoa.Enabled = true;
-            txt_makt.Enabled = txt_tenkt.Enabled = txt_sdt.Enabled
-                = txt_quequan.Enabled = txt_ngaysinh.Enabled = true;
-            txt_cmnd.Enabled = rdb_nam.Enabled = rdb_nu.Enabled= true;
-            btn_luu.Enabled =btn_huy.Enabled= true;
-            btn_xoa.Enabled = btn_sua.Enabled = false;
+           
+            if(khachthue.ktSOLUONGHT(txt_tenphong.Text)==true)
+            {
+                MessageBox.Show("Đã đủ số lượng người ở");
+                return;
+            } 
+            else
+            {
+                btn_sua.Enabled = btn_xoa.Enabled = true;
+                txt_makt.Enabled = false;
+                    txt_tenkt.Enabled = txt_sdt.Enabled
+                    = txt_quequan.Enabled = txt_ngaysinh.Enabled = true;
+                txt_cmnd.Enabled = rdb_nam.Enabled = rdb_nu.Enabled = true;
+                btn_luu.Enabled = btn_huy.Enabled = true;
+                btn_xoa.Enabled = btn_sua.Enabled = false;
+                xoatext();
+                txt_makt.Text = bll_sinhma.SinhMa_KhachThue();
+            }    
 
-            txt_makt.Text = bll_sinhma.SinhMa_KhachThue();
+        }
+        public void xoatext()
+        {
+            txt_tenkt.Clear(); txt_sdt.Clear();
+            txt_quequan.Clear(); txt_ngaysinh.Clear();
+            txt_cmnd.Clear(); 
         }
 
         private void grv_khachthue_Click(object sender, EventArgs e)
@@ -251,9 +315,12 @@ namespace QuanLyKhuTro.DanhMuc
             KHACHTHUE kt = new KHACHTHUE();
             btn_sua.Enabled = btn_xoa.Enabled = true;
             btn_them.Enabled = false;
+            btn_huy.Enabled = true;
+
             int position = gridView_khachthue.FocusedRowHandle;
             try
             {
+                kt.MAPHONG = gridView_khachthue.GetRowCellValue(position, "MAPHONG").ToString();
                 kt.TENKT = gridView_khachthue.GetRowCellValue(position, "TENKT").ToString();
                 kt.MAKT = gridView_khachthue.GetRowCellValue(position, "MAKT").ToString();
                 kt.NGAYSINH = Convert.ToDateTime(gridView_khachthue.GetRowCellValue(position, "NGAYSINH").ToString());
@@ -268,6 +335,7 @@ namespace QuanLyKhuTro.DanhMuc
                 txt_cmnd.Text = kt.SOCMND.ToString();
                 txt_ngaysinh.Text = kt.NGAYSINH.ToString();
                 txt_quequan.Text = kt.QUEQUAN.ToString();
+                txt_tenphong.Text = kt.MAPHONG;
                 if (kt.GIOITINH == "Nam")
                 {
                     rdb_nam.Checked = true;
@@ -317,6 +385,17 @@ namespace QuanLyKhuTro.DanhMuc
             //{
             //    btn_them.Enabled = false;
             //}
+            txt_tenphong.Text = cbo_phong.SelectedValue.ToString();
+            if (khachthue.ktTRuongPhong(txt_tenphong.Text) == true)
+            {
+                ckb_truongphong.Checked = false;
+                ckb_truongphong.Enabled = false;
+            }
+            else
+            {
+                ckb_truongphong.Checked = false;
+                ckb_truongphong.Enabled = true;
+            }
         }
 
         private void btn_tatcahd_Click(object sender, EventArgs e)
@@ -390,6 +469,16 @@ namespace QuanLyKhuTro.DanhMuc
         private void btn_huy_Click(object sender, EventArgs e)
         {
             frm_khachthue_Load(sender, e);
+        }
+
+        private void frm_khachthue_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
+
+        private void cbo_phong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

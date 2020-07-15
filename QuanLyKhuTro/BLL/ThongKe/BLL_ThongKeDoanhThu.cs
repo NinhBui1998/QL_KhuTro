@@ -20,6 +20,18 @@ namespace BLL.ThongKe
         {
             return dal_tkdt.TinhTongTienDien();
         }
+        public decimal tongno()
+        {
+            return dal_tkdt.TongNo();
+        }
+        public decimal tongtiencoc()
+        {
+            return dal_tkdt.tongtiencoc();
+        }
+        public decimal tongtienvipham()
+        {
+            return dal_tkdt.tongtienvipham();
+        }
         public decimal tinhtongtiennuoc()
         {
             return dal_tkdt.TinhTongTienNuoc();
@@ -39,6 +51,10 @@ namespace BLL.ThongKe
         public List<HoaDon> loadtkdoanhthutheothang(int thang)
         {
             return dal_tkdt.loadHoaDontheothang(thang);
+        }
+        public List<HoaDon> loadHoaDonconno()
+        {
+            return dal_tkdt.loadHoaDonconno();
         }
         public List<HoaDon> loadtkdoanhthutheonam(int nam)
         {

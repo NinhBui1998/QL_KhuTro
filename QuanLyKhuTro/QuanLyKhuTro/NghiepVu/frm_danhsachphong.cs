@@ -109,7 +109,7 @@ namespace QuanLyKhuTro
                         }
                         else
                         {
-                        b.BackColor = Color.SeaGreen;
+                            b.BackColor = Color.SeaGreen;
                             b.Click += showformtraphong;
                         }
                     }
@@ -228,9 +228,7 @@ namespace QuanLyKhuTro
                     b.Size = new Size(90, 60);
                     b.Location = new System.Drawing.Point(x, y);
                     b.BackColor = Color.White;
-                    if (p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].SOLUONG_TD - p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].SOLUONG_HT == 0
-                        || (1 <= p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].SOLUONG_HT && 
-                        p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].SOLUONG_HT < p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].SOLUONG_TD))
+                    if (p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].TINHTRANG==true)
                     {
                         if (p.loadphong(p.stang()[j].MATANG.ToString(), cbo_loai.SelectedValue.ToString())[i].TINHTRANGHOPDONG == "Sắp hết hạn hợp đồng")
                         {

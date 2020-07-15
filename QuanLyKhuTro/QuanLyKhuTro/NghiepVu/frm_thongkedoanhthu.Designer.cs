@@ -467,7 +467,7 @@
             // 
             this.cbo_ngay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_ngay.FormattingEnabled = true;
-            this.cbo_ngay.Location = new System.Drawing.Point(102, 4);
+            this.cbo_ngay.Location = new System.Drawing.Point(102, 3);
             this.cbo_ngay.Name = "cbo_ngay";
             this.cbo_ngay.Size = new System.Drawing.Size(214, 27);
             this.cbo_ngay.TabIndex = 0;
@@ -489,7 +489,7 @@
             "10",
             "11",
             "12"});
-            this.cbo_thang.Location = new System.Drawing.Point(102, 37);
+            this.cbo_thang.Location = new System.Drawing.Point(102, 34);
             this.cbo_thang.Name = "cbo_thang";
             this.cbo_thang.Size = new System.Drawing.Size(214, 27);
             this.cbo_thang.TabIndex = 0;

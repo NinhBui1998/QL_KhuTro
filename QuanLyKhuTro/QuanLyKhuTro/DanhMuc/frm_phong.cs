@@ -14,7 +14,7 @@ using System.Data.SqlClient;
 
 namespace QuanLyKhuTro.DanhMuc
 {
-    public partial class frm_phong : DevExpress.XtraEditors.XtraUserControl
+    public partial class frm_phong : DevExpress.XtraEditors.XtraForm
     {
         BLL_Phong phong = new BLL_Phong();
         BLL_LoaiPhong loaip = new BLL_LoaiPhong();

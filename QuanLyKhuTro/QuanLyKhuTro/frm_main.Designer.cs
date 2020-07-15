@@ -83,6 +83,8 @@
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.pnl_main = new System.Windows.Forms.Panel();
             this.btn_khachthue = new DevExpress.XtraBars.BarButtonItem();
+            this.rb_qlhd = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btn_qlhopdong = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
@@ -125,10 +127,11 @@
             this.barButtonItem5,
             this.barButtonItem6,
             this.barButtonItem7,
-            this.barButtonItem8});
+            this.barButtonItem8,
+            this.btn_qlhopdong});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbon.MaxItemId = 36;
+            this.ribbon.MaxItemId = 37;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -460,7 +463,8 @@
             this.ribbonPageGroup2,
             this.ribbonPageGroup9,
             this.ribbonPageGroup10,
-            this.ribbonPageGroup11});
+            this.ribbonPageGroup11,
+            this.rb_qlhd});
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "Nghiệp vụ";
             // 
@@ -558,6 +562,20 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btn_khachthue.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_khachthue_ItemClick);
             // 
+            // rb_qlhd
+            // 
+            this.rb_qlhd.ItemLinks.Add(this.btn_qlhopdong);
+            this.rb_qlhd.Name = "rb_qlhd";
+            // 
+            // btn_qlhopdong
+            // 
+            this.btn_qlhopdong.Caption = "Quản lý hợp đồng";
+            this.btn_qlhopdong.Id = 36;
+            this.btn_qlhopdong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.Image")));
+            this.btn_qlhopdong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.LargeImage")));
+            this.btn_qlhopdong.Name = "btn_qlhopdong";
+            this.btn_qlhopdong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_qlhopdong_ItemClick);
+            // 
             // frm_main
             // 
             this.Appearance.Options.UseFont = true;
@@ -639,5 +657,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem btn_qlhopdong;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rb_qlhd;
     }
 }

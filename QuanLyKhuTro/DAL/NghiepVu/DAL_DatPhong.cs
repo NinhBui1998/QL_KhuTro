@@ -20,6 +20,8 @@ namespace DAL
                      where s.MAKT == kth.MAKT && kth.MAPHONG == p.MAPHONG && s.MANV == nv.MANV
                      select new
                      {
+                         s.TINHTRANG,
+                         p.MAPHONG,
                          s.MAHD,
                          nv.TENNV,
                          kth.MAKT,
@@ -39,7 +41,9 @@ namespace DAL
                 NgayTra = Convert.ToDateTime(t.NGAYTRA),
                 Tiencoc = Convert.ToDecimal(t.TIENCOC),/* string.Format("{0:#,##0.00}",t.TIENCOC),*/
                 TenPhong = t.TENPHONG,
-            }); ;
+                TINHTRANG1=Convert.ToBoolean(t.TINHTRANG),
+                MAPHONG1=t.MAPHONG,
+            });
             kq.ToList<DatPhong>();
             return kq;
         }
@@ -54,6 +58,7 @@ namespace DAL
                             && p.TENPHONG == pten && s.TINHTRANG == true
                      select new
                      {
+                         p.MAPHONG,
                          s.MAHD,
                          nv.TENNV,
                          kth.MAKT,
@@ -73,6 +78,7 @@ namespace DAL
                 NgayTra = Convert.ToDateTime(t.NGAYTRA),
                 Tiencoc = Convert.ToDecimal(t.TIENCOC),/* string.Format("{0:#,##0.00}",t.TIENCOC),*/
                 TenPhong = t.TENPHONG,
+                MAPHONG1 = t.MAPHONG,
             }); ;
             kq.ToList<DatPhong>();
             return kq;

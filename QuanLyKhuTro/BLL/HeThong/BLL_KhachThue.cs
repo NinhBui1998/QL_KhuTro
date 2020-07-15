@@ -25,6 +25,22 @@ namespace BLL
         {
             return dkt.loadbangKhachThuetheoten(pmaphong );
         }
+        public bool ktTRuongPhong(string pmap)
+        {
+            return dkt.kttruongphong(pmap);
+        }
+        public string laymakttheophong (string pmaphong)
+        {
+            try
+            {
+                return dkt.laymakttheophong(pmaphong);
+            }
+            catch
+            {
+                return null;
+            }
+           
+        }
         public string Laytenkt (string pmakt)
         {
             return dkt.Laytenkt(pmakt);
@@ -63,6 +79,11 @@ namespace BLL
         {
             return dkt.sua_tinhtrangOkhachthue(pkt);
         }
+        public bool ktSOLUONGHT(string pmaphong)
+        {
+            return dkt.ktSOLUONGHT(pmaphong);
+        }
+
         public Array layanh(string pma)
         {
             try

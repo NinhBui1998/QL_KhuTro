@@ -346,6 +346,78 @@ namespace DAL.DuLieu
 
             #endregion =====  End Core=====
         }
+        public void ThongTinViPham(string TenKT,string Socmnd, string NgayViPham,string NoiDung,string HinhPhat)
+        {
+            #region ===== Core======
+            MemoryStream mStream = null;
+            WordDocument document = null;
+            string fileThongtinvipham = string.Empty;
+            // Create currency format
+            CultureInfo vietnam = new CultureInfo(1066);
+            NumberFormatInfo vnfi = vietnam.NumberFormat;
+            vnfi.CurrencySymbol = Constants.VN_UNIT;
+            vnfi.CurrencyDecimalSeparator = Constants.CHAR_COMMA;
+            vnfi.CurrencyDecimalDigits = 0;
+            //Create Temp Folder if it does not exist
+            if (!Directory.Exists(Global.AppPath + Constants.FOLDER_TEMP))
+            {
+                Directory.CreateDirectory(Global.AppPath + Constants.FOLDER_TEMP);
+            }
+            //Gets DocFile is Existed
+            string[] DocFile = Directory.GetFiles(Global.AppPath + Constants.FOLDER_TEMP +
+                        Constants.CHAR_FLASH, Constants.CHAR_STAR + Constants.FILE_EXT_DOCS);
+            //Delete *.doc file if existed
+            foreach (string file in DocFile)
+            {
+                File.Delete(file);
+            }
+            //string path = Global.AppPath + Constants.FOLDER_TEMPLATES + Constants.CHAR_FLASH + FILE_QUYETDINHKHENTHUONG;
+            try
+            {
+                // Read template
+                mStream = new MemoryStream(File.ReadAllBytes("bienbanvipham.docx").ToArray());// I
+                document = new WordDocument(mStream);
+                mStream.Close();
+            }
+            catch (Exception ex)
+            {
+
+                return;
+            }
+
+
+            fileThongtinvipham = Global.AppPath + Constants.FOLDER_TEMP +
+                            Constants.CHAR_FLASH + "bienbanvipham" + Constants.FILE_EXT_DOCS;// II
+
+            //Prepare to mailMerg
+            DateTime SysDate = DateTime.Now;
+            #endregion =====  End Core=====
+
+            #region === Set value =====//III
+
+
+
+            string[] fields = new string[] { "TenKT", "Socmnd", "NgayViPham", "NoiDung", "HinhPhat" };
+
+            string[] values = new string[] { TenKT , Socmnd , NgayViPham, NoiDung ,HinhPhat };
+
+            #endregion End Set Value=====
+
+            #region =====Core=====
+            // Begin mailMerg document
+            document.MailMerge.Execute(fields, values);
+
+            // Save document to file
+            document.Save(fileThongtinvipham, FormatType.Docx);
+
+            // Close the document after save
+            document.Close();
+
+
+            this.PrinPriview(fileThongtinvipham);
+
+            #endregion =====  End Core=====
+        }
 
         public void ThongTinTraPhong(string pNgayTra, string pTenPhong, string pTenKT, string pTraCoc, string pCSDDau,
             string pCSDCuoi, string pDonGiaDien, string pTienDien, string pCSNDau, string pCSNCuoi, string PDonGiaNuoc,

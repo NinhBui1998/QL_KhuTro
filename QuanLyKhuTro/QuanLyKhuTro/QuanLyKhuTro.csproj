@@ -248,6 +248,12 @@
     <Compile Include="NghiepVu\frm_quanlyhoadon.Designer.cs">
       <DependentUpon>frm_quanlyhoadon.cs</DependentUpon>
     </Compile>
+    <Compile Include="NghiepVu\frm_quanlyhopdong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NghiepVu\frm_quanlyhopdong.Designer.cs">
+      <DependentUpon>frm_quanlyhopdong.cs</DependentUpon>
+    </Compile>
     <Compile Include="NghiepVu\frm_quanlythietbi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -408,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\frm_quanlyhoadon.resx">
       <DependentUpon>frm_quanlyhoadon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NghiepVu\frm_quanlyhopdong.resx">
+      <DependentUpon>frm_quanlyhopdong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NghiepVu\frm_quanlythietbi.resx">
       <DependentUpon>frm_quanlythietbi.cs</DependentUpon>

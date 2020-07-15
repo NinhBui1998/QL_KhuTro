@@ -423,6 +423,7 @@
             this.txt_tienphat.Name = "txt_tienphat";
             this.txt_tienphat.Size = new System.Drawing.Size(290, 27);
             this.txt_tienphat.TabIndex = 2;
+            this.txt_tienphat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_tienphat_KeyPress);
             // 
             // lb
             // 
@@ -517,6 +518,7 @@
             this.txt_hinhphat.Name = "txt_hinhphat";
             this.txt_hinhphat.Size = new System.Drawing.Size(289, 27);
             this.txt_hinhphat.TabIndex = 2;
+            this.txt_hinhphat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_tienphat_KeyPress);
             // 
             // cbb_manoiquy
             // 
@@ -696,7 +698,6 @@
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin khách thuê";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // grv_khachthue
             // 
@@ -768,7 +769,7 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.6051F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 296F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 174F));
             this.tableLayoutPanel10.Controls.Add(this.btn_tatcahd, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.btn_timkiem, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.cbo_phong, 0, 0);
@@ -788,7 +789,7 @@
             this.btn_tatcahd.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_tatcahd.Appearance.Options.UseFont = true;
             this.btn_tatcahd.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_tatcahd.ImageOptions.SvgImage")));
-            this.btn_tatcahd.Location = new System.Drawing.Point(298, 6);
+            this.btn_tatcahd.Location = new System.Drawing.Point(294, 6);
             this.btn_tatcahd.Name = "btn_tatcahd";
             this.btn_tatcahd.Size = new System.Drawing.Size(159, 40);
             this.btn_tatcahd.TabIndex = 10;
@@ -801,9 +802,9 @@
             this.btn_timkiem.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_timkiem.Appearance.Options.UseFont = true;
             this.btn_timkiem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_timkiem.ImageOptions.SvgImage")));
-            this.btn_timkiem.Location = new System.Drawing.Point(252, 6);
+            this.btn_timkiem.Location = new System.Drawing.Point(249, 6);
             this.btn_timkiem.Name = "btn_timkiem";
-            this.btn_timkiem.Size = new System.Drawing.Size(40, 39);
+            this.btn_timkiem.Size = new System.Drawing.Size(39, 39);
             this.btn_timkiem.TabIndex = 8;
             this.btn_timkiem.Click += new System.EventHandler(this.btn_timkiem_Click);
             // 
@@ -813,16 +814,16 @@
             this.cbo_phong.FormattingEnabled = true;
             this.cbo_phong.Location = new System.Drawing.Point(3, 15);
             this.cbo_phong.Name = "cbo_phong";
-            this.cbo_phong.Size = new System.Drawing.Size(243, 27);
+            this.cbo_phong.Size = new System.Drawing.Size(240, 27);
             this.cbo_phong.TabIndex = 4;
             // 
             // btn_xuathd
             // 
             this.btn_xuathd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_xuathd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_xuathd.ImageOptions.Image")));
-            this.btn_xuathd.Location = new System.Drawing.Point(759, 6);
+            this.btn_xuathd.Location = new System.Drawing.Point(755, 6);
             this.btn_xuathd.Name = "btn_xuathd";
-            this.btn_xuathd.Size = new System.Drawing.Size(165, 40);
+            this.btn_xuathd.Size = new System.Drawing.Size(169, 40);
             this.btn_xuathd.TabIndex = 13;
             this.btn_xuathd.Text = "Xuất vi phạm";
             this.btn_xuathd.Click += new System.EventHandler(this.btn_xuathd_Click);
@@ -831,11 +832,12 @@
             // 
             this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(601, 6);
+            this.simpleButton1.Location = new System.Drawing.Point(575, 6);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(152, 40);
+            this.simpleButton1.Size = new System.Drawing.Size(174, 40);
             this.simpleButton1.TabIndex = 14;
             this.simpleButton1.Text = "Xuất biên bản vi phạm";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // label17
             // 

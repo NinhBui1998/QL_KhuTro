@@ -16,6 +16,8 @@ namespace DAL
         DateTime NGAYTRA;
         Decimal TIENCOC;
         string TENPHONG;
+        Boolean TINHTRANG;
+        string MAPHONG;
 
 
         public String Mahd
@@ -57,5 +59,7 @@ namespace DAL
 
         public DateTime NgayTra
         { get => NGAYTRA; set => NGAYTRA = value; }
+        public Boolean TINHTRANG1 { get => TINHTRANG; set => TINHTRANG = value; }
+        public string MAPHONG1 { get => MAPHONG; set => MAPHONG = value; }
     }
 }

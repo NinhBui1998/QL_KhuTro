@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DAL
 {
@@ -27,12 +28,41 @@ namespace DAL
         public List<KHACHTHUE> loadbangKhachThuetheoten(string pmaphong)
         {
             var dulieu =(from s in data.KHACHTHUEs 
-                         
-                         from p in data.PHONGs
-                         where p.MAPHONG==s.MAPHONG 
-                         && p.MAPHONG==pmaphong 
+                         where  s.TINHTRANG==true
+                         && s.MAPHONG==pmaphong 
                          select s);
             return dulieu.ToList<KHACHTHUE>();
+        }
+        public bool kttruongphong(string pmaphong)
+        {
+            var kq = (from k in data.KHACHTHUEs
+                      where k.MAPHONG==pmaphong && k.TRUONGPHONG == true && k.TINHTRANG == true
+                      select k).Count();
+            if(kq>0)
+            {
+                return true;
+            }    
+            else
+            {
+                return false;
+            }    
+        }
+        public bool ktSOLUONGHT(string pmap)
+        {
+            var kq = (from k in data.PHONGs
+                      where k.MAPHONG == pmap
+                      select k.SOLUONG_HT).FirstOrDefault();
+            var kq2 = (from k in data.PHONGs
+                       where k.MAPHONG == pmap
+                       select k.SOLUONG_TD).FirstOrDefault();
+            if (kq == kq2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         public KHACHTHUE loadTenKT(string pMa)
         {
@@ -241,6 +271,22 @@ namespace DAL
                 return false;
             }
 
+        }
+        public string laymakttheophong(string maphong)
+        {
+
+            var kq = (from kt in data.KHACHTHUEs
+                      where kt.MAPHONG == maphong && kt.TRUONGPHONG == true && kt.TINHTRANG == true
+                      select kt.MAKT).FirstOrDefault();
+              if(kq!=null)
+                {
+                    return kq.ToString();
+                }    
+              else
+                {
+                return null;
+                }    
+           
         }
     }
 }

@@ -34,12 +34,16 @@ namespace QuanLyKhuTro.ThongKe
 
 
             grv_hoadon.DataSource = bll_tienphong.LoadDataHoaDon();
-            txt_tongdt.Text = String.Format("{0:#,##0.##}", Convert.ToDecimal(bll_thongkedt.tinhtongdoanhthu()));
+            decimal TongDoanhThu = bll_thongkedt.tinhtongdoanhthu() + bll_thongkedt.tongtiencoc() + bll_thongkedt.tongtienvipham();
+            txt_tongdt.Text = String.Format("{0:#,##0.##}", TongDoanhThu);
             txt_tongtiendien.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tinhtongtiendien());
             txt_tongtiennuoc.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tinhtongtiennuoc());
             txt_tongtienphong.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tinhtongtienphong());
             txt_tongtienrac.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tinhtongtienrac());
             txt_tienwifi.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tinhtongTienwifi());
+            txt_tiencoc.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongtiencoc());
+            txt_tienvipham.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongtienvipham());
+            txt_no.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongno());
 
         }
 
@@ -425,6 +429,12 @@ namespace QuanLyKhuTro.ThongKe
             }
             finally
             { GC.Collect(); }
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            grv_hoadon.DataSource = bll_thongkedt.loadHoaDonconno();
+
         }
     }
 }

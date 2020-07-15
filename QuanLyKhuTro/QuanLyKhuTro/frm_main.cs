@@ -94,8 +94,15 @@ namespace QuanLyKhuTro
         private void btn_phong_ItemClick(object sender, ItemClickEventArgs e)
         {
             frm_phong forms = new frm_phong();
+            forms.TopLevel = false;
             pnl_main.Controls.Clear();
             pnl_main.Controls.Add(forms);
+            forms.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            forms.Dock = DockStyle.Fill;
+            forms.Show();
+            
+            //pnl_main.Controls.Clear();
+            //pnl_main.Controls.Add(forms);
         }
 
         private void btn_noiquy_ItemClick(object sender, ItemClickEventArgs e)
@@ -342,6 +349,20 @@ namespace QuanLyKhuTro
             
             Visible = false;
             frm.ShowDialog();
+        }
+
+        private void btn_qlhopdong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frm_quanlyhopdong frm = new frm_quanlyhopdong();
+
+            frm.TopLevel = false;
+
+            pnl_main.Controls.Clear();
+            pnl_main.Controls.Add(frm);
+
+            frm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
         }
     }
 }

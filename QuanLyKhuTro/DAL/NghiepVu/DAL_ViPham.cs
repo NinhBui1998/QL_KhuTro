@@ -149,12 +149,15 @@ namespace DAL.NghiepVu
         {
             try
             {
-                VIPHAM hd = data.VIPHAMs.Where(t => t.MANOIQUY == pvipham.MANOIQUY && t.MAKT== pvipham.MAKT).FirstOrDefault();
+                VIPHAM hd = data.VIPHAMs.Where(t => t.MAVIPHAM==pvipham.MAVIPHAM).FirstOrDefault();
                 if (hd != null)
                 {
+                   
+                    hd.MANOIQUY = pvipham.MANOIQUY;
                     hd.NGAYVIPHAM = pvipham.NGAYVIPHAM;
                     hd.GHICHU = pvipham.GHICHU;
-
+                    hd.TIENPHAT = pvipham.TIENPHAT;
+                    hd.LAN = pvipham.LAN;
                     data.SubmitChanges();
                 }
                 return true;

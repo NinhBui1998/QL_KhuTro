@@ -41,13 +41,16 @@ namespace QuanLyKhuTro.NghiepVu
             get { return Ten; }
             set { Ten = value; }
         }
-
+        
         string MaNV;
         public string MaNhanVien
         {
             get { return MaNV; }
             set { MaNV = value; }
         }
+        string MaKT;
+        public string MaKT1 { get => MaKT; set => MaKT = value; }
+
         public frm_datphong()
         {
             InitializeComponent();
@@ -77,11 +80,11 @@ namespace QuanLyKhuTro.NghiepVu
         {
             PHONG p = new PHONG();
             txt_phong.Text = Ten;
-
+            
             grv_datphong.DataSource = datphong.LoadDatPhongTheoMa(Ten);
             txt_manv.Text = MaNV;
             txt_ngaylaphd.Text = DateTime.Now.ToShortDateString();
-            txt_makt.Text = bll_sinhma.SinhMa_KhachThue();
+            //txt_makt.Text = bll_sinhma.SinhMa_KhachThue();
             txt_mahd.Text = bll_sinhma.SinhMa_HopDong();
 
             //cbb_tang.Enabled = cbb_loaiphong.Enabled = cbb_phong.Enabled = false;
@@ -152,37 +155,38 @@ namespace QuanLyKhuTro.NghiepVu
             hd.MANV = txt_manv.Text;
             hd.MAKT = txt_makt.Text;
             hd.NGAYTRA = Convert.ToDateTime(txt_ngaykt.Text);
+            hd.TINHTRANG = true;
 
 
             //Thêm khách thuê vào hợp đồng
-            kt.MAKT = bll_sinhma.SinhMa_KhachThue();
-            kt.TENKT = txt_tenkt.Text;
-            kt.SDT = txt_sdt.Text;
-            kt.MAPHONG = datphong.laymaphong(Ten);
-            kt.TRUONGPHONG = true;
-            if (pic_anh.Image != null)
-            {
-                byte[] b = convertImage(pic_anh.Image);
-                kt.ANH = b;
-            }
-            else
-            {
-                kt.ANH = null;
-            }
-            if (rdb_nam.Checked == true)
-            {
-                kt.GIOITINH = rdb_nam.Text;
-            }
-            else
-            {
-                kt.GIOITINH = rdb_nu.Text;
-            }
-            kt.SOCMND = txt_cmnd.Text;
-            kt.NGAYSINH = Convert.ToDateTime(txt_ngaysinh.Text);
-            kt.QUEQUAN = txt_quequan.Text;
-            kt.MK = "abc";
-            kt.GHICHU = null;
-            kt.TINHTRANG = true;
+            //kt.MAKT = bll_sinhma.SinhMa_KhachThue();
+            //kt.TENKT = txt_tenkt.Text;
+            //kt.SDT = txt_sdt.Text;
+            //kt.MAPHONG = datphong.laymaphong(Ten);
+            //kt.TRUONGPHONG = true;
+            //if (pic_anh.Image != null)
+            //{
+            //    byte[] b = convertImage(pic_anh.Image);
+            //    kt.ANH = b;
+            //}
+            //else
+            //{
+            //    kt.ANH = null;
+            //}
+            //if (rdb_nam.Checked == true)
+            //{
+            //    kt.GIOITINH = rdb_nam.Text;
+            //}
+            //else
+            //{
+            //    kt.GIOITINH = rdb_nu.Text;
+            //}
+            //kt.SOCMND = txt_cmnd.Text;
+            //kt.NGAYSINH = Convert.ToDateTime(txt_ngaysinh.Text);
+            //kt.QUEQUAN = txt_quequan.Text;
+            //kt.MK = "abc";
+            //kt.GHICHU = null;
+            //kt.TINHTRANG = true;
 
             if (txt_makt.Text == string.Empty && txt_mahd.Text == string.Empty
                     && txt_manv.Text == string.Empty && txt_tenkt.Text == string.Empty)
@@ -192,11 +196,11 @@ namespace QuanLyKhuTro.NghiepVu
             }
 
             //kiểm tra khóa chính
-            if (khachthue.ktkc_khachthue(kt.MAKT) == true)
-            {
-                MessageBox.Show("Trùng khóa chính khách thuê");
-                return;
-            }
+            //if (khachthue.ktkc_khachthue(kt.MAKT) == true)
+            //{
+            //    MessageBox.Show("Trùng khóa chính khách thuê");
+            //    return;
+            //}
             if (hopdong.ktkc_HopDong(txt_mahd.Text) == true)
             {
                 MessageBox.Show("Trùng khóa chính hợp đồng");
@@ -204,7 +208,7 @@ namespace QuanLyKhuTro.NghiepVu
             }
             //thêm
 
-            if (khachthue.ThemKT(kt) == true && hopdong.them_HopDong(hd) == true)
+            if (hopdong.them_HopDong(hd) == true)
             {
                 grv_datphong.DataSource = datphong.LoadDatPhongTheoMa(Ten);
 
@@ -264,8 +268,10 @@ namespace QuanLyKhuTro.NghiepVu
                 txt_soluonght.Text = p.SOLUONG_HT.ToString();
                 txt_loaiphong.Text = lp.TENLOAI;
                 txt_matang.Text = t.TENTANG;
+                txt_maphong.Text = p.MAPHONG;
                 txt_gia.Text = String.Format("{0:#,##0.##}", lp.GIA);
-                if(bll_cocphong.kt_phongcococ(datphong.laymaphong(Ten))==true)
+                txt_tiencoc.Text = String.Format("{0:#,##0.##}", lp.GIA);
+                if (bll_cocphong.kt_phongcococ(datphong.laymaphong(Ten))==true)
                 {
                     KHACHCOCPHONG kc = new KHACHCOCPHONG();
                     kc = bll_cocphong.loadkhcocphong(datphong.laymaphong(Ten));
@@ -320,7 +326,6 @@ namespace QuanLyKhuTro.NghiepVu
         {
             txt_soluonght.Refresh();
         }
-
         private void grv_datphong_Click(object sender, EventArgs e)
         {
           try
@@ -484,7 +489,44 @@ namespace QuanLyKhuTro.NghiepVu
         {
             frm_khachthue frm = new frm_khachthue();
             frm.TenPhong = datphong.laymaphong(Ten);
-            frm.ShowDialog(); 
+            frm.ShowDialog();
+            try
+            {
+                txt_makt.Text = khachthue.laymakttheophong(datphong.laymaphong(txt_phong.Text));
+                if (txt_makt.Text!=string.Empty)
+                {
+                    KHACHTHUE kt = new KHACHTHUE();
+                    kt = dal_phong.loadkt(txt_makt.Text);
+                    txt_tenkt.Text = kt.TENKT;
+                    txt_sdt.Text = kt.SDT;
+                    if(kt.GIOITINH=="Nam")
+                    {
+                        rdb_nam.Checked = true;
+                    }
+                    else
+                    {
+                        rdb_nu.Checked = true;
+                    }
+                    txt_quequan.Text = kt.QUEQUAN;
+                    txt_cmnd.Text = kt.SOCMND;
+                    txt_ngaysinh.Text = kt.NGAYSINH.ToString();
+                    try
+                    {
+                        byte[] b = (byte[])khachthue.layanh(kt.MAKT);
+                        pic_anh.Image = bytetoimage(b);
+                        pic_anh.SizeMode = PictureBoxSizeMode.StretchImage;
+                    }
+                    catch
+                    {
+                        return;
+                    }
+
+                }    
+            }
+            catch
+            {
+                return;
+            }
         }
         BLL_CocPhong bll_cocphong = new BLL_CocPhong();
         private void txt_sdt_Validating(object sender, CancelEventArgs e)

@@ -30,6 +30,10 @@ namespace DAL
         {
             return data.PHONGs.Where(t => t.MAPHONG == pMa).FirstOrDefault();
         }
+        public KHACHTHUE loadkt(string pMa)
+        {
+            return data.KHACHTHUEs.Where(t => t.MAKT == pMa).FirstOrDefault();
+        }
         //kiểm tra khóa chính
         public bool ktakhoachinh_Phong(string hd)
         {
@@ -110,6 +114,7 @@ namespace DAL
                     p.TINHTRANG = phong.TINHTRANG;
                     p.SOLUONG_HT = phong.SOLUONG_HT;
                     p.SOLUONG_TD = phong.SOLUONG_TD;
+                    p.TRANGTHAIPHONG = phong.TRANGTHAIPHONG;
                     data.SubmitChanges();
                 }
                 return true;
