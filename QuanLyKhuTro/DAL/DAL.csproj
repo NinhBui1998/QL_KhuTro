@@ -92,8 +92,10 @@
       <DependentUpon>QL_KhuTro.dbml</DependentUpon>
     </Compile>
     <Compile Include="ThongKe\DAL_ThongKeDoanhThu.cs" />
+    <Compile Include="ThongKe\DAL_thongkeHopDong.cs" />
     <Compile Include="ThongKe\DAL_ThongKeKhachThue.cs" />
     <Compile Include="ThongKe\DAL_Thongkephong.cs" />
+    <Compile Include="ThongKe\DAL_ThongKeViPham.cs" />
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>

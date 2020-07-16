@@ -89,7 +89,6 @@
             this.btn_tatcahd = new DevExpress.XtraEditors.SimpleButton();
             this.btn_timkiem = new DevExpress.XtraEditors.SimpleButton();
             this.cbo_phong = new System.Windows.Forms.ComboBox();
-            this.btn_xuathd = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.label17 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
@@ -524,7 +523,7 @@
             // 
             this.cbb_manoiquy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbb_manoiquy.FormattingEnabled = true;
-            this.cbb_manoiquy.Location = new System.Drawing.Point(123, 8);
+            this.cbb_manoiquy.Location = new System.Drawing.Point(123, 5);
             this.cbb_manoiquy.Name = "cbb_manoiquy";
             this.cbb_manoiquy.Size = new System.Drawing.Size(289, 27);
             this.cbb_manoiquy.TabIndex = 3;
@@ -769,12 +768,11 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.6051F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 296F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 174F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 185F));
             this.tableLayoutPanel10.Controls.Add(this.btn_tatcahd, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.btn_timkiem, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.cbo_phong, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.btn_xuathd, 4, 0);
-            this.tableLayoutPanel10.Controls.Add(this.simpleButton1, 3, 0);
+            this.tableLayoutPanel10.Controls.Add(this.simpleButton1, 4, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
@@ -789,7 +787,7 @@
             this.btn_tatcahd.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_tatcahd.Appearance.Options.UseFont = true;
             this.btn_tatcahd.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_tatcahd.ImageOptions.SvgImage")));
-            this.btn_tatcahd.Location = new System.Drawing.Point(294, 6);
+            this.btn_tatcahd.Location = new System.Drawing.Point(283, 6);
             this.btn_tatcahd.Name = "btn_tatcahd";
             this.btn_tatcahd.Size = new System.Drawing.Size(159, 40);
             this.btn_tatcahd.TabIndex = 10;
@@ -802,9 +800,9 @@
             this.btn_timkiem.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_timkiem.Appearance.Options.UseFont = true;
             this.btn_timkiem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_timkiem.ImageOptions.SvgImage")));
-            this.btn_timkiem.Location = new System.Drawing.Point(249, 6);
+            this.btn_timkiem.Location = new System.Drawing.Point(240, 6);
             this.btn_timkiem.Name = "btn_timkiem";
-            this.btn_timkiem.Size = new System.Drawing.Size(39, 39);
+            this.btn_timkiem.Size = new System.Drawing.Size(37, 39);
             this.btn_timkiem.TabIndex = 8;
             this.btn_timkiem.Click += new System.EventHandler(this.btn_timkiem_Click);
             // 
@@ -812,27 +810,16 @@
             // 
             this.cbo_phong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_phong.FormattingEnabled = true;
-            this.cbo_phong.Location = new System.Drawing.Point(3, 15);
+            this.cbo_phong.Location = new System.Drawing.Point(3, 12);
             this.cbo_phong.Name = "cbo_phong";
-            this.cbo_phong.Size = new System.Drawing.Size(240, 27);
+            this.cbo_phong.Size = new System.Drawing.Size(231, 27);
             this.cbo_phong.TabIndex = 4;
-            // 
-            // btn_xuathd
-            // 
-            this.btn_xuathd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_xuathd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_xuathd.ImageOptions.Image")));
-            this.btn_xuathd.Location = new System.Drawing.Point(755, 6);
-            this.btn_xuathd.Name = "btn_xuathd";
-            this.btn_xuathd.Size = new System.Drawing.Size(169, 40);
-            this.btn_xuathd.TabIndex = 13;
-            this.btn_xuathd.Text = "Xuất vi phạm";
-            this.btn_xuathd.Click += new System.EventHandler(this.btn_xuathd_Click);
             // 
             // simpleButton1
             // 
             this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(575, 6);
+            this.simpleButton1.Location = new System.Drawing.Point(750, 6);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(174, 40);
             this.simpleButton1.TabIndex = 14;
@@ -942,7 +929,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Maphong;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_manv;
-        private DevExpress.XtraEditors.SimpleButton btn_xuathd;
         private System.Windows.Forms.Label label17;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;

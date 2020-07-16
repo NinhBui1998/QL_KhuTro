@@ -16,6 +16,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using Excel = Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Interop.Excel;
 using System.IO;
+using QuanLyKhuTro.user_thongkePhong;
 
 namespace QuanLyKhuTro.ThongKe
 {
@@ -46,19 +47,24 @@ namespace QuanLyKhuTro.ThongKe
             txt_no.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongno());
 
         }
-
+        int click = 0;
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if (ckb_thang.Checked == true)
+            click = 1;
+            if (ckb_thang.Checked == true && ckb_nam.Checked == false)
             {
 
                 grv_hoadon.DataSource = bll_thongkedt.loadtkdoanhthutheothang(Convert.ToInt32(cbb_thang.Text));
-
-
+                txt_tiencoc.Text= String.Format("{0:#,##0.##}", bll_thongkedt.tongtiencoctheothang(Convert.ToInt32(cbb_thang.Text)));
+                txt_tienvipham.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongtienviphamtheothang(Convert.ToInt32(cbb_thang.Text)));
+                txt_no.Text= String.Format("{0:#,##0.##}", bll_thongkedt.tongnotheothang(Convert.ToInt32(cbb_thang.Text)));
             }
-            if (ckb_nam.Checked == true)
+            if (ckb_nam.Checked == true && ckb_thang.Checked == false)
             {
                 grv_hoadon.DataSource = bll_thongkedt.loadtkdoanhthutheonam(Convert.ToInt32( txt_nam.Text));
+                txt_tiencoc.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongtiencoctheonam(Convert.ToInt32(txt_nam.Text)));
+                txt_tienvipham.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongtienviphamtheonam(Convert.ToInt32(txt_nam.Text)));
+                txt_no.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongnotheonam(Convert.ToInt32(txt_nam.Text)));
 
             }
 
@@ -69,7 +75,11 @@ namespace QuanLyKhuTro.ThongKe
                     MessageBox.Show("nhâp năm");
                     return;
                 }
-                grv_hoadon.DataSource = bll_thongkedt.loadtkdoanhthutheothangnam(Convert.ToDateTime("05"+cbb_thang.Text + '/' + txt_nam.Text));
+                grv_hoadon.DataSource = bll_thongkedt.loadtkdoanhthutheothangnam(Convert.ToDateTime("05"+"/"+cbb_thang.Text + '/' + txt_nam.Text));
+                txt_tiencoc.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongtiencoctheothangnam(Convert.ToDateTime("05" + "/" + cbb_thang.Text + '/' + txt_nam.Text)));
+                txt_tienvipham.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongtienviphamtheothangnam(Convert.ToDateTime("05" + "/" + cbb_thang.Text + '/' + txt_nam.Text)));
+                txt_no.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongnotheothangnam(Convert.ToDateTime("05" + "/" + cbb_thang.Text + '/' + txt_nam.Text)));
+
             }
             if (ckb_thang.Checked == false && ckb_nam.Checked == false)
             {
@@ -78,7 +88,11 @@ namespace QuanLyKhuTro.ThongKe
                     MessageBox.Show("nhâp năm");
                     return;
                 }
-                grv_hoadon.DataSource = bll_thongkedt.loadtkdoanhthutheothangnam(Convert.ToDateTime("05" + cbb_thang.Text + '/' + txt_nam.Text));
+                grv_hoadon.DataSource = bll_thongkedt.loadtkdoanhthutheothangnam(Convert.ToDateTime("05" + "/" + cbb_thang.Text + '/' + txt_nam.Text));
+                txt_tiencoc.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongtiencoctheothangnam(Convert.ToDateTime("05" + "/" + cbb_thang.Text + '/' + txt_nam.Text)));
+                txt_tienvipham.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongtienviphamtheothangnam(Convert.ToDateTime("05" + "/" + cbb_thang.Text + '/' + txt_nam.Text)));
+                txt_no.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongnotheothangnam(Convert.ToDateTime("05" + "/" + cbb_thang.Text + '/' + txt_nam.Text)));
+
             }
             //tong doanh thu
             Decimal Tong = 0;
@@ -88,7 +102,7 @@ namespace QuanLyKhuTro.ThongKe
                 Tong += Convert.ToDecimal(gridView_hoadon.GetRowCellValue(k, "TongTien"));
             }
             txt_tongdt.Text = string.Empty;
-            txt_tongdt.Text = String.Format("{0:#,##0.##}", Tong);
+            txt_tongdt.Text = String.Format("{0:#,##0.##}", Tong+ Convert.ToDecimal(txt_tiencoc.Text) + Tong + Convert.ToDecimal(txt_tienvipham.Text));
             //tong phong
             Decimal Tong1 = 0;
             for (int k = 0; k < gridView_hoadon.RowCount; k++)
@@ -139,6 +153,7 @@ namespace QuanLyKhuTro.ThongKe
 
         private void btn_tinhtunam_Click(object sender, EventArgs e)
         {
+            click = 2;
             if (txt_tuthang.Text == string.Empty)
             {
                 MessageBox.Show("Nhập năm");
@@ -153,6 +168,64 @@ namespace QuanLyKhuTro.ThongKe
             DateTime? denthang = Convert.ToDateTime("30" + "/" + cbb_denthang.Text + '/' + txt_denthang.Text);
             
             grv_hoadon.DataSource = bll_thongkedt.loadtkdoanhthutheoquy(tuthang, denthang);
+            txt_tiencoc.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongtiencoctheoquy(tuthang, denthang));
+            txt_tienvipham.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongtienviphamtheoquy(tuthang, denthang));
+            txt_no.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongnotheoquy(tuthang, denthang));
+
+            //tong doanh thu
+            Decimal Tong = 0;
+            for (int k = 0; k < gridView_hoadon.RowCount; k++)
+            {
+                DataRow drAmount = gridView_hoadon.GetDataRow(k);
+                Tong += Convert.ToDecimal(gridView_hoadon.GetRowCellValue(k, "TongTien"));
+            }
+            txt_tongdt.Text = string.Empty;
+            txt_tongdt.Text = String.Format("{0:#,##0.##}", Tong + Convert.ToDecimal(txt_tiencoc.Text) + Tong + Convert.ToDecimal(txt_tienvipham.Text));
+            //tong phong
+            Decimal Tong1 = 0;
+            for (int k = 0; k < gridView_hoadon.RowCount; k++)
+            {
+                DataRow drAmount = gridView_hoadon.GetDataRow(k);
+                Tong1 += Convert.ToDecimal(gridView_hoadon.GetRowCellValue(k, "TIENPHONG1"));
+            }
+            txt_tongtienphong.Text = string.Empty;
+            txt_tongtienphong.Text = String.Format("{0:#,##0.##}", Tong1);
+            //tong rac
+            Decimal Tong2 = 0;
+            for (int k = 0; k < gridView_hoadon.RowCount; k++)
+            {
+                DataRow drAmount = gridView_hoadon.GetDataRow(k);
+                Tong2 += Convert.ToDecimal(gridView_hoadon.GetRowCellValue(k, "Rac"));
+            }
+            txt_tongtienrac.Text = string.Empty;
+            txt_tongtienrac.Text = String.Format("{0:#,##0.##}", Tong2);
+            // tong điện
+            Decimal Tong3 = 0;
+            for (int k = 0; k < gridView_hoadon.RowCount; k++)
+            {
+                DataRow drAmount = gridView_hoadon.GetDataRow(k);
+                Tong3 += Convert.ToDecimal(gridView_hoadon.GetRowCellValue(k, "TienDien"));
+            }
+            txt_tongtiendien.Text = string.Empty;
+            txt_tongtiendien.Text = String.Format("{0:#,##0.##}", Tong3);
+            //tổng nước
+            Decimal Tong4 = 0;
+            for (int k = 0; k < gridView_hoadon.RowCount; k++)
+            {
+                DataRow drAmount = gridView_hoadon.GetDataRow(k);
+                Tong4 += Convert.ToDecimal(gridView_hoadon.GetRowCellValue(k, "TienNuoc"));
+            }
+            txt_tongtiennuoc.Text = string.Empty;
+            txt_tongtiennuoc.Text = String.Format("{0:#,##0.##}", Tong4);
+            //tổng tiền wifi
+            Decimal Tong5 = 0;
+            for (int k = 0; k < gridView_hoadon.RowCount; k++)
+            {
+                DataRow drAmount = gridView_hoadon.GetDataRow(k);
+                Tong5 += Convert.ToDecimal(gridView_hoadon.GetRowCellValue(k, "Wifi"));
+            }
+            txt_tienwifi.Text = string.Empty;
+            txt_tienwifi.Text = String.Format("{0:#,##0.##}", Tong5);
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -369,7 +442,7 @@ namespace QuanLyKhuTro.ThongKe
                 {
                     stt++;
                     row++;
-                    String s = gridView_hoadon.GetRowCellValue(i, "ThangNam").ToString();
+                    String s = gridView_hoadon.GetRowCellValue(i, "ThangNam").ToString().Substring(0,11);
                     string ng = gridView_hoadon.GetRowCellValue(i, "NgayLap").ToString().Substring(0, 11);
                     dynamic[] arr = { stt, gridView_hoadon.GetRowCellValue(i, "MaHD"), s, gridView_hoadon.GetRowCellValue(i, "TenTang"), gridView_hoadon.GetRowCellValue(i, "TENLOAI1"), gridView_hoadon.GetRowCellValue(i, "TenPhong"), String.Format("{0:#,##0.##}", gridView_hoadon.GetRowCellValue(i, "TIENPHONG1")), String.Format("{0:#,##0.##}", gridView_hoadon.GetRowCellValue(i, "TienDien")), String.Format("{0:#,##0.##}", gridView_hoadon.GetRowCellValue(i, "TienNuoc")), String.Format("{0:#,##0.##}", gridView_hoadon.GetRowCellValue(i, "Wifi")), String.Format("{0:#,##0.##}", gridView_hoadon.GetRowCellValue(i, "Rac")), ng, String.Format("{0:#,##0.##}", gridView_hoadon.GetRowCellValue(i, "TongTien")), gridView_hoadon.GetRowCellValue(i, "TenNV") };
 
@@ -433,8 +506,146 @@ namespace QuanLyKhuTro.ThongKe
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-            grv_hoadon.DataSource = bll_thongkedt.loadHoaDonconno();
+            if(click==1)
+            { 
+                //grv_hoadon.DataSource = bll_thongkedt.loadHoaDonconno();
+                if (ckb_thang.Checked == true && ckb_nam.Checked == false)
+                {
 
+                    grv_hoadon.DataSource = bll_thongkedt.loadtkdoanhthunotheothang(Convert.ToInt32(cbb_thang.Text));
+                    txt_tiencoc.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongtiencoctheothang(Convert.ToInt32(cbb_thang.Text)));
+                    txt_tienvipham.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongtienviphamtheothang(Convert.ToInt32(cbb_thang.Text)));
+                    txt_no.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongnotheothang(Convert.ToInt32(cbb_thang.Text)));
+                }
+                if (ckb_nam.Checked == true && ckb_thang.Checked == false)
+                {
+                    grv_hoadon.DataSource = bll_thongkedt.loadtkdoanhthunotheonam(Convert.ToInt32(txt_nam.Text));
+                    txt_tiencoc.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongtiencoctheonam(Convert.ToInt32(txt_nam.Text)));
+                    txt_tienvipham.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongtienviphamtheonam(Convert.ToInt32(txt_nam.Text)));
+                    txt_no.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongnotheonam(Convert.ToInt32(txt_nam.Text)));
+
+                }
+
+                if (ckb_thang.Checked == true && ckb_nam.Checked == true)
+                {
+                    if (txt_nam.Text == string.Empty)
+                    {
+                        MessageBox.Show("nhâp năm");
+                        return;
+                    }
+                    grv_hoadon.DataSource = bll_thongkedt.loadtkdoanhthunotheothangnam(Convert.ToDateTime("05" + "/" + cbb_thang.Text + '/' + txt_nam.Text));
+                    txt_tiencoc.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongtiencoctheothangnam(Convert.ToDateTime("05" + "/" + cbb_thang.Text + '/' + txt_nam.Text)));
+                    txt_tienvipham.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongtienviphamtheothangnam(Convert.ToDateTime("05" + "/" + cbb_thang.Text + '/' + txt_nam.Text)));
+                    txt_no.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongnotheothangnam(Convert.ToDateTime("05" + "/" + cbb_thang.Text + '/' + txt_nam.Text)));
+
+                }
+                if (ckb_thang.Checked == false && ckb_nam.Checked == false)
+                {
+                    if (txt_nam.Text == string.Empty)
+                    {
+                        MessageBox.Show("nhâp năm");
+                        return;
+                    }
+                    grv_hoadon.DataSource = bll_thongkedt.loadtkdoanhthunotheothangnam(Convert.ToDateTime("05" + "/" + cbb_thang.Text + '/' + txt_nam.Text));
+                    txt_tiencoc.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongtiencoctheothangnam(Convert.ToDateTime("05" + "/" + cbb_thang.Text + '/' + txt_nam.Text)));
+                    txt_tienvipham.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongtienviphamtheothangnam(Convert.ToDateTime("05" + "/" + cbb_thang.Text + '/' + txt_nam.Text)));
+                    txt_no.Text = String.Format("{0:#,##0.##}", bll_thongkedt.tongnotheothangnam(Convert.ToDateTime("05" + "/" + cbb_thang.Text + '/' + txt_nam.Text)));
+
+                }
+            }
+            else if(click==2)
+            {
+                DateTime? tuthang = Convert.ToDateTime("01" + "/" + cbb_tuthang.Text + '/' + txt_tuthang.Text);
+                DateTime? denthang = Convert.ToDateTime("30" + "/" + cbb_denthang.Text + '/' + txt_denthang.Text);
+
+                grv_hoadon.DataSource = bll_thongkedt.loadtkdoanhthunotheoquy(tuthang, denthang);
+
+            }
+            else
+            {
+                return;
+            }    
+            
+
+        }
+       
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+           
+           frm_thongkevipham frm = new frm_thongkevipham();
+            frm.Click1 = click;
+            if (click == 2)
+            {
+                DateTime? tuthang = Convert.ToDateTime("01" + "/" + cbb_tuthang.Text + '/' + txt_tuthang.Text);
+                DateTime? denthang = Convert.ToDateTime("30" + "/" + cbb_denthang.Text + '/' + txt_denthang.Text);
+                frm.Tuthang = tuthang;
+                frm.Denthang = denthang;
+            }
+            if(click==1)
+            {
+                if(ckb_thang.Checked==true && ckb_nam.Checked==false)
+                { 
+                    int thang = Convert.ToInt32(cbb_thang.Text);
+                    frm.Thang = thang;
+                }
+                else if (ckb_thang.Checked == false && ckb_nam.Checked == true)
+                {
+                    int nam = Convert.ToInt32(txt_nam.Text);
+                    frm.Nam = nam;
+                }
+                else if (ckb_thang.Checked == true && ckb_nam.Checked == true)
+                {
+
+                    DateTime thangnam = Convert.ToDateTime("05" + "/" + cbb_thang.Text + '/' + txt_nam.Text);
+                    frm.Thangnam = thangnam;
+                }    
+                else
+                {
+                    DateTime thangnam = Convert.ToDateTime("05" + "/" + cbb_thang.Text + '/' + txt_nam.Text);
+                    frm.Thangnam = thangnam;
+                }    
+
+            }
+            frm.ShowDialog();
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            frm_thongkehopdong frm = new frm_thongkehopdong();
+            frm.Click1 = click;
+            if (click == 2)
+            {
+                DateTime? tuthang = Convert.ToDateTime("01" + "/" + cbb_tuthang.Text + '/' + txt_tuthang.Text);
+                DateTime? denthang = Convert.ToDateTime("30" + "/" + cbb_denthang.Text + '/' + txt_denthang.Text);
+                frm.Tuthang = tuthang;
+                frm.Denthang = denthang;
+            }
+            if (click == 1)
+            {
+                if (ckb_thang.Checked == true && ckb_nam.Checked == false)
+                {
+                    int thang = Convert.ToInt32(cbb_thang.Text);
+                    frm.Thang = thang;
+                }
+                else if (ckb_thang.Checked == false && ckb_nam.Checked == true)
+                {
+                    int nam = Convert.ToInt32(txt_nam.Text);
+                    frm.Nam = nam;
+                }
+                else if (ckb_thang.Checked == true && ckb_nam.Checked == true)
+                {
+
+                    DateTime thangnam = Convert.ToDateTime("05" + "/" + cbb_thang.Text + '/' + txt_nam.Text);
+                    frm.Thangnam = thangnam;
+                }
+                else
+                {
+                    DateTime thangnam = Convert.ToDateTime("05" + "/" + cbb_thang.Text + '/' + txt_nam.Text);
+                    frm.Thangnam = thangnam;
+                }
+
+            }
+            frm.ShowDialog();
         }
     }
 }

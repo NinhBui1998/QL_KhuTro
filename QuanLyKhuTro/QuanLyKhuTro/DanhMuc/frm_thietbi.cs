@@ -204,7 +204,7 @@ namespace QuanLyKhuTro.DanhMuc
             {
                 tb.TENTB = gridView_ThietBi.GetRowCellValue(position, "TENTB").ToString();
                 tb.MATHIETBI = gridView_ThietBi.GetRowCellValue(position, "MATHIETBI").ToString();
-                tb.GIADENBUHUHAI = decimal.Parse(gridView_ThietBi.GetRowCellValue(position, "GIATB").ToString());
+                tb.GIADENBUHUHAI = decimal.Parse(gridView_ThietBi.GetRowCellValue(position, "GIADENBUHUHAI").ToString());
                 //tb.SOLUONG_PHANBO = Int32.Parse(gridView_ThietBi.GetRowCellValue(position,"SOLUONG_PHANBO").ToString());
                 //tb.SOLUONG_HUHONG = Int32.Parse(gridView_ThietBi.GetRowCellValue(position, "SOLUONG_HUHONG").ToString());
                 //tb.SOLUONG_TONKHO = Int32.Parse(gridView_ThietBi.GetRowCellValue(position, "SOLUONG_TONKHO").ToString());

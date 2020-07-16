@@ -19,6 +19,8 @@ namespace DAL.Model
         Decimal HINHPHAT;
         string MAVIPHAM;
         Decimal TIENPHAT;
+        string MAPHONG;
+        string TENPHONG;
 
 
 
@@ -33,5 +35,7 @@ namespace DAL.Model
         public DateTime Ngayvipham { get => NGAYVIPHAM; set => NGAYVIPHAM = value; }
         public string MAVIPHAM1 { get => MAVIPHAM; set => MAVIPHAM = value; }
         public decimal TIENPHAT1 { get => TIENPHAT; set => TIENPHAT = value; }
+        public string MAPHONG1 { get => MAPHONG; set => MAPHONG = value; }
+        public string TENPHONG1 { get => TENPHONG; set => TENPHONG = value; }
     }
 }

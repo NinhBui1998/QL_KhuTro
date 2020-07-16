@@ -340,6 +340,18 @@
     <Compile Include="user_thongkePhong\frm_phongtrong.Designer.cs">
       <DependentUpon>frm_phongtrong.cs</DependentUpon>
     </Compile>
+    <Compile Include="user_thongkePhong\frm_thongkehopdong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user_thongkePhong\frm_thongkehopdong.Designer.cs">
+      <DependentUpon>frm_thongkehopdong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="user_thongkePhong\frm_thongkevipham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user_thongkePhong\frm_thongkevipham.Designer.cs">
+      <DependentUpon>frm_thongkevipham.cs</DependentUpon>
+    </Compile>
     <Compile Include="user_thongkePhong\frm_tongphong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -470,6 +482,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="user_thongkePhong\frm_phongtrong.resx">
       <DependentUpon>frm_phongtrong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_thongkePhong\frm_thongkehopdong.resx">
+      <DependentUpon>frm_thongkehopdong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_thongkePhong\frm_thongkevipham.resx">
+      <DependentUpon>frm_thongkevipham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user_thongkePhong\frm_tongphong.resx">
       <DependentUpon>frm_tongphong.cs</DependentUpon>

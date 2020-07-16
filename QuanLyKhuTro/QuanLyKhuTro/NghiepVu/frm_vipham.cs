@@ -49,7 +49,7 @@ namespace QuanLyKhuTro.NghiepVu
             btn_huy.Enabled = btn_luu.Enabled = false;
             btn_them.Enabled = true;
             txt_solan.Enabled = txt_ghichu.Enabled = false;
-            txt_ngayvipham.Text = DateTime.Now.ToShortDateString();
+            //txt_ngayvipham.Text = DateTime.Now.ToShortDateString();
             txt_mavp.Enabled = false;
         }
         private void btn_tatcahd_Click(object sender, EventArgs e)
@@ -91,7 +91,7 @@ namespace QuanLyKhuTro.NghiepVu
             txt_mavp.Text = bll_sm.Sinhma_vipham();
             txt_ngayvipham.Enabled = true;
             txt_solan.Enabled = false;
-            txt_hinhphat.Enabled = true;
+            txt_hinhphat.Enabled = false;
         }
         string makt;
         private void grv_vipham_Click(object sender, EventArgs e)
@@ -105,9 +105,13 @@ namespace QuanLyKhuTro.NghiepVu
                 txt_noidung.Text = gridView_ViPham.GetRowCellValue(position, "Noidung").ToString();
                 txt_mavp.Text= gridView_ViPham.GetRowCellValue(position, "MAVIPHAM1").ToString();
                 makt= gridView_ViPham.GetRowCellValue(position, "Makt").ToString();
+                txt_tienphat.Text = gridView_ViPham.GetRowCellValue(position, "TIENPHAT1").ToString();
+                txt_ngayvipham.Text= gridView_ViPham.GetRowCellValue(position, "Ngayvipham").ToString();
+
                 btn_sua.Enabled = true;
                 btn_xoa.Enabled = true;
-                btn_them.Enabled = true;
+                btn_them.Enabled = false;
+                btn_huy.Enabled = true;
 
             }
             catch { }
@@ -116,10 +120,13 @@ namespace QuanLyKhuTro.NghiepVu
         {
             txt_solan.Clear();
             txt_ghichu.Clear();
-            btn_them.Enabled = true;
-            btn_sua.Enabled = false;
-            btn_xoa.Enabled = false;
-            btn_luu.Enabled = false;
+            txt_ngayvipham.Clear();
+            txt_tienphat.Clear();
+            //btn_them.Enabled = true;
+            //btn_sua.Enabled = false;
+            //btn_xoa.Enabled = false;
+            //btn_luu.Enabled = false;
+            frm_vipham_Load(sender, e);
         }
         private void btn_xoa_Click(object sender, EventArgs e)
         {
@@ -165,7 +172,7 @@ namespace QuanLyKhuTro.NghiepVu
             vp.GHICHU = txt_ghichu.Text;
             vp.MANV = txt_manv.Text;
             vp.TIENPHAT = Convert.ToDecimal(txt_tienphat.Text);
-            if(txt_solan.Text==string.Empty)
+            if(txt_solan.Text==string.Empty && txt_ngayvipham.Text==string.Empty)
             {
                 MessageBox.Show("Không được để trống");
             }    
@@ -198,6 +205,13 @@ namespace QuanLyKhuTro.NghiepVu
             }
             btn_them.Enabled = true;
             btn_sua.Enabled = btn_xoa.Enabled = false;
+            btn_luu.Enabled = btn_huy.Enabled = false;
+            txt_ngayvipham.Clear();
+            txt_mavp.Text = bll_sm.Sinhma_vipham();
+            txt_solan.Enabled = false;
+            txt_tienphat.Enabled = false;
+            txt_solan.Clear();
+            txt_mavp.Clear();
           
         }
         private void cbb_manoiquy_Click(object sender, EventArgs e)

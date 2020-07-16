@@ -40,7 +40,7 @@
             this.cbb_thang = new System.Windows.Forms.ComboBox();
             this.ckb_thang = new System.Windows.Forms.CheckBox();
             this.ckb_nam = new System.Windows.Forms.CheckBox();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_tinhthang = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
@@ -61,6 +61,9 @@
             this.txt_tienvipham = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_tiencoc = new System.Windows.Forms.TextBox();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_tinhtunam = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
@@ -89,9 +92,6 @@
             this.TINHTRANG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -195,7 +195,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.simpleButton1, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btn_tinhthang, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel4.ForeColor = System.Drawing.Color.Black;
@@ -250,7 +250,7 @@
             "10",
             "11",
             "12"});
-            this.cbb_thang.Location = new System.Drawing.Point(98, 8);
+            this.cbb_thang.Location = new System.Drawing.Point(98, 5);
             this.cbb_thang.Name = "cbb_thang";
             this.cbb_thang.Size = new System.Drawing.Size(172, 27);
             this.cbb_thang.TabIndex = 2;
@@ -277,19 +277,19 @@
             this.ckb_nam.Text = "Năm";
             this.ckb_nam.UseVisualStyleBackColor = true;
             // 
-            // simpleButton1
+            // btn_tinhthang
             // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Appearance.Options.UseForeColor = true;
-            this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.simpleButton1.Location = new System.Drawing.Point(3, 3);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(72, 75);
-            this.simpleButton1.TabIndex = 1;
-            this.simpleButton1.Text = "Tính";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.btn_tinhthang.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_tinhthang.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_tinhthang.Appearance.Options.UseFont = true;
+            this.btn_tinhthang.Appearance.Options.UseForeColor = true;
+            this.btn_tinhthang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_tinhthang.Location = new System.Drawing.Point(3, 3);
+            this.btn_tinhthang.Name = "btn_tinhthang";
+            this.btn_tinhthang.Size = new System.Drawing.Size(72, 75);
+            this.btn_tinhthang.TabIndex = 1;
+            this.btn_tinhthang.Text = "Tính";
+            this.btn_tinhthang.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // groupBox2
             // 
@@ -309,7 +309,7 @@
             this.tableLayoutPanel6.ColumnCount = 3;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.48495F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.51505F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
             this.tableLayoutPanel6.Controls.Add(this.label4, 0, 2);
             this.tableLayoutPanel6.Controls.Add(this.label5, 0, 3);
             this.tableLayoutPanel6.Controls.Add(this.label6, 0, 4);
@@ -356,7 +356,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(3, 80);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 19);
+            this.label4.Size = new System.Drawing.Size(130, 19);
             this.label4.TabIndex = 0;
             this.label4.Text = "Tổng tiền điện";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -367,7 +367,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(3, 118);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(133, 19);
+            this.label5.Size = new System.Drawing.Size(130, 19);
             this.label5.TabIndex = 0;
             this.label5.Text = "Tổng tiền nước";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -378,7 +378,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(3, 156);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 19);
+            this.label6.Size = new System.Drawing.Size(130, 19);
             this.label6.TabIndex = 0;
             this.label6.Text = "Tổng tiền wifi";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -389,7 +389,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(3, 194);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(133, 19);
+            this.label7.Size = new System.Drawing.Size(130, 19);
             this.label7.TabIndex = 0;
             this.label7.Text = "Tổng tiền rác";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -400,7 +400,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(3, 234);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(133, 19);
+            this.label8.Size = new System.Drawing.Size(130, 19);
             this.label8.TabIndex = 0;
             this.label8.Text = "Tổng tiền phòng";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -413,7 +413,7 @@
             this.label9.ForeColor = System.Drawing.Color.Red;
             this.label9.Location = new System.Drawing.Point(3, 272);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(133, 19);
+            this.label9.Size = new System.Drawing.Size(130, 19);
             this.label9.TabIndex = 0;
             this.label9.Text = "Tổng doanh thu";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -421,45 +421,45 @@
             // txt_tongtiendien
             // 
             this.txt_tongtiendien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_tongtiendien.Location = new System.Drawing.Point(142, 76);
+            this.txt_tongtiendien.Location = new System.Drawing.Point(139, 76);
             this.txt_tongtiendien.Name = "txt_tongtiendien";
-            this.txt_tongtiendien.Size = new System.Drawing.Size(160, 27);
+            this.txt_tongtiendien.Size = new System.Drawing.Size(156, 27);
             this.txt_tongtiendien.TabIndex = 1;
             this.txt_tongtiendien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_tongtiennuoc
             // 
             this.txt_tongtiennuoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_tongtiennuoc.Location = new System.Drawing.Point(142, 114);
+            this.txt_tongtiennuoc.Location = new System.Drawing.Point(139, 114);
             this.txt_tongtiennuoc.Name = "txt_tongtiennuoc";
-            this.txt_tongtiennuoc.Size = new System.Drawing.Size(160, 27);
+            this.txt_tongtiennuoc.Size = new System.Drawing.Size(156, 27);
             this.txt_tongtiennuoc.TabIndex = 1;
             this.txt_tongtiennuoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_tienwifi
             // 
             this.txt_tienwifi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_tienwifi.Location = new System.Drawing.Point(142, 152);
+            this.txt_tienwifi.Location = new System.Drawing.Point(139, 152);
             this.txt_tienwifi.Name = "txt_tienwifi";
-            this.txt_tienwifi.Size = new System.Drawing.Size(160, 27);
+            this.txt_tienwifi.Size = new System.Drawing.Size(156, 27);
             this.txt_tienwifi.TabIndex = 1;
             this.txt_tienwifi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_tongtienrac
             // 
             this.txt_tongtienrac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_tongtienrac.Location = new System.Drawing.Point(142, 190);
+            this.txt_tongtienrac.Location = new System.Drawing.Point(139, 190);
             this.txt_tongtienrac.Name = "txt_tongtienrac";
-            this.txt_tongtienrac.Size = new System.Drawing.Size(160, 27);
+            this.txt_tongtienrac.Size = new System.Drawing.Size(156, 27);
             this.txt_tongtienrac.TabIndex = 1;
             this.txt_tongtienrac.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_tongtienphong
             // 
             this.txt_tongtienphong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_tongtienphong.Location = new System.Drawing.Point(142, 230);
+            this.txt_tongtienphong.Location = new System.Drawing.Point(139, 230);
             this.txt_tongtienphong.Name = "txt_tongtienphong";
-            this.txt_tongtienphong.Size = new System.Drawing.Size(160, 27);
+            this.txt_tongtienphong.Size = new System.Drawing.Size(156, 27);
             this.txt_tongtienphong.TabIndex = 1;
             this.txt_tongtienphong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -467,9 +467,9 @@
             // 
             this.txt_tongdt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_tongdt.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tongdt.Location = new System.Drawing.Point(142, 268);
+            this.txt_tongdt.Location = new System.Drawing.Point(139, 268);
             this.txt_tongdt.Name = "txt_tongdt";
-            this.txt_tongdt.Size = new System.Drawing.Size(160, 27);
+            this.txt_tongdt.Size = new System.Drawing.Size(156, 27);
             this.txt_tongdt.TabIndex = 1;
             this.txt_tongdt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -479,7 +479,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(3, 309);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(133, 19);
+            this.label10.Size = new System.Drawing.Size(130, 19);
             this.label10.TabIndex = 0;
             this.label10.Text = "Nợ";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -487,9 +487,9 @@
             // txt_no
             // 
             this.txt_no.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_no.Location = new System.Drawing.Point(142, 305);
+            this.txt_no.Location = new System.Drawing.Point(139, 305);
             this.txt_no.Name = "txt_no";
-            this.txt_no.Size = new System.Drawing.Size(160, 27);
+            this.txt_no.Size = new System.Drawing.Size(156, 27);
             this.txt_no.TabIndex = 1;
             this.txt_no.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -499,7 +499,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(3, 42);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(133, 19);
+            this.label11.Size = new System.Drawing.Size(130, 19);
             this.label11.TabIndex = 0;
             this.label11.Text = "Tổng tiền vi phạm";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -507,9 +507,9 @@
             // txt_tienvipham
             // 
             this.txt_tienvipham.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_tienvipham.Location = new System.Drawing.Point(142, 38);
+            this.txt_tienvipham.Location = new System.Drawing.Point(139, 38);
             this.txt_tienvipham.Name = "txt_tienvipham";
-            this.txt_tienvipham.Size = new System.Drawing.Size(160, 27);
+            this.txt_tienvipham.Size = new System.Drawing.Size(156, 27);
             this.txt_tienvipham.TabIndex = 1;
             this.txt_tienvipham.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -519,7 +519,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(3, 7);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(133, 19);
+            this.label12.Size = new System.Drawing.Size(130, 19);
             this.label12.TabIndex = 0;
             this.label12.Text = "Tổng tiền cọc";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -527,11 +527,50 @@
             // txt_tiencoc
             // 
             this.txt_tiencoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_tiencoc.Location = new System.Drawing.Point(142, 3);
+            this.txt_tiencoc.Location = new System.Drawing.Point(139, 3);
             this.txt_tiencoc.Name = "txt_tiencoc";
-            this.txt_tiencoc.Size = new System.Drawing.Size(160, 27);
+            this.txt_tiencoc.Size = new System.Drawing.Size(156, 27);
             this.txt_tiencoc.TabIndex = 1;
             this.txt_tiencoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.Appearance.Options.UseForeColor = true;
+            this.simpleButton2.Location = new System.Drawing.Point(301, 3);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(46, 27);
+            this.simpleButton2.TabIndex = 3;
+            this.simpleButton2.Text = "Xem";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // simpleButton5
+            // 
+            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton5.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.simpleButton5.Appearance.Options.UseFont = true;
+            this.simpleButton5.Appearance.Options.UseForeColor = true;
+            this.simpleButton5.Location = new System.Drawing.Point(301, 36);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(46, 29);
+            this.simpleButton5.TabIndex = 5;
+            this.simpleButton5.Text = "Xem";
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton4.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.simpleButton4.Appearance.Options.UseFont = true;
+            this.simpleButton4.Appearance.Options.UseForeColor = true;
+            this.simpleButton4.Location = new System.Drawing.Point(301, 302);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(46, 29);
+            this.simpleButton4.TabIndex = 4;
+            this.simpleButton4.Text = "Xem";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // tableLayoutPanel7
             // 
@@ -869,43 +908,6 @@
             this.simpleButton3.Text = "Xuất danh sách";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Appearance.Options.UseForeColor = true;
-            this.simpleButton2.Location = new System.Drawing.Point(308, 3);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(46, 27);
-            this.simpleButton2.TabIndex = 3;
-            this.simpleButton2.Text = "Xem";
-            // 
-            // simpleButton4
-            // 
-            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton4.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.Appearance.Options.UseForeColor = true;
-            this.simpleButton4.Location = new System.Drawing.Point(308, 302);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(46, 29);
-            this.simpleButton4.TabIndex = 4;
-            this.simpleButton4.Text = "Xem";
-            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
-            // 
-            // simpleButton5
-            // 
-            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton5.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.simpleButton5.Appearance.Options.UseFont = true;
-            this.simpleButton5.Appearance.Options.UseForeColor = true;
-            this.simpleButton5.Location = new System.Drawing.Point(308, 36);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(46, 29);
-            this.simpleButton5.TabIndex = 5;
-            this.simpleButton5.Text = "Xem";
-            // 
             // frm_tkdoanhthu
             // 
             this.Appearance.Options.UseFont = true;
@@ -948,7 +950,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btn_tinhthang;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Label label4;
