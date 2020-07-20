@@ -48,8 +48,8 @@ namespace QuanLyKhuTro.NghiepVu
                        where hd.MAPHONG == cbo_phong.SelectedValue.ToString()
                        select hd.TONGTIEN).Sum();
             var tdp = (from dp in data.HOPDONGs
-                       from kt in data.KHACHTHUEs
-                       where dp.MAKT == kt.MAKT && kt.MAPHONG == cbo_phong.SelectedValue.ToString()
+                       from kp in data.PHONGs
+                       where dp.MAPHONG==kp.MAPHONG && kp.MAPHONG == cbo_phong.SelectedValue.ToString()
                        select dp.TIENCOC).Sum();
             return Convert.ToDouble(tkd) + Convert.ToDouble(tdp);
         }

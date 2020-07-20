@@ -79,7 +79,7 @@ namespace DAL
                 if (hd != null)
                 {
                     hd.TIENCOC = pHopDong.TIENCOC;
-                    
+                    hd.NGAYTRA = pHopDong.NGAYTRA;
                     data.SubmitChanges();
                 }
                 return true;

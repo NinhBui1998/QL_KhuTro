@@ -34,6 +34,24 @@ namespace DAL
         {
             return data.KHACHTHUEs.Where(t => t.MAKT == pMa).FirstOrDefault();
         }
+        public KHACHTHUE loadkttheosdt(string pMa)
+        {
+            return data.KHACHTHUEs.Where(t => t.SDT == pMa).FirstOrDefault();
+        }
+        public bool kt_sdt(string psdt)
+        {
+            var kq = (from k in data.KHACHTHUEs
+                      where k.SDT == psdt
+                      select k).Count();
+            if(kq>0)
+            {
+                return true;
+            }    
+            else
+            {
+                return false;
+            }    
+        }
         //kiểm tra khóa chính
         public bool ktakhoachinh_Phong(string hd)
         {
@@ -88,10 +106,10 @@ namespace DAL
         {
             var ktx = (from nv in data.PHONGs
                        from h in data.HOADONs
-                       from tk in data.KHACHTHUEs
+                       from kp in data.KHACHTHUEPHONGs
                        from tb in data.THIETBI_PHONGs
                        where nv.MAPHONG == h.MAPHONG
-                       || nv.MAPHONG == tk.MAPHONG || nv.MAPHONG == tb.MAPHONG && nv.MAPHONG == pPhong
+                       || nv.MAPHONG == kp.MAPHONG || nv.MAPHONG == tb.MAPHONG && nv.MAPHONG == pPhong
                        select nv).Count();
             if (ktx > 0)
             {

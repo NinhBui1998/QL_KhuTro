@@ -111,7 +111,8 @@ namespace DAL
                      from k in data.KHACHTHUEs
                      from tn in data.THANNHANs
                      from tntt in data.THANNHAN_TAMTRUs
-                     where p.MAPHONG==k.MAPHONG && k.MAKT==tntt.MAKT && tn.MATN==tntt.MATN
+                     from kp in data.KHACHTHUEPHONGs
+                     where p.MAPHONG==kp.MAPHONG && kp.MAKT==k.MAKT && k.MAKT==tntt.MAKT && tn.MATN==tntt.MATN
                      select new
                      {
                         p.TENPHONG,

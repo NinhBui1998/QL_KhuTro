@@ -39,5 +39,9 @@ namespace BLL
         {
             return dal_sm.SINHMA_THANNHAN();
         }
+        public string sinhma_khachthuephong()
+        {
+            return dal_sm.sinhmakhachthuephong();
+        }
     }
 }

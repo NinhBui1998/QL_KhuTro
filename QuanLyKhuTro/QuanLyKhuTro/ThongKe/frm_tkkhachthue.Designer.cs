@@ -226,7 +226,7 @@
             // 
             this.cbo_phong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_phong.FormattingEnabled = true;
-            this.cbo_phong.Location = new System.Drawing.Point(3, 4);
+            this.cbo_phong.Location = new System.Drawing.Point(3, 7);
             this.cbo_phong.Name = "cbo_phong";
             this.cbo_phong.Size = new System.Drawing.Size(132, 27);
             this.cbo_phong.TabIndex = 11;

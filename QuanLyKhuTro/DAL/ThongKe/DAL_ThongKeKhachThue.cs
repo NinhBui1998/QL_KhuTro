@@ -20,7 +20,8 @@ namespace DAL.ThongKe
         public string tongkhachthuetheophong(string mphong)
         {
             var kq= (from k in data.KHACHTHUEs
-                     where k.MAPHONG==mphong
+                     from kp in data.KHACHTHUEPHONGs
+                     where kp.MAKT==k.MAKT && kp.MAPHONG==mphong
                      select k).Count();
             return kq.ToString();
         }

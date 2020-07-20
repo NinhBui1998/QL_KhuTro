@@ -21,6 +21,8 @@ namespace QuanLyKhuTro.DuLieu
             dal_sm.updatehopdonghethan();
             dal_sm.updatehopdongsaphethan();
             dal_sm.Capnhapphongdacoc();
+            dal_sm.updatetinhtrangtraphong();
+            dal_sm.updatetinhtrangHOPDONGTRAPHONG();
         }
     }
 }

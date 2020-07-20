@@ -13,10 +13,10 @@ namespace BLL
         {
             return dkt.loadbangKhachThue();
         }
-        public List<KHACHTHUE> loadphongcokhach()
-        {
-            return dkt.loadbangphongcokhachthue();
-        }
+        //public List<KHACHTHUE> loadphongcokhach()
+        //{
+        //    return dkt.loadbangphongcokhachthue();
+        //}
         public KHACHTHUE layttkt(string pma)
         {
             return dkt.loadTenKT(pma);

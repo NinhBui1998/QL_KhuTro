@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DAL;
 using DAL.Model;
+using QuanLyKhuTro.DuLieu;
 
 namespace QuanLyKhuTro.HeThong
 {
@@ -97,16 +98,18 @@ namespace QuanLyKhuTro.HeThong
             txt_taikhoan.Clear();
         }
         DAL_SinhMa dal_sm = new DAL_SinhMa();
+        capnhatdulieu update = new capnhatdulieu();
         private void frm_dangnhap_Load(object sender, EventArgs e)
         {
-            dal_sm.updatekhachthuesaphethantt();
-            dal_sm.updatekhachthuedadktt();
-            dal_sm.updatekhachthuedahethantt();
+            update.update();
+            //dal_sm.updatekhachthuesaphethantt();
+            //dal_sm.updatekhachthuedadktt();
+            //dal_sm.updatekhachthuedahethantt();
             
-            dal_sm.updatehopdongconthoihan();
-            dal_sm.updatehopdonghethan();
-            dal_sm.updatehopdongsaphethan();
-            dal_sm.Capnhapphongdacoc();
+            //dal_sm.updatehopdongconthoihan();
+            //dal_sm.updatehopdonghethan();
+            //dal_sm.updatehopdongsaphethan();
+            //dal_sm.Capnhapphongdacoc();
         }
 
         private void frm_dangnhap_FormClosing(object sender, FormClosingEventArgs e)

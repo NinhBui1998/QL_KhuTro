@@ -78,10 +78,9 @@
       <Column Name="NGAYLAPHD" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="MANV" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="NGAYTRA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="MAKT" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MAPHONG" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="TINHTRANG" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="KHACHTHUE_HOPDONG" Member="KHACHTHUE" ThisKey="MAKT" OtherKey="MAKT" Type="KHACHTHUE" IsForeignKey="true" />
-      <Association Name="NHANVIEN_HOPDONG" Member="NHANVIEN" ThisKey="MANV" OtherKey="MANV" Type="NHANVIEN" IsForeignKey="true" />
+      <Association Name="PHONG_HOPDONG" Member="PHONG" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONG" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.KHACHCOCPHONG" Member="KHACHCOCPHONGs">
@@ -109,16 +108,24 @@
       <Column Name="SOCMND" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
       <Column Name="NGAYSINH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="TRUONGPHONG" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="MAPHONG" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="TINHTRANGTAMTRU" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
       <Column Name="MK" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="GHICHU" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="TINHTRANG" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QUANHE" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
       <Association Name="KHACHTHUE_VIPHAM" Member="VIPHAMs" ThisKey="MAKT" OtherKey="MAKT" Type="VIPHAM" />
-      <Association Name="KHACHTHUE_HOPDONG" Member="HOPDONGs" ThisKey="MAKT" OtherKey="MAKT" Type="HOPDONG" />
+      <Association Name="KHACHTHUE_KHACHTHUEPHONG" Member="KHACHTHUEPHONGs" ThisKey="MAKT" OtherKey="MAKT" Type="KHACHTHUEPHONG" />
       <Association Name="KHACHTHUE_TAMTRU" Member="TAMTRUs" ThisKey="MAKT" OtherKey="MAKT" Type="TAMTRU" />
       <Association Name="KHACHTHUE_THANNHAN_TAMTRU" Member="THANNHAN_TAMTRUs" ThisKey="MAKT" OtherKey="MAKT" Type="THANNHAN_TAMTRU" />
-      <Association Name="PHONG_KHACHTHUE" Member="PHONG" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KHACHTHUEPHONG" Member="KHACHTHUEPHONGs">
+    <Type Name="KHACHTHUEPHONG">
+      <Column Name="MAKTP" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MAPHONG" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MAKT" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="KHACHTHUE_KHACHTHUEPHONG" Member="KHACHTHUE" ThisKey="MAKT" OtherKey="MAKT" Type="KHACHTHUE" IsForeignKey="true" />
+      <Association Name="PHONG_KHACHTHUEPHONG" Member="PHONG" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONG" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.LOAIPHONG" Member="LOAIPHONGs">
@@ -139,7 +146,6 @@
       <Column Name="DIACHI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="NHANVIEN_VIPHAM" Member="VIPHAMs" ThisKey="MANV" OtherKey="MANV" Type="VIPHAM" />
       <Association Name="NHANVIEN_HOADON" Member="HOADONs" ThisKey="MANV" OtherKey="MANV" Type="HOADON" />
-      <Association Name="NHANVIEN_HOPDONG" Member="HOPDONGs" ThisKey="MANV" OtherKey="MANV" Type="HOPDONG" />
       <Association Name="NHANVIEN_QUANLYND" Member="QUANLYND" ThisKey="MANV" OtherKey="TENDN" Type="QUANLYND" Cardinality="One" />
       <Association Name="NHANVIEN_TAMTRU" Member="TAMTRUs" ThisKey="MANV" OtherKey="MANV" Type="TAMTRU" />
     </Type>
@@ -167,8 +173,9 @@
       <Association Name="PHONG_DICHVU" Member="DICHVUs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="DICHVU" />
       <Association Name="PHONG_DICHVUDIEN" Member="DICHVUDIENs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="DICHVUDIEN" />
       <Association Name="PHONG_HOADON" Member="HOADONs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="HOADON" />
+      <Association Name="PHONG_HOPDONG" Member="HOPDONGs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="HOPDONG" />
       <Association Name="PHONG_KHACHCOCPHONG" Member="KHACHCOCPHONGs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="KHACHCOCPHONG" />
-      <Association Name="PHONG_KHACHTHUE" Member="KHACHTHUEs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="KHACHTHUE" />
+      <Association Name="PHONG_KHACHTHUEPHONG" Member="KHACHTHUEPHONGs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="KHACHTHUEPHONG" />
       <Association Name="PHONG_THIETBI_PHONG" Member="THIETBI_PHONGs" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="THIETBI_PHONG" />
       <Association Name="LOAIPHONG_PHONG" Member="LOAIPHONG" ThisKey="MALOAI" OtherKey="MALOAI" Type="LOAIPHONG" IsForeignKey="true" />
       <Association Name="TANG_PHONG" Member="TANG" ThisKey="MATANG" OtherKey="MATANG" Type="TANG" IsForeignKey="true" />
@@ -265,22 +272,10 @@
       <Association Name="THIETBI_THIETBI_PHONG" Member="THIETBI" ThisKey="MATHIETBI" OtherKey="MATHIETBI" Type="THIETBI" IsForeignKey="true" />
     </Type>
   </Table>
-  <Function Name="dbo.SINHMA_HOADON" Method="SINHMA_HOADON" IsComposable="true">
-    <Return Type="System.String" />
-  </Function>
-  <Function Name="dbo.SINHMA_TAMTRU" Method="SINHMA_TAMTRU" IsComposable="true">
-    <Return Type="System.String" />
-  </Function>
-  <Function Name="dbo.SINHMA_HOPDONG" Method="SINHMA_HOPDONG" IsComposable="true">
-    <Return Type="System.String" />
-  </Function>
-  <Function Name="dbo.SINHMA_KHACHTHUE" Method="SINHMA_KHACHTHUE" IsComposable="true">
-    <Return Type="System.String" />
-  </Function>
   <Function Name="dbo.updatehopdongconthoihan" Method="updatehopdongconthoihan">
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.updatekhachthuesaphethan" Method="updatekhachthuesaphethan">
+  <Function Name="dbo.updatetinhtrangtraphong" Method="updatetinhtrangtraphong">
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.updatehopdonghethan" Method="updatehopdonghethan">
@@ -295,20 +290,44 @@
   <Function Name="dbo.updatekhachthuedahethantt" Method="updatekhachthuedahethantt">
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.updatekhachthuesaphethan" Method="updatekhachthuesaphethan">
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.updatephongdacoc" Method="updatephongdacoc">
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.SINHMA_KHACHCOC" Method="SINHMA_KHACHCOC" IsComposable="true">
-    <Return Type="System.String" />
-  </Function>
-  <Function Name="dbo.SINHMA_Thannhan" Method="SINHMA_Thannhan" IsComposable="true">
-    <Return Type="System.String" />
+  <Function Name="dbo.updatetinhtranghdhopdonghethan" Method="updatetinhtranghdhopdonghethan">
+    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.updatetinhtrangKT" Method="updatetinhtrangKT">
     <Parameter Name="MAHOPDONG" Parameter="mAHOPDONG" Type="System.String" DbType="VarChar(10)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.SINHMA_HOADON" Method="SINHMA_HOADON" IsComposable="true">
+    <Return Type="System.String" />
+  </Function>
   <Function Name="dbo.SINHMA_ViPham" Method="SINHMA_ViPham" IsComposable="true">
     <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.SINHMA_HOPDONG" Method="SINHMA_HOPDONG" IsComposable="true">
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.SINHMA_KHACHCOC" Method="SINHMA_KHACHCOC" IsComposable="true">
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.SINHMA_KHACHTHUE" Method="SINHMA_KHACHTHUE" IsComposable="true">
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.SINHMA_KTPhong" Method="SINHMA_KTPhong" IsComposable="true">
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.SINHMA_TAMTRU" Method="SINHMA_TAMTRU" IsComposable="true">
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.SINHMA_Thannhan" Method="SINHMA_Thannhan" IsComposable="true">
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.updatetinhtrangHOPDONGTRAPHONG" Method="updatetinhtrangHOPDONGTRAPHONG">
+    <Return Type="System.Int32" />
   </Function>
 </Database>

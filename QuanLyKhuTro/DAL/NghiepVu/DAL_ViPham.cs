@@ -170,7 +170,9 @@ namespace DAL.NghiepVu
         public string laymaphong (string makt)
         {
             var kq = (from kt in data.KHACHTHUEs
-                      select kt.MAPHONG).FirstOrDefault();
+                      from kp in data.KHACHTHUEPHONGs
+                      where kt.MAKT==kp.MAKT
+                      select kp.MAPHONG).FirstOrDefault();
             return kq.ToString();
         }
         public int laylanvipham (string makt, string pmanq)

@@ -16,10 +16,11 @@ namespace DAL.ThongKe
                      from k in data.VIPHAMs
                      from kth in data.NOIQUYs
                      from p in data.PHONGs
-                     where s.MAKT == k.MAKT && k.MANOIQUY == kth.MANOIQUY && p.MAPHONG==s.MAPHONG
+                     from kp in data.KHACHTHUEPHONGs
+                     where s.MAKT == k.MAKT && k.MANOIQUY == kth.MANOIQUY && p.MAPHONG==kp.MAPHONG && kp.MAKT==s.MAKT
                      select new
                      {
-                         s.MAPHONG,
+                         kp.MAPHONG,
                          p.TENPHONG,
                          k.TIENPHAT,
                          k.MAVIPHAM,
@@ -60,11 +61,12 @@ namespace DAL.ThongKe
                      from k in data.VIPHAMs
                      from kth in data.NOIQUYs
                      from p in data.PHONGs
-                     where s.MAKT == k.MAKT && k.MANOIQUY == kth.MANOIQUY && p.MAPHONG == s.MAPHONG
+                     from kp in data.KHACHTHUEPHONGs
+                     where s.MAKT == k.MAKT && k.MANOIQUY == kth.MANOIQUY && p.MAPHONG == kp.MAPHONG && kp.MAKT==s.MAKT
                         && k.NGAYVIPHAM.Value.Month==thang
                      select new
                      {
-                         s.MAPHONG,
+                         kp.MAPHONG,
                          p.TENPHONG,
                          k.TIENPHAT,
                          k.MAVIPHAM,
@@ -104,11 +106,12 @@ namespace DAL.ThongKe
                      from k in data.VIPHAMs
                      from kth in data.NOIQUYs
                      from p in data.PHONGs
-                     where s.MAKT == k.MAKT && k.MANOIQUY == kth.MANOIQUY && p.MAPHONG == s.MAPHONG
+                      from kp in data.KHACHTHUEPHONGs
+                     where kp.MAKT == k.MAKT && kp.MAPHONG == p.MAPHONG && s.MAKT == k.MAKT && k.MANOIQUY == kth.MANOIQUY 
                         && k.NGAYVIPHAM.Value.Year == nam
                      select new
                      {
-                         s.MAPHONG,
+                         kp.MAPHONG,
                          p.TENPHONG,
                          k.TIENPHAT,
                          k.MAVIPHAM,
@@ -148,11 +151,12 @@ namespace DAL.ThongKe
                      from k in data.VIPHAMs
                      from kth in data.NOIQUYs
                      from p in data.PHONGs
-                     where s.MAKT == k.MAKT && k.MANOIQUY == kth.MANOIQUY && p.MAPHONG == s.MAPHONG
+                     from kp in data.KHACHTHUEPHONGs
+                     where s.MAKT == k.MAKT && k.MANOIQUY == kth.MANOIQUY && p.MAPHONG == kp.MAPHONG && kp.MAKT==s.MAKT
                         && k.NGAYVIPHAM.Value.Month == thangnam.Month && k.NGAYVIPHAM.Value.Year == thangnam.Year
                      select new
                      {
-                         s.MAPHONG,
+                         kp.MAPHONG,
                          p.TENPHONG,
                          k.TIENPHAT,
                          k.MAVIPHAM,
@@ -193,11 +197,12 @@ namespace DAL.ThongKe
                      from k in data.VIPHAMs
                      from kth in data.NOIQUYs
                      from p in data.PHONGs
-                     where s.MAKT == k.MAKT && k.MANOIQUY == kth.MANOIQUY && p.MAPHONG == s.MAPHONG
+                     from kp in data.KHACHTHUEPHONGs
+                     where kp.MAKT == s.MAKT && kp.MAPHONG == p.MAPHONG && s.MAKT == k.MAKT && k.MANOIQUY == kth.MANOIQUY 
                         && k.NGAYVIPHAM>=tuthang && k.NGAYVIPHAM<=denthang
                      select new
                      {
-                         s.MAPHONG,
+                         kp.MAPHONG,
                          p.TENPHONG,
                          k.TIENPHAT,
                          k.MAVIPHAM,

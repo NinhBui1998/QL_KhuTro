@@ -14,6 +14,9 @@ using System.IO;
 using DevExpress.Utils.Extensions;
 using DevExpress.Data.WcfLinq.Helpers;
 using QuanLyKhuTro.NghiepVu;
+using DAL.HeThong;
+using DAL.Model;
+using DAL.NghiepVu;
 
 namespace QuanLyKhuTro.DanhMuc
 {
@@ -24,6 +27,7 @@ namespace QuanLyKhuTro.DanhMuc
         //QL_KhuTroDataContext data = new QL_KhuTroDataContext();
         BLL_SinhMa bll_sinhma = new BLL_SinhMa();
         BLL_DatPhong bll_datphong = new BLL_DatPhong();
+        DAL_LoadKhachThue dal_loakt = new DAL_LoadKhachThue();
         public frm_khachthue()
         {
             InitializeComponent();
@@ -36,29 +40,31 @@ namespace QuanLyKhuTro.DanhMuc
         }
         private void frm_khachthue_Load(object sender, EventArgs e)
         {
-            grv_khachthue.DataSource = khachthue.loadBangKT();
+            grv_khachthue.DataSource = dal_loakt.loadkhachthue();
+            //grv_khachthue.DataSource = khachthue.loadBangKT();
             txt_tenphong.Text = Ten;
-            if(Ten!=null)
-            {    
-                grv_khachthue.DataSource = khachthue.loadBangKTtheoma(Ten);
+            if (Ten != null)
+            {
+                //grv_khachthue.DataSource = khachthue.loadBangKTtheoma(Ten);
+                grv_khachthue.DataSource = dal_loakt.loadkhachthuetheomaphong(Ten);
             }
             cbo_phong.DataSource = bll_phong.loadBang_Phong();
             cbo_phong.DisplayMember = "TENPHONG";
             cbo_phong.ValueMember = "MAPHONG";
 
-            
-            btn_sua.Enabled = btn_xoa.Enabled=btn_huy.Enabled=btn_luu.Enabled = false;
+
+            btn_sua.Enabled = btn_xoa.Enabled = btn_huy.Enabled = btn_luu.Enabled = false;
             txt_makt.Enabled = txt_tenkt.Enabled = txt_sdt.Enabled
                 = txt_quequan.Enabled = txt_ngaysinh.Enabled = false;
-            txt_cmnd.Enabled = rdb_nam.Enabled = rdb_nu.Enabled =  false;
+            txt_cmnd.Enabled = rdb_nam.Enabled = rdb_nu.Enabled = false;
             txt_makt.Text = bll_sinhma.SinhMa_KhachThue();
-           
+
 
             ckb_tinhtrang.Checked = true;
             rdb_nam.Checked = true;
             ckb_tinhtrang.Text = "đang ở";
-             btn_them.Enabled = true;
-            if(khachthue.ktTRuongPhong(txt_tenphong.Text)==true)
+            btn_them.Enabled = true;
+            if (khachthue.ktTRuongPhong(txt_tenphong.Text) == true)
             {
                 ckb_truongphong.Checked = false;
                 ckb_truongphong.Enabled = false;
@@ -69,6 +75,7 @@ namespace QuanLyKhuTro.DanhMuc
                 ckb_truongphong.Enabled = true;
             }
             btn_them.Enabled = true;
+            txt_tenphong.Enabled = false;
         }
         
 
@@ -81,12 +88,26 @@ namespace QuanLyKhuTro.DanhMuc
             txt_tenkt.Enabled = txt_sdt.Enabled = txt_quequan.Enabled = true;
             txt_ngaysinh.Enabled = txt_cmnd.Enabled = rdb_nam.Enabled = rdb_nu.Enabled = true;
         }
-
+        DAL_SinhMa dal_sm = new DAL_SinhMa();
+        DAL_KHACHTHUEPHONG dal_khachthuephong = new DAL_KHACHTHUEPHONG();
         private void btn_luu_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+            if (txt_makt.Text == string.Empty && txt_sdt.Text == string.Empty && txt_cmnd.Text == string.Empty
+                    && txt_quequan.Text == string.Empty)
+            {
+                MessageBox.Show(" không được để trống");
+                return;
+            }
+            if ( pic_anhkt.Image == null)
+            {
+                MessageBox.Show("Thêm ảnh khách thuê");
+                return;
+            }    
             byte[] b = convertImage(pic_anhkt.Image);
-
+            // khách thuê
             KHACHTHUE kt = new KHACHTHUE();
             kt.MAKT = txt_makt.Text;
             kt.TENKT = txt_tenkt.Text;
@@ -114,25 +135,24 @@ namespace QuanLyKhuTro.DanhMuc
             {
                 kt.TRUONGPHONG = false;
             }
-            kt.MAPHONG = txt_tenphong.Text;
+            //kt.MAPHONG = txt_tenphong.Text;
             kt.MK = "abc";
             kt.TINHTRANG = true;
+            // khách thuê phòng
+            KHACHTHUEPHONG ktp = new KHACHTHUEPHONG();
+            ktp.MAKTP = dal_sm.sinhmakhachthuephong();
+            ktp.MAPHONG = txt_tenphong.Text;
+            ktp.MAKT = txt_makt.Text;
             if (btn_sua.Enabled == false && btn_them.Enabled == true)
             {
                 try
                 {
-                    if (txt_makt.Text == string.Empty && txt_sdt.Text == string.Empty && txt_cmnd.Text == string.Empty
-                     && txt_quequan.Text == string.Empty)
-                    {
-                        MessageBox.Show(" không được để trống");
-                        return;
-                    }  
-                    if(khachthue.ktkc_khachthue(txt_makt.Text)==true)
+                    if(khachthue.ktkc_khachthue(txt_makt.Text)==true )
                     {
                         MessageBox.Show("Trùng khóa chính");
                         return;
                     }    
-                    if(khachthue.ThemKT(kt)==true)
+                    if(khachthue.ThemKT(kt)==true && dal_khachthuephong.them_khachthuephong(ktp) == true)
                     {
                         PHONG ph = new PHONG();
                         ph.MAPHONG =txt_tenphong.Text;
@@ -189,10 +209,15 @@ namespace QuanLyKhuTro.DanhMuc
             txt_cmnd.Enabled = rdb_nam.Enabled = rdb_nu.Enabled = false;
 
             txt_makt.Text = bll_sinhma.SinhMa_KhachThue();
-            grv_khachthue.DataSource = khachthue.loadBangKTtheoma(txt_tenphong.Text);
+            grv_khachthue.DataSource = dal_loakt.loadkhachthuetheomaphong(txt_tenphong.Text);
             btn_huy.Enabled = btn_luu.Enabled = btn_xoa.Enabled = btn_sua.Enabled = false;
             ckb_truongphong.Checked = false;
 
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi");
+            }
         }
         BLL_DatPhong datphong = new BLL_DatPhong();
         BLL_Phong phong = new BLL_Phong();
@@ -254,7 +279,6 @@ namespace QuanLyKhuTro.DanhMuc
             open.RestoreDirectory = true;
             if (open.ShowDialog() == DialogResult.OK)
             {
-               
                 pic_anhkt.ImageLocation = open.FileName;
                 pic_anhkt.SizeMode = PictureBoxSizeMode.StretchImage;
                 
@@ -280,7 +304,7 @@ namespace QuanLyKhuTro.DanhMuc
             MemoryStream m = new MemoryStream(b);
             return Image.FromStream(m);
         }
-
+        DAL_CocPhong dal_cp = new DAL_CocPhong();
         private void btn_them_Click(object sender, EventArgs e)
         {
            
@@ -300,6 +324,45 @@ namespace QuanLyKhuTro.DanhMuc
                 btn_xoa.Enabled = btn_sua.Enabled = false;
                 xoatext();
                 txt_makt.Text = bll_sinhma.SinhMa_KhachThue();
+                if(dal_cp.kt_phongcococ(Ten)==true)
+                {
+                    KHACHCOCPHONG kcp = new KHACHCOCPHONG();
+                    kcp = dal_cp.loadkhcocphong(Ten);
+                    txt_tenkt.Text = kcp.TEN;
+                    txt_sdt.Text = kcp.SODT;
+                    txt_cmnd.Text = kcp.SOCMND;
+                    txt_quequan.Text = kcp.QUEQUAN;
+                    if(kcp.GIOITINHKC=="Nam")
+                    {
+                        rdb_nam.Checked = true;
+                    }    
+                    else
+                    {
+                        rdb_nu.Checked = true;
+                    }
+                    try
+                    {
+                        if (dal_cp.xoa_khachcoc(kcp.MAKHCP) == true)
+                        {
+                            return;
+                        }
+                        else
+                        {
+                            return;
+                        }    
+
+                    }
+                    catch
+                    {
+                        return;
+                    }
+                }
+
+                else
+                {
+                    return;
+                }
+               
             }    
 
         }
@@ -317,59 +380,66 @@ namespace QuanLyKhuTro.DanhMuc
             btn_them.Enabled = false;
             btn_huy.Enabled = true;
 
-            int position = gridView_khachthue.FocusedRowHandle;
-            try
-            {
-                kt.MAPHONG = gridView_khachthue.GetRowCellValue(position, "MAPHONG").ToString();
-                kt.TENKT = gridView_khachthue.GetRowCellValue(position, "TENKT").ToString();
-                kt.MAKT = gridView_khachthue.GetRowCellValue(position, "MAKT").ToString();
-                kt.NGAYSINH = Convert.ToDateTime(gridView_khachthue.GetRowCellValue(position, "NGAYSINH").ToString());
-                kt.GIOITINH = gridView_khachthue.GetRowCellValue(position, "GIOITINH").ToString();
-                kt.QUEQUAN = gridView_khachthue.GetRowCellValue(position, "QUEQUAN").ToString();
-                kt.SOCMND = gridView_khachthue.GetRowCellValue(position, "SOCMND").ToString();
-                kt.SDT = gridView_khachthue.GetRowCellValue(position, "SDT").ToString();
-
-                txt_makt.Text = kt.MAKT.ToString();
-                txt_tenkt.Text = kt.TENKT.ToString();
-                txt_sdt.Text = kt.SDT.ToString();
-                txt_cmnd.Text = kt.SOCMND.ToString();
-                txt_ngaysinh.Text = kt.NGAYSINH.ToString();
-                txt_quequan.Text = kt.QUEQUAN.ToString();
-                txt_tenphong.Text = kt.MAPHONG;
-                if (kt.GIOITINH == "Nam")
-                {
-                    rdb_nam.Checked = true;
-                }
-                if (kt.GIOITINH == "Nữ")
-                {
-                    rdb_nu.Checked = true;
-                }
-
-
-                //var q3 = data.KHACHTHUEs.Where(c => c.MAKT == kt.MAKT).Select(c => c.ANH).FirstOrDefault();
-
-                //byte[] b = q3.ToArray();
-                //if(kt.ANH!=null)
-                //{
+            if(gridView_khachthue.RowCount>0)
+            {     
+                int position = gridView_khachthue.FocusedRowHandle;
                 try
                 {
-                    byte[] b = (byte[])khachthue.layanh(kt.MAKT);
-                    pic_anhkt.Image = bytetoimage(b);
-                    pic_anhkt.SizeMode = PictureBoxSizeMode.StretchImage;
-                }
-                catch
-                {
-                    return;
-                }
+                    //kt.MAPHONG = gridView_khachthue.GetRowCellValue(position, "MAPHONG").ToString();
+                    kt.TENKT = gridView_khachthue.GetRowCellValue(position, "TENKT1").ToString();
+                    kt.MAKT = gridView_khachthue.GetRowCellValue(position, "MAKT1").ToString();
+                    kt.NGAYSINH = Convert.ToDateTime(gridView_khachthue.GetRowCellValue(position, "NGAYSINH1").ToString());
+                    kt.GIOITINH = gridView_khachthue.GetRowCellValue(position, "GIOITINH1").ToString();
+                    kt.QUEQUAN = gridView_khachthue.GetRowCellValue(position, "QUEQUAN1").ToString();
+                    kt.SOCMND = gridView_khachthue.GetRowCellValue(position, "SOCMND1").ToString();
+                    kt.SDT = gridView_khachthue.GetRowCellValue(position, "SDT1").ToString();
 
-                // }
-                //else
-                //{
-                //    MessageBox.Show("Không có ảnh");
-                //}
+                    txt_makt.Text = kt.MAKT.ToString();
+                    txt_tenkt.Text = kt.TENKT.ToString();
+                    txt_sdt.Text = kt.SDT.ToString();
+                    txt_cmnd.Text = kt.SOCMND.ToString();
+                    txt_ngaysinh.Text = kt.NGAYSINH.ToString();
+                    txt_quequan.Text = kt.QUEQUAN.ToString();
+                    //txt_tenphong.Text = kt.MAPHONG;
+                    if (kt.GIOITINH == "Nam")
+                    {
+                        rdb_nam.Checked = true;
+                    }
+                    if (kt.GIOITINH == "Nữ")
+                    {
+                        rdb_nu.Checked = true;
+                    }
 
+
+                    //var q3 = data.KHACHTHUEs.Where(c => c.MAKT == kt.MAKT).Select(c => c.ANH).FirstOrDefault();
+
+                    //byte[] b = q3.ToArray();
+                    //if(kt.ANH!=null)
+                    //{
+                    try
+                    {
+                        byte[] b = (byte[])khachthue.layanh(kt.MAKT);
+                        pic_anhkt.Image = bytetoimage(b);
+                        pic_anhkt.SizeMode = PictureBoxSizeMode.StretchImage;
+                    }
+                    catch
+                    {
+                        return;
+                    }
+
+                    // }
+                    //else
+                    //{
+                    //    MessageBox.Show("Không có ảnh");
+                    //}
+
+                }
+                catch { }
             }
-            catch { }
+            else
+            {
+                return;
+            }
             int sltd = Convert.ToInt32(bll_datphong.laysoLuongtd(cbo_phong.SelectedValue.ToString()));
             if (bll_datphong.demsohd(cbo_phong.SelectedValue.ToString()) <= sltd)
             {
@@ -379,7 +449,7 @@ namespace QuanLyKhuTro.DanhMuc
 
         private void btn_timkiem_Click(object sender, EventArgs e)
         {
-            grv_khachthue.DataSource = khachthue.loadBangKTtheoma(cbo_phong.SelectedValue.ToString());
+            grv_khachthue.DataSource = dal_loakt.loadkhachthuetheomaphong(cbo_phong.SelectedValue.ToString());
             int sltd = Convert.ToInt32(bll_datphong.laysoLuongtd(cbo_phong.SelectedValue.ToString()));
             //if (bll_datphong.demsohd(cbo_phong.SelectedValue.ToString()) <= sltd)
             //{
@@ -400,7 +470,7 @@ namespace QuanLyKhuTro.DanhMuc
 
         private void btn_tatcahd_Click(object sender, EventArgs e)
         {
-            grv_khachthue.DataSource = khachthue.loadBangKT();
+            grv_khachthue.DataSource = dal_loakt.loadkhachthue();
         }
 
         private void txt_cmnd_Leave(object sender, EventArgs e)
@@ -469,16 +539,14 @@ namespace QuanLyKhuTro.DanhMuc
         private void btn_huy_Click(object sender, EventArgs e)
         {
             frm_khachthue_Load(sender, e);
-        }
-
-        private void frm_khachthue_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            
-        }
-
-        private void cbo_phong_SelectedIndexChanged(object sender, EventArgs e)
-        {
+            txt_tenkt.Clear();
+            txt_sdt.Clear();
+            txt_quequan.Clear();
+            txt_cmnd.Clear();
+            txt_ngaysinh.Clear();
 
         }
+
+        
     }
 }

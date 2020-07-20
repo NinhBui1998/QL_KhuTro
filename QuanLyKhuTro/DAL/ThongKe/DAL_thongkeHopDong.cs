@@ -15,7 +15,8 @@ namespace DAL.ThongKe
                      from kth in data.KHACHTHUEs
                      from p in data.PHONGs
                      from nv in data.NHANVIENs
-                     where s.MAKT == kth.MAKT && kth.MAPHONG == p.MAPHONG && s.MANV == nv.MANV
+                     from kp in data.KHACHTHUEPHONGs
+                     where kp.MAKT == kth.MAKT && kp.MAPHONG == p.MAPHONG &&s.MAPHONG==p.MAPHONG && s.MANV == nv.MANV
                             
                      select new
                      {
@@ -50,7 +51,8 @@ namespace DAL.ThongKe
                      from kth in data.KHACHTHUEs
                      from p in data.PHONGs
                      from nv in data.NHANVIENs
-                     where s.MAKT == kth.MAKT && kth.MAPHONG == p.MAPHONG && s.MANV == nv.MANV
+                     from kp in data.KHACHTHUEPHONGs
+                     where kp.MAKT == kth.MAKT && kp.MAPHONG == p.MAPHONG && s.MAPHONG==p.MAPHONG && s.MANV == nv.MANV
                             && s.NGAYLAPHD.Value.Month==thang
                      select new
                      {
@@ -85,7 +87,8 @@ namespace DAL.ThongKe
                      from kth in data.KHACHTHUEs
                      from p in data.PHONGs
                      from nv in data.NHANVIENs
-                     where s.MAKT == kth.MAKT && kth.MAPHONG == p.MAPHONG && s.MANV == nv.MANV
+                     from kp in data.KHACHTHUEPHONGs
+                     where kp.MAKT == kth.MAKT && kp.MAPHONG == p.MAPHONG && s.MAPHONG==p.MAPHONG && s.MANV == nv.MANV
                             && s.NGAYLAPHD.Value.Year == nam
                      select new
                      {
@@ -120,7 +123,8 @@ namespace DAL.ThongKe
                      from kth in data.KHACHTHUEs
                      from p in data.PHONGs
                      from nv in data.NHANVIENs
-                     where s.MAKT == kth.MAKT && kth.MAPHONG == p.MAPHONG && s.MANV == nv.MANV
+                     from kp in data.KHACHTHUEPHONGs
+                     where kp.MAKT == kth.MAKT && kp.MAPHONG == p.MAPHONG && s.MAPHONG==p.MAPHONG && s.MANV == nv.MANV
                             && s.NGAYLAPHD.Value.Month == thangnam.Month && s.NGAYLAPHD.Value.Year==thangnam.Year
                      select new
                      {
@@ -155,11 +159,12 @@ namespace DAL.ThongKe
                      from kth in data.KHACHTHUEs
                      from p in data.PHONGs
                      from nv in data.NHANVIENs
-                     where s.MAKT == kth.MAKT && kth.MAPHONG == p.MAPHONG && s.MANV == nv.MANV
+                     from kp in data.KHACHTHUEPHONGs
+                     where s.MAPHONG==p.MAPHONG && kp.MAKT==kth.MAKT && kp.MAPHONG == p.MAPHONG && s.MANV == nv.MANV
                             && s.NGAYLAPHD>=tuthang && s.NGAYLAPHD<=denthang
                      select new
                      {
-                         p.MAPHONG,
+                         kp.MAPHONG,
                          s.MAHD,
                          nv.TENNV,
                          kth.MAKT,

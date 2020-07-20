@@ -22,6 +22,21 @@ namespace DAL.NghiepVu
         {
             return data.KHACHCOCPHONGs.Where(t =>t.MAPHONG==pma).FirstOrDefault();
         }
+
+        public bool ktphongcoduoccoc(string pmaphong)
+        {
+            var kq = (from kc in data.KHACHCOCPHONGs
+                      where kc.MAPHONG == pmaphong
+                      select kc).Count();
+            if(kq>0)
+            {
+                return true;
+            }    
+            else
+            {
+                return false;
+            }    
+        }
         public bool kt_phongcococ(string pmaphong)
         {
             var kq = (from kc in data.KHACHCOCPHONGs

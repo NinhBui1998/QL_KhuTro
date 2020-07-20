@@ -17,7 +17,8 @@ namespace DAL
                      from kth in data.KHACHTHUEs
                      from p in data.PHONGs
                      from nv in data.NHANVIENs
-                     where s.MAKT == kth.MAKT && kth.MAPHONG == p.MAPHONG && s.MANV == nv.MANV
+                     from kp in data.KHACHTHUEPHONGs
+                     where kp.MAKT==kth.MAKT && kp.MAPHONG == p.MAPHONG && p.MAPHONG==s.MAPHONG && s.MANV == nv.MANV
                      select new
                      {
                          s.MAHD,
@@ -28,6 +29,7 @@ namespace DAL
                          kth.TENKT,
                          s.NGAYLAPHD,
                          s.NGAYTRA,
+                         
                                             
                      };
             var kq = kt.ToList().ConvertAll(t => new TraPhong()
@@ -51,8 +53,10 @@ namespace DAL
                      from kth in data.KHACHTHUEs
                      from p in data.PHONGs
                      from nv in data.NHANVIENs
-                     where s.MAKT == kth.MAKT && kth.MAPHONG == p.MAPHONG && s.MANV == nv.MANV
-                     && p.TENPHONG==pten && s.TINHTRANG==true
+                     from kp in data.KHACHTHUEPHONGs
+                     where s.MAPHONG==p.MAPHONG && kp.MAKT==kth.MAKT && kp.MAPHONG == p.MAPHONG 
+                     && s.MANV == nv.MANV
+                     && p.TENPHONG==pten && s.TINHTRANG==true && kth.TRUONGPHONG==true && kth.TINHTRANG==true
                      select new
                      {
                          s.MAHD,

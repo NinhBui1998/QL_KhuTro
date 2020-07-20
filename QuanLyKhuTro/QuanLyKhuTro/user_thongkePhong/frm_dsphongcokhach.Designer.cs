@@ -41,7 +41,6 @@
             this.MAKT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENKT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GIOITINH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ANH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.QUEQUAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SOCMND = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -168,7 +167,6 @@
             this.MAKT,
             this.TENKT,
             this.GIOITINH,
-            this.ANH,
             this.SDT,
             this.QUEQUAN,
             this.SOCMND,
@@ -181,7 +179,7 @@
             // MAKT
             // 
             this.MAKT.Caption = "Mã khách thuê";
-            this.MAKT.FieldName = "MAKT";
+            this.MAKT.FieldName = "MAKT1";
             this.MAKT.Name = "MAKT";
             this.MAKT.Visible = true;
             this.MAKT.VisibleIndex = 0;
@@ -189,7 +187,7 @@
             // TENKT
             // 
             this.TENKT.Caption = "Tên khách thuê";
-            this.TENKT.FieldName = "TENKT";
+            this.TENKT.FieldName = "TENKT1";
             this.TENKT.Name = "TENKT";
             this.TENKT.Visible = true;
             this.TENKT.VisibleIndex = 1;
@@ -197,68 +195,60 @@
             // GIOITINH
             // 
             this.GIOITINH.Caption = "Giới tính";
-            this.GIOITINH.FieldName = "GIOITINH";
+            this.GIOITINH.FieldName = "GIOITINH1";
             this.GIOITINH.Name = "GIOITINH";
             this.GIOITINH.Visible = true;
             this.GIOITINH.VisibleIndex = 2;
             // 
-            // ANH
-            // 
-            this.ANH.Caption = "Ảnh";
-            this.ANH.FieldName = "ANH";
-            this.ANH.Name = "ANH";
-            this.ANH.Visible = true;
-            this.ANH.VisibleIndex = 3;
-            // 
             // SDT
             // 
             this.SDT.Caption = "Số điện thoại";
-            this.SDT.FieldName = "SDT";
+            this.SDT.FieldName = "SDT1";
             this.SDT.Name = "SDT";
             this.SDT.Visible = true;
-            this.SDT.VisibleIndex = 4;
+            this.SDT.VisibleIndex = 3;
             // 
             // QUEQUAN
             // 
             this.QUEQUAN.Caption = "Quê quán";
-            this.QUEQUAN.FieldName = "QUEQUAN";
+            this.QUEQUAN.FieldName = "QUEQUAN1";
             this.QUEQUAN.Name = "QUEQUAN";
             this.QUEQUAN.Visible = true;
-            this.QUEQUAN.VisibleIndex = 5;
+            this.QUEQUAN.VisibleIndex = 4;
             // 
             // SOCMND
             // 
             this.SOCMND.Caption = "Số CMND";
-            this.SOCMND.FieldName = "SOCMND";
+            this.SOCMND.FieldName = "SOCMND1";
             this.SOCMND.Name = "SOCMND";
             this.SOCMND.Visible = true;
-            this.SOCMND.VisibleIndex = 6;
+            this.SOCMND.VisibleIndex = 5;
             // 
             // NGAYSINH
             // 
             this.NGAYSINH.Caption = "Ngày sinh";
             this.NGAYSINH.DisplayFormat.FormatString = "d";
             this.NGAYSINH.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.NGAYSINH.FieldName = "NGAYSINH";
+            this.NGAYSINH.FieldName = "NGAYSINH1";
             this.NGAYSINH.Name = "NGAYSINH";
             this.NGAYSINH.Visible = true;
-            this.NGAYSINH.VisibleIndex = 7;
+            this.NGAYSINH.VisibleIndex = 6;
             // 
             // TRUONGPHONG
             // 
             this.TRUONGPHONG.Caption = "Trưởng phòng";
-            this.TRUONGPHONG.FieldName = "TRUONGPHONG";
+            this.TRUONGPHONG.FieldName = "TRUONGPHONG1";
             this.TRUONGPHONG.Name = "TRUONGPHONG";
             this.TRUONGPHONG.Visible = true;
-            this.TRUONGPHONG.VisibleIndex = 8;
+            this.TRUONGPHONG.VisibleIndex = 7;
             // 
             // MAPHONG
             // 
             this.MAPHONG.Caption = "Mã phòng";
-            this.MAPHONG.FieldName = "MAPHONG";
+            this.MAPHONG.FieldName = "MAPHONG1";
             this.MAPHONG.Name = "MAPHONG";
             this.MAPHONG.Visible = true;
-            this.MAPHONG.VisibleIndex = 9;
+            this.MAPHONG.VisibleIndex = 8;
             // 
             // frm_dsphongcokhach
             // 
@@ -294,7 +284,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn MAKT;
         private DevExpress.XtraGrid.Columns.GridColumn TENKT;
         private DevExpress.XtraGrid.Columns.GridColumn GIOITINH;
-        private DevExpress.XtraGrid.Columns.GridColumn ANH;
         private DevExpress.XtraGrid.Columns.GridColumn SDT;
         private DevExpress.XtraGrid.Columns.GridColumn QUEQUAN;
         private DevExpress.XtraGrid.Columns.GridColumn SOCMND;

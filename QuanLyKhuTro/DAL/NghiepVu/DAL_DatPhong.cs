@@ -17,7 +17,8 @@ namespace DAL
                      from kth in data.KHACHTHUEs
                      from p in data.PHONGs
                      from nv in data.NHANVIENs
-                     where s.MAKT == kth.MAKT && kth.MAPHONG == p.MAPHONG && s.MANV == nv.MANV
+                     from kp in data.KHACHTHUEPHONGs
+                     where s.MAPHONG==p.MAPHONG && kth.MAKT==kp.MAKT && kp.MAPHONG == p.MAPHONG && s.MANV == nv.MANV
                      select new
                      {
                          s.TINHTRANG,
@@ -54,8 +55,10 @@ namespace DAL
                      from kth in data.KHACHTHUEs
                      from p in data.PHONGs
                      from nv in data.NHANVIENs
-                     where s.MAKT == kth.MAKT && kth.MAPHONG == p.MAPHONG && s.MANV == nv.MANV
-                            && p.TENPHONG == pten && s.TINHTRANG == true
+                     from kp in data.KHACHTHUEPHONGs
+                     where s.MAPHONG==p.MAPHONG && kp.MAPHONG == p.MAPHONG && 
+                     kp.MAKT==kth.MAKT && s.MANV == nv.MANV
+                     && p.TENPHONG == pten && s.TINHTRANG == true && kth.TINHTRANG==true
                      select new
                      {
                          p.MAPHONG,
@@ -128,10 +131,12 @@ namespace DAL
         public int demhopdong(string pmaphong)
         {
             var kq = (from hd in data.KHACHTHUEs
-                      where hd.MAPHONG == pmaphong && hd.TINHTRANG==true
+                      from kp in data.KHACHTHUEPHONGs
+                      where kp.MAPHONG == pmaphong && kp.MAKT==hd.MAKT && hd.TINHTRANG==true
                       select hd).Count();
             return kq;
         }
+
         public string laysoLuongtd(string pmaphong)
         {
             var kq = (from p in data.PHONGs
@@ -139,13 +144,14 @@ namespace DAL
                       select p.SOLUONG_TD).FirstOrDefault();
             return kq.ToString();
         }
-        public string laymakt(string pmahd)
-        {
-            var kq = (from hd in data.HOPDONGs
-                      where hd.MAHD == pmahd
-                      select hd.MAKT).FirstOrDefault();
-            return kq.ToString();
-        }
+        //public string laymakt(string pmahd)
+        //{
+        //    var kq = (from hd in data.HOPDONGs
+        //              where hd.MAHD == pmahd
+        //              select hd.MAKT).FirstOrDefault();
+        //    return kq.ToString();
+
+        //}
         //public List<PHONG> laytenphong(string pmatang, string pmaloai)
         //{
         //    var l = (from p in data.PHONGs
@@ -162,7 +168,8 @@ namespace DAL
                      from kth in data.KHACHTHUEs
                      from p in data.PHONGs
                      from nv in data.NHANVIENs
-                     where s.MAKT == kth.MAKT && kth.MAPHONG == p.MAPHONG && s.MANV == nv.MANV && 
+                     from kp in data.KHACHTHUEPHONGs
+                     where s.MAPHONG==p.MAPHONG && kp.MAPHONG == p.MAPHONG && kp.MAKT==kth.MAKT && s.MANV == nv.MANV && 
                    (  s.NGAYLAPHD.Value.Day.ToString() == ngay || s.NGAYLAPHD.Value.Month.ToString() == ngay
                    || s.NGAYLAPHD.Value.Year.ToString() == ngay)
                      select new

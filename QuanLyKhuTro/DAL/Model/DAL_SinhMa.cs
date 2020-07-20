@@ -29,6 +29,10 @@ namespace DAL.Model
         {
             return data.SINHMA_TAMTRU();
         }
+        public string sinhmakhachthuephong()
+        {
+            return data.SINHMA_KTPhong();
+        }
         public String SinhMaKHACHCOC()
         {
             return data.SINHMA_KHACHCOC();
@@ -69,6 +73,14 @@ namespace DAL.Model
         public int updatetinhtrangKT(string pma)
         {
             return data.updatetinhtrangKT(pma);
+        }
+        public int updatetinhtrangtraphong()
+        {
+            return data.updatetinhtrangtraphong();
+        }
+        public int updatetinhtrangHOPDONGTRAPHONG()
+        {
+            return data.updatetinhtrangHOPDONGTRAPHONG();
         }
     }
 }

@@ -17,26 +17,28 @@ namespace DAL
             var dulieu = (from s in data.KHACHTHUEs select s);
             return dulieu.ToList<KHACHTHUE>();
         }
-        public List<KHACHTHUE> loadbangphongcokhachthue()
-        {
-            var dulieu = (from s in data.KHACHTHUEs 
-                          from hd in data.HOPDONGs
-                          where s.MAKT==hd.MAKT
-                          select s);
-            return dulieu.ToList<KHACHTHUE>();
-        }
+        //public List<KHACHTHUE> loadbangphongcokhachthue()
+        //{
+        //    var dulieu = (from s in data.KHACHTHUEs 
+        //                  from hd in data.HOPDONGs
+        //                  where s.MAKT==hd.MAKT
+        //                  select s);
+        //    return dulieu.ToList<KHACHTHUE>();
+        //}
         public List<KHACHTHUE> loadbangKhachThuetheoten(string pmaphong)
         {
-            var dulieu =(from s in data.KHACHTHUEs 
-                         where  s.TINHTRANG==true
-                         && s.MAPHONG==pmaphong 
+            var dulieu =(from s in data.KHACHTHUEs
+                         from kp in data.KHACHTHUEPHONGs
+                         where s.MAKT==kp.MAKT && s.TINHTRANG==true
+                         && kp.MAPHONG==pmaphong 
                          select s);
             return dulieu.ToList<KHACHTHUE>();
         }
         public bool kttruongphong(string pmaphong)
         {
             var kq = (from k in data.KHACHTHUEs
-                      where k.MAPHONG==pmaphong && k.TRUONGPHONG == true && k.TINHTRANG == true
+                      from kp in data.KHACHTHUEPHONGs
+                      where kp.MAKT==k.MAKT && kp.MAPHONG==pmaphong && k.TRUONGPHONG == true && k.TINHTRANG == true
                       select k).Count();
             if(kq>0)
             {
@@ -228,15 +230,13 @@ namespace DAL
             //              kt.SOCMND == socm || kc.MAPHONG == p.MAPHONG && p.MAPHONG == kt.MAPHONG && kc.SOCMND == socm
             //          select kt).Count();
             var kq = (from kt in data.KHACHTHUEs
-                      where kt.SOCMND == socm
+                      where kt.SOCMND == socm && kt.TINHTRANG == true
                       select kt).Count();
-            var kq1 = (from kt in data.KHACHCOCPHONGs
-                       where kt.SOCMND == socm
-                       select kt).Count();
+          
             var kq2 = (from kt in data.THANNHANs
                        where kt.SOCMNDTN == socm
                        select kt).Count();
-            if (kq>0 || kq1>0|| kq2>0)
+            if (kq>0 || kq2>0)
             {
                 return true;
             }    
@@ -244,7 +244,6 @@ namespace DAL
             {
                 return false;
             }    
-            
         }
         public bool KT_SODT(string Sodt)
         {
@@ -256,13 +255,10 @@ namespace DAL
             //              kt.SOCMND == socm || kc.MAPHONG == p.MAPHONG && p.MAPHONG == kt.MAPHONG && kc.SOCMND == socm
             //          select kt).Count();
             var kq = (from kt in data.KHACHTHUEs
-                      where kt.SDT == Sodt
-                      select kt).Count();
-            var kq1 = (from kt in data.KHACHCOCPHONGs
-                      where kt.SODT == Sodt
+                      where kt.SDT == Sodt && kt.TINHTRANG==true
                       select kt).Count();
             
-            if (kq > 0|| kq1>0)
+            if (kq > 0)
             {
                 return true;
             }
@@ -276,7 +272,8 @@ namespace DAL
         {
 
             var kq = (from kt in data.KHACHTHUEs
-                      where kt.MAPHONG == maphong && kt.TRUONGPHONG == true && kt.TINHTRANG == true
+                      from kp in data.KHACHTHUEPHONGs
+                      where kp.MAKT==kt.MAKT && kp.MAPHONG == maphong && kt.TRUONGPHONG == true && kt.TINHTRANG == true
                       select kt.MAKT).FirstOrDefault();
               if(kq!=null)
                 {
@@ -288,5 +285,23 @@ namespace DAL
                 }    
            
         }
+        public string laymakttheosdt(string sdt)
+        {
+
+            var kq = (from kt in data.KHACHTHUEs
+                      from kp in data.KHACHTHUEPHONGs
+                      where kp.MAKT == kt.MAKT && kt.SDT == sdt && kt.TRUONGPHONG == true && kt.TINHTRANG == true
+                      select kt.MAKT).FirstOrDefault();
+            if (kq != null)
+            {
+                return kq.ToString();
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+       
     }
 }

@@ -15,6 +15,7 @@ using System.Globalization;
 using DAL.DuLieu;
 using QuanLyKhuTro.DanhMuc;
 using BLL.NghiepVu;
+using DAL.NghiepVu;
 
 namespace QuanLyKhuTro.NghiepVu
 {
@@ -80,70 +81,26 @@ namespace QuanLyKhuTro.NghiepVu
         {
             PHONG p = new PHONG();
             txt_phong.Text = Ten;
-            
             grv_datphong.DataSource = datphong.LoadDatPhongTheoMa(Ten);
             txt_manv.Text = MaNV;
             txt_ngaylaphd.Text = DateTime.Now.ToShortDateString();
             //txt_makt.Text = bll_sinhma.SinhMa_KhachThue();
             txt_mahd.Text = bll_sinhma.SinhMa_HopDong();
-
-            //cbb_tang.Enabled = cbb_loaiphong.Enabled = cbb_phong.Enabled = false;
-            //btn_sua.Enabled = false;
-            //txt_makt.Enabled = txt_tenkt.Enabled = rdb_nam.Enabled = rdb_nu.Enabled = txt_sdt.Enabled
-            //    = txt_quequan.Enabled = txt_cmnd.Enabled = txt_ngaysinh.Enabled = pic_anh.Enabled = false;
-            //txt_mahd.Enabled = txt_tiencoc.Enabled = txt_thoihan.Enabled = txt_manv.Enabled = txt_ngaylaphd.Enabled = false;
-
-            //string pos = gridView_datphong.GetRowCellValue(gridView_datphong.RowCount - 1, "Makt").ToString();
-            //pos = pos.Substring(2);
-            //int k = (int.Parse(pos) + 1);
-            //if (k < 10)
-            //{
-            //    txt_makt.Text = "KT00" + k;
-            //}
-            //else if (k >= 10 && k < 100)
-            //{
-            //    txt_makt.Text = "KT0" + k;
-            //}
-            ////sinh mã hợp đồng
-            //string pos1 = gridView_datphong.GetRowCellValue(gridView_datphong.RowCount - 1, "Mahd").ToString();
-            //pos1 = pos1.Substring(2);
-            //int k1 = (int.Parse(pos1) + 1);
-            //if (k1 < 10)
-            //{
-            //    txt_mahd.Text = "HD00" + k1;
-            //}
-            //else if (k1 >= 10 && k1 < 100)
-            //{
-            //    txt_mahd.Text = "HD0" + k1;
-            //}
-
-
-
         }
 
         private void gridView_datphong_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            //KHACHTHUE kt = new KHACHTHUE();
-            //HOPDONG hd = new HOPDONG();
-
-            //DatPhong dp = new DatPhong();
-            ////btn_xoa.Enabled = btn_sua.Enabled = btn_huy.Enabled = true;
-            ////btn_them.Enabled = false;
-            //int position = gridView_datphong.FocusedRowHandle;
-            //try
-            //{
-            //    dp.Mahd = gridView_datphong.GetRowCellValue(position, "MAHD").ToString();
-            //    dp.Makt = gridView_datphong.GetRowCellValue(position, "Makt").ToString();
-
-            //    txt_mahd.Text = dp.Mahd.ToString();
-            //    txt_makt.Text = dp.Makt.ToString();
-            //}
-            //catch { }
+          
         }
-
+        DAL_KHACHTHUEPHONG dal_ktp = new DAL_KHACHTHUEPHONG();
         private void btn_taohd_Click(object sender, EventArgs e)
         {
-            KHACHTHUE kt = new KHACHTHUE();
+            if (txt_makt.Text == string.Empty && txt_mahd.Text == string.Empty
+                    && txt_manv.Text == string.Empty && txt_tenkt.Text == string.Empty && txt_ngaykt.Text==string.Empty)
+            {
+                MessageBox.Show("không được để trống");
+                return;
+            }
             HOPDONG hd = new HOPDONG();
          
             //thêm hợp đồng
@@ -151,88 +108,76 @@ namespace QuanLyKhuTro.NghiepVu
             hd.MAHD = txt_mahd.Text;
             hd.TIENCOC = decimal.Parse(txt_tiencoc.Text);
             hd.NGAYLAPHD = Convert.ToDateTime(txt_ngaylaphd.Text);
-            //hd.MAPHONG = datphong.laymaphong(Ten);
             hd.MANV = txt_manv.Text;
-            hd.MAKT = txt_makt.Text;
+            //hd.MAKT = txt_makt.Text;
+            hd.MAPHONG = txt_maphong.Text;
             hd.NGAYTRA = Convert.ToDateTime(txt_ngaykt.Text);
             hd.TINHTRANG = true;
-
-
-            //Thêm khách thuê vào hợp đồng
-            //kt.MAKT = bll_sinhma.SinhMa_KhachThue();
-            //kt.TENKT = txt_tenkt.Text;
-            //kt.SDT = txt_sdt.Text;
-            //kt.MAPHONG = datphong.laymaphong(Ten);
-            //kt.TRUONGPHONG = true;
-            //if (pic_anh.Image != null)
-            //{
-            //    byte[] b = convertImage(pic_anh.Image);
-            //    kt.ANH = b;
-            //}
-            //else
-            //{
-            //    kt.ANH = null;
-            //}
-            //if (rdb_nam.Checked == true)
-            //{
-            //    kt.GIOITINH = rdb_nam.Text;
-            //}
-            //else
-            //{
-            //    kt.GIOITINH = rdb_nu.Text;
-            //}
-            //kt.SOCMND = txt_cmnd.Text;
-            //kt.NGAYSINH = Convert.ToDateTime(txt_ngaysinh.Text);
-            //kt.QUEQUAN = txt_quequan.Text;
-            //kt.MK = "abc";
-            //kt.GHICHU = null;
-            //kt.TINHTRANG = true;
-
-            if (txt_makt.Text == string.Empty && txt_mahd.Text == string.Empty
-                    && txt_manv.Text == string.Empty && txt_tenkt.Text == string.Empty)
-            {
-                MessageBox.Show("không được để trống");
-                return;
-            }
-
-            //kiểm tra khóa chính
-            //if (khachthue.ktkc_khachthue(kt.MAKT) == true)
-            //{
-            //    MessageBox.Show("Trùng khóa chính khách thuê");
-            //    return;
-            //}
+            // thêm khách thuê phòng
+            KHACHTHUEPHONG ktp = new KHACHTHUEPHONG();
+            ktp.MAKTP = bll_sinhma.sinhma_khachthuephong();
+            ktp.MAPHONG = txt_maphong.Text;
+            ktp.MAKT = txt_makt.Text;
             if (hopdong.ktkc_HopDong(txt_mahd.Text) == true)
             {
                 MessageBox.Show("Trùng khóa chính hợp đồng");
                 return;
             }
             //thêm
-
-            if (hopdong.them_HopDong(hd) == true)
+            if(dal_ktp.ktKhachthuephong(ktp.MAPHONG,ktp.MAKT)==true)
             {
-                grv_datphong.DataSource = datphong.LoadDatPhongTheoMa(Ten);
-
+                if (hopdong.them_HopDong(hd) == true)
+                {
+                    grv_datphong.DataSource = datphong.LoadDatPhongTheoMa(Ten);
+                    PHONG ph = new PHONG();
+                    ph.MAPHONG = datphong.laymaphong(Ten);
+                    ph.TINHTRANG = true;
+                    ph.SOLUONG_HT = datphong.demsohd(txt_maphong.Text);
+                    if (phong.sua_slhientai(ph) == true)
+                    {
+                        MessageBox.Show("Thành công");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thất bại");
+                    }
+                    frm_datphong_Load(sender, e);
+                    txt_soluonght.Text = (datphong.demsohd(txt_maphong.Text)).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm Thất bại");
+                }
             }
             else
             {
-                MessageBox.Show("Thất bại");
+                if (  dal_ktp.them_khachthuephong(ktp) == true &&  hopdong.them_HopDong(hd) == true)
+                {
+                    grv_datphong.DataSource = datphong.LoadDatPhongTheoMa(Ten);
+                    PHONG ph = new PHONG();
+                    ph.MAPHONG = datphong.laymaphong(Ten);
+                    ph.TINHTRANG = true;
+                    ph.SOLUONG_HT = datphong.demsohd(txt_maphong.Text);
+                    if (phong.sua_slhientai(ph) == true)
+                    {
+
+                        MessageBox.Show("Thành công");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thất bại");
+                    }
+                    frm_datphong_Load(sender, e);
+                    txt_soluonght.Text = (datphong.demsohd(txt_maphong.Text)).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm Thất bại");
+                }
             }
+            
             //sửa số lượng hiện tại trong phòng
-            PHONG ph = new PHONG();
-            ph.MAPHONG = datphong.laymaphong(Ten);
-            ph.TINHTRANG = true;
-            ph.SOLUONG_HT = datphong.demsohd(ph.MAPHONG);
-            if (phong.sua_slhientai(ph) == true)
-            {
-
-                MessageBox.Show("Thành công");
-            }
-            else
-            {
-                MessageBox.Show("Thất bại");
-            }
-            frm_datphong_Load(sender, e);
-            txt_soluonght.Text = (datphong.demsohd(datphong.laymaphong(Ten))).ToString();
+            
         }
 
         private void cbb_phong_SelectedIndexChanged(object sender, EventArgs e)
@@ -337,6 +282,8 @@ namespace QuanLyKhuTro.NghiepVu
             int position = gridView_datphong.FocusedRowHandle;
             try
             {
+                if(gridView_datphong.RowCount>0)
+                {     
                 txt_mahd.Text = gridView_datphong.GetRowCellValue(position, "Mahd").ToString();
                 txt_ngaykt.Text= gridView_datphong.GetRowCellValue(position, "NgayTra").ToString();
                 hd.TIENCOC= Convert.ToDecimal(gridView_datphong.GetRowCellValue(position, "Tiencoc").ToString());
@@ -361,6 +308,12 @@ namespace QuanLyKhuTro.NghiepVu
                         return;
                     }
                 }
+                else
+                    {
+                        return;
+                    }    
+                }
+
                 catch { }
             }
             catch
@@ -378,7 +331,7 @@ namespace QuanLyKhuTro.NghiepVu
         {
             HOPDONG hd = new HOPDONG();
             hd.MAHD = txt_mahd.Text;
-           
+            hd.NGAYTRA = Convert.ToDateTime(txt_ngaykt.Text);
             hd.TIENCOC = Convert.ToDecimal(txt_tiencoc.Text);
             if (hopdong.sua_HopDong(hd) == true)
             {
@@ -425,6 +378,7 @@ namespace QuanLyKhuTro.NghiepVu
             int position = gridView_datphong.FocusedRowHandle;
             string mahd = gridView_datphong.GetRowCellValue(position, "Mahd").ToString();
             string tenphong = gridView_datphong.GetRowCellValue(position, "TenPhong").ToString();
+            string makt = gridView_datphong.GetRowCellValue(position, "Makt").ToString();
 
             string tiencoc = String.Format("{0:#,##0.##}", Convert.ToDecimal(gridView_datphong.GetRowCellValue(position, "Tiencoc").ToString()));
 
@@ -443,7 +397,7 @@ namespace QuanLyKhuTro.NghiepVu
             string sdtnv = nv.SODT_CT;
 
             KHACHTHUE kt = new KHACHTHUE();
-            kt = dal_kt.loadTenKT(datphong.laymakt(mahd));
+            kt = dal_kt.loadTenKT(makt);
             string tenkt = kt.TENKT;
             string ngaysinhkttam = kt.NGAYSINH.ToString();
             string ngaysinhkt = ngaysinhkttam.Substring(0, 11);
@@ -496,6 +450,9 @@ namespace QuanLyKhuTro.NghiepVu
                 if (txt_makt.Text!=string.Empty)
                 {
                     KHACHTHUE kt = new KHACHTHUE();
+                    PHONG p = new PHONG();
+                    p = dal_phong.loadTenPhong(datphong.laymaphong(Ten));
+                    txt_soluonght.Text = p.SOLUONG_HT.ToString();
                     kt = dal_phong.loadkt(txt_makt.Text);
                     txt_tenkt.Text = kt.TENKT;
                     txt_sdt.Text = kt.SDT;
@@ -529,36 +486,54 @@ namespace QuanLyKhuTro.NghiepVu
             }
         }
         BLL_CocPhong bll_cocphong = new BLL_CocPhong();
-        private void txt_sdt_Validating(object sender, CancelEventArgs e)
-        {
-            if (khachthue.kt_SoDT(txt_sdt.Text) == true)
-            {
-                errorProvider1.SetError(txt_sdt, "trùng số điện thoại");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider1.SetError(txt_sdt, null);
-            }
-        }
 
-        private void txt_cmnd_Validating(object sender, CancelEventArgs e)
+        DAL_DatPhong dal_datphong = new DAL_DatPhong();
+        private void txt_sdt_Leave(object sender, EventArgs e)
         {
-            if (khachthue.kt_Socm(txt_cmnd.Text) == true)
+            try
             {
-                errorProvider1.SetError(txt_cmnd, "trùng số chứng minh");
+                if(dal_phong.kt_sdt(txt_sdt.Text)==true)
+                {
+                    if (txt_sdt.Text != string.Empty)
+                    {
+                        KHACHTHUE kt = new KHACHTHUE();
+                        kt = dal_phong.loadkttheosdt(txt_sdt.Text);
+                        txt_makt.Text = kt.MAKT;
+                        txt_tenkt.Text = kt.TENKT;
+                        txt_sdt.Text = kt.SDT;
+                        if (kt.GIOITINH == "Nam")
+                        {
+                            rdb_nam.Checked = true;
+                        }
+                        else
+                        {
+                            rdb_nu.Checked = true;
+                        }
+                        txt_quequan.Text = kt.QUEQUAN;
+                        txt_cmnd.Text = kt.SOCMND;
+                        txt_ngaysinh.Text = kt.NGAYSINH.ToString();
+                        try
+                        {
+                            byte[] b = (byte[])khachthue.layanh(kt.MAKT);
+                            pic_anh.Image = bytetoimage(b);
+                            pic_anh.SizeMode = PictureBoxSizeMode.StretchImage;
+                        }
+                        catch
+                        {
+                            return;
+                        }
+
+                    }
+                    else
+                    {
+                        return;
+                    }    
+                }
             }
-            else
+            catch
             {
-                e.Cancel = false;
-                errorProvider1.SetError(txt_cmnd, null);
+                return;
             }
-        }
-
-        private void txt_makt_TextChanged(object sender, EventArgs e)
-        {
-            
-
         }
     }
 }

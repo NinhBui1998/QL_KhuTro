@@ -306,7 +306,7 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.30208F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.69792F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 351F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 352F));
             this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel2, 3, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 3);
@@ -326,12 +326,12 @@
             this.tableLayoutPanel2.Controls.Add(this.btn_in, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btn_tatcahd, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(297, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(296, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(346, 56);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(347, 56);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // btn_in
@@ -342,7 +342,7 @@
             this.btn_in.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_in.ImageOptions.Image")));
             this.btn_in.Location = new System.Drawing.Point(176, 3);
             this.btn_in.Name = "btn_in";
-            this.btn_in.Size = new System.Drawing.Size(167, 50);
+            this.btn_in.Size = new System.Drawing.Size(168, 50);
             this.btn_in.TabIndex = 4;
             this.btn_in.Text = "Xuất ";
             // 
@@ -611,7 +611,7 @@
             this.tableLayoutPanel7.ColumnCount = 3;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.05463F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.94537F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 17F));
             this.tableLayoutPanel7.Controls.Add(this.lbl_maloaiphong, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.lbl_maphong, 0, 2);
             this.tableLayoutPanel7.Controls.Add(this.lbl_tenphong, 0, 3);
@@ -688,7 +688,7 @@
             this.txt_tenkt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_tenkt.Location = new System.Drawing.Point(150, 36);
             this.txt_tenkt.Name = "txt_tenkt";
-            this.txt_tenkt.Size = new System.Drawing.Size(244, 27);
+            this.txt_tenkt.Size = new System.Drawing.Size(243, 27);
             this.txt_tenkt.TabIndex = 2;
             // 
             // txt_makt
@@ -697,7 +697,7 @@
             this.txt_makt.Enabled = false;
             this.txt_makt.Location = new System.Drawing.Point(150, 3);
             this.txt_makt.Name = "txt_makt";
-            this.txt_makt.Size = new System.Drawing.Size(244, 27);
+            this.txt_makt.Size = new System.Drawing.Size(243, 27);
             this.txt_makt.TabIndex = 2;
             // 
             // tableLayoutPanel11
@@ -713,7 +713,7 @@
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(244, 28);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(243, 28);
             this.tableLayoutPanel11.TabIndex = 8;
             // 
             // rdb_nam
@@ -754,7 +754,7 @@
             this.txt_cmnd.Location = new System.Drawing.Point(150, 136);
             this.txt_cmnd.MaxLength = 9;
             this.txt_cmnd.Name = "txt_cmnd";
-            this.txt_cmnd.Size = new System.Drawing.Size(244, 27);
+            this.txt_cmnd.Size = new System.Drawing.Size(243, 27);
             this.txt_cmnd.TabIndex = 2;
             this.txt_cmnd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sdt_KeyPress);
             this.txt_cmnd.Validating += new System.ComponentModel.CancelEventHandler(this.txt_cmnd_Validating);
@@ -765,7 +765,7 @@
             this.txt_quequan.Location = new System.Drawing.Point(150, 168);
             this.txt_quequan.MaxLength = 1000;
             this.txt_quequan.Name = "txt_quequan";
-            this.txt_quequan.Size = new System.Drawing.Size(244, 27);
+            this.txt_quequan.Size = new System.Drawing.Size(243, 27);
             this.txt_quequan.TabIndex = 2;
             // 
             // txt_tiencoc
@@ -774,7 +774,7 @@
             this.txt_tiencoc.Location = new System.Drawing.Point(150, 202);
             this.txt_tiencoc.MaxLength = 1000;
             this.txt_tiencoc.Name = "txt_tiencoc";
-            this.txt_tiencoc.Size = new System.Drawing.Size(244, 27);
+            this.txt_tiencoc.Size = new System.Drawing.Size(243, 27);
             this.txt_tiencoc.TabIndex = 2;
             this.txt_tiencoc.TextChanged += new System.EventHandler(this.txt_tiencoc_TextChanged);
             this.txt_tiencoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sdt_KeyPress);
@@ -805,7 +805,7 @@
             this.txt_sdt.Location = new System.Drawing.Point(150, 103);
             this.txt_sdt.MaxLength = 10;
             this.txt_sdt.Name = "txt_sdt";
-            this.txt_sdt.Size = new System.Drawing.Size(244, 27);
+            this.txt_sdt.Size = new System.Drawing.Size(243, 27);
             this.txt_sdt.TabIndex = 2;
             this.txt_sdt.Click += new System.EventHandler(this.txt_sdt_Click);
             this.txt_sdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sdt_KeyPress);

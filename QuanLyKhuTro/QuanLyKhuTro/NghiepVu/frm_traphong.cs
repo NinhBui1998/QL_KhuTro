@@ -149,11 +149,8 @@ namespace QuanLyKhuTro.NghiepVu
 
                         if (hopdong.sua_tinhtrangHopDong(hd) == true)
                         {
-                          
                             dal_sm.updatetinhtrangKT(hd.MAHD);
-                                grv_traphong.DataSource = traphong.LoadTraPhong();
-                            
-
+                            grv_traphong.DataSource = traphong.LoadTraPhong();
                         }
                         else
                         {
@@ -166,7 +163,6 @@ namespace QuanLyKhuTro.NghiepVu
 
                     if (phong.sua_slhientai(p) == true)
                     {
-
                         MessageBox.Show(" thành công");
                     }
                     else
@@ -508,10 +504,11 @@ namespace QuanLyKhuTro.NghiepVu
         {
             int position = gridView_traphong.FocusedRowHandle;
             string mahd = gridView_traphong.GetRowCellValue(position, "Mahd").ToString();
+            string Makt = gridView_traphong.GetRowCellValue(position, "Makt").ToString();
             string Tenphong = txt_tenphong.Text; /* gridView_traphong.GetRowCellValue(position, "TenPhong").ToString();*/
 
-            KHACHTHUE kt = new KHACHTHUE();
-            kt = dal_khachthue.loadTenKT(datphong.laymakt(mahd));
+            //KHACHTHUE kt = new KHACHTHUE();
+            //kt = dal_khachthue.loadTenKT(datphong.laymakt(mahd));
 
 
             PHONG p = new PHONG();
@@ -520,7 +517,7 @@ namespace QuanLyKhuTro.NghiepVu
             // data 
             string ngaytra = DateTime.Now.ToShortDateString();
             string tenphong = p.TENPHONG;
-            string tenkt = kt.TENKT;
+            string tenkt = Makt;
             string tracoc = "Chưa";
             string CSDDau = txt_sodiendau.Text;
             string CSDCuoi = txt_sodiencuoi.Text;

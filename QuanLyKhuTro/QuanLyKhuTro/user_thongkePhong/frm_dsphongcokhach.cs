@@ -13,6 +13,7 @@ using BLL.NghiepVu;
 using Excel = Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Interop.Excel;
 using System.IO;
+using DAL.HeThong;
 
 namespace QuanLyKhuTro.user_thongkePhong
 {
@@ -24,10 +25,11 @@ namespace QuanLyKhuTro.user_thongkePhong
         {
             InitializeComponent();
         }
-
+        DAL_LoadKhachThue dal_lkt = new DAL_LoadKhachThue();
         private void frm_dsphongcokhach_Load(object sender, EventArgs e)
         {
-            grv_khachthue.DataSource = bll_kt.loadphongcokhach();
+            //grv_khachthue.DataSource = bll_kt.loadphongcokhach();
+            grv_khachthue.DataSource = dal_lkt.loadkhachthue();
             txt_tongphongdacoc.Text = bll_ds.tongphongcokhach();
         }
         QL_KhuTroDataContext data = new QL_KhuTroDataContext();
@@ -199,13 +201,13 @@ namespace QuanLyKhuTro.user_thongkePhong
                     stt++;
                     row++;
                     string tp = laytenphong();
-                    string mkt= gridView_khachthue.GetRowCellValue(i, "MAKT").ToString();
-                    string tenkt= gridView_khachthue.GetRowCellValue(i, "TENKT").ToString();
-                    string GT = gridView_khachthue.GetRowCellValue(i, "GIOITINH").ToString();
-                    string SDT = gridView_khachthue.GetRowCellValue(i, "SDT").ToString();
-                    string SOCMND = gridView_khachthue.GetRowCellValue(i, "SOCMND").ToString();
-                    string NGAYSINH = gridView_khachthue.GetRowCellValue(i, "NGAYSINH").ToString().Substring(0, 11);
-                    string QUEQUAN = gridView_khachthue.GetRowCellValue(i, "QUEQUAN").ToString();
+                    string mkt= gridView_khachthue.GetRowCellValue(i, "MAKT1").ToString();
+                    string tenkt= gridView_khachthue.GetRowCellValue(i, "TENKT1").ToString();
+                    string GT = gridView_khachthue.GetRowCellValue(i, "GIOITINH1").ToString();
+                    string SDT = gridView_khachthue.GetRowCellValue(i, "SDT1").ToString();
+                    string SOCMND = gridView_khachthue.GetRowCellValue(i, "SOCMND1").ToString();
+                    string NGAYSINH = gridView_khachthue.GetRowCellValue(i, "NGAYSINH1").ToString().Substring(0, 11);
+                    string QUEQUAN = gridView_khachthue.GetRowCellValue(i, "QUEQUAN1").ToString();
 
                     dynamic[] arr = {stt,tp,mkt,tenkt,GT,SDT,SOCMND,NGAYSINH,QUEQUAN };
                     Range rowData = ws.get_Range("A" + row, "I" + row);//Lấy dòng thứ row ra để đổ dữ liệu

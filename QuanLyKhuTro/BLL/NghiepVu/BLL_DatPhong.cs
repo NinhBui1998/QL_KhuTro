@@ -43,9 +43,9 @@ namespace BLL
         {
             return dp.laysoLuongtd(pmaphong);
         }
-        public string laymakt(string pmahd)
-        {
-            return dp.laymakt(pmahd);
-        }
+        //public string laymakt(string pmahd)
+        //{
+        //    return dp.laymakt(pmahd);
+        //}
     }
 }

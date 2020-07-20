@@ -16,7 +16,8 @@ namespace DAL.NghiepVu
                      from kth in data.KHACHTHUEs
                      from p in data.PHONGs
                      from nv in data.NHANVIENs
-                     where s.MAKT == kth.MAKT && kth.MAPHONG == p.MAPHONG && s.MANV == nv.MANV
+                     from kp in data.KHACHTHUEPHONGs
+                     where s.MAKT == kth.MAKT && kp.MAKT==kth.MAKT && kp.MAPHONG == p.MAPHONG && s.MANV == nv.MANV
                      select new
                      {
                          s. MAKT,
@@ -52,7 +53,8 @@ namespace DAL.NghiepVu
                      from kth in data.KHACHTHUEs
                      from p in data.PHONGs
                      from nv in data.NHANVIENs
-                     where s.MAKT == kth.MAKT && kth.MAPHONG == p.MAPHONG && s.MANV == nv.MANV && kth.MAKT==pmakt
+                     from kp in data.KHACHTHUEPHONGs
+                     where s.MAKT == kth.MAKT && kp.MAKT==kth.MAKT && kp.MAPHONG == p.MAPHONG && s.MANV == nv.MANV && kth.MAKT==pmakt
                      select new
                      {
                          s.MAKT,
@@ -156,7 +158,8 @@ namespace DAL.NghiepVu
                      from kth in data.KHACHTHUEs
                      from p in data.PHONGs
                      from nv in data.NHANVIENs
-                     where s.MAKT == kth.MAKT && kth.MAPHONG == p.MAPHONG && s.MANV == nv.MANV && s.NGAYHETHAN_TAMTRU==pngay
+                     from kp in data.KHACHTHUEPHONGs
+                     where s.MAKT == kth.MAKT && kp.MAKT==kth.MAKT && kp.MAPHONG == p.MAPHONG && s.MANV == nv.MANV && s.NGAYHETHAN_TAMTRU==pngay
                      select new
                      {
                          s.MAKT,
