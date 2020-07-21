@@ -15,6 +15,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Interop.Excel;
 using System.IO;
 using DAL.DuLieu;
+using DAL.HeThong;
 
 namespace QuanLyKhuTro.NghiepVu
 {
@@ -35,18 +36,20 @@ namespace QuanLyKhuTro.NghiepVu
         private void frm_vipham_Load(object sender, EventArgs e)
         {
             txt_mavp.Text = bll_sm.Sinhma_vipham();
-            cbb_manoiquy.DataSource = bll_noiquy.loadBang_NoiQuy();
-            //cbb_manoiquy.ValueMember = "NOIDUNG";
+            //cbb_manoiquy.DataSource = bll_noiquy.loadBang_NoiQuy();
+            cbb_manoiquy.DataSource = bll_vipham.loadBANGnoiquy();
+            cbb_manoiquy.ValueMember = "MANOIQUY";
             cbb_manoiquy.DisplayMember = "MANOIQUY";
+
             grv_vipham.DataSource = bll_vipham.LoadViPham();
-            grv_khachthue.DataSource = bll_khachthue.loadBangKT();
+            grv_khachthue.DataSource = dal_loadkt.loadkhachthuecono();
             cbo_phong.DataSource = bll_phong.loadBang_Phong();
             cbo_phong.DisplayMember = "TENPHONG";
             cbo_phong.ValueMember = "MAPHONG";
             txt_manv.Text = MaNV;
 
             btn_sua.Enabled = btn_xoa.Enabled = false;
-            btn_huy.Enabled = btn_luu.Enabled = false;
+            btn_huy.Enabled = btn_luu.Enabled=txt_ngayvipham.Enabled = false;
             btn_them.Enabled = true;
             txt_solan.Enabled = txt_ghichu.Enabled = false;
             //txt_ngayvipham.Text = DateTime.Now.ToShortDateString();
@@ -54,12 +57,15 @@ namespace QuanLyKhuTro.NghiepVu
         }
         private void btn_tatcahd_Click(object sender, EventArgs e)
         {
-            grv_khachthue.DataSource = bll_khachthue.loadBangKT();
+            grv_khachthue.DataSource = dal_loadkt.loadkhachthuecono();
             grv_vipham.DataSource = bll_vipham.LoadViPham();
         }
+
+        DAL_LoadKhachThue dal_loadkt = new DAL_LoadKhachThue();
+        
         private void btn_timkiem_Click(object sender, EventArgs e)
         {
-            grv_khachthue.DataSource = bll_khachthue.loadBangKTtheoma(cbo_phong.SelectedValue.ToString());
+            grv_khachthue.DataSource = dal_loadkt.loadkhachthuetheomaphong(cbo_phong.SelectedValue.ToString());
         } 
         private void grv_khachthue_Click(object sender, EventArgs e)
         {
@@ -68,7 +74,7 @@ namespace QuanLyKhuTro.NghiepVu
             {
                 NOIQUY nq = new NOIQUY();
                 nq = dal_vipham.loadnoiquy(cbb_manoiquy.Text);
-                string MAKT = gridView_kt.GetRowCellValue(position, "MAKT").ToString();
+                string MAKT = gridView_kt.GetRowCellValue(position, "MAKT1").ToString();
    
                     txt_solan.Text = (bll_vipham.laylanvipham(MAKT, cbb_manoiquy.Text) + 1).ToString();
                 if(Convert.ToInt32(txt_solan.Text)>=4)
@@ -91,6 +97,7 @@ namespace QuanLyKhuTro.NghiepVu
             txt_mavp.Text = bll_sm.Sinhma_vipham();
             txt_ngayvipham.Enabled = true;
             txt_solan.Enabled = false;
+            txt_ngayvipham.Enabled = true;
             txt_hinhphat.Enabled = false;
         }
         string makt;
@@ -161,7 +168,7 @@ namespace QuanLyKhuTro.NghiepVu
         {
             int position = gridView_kt.FocusedRowHandle;
          
-            string MAKT = gridView_kt.GetRowCellValue(position, "MAKT").ToString();
+            string MAKT = gridView_kt.GetRowCellValue(position, "MAKT1").ToString();
           
             VIPHAM vp = new VIPHAM();
             vp.MAVIPHAM = txt_mavp.Text;
@@ -216,22 +223,29 @@ namespace QuanLyKhuTro.NghiepVu
         }
         private void cbb_manoiquy_Click(object sender, EventArgs e)
         {
-            NOIQUY nq = new NOIQUY();
-            nq = dal_vipham.loadnoiquy(cbb_manoiquy.Text);
-            txt_noidung.Text = nq.NOIDUNG;
-            txt_hinhphat.Text = String.Format("{0:#,##0.##}",Convert.ToDecimal( nq.HINHPHAT));
-            txt_tienphat.Text = String.Format("{0:#,##0.##}", (Convert.ToDecimal(nq.HINHPHAT)));
-            int position = gridView_kt.FocusedRowHandle;
-            try
+            if (cbb_manoiquy.Text.Length > 0)
             {
-                string MAKT = gridView_kt.GetRowCellValue(position, "MAKT").ToString();
+                NOIQUY nq = new NOIQUY();
+                nq = dal_vipham.loadnoiquy(cbb_manoiquy.Text);
+                txt_noidung.Text = nq.NOIDUNG;
+                txt_hinhphat.Text = String.Format("{0:#,##0.##}", Convert.ToDecimal(nq.HINHPHAT));
+                txt_tienphat.Text = String.Format("{0:#,##0.##}", (Convert.ToDecimal(nq.HINHPHAT)));
+                int position = gridView_kt.FocusedRowHandle;
+                try
+                {
+                    string MAKT = gridView_kt.GetRowCellValue(position, "MAKT1").ToString();
                     txt_solan.Text = (bll_vipham.laylanvipham(MAKT, cbb_manoiquy.Text) + 1).ToString();
-                if(Convert.ToInt32(txt_solan.Text)>=4)
-                {     
-                    txt_tienphat.Text =String.Format("{0:#,##0.##}",( Convert.ToDecimal(nq.HINHPHAT)*2));
+                    if (Convert.ToInt32(txt_solan.Text) >= 4)
+                    {
+                        txt_tienphat.Text = String.Format("{0:#,##0.##}", (Convert.ToDecimal(nq.HINHPHAT) * 2));
+                    }
+                }
+                catch
+                {
+                    return;
                 }
             }
-            catch
+            else
             {
                 return;
             }

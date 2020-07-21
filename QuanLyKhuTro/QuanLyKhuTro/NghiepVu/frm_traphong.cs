@@ -504,7 +504,7 @@ namespace QuanLyKhuTro.NghiepVu
         {
             int position = gridView_traphong.FocusedRowHandle;
             string mahd = gridView_traphong.GetRowCellValue(position, "Mahd").ToString();
-            string Makt = gridView_traphong.GetRowCellValue(position, "Makt").ToString();
+            string Makt = gridView_traphong.GetRowCellValue(position, "Tenkt").ToString();
             string Tenphong = txt_tenphong.Text; /* gridView_traphong.GetRowCellValue(position, "TenPhong").ToString();*/
 
             //KHACHTHUE kt = new KHACHTHUE();

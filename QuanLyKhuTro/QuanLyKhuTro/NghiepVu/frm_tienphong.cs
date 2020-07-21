@@ -455,54 +455,70 @@ namespace QuanLyKhuTro.NghiepVu
         DAL_Tang dal_tang = new DAL_Tang();
         private void cbo_maphong_Click(object sender, EventArgs e)
         {
-            PHONG p = new PHONG();
-            TANG t = new TANG();
-            LOAIPHONG lp = new LOAIPHONG();
-            p = dal_phong.loadTenPhong(cbo_maphong.SelectedValue.ToString());
-            lp = dal_lp.loadTenLoaiPhong(p.MALOAI);
-            t = dal_tang.loadTenTang(p.MATANG);
-            //txt_tenphong.Text = p.TENPHONG.ToString();
-            cbo_tang.Text = string.Empty;
-            cbo_tang.Text = t.TENTANG;
-            txt_loaiphong.Text = lp.TENLOAI;
-            txt_ma.Text = p.MAPHONG;
-            txt_tienphong.Text = String.Format("{0:#,##0.##}", Convert.ToDouble(lp.GIA.ToString()));
-            String kq = traphong.laySoDien(cbo_maphong.SelectedValue.ToString());
-            if (kq == "")
-            {
-                txt_sodiendau.Text = "0";
-            }
-            else
-            {
-                txt_sodiendau.Text = kq;
-            }
+            if(cbo_maphong.Text.Length>0)
+                {     
+                PHONG p = new PHONG();
+                TANG t = new TANG();
+                LOAIPHONG lp = new LOAIPHONG();
+                p = dal_phong.loadTenPhong(cbo_maphong.SelectedValue.ToString());
+                lp = dal_lp.loadTenLoaiPhong(p.MALOAI);
+                t = dal_tang.loadTenTang(p.MATANG);
+                //txt_tenphong.Text = p.TENPHONG.ToString();
+                cbo_tang.Text = string.Empty;
+                cbo_tang.Text = t.TENTANG;
+                txt_loaiphong.Text = lp.TENLOAI;
+                txt_ma.Text = p.MAPHONG;
+                txt_tienphong.Text = String.Format("{0:#,##0.##}", Convert.ToDouble(lp.GIA.ToString()));
+                String kq = traphong.laySoDien(cbo_maphong.SelectedValue.ToString());
+                if (kq == "")
+                {
+                    txt_sodiendau.Text = "0";
+                }
+                else
+                {
+                    txt_sodiendau.Text = kq;
+                }
 
-            String sn = traphong.laySoNuoc(cbo_maphong.SelectedValue.ToString());
-            if (sn == "")
-            {
-                txt_sonuocdau.Text = "0";
-            }
-            else
-            {
-                txt_sonuocdau.Text = sn;
-            }
-            txt_mahd.Text = bll_sm.SinhMaHoaDon();
-            txt_sodiencuoi.Clear();
-            txt_sonuoccuoi.Clear();
-            txt_sonuoc.Clear();
-            txt_sodien.Clear();
-            txt_tongtien.Clear();
-            txt_tiendien.Clear();
-            txt_tiennuoc.Clear();
-            DateTime thang = Convert.ToDateTime("05" + "/" + cbo_thang.Text + "/" + txt_nam.Text);
-            if (kttinhtienthaothang(cbo_maphong.SelectedValue.ToString(), thang) == true)
-            {
-                btn_tinhtienphong.Enabled = false;
-            }
-            else
-            { btn_tinhtienphong.Enabled = true; }
+                String sn = traphong.laySoNuoc(cbo_maphong.SelectedValue.ToString());
+                if (sn == "")
+                {
+                    txt_sonuocdau.Text = "0";
+                }
+                else
+                {
+                    txt_sonuocdau.Text = sn;
+                }
+                txt_mahd.Text = bll_sm.SinhMaHoaDon();
+                txt_sodiencuoi.Clear();
+                txt_sonuoccuoi.Clear();
+                txt_sonuoc.Clear();
+                txt_sodien.Clear();
+                txt_tongtien.Clear();
+                txt_tiendien.Clear();
+                txt_tiennuoc.Clear();
+                if(cbo_thang.Text.Length>0)
+                { 
+                    DateTime thang = Convert.ToDateTime("05" + "/" + cbo_thang.Text + "/" + txt_nam.Text);
+                    if (kttinhtienthaothang(cbo_maphong.SelectedValue.ToString(), thang) == true)
+                    {
+                        btn_tinhtienphong.Enabled = false;
+                    }
+                    else
+                    { btn_tinhtienphong.Enabled = true; }
+                }
+                else
+                {
+                    return;
+                }
+               
 
-            grv_hoadon.DataSource = bLL_TienPhongHangThang.LoadDataHoaDontheomaphong(cbo_maphong.SelectedValue.ToString());
+                grv_hoadon.DataSource = bLL_TienPhongHangThang.LoadDataHoaDontheomaphong(cbo_maphong.SelectedValue.ToString());
+
+            }
+            else
+            {
+                return;
+            }    
         }
     }
 }

@@ -58,7 +58,7 @@ namespace DAL
                      from kp in data.KHACHTHUEPHONGs
                      where s.MAPHONG==p.MAPHONG && kp.MAPHONG == p.MAPHONG && 
                      kp.MAKT==kth.MAKT && s.MANV == nv.MANV
-                     && p.TENPHONG == pten && s.TINHTRANG == true && kth.TINHTRANG==true
+                     && p.TENPHONG == pten && s.TINHTRANG == true && kth.TINHTRANG==true && kth.TRUONGPHONG==true
                      select new
                      {
                          p.MAPHONG,

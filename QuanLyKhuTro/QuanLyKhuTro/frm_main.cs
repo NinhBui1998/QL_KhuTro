@@ -364,5 +364,19 @@ namespace QuanLyKhuTro
             frm.Dock = DockStyle.Fill;
             frm.Show();
         }
+
+        private void btn_thietbi_phong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frm_thietbiphong frm = new frm_thietbiphong();
+
+            //frm.TopLevel = false;
+
+            pnl_main.Controls.Clear();
+            pnl_main.Controls.Add(frm);
+
+            //frm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            //frm.Dock = DockStyle.Fill;
+            //frm.Show();
+        }
     }
 }

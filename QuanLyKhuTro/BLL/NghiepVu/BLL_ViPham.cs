@@ -25,6 +25,10 @@ namespace BLL
         {
             return vp.them_vipham(ptamtru);
         }
+        public List<NOIQUY> loadBANGnoiquy()
+        {
+            return vp.loadBANGnoiquy();
+        }
 
         //Xóa
         public bool xoa_vipham(string pMa)

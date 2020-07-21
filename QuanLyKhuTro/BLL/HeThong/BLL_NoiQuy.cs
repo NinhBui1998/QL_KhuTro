@@ -18,6 +18,7 @@ namespace BLL
         {
             return noiquy.ktakhoachinh_NoiQuy(pMa);
         }
+       
         //Thêm
         public bool them_NoiQuy(NOIQUY pNoiQuy)
         {

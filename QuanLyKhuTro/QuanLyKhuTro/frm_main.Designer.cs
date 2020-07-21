@@ -65,6 +65,7 @@
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_qlhopdong = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -74,6 +75,7 @@
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rb_qlhd = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -83,8 +85,7 @@
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.pnl_main = new System.Windows.Forms.Panel();
             this.btn_khachthue = new DevExpress.XtraBars.BarButtonItem();
-            this.rb_qlhd = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btn_qlhopdong = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_thietbi_phong = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
@@ -128,10 +129,11 @@
             this.barButtonItem6,
             this.barButtonItem7,
             this.barButtonItem8,
-            this.btn_qlhopdong});
+            this.btn_qlhopdong,
+            this.btn_thietbi_phong});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbon.MaxItemId = 37;
+            this.ribbon.MaxItemId = 38;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -427,6 +429,15 @@
             this.barButtonItem8.Name = "barButtonItem8";
             this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
             // 
+            // btn_qlhopdong
+            // 
+            this.btn_qlhopdong.Caption = "Quản lý hợp đồng";
+            this.btn_qlhopdong.Id = 36;
+            this.btn_qlhopdong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_qlhopdong.ImageOptions.Image")));
+            this.btn_qlhopdong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_qlhopdong.ImageOptions.LargeImage")));
+            this.btn_qlhopdong.Name = "btn_qlhopdong";
+            this.btn_qlhopdong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_qlhopdong_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -449,6 +460,7 @@
             this.ribbonPageGroup7.ItemLinks.Add(this.btn_thietbi);
             this.ribbonPageGroup7.ItemLinks.Add(this.btn_dichvu);
             this.ribbonPageGroup7.ItemLinks.Add(this.btn_noiquy);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btn_thietbi_phong);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             // 
             // ribbonPageGroup8
@@ -489,6 +501,11 @@
             this.ribbonPageGroup11.ItemLinks.Add(this.barButtonItem5);
             this.ribbonPageGroup11.ItemLinks.Add(this.barButtonItem6);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
+            // 
+            // rb_qlhd
+            // 
+            this.rb_qlhd.ItemLinks.Add(this.btn_qlhopdong);
+            this.rb_qlhd.Name = "rb_qlhd";
             // 
             // ribbonPage3
             // 
@@ -562,19 +579,14 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btn_khachthue.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_khachthue_ItemClick);
             // 
-            // rb_qlhd
+            // btn_thietbi_phong
             // 
-            this.rb_qlhd.ItemLinks.Add(this.btn_qlhopdong);
-            this.rb_qlhd.Name = "rb_qlhd";
-            // 
-            // btn_qlhopdong
-            // 
-            this.btn_qlhopdong.Caption = "Quản lý hợp đồng";
-            this.btn_qlhopdong.Id = 36;
-            this.btn_qlhopdong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.Image")));
-            this.btn_qlhopdong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.LargeImage")));
-            this.btn_qlhopdong.Name = "btn_qlhopdong";
-            this.btn_qlhopdong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_qlhopdong_ItemClick);
+            this.btn_thietbi_phong.Caption = "Thiết bị phòng";
+            this.btn_thietbi_phong.Id = 37;
+            this.btn_thietbi_phong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.Image")));
+            this.btn_thietbi_phong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.LargeImage")));
+            this.btn_thietbi_phong.Name = "btn_thietbi_phong";
+            this.btn_thietbi_phong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_thietbi_phong_ItemClick);
             // 
             // frm_main
             // 
@@ -659,5 +671,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem btn_qlhopdong;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rb_qlhd;
+        private DevExpress.XtraBars.BarButtonItem btn_thietbi_phong;
     }
 }

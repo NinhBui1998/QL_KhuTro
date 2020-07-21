@@ -78,7 +78,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1234, 475);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1232, 377);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -92,9 +92,9 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.40881F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.59119F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(381, 469);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 58.76011F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.23989F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(381, 371);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // groupBox1
@@ -103,9 +103,9 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Red;
-            this.groupBox1.Location = new System.Drawing.Point(3, 309);
+            this.groupBox1.Location = new System.Drawing.Point(3, 221);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(375, 157);
+            this.groupBox1.Size = new System.Drawing.Size(375, 147);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức năng";
@@ -123,7 +123,7 @@
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(369, 128);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(369, 118);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // tableLayoutPanel5
@@ -140,8 +140,8 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(363, 58);
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 99F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(363, 53);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // btn_them
@@ -150,7 +150,7 @@
             this.btn_them.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_them.Appearance.Options.UseFont = true;
             this.btn_them.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_them.ImageOptions.SvgImage")));
-            this.btn_them.Location = new System.Drawing.Point(3, 9);
+            this.btn_them.Location = new System.Drawing.Point(3, 6);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(115, 40);
             this.btn_them.TabIndex = 0;
@@ -163,7 +163,7 @@
             this.btn_sua.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_sua.Appearance.Options.UseFont = true;
             this.btn_sua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_sua.ImageOptions.SvgImage")));
-            this.btn_sua.Location = new System.Drawing.Point(245, 9);
+            this.btn_sua.Location = new System.Drawing.Point(245, 6);
             this.btn_sua.Name = "btn_sua";
             this.btn_sua.Size = new System.Drawing.Size(115, 40);
             this.btn_sua.TabIndex = 1;
@@ -176,7 +176,7 @@
             this.btn_xoa.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_xoa.Appearance.Options.UseFont = true;
             this.btn_xoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_xoa.ImageOptions.SvgImage")));
-            this.btn_xoa.Location = new System.Drawing.Point(124, 9);
+            this.btn_xoa.Location = new System.Drawing.Point(124, 6);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(115, 40);
             this.btn_xoa.TabIndex = 0;
@@ -191,12 +191,12 @@
             this.tableLayoutPanel6.Controls.Add(this.btn_huy, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.btn_luu, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 67);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 62);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(363, 58);
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 99F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(363, 53);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // btn_huy
@@ -206,7 +206,7 @@
             this.btn_huy.Appearance.Options.UseFont = true;
             this.btn_huy.Enabled = false;
             this.btn_huy.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_huy.ImageOptions.SvgImage")));
-            this.btn_huy.Location = new System.Drawing.Point(81, 8);
+            this.btn_huy.Location = new System.Drawing.Point(81, 6);
             this.btn_huy.Name = "btn_huy";
             this.btn_huy.Size = new System.Drawing.Size(97, 41);
             this.btn_huy.TabIndex = 3;
@@ -220,7 +220,7 @@
             this.btn_luu.Appearance.Options.UseFont = true;
             this.btn_luu.Enabled = false;
             this.btn_luu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_luu.ImageOptions.SvgImage")));
-            this.btn_luu.Location = new System.Drawing.Point(184, 8);
+            this.btn_luu.Location = new System.Drawing.Point(184, 6);
             this.btn_luu.Name = "btn_luu";
             this.btn_luu.Size = new System.Drawing.Size(97, 41);
             this.btn_luu.TabIndex = 2;
@@ -235,7 +235,7 @@
             this.grb_thongtinthietbi.ForeColor = System.Drawing.Color.Red;
             this.grb_thongtinthietbi.Location = new System.Drawing.Point(3, 3);
             this.grb_thongtinthietbi.Name = "grb_thongtinthietbi";
-            this.grb_thongtinthietbi.Size = new System.Drawing.Size(375, 300);
+            this.grb_thongtinthietbi.Size = new System.Drawing.Size(375, 212);
             this.grb_thongtinthietbi.TabIndex = 4;
             this.grb_thongtinthietbi.TabStop = false;
             this.grb_thongtinthietbi.Text = "Thông tin thiết bị";
@@ -324,7 +324,7 @@
             this.grv_thietbi.Location = new System.Drawing.Point(390, 3);
             this.grv_thietbi.MainView = this.gridView_ThietBi;
             this.grv_thietbi.Name = "grv_thietbi";
-            this.grv_thietbi.Size = new System.Drawing.Size(841, 469);
+            this.grv_thietbi.Size = new System.Drawing.Size(839, 371);
             this.grv_thietbi.TabIndex = 1;
             this.grv_thietbi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_ThietBi});
@@ -370,9 +370,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1232, 377);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frm_thietbi";
-            this.Size = new System.Drawing.Size(1234, 475);
             this.Load += new System.EventHandler(this.frm_thietbi_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);

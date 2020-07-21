@@ -40,6 +40,8 @@
             this.cbo_tang = new System.Windows.Forms.ComboBox();
             this.lbl_phong = new System.Windows.Forms.Label();
             this.lbl_tang = new System.Windows.Forms.Label();
+            this.txt_ma = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
@@ -110,8 +112,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.cbo_thang = new System.Windows.Forms.ComboBox();
             this.txt_nam = new System.Windows.Forms.TextBox();
-            this.txt_ma = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -248,12 +248,13 @@
             this.cbo_maphong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_maphong.DisplayMember = "MAPHONG";
             this.cbo_maphong.FormattingEnabled = true;
-            this.cbo_maphong.Location = new System.Drawing.Point(126, 46);
+            this.cbo_maphong.Location = new System.Drawing.Point(126, 49);
             this.cbo_maphong.Name = "cbo_maphong";
             this.cbo_maphong.Size = new System.Drawing.Size(411, 27);
             this.cbo_maphong.TabIndex = 5;
             this.cbo_maphong.ValueMember = "MAPHONG";
             this.cbo_maphong.SelectedIndexChanged += new System.EventHandler(this.cbo_maphong_SelectedIndexChanged);
+            this.cbo_maphong.SelectedValueChanged += new System.EventHandler(this.cbo_maphong_Click);
             this.cbo_maphong.Click += new System.EventHandler(this.cbo_maphong_Click);
             // 
             // cbo_tang
@@ -261,12 +262,13 @@
             this.cbo_tang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_tang.DisplayMember = "MAPHONG";
             this.cbo_tang.FormattingEnabled = true;
-            this.cbo_tang.Location = new System.Drawing.Point(126, 6);
+            this.cbo_tang.Location = new System.Drawing.Point(126, 9);
             this.cbo_tang.Name = "cbo_tang";
             this.cbo_tang.Size = new System.Drawing.Size(411, 27);
             this.cbo_tang.TabIndex = 5;
             this.cbo_tang.ValueMember = "MAPHONG";
             this.cbo_tang.SelectedIndexChanged += new System.EventHandler(this.cbo_tang_SelectedIndexChanged);
+            this.cbo_tang.SelectedValueChanged += new System.EventHandler(this.cbo_tang_SelectedIndexChanged);
             // 
             // lbl_phong
             // 
@@ -287,6 +289,24 @@
             this.lbl_tang.Size = new System.Drawing.Size(117, 19);
             this.lbl_tang.TabIndex = 0;
             this.lbl_tang.Text = "Tầng";
+            // 
+            // txt_ma
+            // 
+            this.txt_ma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_ma.Location = new System.Drawing.Point(126, 137);
+            this.txt_ma.Name = "txt_ma";
+            this.txt_ma.Size = new System.Drawing.Size(411, 27);
+            this.txt_ma.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 141);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Mã phòng";
             // 
             // groupBox1
             // 
@@ -1102,24 +1122,6 @@
             this.txt_nam.Name = "txt_nam";
             this.txt_nam.Size = new System.Drawing.Size(116, 27);
             this.txt_nam.TabIndex = 2;
-            // 
-            // txt_ma
-            // 
-            this.txt_ma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_ma.Location = new System.Drawing.Point(126, 137);
-            this.txt_ma.Name = "txt_ma";
-            this.txt_ma.Size = new System.Drawing.Size(411, 27);
-            this.txt_ma.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 141);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã phòng";
             // 
             // frm_tienphong
             // 

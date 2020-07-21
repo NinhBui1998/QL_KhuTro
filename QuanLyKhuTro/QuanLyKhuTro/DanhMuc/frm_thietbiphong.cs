@@ -12,7 +12,7 @@ using BLL;
 
 namespace QuanLyKhuTro.DanhMuc
 {
-    public partial class frm_thietbiphong : Form
+    public partial class frm_thietbiphong : DevExpress.XtraEditors.XtraUserControl
     {
         BLL_ThietBi bll_thietbi = new BLL_ThietBi();
         BLL_Phong bll_phong = new BLL_Phong();

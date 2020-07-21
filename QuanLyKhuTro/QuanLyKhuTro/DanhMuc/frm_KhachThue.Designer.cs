@@ -165,7 +165,7 @@
             this.tableLayoutPanel8.ColumnCount = 3;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.36246F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.63754F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel8.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel8.Controls.Add(this.label3, 0, 3);
             this.tableLayoutPanel8.Controls.Add(this.label5, 0, 5);
@@ -271,7 +271,7 @@
             this.txt_makt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_makt.Location = new System.Drawing.Point(113, 44);
             this.txt_makt.Name = "txt_makt";
-            this.txt_makt.Size = new System.Drawing.Size(235, 30);
+            this.txt_makt.Size = new System.Drawing.Size(234, 30);
             this.txt_makt.TabIndex = 1;
             // 
             // txt_tenkt
@@ -279,7 +279,7 @@
             this.txt_tenkt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_tenkt.Location = new System.Drawing.Point(113, 82);
             this.txt_tenkt.Name = "txt_tenkt";
-            this.txt_tenkt.Size = new System.Drawing.Size(235, 30);
+            this.txt_tenkt.Size = new System.Drawing.Size(234, 30);
             this.txt_tenkt.TabIndex = 1;
             // 
             // txt_sdt
@@ -288,7 +288,7 @@
             this.txt_sdt.Location = new System.Drawing.Point(113, 156);
             this.txt_sdt.MaxLength = 10;
             this.txt_sdt.Name = "txt_sdt";
-            this.txt_sdt.Size = new System.Drawing.Size(235, 30);
+            this.txt_sdt.Size = new System.Drawing.Size(234, 30);
             this.txt_sdt.TabIndex = 1;
             this.txt_sdt.TextChanged += new System.EventHandler(this.txt_sdt_TextChanged);
             this.txt_sdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sdt_KeyPress);
@@ -300,7 +300,7 @@
             this.txt_quequan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_quequan.Location = new System.Drawing.Point(113, 191);
             this.txt_quequan.Name = "txt_quequan";
-            this.txt_quequan.Size = new System.Drawing.Size(235, 30);
+            this.txt_quequan.Size = new System.Drawing.Size(234, 30);
             this.txt_quequan.TabIndex = 1;
             // 
             // txt_cmnd
@@ -309,7 +309,7 @@
             this.txt_cmnd.Location = new System.Drawing.Point(113, 228);
             this.txt_cmnd.MaxLength = 9;
             this.txt_cmnd.Name = "txt_cmnd";
-            this.txt_cmnd.Size = new System.Drawing.Size(235, 30);
+            this.txt_cmnd.Size = new System.Drawing.Size(234, 30);
             this.txt_cmnd.TabIndex = 1;
             this.txt_cmnd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sdt_KeyPress);
             this.txt_cmnd.Leave += new System.EventHandler(this.txt_cmnd_Leave);
@@ -321,7 +321,7 @@
             this.txt_ngaysinh.Location = new System.Drawing.Point(113, 268);
             this.txt_ngaysinh.Mask = "00/00/0000";
             this.txt_ngaysinh.Name = "txt_ngaysinh";
-            this.txt_ngaysinh.Size = new System.Drawing.Size(235, 30);
+            this.txt_ngaysinh.Size = new System.Drawing.Size(234, 30);
             this.txt_ngaysinh.TabIndex = 2;
             this.txt_ngaysinh.ValidatingType = typeof(System.DateTime);
             // 
@@ -337,7 +337,7 @@
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(235, 33);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(234, 33);
             this.tableLayoutPanel9.TabIndex = 3;
             // 
             // rdb_nam
@@ -399,7 +399,7 @@
             this.txt_tenphong.Enabled = false;
             this.txt_tenphong.Location = new System.Drawing.Point(113, 5);
             this.txt_tenphong.Name = "txt_tenphong";
-            this.txt_tenphong.Size = new System.Drawing.Size(235, 30);
+            this.txt_tenphong.Size = new System.Drawing.Size(234, 30);
             this.txt_tenphong.TabIndex = 1;
             // 
             // label8
@@ -480,7 +480,7 @@
             this.txt_ghichu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_ghichu.Location = new System.Drawing.Point(113, 363);
             this.txt_ghichu.Name = "txt_ghichu";
-            this.txt_ghichu.Size = new System.Drawing.Size(235, 88);
+            this.txt_ghichu.Size = new System.Drawing.Size(234, 88);
             this.txt_ghichu.TabIndex = 5;
             this.txt_ghichu.Text = "";
             // 

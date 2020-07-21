@@ -560,7 +560,7 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.13553F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.86447F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 258F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 261F));
             this.tableLayoutPanel9.Controls.Add(this.label13, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.label16, 0, 1);
             this.tableLayoutPanel9.Controls.Add(this.txt_sodien, 1, 0);
@@ -589,7 +589,7 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(3, 6);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(69, 19);
+            this.label13.Size = new System.Drawing.Size(68, 19);
             this.label13.TabIndex = 0;
             this.label13.Text = "Số điện";
             // 
@@ -599,32 +599,32 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(3, 37);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(69, 19);
+            this.label16.Size = new System.Drawing.Size(68, 19);
             this.label16.TabIndex = 0;
             this.label16.Text = "Số nước";
             // 
             // txt_sodien
             // 
             this.txt_sodien.Enabled = false;
-            this.txt_sodien.Location = new System.Drawing.Point(78, 3);
+            this.txt_sodien.Location = new System.Drawing.Point(77, 3);
             this.txt_sodien.Name = "txt_sodien";
-            this.txt_sodien.Size = new System.Drawing.Size(160, 27);
+            this.txt_sodien.Size = new System.Drawing.Size(158, 27);
             this.txt_sodien.TabIndex = 1;
             // 
             // txt_sonuoc
             // 
             this.txt_sonuoc.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_sonuoc.Enabled = false;
-            this.txt_sonuoc.Location = new System.Drawing.Point(78, 34);
+            this.txt_sonuoc.Location = new System.Drawing.Point(77, 34);
             this.txt_sonuoc.Name = "txt_sonuoc";
-            this.txt_sonuoc.Size = new System.Drawing.Size(160, 27);
+            this.txt_sonuoc.Size = new System.Drawing.Size(158, 27);
             this.txt_sonuoc.TabIndex = 1;
             // 
             // label19
             // 
             this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(244, 6);
+            this.label19.Location = new System.Drawing.Point(241, 6);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(76, 19);
             this.label19.TabIndex = 0;
@@ -634,9 +634,9 @@
             // 
             this.txt_tiendien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_tiendien.Enabled = false;
-            this.txt_tiendien.Location = new System.Drawing.Point(326, 3);
+            this.txt_tiendien.Location = new System.Drawing.Point(323, 3);
             this.txt_tiendien.Name = "txt_tiendien";
-            this.txt_tiendien.Size = new System.Drawing.Size(253, 27);
+            this.txt_tiendien.Size = new System.Drawing.Size(256, 27);
             this.txt_tiendien.TabIndex = 1;
             this.txt_tiendien.TextChanged += new System.EventHandler(this.txt_tiendien_TextChanged);
             // 
@@ -644,7 +644,7 @@
             // 
             this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(244, 37);
+            this.label20.Location = new System.Drawing.Point(241, 37);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(76, 19);
             this.label20.TabIndex = 0;
@@ -654,9 +654,9 @@
             // 
             this.txt_tiennuoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_tiennuoc.Enabled = false;
-            this.txt_tiennuoc.Location = new System.Drawing.Point(326, 34);
+            this.txt_tiennuoc.Location = new System.Drawing.Point(323, 34);
             this.txt_tiennuoc.Name = "txt_tiennuoc";
-            this.txt_tiennuoc.Size = new System.Drawing.Size(253, 27);
+            this.txt_tiennuoc.Size = new System.Drawing.Size(256, 27);
             this.txt_tiennuoc.TabIndex = 1;
             this.txt_tiennuoc.TextChanged += new System.EventHandler(this.txt_tiennuoc_TextChanged);
             // 
@@ -664,16 +664,16 @@
             // 
             this.txt_tongtien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_tongtien.Enabled = false;
-            this.txt_tongtien.Location = new System.Drawing.Point(326, 65);
+            this.txt_tongtien.Location = new System.Drawing.Point(323, 65);
             this.txt_tongtien.Name = "txt_tongtien";
-            this.txt_tongtien.Size = new System.Drawing.Size(253, 27);
+            this.txt_tongtien.Size = new System.Drawing.Size(256, 27);
             this.txt_tongtien.TabIndex = 1;
             // 
             // label17
             // 
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(244, 69);
+            this.label17.Location = new System.Drawing.Point(241, 69);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(76, 19);
             this.label17.TabIndex = 0;

@@ -33,6 +33,7 @@ namespace QuanLyKhuTro.DanhMuc
         {
             
             btn_huy.Enabled = btn_luu.Enabled = true;
+            rdb_nam.Enabled = rdb_nu.Enabled = true;
             btn_sua.Enabled = btn_xoa.Enabled = false;
             txt_diachi.Enabled  = txt_sdt.Enabled = txt_tennv.Enabled = txt_scm.Enabled = true;
             txt_sdt.Clear();txt_scm.Clear();txt_tennv.Clear();txt_diachi.Clear();
@@ -53,6 +54,8 @@ namespace QuanLyKhuTro.DanhMuc
         private void frm_nhanvien_Load(object sender, EventArgs e)
         {
             grv_nhanvien.DataSource = bnv.loadBangNV();
+            rdb_nam.Checked = true;
+            rdb_nam.Enabled = rdb_nu.Enabled = false;
             txt_diachi.Enabled = txt_manv.Enabled  = txt_scm.Enabled=
             txt_sdt.Enabled = txt_tennv.Enabled = btn_huy.Enabled=btn_luu.Enabled=btn_sua.Enabled=btn_xoa.Enabled= false;
             btn_them.Enabled = true;
@@ -67,18 +70,28 @@ namespace QuanLyKhuTro.DanhMuc
         {
             
 
-                btn_xoa.Enabled = btn_sua.Enabled = btn_huy.Enabled = true;
-                btn_them.Enabled = false;
-                int position = gridView_NhanVien.FocusedRowHandle;
-                try
+            btn_xoa.Enabled = btn_sua.Enabled = btn_huy.Enabled = true;
+            btn_them.Enabled = false;
+            int position = gridView_NhanVien.FocusedRowHandle;
+            try
+             {
+                txt_manv.Text = gridView_NhanVien.GetRowCellValue(position, "MANV").ToString();
+                txt_tennv.Text = gridView_NhanVien.GetRowCellValue(position, "TENNV").ToString();
+                txt_scm.Text = gridView_NhanVien.GetRowCellValue(position, "CMND_NV").ToString();
+                txt_diachi.Text = gridView_NhanVien.GetRowCellValue(position, "DIACHI").ToString();
+                txt_sdt.Text = gridView_NhanVien.GetRowCellValue(position, "SODT_CT").ToString();
+                string gt = gridView_NhanVien.GetRowCellValue(position, "GIOITINH").ToString();
+                if(gt=="Nam")
                 {
-                    txt_manv.Text = gridView_NhanVien.GetRowCellValue(position, "MANV").ToString();
-                    txt_tennv.Text = gridView_NhanVien.GetRowCellValue(position, "TENNV").ToString();
-                    txt_scm.Text = gridView_NhanVien.GetRowCellValue(position, "CMND_NV").ToString();
-                    txt_diachi.Text = gridView_NhanVien.GetRowCellValue(position, "DIACHI").ToString();
-                    txt_sdt.Text = gridView_NhanVien.GetRowCellValue(position, "SODT_CT").ToString();
+                    rdb_nam.Checked = true;
+
                 }
-                catch { }
+                else
+                {
+                    rdb_nu.Checked = true;
+                }
+            }
+            catch { }
             
           
         }
@@ -138,6 +151,14 @@ namespace QuanLyKhuTro.DanhMuc
             qlnd.TENDN = txt_manv.Text;
             qlnd.MK = "123456789";
             qlnd.HOATDONG = false;
+            if(rdb_nam.Checked==true)
+            {
+                nv.GIOITINH = "Nam";
+            }    
+            else
+            {
+                nv.GIOITINH = "Nữ";
+            }
             if (btn_them.Enabled==true && btn_sua.Enabled==false)
             {
                 

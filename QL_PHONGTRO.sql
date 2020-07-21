@@ -61,6 +61,10 @@ CREATE TABLE NHANVIEN
 	DIACHI NVARCHAR(50)
 )
 
+ALTER TABLE NHANVIEN
+ ADD GIOITINH NVARCHAR(4)
+
+
 CREATE TABLE KHACHTHUEPHONG
 (
 	MAKTP VARCHAR(10) PRIMARY key,
@@ -508,7 +512,12 @@ VALUES ('TN001','KT001','15/05/2020','16/05/2020'),
 		('TN002','KT002','10/05/2020','12/05/2020')
 ------
 
-   
+  
+INSERT INTO NOIQUY
+ VALUES ('NQ001',N'Uống rượu bia','200000',N'Vi phạm nhiều lần hình phạt tăng gấp đôi'),
+		('NQ002',N'Hút thuốc','100000',N'Vi phạm nhiều lần hình phạt tăng gấp đôi'),
+		('NQ003',N'Gây ồn','500000',N'Vi phạm nhiều lần hình phạt tăng gấp đôi')
+ 
 
 --Set dateformat dmy 
 --insert into VIPHAM
@@ -521,8 +530,8 @@ values ('TB001',N'Quạt','160000'),
 ---
 Set dateformat dmy 
 insert into THIETBI_PHONG
-VALUES ('TB001','P001','Bình thường'),
-		('TB002','P002','Bình thường')
+VALUES ('TB001','P001',N'Bình thường'),
+		('TB002','P002',N'Bình thường')
 
 Set dateformat dmy 
 INSERT INTO HOADON

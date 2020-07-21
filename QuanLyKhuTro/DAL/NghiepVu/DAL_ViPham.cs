@@ -97,6 +97,10 @@ namespace DAL.NghiepVu
         {
             return data.NOIQUYs.Where(t => t.MANOIQUY == pMa).FirstOrDefault();
         }
+        public List< NOIQUY> loadBANGnoiquy()
+        {
+            return data.NOIQUYs.Select(t => t).ToList<NOIQUY>();
+        }
         public bool ktakhoachinh_ViPham(string manq)
         {
             var kt = (from h in data.VIPHAMs

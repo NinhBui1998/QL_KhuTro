@@ -523,7 +523,7 @@
             // 
             this.cbb_manoiquy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbb_manoiquy.FormattingEnabled = true;
-            this.cbb_manoiquy.Location = new System.Drawing.Point(123, 5);
+            this.cbb_manoiquy.Location = new System.Drawing.Point(123, 8);
             this.cbb_manoiquy.Name = "cbb_manoiquy";
             this.cbb_manoiquy.Size = new System.Drawing.Size(289, 27);
             this.cbb_manoiquy.TabIndex = 3;
@@ -724,7 +724,7 @@
             // Makhachthue
             // 
             this.Makhachthue.Caption = "Mã khách thuê";
-            this.Makhachthue.FieldName = "MAKT";
+            this.Makhachthue.FieldName = "MAKT1";
             this.Makhachthue.Name = "Makhachthue";
             this.Makhachthue.Visible = true;
             this.Makhachthue.VisibleIndex = 0;
@@ -732,7 +732,7 @@
             // Tenkhachthue
             // 
             this.Tenkhachthue.Caption = "Tên khách thuê";
-            this.Tenkhachthue.FieldName = "TENKT";
+            this.Tenkhachthue.FieldName = "TENKT1";
             this.Tenkhachthue.Name = "Tenkhachthue";
             this.Tenkhachthue.Visible = true;
             this.Tenkhachthue.VisibleIndex = 1;
@@ -740,7 +740,7 @@
             // Sochungminh
             // 
             this.Sochungminh.Caption = "Số chứng minh";
-            this.Sochungminh.FieldName = "SOCMND";
+            this.Sochungminh.FieldName = "SOCMND1";
             this.Sochungminh.Name = "Sochungminh";
             this.Sochungminh.Visible = true;
             this.Sochungminh.VisibleIndex = 2;
@@ -748,7 +748,7 @@
             // Quequan
             // 
             this.Quequan.Caption = "Quê quán";
-            this.Quequan.FieldName = "QUEQUAN";
+            this.Quequan.FieldName = "QUEQUAN1";
             this.Quequan.Name = "Quequan";
             this.Quequan.Visible = true;
             this.Quequan.VisibleIndex = 3;
@@ -756,10 +756,8 @@
             // Maphong
             // 
             this.Maphong.Caption = "Mã phòng";
-            this.Maphong.FieldName = "MAPHONG";
+            this.Maphong.FieldName = "MAPHONG1";
             this.Maphong.Name = "Maphong";
-            this.Maphong.Visible = true;
-            this.Maphong.VisibleIndex = 4;
             // 
             // tableLayoutPanel10
             // 
@@ -768,7 +766,7 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.6051F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 296F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 185F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 188F));
             this.tableLayoutPanel10.Controls.Add(this.btn_tatcahd, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.btn_timkiem, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.cbo_phong, 0, 0);
@@ -787,7 +785,7 @@
             this.btn_tatcahd.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_tatcahd.Appearance.Options.UseFont = true;
             this.btn_tatcahd.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_tatcahd.ImageOptions.SvgImage")));
-            this.btn_tatcahd.Location = new System.Drawing.Point(283, 6);
+            this.btn_tatcahd.Location = new System.Drawing.Point(280, 6);
             this.btn_tatcahd.Name = "btn_tatcahd";
             this.btn_tatcahd.Size = new System.Drawing.Size(159, 40);
             this.btn_tatcahd.TabIndex = 10;
@@ -800,7 +798,7 @@
             this.btn_timkiem.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_timkiem.Appearance.Options.UseFont = true;
             this.btn_timkiem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_timkiem.ImageOptions.SvgImage")));
-            this.btn_timkiem.Location = new System.Drawing.Point(240, 6);
+            this.btn_timkiem.Location = new System.Drawing.Point(237, 6);
             this.btn_timkiem.Name = "btn_timkiem";
             this.btn_timkiem.Size = new System.Drawing.Size(37, 39);
             this.btn_timkiem.TabIndex = 8;
@@ -810,9 +808,9 @@
             // 
             this.cbo_phong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_phong.FormattingEnabled = true;
-            this.cbo_phong.Location = new System.Drawing.Point(3, 12);
+            this.cbo_phong.Location = new System.Drawing.Point(3, 15);
             this.cbo_phong.Name = "cbo_phong";
-            this.cbo_phong.Size = new System.Drawing.Size(231, 27);
+            this.cbo_phong.Size = new System.Drawing.Size(228, 27);
             this.cbo_phong.TabIndex = 4;
             // 
             // simpleButton1
