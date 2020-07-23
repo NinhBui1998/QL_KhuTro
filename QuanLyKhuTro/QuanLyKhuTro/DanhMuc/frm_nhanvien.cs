@@ -28,7 +28,6 @@ namespace QuanLyKhuTro.DanhMuc
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
-
         private void btn_them_Click(object sender, EventArgs e)
         {
             

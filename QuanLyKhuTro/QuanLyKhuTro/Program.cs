@@ -8,8 +8,11 @@ using System.Windows.Forms;
 
 namespace QuanLyKhuTro
 {
-    static class Program
+   public static class Program
     {
+        public static frm_dangnhap frm_dn;
+        public static frm_main frm_nain;
+        public static frm_test frm_dsp;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -19,7 +22,8 @@ namespace QuanLyKhuTro
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frm_main());
-            Application.Run(new frm_dangnhap());
+            Application.Run(frm_dn= new frm_dangnhap());
+         
             //Application.Run(new frm_thietbiphong());
         }
     }

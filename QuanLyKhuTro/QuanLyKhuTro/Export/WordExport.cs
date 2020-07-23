@@ -346,7 +346,7 @@ namespace DAL.DuLieu
 
             #endregion =====  End Core=====
         }
-        public void ThongTinViPham(string TenKT,string Socmnd, string NgayViPham,string NoiDung,string HinhPhat)
+        public void ThongTinViPham(string TenKT,string Socmnd, string NgayViPham,string NoiDung,string HinhPhat,string SoLan)
         {
             #region ===== Core======
             MemoryStream mStream = null;
@@ -397,9 +397,9 @@ namespace DAL.DuLieu
 
 
 
-            string[] fields = new string[] { "TenKT", "Socmnd", "NgayViPham", "NoiDung", "HinhPhat" };
+            string[] fields = new string[] { "TenKT", "Socmnd", "NgayViPham", "NoiDung", "HinhPhat","SoLan"};
 
-            string[] values = new string[] { TenKT , Socmnd , NgayViPham, NoiDung ,HinhPhat };
+            string[] values = new string[] { TenKT , Socmnd , NgayViPham, NoiDung ,HinhPhat, SoLan};
 
             #endregion End Set Value=====
 

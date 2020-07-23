@@ -41,7 +41,9 @@ namespace QuanLyKhuTro.HeThong
                 frm_main main = new frm_main();
                 main.Tendn = txt_taikhoan.Text;
                 main.MatKhau = txt_matkhau.Text;
+                //Visible = false;
                 main.ShowDialog();
+                //Program.frm_nain.ShowDialog();
             }
         }
 
@@ -96,6 +98,7 @@ namespace QuanLyKhuTro.HeThong
         {
             txt_matkhau.Clear();
             txt_taikhoan.Clear();
+            //Application.Exit();
         }
         DAL_SinhMa dal_sm = new DAL_SinhMa();
         capnhatdulieu update = new capnhatdulieu();

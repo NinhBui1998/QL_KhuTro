@@ -297,6 +297,9 @@ namespace QuanLyKhuTro
             frm.ShowDialog();
         }
 
-      
+        private void frm_test_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //Program.frm_nain.Show();
+        }
     }
 }

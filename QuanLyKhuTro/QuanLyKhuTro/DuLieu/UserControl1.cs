@@ -25,7 +25,7 @@ namespace QuanLyKhuTro.DuLieu
             try
             {
                 SqlConnection sqlconn;
-                sqlconn = new SqlConnection(@"Data Source=DESKTOP-T8SC55E\SQLEXPRESS;Initial Catalog=QL_NHATRO;Integrated Security=True");
+                sqlconn = new SqlConnection(@"Data Source=DESKTOP-T8SC55E\SQLEXPRESS;Initial Catalog=DLDEMO;Integrated Security=True");
                 if (sqlconn.State == ConnectionState.Closed)
                 {
                     sqlconn.Open();

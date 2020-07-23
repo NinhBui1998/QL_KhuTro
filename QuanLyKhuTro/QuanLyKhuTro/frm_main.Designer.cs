@@ -66,6 +66,7 @@
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.btn_qlhopdong = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_thietbi_phong = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -85,7 +86,7 @@
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.pnl_main = new System.Windows.Forms.Panel();
             this.btn_khachthue = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_thietbi_phong = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
@@ -135,6 +136,8 @@
             this.ribbon.Margin = new System.Windows.Forms.Padding(4);
             this.ribbon.MaxItemId = 38;
             this.ribbon.Name = "ribbon";
+            this.ribbon.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
+            this.ribbonPageCategory1});
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2,
@@ -438,6 +441,15 @@
             this.btn_qlhopdong.Name = "btn_qlhopdong";
             this.btn_qlhopdong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_qlhopdong_ItemClick);
             // 
+            // btn_thietbi_phong
+            // 
+            this.btn_thietbi_phong.Caption = "Thiết bị phòng";
+            this.btn_thietbi_phong.Id = 37;
+            this.btn_thietbi_phong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_thietbi_phong.ImageOptions.Image")));
+            this.btn_thietbi_phong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_thietbi_phong.ImageOptions.LargeImage")));
+            this.btn_thietbi_phong.Name = "btn_thietbi_phong";
+            this.btn_thietbi_phong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_thietbi_phong_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -579,14 +591,10 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btn_khachthue.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_khachthue_ItemClick);
             // 
-            // btn_thietbi_phong
+            // ribbonPageCategory1
             // 
-            this.btn_thietbi_phong.Caption = "Thiết bị phòng";
-            this.btn_thietbi_phong.Id = 37;
-            this.btn_thietbi_phong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.Image")));
-            this.btn_thietbi_phong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.LargeImage")));
-            this.btn_thietbi_phong.Name = "btn_thietbi_phong";
-            this.btn_thietbi_phong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_thietbi_phong_ItemClick);
+            this.ribbonPageCategory1.Name = "ribbonPageCategory1";
+            this.ribbonPageCategory1.Text = "ribbonPageCategory1";
             // 
             // frm_main
             // 
@@ -606,6 +614,7 @@
             this.Text = "NHÀ TRỌ HN";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_main_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_main_FormClosed);
             this.Load += new System.EventHandler(this.frm_main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
@@ -672,5 +681,6 @@
         private DevExpress.XtraBars.BarButtonItem btn_qlhopdong;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rb_qlhd;
         private DevExpress.XtraBars.BarButtonItem btn_thietbi_phong;
+        private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory1;
     }
 }

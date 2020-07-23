@@ -13,6 +13,7 @@ using Microsoft.Office.Interop.Excel;
 using System.IO;
 using BLL;
 using DAL.ThongKe;
+using DAL.HeThong;
 
 namespace QuanLyKhuTro.ThongKe
 {
@@ -29,33 +30,35 @@ namespace QuanLyKhuTro.ThongKe
 
         private void frm_tkkhachthue_Load(object sender, EventArgs e)
         {
-            grv_khachthue.DataSource = bll_kt.loadBangKT();
+            grv_khachthue.DataSource = dal_loakt.loadkhachthue();
             cbo_phong.DataSource = bll_phong.loadBang_Phong();
             cbo_phong.DisplayMember = "TENPHONG";
             cbo_phong.ValueMember = "MAPHONG";
             txt_tongkhachthue.Text= dal_tkkt.tongkt();
         }
-
+        DAL_LoadKhachThue dal_loakt = new DAL_LoadKhachThue();
         private void btn_timkiem_Click(object sender, EventArgs e)
         {
-            grv_khachthue.DataSource = bll_kt.loadBangKTtheoma(cbo_phong.SelectedValue.ToString());
+            //grv_khachthue.DataSource = bll_kt.loadBangKTtheoma(cbo_phong.SelectedValue.ToString());
+            grv_khachthue.DataSource = dal_loakt.loadkhachthuetheomaphong(cbo_phong.SelectedValue.ToString());
+
             txt_toongslkhachtrongphong.Clear();
             txt_toongslkhachtrongphong.Text = dal_tkkt.tongkhachthuetheophong(cbo_phong.SelectedValue.ToString());
         }
 
         private void btn_tatcahd_Click(object sender, EventArgs e)
         {
-            grv_khachthue.DataSource = bll_kt.loadBangKT();
+            grv_khachthue.DataSource = dal_loakt.loadkhachthue();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            grv_khachthue.DataSource = dal_tkkt.loadbangKhachThuechuadktamtru();
+            grv_khachthue.DataSource = dal_loakt.loadkhachthueChuadktt();
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            grv_khachthue.DataSource = dal_tkkt.loadbangKhachsaphethantt();
+            grv_khachthue.DataSource = dal_loakt.loadkhachthuesaptoihan();
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -229,16 +232,16 @@ namespace QuanLyKhuTro.ThongKe
                     stt++;
                     row++;
                    
-                    string makt = gridView_khachthue.GetRowCellValue(i, "MAKT").ToString();
-                    string tenkt = gridView_khachthue.GetRowCellValue(i, "TENKT").ToString();
-                    string GT = gridView_khachthue.GetRowCellValue(i, "GIOITINH").ToString();
-                    string SDT = gridView_khachthue.GetRowCellValue(i, "SDT").ToString();
-                    string SOCMND = gridView_khachthue.GetRowCellValue(i, "SOCMND").ToString();
-                    string NGAYSINH = gridView_khachthue.GetRowCellValue(i, "NGAYSINH").ToString().Substring(0, 11);
-                    string QUEQUAN = gridView_khachthue.GetRowCellValue(i, "QUEQUAN").ToString();
-                    string MAPHONG = gridView_khachthue.GetRowCellValue(i, "MAPHONG").ToString();
+                    string makt = gridView_khachthue.GetRowCellValue(i, "MAKT1").ToString();
+                    string tenkt = gridView_khachthue.GetRowCellValue(i, "TENKT1").ToString();
+                    string GT = gridView_khachthue.GetRowCellValue(i, "GIOITINH1").ToString();
+                    string SDT = gridView_khachthue.GetRowCellValue(i, "SDT1").ToString();
+                    string SOCMND = gridView_khachthue.GetRowCellValue(i, "SOCMND1").ToString();
+                    string NGAYSINH = gridView_khachthue.GetRowCellValue(i, "NGAYSINH1").ToString().Substring(0, 11);
+                    string QUEQUAN = gridView_khachthue.GetRowCellValue(i, "QUEQUAN1").ToString();
+                    string MAPHONG = gridView_khachthue.GetRowCellValue(i, "MAPHONG1").ToString();
                     string phong = bll_datphong.Laytenphongtheoma(MAPHONG);
-                    string tinhtrang = gridView_khachthue.GetRowCellValue(i, "TINHTRANGTAMTRU").ToString();
+                    string tinhtrang = gridView_khachthue.GetRowCellValue(i, "TINHTRANGTAMTRU1").ToString();
 
                     dynamic[] arr = { stt, makt,tenkt, GT, SDT, SOCMND, NGAYSINH, QUEQUAN,phong,tinhtrang };
                     Range rowData = ws.get_Range("A" + row, "J" + row);//Lấy dòng thứ row ra để đổ dữ liệu

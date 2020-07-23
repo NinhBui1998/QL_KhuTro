@@ -35,13 +35,13 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.txt_tongkhachthue = new System.Windows.Forms.TextBox();
             this.btn_tatcahd = new DevExpress.XtraEditors.SimpleButton();
-            this.label6 = new System.Windows.Forms.Label();
             this.btn_timkiem = new DevExpress.XtraEditors.SimpleButton();
             this.cbo_phong = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_tongkhachthue = new System.Windows.Forms.TextBox();
             this.txt_toongslkhachtrongphong = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
@@ -157,13 +157,13 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.77712F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.48371F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.73917F));
-            this.tableLayoutPanel4.Controls.Add(this.txt_tongkhachthue, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.btn_tatcahd, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label6, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.btn_timkiem, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.cbo_phong, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.txt_toongslkhachtrongphong, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.label6, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.txt_tongkhachthue, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.txt_toongslkhachtrongphong, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel4.ForeColor = System.Drawing.Color.Black;
@@ -175,15 +175,6 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 72F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(284, 177);
             this.tableLayoutPanel4.TabIndex = 0;
-            // 
-            // txt_tongkhachthue
-            // 
-            this.txt_tongkhachthue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_tongkhachthue.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tongkhachthue.Location = new System.Drawing.Point(141, 56);
-            this.txt_tongkhachthue.Name = "txt_tongkhachthue";
-            this.txt_tongkhachthue.Size = new System.Drawing.Size(35, 27);
-            this.txt_tongkhachthue.TabIndex = 16;
             // 
             // btn_tatcahd
             // 
@@ -197,18 +188,6 @@
             this.btn_tatcahd.TabIndex = 13;
             this.btn_tatcahd.Text = "Tất cả";
             this.btn_tatcahd.Click += new System.EventHandler(this.btn_tatcahd_Click);
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 51);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(132, 38);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Tổng số khách thuê trong nhà trọ";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btn_timkiem
             // 
@@ -231,24 +210,46 @@
             this.cbo_phong.Size = new System.Drawing.Size(132, 27);
             this.cbo_phong.TabIndex = 11;
             // 
-            // label3
+            // label6
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 121);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 38);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Số lượng khách thuê trong phòng";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 121);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(132, 38);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Tổng số khách thuê trong nhà trọ";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txt_tongkhachthue
+            // 
+            this.txt_tongkhachthue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_tongkhachthue.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tongkhachthue.Location = new System.Drawing.Point(141, 127);
+            this.txt_tongkhachthue.Name = "txt_tongkhachthue";
+            this.txt_tongkhachthue.Size = new System.Drawing.Size(35, 27);
+            this.txt_tongkhachthue.TabIndex = 16;
             // 
             // txt_toongslkhachtrongphong
             // 
             this.txt_toongslkhachtrongphong.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_toongslkhachtrongphong.Location = new System.Drawing.Point(141, 127);
+            this.txt_toongslkhachtrongphong.Location = new System.Drawing.Point(141, 56);
             this.txt_toongslkhachtrongphong.Name = "txt_toongslkhachtrongphong";
             this.txt_toongslkhachtrongphong.Size = new System.Drawing.Size(34, 27);
             this.txt_toongslkhachtrongphong.TabIndex = 15;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(132, 38);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Số lượng khách thuê trong phòng";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // groupBox2
             // 
@@ -377,7 +378,7 @@
             // MAKT
             // 
             this.MAKT.Caption = "Mã khách thuê";
-            this.MAKT.FieldName = "MAKT";
+            this.MAKT.FieldName = "MAKT1";
             this.MAKT.Name = "MAKT";
             this.MAKT.Visible = true;
             this.MAKT.VisibleIndex = 0;
@@ -385,7 +386,7 @@
             // TENKT
             // 
             this.TENKT.Caption = "Tên khách thuê";
-            this.TENKT.FieldName = "TENKT";
+            this.TENKT.FieldName = "TENKT1";
             this.TENKT.Name = "TENKT";
             this.TENKT.Visible = true;
             this.TENKT.VisibleIndex = 1;
@@ -393,7 +394,7 @@
             // GIOITINH
             // 
             this.GIOITINH.Caption = "Giới tính";
-            this.GIOITINH.FieldName = "GIOITINH";
+            this.GIOITINH.FieldName = "GIOITINH1";
             this.GIOITINH.Name = "GIOITINH";
             this.GIOITINH.Visible = true;
             this.GIOITINH.VisibleIndex = 2;
@@ -401,7 +402,7 @@
             // ANH
             // 
             this.ANH.Caption = "Ảnh";
-            this.ANH.FieldName = "ANH";
+            this.ANH.FieldName = "ANH1";
             this.ANH.Name = "ANH";
             this.ANH.Visible = true;
             this.ANH.VisibleIndex = 3;
@@ -409,7 +410,7 @@
             // SDT
             // 
             this.SDT.Caption = "Số điện thoại";
-            this.SDT.FieldName = "SDT";
+            this.SDT.FieldName = "SDT1";
             this.SDT.Name = "SDT";
             this.SDT.Visible = true;
             this.SDT.VisibleIndex = 4;
@@ -417,7 +418,7 @@
             // QUEQUAN
             // 
             this.QUEQUAN.Caption = "Quê quán";
-            this.QUEQUAN.FieldName = "QUEQUAN";
+            this.QUEQUAN.FieldName = "QUEQUAN1";
             this.QUEQUAN.Name = "QUEQUAN";
             this.QUEQUAN.Visible = true;
             this.QUEQUAN.VisibleIndex = 5;
@@ -425,7 +426,7 @@
             // SOCMND
             // 
             this.SOCMND.Caption = "Số CMND";
-            this.SOCMND.FieldName = "SOCMND";
+            this.SOCMND.FieldName = "SOCMND1";
             this.SOCMND.Name = "SOCMND";
             this.SOCMND.Visible = true;
             this.SOCMND.VisibleIndex = 6;
@@ -435,7 +436,7 @@
             this.NGAYSINH.Caption = "Ngày sinh";
             this.NGAYSINH.DisplayFormat.FormatString = "d";
             this.NGAYSINH.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.NGAYSINH.FieldName = "NGAYSINH";
+            this.NGAYSINH.FieldName = "NGAYSINH1";
             this.NGAYSINH.Name = "NGAYSINH";
             this.NGAYSINH.Visible = true;
             this.NGAYSINH.VisibleIndex = 7;
@@ -443,7 +444,7 @@
             // TRUONGPHONG
             // 
             this.TRUONGPHONG.Caption = "Trưởng phòng";
-            this.TRUONGPHONG.FieldName = "TRUONGPHONG";
+            this.TRUONGPHONG.FieldName = "TRUONGPHONG1";
             this.TRUONGPHONG.Name = "TRUONGPHONG";
             this.TRUONGPHONG.Visible = true;
             this.TRUONGPHONG.VisibleIndex = 8;
@@ -451,7 +452,7 @@
             // MAPHONG
             // 
             this.MAPHONG.Caption = "Mã phòng";
-            this.MAPHONG.FieldName = "MAPHONG";
+            this.MAPHONG.FieldName = "MAPHONG1";
             this.MAPHONG.Name = "MAPHONG";
             this.MAPHONG.Visible = true;
             this.MAPHONG.VisibleIndex = 9;
@@ -459,7 +460,7 @@
             // gridColumn8
             // 
             this.gridColumn8.Caption = "Tình trạng đăng ký tạm trú";
-            this.gridColumn8.FieldName = "TINHTRANGTAMTRU";
+            this.gridColumn8.FieldName = "TINHTRANGTAMTRU1";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 10;
@@ -535,7 +536,6 @@
         private System.Windows.Forms.ComboBox cbo_phong;
         private DevExpress.XtraEditors.SimpleButton btn_timkiem;
         private DevExpress.XtraEditors.SimpleButton btn_tatcahd;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_toongslkhachtrongphong;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
@@ -561,5 +561,6 @@
         private System.Windows.Forms.TextBox txt_tongkhachthue;
         private System.Windows.Forms.Label label6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private System.Windows.Forms.Label label2;
     }
 }

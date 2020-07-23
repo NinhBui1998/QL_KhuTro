@@ -112,7 +112,7 @@ namespace QuanLyKhuTro.NghiepVu
                 txt_noidung.Text = gridView_ViPham.GetRowCellValue(position, "Noidung").ToString();
                 txt_mavp.Text= gridView_ViPham.GetRowCellValue(position, "MAVIPHAM1").ToString();
                 makt= gridView_ViPham.GetRowCellValue(position, "Makt").ToString();
-                txt_tienphat.Text = gridView_ViPham.GetRowCellValue(position, "TIENPHAT1").ToString();
+                txt_tienphat.Text = String.Format("{0:#,##0.##}", gridView_ViPham.GetRowCellValue(position, "TIENPHAT1"));
                 txt_ngayvipham.Text= gridView_ViPham.GetRowCellValue(position, "Ngayvipham").ToString();
 
                 btn_sua.Enabled = true;
@@ -223,7 +223,7 @@ namespace QuanLyKhuTro.NghiepVu
         }
         private void cbb_manoiquy_Click(object sender, EventArgs e)
         {
-            if (cbb_manoiquy.Text.Length > 0)
+            if (cbb_manoiquy.SelectedValue !=null)
             {
                 NOIQUY nq = new NOIQUY();
                 nq = dal_vipham.loadnoiquy(cbb_manoiquy.Text);
@@ -510,7 +510,8 @@ namespace QuanLyKhuTro.NghiepVu
             string NgayViPham = txt_ngayvipham.Text;
             string NoiDung = txt_noidung.Text;
             string HinhPhat = txt_tienphat.Text;
-            we.ThongTinViPham(TenKT, socmnd, NgayViPham, NoiDung, HinhPhat);
+            string SoLan = txt_solan.Text;
+            we.ThongTinViPham(TenKT, socmnd, NgayViPham, NoiDung, HinhPhat,SoLan);
         }
     }
 }

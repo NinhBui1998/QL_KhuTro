@@ -217,7 +217,7 @@ namespace QuanLyKhuTro
 
         private void btn_dangxuat_ItemClick(object sender, ItemClickEventArgs e)
         {
-            this.Close();
+            Program.frm_dn.Show();
         }
 
         private void btn_thannhan_ItemClick(object sender, ItemClickEventArgs e)
@@ -346,9 +346,14 @@ namespace QuanLyKhuTro
         private void frm_main_FormClosing(object sender, FormClosingEventArgs e)
         {
             frm_dangnhap frm = new frm_dangnhap();
-            
+
             Visible = false;
             frm.ShowDialog();
+
+
+            //e.Cancel = true;
+            //Program.frm_dn.Show();
+
         }
 
         private void btn_qlhopdong_ItemClick(object sender, ItemClickEventArgs e)
@@ -377,6 +382,11 @@ namespace QuanLyKhuTro
             //frm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             //frm.Dock = DockStyle.Fill;
             //frm.Show();
+        }
+
+        private void frm_main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //Program.frm_dn.Show();
         }
     }
 }

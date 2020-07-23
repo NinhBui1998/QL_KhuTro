@@ -210,39 +210,43 @@ namespace QuanLyKhuTro.NghiepVu
 
         private void grv_traphong_Click(object sender, EventArgs e)
         {
-            HOPDONG hd = new HOPDONG();
-           
-            TraPhong tp = new TraPhong();
-            PHONG p = new PHONG();
-            int position = gridView_traphong.FocusedRowHandle;
-            try
+            if(gridView_traphong.RowCount>0)
             {
+                HOPDONG hd = new HOPDONG();
 
-                tp.Mahd = gridView_traphong.GetRowCellValue(position, "Mahd").ToString();
-                //  p.MAPHONG = gridView_traphong.GetRowCellValue(position, "Maphong").ToString();
-                tp.Makt = gridView_traphong.GetRowCellValue(position, "Makt").ToString();
-                tp.Tenkt = gridView_traphong.GetRowCellValue(position, "Tenkt").ToString();
-                tp.Ngaylap = Convert.ToDateTime(gridView_traphong.GetRowCellValue(position, "Ngaylap").ToString());
-              //  tp.Ngaytra = Convert.ToDateTime(gridView_traphong.GetRowCellValue(position, "Ngaytra").ToString());
-
-
-                txt_mahd.Text = tp.Mahd.ToString();
-                // txt_maphong.Text = p.MAPHONG.ToString();
-                txt_makt.Text = tp.Makt.ToString();
-                txt_tenkt.Text = tp.Tenkt.ToString();
-                txt_ngaylap.Text = tp.Ngaylap.ToString();
-             //   txt_ngaytra.Text = tp.Ngaytra.ToString();
-                if (ckb_tracoc.Checked == true)
+                TraPhong tp = new TraPhong();
+                PHONG p = new PHONG();
+                int position = gridView_traphong.FocusedRowHandle;
+                try
                 {
-                    ckb_tracoc.Text = "Rồi";
-                }
-                else
-                {
-                    ckb_tracoc.Text = "Chưa";
-                }
 
-            }
-            catch { }
+                    tp.Mahd = gridView_traphong.GetRowCellValue(position, "Mahd").ToString();
+                    //  p.MAPHONG = gridView_traphong.GetRowCellValue(position, "Maphong").ToString();
+                    tp.Makt = gridView_traphong.GetRowCellValue(position, "Makt").ToString();
+                    tp.Tenkt = gridView_traphong.GetRowCellValue(position, "Tenkt").ToString();
+                    tp.Ngaylap = Convert.ToDateTime(gridView_traphong.GetRowCellValue(position, "Ngaylap").ToString());
+                    //  tp.Ngaytra = Convert.ToDateTime(gridView_traphong.GetRowCellValue(position, "Ngaytra").ToString());
+
+
+                    txt_mahd.Text = tp.Mahd.ToString();
+                    // txt_maphong.Text = p.MAPHONG.ToString();
+                    txt_makt.Text = tp.Makt.ToString();
+                    txt_tenkt.Text = tp.Tenkt.ToString();
+                    txt_ngaylap.Text = tp.Ngaylap.ToString();
+                    //   txt_ngaytra.Text = tp.Ngaytra.ToString();
+                    //if (ckb_tracoc.Checked == true)
+                    //{
+                    //    ckb_tracoc.Text = "Rồi";
+                    //}
+                    //else
+                    //{
+                    //    ckb_tracoc.Text = "Chưa";
+                    //}
+
+                }
+                catch { }
+            }  
+            
         }
 
         private void btn_tatcahd_Click(object sender, EventArgs e)
@@ -563,14 +567,14 @@ namespace QuanLyKhuTro.NghiepVu
 
         private void ckb_tracoc_CheckedChanged(object sender, EventArgs e)
         {
-            if(ckb_tracoc.Checked==true)
-            {
-                ckb_tracoc.Text = "Đã trả cọc";
-            }
-            else
-            {
-                ckb_tracoc.Text = "Chưa trả cọc";
-            }    
+            //if(ckb_tracoc.Checked==true)
+            //{
+            //    ckb_tracoc.Text = "Đã trả cọc";
+            //}
+            //else
+            //{
+            //    ckb_tracoc.Text = "Chưa trả cọc";
+            //}    
         }
     }
 }

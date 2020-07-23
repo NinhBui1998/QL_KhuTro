@@ -40,19 +40,7 @@ namespace QuanLyKhuTro.DuLieu
                     sqlconn.Open();
                 }
 
-                //string sql2 = string.Format("alter databse [" + sqlconn.Database + "] set single_user with rollback immediate");
-                //SqlCommand cmd1 = new SqlCommand(sql2, sqlconn);
-                //cmd1.ExecuteNonQuery();
-
-                //string sql3 = string.Format("use master restore database  [" + sqlconn.Database + "] from disk='" + txt_links + "'with replace;");
-                //SqlCommand cmd2 = new SqlCommand(sql2, sqlconn);
-                //cmd2.ExecuteNonQuery();
-
-                //string sql4 = string.Format("alter databse [" + sqlconn.Database + "] set multi_user");
-                //SqlCommand cmd3 = new SqlCommand(sql2, sqlconn);
-                //cmd3.ExecuteNonQuery();
-
-                string st = "USE [master] RESTORE DATABASE [QL_NHATRO] FROM DISK = N'" + txt_links.Text + "'with replace";
+                string st = "USE [master] RESTORE DATABASE [DLDEMO] FROM DISK = N'" + txt_links.Text + "'with replace";
                 SqlCommand cmd = new SqlCommand(st, sqlconn);
                 cmd.ExecuteNonQuery();
                 if (sqlconn.State == ConnectionState.Open)
