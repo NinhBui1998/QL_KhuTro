@@ -175,7 +175,8 @@ namespace QuanLyKhuTro.NghiepVu
         {
            
             btn_xoa.Enabled = btn_sua.Enabled = true;
-            btn_them.Enabled = true;
+            btn_them.Enabled = false;
+            btn_huy.Enabled = true;
             int position = gridView_cocphong.FocusedRowHandle;
             try
             {

@@ -64,10 +64,11 @@
             // 
             // txt_matkhau
             // 
-            this.txt_matkhau.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_matkhau.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_matkhau.Location = new System.Drawing.Point(145, 81);
             this.txt_matkhau.Multiline = true;
             this.txt_matkhau.Name = "txt_matkhau";
+            this.txt_matkhau.PasswordChar = '*';
             this.txt_matkhau.Size = new System.Drawing.Size(282, 32);
             this.txt_matkhau.TabIndex = 2;
             this.txt_matkhau.Text = "123456789";
@@ -86,11 +87,11 @@
             // 
             this.lbl_matkhau.AutoSize = true;
             this.lbl_matkhau.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_matkhau.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_matkhau.Location = new System.Drawing.Point(77, 89);
+            this.lbl_matkhau.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_matkhau.Location = new System.Drawing.Point(72, 84);
             this.lbl_matkhau.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_matkhau.Name = "lbl_matkhau";
-            this.lbl_matkhau.Size = new System.Drawing.Size(64, 17);
+            this.lbl_matkhau.Size = new System.Drawing.Size(71, 19);
             this.lbl_matkhau.TabIndex = 3;
             this.lbl_matkhau.Text = "Mật khẩu";
             // 
@@ -98,11 +99,11 @@
             // 
             this.lbl_taikhoan.AutoSize = true;
             this.lbl_taikhoan.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_taikhoan.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_taikhoan.Location = new System.Drawing.Point(74, 49);
+            this.lbl_taikhoan.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_taikhoan.Location = new System.Drawing.Point(69, 44);
             this.lbl_taikhoan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_taikhoan.Name = "lbl_taikhoan";
-            this.lbl_taikhoan.Size = new System.Drawing.Size(66, 17);
+            this.lbl_taikhoan.Size = new System.Drawing.Size(74, 19);
             this.lbl_taikhoan.TabIndex = 4;
             this.lbl_taikhoan.Text = "Tài khoản";
             // 
@@ -112,13 +113,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Stretch;
             this.BackgroundImageStore = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImageStore")));
-            this.ClientSize = new System.Drawing.Size(511, 236);
+            this.ClientSize = new System.Drawing.Size(547, 262);
             this.Controls.Add(this.btn_huy);
             this.Controls.Add(this.btn_dangnhap);
             this.Controls.Add(this.txt_matkhau);
             this.Controls.Add(this.txt_taikhoan);
             this.Controls.Add(this.lbl_matkhau);
             this.Controls.Add(this.lbl_taikhoan);
+            this.DoubleBuffered = true;
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frm_dangnhap.IconOptions.LargeImage")));
             this.Name = "frm_dangnhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

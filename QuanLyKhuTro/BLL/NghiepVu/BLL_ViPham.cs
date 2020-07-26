@@ -13,11 +13,11 @@ namespace BLL
     {
         DAL_ViPham vp = new DAL_ViPham();
 
-        public List<ViPham> LoadViPham()
+        public List<Vipham> LoadViPham()
         {
             return vp.loadvipham();
         }
-        public List<ViPham> Loadviphamtheoma(string pmakt)
+        public List<Vipham> Loadviphamtheoma(string pmakt)
         {
             return vp.loadviphamtheoma(pmakt);
         }

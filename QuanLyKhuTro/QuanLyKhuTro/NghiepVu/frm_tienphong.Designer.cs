@@ -248,7 +248,7 @@
             this.cbo_maphong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_maphong.DisplayMember = "MAPHONG";
             this.cbo_maphong.FormattingEnabled = true;
-            this.cbo_maphong.Location = new System.Drawing.Point(126, 49);
+            this.cbo_maphong.Location = new System.Drawing.Point(126, 46);
             this.cbo_maphong.Name = "cbo_maphong";
             this.cbo_maphong.Size = new System.Drawing.Size(411, 27);
             this.cbo_maphong.TabIndex = 5;
@@ -262,7 +262,7 @@
             this.cbo_tang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_tang.DisplayMember = "MAPHONG";
             this.cbo_tang.FormattingEnabled = true;
-            this.cbo_tang.Location = new System.Drawing.Point(126, 9);
+            this.cbo_tang.Location = new System.Drawing.Point(126, 6);
             this.cbo_tang.Name = "cbo_tang";
             this.cbo_tang.Size = new System.Drawing.Size(411, 27);
             this.cbo_tang.TabIndex = 5;
@@ -1129,8 +1129,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1202, 722);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frm_tienphong.IconOptions.LargeImage")));
             this.Name = "frm_tienphong";
-            this.Text = "frm_tienphong";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_tienphong_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

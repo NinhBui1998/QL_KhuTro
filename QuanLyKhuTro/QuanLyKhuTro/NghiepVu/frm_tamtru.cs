@@ -13,6 +13,7 @@ using BLL.NghiepVu;
 using Excel = Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Interop.Excel;
 using System.IO;
+using DAL.HeThong;
 
 namespace QuanLyKhuTro.NghiepVu
 {
@@ -31,7 +32,7 @@ namespace QuanLyKhuTro.NghiepVu
         string MaNV;
 
         public string Manv { get => MaNV; set => MaNV = value; }
-
+        DAL_LoadKhachThue dal_kt = new DAL_LoadKhachThue();
         private void frm_tamtru_Load(object sender, EventArgs e)
         {
             
@@ -39,8 +40,8 @@ namespace QuanLyKhuTro.NghiepVu
             cbo_phong.DisplayMember = "TENPHONG";
             cbo_phong.ValueMember = "MAPHONG";
 
-            grv_khachthue.DataSource = bll_khachthue.loadBangKT();
-
+            //grv_khachthue.DataSource = bll_khachthue.loadBangKT();
+            grv_khachthue.DataSource = dal_kt.loadkhachthue();
             txt_manv.Text = MaNV;
             txt_ngaylamgiay.Text = DateTime.Now.ToShortDateString();
             grv_tamtru.DataSource = bll_tamtru.Loadtamtru();
@@ -92,7 +93,7 @@ namespace QuanLyKhuTro.NghiepVu
                     KHACHTHUE kt = new KHACHTHUE();
                     int position = gridView_kt.FocusedRowHandle;
                    
-                        string MAKT = gridView_kt.GetRowCellValue(position, "MAKT").ToString();
+                        string MAKT = gridView_kt.GetRowCellValue(position, "MAKT1").ToString();
                         kt.MAKT = MAKT;
 
                     DateTime ngaydk = Convert.ToDateTime(DateTime.Now.ToShortDateString());
@@ -243,7 +244,7 @@ namespace QuanLyKhuTro.NghiepVu
             int position = gridView_kt.FocusedRowHandle;
             try
             {
-               string MAKT = gridView_kt.GetRowCellValue(position, "MAKT").ToString();
+               string MAKT = gridView_kt.GetRowCellValue(position, "MAKT1").ToString();
                 txt_makt.Text = MAKT;
                 grv_tamtru.DataSource = bll_tamtru.Loadtamtrukt(MAKT);
             }

@@ -95,6 +95,7 @@ namespace QuanLyKhuTro.NghiepVu
         DAL_KHACHTHUEPHONG dal_ktp = new DAL_KHACHTHUEPHONG();
         private void btn_taohd_Click(object sender, EventArgs e)
         {
+           
             if (txt_makt.Text == string.Empty && txt_mahd.Text == string.Empty
                     && txt_manv.Text == string.Empty && txt_tenkt.Text == string.Empty && txt_ngaykt.Text==string.Empty)
             {

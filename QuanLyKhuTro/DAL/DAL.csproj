@@ -54,7 +54,8 @@
     <Compile Include="Model\Thannhantamtru.cs" />
     <Compile Include="Model\Thongkekhach.cs" />
     <Compile Include="Model\Thongkephong.cs" />
-    <Compile Include="Model\ViPham.cs" />
+    <Compile Include="Model\thietbi.cs" />
+    <Compile Include="Model\Vipham.cs" />
     <Compile Include="NghiepVu\DAL_ChiSoDienNuoc.cs" />
     <Compile Include="NghiepVu\DAL_CocPhong.cs" />
     <Compile Include="NghiepVu\DAL_DatPhong.cs" />

@@ -73,6 +73,16 @@ namespace QuanLyKhuTro.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap br {
+            get {
+                object obj = ResourceManager.GetObject("br", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dauX {
             get {
                 object obj = ResourceManager.GetObject("dauX", resourceCulture);

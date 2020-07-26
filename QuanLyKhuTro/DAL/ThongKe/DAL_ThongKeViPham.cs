@@ -10,7 +10,7 @@ namespace DAL.ThongKe
     public class DAL_ThongKeViPham
     {
         QL_KhuTroDataContext data = new QL_KhuTroDataContext();
-        public List<ViPham> loadtkvipham()
+        public List<Vipham> loadtkvipham()
         {
             var kt = from s in data.KHACHTHUEs
                      from k in data.VIPHAMs
@@ -34,7 +34,7 @@ namespace DAL.ThongKe
                          kth.NOIDUNG,
                          kth.HINHPHAT
                      };
-            var kq = kt.ToList().ConvertAll(t => new ViPham()
+            var kq = kt.ToList().ConvertAll(t => new Vipham()
             {
                 MAVIPHAM1 = t.MAVIPHAM,
                 Manoiquy = t.MANOIQUY,
@@ -51,11 +51,11 @@ namespace DAL.ThongKe
                 TENPHONG1=t.TENPHONG,
 
             }); ;
-            kq.ToList<ViPham>();
+            kq.ToList<Vipham>();
             return kq;
         }
 
-        public List<ViPham> loadtkviphamtheothang(int thang)
+        public List<Vipham> loadtkviphamtheothang(int thang)
         {
             var kt = from s in data.KHACHTHUEs
                      from k in data.VIPHAMs
@@ -80,7 +80,7 @@ namespace DAL.ThongKe
                          kth.NOIDUNG,
                          kth.HINHPHAT
                      };
-            var kq = kt.ToList().ConvertAll(t => new ViPham()
+            var kq = kt.ToList().ConvertAll(t => new Vipham()
             {
                 MAVIPHAM1 = t.MAVIPHAM,
                 Manoiquy = t.MANOIQUY,
@@ -97,10 +97,10 @@ namespace DAL.ThongKe
                 TENPHONG1 = t.TENPHONG,
 
             }); ;
-            kq.ToList<ViPham>();
+            kq.ToList<Vipham>();
             return kq;
         }
-        public List<ViPham> loadtkviphamtheonam(int nam)
+        public List<Vipham> loadtkviphamtheonam(int nam)
         {
             var kt = from s in data.KHACHTHUEs
                      from k in data.VIPHAMs
@@ -125,7 +125,7 @@ namespace DAL.ThongKe
                          kth.NOIDUNG,
                          kth.HINHPHAT
                      };
-            var kq = kt.ToList().ConvertAll(t => new ViPham()
+            var kq = kt.ToList().ConvertAll(t => new Vipham()
             {
                 MAVIPHAM1 = t.MAVIPHAM,
                 Manoiquy = t.MANOIQUY,
@@ -142,10 +142,10 @@ namespace DAL.ThongKe
                 TENPHONG1 = t.TENPHONG,
 
             }); ;
-            kq.ToList<ViPham>();
+            kq.ToList<Vipham>();
             return kq;
         }
-        public List<ViPham> loadtkviphamtheothangnam(DateTime thangnam)
+        public List<Vipham> loadtkviphamtheothangnam(DateTime thangnam)
         {
             var kt = from s in data.KHACHTHUEs
                      from k in data.VIPHAMs
@@ -170,7 +170,7 @@ namespace DAL.ThongKe
                          kth.NOIDUNG,
                          kth.HINHPHAT
                      };
-            var kq = kt.ToList().ConvertAll(t => new ViPham()
+            var kq = kt.ToList().ConvertAll(t => new Vipham()
             {
                 MAVIPHAM1 = t.MAVIPHAM,
                 Manoiquy = t.MANOIQUY,
@@ -187,11 +187,11 @@ namespace DAL.ThongKe
                 TENPHONG1 = t.TENPHONG,
 
             }); ;
-            kq.ToList<ViPham>();
+            kq.ToList<Vipham>();
             return kq;
         }
      
-        public List<ViPham> loadtkviphamtheoquy(DateTime? tuthang, DateTime? denthang)
+        public List<Vipham> loadtkviphamtheoquy(DateTime? tuthang, DateTime? denthang)
         {
             var kt = from s in data.KHACHTHUEs
                      from k in data.VIPHAMs
@@ -216,7 +216,7 @@ namespace DAL.ThongKe
                          kth.NOIDUNG,
                          kth.HINHPHAT
                      };
-            var kq = kt.ToList().ConvertAll(t => new ViPham()
+            var kq = kt.ToList().ConvertAll(t => new Vipham()
             {
                 MAVIPHAM1 = t.MAVIPHAM,
                 Manoiquy = t.MANOIQUY,
@@ -233,7 +233,7 @@ namespace DAL.ThongKe
                 TENPHONG1 = t.TENPHONG,
 
             }); ;
-            kq.ToList<ViPham>();
+            kq.ToList<Vipham>();
             return kq;
         }
 

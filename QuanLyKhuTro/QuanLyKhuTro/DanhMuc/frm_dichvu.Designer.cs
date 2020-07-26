@@ -124,7 +124,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.43956F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 197F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.56044F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(417, 480);
@@ -136,9 +136,9 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Red;
-            this.groupBox1.Location = new System.Drawing.Point(3, 371);
+            this.groupBox1.Location = new System.Drawing.Point(3, 356);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(411, 106);
+            this.groupBox1.Size = new System.Drawing.Size(411, 121);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức năng";
@@ -156,7 +156,7 @@
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(405, 77);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(405, 92);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // tableLayoutPanel5
@@ -174,7 +174,7 @@
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(399, 32);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(399, 40);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // btn_them
@@ -185,7 +185,7 @@
             this.btn_them.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_them.ImageOptions.SvgImage")));
             this.btn_them.Location = new System.Drawing.Point(3, 3);
             this.btn_them.Name = "btn_them";
-            this.btn_them.Size = new System.Drawing.Size(127, 26);
+            this.btn_them.Size = new System.Drawing.Size(127, 33);
             this.btn_them.TabIndex = 0;
             this.btn_them.Text = "Thêm";
             this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
@@ -198,7 +198,7 @@
             this.btn_sua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_sua.ImageOptions.SvgImage")));
             this.btn_sua.Location = new System.Drawing.Point(269, 3);
             this.btn_sua.Name = "btn_sua";
-            this.btn_sua.Size = new System.Drawing.Size(127, 26);
+            this.btn_sua.Size = new System.Drawing.Size(127, 34);
             this.btn_sua.TabIndex = 1;
             this.btn_sua.Text = "Sửa";
             this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
@@ -211,7 +211,7 @@
             this.btn_xoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_xoa.ImageOptions.SvgImage")));
             this.btn_xoa.Location = new System.Drawing.Point(136, 3);
             this.btn_xoa.Name = "btn_xoa";
-            this.btn_xoa.Size = new System.Drawing.Size(127, 26);
+            this.btn_xoa.Size = new System.Drawing.Size(127, 34);
             this.btn_xoa.TabIndex = 0;
             this.btn_xoa.Text = "Xóa";
             this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
@@ -224,12 +224,12 @@
             this.tableLayoutPanel6.Controls.Add(this.btn_huy, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.btn_luu, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 41);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 49);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(399, 33);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(399, 40);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // btn_huy
@@ -241,7 +241,7 @@
             this.btn_huy.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_huy.ImageOptions.SvgImage")));
             this.btn_huy.Location = new System.Drawing.Point(99, 3);
             this.btn_huy.Name = "btn_huy";
-            this.btn_huy.Size = new System.Drawing.Size(97, 27);
+            this.btn_huy.Size = new System.Drawing.Size(97, 34);
             this.btn_huy.TabIndex = 3;
             this.btn_huy.Text = "Hủy";
             this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
@@ -255,7 +255,7 @@
             this.btn_luu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_luu.ImageOptions.SvgImage")));
             this.btn_luu.Location = new System.Drawing.Point(202, 3);
             this.btn_luu.Name = "btn_luu";
-            this.btn_luu.Size = new System.Drawing.Size(97, 27);
+            this.btn_luu.Size = new System.Drawing.Size(97, 34);
             this.btn_luu.TabIndex = 2;
             this.btn_luu.Text = "Lưu";
             this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
@@ -268,7 +268,7 @@
             this.grb_thongtindichvu.ForeColor = System.Drawing.Color.Red;
             this.grb_thongtindichvu.Location = new System.Drawing.Point(3, 3);
             this.grb_thongtindichvu.Name = "grb_thongtindichvu";
-            this.grb_thongtindichvu.Size = new System.Drawing.Size(411, 165);
+            this.grb_thongtindichvu.Size = new System.Drawing.Size(411, 187);
             this.grb_thongtindichvu.TabIndex = 5;
             this.grb_thongtindichvu.TabStop = false;
             this.grb_thongtindichvu.Text = "Thông tin dịch vụ";
@@ -296,13 +296,13 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(405, 136);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(405, 158);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // txt_donvi
             // 
             this.txt_donvi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_donvi.Location = new System.Drawing.Point(120, 105);
+            this.txt_donvi.Location = new System.Drawing.Point(120, 124);
             this.txt_donvi.Name = "txt_donvi";
             this.txt_donvi.Size = new System.Drawing.Size(282, 27);
             this.txt_donvi.TabIndex = 4;
@@ -311,7 +311,7 @@
             // 
             this.lbl_dichvu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_dichvu.AutoSize = true;
-            this.lbl_dichvu.Location = new System.Drawing.Point(3, 7);
+            this.lbl_dichvu.Location = new System.Drawing.Point(3, 10);
             this.lbl_dichvu.Name = "lbl_dichvu";
             this.lbl_dichvu.Size = new System.Drawing.Size(111, 19);
             this.lbl_dichvu.TabIndex = 0;
@@ -321,7 +321,7 @@
             // 
             this.lbl_tendichvu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_tendichvu.AutoSize = true;
-            this.lbl_tendichvu.Location = new System.Drawing.Point(3, 41);
+            this.lbl_tendichvu.Location = new System.Drawing.Point(3, 49);
             this.lbl_tendichvu.Name = "lbl_tendichvu";
             this.lbl_tendichvu.Size = new System.Drawing.Size(111, 19);
             this.lbl_tendichvu.TabIndex = 1;
@@ -330,7 +330,7 @@
             // txt_madichvu
             // 
             this.txt_madichvu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_madichvu.Location = new System.Drawing.Point(120, 3);
+            this.txt_madichvu.Location = new System.Drawing.Point(120, 6);
             this.txt_madichvu.Name = "txt_madichvu";
             this.txt_madichvu.Size = new System.Drawing.Size(282, 27);
             this.txt_madichvu.TabIndex = 2;
@@ -338,7 +338,7 @@
             // txt_tendichvu
             // 
             this.txt_tendichvu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_tendichvu.Location = new System.Drawing.Point(120, 37);
+            this.txt_tendichvu.Location = new System.Drawing.Point(120, 45);
             this.txt_tendichvu.Name = "txt_tendichvu";
             this.txt_tendichvu.Size = new System.Drawing.Size(282, 27);
             this.txt_tendichvu.TabIndex = 2;
@@ -347,7 +347,7 @@
             // 
             this.lbl_gia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_gia.AutoSize = true;
-            this.lbl_gia.Location = new System.Drawing.Point(3, 75);
+            this.lbl_gia.Location = new System.Drawing.Point(3, 88);
             this.lbl_gia.Name = "lbl_gia";
             this.lbl_gia.Size = new System.Drawing.Size(111, 19);
             this.lbl_gia.TabIndex = 1;
@@ -356,7 +356,7 @@
             // txt_gia
             // 
             this.txt_gia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_gia.Location = new System.Drawing.Point(120, 71);
+            this.txt_gia.Location = new System.Drawing.Point(120, 84);
             this.txt_gia.Name = "txt_gia";
             this.txt_gia.Size = new System.Drawing.Size(282, 27);
             this.txt_gia.TabIndex = 2;
@@ -365,7 +365,7 @@
             // 
             this.lbl_donvi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_donvi.AutoSize = true;
-            this.lbl_donvi.Location = new System.Drawing.Point(3, 109);
+            this.lbl_donvi.Location = new System.Drawing.Point(3, 128);
             this.lbl_donvi.Name = "lbl_donvi";
             this.lbl_donvi.Size = new System.Drawing.Size(111, 19);
             this.lbl_donvi.TabIndex = 1;
@@ -377,9 +377,9 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.Red;
-            this.groupBox4.Location = new System.Drawing.Point(3, 174);
+            this.groupBox4.Location = new System.Drawing.Point(3, 196);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(411, 191);
+            this.groupBox4.Size = new System.Drawing.Size(411, 154);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thông tin dịch vụ điện";
@@ -405,14 +405,14 @@
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(405, 162);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(405, 125);
             this.tableLayoutPanel9.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 8);
+            this.label2.Location = new System.Drawing.Point(3, 1);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 38);
             this.label2.TabIndex = 0;
@@ -422,7 +422,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 71);
+            this.label3.Location = new System.Drawing.Point(3, 52);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(110, 19);
             this.label3.TabIndex = 1;
@@ -431,7 +431,7 @@
             // txt_madvd
             // 
             this.txt_madvd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_madvd.Location = new System.Drawing.Point(119, 13);
+            this.txt_madvd.Location = new System.Drawing.Point(119, 7);
             this.txt_madvd.Name = "txt_madvd";
             this.txt_madvd.Size = new System.Drawing.Size(283, 27);
             this.txt_madvd.TabIndex = 2;
@@ -439,7 +439,7 @@
             // txt_luytuyen
             // 
             this.txt_luytuyen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_luytuyen.Location = new System.Drawing.Point(119, 67);
+            this.txt_luytuyen.Location = new System.Drawing.Point(119, 48);
             this.txt_luytuyen.Name = "txt_luytuyen";
             this.txt_luytuyen.Size = new System.Drawing.Size(283, 27);
             this.txt_luytuyen.TabIndex = 2;
@@ -448,7 +448,7 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 125);
+            this.label4.Location = new System.Drawing.Point(3, 94);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 19);
             this.label4.TabIndex = 1;
@@ -457,7 +457,7 @@
             // txt_giadvd
             // 
             this.txt_giadvd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_giadvd.Location = new System.Drawing.Point(119, 121);
+            this.txt_giadvd.Location = new System.Drawing.Point(119, 90);
             this.txt_giadvd.Name = "txt_giadvd";
             this.txt_giadvd.Size = new System.Drawing.Size(283, 27);
             this.txt_giadvd.TabIndex = 2;

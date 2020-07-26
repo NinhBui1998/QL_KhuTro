@@ -1,9 +1,8 @@
-﻿using System;
+﻿using DAL;
+using DAL.Model;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DAL;
+
 namespace BLL
 {
     public class BLL_ThietBi
@@ -47,10 +46,31 @@ namespace BLL
         {
             return thietbi.loadbangThietBiPhong();
         }
+        public List<THIETBI_PHONG> loadBang_TBPhong(string pma)
+        {
+            return thietbi.loadbangThietBiPhong(pma);
+        }
+        public List<THIETBI_PHONG> loadbangThietBiPhongtheomaphong(string pma)
+        {
+            
+            return thietbi.loadbangThietBiPhongtheomaphong(pma);
+        }
         //kiểm tra khóa chính
         public bool ktkc_ThietBiphong(string pMa, string pmaphong)
         {
-            return thietbi.ktakhoachinh_ThietBiphong(pMa,pmaphong);
+            return thietbi.ktakhoachinh_ThietBiphong(pMa, pmaphong);
+        }
+        public List<thietbi> loadthietbihuhaitheophong(string pma)
+        {
+            return thietbi.loadthietbihuhaitheophong(pma);
+        }
+        public List<thietbi>loadhuhai(string pma)
+        {
+            return thietbi.loadthietbihuhaitheophong1(pma);
+        }
+        public List<THIETBI_PHONG> loadthietbihuhai()
+        {
+            return thietbi.loadthietbihuhai();
         }
         //Thêm
         public bool them_ThietBiphong(THIETBI_PHONG pThietBi)
@@ -58,11 +78,11 @@ namespace BLL
             return thietbi.them_ThietBiphong(pThietBi);
         }
         //ktra xóa
-     
+
         //Xóa
         public bool xoa_ThietBiphong(string pMa, string pmaphong)
         {
-            return thietbi.xoa_ThietBiphong(pMa,pmaphong);
+            return thietbi.xoa_ThietBiphong(pMa, pmaphong);
         }
         //Sửa
         public bool sua_ThietBiphong(THIETBI_PHONG pThietBi)

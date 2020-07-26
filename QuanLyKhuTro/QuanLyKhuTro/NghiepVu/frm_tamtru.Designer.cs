@@ -73,6 +73,7 @@
             this.btn_tatcahd = new DevExpress.XtraEditors.SimpleButton();
             this.btn_timkiem = new DevExpress.XtraEditors.SimpleButton();
             this.cbo_phong = new System.Windows.Forms.ComboBox();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.grv_khachthue = new DevExpress.XtraGrid.GridControl();
             this.gridView_kt = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Makhachthue = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -81,7 +82,6 @@
             this.Quequan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Maphong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -581,11 +581,11 @@
             // tableLayoutPanel10
             // 
             this.tableLayoutPanel10.ColumnCount = 5;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.21548F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.78451F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.0598F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.9402F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 176F));
             this.tableLayoutPanel10.Controls.Add(this.btn_tatcahd, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.btn_timkiem, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.cbo_phong, 0, 0);
@@ -604,9 +604,9 @@
             this.btn_tatcahd.Appearance.Options.UseFont = true;
             this.btn_tatcahd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_tatcahd.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_tatcahd.ImageOptions.SvgImage")));
-            this.btn_tatcahd.Location = new System.Drawing.Point(292, 3);
+            this.btn_tatcahd.Location = new System.Drawing.Point(300, 3);
             this.btn_tatcahd.Name = "btn_tatcahd";
-            this.btn_tatcahd.Size = new System.Drawing.Size(95, 44);
+            this.btn_tatcahd.Size = new System.Drawing.Size(112, 44);
             this.btn_tatcahd.TabIndex = 10;
             this.btn_tatcahd.Text = "Tất cả";
             this.btn_tatcahd.Click += new System.EventHandler(this.btn_tatcahd_Click);
@@ -617,20 +617,34 @@
             this.btn_timkiem.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_timkiem.Appearance.Options.UseFont = true;
             this.btn_timkiem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_timkiem.ImageOptions.SvgImage")));
-            this.btn_timkiem.Location = new System.Drawing.Point(258, 14);
+            this.btn_timkiem.Location = new System.Drawing.Point(247, 11);
             this.btn_timkiem.Name = "btn_timkiem";
-            this.btn_timkiem.Size = new System.Drawing.Size(28, 21);
+            this.btn_timkiem.Size = new System.Drawing.Size(47, 27);
             this.btn_timkiem.TabIndex = 8;
             this.btn_timkiem.Click += new System.EventHandler(this.btn_timkiem_Click);
             // 
             // cbo_phong
             // 
             this.cbo_phong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbo_phong.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_phong.FormattingEnabled = true;
-            this.cbo_phong.Location = new System.Drawing.Point(3, 14);
+            this.cbo_phong.Location = new System.Drawing.Point(3, 11);
             this.cbo_phong.Name = "cbo_phong";
-            this.cbo_phong.Size = new System.Drawing.Size(249, 21);
+            this.cbo_phong.Size = new System.Drawing.Size(238, 27);
             this.cbo_phong.TabIndex = 4;
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.simpleButton3.Location = new System.Drawing.Point(483, 3);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(171, 44);
+            this.simpleButton3.TabIndex = 11;
+            this.simpleButton3.Text = "Xuất danh sách tạm trú";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // grv_khachthue
             // 
@@ -659,7 +673,7 @@
             // Makhachthue
             // 
             this.Makhachthue.Caption = "Mã khách thuê";
-            this.Makhachthue.FieldName = "MAKT";
+            this.Makhachthue.FieldName = "MAKT1";
             this.Makhachthue.Name = "Makhachthue";
             this.Makhachthue.Visible = true;
             this.Makhachthue.VisibleIndex = 0;
@@ -667,7 +681,7 @@
             // Tenkhachthue
             // 
             this.Tenkhachthue.Caption = "Tên khách thuê";
-            this.Tenkhachthue.FieldName = "TENKT";
+            this.Tenkhachthue.FieldName = "TENKT1";
             this.Tenkhachthue.Name = "Tenkhachthue";
             this.Tenkhachthue.Visible = true;
             this.Tenkhachthue.VisibleIndex = 1;
@@ -675,7 +689,7 @@
             // Sochungminh
             // 
             this.Sochungminh.Caption = "Số chứng minh";
-            this.Sochungminh.FieldName = "SOCMND";
+            this.Sochungminh.FieldName = "SOCMND1";
             this.Sochungminh.Name = "Sochungminh";
             this.Sochungminh.Visible = true;
             this.Sochungminh.VisibleIndex = 2;
@@ -683,7 +697,7 @@
             // Quequan
             // 
             this.Quequan.Caption = "Quê quán";
-            this.Quequan.FieldName = "QUEQUAN";
+            this.Quequan.FieldName = "QUEQUAN1";
             this.Quequan.Name = "Quequan";
             this.Quequan.Visible = true;
             this.Quequan.VisibleIndex = 3;
@@ -691,7 +705,7 @@
             // Maphong
             // 
             this.Maphong.Caption = "Mã phòng";
-            this.Maphong.FieldName = "MAPHONG";
+            this.Maphong.FieldName = "MAPHONG1";
             this.Maphong.Name = "Maphong";
             this.Maphong.Visible = true;
             this.Maphong.VisibleIndex = 4;
@@ -699,23 +713,10 @@
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Tình trạng tạm trú";
-            this.gridColumn3.FieldName = "TINHTRANGTAMTRU";
+            this.gridColumn3.FieldName = "TINHTRANGTAMTRU1";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 5;
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
-            this.simpleButton3.Location = new System.Drawing.Point(489, 3);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(165, 44);
-            this.simpleButton3.TabIndex = 11;
-            this.simpleButton3.Text = "Xuất danh sách tạm trú";
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // frm_tamtru
             // 
@@ -724,7 +725,6 @@
             this.ClientSize = new System.Drawing.Size(1066, 479);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frm_tamtru";
-            this.Text = "frm_tamtru";
             this.Load += new System.EventHandler(this.frm_tamtru_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

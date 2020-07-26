@@ -25,5 +25,10 @@ namespace QuanLyKhuTro.NghiepVu
         {
             grv_datphong.DataSource = datphong.LoadDatPhong();
         }
+
+        private void btn_tatcahd_Click(object sender, EventArgs e)
+        {
+            grv_datphong.DataSource = datphong.LoadDatPhong();
+        }
     }
 }

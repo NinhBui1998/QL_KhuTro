@@ -1,6 +1,8 @@
-﻿using System;
+﻿using DAL.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -52,6 +54,13 @@ namespace DAL
             {
                 return false;
             }
+        }
+        public List<THIETBI_PHONG> loadthietbihuhai()
+        {
+            var kq = (from tb in data.THIETBI_PHONGs
+                      where tb.TRANGTHAI == "Hư hỏng"
+                      select tb).ToList<THIETBI_PHONG>();
+            return kq;
         }
 
         //Thêm
@@ -132,6 +141,20 @@ namespace DAL
             var dulieu = (from s in data.THIETBI_PHONGs select s);
             return dulieu.ToList<THIETBI_PHONG>();
         }
+        public List<THIETBI_PHONG> loadbangThietBiPhong(string pma)
+        {
+            var dulieu = (from s in data.THIETBI_PHONGs 
+                          where s.MAPHONG==pma select s);
+            return dulieu.ToList<THIETBI_PHONG>();
+        }
+
+        public List<THIETBI_PHONG> loadbangThietBiPhongtheomaphong(string pma)
+        {
+            var dulieu = (from s in data.THIETBI_PHONGs 
+                          where s.MAPHONG==pma
+                          select s);
+            return dulieu.ToList<THIETBI_PHONG>();
+        }
         public bool them_ThietBiphong(THIETBI_PHONG tb)
         {
             try
@@ -180,6 +203,46 @@ namespace DAL
             {
                 return false;
             }
+        }
+        public List<thietbi> loadthietbihuhaitheophong(string pma)
+        {
+            var kt = from t in data.THIETBIs
+                     from tb in data.THIETBI_PHONGs
+                     where t.MATHIETBI ==tb.MATHIETBI && tb.MAPHONG==pma
+                     select new
+                     {
+                         tb.MATHIETBI,
+                         t.TENTB,
+                         t.GIADENBUHUHAI,
+                     };
+            var kq = kt.ToList().ConvertAll(t => new thietbi()
+            {
+                MATB1=t.MATHIETBI,
+                TENTB1=t.TENTB,
+                GIADENBU1=Convert.ToDecimal(t.GIADENBUHUHAI),
+            });
+            kq.ToList<thietbi>();
+            return kq;
+        }
+        public List<thietbi> loadthietbihuhaitheophong1(string pma)
+        {
+            var kt = from t in data.THIETBIs
+                     from tb in data.THIETBI_PHONGs
+                     where t.MATHIETBI == tb.MATHIETBI && tb.MAPHONG == pma && tb.TRANGTHAI== "Hư hỏng"
+                     select new
+                     {
+                         tb.MATHIETBI,
+                         t.TENTB,
+                         t.GIADENBUHUHAI,
+                     };
+            var kq = kt.ToList().ConvertAll(t => new thietbi()
+            {
+                MATB1 = t.MATHIETBI,
+                TENTB1 = t.TENTB,
+                GIADENBU1 = Convert.ToDecimal(t.GIADENBUHUHAI),
+            });
+            kq.ToList<thietbi>();
+            return kq;
         }
     }
 }

@@ -14,6 +14,7 @@ using DAL.Model;
 using DevExpress.Utils.Extensions;
 using BLL.NghiepVu;
 using DAL.DuLieu;
+using QuanLyKhuTro.DanhMuc;
 
 namespace QuanLyKhuTro.NghiepVu
 {
@@ -55,11 +56,12 @@ namespace QuanLyKhuTro.NghiepVu
         {
             InitializeComponent();
         }
-       
+        BLL_ThietBi bll_thietbi = new BLL_ThietBi();
         private void frm_traphong_Load(object sender, EventArgs e)
         {
             DateTime d = DateTime.Now;
-          
+
+            grv_thietbi.DataSource = bll_thietbi.loadthietbihuhaitheophong(datphong.laymaphong(Ten));
             txt_tenphong.Text = Ten;
             grv_traphong.DataSource = traphong.LoadTraPhongtheoten(Ten);
             txt_maphong.Text = datphong.laymaphong(txt_tenphong.Text);
@@ -575,6 +577,14 @@ namespace QuanLyKhuTro.NghiepVu
             //{
             //    ckb_tracoc.Text = "Chưa trả cọc";
             //}    
+        }
+
+        private void btn_thietbi_Click(object sender, EventArgs e)
+        {
+            frm_thietbiphong frm = new frm_thietbiphong();
+            frm.Maphong1 = txt_maphong.Text;
+            frm.ShowDialog();
+            grv_thietbi.DataSource = bll_thietbi.loadhuhai(datphong.laymaphong(Ten));
         }
     }
 }

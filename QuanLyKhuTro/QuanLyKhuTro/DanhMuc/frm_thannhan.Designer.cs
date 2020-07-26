@@ -203,9 +203,9 @@
             this.btn_them.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_them.Appearance.Options.UseFont = true;
             this.btn_them.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_them.ImageOptions.SvgImage")));
-            this.btn_them.Location = new System.Drawing.Point(3, 8);
+            this.btn_them.Location = new System.Drawing.Point(3, 4);
             this.btn_them.Name = "btn_them";
-            this.btn_them.Size = new System.Drawing.Size(138, 27);
+            this.btn_them.Size = new System.Drawing.Size(138, 35);
             this.btn_them.TabIndex = 0;
             this.btn_them.Text = "Thêm";
             this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
@@ -216,9 +216,9 @@
             this.btn_sua.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_sua.Appearance.Options.UseFont = true;
             this.btn_sua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_sua.ImageOptions.SvgImage")));
-            this.btn_sua.Location = new System.Drawing.Point(291, 8);
+            this.btn_sua.Location = new System.Drawing.Point(291, 3);
             this.btn_sua.Name = "btn_sua";
-            this.btn_sua.Size = new System.Drawing.Size(140, 27);
+            this.btn_sua.Size = new System.Drawing.Size(140, 38);
             this.btn_sua.TabIndex = 1;
             this.btn_sua.Text = "Sửa";
             this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
@@ -230,9 +230,9 @@
             this.btn_xoa.Appearance.Options.UseFont = true;
             this.btn_xoa.Enabled = false;
             this.btn_xoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_xoa.ImageOptions.SvgImage")));
-            this.btn_xoa.Location = new System.Drawing.Point(147, 8);
+            this.btn_xoa.Location = new System.Drawing.Point(147, 3);
             this.btn_xoa.Name = "btn_xoa";
-            this.btn_xoa.Size = new System.Drawing.Size(138, 27);
+            this.btn_xoa.Size = new System.Drawing.Size(138, 38);
             this.btn_xoa.TabIndex = 0;
             this.btn_xoa.Text = "Xóa";
             // 
@@ -259,9 +259,9 @@
             this.btn_huy.Appearance.Options.UseFont = true;
             this.btn_huy.Enabled = false;
             this.btn_huy.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_huy.ImageOptions.SvgImage")));
-            this.btn_huy.Location = new System.Drawing.Point(117, 9);
+            this.btn_huy.Location = new System.Drawing.Point(117, 3);
             this.btn_huy.Name = "btn_huy";
-            this.btn_huy.Size = new System.Drawing.Size(97, 27);
+            this.btn_huy.Size = new System.Drawing.Size(97, 39);
             this.btn_huy.TabIndex = 3;
             this.btn_huy.Text = "Hủy";
             this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
@@ -273,9 +273,9 @@
             this.btn_luu.Appearance.Options.UseFont = true;
             this.btn_luu.Enabled = false;
             this.btn_luu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_luu.ImageOptions.SvgImage")));
-            this.btn_luu.Location = new System.Drawing.Point(220, 9);
+            this.btn_luu.Location = new System.Drawing.Point(220, 3);
             this.btn_luu.Name = "btn_luu";
-            this.btn_luu.Size = new System.Drawing.Size(97, 27);
+            this.btn_luu.Size = new System.Drawing.Size(97, 39);
             this.btn_luu.TabIndex = 2;
             this.btn_luu.Text = "Lưu";
             this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
@@ -312,7 +312,7 @@
             this.tableLayoutPanel9.ColumnCount = 3;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.37598F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.62402F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel9.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.label4, 0, 1);
             this.tableLayoutPanel9.Controls.Add(this.txt_ngayvao, 1, 0);
@@ -355,7 +355,7 @@
             this.txt_ngayvao.Location = new System.Drawing.Point(133, 8);
             this.txt_ngayvao.Mask = "00/00/0000";
             this.txt_ngayvao.Name = "txt_ngayvao";
-            this.txt_ngayvao.Size = new System.Drawing.Size(266, 27);
+            this.txt_ngayvao.Size = new System.Drawing.Size(265, 27);
             this.txt_ngayvao.TabIndex = 4;
             this.txt_ngayvao.ValidatingType = typeof(System.DateTime);
             this.txt_ngayvao.Validating += new System.ComponentModel.CancelEventHandler(this.txt_ngayvao_Validating);
@@ -366,7 +366,7 @@
             this.txt_ngayra.Location = new System.Drawing.Point(133, 51);
             this.txt_ngayra.Mask = "00/00/0000";
             this.txt_ngayra.Name = "txt_ngayra";
-            this.txt_ngayra.Size = new System.Drawing.Size(266, 27);
+            this.txt_ngayra.Size = new System.Drawing.Size(265, 27);
             this.txt_ngayra.TabIndex = 4;
             this.txt_ngayra.ValidatingType = typeof(System.DateTime);
             // 
@@ -375,7 +375,7 @@
             this.tableLayoutPanel7.ColumnCount = 3;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.84615F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.15385F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel7.Controls.Add(this.lbl_manv, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.lbl_tennv, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.txt_matn, 1, 0);
@@ -423,7 +423,7 @@
             this.txt_matn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_matn.Location = new System.Drawing.Point(155, 9);
             this.txt_matn.Name = "txt_matn";
-            this.txt_matn.Size = new System.Drawing.Size(245, 27);
+            this.txt_matn.Size = new System.Drawing.Size(244, 27);
             this.txt_matn.TabIndex = 2;
             // 
             // txt_tentn
@@ -431,7 +431,7 @@
             this.txt_tentn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_tentn.Location = new System.Drawing.Point(155, 55);
             this.txt_tentn.Name = "txt_tentn";
-            this.txt_tentn.Size = new System.Drawing.Size(245, 27);
+            this.txt_tentn.Size = new System.Drawing.Size(244, 27);
             this.txt_tentn.TabIndex = 2;
             this.txt_tentn.Validating += new System.ComponentModel.CancelEventHandler(this.txt_tentn_Validating);
             // 
@@ -461,7 +461,7 @@
             this.txt_scm.Location = new System.Drawing.Point(155, 101);
             this.txt_scm.MaxLength = 9;
             this.txt_scm.Name = "txt_scm";
-            this.txt_scm.Size = new System.Drawing.Size(245, 27);
+            this.txt_scm.Size = new System.Drawing.Size(244, 27);
             this.txt_scm.TabIndex = 2;
             this.txt_scm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_scm_KeyPress);
             this.txt_scm.Validating += new System.ComponentModel.CancelEventHandler(this.txt_scm_Validating);
@@ -602,7 +602,7 @@
             // 
             this.cbo_phong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_phong.FormattingEnabled = true;
-            this.cbo_phong.Location = new System.Drawing.Point(154, 10);
+            this.cbo_phong.Location = new System.Drawing.Point(154, 7);
             this.cbo_phong.Name = "cbo_phong";
             this.cbo_phong.Size = new System.Drawing.Size(311, 27);
             this.cbo_phong.TabIndex = 3;
@@ -612,7 +612,7 @@
             // 
             this.cbo_makt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_makt.FormattingEnabled = true;
-            this.cbo_makt.Location = new System.Drawing.Point(154, 48);
+            this.cbo_makt.Location = new System.Drawing.Point(154, 45);
             this.cbo_makt.Name = "cbo_makt";
             this.cbo_makt.Size = new System.Drawing.Size(311, 27);
             this.cbo_makt.TabIndex = 4;

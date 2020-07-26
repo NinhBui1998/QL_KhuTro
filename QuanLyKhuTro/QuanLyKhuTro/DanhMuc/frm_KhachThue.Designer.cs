@@ -165,7 +165,7 @@
             this.tableLayoutPanel8.ColumnCount = 3;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.36246F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.63754F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
             this.tableLayoutPanel8.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel8.Controls.Add(this.label3, 0, 3);
             this.tableLayoutPanel8.Controls.Add(this.label5, 0, 5);
@@ -271,7 +271,7 @@
             this.txt_makt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_makt.Location = new System.Drawing.Point(112, 44);
             this.txt_makt.Name = "txt_makt";
-            this.txt_makt.Size = new System.Drawing.Size(233, 30);
+            this.txt_makt.Size = new System.Drawing.Size(232, 30);
             this.txt_makt.TabIndex = 1;
             // 
             // txt_tenkt
@@ -279,7 +279,7 @@
             this.txt_tenkt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_tenkt.Location = new System.Drawing.Point(112, 82);
             this.txt_tenkt.Name = "txt_tenkt";
-            this.txt_tenkt.Size = new System.Drawing.Size(233, 30);
+            this.txt_tenkt.Size = new System.Drawing.Size(232, 30);
             this.txt_tenkt.TabIndex = 1;
             // 
             // txt_sdt
@@ -288,7 +288,7 @@
             this.txt_sdt.Location = new System.Drawing.Point(112, 156);
             this.txt_sdt.MaxLength = 10;
             this.txt_sdt.Name = "txt_sdt";
-            this.txt_sdt.Size = new System.Drawing.Size(233, 30);
+            this.txt_sdt.Size = new System.Drawing.Size(232, 30);
             this.txt_sdt.TabIndex = 1;
             this.txt_sdt.TextChanged += new System.EventHandler(this.txt_sdt_TextChanged);
             this.txt_sdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sdt_KeyPress);
@@ -300,7 +300,7 @@
             this.txt_quequan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_quequan.Location = new System.Drawing.Point(112, 191);
             this.txt_quequan.Name = "txt_quequan";
-            this.txt_quequan.Size = new System.Drawing.Size(233, 30);
+            this.txt_quequan.Size = new System.Drawing.Size(232, 30);
             this.txt_quequan.TabIndex = 1;
             // 
             // txt_cmnd
@@ -309,7 +309,7 @@
             this.txt_cmnd.Location = new System.Drawing.Point(112, 228);
             this.txt_cmnd.MaxLength = 9;
             this.txt_cmnd.Name = "txt_cmnd";
-            this.txt_cmnd.Size = new System.Drawing.Size(233, 30);
+            this.txt_cmnd.Size = new System.Drawing.Size(232, 30);
             this.txt_cmnd.TabIndex = 1;
             this.txt_cmnd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sdt_KeyPress);
             this.txt_cmnd.Leave += new System.EventHandler(this.txt_cmnd_Leave);
@@ -321,7 +321,7 @@
             this.txt_ngaysinh.Location = new System.Drawing.Point(112, 268);
             this.txt_ngaysinh.Mask = "00/00/0000";
             this.txt_ngaysinh.Name = "txt_ngaysinh";
-            this.txt_ngaysinh.Size = new System.Drawing.Size(233, 30);
+            this.txt_ngaysinh.Size = new System.Drawing.Size(232, 30);
             this.txt_ngaysinh.TabIndex = 2;
             this.txt_ngaysinh.ValidatingType = typeof(System.DateTime);
             // 
@@ -337,7 +337,7 @@
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(233, 33);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(232, 33);
             this.tableLayoutPanel9.TabIndex = 3;
             // 
             // rdb_nam
@@ -399,7 +399,7 @@
             this.txt_tenphong.Enabled = false;
             this.txt_tenphong.Location = new System.Drawing.Point(112, 5);
             this.txt_tenphong.Name = "txt_tenphong";
-            this.txt_tenphong.Size = new System.Drawing.Size(233, 30);
+            this.txt_tenphong.Size = new System.Drawing.Size(232, 30);
             this.txt_tenphong.TabIndex = 1;
             // 
             // label8
@@ -480,7 +480,7 @@
             this.txt_ghichu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_ghichu.Location = new System.Drawing.Point(112, 363);
             this.txt_ghichu.Name = "txt_ghichu";
-            this.txt_ghichu.Size = new System.Drawing.Size(233, 88);
+            this.txt_ghichu.Size = new System.Drawing.Size(232, 88);
             this.txt_ghichu.TabIndex = 5;
             this.txt_ghichu.Text = "";
             // 
@@ -678,15 +678,14 @@
             this.tableLayoutPanel10.Location = new System.Drawing.Point(410, 38);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 2;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.973059F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.02694F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.116643F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.88335F));
             this.tableLayoutPanel10.Size = new System.Drawing.Size(945, 703);
             this.tableLayoutPanel10.TabIndex = 2;
             // 
             // grv_khachthue
             // 
-            this.grv_khachthue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grv_khachthue.Location = new System.Drawing.Point(3, 52);
+            this.grv_khachthue.Location = new System.Drawing.Point(3, 45);
             this.grv_khachthue.MainView = this.gridView_khachthue;
             this.grv_khachthue.Name = "grv_khachthue";
             this.grv_khachthue.Size = new System.Drawing.Size(939, 648);
@@ -828,25 +827,26 @@
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 171F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 266F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel12.Controls.Add(this.cbo_phong, 0, 0);
             this.tableLayoutPanel12.Controls.Add(this.btn_tatcakt, 2, 0);
             this.tableLayoutPanel12.Controls.Add(this.btn_timkiem, 1, 0);
+            this.tableLayoutPanel12.Controls.Add(this.cbo_phong, 0, 0);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tableLayoutPanel12.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 1;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(707, 43);
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(707, 36);
             this.tableLayoutPanel12.TabIndex = 4;
             // 
             // cbo_phong
             // 
-            this.cbo_phong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbo_phong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbo_phong.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_phong.FormattingEnabled = true;
-            this.cbo_phong.Location = new System.Drawing.Point(3, 3);
+            this.cbo_phong.Location = new System.Drawing.Point(3, 6);
             this.cbo_phong.Name = "cbo_phong";
-            this.cbo_phong.Size = new System.Drawing.Size(194, 21);
+            this.cbo_phong.Size = new System.Drawing.Size(194, 27);
             this.cbo_phong.TabIndex = 3;
             // 
             // btn_tatcakt
@@ -856,7 +856,7 @@
             this.btn_tatcakt.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_tatcakt.ImageOptions.SvgImage")));
             this.btn_tatcakt.Location = new System.Drawing.Point(253, 3);
             this.btn_tatcakt.Name = "btn_tatcakt";
-            this.btn_tatcakt.Size = new System.Drawing.Size(165, 37);
+            this.btn_tatcakt.Size = new System.Drawing.Size(165, 30);
             this.btn_tatcakt.TabIndex = 7;
             this.btn_tatcakt.Text = "Tất cả khách thuê";
             this.btn_tatcakt.Click += new System.EventHandler(this.btn_tatcahd_Click);
@@ -868,7 +868,7 @@
             this.btn_timkiem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_timkiem.ImageOptions.SvgImage")));
             this.btn_timkiem.Location = new System.Drawing.Point(203, 3);
             this.btn_timkiem.Name = "btn_timkiem";
-            this.btn_timkiem.Size = new System.Drawing.Size(36, 23);
+            this.btn_timkiem.Size = new System.Drawing.Size(44, 30);
             this.btn_timkiem.TabIndex = 7;
             this.btn_timkiem.Click += new System.EventHandler(this.btn_timkiem_Click);
             // 

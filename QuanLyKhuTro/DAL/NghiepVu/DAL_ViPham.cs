@@ -10,7 +10,7 @@ namespace DAL.NghiepVu
     public class DAL_ViPham
     {
         QL_KhuTroDataContext data = new QL_KhuTroDataContext();
-        public List<ViPham> loadvipham()
+        public List<Vipham> loadvipham()
         {
             var kt = from s in data.KHACHTHUEs
                      from k in data.VIPHAMs
@@ -30,7 +30,7 @@ namespace DAL.NghiepVu
                          kth.NOIDUNG,
                          kth.HINHPHAT
                      };
-            var kq = kt.ToList().ConvertAll(t => new ViPham()
+            var kq = kt.ToList().ConvertAll(t => new Vipham()
             {
                 MAVIPHAM1=t.MAVIPHAM,
                 Manoiquy = t.MANOIQUY,
@@ -45,11 +45,11 @@ namespace DAL.NghiepVu
                 TIENPHAT1= Convert.ToDecimal(t.TIENPHAT),
 
             });; 
-            kq.ToList<ViPham>();
+            kq.ToList<Vipham>();
             return kq;
         }
 
-        public List<ViPham> loadviphamtheoma( string pmakt)
+        public List<Vipham> loadviphamtheoma( string pmakt)
         {
             var kt = from s in data.KHACHTHUEs
                      from k in data.VIPHAMs
@@ -69,7 +69,7 @@ namespace DAL.NghiepVu
                          kth.HINHPHAT,
                          k.TIENPHAT,
                      };
-            var kq = kt.ToList().ConvertAll(t => new ViPham()
+            var kq = kt.ToList().ConvertAll(t => new Vipham()
             {
                 MAVIPHAM1=t.MAVIPHAM,
                 Manoiquy = t.MANOIQUY,
@@ -83,7 +83,7 @@ namespace DAL.NghiepVu
                 Hinhphat = Convert.ToDecimal(t.HINHPHAT),
                 TIENPHAT1 = Convert.ToDecimal(t.TIENPHAT),
             });
-            kq.ToList<ViPham>();
+            kq.ToList<Vipham>();
             return kq;
         }
         public String laynoidung(string mMa)

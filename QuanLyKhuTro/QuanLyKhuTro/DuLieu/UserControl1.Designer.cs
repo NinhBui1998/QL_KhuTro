@@ -31,12 +31,13 @@
             this.btn_backup = new System.Windows.Forms.Button();
             this.btn_links = new System.Windows.Forms.Button();
             this.txt_links = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_backup
             // 
             this.btn_backup.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_backup.Location = new System.Drawing.Point(472, 88);
+            this.btn_backup.Location = new System.Drawing.Point(472, 114);
             this.btn_backup.Name = "btn_backup";
             this.btn_backup.Size = new System.Drawing.Size(98, 33);
             this.btn_backup.TabIndex = 5;
@@ -47,7 +48,7 @@
             // btn_links
             // 
             this.btn_links.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_links.Location = new System.Drawing.Point(472, 32);
+            this.btn_links.Location = new System.Drawing.Point(472, 58);
             this.btn_links.Name = "btn_links";
             this.btn_links.Size = new System.Drawing.Size(98, 33);
             this.btn_links.TabIndex = 4;
@@ -57,22 +58,35 @@
             // 
             // txt_links
             // 
-            this.txt_links.Location = new System.Drawing.Point(12, 33);
+            this.txt_links.Location = new System.Drawing.Point(12, 59);
             this.txt_links.Name = "txt_links";
             this.txt_links.Size = new System.Drawing.Size(434, 32);
             this.txt_links.TabIndex = 3;
             this.txt_links.Text = "";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(181, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(192, 25);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "SAO LƯU DỮ LIỆU";
+            // 
             // frm_backup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_backup);
             this.Controls.Add(this.btn_links);
             this.Controls.Add(this.txt_links);
             this.Name = "frm_backup";
-            this.Size = new System.Drawing.Size(597, 147);
+            this.Size = new System.Drawing.Size(620, 175);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -81,5 +95,6 @@
         private System.Windows.Forms.Button btn_backup;
         private System.Windows.Forms.Button btn_links;
         private System.Windows.Forms.RichTextBox txt_links;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -121,13 +121,16 @@
   <data name="giahan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\giahan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="dauX" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dauX.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="suachua" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\suachua.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="anh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\anh.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dauX" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dauX.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="br" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\br.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -12,7 +12,7 @@ using BLL;
 
 namespace QuanLyKhuTro.DanhMuc
 {
-    public partial class frm_thietbiphong : DevExpress.XtraEditors.XtraUserControl
+    public partial class frm_thietbiphong : DevExpress.XtraEditors.XtraForm
     {
         BLL_ThietBi bll_thietbi = new BLL_ThietBi();
         BLL_Phong bll_phong = new BLL_Phong();
@@ -20,10 +20,20 @@ namespace QuanLyKhuTro.DanhMuc
         {
             InitializeComponent();
         }
+        string Maphong;
+
+        public string Maphong1 { get => Maphong; set => Maphong = value; }
 
         private void frm_thietbiphong_Load(object sender, EventArgs e)
         {
-            
+            if(Maphong1!="")
+            {
+                grv_thietbiphong.DataSource = bll_thietbi.loadBang_TBPhong(Maphong1);
+            }
+            else
+            {
+                grv_thietbiphong.DataSource = bll_thietbi.loadBang_TBPhong();
+            }
             cbo_matb.DataSource = bll_thietbi.loadBang_TB();
             //cbo_matb.DisplayMember = "MATB";
             cbo_matb.ValueMember = "MATHIETBI";
@@ -31,7 +41,7 @@ namespace QuanLyKhuTro.DanhMuc
             cbo_tenphong.DataSource = bll_phong.loadBang_Phong();
             cbo_tenphong.DisplayMember = "TENPHONG";
             cbo_tenphong.ValueMember = "MAPHONG";
-            grv_thietbiphong.DataSource = bll_thietbi.loadBang_TBPhong();
+            
 
             btn_them.Enabled = true;
             btn_sua.Enabled = btn_xoa.Enabled = btn_xoa.Enabled = btn_luu.Enabled = false;
@@ -47,7 +57,7 @@ namespace QuanLyKhuTro.DanhMuc
 
         private void btn_huy_Click(object sender, EventArgs e)
         {
-            txt_tinhtrangtb.Clear();
+            //txt_tinhtrangtb.Clear();
             frm_thietbiphong_Load(sender,e);
         }
 
@@ -81,7 +91,7 @@ namespace QuanLyKhuTro.DanhMuc
             btn_luu.Enabled = btn_huy.Enabled = true;
             btn_sua.Enabled = btn_xoa.Enabled = false;
             txt_tinhtrangtb.Enabled = true;
-            txt_tinhtrangtb.Clear();
+            //txt_tinhtrangtb.Clear();
         }
 
         private void btn_luu_Click(object sender, EventArgs e)
@@ -126,7 +136,17 @@ namespace QuanLyKhuTro.DanhMuc
                     MessageBox.Show("Thất bại");
                 }
             }
-                    frm_thietbiphong_Load(sender,e);
+            //frm_thietbiphong_Load(sender,e);
+            cbo_matb.DataSource = bll_thietbi.loadBang_TB();
+            //cbo_matb.DisplayMember = "MATB";
+            cbo_matb.ValueMember = "MATHIETBI";
+
+            grv_thietbiphong.DataSource = bll_thietbi.loadBang_TBPhong();
+
+            btn_them.Enabled = true;
+            btn_sua.Enabled = btn_xoa.Enabled = btn_xoa.Enabled = btn_luu.Enabled = false;
+            txt_tentb.Enabled = false;
+            txt_tinhtrangtb.Enabled = false;
         }
 
         private void btn_sua_Click(object sender, EventArgs e)

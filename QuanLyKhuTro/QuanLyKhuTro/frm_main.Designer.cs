@@ -67,6 +67,7 @@
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.btn_qlhopdong = new DevExpress.XtraBars.BarButtonItem();
             this.btn_thietbi_phong = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -86,7 +87,6 @@
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.pnl_main = new System.Windows.Forms.Panel();
             this.btn_khachthue = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
@@ -450,6 +450,11 @@
             this.btn_thietbi_phong.Name = "btn_thietbi_phong";
             this.btn_thietbi_phong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_thietbi_phong_ItemClick);
             // 
+            // ribbonPageCategory1
+            // 
+            this.ribbonPageCategory1.Name = "ribbonPageCategory1";
+            this.ribbonPageCategory1.Text = "ribbonPageCategory1";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -465,7 +470,6 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btn_loaiphong);
             this.ribbonPageGroup1.ItemLinks.Add(this.btn_phong);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "Nhà trọ";
             // 
             // ribbonPageGroup7
             // 
@@ -574,6 +578,7 @@
             // pnl_main
             // 
             this.pnl_main.AutoSize = true;
+            this.pnl_main.BackgroundImage = global::QuanLyKhuTro.Properties.Resources.br;
             this.pnl_main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnl_main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_main.Location = new System.Drawing.Point(0, 158);
@@ -590,11 +595,6 @@
             this.btn_khachthue.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btn_khachthue.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_khachthue_ItemClick);
-            // 
-            // ribbonPageCategory1
-            // 
-            this.ribbonPageCategory1.Name = "ribbonPageCategory1";
-            this.ribbonPageCategory1.Text = "ribbonPageCategory1";
             // 
             // frm_main
             // 

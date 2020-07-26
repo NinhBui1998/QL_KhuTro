@@ -314,7 +314,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_tkphong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_tkphong";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_tkphong_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

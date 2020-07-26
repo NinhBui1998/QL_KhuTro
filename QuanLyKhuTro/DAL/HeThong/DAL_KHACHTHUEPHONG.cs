@@ -97,5 +97,20 @@ namespace DAL.NghiepVu
             }
 
         }
+        public bool ktkhachthue(string psdt)
+        {
+            var kq = (from p in data.KHACHTHUEs
+                      where p.SDT==psdt
+                      select p).Count();
+            if (kq > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
     }
 }

@@ -79,8 +79,8 @@
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 26);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 2;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.46106F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.53894F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.21378F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.78622F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(794, 421);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
@@ -99,8 +99,8 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(788, 46);
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(788, 37);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // txt_tongphong
@@ -108,7 +108,7 @@
             this.txt_tongphong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_tongphong.Enabled = false;
             this.txt_tongphong.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tongphong.Location = new System.Drawing.Point(125, 9);
+            this.txt_tongphong.Location = new System.Drawing.Point(125, 5);
             this.txt_tongphong.Name = "txt_tongphong";
             this.txt_tongphong.Size = new System.Drawing.Size(112, 27);
             this.txt_tongphong.TabIndex = 7;
@@ -118,7 +118,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 13);
+            this.label5.Location = new System.Drawing.Point(3, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 19);
             this.label5.TabIndex = 6;
@@ -130,10 +130,10 @@
             this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
+            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
             this.simpleButton3.Location = new System.Drawing.Point(636, 3);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(149, 40);
+            this.simpleButton3.Size = new System.Drawing.Size(149, 31);
             this.simpleButton3.TabIndex = 4;
             this.simpleButton3.Text = "Xuất danh sách phòng";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
@@ -142,9 +142,9 @@
             // 
             this.pnl_tkphong.Controls.Add(this.grv_tkphong);
             this.pnl_tkphong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_tkphong.Location = new System.Drawing.Point(3, 55);
+            this.pnl_tkphong.Location = new System.Drawing.Point(3, 46);
             this.pnl_tkphong.Name = "pnl_tkphong";
-            this.pnl_tkphong.Size = new System.Drawing.Size(788, 363);
+            this.pnl_tkphong.Size = new System.Drawing.Size(788, 372);
             this.pnl_tkphong.TabIndex = 2;
             // 
             // grv_tkphong
@@ -153,7 +153,7 @@
             this.grv_tkphong.Location = new System.Drawing.Point(0, 0);
             this.grv_tkphong.MainView = this.gridView3;
             this.grv_tkphong.Name = "grv_tkphong";
-            this.grv_tkphong.Size = new System.Drawing.Size(788, 363);
+            this.grv_tkphong.Size = new System.Drawing.Size(788, 372);
             this.grv_tkphong.TabIndex = 1;
             this.grv_tkphong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});

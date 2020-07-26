@@ -765,8 +765,8 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.39491F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.6051F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 296F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 191F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 263F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 228F));
             this.tableLayoutPanel10.Controls.Add(this.btn_tatcahd, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.btn_timkiem, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.cbo_phong, 0, 0);
@@ -785,7 +785,7 @@
             this.btn_tatcahd.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_tatcahd.Appearance.Options.UseFont = true;
             this.btn_tatcahd.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_tatcahd.ImageOptions.SvgImage")));
-            this.btn_tatcahd.Location = new System.Drawing.Point(277, 6);
+            this.btn_tatcahd.Location = new System.Drawing.Point(273, 6);
             this.btn_tatcahd.Name = "btn_tatcahd";
             this.btn_tatcahd.Size = new System.Drawing.Size(159, 40);
             this.btn_tatcahd.TabIndex = 10;
@@ -798,7 +798,7 @@
             this.btn_timkiem.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_timkiem.Appearance.Options.UseFont = true;
             this.btn_timkiem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_timkiem.ImageOptions.SvgImage")));
-            this.btn_timkiem.Location = new System.Drawing.Point(235, 6);
+            this.btn_timkiem.Location = new System.Drawing.Point(231, 6);
             this.btn_timkiem.Name = "btn_timkiem";
             this.btn_timkiem.Size = new System.Drawing.Size(36, 39);
             this.btn_timkiem.TabIndex = 8;
@@ -810,16 +810,16 @@
             this.cbo_phong.FormattingEnabled = true;
             this.cbo_phong.Location = new System.Drawing.Point(3, 12);
             this.cbo_phong.Name = "cbo_phong";
-            this.cbo_phong.Size = new System.Drawing.Size(226, 27);
+            this.cbo_phong.Size = new System.Drawing.Size(222, 27);
             this.cbo_phong.TabIndex = 4;
             // 
             // simpleButton1
             // 
             this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(750, 6);
+            this.simpleButton1.Location = new System.Drawing.Point(704, 6);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(174, 40);
+            this.simpleButton1.Size = new System.Drawing.Size(220, 40);
             this.simpleButton1.TabIndex = 14;
             this.simpleButton1.Text = "Xuất biên bản vi phạm";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -844,6 +844,7 @@
             this.ClientSize = new System.Drawing.Size(1378, 572);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frm_vipham.IconOptions.LargeImage")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_vipham";
             this.Load += new System.EventHandler(this.frm_vipham_Load);

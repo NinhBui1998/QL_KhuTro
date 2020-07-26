@@ -50,7 +50,7 @@
             this.cbo_matb = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_mathietbi = new System.Windows.Forms.Label();
-            this.txt_tinhtrangtb = new System.Windows.Forms.RichTextBox();
+            this.txt_tinhtrangtb = new System.Windows.Forms.ComboBox();
             this.grv_thietbiphong = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -95,7 +95,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 346F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 383F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1116, 383);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
@@ -158,7 +158,7 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(307, 46);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
@@ -214,7 +214,7 @@
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(307, 46);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
@@ -354,12 +354,16 @@
             // 
             // txt_tinhtrangtb
             // 
-            this.txt_tinhtrangtb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_tinhtrangtb.Location = new System.Drawing.Point(132, 153);
+            this.txt_tinhtrangtb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_tinhtrangtb.FormattingEnabled = true;
+            this.txt_tinhtrangtb.Items.AddRange(new object[] {
+            "Bình thường",
+            "Hư hỏng"});
+            this.txt_tinhtrangtb.Location = new System.Drawing.Point(132, 166);
             this.txt_tinhtrangtb.Name = "txt_tinhtrangtb";
-            this.txt_tinhtrangtb.Size = new System.Drawing.Size(178, 47);
-            this.txt_tinhtrangtb.TabIndex = 5;
-            this.txt_tinhtrangtb.Text = "";
+            this.txt_tinhtrangtb.Size = new System.Drawing.Size(178, 27);
+            this.txt_tinhtrangtb.TabIndex = 3;
+            this.txt_tinhtrangtb.Click += new System.EventHandler(this.cbo_matb_Click);
             // 
             // grv_thietbiphong
             // 
@@ -479,6 +483,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_tentb;
-        private System.Windows.Forms.RichTextBox txt_tinhtrangtb;
+        private System.Windows.Forms.ComboBox txt_tinhtrangtb;
     }
 }

@@ -374,14 +374,14 @@ namespace QuanLyKhuTro
         {
             frm_thietbiphong frm = new frm_thietbiphong();
 
-            //frm.TopLevel = false;
+            frm.TopLevel = false;
 
             pnl_main.Controls.Clear();
             pnl_main.Controls.Add(frm);
 
-            //frm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //frm.Dock = DockStyle.Fill;
-            //frm.Show();
+            frm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
         }
 
         private void frm_main_FormClosed(object sender, FormClosedEventArgs e)
