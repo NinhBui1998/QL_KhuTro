@@ -230,13 +230,13 @@ namespace QuanLyKhuTro.NghiepVu
 
         private void btn_tatcahd_Click(object sender, EventArgs e)
         {
-            grv_khachthue.DataSource = bll_khachthue.loadBangKT();
+            grv_khachthue.DataSource = dal_kt.loadkhachthue();
             grv_tamtru.DataSource = bll_tamtru.Loadtamtru();
         }
 
         private void btn_timkiem_Click(object sender, EventArgs e)
         {
-            grv_khachthue.DataSource = bll_khachthue.loadBangKTtheoma(cbo_phong.SelectedValue.ToString());
+            grv_khachthue.DataSource = dal_kt.loadkhachthuetheomaphong(cbo_phong.SelectedValue.ToString());
         }
 
         private void grv_khachthue_Click(object sender, EventArgs e)

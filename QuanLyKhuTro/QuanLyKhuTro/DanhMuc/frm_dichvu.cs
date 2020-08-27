@@ -41,6 +41,7 @@ namespace QuanLyKhuTro.DanhMuc
             txt_donvi.Clear();
             txt_tendichvu.Enabled=txt_gia.Enabled=txt_donvi.Enabled = true;
             txt_madichvu.Enabled = false;
+           
             //sinh mã
             string pos = gridView_DichVu.GetRowCellValue(gridView_DichVu.RowCount - 1, "MADV").ToString();
             pos = pos.Substring(2);
@@ -266,6 +267,46 @@ namespace QuanLyKhuTro.DanhMuc
         private void groupBox3_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt_giadvd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_giadvd_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                //địng dạng tiền tệ
+                System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+                decimal value = decimal.Parse(txt_giadvd.Text, System.Globalization.NumberStyles.AllowThousands);
+                txt_giadvd.Text = String.Format(culture, "{0:N0}", value);
+                //texbox1.Text = String.Format(culture, "{0:N0}", value);
+                txt_giadvd.Select(txt_giadvd.Text.Length, 0);
+            }
+            catch
+            {
+                return;
+            }
+        }
+
+        private void txt_gia_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                //địng dạng tiền tệ
+                System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+                decimal value = decimal.Parse(txt_gia.Text, System.Globalization.NumberStyles.AllowThousands);
+                txt_gia.Text = String.Format(culture, "{0:N0}", value);
+                //texbox1.Text = String.Format(culture, "{0:N0}", value);
+                txt_gia.Select(txt_gia.Text.Length, 0);
+            }
+            catch
+            {
+                return;
+            }
         }
     }
 }

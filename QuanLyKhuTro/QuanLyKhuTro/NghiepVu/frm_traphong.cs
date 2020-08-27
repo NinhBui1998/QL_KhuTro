@@ -15,6 +15,7 @@ using DevExpress.Utils.Extensions;
 using BLL.NghiepVu;
 using DAL.DuLieu;
 using QuanLyKhuTro.DanhMuc;
+using DevExpress.ClipboardSource.SpreadsheetML;
 
 namespace QuanLyKhuTro.NghiepVu
 {
@@ -129,6 +130,24 @@ namespace QuanLyKhuTro.NghiepVu
             catch { MessageBox.Show("Lỗi hệ thống"); }
         }
         DAL_SinhMa dal_sm = new DAL_SinhMa();
+        public bool suahopdong(HOPDONG phd)
+        {
+            try
+            {
+                HOPDONG nv = data.HOPDONGs.Where(t => t.MAHD == phd.MAHD).FirstOrDefault();
+                if (nv != null)
+                {
+
+                    nv.TINHTRANG = phd.TINHTRANG;
+                    data.SubmitChanges();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         private void btn_xacnhan_Click(object sender, EventArgs e)
         {
             DialogResult res;
@@ -152,6 +171,7 @@ namespace QuanLyKhuTro.NghiepVu
                         if (hopdong.sua_tinhtrangHopDong(hd) == true)
                         {
                             dal_sm.updatetinhtrangKT(hd.MAHD);
+                            
                             grv_traphong.DataSource = traphong.LoadTraPhong();
                         }
                         else
@@ -506,6 +526,13 @@ namespace QuanLyKhuTro.NghiepVu
                 return;
             }
         }    
+        public decimal laycoc(string mahd)
+        {
+            var kq = (from s in data.HOPDONGs
+                      where s.MAHD == mahd
+                      select s.TIENCOC).FirstOrDefault();
+            return Convert.ToDecimal( kq);
+        }
         private void btn_in_Click(object sender, EventArgs e)
         {
             int position = gridView_traphong.FocusedRowHandle;
@@ -524,10 +551,11 @@ namespace QuanLyKhuTro.NghiepVu
             string ngaytra = DateTime.Now.ToShortDateString();
             string tenphong = p.TENPHONG;
             string tenkt = Makt;
-            string tracoc = "Chưa";
+            string tracoc = "Đã trả cọc"+"-"+ (String.Format("{0:#,##0.##}", laycoc(mahd)));
             string CSDDau = txt_sodiendau.Text;
             string CSDCuoi = txt_sodiencuoi.Text;
             int sodien = Convert.ToInt32(txt_sodien.Text);
+
             //string DonGiaDien = "3,000";
             string DonGiaDien;
             if (sodien >= 0 && sodien <= 50)
@@ -561,10 +589,12 @@ namespace QuanLyKhuTro.NghiepVu
             string TienNuoc = txt_tiennuoc.Text;
             string DonGiaWifi = (String.Format("{0:#,##0.##}", Convert.ToDouble(bll_dichvu.loaddv("DV002"))).ToString());
             string DonGiaRac = (String.Format("{0:#,##0.##}", Convert.ToDouble(bll_dichvu.loaddv("DV003"))).ToString());
+            string Tentb = gridView1.GetRowCellValue(position, "TENTB1").ToString();
+            string gia = (String.Format("{0:#,##0.##}", Convert.ToDecimal(gridView1.GetRowCellValue(position, "GIADENBU1").ToString())));
             string TongTien = txt_tongtien.Text;
             we.ThongTinTraPhong(ngaytra, tenphong, tenkt, tracoc, CSDDau, CSDCuoi,
                 DonGiaDien, TienDien, CSNDau, CSNCuoi, DonGiaNuoc, TienNuoc, DonGiaWifi,
-                DonGiaRac, TongTien);
+                DonGiaRac, TongTien,Tentb,gia);
         }
 
         private void ckb_tracoc_CheckedChanged(object sender, EventArgs e)
@@ -585,6 +615,18 @@ namespace QuanLyKhuTro.NghiepVu
             frm.Maphong1 = txt_maphong.Text;
             frm.ShowDialog();
             grv_thietbi.DataSource = bll_thietbi.loadhuhai(datphong.laymaphong(Ten));
+        }
+
+        private void txt_sodiencuoi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_sonuoccuoi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

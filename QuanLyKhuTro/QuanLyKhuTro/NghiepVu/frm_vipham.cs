@@ -16,6 +16,7 @@ using Microsoft.Office.Interop.Excel;
 using System.IO;
 using DAL.DuLieu;
 using DAL.HeThong;
+using Syncfusion.XlsIO;
 
 namespace QuanLyKhuTro.NghiepVu
 {
@@ -36,13 +37,14 @@ namespace QuanLyKhuTro.NghiepVu
         private void frm_vipham_Load(object sender, EventArgs e)
         {
             txt_mavp.Text = bll_sm.Sinhma_vipham();
+            grv_khachthue.DataSource = dal_loadkt.loadkhachthuecono();
             //cbb_manoiquy.DataSource = bll_noiquy.loadBang_NoiQuy();
             cbb_manoiquy.DataSource = bll_vipham.loadBANGnoiquy();
-            cbb_manoiquy.ValueMember = "MANOIQUY";
+            //cbb_manoiquy.ValueMember = "MANOIQUY";
             cbb_manoiquy.DisplayMember = "MANOIQUY";
 
             grv_vipham.DataSource = bll_vipham.LoadViPham();
-            grv_khachthue.DataSource = dal_loadkt.loadkhachthuecono();
+         
             cbo_phong.DataSource = bll_phong.loadBang_Phong();
             cbo_phong.DisplayMember = "TENPHONG";
             cbo_phong.ValueMember = "MAPHONG";
@@ -103,25 +105,34 @@ namespace QuanLyKhuTro.NghiepVu
         string makt;
         private void grv_vipham_Click(object sender, EventArgs e)
         {
-            int position = gridView_ViPham.FocusedRowHandle;
-            try
+            if(gridView_ViPham.RowCount>0)
             {
-                txt_solan.Text = gridView_ViPham.GetRowCellValue(position, "Solan").ToString();
-               // txt_ghichu.Text = gridView_ViPham.GetRowCellValue(position, "Ghichu").ToString();
-                cbb_manoiquy.Text = gridView_ViPham.GetRowCellValue(position, "Manoiquy").ToString();
-                txt_noidung.Text = gridView_ViPham.GetRowCellValue(position, "Noidung").ToString();
-                txt_mavp.Text= gridView_ViPham.GetRowCellValue(position, "MAVIPHAM1").ToString();
-                makt= gridView_ViPham.GetRowCellValue(position, "Makt").ToString();
-                txt_tienphat.Text = String.Format("{0:#,##0.##}", gridView_ViPham.GetRowCellValue(position, "TIENPHAT1"));
-                txt_ngayvipham.Text= gridView_ViPham.GetRowCellValue(position, "Ngayvipham").ToString();
+  
+                int position = gridView_ViPham.FocusedRowHandle;
+                try
+                {
+                    txt_solan.Text = gridView_ViPham.GetRowCellValue(position, "Solan").ToString();
+                   // txt_ghichu.Text = gridView_ViPham.GetRowCellValue(position, "Ghichu").ToString();
+                    cbb_manoiquy.Text = gridView_ViPham.GetRowCellValue(position, "Manoiquy").ToString();
+                    txt_noidung.Text = gridView_ViPham.GetRowCellValue(position, "Noidung").ToString();
+                    txt_mavp.Text= gridView_ViPham.GetRowCellValue(position, "MAVIPHAM1").ToString();
+                    makt= gridView_ViPham.GetRowCellValue(position, "Makt").ToString();
+                    txt_tienphat.Text = String.Format("{0:#,##0.##}", gridView_ViPham.GetRowCellValue(position, "TIENPHAT1"));
+                    txt_ngayvipham.Text= gridView_ViPham.GetRowCellValue(position, "Ngayvipham").ToString();
 
-                btn_sua.Enabled = true;
-                btn_xoa.Enabled = true;
-                btn_them.Enabled = false;
-                btn_huy.Enabled = true;
+                    btn_sua.Enabled = true;
+                    btn_xoa.Enabled = true;
+                    btn_them.Enabled = false;
+                    btn_huy.Enabled = true;
+
+                }
+                catch { }
 
             }
-            catch { }
+            else
+            {
+                return;
+            }    
         }
         private void btn_huy_Click(object sender, EventArgs e)
         {
@@ -221,8 +232,23 @@ namespace QuanLyKhuTro.NghiepVu
             txt_mavp.Clear();
           
         }
+        QL_KhuTroDataContext data = new QL_KhuTroDataContext();
+        public bool KTMANQ(string pma)
+        {
+            var kq = (from nq in data.NOIQUYs
+                      where nq.MANOIQUY == pma
+                      select nq).Count();
+            if (kq > 0)
+                return true;
+            else
+                return false;
+        }
         private void cbb_manoiquy_Click(object sender, EventArgs e)
         {
+            if(KTMANQ(cbb_manoiquy.Text)==false)
+            {
+                return;
+            }    
             if (cbb_manoiquy.SelectedValue !=null)
             {
                 NOIQUY nq = new NOIQUY();

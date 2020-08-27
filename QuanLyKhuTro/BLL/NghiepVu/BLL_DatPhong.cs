@@ -18,6 +18,10 @@ namespace BLL
         {
             return dp.loaddatPhongtheoMa(pten);
         }
+        public List<DatPhong> LoadDatPhongTheoten(string pten)
+        {
+            return dp.loaddatPhongtheoten(pten);
+        }
         public List<PHONG>laytenphong( string pmatang, string pmaloai)
         {
             return dp.laytenphong(pmatang, pmaloai);

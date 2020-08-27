@@ -421,7 +421,7 @@ namespace DAL.DuLieu
 
         public void ThongTinTraPhong(string pNgayTra, string pTenPhong, string pTenKT, string pTraCoc, string pCSDDau,
             string pCSDCuoi, string pDonGiaDien, string pTienDien, string pCSNDau, string pCSNCuoi, string PDonGiaNuoc,
-            string pTienNuoc, string pDonGiaWifi, string pDonGiaRac, string pTongTien)
+            string pTienNuoc, string pDonGiaWifi, string pDonGiaRac, string pTongTien,string TenThietBi,string GiaDenBu)
         {
             #region ===== Core======
             MemoryStream mStream = null;
@@ -473,10 +473,10 @@ namespace DAL.DuLieu
 
 
             string[] fields = new string[] {"NgayTra","TenPhong", "TenKT", "TraCoc","CSDDau", "CSDCuoi","DonGiaDien",
-                "TienDien","CSNDau","CSNCuoi","DonGiaNuoc","TienNuoc","DonGiaWifi","DonGiaRac","TongTien"};
+                "TienDien","CSNDau","CSNCuoi","DonGiaNuoc","TienNuoc","DonGiaWifi","DonGiaRac","TongTien","TenThietBi","GiaDenBu"};
 
             string[] values = new string[] {pNgayTra,pTenPhong, pTenKT, pTraCoc,pCSDDau,pCSDCuoi,pDonGiaDien, pTienDien,
-                pCSNDau,pCSNCuoi,PDonGiaNuoc,pTienNuoc,pDonGiaWifi,pDonGiaRac,pTongTien};
+                pCSNDau,pCSNCuoi,PDonGiaNuoc,pTienNuoc,pDonGiaWifi,pDonGiaRac,pTongTien,TenThietBi,GiaDenBu};
 
             #endregion End Set Value=====
 
@@ -497,7 +497,7 @@ namespace DAL.DuLieu
         }
         public void PhieuThuTienTro(string pNgayLap, string pTenPhong,string pTenTang, string pTienPhong, string pCSDDau,
            string pCSDCuoi, string pDonGiaDien, string pTienDien, string pCSNDau, string pCSNCuoi, string PDonGiaNuoc,
-           string pTienNuoc, string pDonGiaWifi, string pDonGiaRac, string pTongTien,string pMaPhieuThu, string pMaNV, string pTenNV)
+           string pTienNuoc, string pDonGiaWifi, string pDonGiaRac, string pTongTien,string pMaPhieuThu, string pMaNV, string pTenNV, string Thang, string Nam)
         {
             #region ===== Core======
             MemoryStream mStream = null;
@@ -549,10 +549,10 @@ namespace DAL.DuLieu
 
 
             string[] fields = new string[] {"NgayLap","TenPhong","TenTang", "TienPhong","CSDDau", "CSDCuoi","DonGiaDien",
-                "TienDien","CSNDau","CSNCuoi","DonGiaNuoc","TienNuoc","DonGiaWifi","DonGiaRac","TongTien","MaPhieuThu","MaNV","TenNV"};
+                "TienDien","CSNDau","CSNCuoi","DonGiaNuoc","TienNuoc","DonGiaWifi","DonGiaRac","TongTien","MaPhieuThu","MaNV","TenNV","Thang","Nam"};
 
             string[] values = new string[] {pNgayLap,pTenPhong,pTenTang, pTienPhong,pCSDDau,pCSDCuoi,pDonGiaDien, pTienDien,
-                pCSNDau,pCSNCuoi,PDonGiaNuoc,pTienNuoc,pDonGiaWifi,pDonGiaRac,pTongTien,pMaPhieuThu,pMaNV,pTenNV};
+                pCSNDau,pCSNCuoi,PDonGiaNuoc,pTienNuoc,pDonGiaWifi,pDonGiaRac,pTongTien,pMaPhieuThu,pMaNV,pTenNV,Thang,Nam};
 
             #endregion End Set Value=====
 
@@ -568,6 +568,79 @@ namespace DAL.DuLieu
 
 
             this.PrinPriview(filePhieuThuTienTro);
+
+            #endregion =====  End Core=====
+        }
+        public void Cocphong(string pNgay, string pThang, string pNam, string pten, string pscm, string psdt, string pquequan, string pgia)
+        {
+            #region ===== Core======
+            MemoryStream mStream = null;
+            WordDocument document = null;
+            string fileThongtinSV = string.Empty;
+            // Create currency format
+            CultureInfo vietnam = new CultureInfo(1066);
+            NumberFormatInfo vnfi = vietnam.NumberFormat;
+            vnfi.CurrencySymbol = Constants.VN_UNIT;
+            vnfi.CurrencyDecimalSeparator = Constants.CHAR_COMMA;
+            vnfi.CurrencyDecimalDigits = 0;
+            //Create Temp Folder if it does not exist
+            if (!Directory.Exists(Global.AppPath + Constants.FOLDER_TEMP))
+            {
+                Directory.CreateDirectory(Global.AppPath + Constants.FOLDER_TEMP);
+            }
+            //Gets DocFile is Existed
+            string[] DocFile = Directory.GetFiles(Global.AppPath + Constants.FOLDER_TEMP +
+                        Constants.CHAR_FLASH, Constants.CHAR_STAR + Constants.FILE_EXT_DOC);
+            //Delete *.doc file if existed
+            foreach (string file in DocFile)
+            {
+                File.Delete(file);
+            }
+            //string path = Global.AppPath + Constants.FOLDER_TEMPLATES + Constants.CHAR_FLASH + FILE_QUYETDINHKHENTHUONG;
+            try
+            {
+                // Read template
+                mStream = new MemoryStream(File.ReadAllBytes("phieucoc.doc").ToArray());// I
+                document = new WordDocument(mStream);
+                mStream.Close();
+            }
+            catch
+            {
+
+                return;
+            }
+
+            fileThongtinSV = Global.AppPath + Constants.FOLDER_TEMP +
+                            Constants.CHAR_FLASH + "phieucoc" + Constants.FILE_EXT_DOC;// II
+
+            //Prepare to mailMerg
+            DateTime SysDate = DateTime.Now;
+            #endregion =====  End Core=====
+
+            #region === Set value =====//III
+
+
+
+            string[] fields = new string[] { "Ngay", "Thang", "Nam", "Ten", "Socmnd", "Sodt", "Quequan", "Gia" };
+
+
+            string[] values = new string[] { pNgay, pThang, pNam, pten, pscm,psdt,pquequan,pgia };
+
+
+            #endregion End Set Value=====
+
+            #region =====Core=====
+            // Begin mailMerg document
+            document.MailMerge.Execute(fields, values);
+
+            // Save document to file
+            document.Save(fileThongtinSV, FormatType.Doc);
+
+            // Close the document after save
+            document.Close();
+
+
+            this.PrinPriview(fileThongtinSV);
 
             #endregion =====  End Core=====
         }

@@ -301,6 +301,7 @@
             this.txt_gia.Name = "txt_gia";
             this.txt_gia.Size = new System.Drawing.Size(254, 27);
             this.txt_gia.TabIndex = 2;
+            this.txt_gia.TextChanged += new System.EventHandler(this.txt_gia_TextChanged);
             this.txt_gia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_gia_KeyPress);
             // 
             // tableLayoutPanel1
@@ -323,7 +324,7 @@
             // grv_loaiPhong
             // 
             this.grv_loaiPhong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grv_loaiPhong.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grv_loaiPhong.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.grv_loaiPhong.Location = new System.Drawing.Point(389, 3);
             this.grv_loaiPhong.MainView = this.gridView_LoaiPhong;
             this.grv_loaiPhong.Name = "grv_loaiPhong";

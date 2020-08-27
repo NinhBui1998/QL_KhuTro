@@ -173,5 +173,22 @@ namespace QuanLyKhuTro.DanhMuc
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
+
+        private void txt_gia_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                //địng dạng tiền tệ
+                System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+                decimal value = decimal.Parse(txt_gia.Text, System.Globalization.NumberStyles.AllowThousands);
+                txt_gia.Text = String.Format(culture, "{0:N0}", value);
+                //texbox1.Text = String.Format(culture, "{0:N0}", value);
+                txt_gia.Select(txt_gia.Text.Length, 0);
+            }
+            catch
+            {
+                return;
+            }
+        }
     }
 }

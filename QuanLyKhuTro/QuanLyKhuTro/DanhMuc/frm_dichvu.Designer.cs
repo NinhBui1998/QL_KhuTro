@@ -173,7 +173,7 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(399, 40);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
@@ -228,7 +228,7 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(399, 40);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
@@ -360,6 +360,8 @@
             this.txt_gia.Name = "txt_gia";
             this.txt_gia.Size = new System.Drawing.Size(282, 27);
             this.txt_gia.TabIndex = 2;
+            this.txt_gia.TextChanged += new System.EventHandler(this.txt_gia_TextChanged);
+            this.txt_gia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_giadvd_KeyPress);
             // 
             // lbl_donvi
             // 
@@ -461,6 +463,8 @@
             this.txt_giadvd.Name = "txt_giadvd";
             this.txt_giadvd.Size = new System.Drawing.Size(283, 27);
             this.txt_giadvd.TabIndex = 2;
+            this.txt_giadvd.TextChanged += new System.EventHandler(this.txt_giadvd_TextChanged);
+            this.txt_giadvd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_giadvd_KeyPress);
             // 
             // tableLayoutPanel7
             // 

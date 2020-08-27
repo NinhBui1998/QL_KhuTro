@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_tienphong));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -112,6 +113,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.cbo_thang = new System.Windows.Forms.ComboBox();
             this.txt_nam = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -132,6 +134,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grv_hoadon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_hoadon)).BeginInit();
             this.tableLayoutPanel15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -248,7 +251,7 @@
             this.cbo_maphong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_maphong.DisplayMember = "MAPHONG";
             this.cbo_maphong.FormattingEnabled = true;
-            this.cbo_maphong.Location = new System.Drawing.Point(126, 46);
+            this.cbo_maphong.Location = new System.Drawing.Point(126, 49);
             this.cbo_maphong.Name = "cbo_maphong";
             this.cbo_maphong.Size = new System.Drawing.Size(411, 27);
             this.cbo_maphong.TabIndex = 5;
@@ -262,7 +265,7 @@
             this.cbo_tang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_tang.DisplayMember = "MAPHONG";
             this.cbo_tang.FormattingEnabled = true;
-            this.cbo_tang.Location = new System.Drawing.Point(126, 6);
+            this.cbo_tang.Location = new System.Drawing.Point(126, 9);
             this.cbo_tang.Name = "cbo_tang";
             this.cbo_tang.Size = new System.Drawing.Size(411, 27);
             this.cbo_tang.TabIndex = 5;
@@ -396,6 +399,7 @@
             this.txt_sonuoccuoi.Name = "txt_sonuoccuoi";
             this.txt_sonuoccuoi.Size = new System.Drawing.Size(152, 27);
             this.txt_sonuoccuoi.TabIndex = 1;
+            this.txt_sonuoccuoi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sonuoccuoi_KeyPress);
             this.txt_sonuoccuoi.Leave += new System.EventHandler(this.txt_sonuoccuoi_Leave);
             // 
             // label7
@@ -477,7 +481,10 @@
             this.txt_sodiencuoi.Name = "txt_sodiencuoi";
             this.txt_sodiencuoi.Size = new System.Drawing.Size(157, 27);
             this.txt_sodiencuoi.TabIndex = 1;
+            this.txt_sodiencuoi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_sodiencuoi_KeyDown);
+            this.txt_sodiencuoi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sodiencuoi_KeyPress);
             this.txt_sodiencuoi.Leave += new System.EventHandler(this.txt_sodiencuoi_Leave);
+            this.txt_sodiencuoi.Validating += new System.ComponentModel.CancelEventHandler(this.txt_sodiencuoi_Validating);
             // 
             // label6
             // 
@@ -1123,6 +1130,10 @@
             this.txt_nam.Size = new System.Drawing.Size(116, 27);
             this.txt_nam.TabIndex = 2;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frm_tienphong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1161,6 +1172,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView_hoadon)).EndInit();
             this.tableLayoutPanel15.ResumeLayout(false);
             this.tableLayoutPanel15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1250,5 +1262,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private System.Windows.Forms.TextBox txt_ma;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

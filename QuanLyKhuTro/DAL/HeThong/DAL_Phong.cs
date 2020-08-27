@@ -41,7 +41,7 @@ namespace DAL
         public bool kt_sdt(string psdt)
         {
             var kq = (from k in data.KHACHTHUEs
-                      where k.SDT == psdt
+                      where k.SDT == psdt && k.TINHTRANG==true
                       select k).Count();
             if(kq>0)
             {

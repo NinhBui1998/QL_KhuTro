@@ -422,9 +422,11 @@ namespace QuanLyKhuTro.NghiepVu
             string DonGiaWifi = (String.Format("{0:#,##0.##}", Convert.ToDouble(bll_dichvu.loaddv("DV002"))).ToString());
             string DonGiaRac = (String.Format("{0:#,##0.##}", Convert.ToDouble(bll_dichvu.loaddv("DV003"))).ToString()); ;
             string TongTien = txt_tongtien.Text;
+            string Thang = cbo_thang.Text;
+            string Nam = txt_nam.Text;
             we.PhieuThuTienTro(ngaylap,tenphong,tentang, tienphong, CSDDau, CSDCuoi,
                 DonGiaDien, TienDien, CSNDau, CSNCuoi, DonGiaNuoc, TienNuoc, DonGiaWifi,
-                DonGiaRac, TongTien,mahd, manv, tennv);
+                DonGiaRac, TongTien,mahd, manv, tennv, Thang,Nam);
         }
 
         private void ckb_Tinhtrang_Click(object sender, EventArgs e)
@@ -519,6 +521,28 @@ namespace QuanLyKhuTro.NghiepVu
             {
                 return;
             }    
+        }
+
+        private void txt_sodiencuoi_Validating(object sender, CancelEventArgs e)
+        {
+            
+        }
+
+        private void txt_sodiencuoi_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void txt_sodiencuoi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txt_sonuoccuoi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

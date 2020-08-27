@@ -527,6 +527,7 @@
             this.cbb_manoiquy.Name = "cbb_manoiquy";
             this.cbb_manoiquy.Size = new System.Drawing.Size(289, 27);
             this.cbb_manoiquy.TabIndex = 3;
+            this.cbb_manoiquy.SelectedIndexChanged += new System.EventHandler(this.cbb_manoiquy_Click);
             this.cbb_manoiquy.Click += new System.EventHandler(this.cbb_manoiquy_Click);
             // 
             // tableLayoutPanel4
@@ -766,7 +767,7 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.6051F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 263F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 228F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 230F));
             this.tableLayoutPanel10.Controls.Add(this.btn_tatcahd, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.btn_timkiem, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.cbo_phong, 0, 0);
@@ -785,7 +786,7 @@
             this.btn_tatcahd.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_tatcahd.Appearance.Options.UseFont = true;
             this.btn_tatcahd.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_tatcahd.ImageOptions.SvgImage")));
-            this.btn_tatcahd.Location = new System.Drawing.Point(273, 6);
+            this.btn_tatcahd.Location = new System.Drawing.Point(271, 6);
             this.btn_tatcahd.Name = "btn_tatcahd";
             this.btn_tatcahd.Size = new System.Drawing.Size(159, 40);
             this.btn_tatcahd.TabIndex = 10;
@@ -798,9 +799,9 @@
             this.btn_timkiem.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_timkiem.Appearance.Options.UseFont = true;
             this.btn_timkiem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_timkiem.ImageOptions.SvgImage")));
-            this.btn_timkiem.Location = new System.Drawing.Point(231, 6);
+            this.btn_timkiem.Location = new System.Drawing.Point(230, 6);
             this.btn_timkiem.Name = "btn_timkiem";
-            this.btn_timkiem.Size = new System.Drawing.Size(36, 39);
+            this.btn_timkiem.Size = new System.Drawing.Size(35, 39);
             this.btn_timkiem.TabIndex = 8;
             this.btn_timkiem.Click += new System.EventHandler(this.btn_timkiem_Click);
             // 
@@ -810,7 +811,7 @@
             this.cbo_phong.FormattingEnabled = true;
             this.cbo_phong.Location = new System.Drawing.Point(3, 12);
             this.cbo_phong.Name = "cbo_phong";
-            this.cbo_phong.Size = new System.Drawing.Size(222, 27);
+            this.cbo_phong.Size = new System.Drawing.Size(221, 27);
             this.cbo_phong.TabIndex = 4;
             // 
             // simpleButton1

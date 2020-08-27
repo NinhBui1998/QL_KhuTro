@@ -291,10 +291,17 @@ namespace QuanLyKhuTro
 
         private void frm_test_FormClosing(object sender, FormClosingEventArgs e)
         {
-            frm_main frm = new frm_main();
-            frm.Tendn = MaNV;
-            Visible = false;
-            frm.ShowDialog();
+            try
+            { 
+                frm_main frm = new frm_main();
+                frm.Tendn = MaNV;
+                Visible = false;
+                frm.ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi hệ thống");
+            }
         }
 
         private void frm_test_FormClosed(object sender, FormClosedEventArgs e)

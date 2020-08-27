@@ -183,7 +183,8 @@ namespace QuanLyKhuTro.DanhMuc
                 {
                     MessageBox.Show("Thất bại");
                 }
-            }    
+                    grv_khachthue.DataSource = dal_loakt.loadkhachthuetheomaphong(txt_tenphong.Text);
+                }    
             if (btn_sua.Enabled == true && btn_them.Enabled == false)
             {
                 try
@@ -196,7 +197,8 @@ namespace QuanLyKhuTro.DanhMuc
                     }
                     if (khachthue.sua_khachthue(kt) == true)
                     {
-                        MessageBox.Show("Thành công");
+                            grv_khachthue.DataSource = dal_loakt.loadkhachthue();
+                            MessageBox.Show("Thành công");
                     }
                 }
                 catch
@@ -209,8 +211,10 @@ namespace QuanLyKhuTro.DanhMuc
             txt_cmnd.Enabled = rdb_nam.Enabled = rdb_nu.Enabled = false;
 
             txt_makt.Text = bll_sinhma.SinhMa_KhachThue();
-            grv_khachthue.DataSource = dal_loakt.loadkhachthuetheomaphong(txt_tenphong.Text);
-            btn_huy.Enabled = btn_luu.Enabled = btn_xoa.Enabled = btn_sua.Enabled = false;
+          
+            
+
+                btn_huy.Enabled = btn_luu.Enabled = btn_xoa.Enabled = btn_sua.Enabled = false;
             ckb_truongphong.Checked = false;
 
             }

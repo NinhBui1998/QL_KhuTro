@@ -13,6 +13,9 @@ using DAL.DuLieu;
 using System.Drawing;
 using BLL.NghiepVu;
 using QuanLyKhuTro.DuLieu;
+using System.IO;
+using System.Globalization;
+using DAL.DuLieu;
 
 namespace QuanLyKhuTro.NghiepVu
 {
@@ -107,7 +110,7 @@ namespace QuanLyKhuTro.NghiepVu
                 txt_soluonght.Text = p.SOLUONG_HT.ToString();
                 txt_loaiphong.Text = lp.TENLOAI;
                 txt_matang.Text = t.TENTANG;
-                txt_gia.Text = String.Format("{0:#,##0.##}", lp.GIA);
+                txt_tiencoc.Text= txt_gia.Text = String.Format("{0:#,##0.##}", lp.GIA);
             }
             catch { MessageBox.Show("Lỗi hệ thống"); }
         }
@@ -291,6 +294,20 @@ namespace QuanLyKhuTro.NghiepVu
             btn_them.Enabled = btn_xoa.Enabled = false;
             btn_luu.Enabled = btn_huy.Enabled = true;
             txt_tenkt.Enabled = txt_sdt.Enabled = txt_cmnd.Enabled = txt_quequan.Enabled = txt_tiencoc.Enabled = true;
+        }
+        private void btn_in_Click(object sender, EventArgs e)
+        {
+            int position = gridView_cocphong.FocusedRowHandle;
+            //string mahd = gridView_cocphong.GetRowCellValue(position, "Mahd").ToString();
+            string ngay = DateTime.Now.Day.ToString();
+            string thang = DateTime.Now.Month.ToString();
+            string nam = DateTime.Now.Year.ToString();
+            string ten = gridView_cocphong.GetRowCellValue(position, "TEN1").ToString();
+            string scm = gridView_cocphong.GetRowCellValue(position, "SOCMND1").ToString();
+            string sdt = gridView_cocphong.GetRowCellValue(position, "SODT1").ToString();
+            string quequan = gridView_cocphong.GetRowCellValue(position, "QUEQUAN1").ToString();
+            string gia = gridView_cocphong.GetRowCellValue(position, "TIENCOCPHONG1").ToString();
+            we.Cocphong(ngay,thang,nam,ten,scm,sdt,quequan,gia);
         }
     }
 }
